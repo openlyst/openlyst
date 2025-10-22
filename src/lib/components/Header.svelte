@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import favicon from '$lib/assets/favicon.svg';
   
   let isMenuOpen = $state(false);
   
