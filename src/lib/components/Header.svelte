@@ -18,9 +18,7 @@
       <!-- Logo -->
       <div class="flex items-center">
         <a href="/" class="flex items-center space-x-2">
-          <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-            <span class="text-red-900 font-bold text-lg">★</span>
-          </div>
+          <img src={favicon} alt="OpenLyst Logo" class="w-8 h-8" />
           <span class="text-xl font-bold">OpenLyst</span>
         </a>
       </div>
