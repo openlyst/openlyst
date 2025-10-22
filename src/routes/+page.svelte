@@ -9,12 +9,35 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-red-700 via-red-600 to-red-800 text-white overflow-hidden">
-  <div class="absolute inset-0 bg-black opacity-10"></div>
+<section class="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white overflow-hidden min-h-screen flex items-center">
+  <!-- Decorative circles like in the header -->
+  <div class="absolute inset-0">
+    <div class="absolute top-20 left-20 w-8 h-8 bg-yellow-400 rounded-full opacity-30"></div>
+    <div class="absolute top-32 right-32 w-12 h-12 bg-orange-400 rounded-full opacity-25"></div>
+    <div class="absolute bottom-40 left-32 w-6 h-6 bg-yellow-300 rounded-full opacity-35"></div>
+    <div class="absolute bottom-20 right-20 w-10 h-10 bg-orange-300 rounded-full opacity-20"></div>
+    <div class="absolute top-1/3 left-1/4 w-4 h-4 bg-yellow-500 rounded-full opacity-40"></div>
+    <div class="absolute top-2/3 right-1/3 w-8 h-8 bg-orange-500 rounded-full opacity-30"></div>
+  </div>
+  
   <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
     <div class="text-center">
+      <!-- Platform icons bar like in the header -->
       <div class="mb-8 flex justify-center">
-        <img src="/header.png" alt="OpenLyst Header" class="max-w-md w-full h-auto shadow-2xl rounded-lg" />
+        <div class="bg-blue-500 bg-opacity-80 backdrop-blur-sm rounded-2xl px-8 py-4 shadow-2xl">
+          <div class="flex items-center space-x-4">
+            <!-- iOS circle -->
+            <div class="w-8 h-8 bg-green-400 rounded-full"></div>
+            <!-- Android rounded square -->
+            <div class="w-8 h-8 bg-orange-400 rounded-lg"></div>
+            <!-- Desktop hexagon -->
+            <div class="w-8 h-8 bg-red-400 rounded"></div>
+            <!-- Additional platform indicators -->
+            <div class="w-8 h-8 bg-green-500 rounded-full"></div>
+            <div class="w-8 h-8 bg-yellow-400 rounded-full"></div>
+            <div class="w-8 h-8 bg-gray-600 rounded"></div>
+          </div>
+        </div>
       </div>
       
       <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
