@@ -14,9 +14,7 @@
   <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
     <div class="text-center">
       <div class="mb-8 flex justify-center">
-        <div class="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-2xl">
-          <span class="text-red-900 font-bold text-4xl">★</span>
-        </div>
+        <img src={favicon} alt="OpenLyst Logo" class="w-24 h-24 shadow-2xl rounded-lg" />
       </div>
       
       <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
