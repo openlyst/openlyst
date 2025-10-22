@@ -1,0 +1,67 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="baobao-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="50%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="300" rx="20" fill="url(#baobao-bg)" />
+  
+  <!-- Decorative circles -->
+  <circle cx="1100" cy="50" r="80" fill="#ffffff" opacity="0.05"/>
+  <circle cx="1050" cy="250" r="120" fill="#ffffff" opacity="0.05"/>
+  <circle cx="100" cy="250" r="60" fill="#ffffff" opacity="0.08"/>
+  
+  <!-- Fox Icon -->
+  <g transform="translate(90, 150)">
+    <circle cx="0" cy="0" r="50" fill="#ffffff" opacity="0.15"/>
+    <circle cx="0" cy="0" r="45" fill="#ffffff" opacity="0.2"/>
+    
+    <!-- Fox head -->
+    <g transform="translate(-15, -15)" fill="#ffffff">
+      <!-- Main head -->
+      <ellipse cx="15" cy="10" rx="12" ry="10"/>
+      
+      <!-- Ears -->
+      <path d="M 5 0 L 10 -8 L 15 0 Z"/>
+      <path d="M 15 0 L 20 -8 L 25 0 Z"/>
+      
+      <!-- Inner ears -->
+      <path d="M 7 -2 L 10 -6 L 13 -2 Z" fill="#fbbf24"/>
+      <path d="M 17 -2 L 20 -6 L 23 -2 Z" fill="#fbbf24"/>
+      
+      <!-- Eyes -->
+      <circle cx="11" cy="8" r="1.5" fill="#1f2937"/>
+      <circle cx="19" cy="8" r="1.5" fill="#1f2937"/>
+      
+      <!-- Nose -->
+      <path d="M 15 12 L 13 14 L 17 14 Z" fill="#1f2937"/>
+    </g>
+  </g>
+  
+  <!-- App Name -->
+  <g transform="translate(200, 150)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff">
+      BaoBao
+    </text>
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#ffffff" opacity="0.85">
+      Privacy-Focused e621 Client
+    </text>
+  </g>
+  
+  <!-- Status badge -->
+  <g transform="translate(980, 100)">
+    <rect x="0" y="0" width="140" height="30" rx="15" fill="#ef4444"/>
+    <text x="70" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">
+      IN DEVELOPMENT
+    </text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="950" cy="80" r="8" fill="#ffffff" opacity="0.3"/>
+  <circle cx="800" cy="100" r="6" fill="#ffffff" opacity="0.4"/>
+  <circle cx="750" cy="200" r="10" fill="#ffffff" opacity="0.2"/>
+</svg>
