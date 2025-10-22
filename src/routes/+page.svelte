@@ -47,7 +47,7 @@
       <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-red-100">
         Building free and open source software that serves the people, not corporate interests. 
         Join the revolution and take back control of your digital life.
-      </div>
+      </p>
       
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <Button text="Explore Our Apps" href="/apps" variant="secondary" size="lg" />
