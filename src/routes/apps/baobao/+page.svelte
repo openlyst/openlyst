@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Section, Button } from '$lib';
-  import baobaoHeader from '$lib/assets/headers/baobao.svg';
+  
+  const baobaoHeader = '/images/headers/baobao.svg';
 </script>
 
 <svelte:head>
