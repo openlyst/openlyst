@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Section, AppCard, Button } from '$lib';
+  import favicon from '$lib/assets/favicon.svg';
 </script>
 
 <svelte:head>
