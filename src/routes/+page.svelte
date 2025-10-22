@@ -99,6 +99,7 @@
         status="released"
         platforms={['iOS', 'Android', 'macOS', 'Linux', 'Windows*']}
         href="/apps/doudou"
+        headerImage={doudouHeader}
         features={[
           'Jellyfin integration',
           'Plex support',
@@ -107,7 +108,6 @@
           'Offline playback',
           'No ads or tracking'
         ]}
-        image="🎵"
       />
       
       <AppCard
@@ -116,6 +116,7 @@
         status="development"
         platforms={['iOS', 'Android']}
         href="/apps/baobao"
+        headerImage={baobaoHeader}
         features={[
           'Intuitive interface',
           'Advanced search',
@@ -123,7 +124,6 @@
           'Privacy protection',
           'Community features'
         ]}
-        image="🦊"
       />
     </div>
     
