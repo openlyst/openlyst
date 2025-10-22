@@ -74,7 +74,7 @@
   </g>
   
   <!-- App Name -->
-  <g transform="translate(200, 170)" filter="url(#softShadow)">
+  <g transform="translate(200, 170)" filter="url(#baobao-softShadow)">
     <text x="0" y="0" font-family="Inter, sans-serif" font-size="64" font-weight="800" fill="#ffffff" opacity="0.95">
       BaoBao
     </text>
