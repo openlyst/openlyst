@@ -47,21 +47,13 @@
       <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-red-100">
         Building free and open source software that serves the people, not corporate interests. 
         Join the revolution and take back control of your digital life.
-      </p>
+      </div>
       
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <Button text="Explore Our Apps" href="/apps" variant="secondary" size="lg" />
         <Button text="Join the Movement" href="/contribute" variant="outline" size="lg" />
       </div>
     </div>
-  </div>
-  
-  <!-- Decorative elements -->
-  <div class="absolute top-0 left-0 w-full h-full">
-    <div class="absolute top-10 left-10 w-4 h-4 bg-yellow-400 rounded-full opacity-20"></div>
-    <div class="absolute top-20 right-20 w-6 h-6 bg-yellow-400 rounded-full opacity-30"></div>
-    <div class="absolute bottom-20 left-20 w-3 h-3 bg-yellow-400 rounded-full opacity-25"></div>
-    <div class="absolute bottom-10 right-10 w-5 h-5 bg-yellow-400 rounded-full opacity-20"></div>
   </div>
 </section>
 
