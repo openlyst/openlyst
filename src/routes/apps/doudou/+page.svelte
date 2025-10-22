@@ -9,21 +9,15 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-purple-600 via-red-600 to-red-700 text-white py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="flex items-center mb-4">
-          <span class="text-6xl mr-4">🎵</span>
-          <div>
-            <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
-              DouDou
-            </h1>
-            <p class="text-xl text-red-100 mt-2">Revolutionary Music Player</p>
-          </div>
-        </div>
-        
-        <p class="text-lg text-red-100 mb-8">
+<section class="relative text-white overflow-hidden">
+  <img src={doudouHeader} alt="DouDou Header" class="w-full h-80 object-cover" />
+  
+  <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+  
+  <div class="absolute inset-0 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <div class="lg:ml-8">
+        <p class="text-lg text-white mb-8">
           Break free from corporate streaming platforms. DouDou connects to your self-hosted music services 
           like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.
         </p>
