@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Section, Button } from '$lib';
+  import baobaoHeader from '$lib/assets/headers/baobao.svg';
 </script>
 
 <svelte:head>
@@ -8,21 +9,15 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-orange-500 via-red-600 to-pink-600 text-white py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="flex items-center mb-4">
-          <span class="text-6xl mr-4">🦊</span>
-          <div>
-            <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
-              BaoBao
-            </h1>
-            <p class="text-xl text-orange-100 mt-2">Privacy-Focused e621 Client</p>
-          </div>
-        </div>
-        
-        <p class="text-lg text-orange-100 mb-8">
+<section class="relative text-white overflow-hidden">
+  <img src={baobaoHeader} alt="BaoBao Header" class="w-full h-80 object-cover" />
+  
+  <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+  
+  <div class="absolute inset-0 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <div class="lg:ml-8">
+        <p class="text-lg text-white mb-8">
           A modern, privacy-focused client for the e621 community. Built with user experience, 
           data protection, and community values as our top priorities.
         </p>
