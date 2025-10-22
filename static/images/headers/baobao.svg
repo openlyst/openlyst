@@ -41,10 +41,10 @@
   <circle cx="100" cy="250" r="60" fill="#ffffff" opacity="0.08"/>
   
   <!-- Shimmer overlay -->
-  <rect width="1200" height="300" rx="20" fill="url(#shimmer)" opacity="0.5"/>
+  <rect width="1200" height="300" rx="20" fill="url(#baobao-shimmer)" opacity="0.5"/>
   
   <!-- Fox Icon with modern design -->
-  <g transform="translate(90, 150)" filter="url(#glow)">
+  <g transform="translate(90, 150)" filter="url(#baobao-glow)">
     <circle cx="0" cy="0" r="50" fill="#ffffff" opacity="0.15"/>
     <circle cx="0" cy="0" r="45" fill="#ffffff" opacity="0.2"/>
     
