@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Section, Button } from '$lib';
-  import doudouHeader from '$lib/assets/headers/doudou.svg';
+  
+  const doudouHeader = '/images/headers/doudou.svg';
 </script>
 
 <svelte:head>
