@@ -5,6 +5,7 @@
     status: 'released' | 'beta' | 'development';
     platforms: string[];
     image?: string;
+    headerImage?: string;
     href: string;
     features?: string[];
   }
@@ -15,6 +16,7 @@
     status, 
     platforms, 
     image = '', 
+    headerImage = '',
     href,
     features = []
   }: Props = $props();
