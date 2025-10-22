@@ -35,7 +35,12 @@
 </script>
 
 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-red-200 hover:shadow-xl transition-shadow duration-300">
-  {#if image}
+  {#if headerImage}
+    <div class="h-48 relative">
+      <img src={headerImage} alt="{title} Header" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+    </div>
+  {:else if image}
     <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
       <span class="text-6xl text-white">{image}</span>
     </div>
