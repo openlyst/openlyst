@@ -149,18 +149,15 @@
         <div class="text-4xl mb-4">📱</div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">iOS</h3>
         <p class="text-gray-600 mb-4">iPhone and iPad</p>
-        <div class="space-y-2">
-          <Button text="App Store" href="#" variant="primary" />
-          <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-            <p class="text-sm text-gray-700 mb-2">
-              <strong>Alternative Installation:</strong> Use AltStore to install from our repository
+        <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg">
+          <p class="text-sm text-gray-700 mb-2">
+            <strong>Install via AltStore:</strong> Use AltStore to install from our repository
+          </p>
+          <div class="space-y-1">
+            <Button text="Get AltStore" href="https://altstore.io" variant="primary" size="sm" />
+            <p class="text-xs text-gray-600 mt-1">
+              Then add: <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads</code>
             </p>
-            <div class="space-y-1">
-              <Button text="Get AltStore" href="https://altstore.io" variant="outline" size="sm" />
-              <p class="text-xs text-gray-600 mt-1">
-                Then add: <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads</code>
-              </p>
-            </div>
           </div>
         </div>
       </div>
