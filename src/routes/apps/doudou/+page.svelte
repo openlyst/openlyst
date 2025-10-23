@@ -194,10 +194,42 @@
       <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
         <div class="text-4xl mb-4">🖥️</div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">macOS</h3>
-        <p class="text-gray-600 mb-4">Mac App Store & Direct</p>
-        <div class="space-y-2">
-          <Button text="Mac App Store" href="#" variant="primary" />
-          <Button text="Direct Download" href="#" variant="outline" />
+        <p class="text-gray-600 mb-4">Install via Homebrew</p>
+        <div class="p-3 bg-orange-50 border border-orange-200 rounded-lg">
+          <p class="text-sm text-gray-700 mb-3">
+            <strong>Install via Homebrew:</strong> Use the following commands in Terminal
+          </p>
+          <div class="space-y-3 text-left">
+            <div>
+              <p class="text-xs text-gray-600 mb-1">1. Add the tap:</p>
+              <div class="flex items-start gap-2">
+                <code class="bg-gray-100 px-2 py-1 rounded text-xs flex-1 break-all">brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git</code>
+                <button 
+                  onclick={() => navigator.clipboard.writeText('brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git')}
+                  class="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded text-xs font-medium transition-colors flex-shrink-0"
+                  title="Copy command"
+                >
+                  📋
+                </button>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs text-gray-600 mb-1">2. Install DouDou:</p>
+              <div class="flex items-start gap-2">
+                <code class="bg-gray-100 px-2 py-1 rounded text-xs flex-1">brew install --cask doudou</code>
+                <button 
+                  onclick={() => navigator.clipboard.writeText('brew install --cask doudou')}
+                  class="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded text-xs font-medium transition-colors flex-shrink-0"
+                  title="Copy command"
+                >
+                  📋
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 text-center">
+            <Button text="Get Homebrew" href="https://brew.sh" variant="outline" size="sm" />
+          </div>
         </div>
       </div>
       
