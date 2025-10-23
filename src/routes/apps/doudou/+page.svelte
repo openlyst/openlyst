@@ -5,6 +5,7 @@
 <svelte:head>
   <title>DouDou - Revolutionary Music Player - OpenLyst</title>
   <meta name="description" content="DouDou is a revolutionary music player for Jellyfin, Plex, and Navidrome. Free, open source, and privacy-focused." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </svelte:head>
 
 <!-- Hero Section -->
