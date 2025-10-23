@@ -143,28 +143,37 @@
   background="default"
 >
   {#snippet children()}
-    <div id="downloads" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div id="downloads" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
       <!-- iOS -->
-      <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
-        <div class="text-4xl mb-4">📱</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">iOS</h3>
-        <p class="text-gray-600 mb-4">iPhone and iPad</p>
-        <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-          <p class="text-sm text-gray-700 mb-2">
-            <strong>Install via AltStore:</strong> Use AltStore to install from our repository
-          </p>
-          <div class="space-y-2">
-            <Button text="Get AltStore" href="https://altstore.io" variant="primary" size="sm" />
-            <div class="mt-2">
-              <p class="text-xs text-gray-600 mb-1">Then add this repository URL:</p>
-              <div class="flex items-center gap-2 justify-center">
-                <code class="bg-gray-100 px-2 py-1 rounded text-xs break-all">https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads</code>
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📱</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">iOS</h3>
+          <p class="text-gray-500">iPhone and iPad</p>
+        </div>
+        
+        <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+          <div class="text-center mb-4">
+            <h4 class="font-semibold text-blue-900 mb-2">Install via AltStore</h4>
+            <p class="text-sm text-blue-700 mb-4">Use AltStore to install from our repository</p>
+            <Button text="Get AltStore" href="https://altstore.io" variant="primary" size="md" />
+          </div>
+          
+          <div class="mt-6 pt-4 border-t border-blue-200">
+            <p class="text-xs font-medium text-blue-800 mb-3">Repository URL:</p>
+            <div class="bg-white rounded-lg p-3 border border-blue-200">
+              <div class="flex items-center gap-2">
+                <code class="text-xs text-gray-700 flex-1 break-all leading-relaxed">https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads</code>
                 <button 
                   onclick={() => navigator.clipboard.writeText('https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads')}
-                  class="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded text-xs font-medium transition-colors"
+                  class="bg-blue-100 hover:bg-blue-200 text-blue-700 p-2 rounded-md transition-colors"
                   title="Copy URL"
                 >
-                  📋
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -173,116 +182,150 @@
       </div>
       
       <!-- Android -->
-      <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
-        <div class="text-4xl mb-4">🤖</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Android</h3>
-        <p class="text-gray-600 mb-4">Android phones and tablets</p>
-        <div class="p-3 bg-green-50 border border-green-200 rounded-lg">
-          <p class="text-sm text-gray-700 mb-2">
-            <strong>Install via RepStore:</strong> Use RepStore to install from our repository
-          </p>
-          <div class="space-y-2">
-            <Button text="Get RepStore" href="https://gitlab.com/HttpAnimations/repstore" variant="primary" size="sm" />
-            <div class="mt-2">
-              <p class="text-xs text-gray-600 mb-1">Visit RepStore for installation instructions</p>
-            </div>
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🤖</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Android</h3>
+          <p class="text-gray-500">Phones and tablets</p>
+        </div>
+        
+        <div class="bg-green-50 rounded-xl p-6 border border-green-100">
+          <div class="text-center">
+            <h4 class="font-semibold text-green-900 mb-2">Install via RepStore</h4>
+            <p class="text-sm text-green-700 mb-4">Use RepStore to install from our repository</p>
+            <Button text="Get RepStore" href="https://gitlab.com/HttpAnimations/repstore" variant="primary" size="md" />
+            <p class="text-xs text-green-600 mt-3">Visit RepStore for installation instructions</p>
           </div>
         </div>
       </div>
       
       <!-- macOS -->
-      <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
-        <div class="text-4xl mb-4">🖥️</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">macOS</h3>
-        <p class="text-gray-600 mb-4">Install via Homebrew</p>
-        <div class="p-3 bg-orange-50 border border-orange-200 rounded-lg">
-          <p class="text-sm text-gray-700 mb-3">
-            <strong>Install via Homebrew:</strong> Use the following commands in Terminal
-          </p>
-          <div class="space-y-3 text-left">
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🖥️</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">macOS</h3>
+          <p class="text-gray-500">Install via Homebrew</p>
+        </div>
+        
+        <div class="bg-orange-50 rounded-xl p-6 border border-orange-100">
+          <h4 class="font-semibold text-orange-900 mb-4 text-center">Terminal Commands</h4>
+          
+          <div class="space-y-4">
             <div>
-              <p class="text-xs text-gray-600 mb-1">1. Add the tap:</p>
-              <div class="flex items-start gap-2">
-                <code class="bg-gray-100 px-2 py-1 rounded text-xs flex-1 break-all">brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git</code>
-                <button 
-                  onclick={() => navigator.clipboard.writeText('brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git')}
-                  class="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded text-xs font-medium transition-colors flex-shrink-0"
-                  title="Copy command"
-                >
-                  📋
-                </button>
+              <p class="text-xs font-medium text-orange-800 mb-2">1. Add the tap:</p>
+              <div class="bg-white rounded-lg p-3 border border-orange-200">
+                <div class="flex items-start gap-2">
+                  <code class="text-xs text-gray-700 flex-1 leading-relaxed">brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git</code>
+                  <button 
+                    onclick={() => navigator.clipboard.writeText('brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git')}
+                    class="bg-orange-100 hover:bg-orange-200 text-orange-700 p-2 rounded-md transition-colors"
+                    title="Copy command"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
+            
             <div>
-              <p class="text-xs text-gray-600 mb-1">2. Install DouDou:</p>
-              <div class="flex items-start gap-2">
-                <code class="bg-gray-100 px-2 py-1 rounded text-xs flex-1">brew install --cask doudou</code>
-                <button 
-                  onclick={() => navigator.clipboard.writeText('brew install --cask doudou')}
-                  class="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded text-xs font-medium transition-colors flex-shrink-0"
-                  title="Copy command"
-                >
-                  📋
-                </button>
+              <p class="text-xs font-medium text-orange-800 mb-2">2. Install DouDou:</p>
+              <div class="bg-white rounded-lg p-3 border border-orange-200">
+                <div class="flex items-start gap-2">
+                  <code class="text-xs text-gray-700 flex-1 leading-relaxed">brew install --cask doudou</code>
+                  <button 
+                    onclick={() => navigator.clipboard.writeText('brew install --cask doudou')}
+                    class="bg-orange-100 hover:bg-orange-200 text-orange-700 p-2 rounded-md transition-colors"
+                    title="Copy command"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="mt-3 text-center">
+          
+          <div class="mt-6 text-center">
             <Button text="Get Homebrew" href="https://brew.sh" variant="outline" size="sm" />
           </div>
         </div>
       </div>
       
       <!-- Linux -->
-      <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
-        <div class="text-4xl mb-4">🐧</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Linux</h3>
-        <p class="text-gray-600 mb-4">All Linux distributions</p>
-        <div class="p-3 bg-purple-50 border border-purple-200 rounded-lg">
-          <p class="text-sm text-gray-700 mb-3">
-            <strong>Direct Download:</strong> Download the latest Linux build
-          </p>
-          <div class="space-y-2">
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🐧</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Linux</h3>
+          <p class="text-gray-500">All distributions</p>
+        </div>
+        
+        <div class="bg-purple-50 rounded-xl p-6 border border-purple-100">
+          <div class="text-center">
+            <h4 class="font-semibold text-purple-900 mb-2">Direct Download</h4>
+            <p class="text-sm text-purple-700 mb-4">Latest build from GitLab CI</p>
             <Button 
               text="Download for Linux" 
               href="https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux" 
               variant="primary" 
-              size="sm" 
+              size="md" 
             />
-            <p class="text-xs text-gray-600">Latest release build from GitLab CI</p>
+            <p class="text-xs text-purple-600 mt-3">Latest release build from GitLab CI</p>
           </div>
         </div>
       </div>
       
       <!-- Windows -->
-      <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
-        <div class="text-4xl mb-4">🪟</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Windows</h3>
-        <p class="text-gray-600 mb-4">Compile from source</p>
-        <div class="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
-          <p class="text-sm text-gray-700 mb-3">
-            <strong>Manual Compilation Required:</strong> Download source and compile yourself
-          </p>
-          <div class="space-y-2">
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🪟</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Windows</h3>
+          <p class="text-gray-500">Compile from source</p>
+        </div>
+        
+        <div class="bg-yellow-50 rounded-xl p-6 border border-yellow-100">
+          <div class="text-center">
+            <h4 class="font-semibold text-yellow-900 mb-2">Manual Compilation</h4>
+            <p class="text-sm text-yellow-700 mb-4">Download source and compile yourself</p>
             <Button 
               text="Download Source" 
               href="https://gitlab.com/Openlyst/doudou/-/archive/pipeline-2070928152/doudou-pipeline-2070928152.tar.gz" 
               variant="primary" 
-              size="sm" 
+              size="md" 
             />
-            <p class="text-xs text-gray-600">Source code from GitLab pipeline</p>
-            <p class="text-xs text-gray-500 mt-2">⚠️ Windows support not fully tested</p>
+            <div class="mt-4 p-3 bg-yellow-100 rounded-lg">
+              <p class="text-xs text-yellow-800">⚠️ Windows support not fully tested</p>
+            </div>
           </div>
         </div>
       </div>
       
       <!-- Source Code -->
-      <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
-        <div class="text-4xl mb-4">💻</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Source Code</h3>
-        <p class="text-gray-600 mb-4">Build from source</p>
-        <div class="space-y-2">
-          <Button text="GitLab Repository" href="https://gitlab.com/Openlyst/doudou" variant="primary" />
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">💻</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Source Code</h3>
+          <p class="text-gray-500">Build from source</p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+          <div class="text-center">
+            <h4 class="font-semibold text-gray-900 mb-2">GitLab Repository</h4>
+            <p class="text-sm text-gray-700 mb-4">Access the complete source code</p>
+            <Button text="View Repository" href="https://gitlab.com/Openlyst/doudou" variant="primary" size="md" />
+          </div>
         </div>
       </div>
     </div>
