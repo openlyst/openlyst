@@ -160,7 +160,7 @@
               <div class="flex items-center gap-2 justify-center">
                 <code class="bg-gray-100 px-2 py-1 rounded text-xs break-all">https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads</code>
                 <button 
-                  onclick="navigator.clipboard.writeText('https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads')"
+                  onclick={() => navigator.clipboard.writeText('https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads')}
                   class="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded text-xs font-medium transition-colors"
                   title="Copy URL"
                 >
