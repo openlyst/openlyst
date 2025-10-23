@@ -150,7 +150,7 @@
           <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">📱</span>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">iOS</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">iOS <span class="ml-2 inline-block align-middle text-sm bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full">v6.0.0</span></h3>
           <p class="text-gray-500">iPhone and iPad</p>
         </div>
         
@@ -187,7 +187,7 @@
           <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🤖</span>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Android</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Android <span class="ml-2 inline-block align-middle text-sm bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full">v6.0.0</span></h3>
           <p class="text-gray-500">Phones and tablets</p>
         </div>
         
@@ -207,7 +207,7 @@
           <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🖥️</span>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">macOS</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">macOS <span class="ml-2 inline-block align-middle text-sm bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full">v6.0.0</span></h3>
           <p class="text-gray-500">Install via Homebrew</p>
         </div>
         
@@ -264,7 +264,7 @@
           <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🐧</span>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Linux</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Linux <span class="ml-2 inline-block align-middle text-sm bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full">v6.0.0</span></h3>
           <p class="text-gray-500">All distributions</p>
         </div>
         
@@ -289,7 +289,7 @@
           <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🪟</span>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Windows</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Windows <span class="ml-2 inline-block align-middle text-sm bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full">v6.0.0</span></h3>
           <p class="text-gray-500">Compile from source</p>
         </div>
         
@@ -316,7 +316,7 @@
           <div class="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">💻</span>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Source Code</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Source Code <span class="ml-2 inline-block align-middle text-sm bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full">v6.0.0</span></h3>
           <p class="text-gray-500">Build from source</p>
         </div>
         
