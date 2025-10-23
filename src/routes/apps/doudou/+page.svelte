@@ -258,12 +258,22 @@
       <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
         <div class="text-4xl mb-4">🪟</div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">Windows</h3>
-        <p class="text-gray-600 mb-4">Microsoft Store & Direct</p>
-        <div class="space-y-2">
-          <Button text="Microsoft Store" href="#" variant="primary" />
-          <Button text="Direct Download" href="#" variant="outline" />
+        <p class="text-gray-600 mb-4">Compile from source</p>
+        <div class="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <p class="text-sm text-gray-700 mb-3">
+            <strong>Manual Compilation Required:</strong> Download source and compile yourself
+          </p>
+          <div class="space-y-2">
+            <Button 
+              text="Download Source" 
+              href="https://gitlab.com/Openlyst/doudou/-/archive/pipeline-2070928152/doudou-pipeline-2070928152.tar.gz" 
+              variant="primary" 
+              size="sm" 
+            />
+            <p class="text-xs text-gray-600">Source code from GitLab pipeline</p>
+            <p class="text-xs text-gray-500 mt-2">⚠️ Windows support not fully tested</p>
+          </div>
         </div>
-        <p class="text-xs text-gray-500 mt-2">* Not fully tested</p>
       </div>
       
       <!-- Source Code -->
@@ -272,8 +282,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-2">Source Code</h3>
         <p class="text-gray-600 mb-4">Build from source</p>
         <div class="space-y-2">
-          <Button text="GitHub" href="#" variant="primary" />
-          <Button text="GitLab" href="#" variant="outline" />
+          <Button text="GitLab Repository" href="https://gitlab.com/Openlyst/doudou" variant="primary" />
         </div>
       </div>
     </div>
