@@ -153,11 +153,21 @@
           <p class="text-sm text-gray-700 mb-2">
             <strong>Install via AltStore:</strong> Use AltStore to install from our repository
           </p>
-          <div class="space-y-1">
+          <div class="space-y-2">
             <Button text="Get AltStore" href="https://altstore.io" variant="primary" size="sm" />
-            <p class="text-xs text-gray-600 mt-1">
-              Then add: <code class="bg-gray-100 px-1 py-0.5 rounded text-xs">https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads</code>
-            </p>
+            <div class="mt-2">
+              <p class="text-xs text-gray-600 mb-1">Then add this repository URL:</p>
+              <div class="flex items-center gap-2 justify-center">
+                <code class="bg-gray-100 px-2 py-1 rounded text-xs break-all">https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads</code>
+                <button 
+                  onclick="navigator.clipboard.writeText('https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads')"
+                  class="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded text-xs font-medium transition-colors"
+                  title="Copy URL"
+                >
+                  📋
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
