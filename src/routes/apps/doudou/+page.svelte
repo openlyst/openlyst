@@ -237,10 +237,20 @@
       <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
         <div class="text-4xl mb-4">🐧</div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">Linux</h3>
-        <p class="text-gray-600 mb-4">AppImage, Flatpak, Snap</p>
-        <div class="space-y-2">
-          <Button text="Flatpak" href="#" variant="primary" />
-          <Button text="AppImage" href="#" variant="outline" />
+        <p class="text-gray-600 mb-4">All Linux distributions</p>
+        <div class="p-3 bg-purple-50 border border-purple-200 rounded-lg">
+          <p class="text-sm text-gray-700 mb-3">
+            <strong>Direct Download:</strong> Download the latest Linux build
+          </p>
+          <div class="space-y-2">
+            <Button 
+              text="Download for Linux" 
+              href="https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux" 
+              variant="primary" 
+              size="sm" 
+            />
+            <p class="text-xs text-gray-600">Latest release build from GitLab CI</p>
+          </div>
         </div>
       </div>
       
