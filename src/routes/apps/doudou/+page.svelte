@@ -314,7 +314,7 @@
       <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
         <div class="text-center mb-6">
           <div class="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl">💻</span>
+            <i class="fas fa-code text-2xl text-white"></i>
           </div>
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Source Code <span class="ml-2 inline-block align-middle text-sm bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full">v6.0.0</span></h3>
           <p class="text-gray-500">Build from source</p>
