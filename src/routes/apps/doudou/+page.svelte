@@ -176,10 +176,17 @@
       <div class="bg-white rounded-lg shadow-lg p-6 border border-red-200 text-center">
         <div class="text-4xl mb-4">🤖</div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">Android</h3>
-        <p class="text-gray-600 mb-4">Google Play & F-Droid</p>
-        <div class="space-y-2">
-          <Button text="Play Store" href="#" variant="primary" />
-          <Button text="F-Droid" href="#" variant="outline" />
+        <p class="text-gray-600 mb-4">Android phones and tablets</p>
+        <div class="p-3 bg-green-50 border border-green-200 rounded-lg">
+          <p class="text-sm text-gray-700 mb-2">
+            <strong>Install via RepStore:</strong> Use RepStore to install from our repository
+          </p>
+          <div class="space-y-2">
+            <Button text="Get RepStore" href="https://gitlab.com/HttpAnimations/repstore" variant="primary" size="sm" />
+            <div class="mt-2">
+              <p class="text-xs text-gray-600 mb-1">Visit RepStore for installation instructions</p>
+            </div>
+          </div>
         </div>
       </div>
       
