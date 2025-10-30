@@ -1,53 +1,89 @@
 {
-  "name": "OpenLyst Repository",
-  "subtitle": "Every Openlyst iOS app.",
-  "description": "FOSS apps for iOS, Android, and Desktop made for everyone. Focused on more unique apps.",
-  "iconURL": "/favicon.svg",
-  "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads",
-  "website": "https://openlyst.onrender.com",
-  "tintColor": "#dc2626",
-  "featuredApps": ["doudou"],
-  "apps":
-    [
-      {
-        "name": "Doudou",
-        "bundleIdentifier": "doudou",
-        "subtitle": "Revolutionary Music Player",
-        "localizedDescription": "Break free from corporate streaming platforms. Doudou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
-        "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
-        "tintColor": "#dc2626",
-        "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-        "screenshots":
-          [
-            "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
-            "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
-            "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/albums.PNG?ref_type=heads",
-          ],
-        "versions":
-          [
-            {
-              "version": "6.0.0",
-              "date": "2025-10-29",
-              "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
-              "platformInstall":
-                {
-                  "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
-                  "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-                  "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
-                  "Windows": "Download source and compile yourself from GitLab pipeline.",
-                  "Linux": "Download the latest Linux build from GitLab CI.",
-                },
-              "downloadURLs":
-                {
-                  "iOS": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
-                  "Android": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_android",
-                  "macOS": "https://gitlab.com/Openlyst/repos/homebrew/macos/-/raw/main/Casks/doudou.rb?ref_type=heads",
-                  "Windows": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_windows",
-                  "Linux": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux",
-                },
-              "localizedDescription": "Note: This version does not work with Plex and Navidome.\n ## Added\n- Added a button to reload all data from the Jellyfin server.\n- Added an animation that plays when album art changes size.\n- Added a background for the \"Now Playing\" screen.\n- Automatically build `.apk` files.\n- Added an indication if a song is playing locally (downloaded) or streaming.\n- Added a \"Shuffle Favorites\" button for downloaded songs.\n- Added new options to the drop-down menu on the \"Now Playing\" screen.\n- Added a kebab menu (three dots) to the album details page with a download option.\n- Enhanced the kebab menu with \"Play Next,\" \"Play Later,\" and \"Add to Favorites\" options.\n- Added Android Auto support.\n- Added support for the macOS platform.\n- Added a new desktop sidebar.\n- Added web builds.\n\n## Changed\n- Lyrics are now greyed out if none are available.\n- Devices are now locked to vertical orientation.\n- Album art is smaller when the song is paused.\n- The entire audio backend was refactored, which should hopefully lead to fewer bugs.\n- The home page was redesigned.\n- The album name is now displayed as the title on the album details page.\n- \"Play All\" was changed to \"Play\" on the album details page.\n- The \"Play\" and \"Shuffle\" buttons are now bolded on the album details page.\n- The \"Download Album\" button was moved to the kebab menu in the navigation bar.\n- The \"Now Playing\" screen was completely redesigned with an improved layout and spacing.\n- The mini-player will no longer show when a keyboard is open.\n- The search page was completely redesigned with unified results and recent searches.\n- Uses a template for the album and playlist screens.\n\n## Removed\n- The music visualizer was removed (this is not possible with the current audio provider).\n- The \"Now Playing\" option was removed from the settings screen.\n- The ability to scroll on the \"Now Playing\" page was removed.\n- The year was removed from the album details page.\n\n## Fixed\n- Fixed synced lyrics text being hidden in some cases.\n- Fixed an issue where offline mode was never set to true.\n- Fixed autoplay.\n- Fixed recently added albums not showing correctly.\n- Fixed the gapless audio playback.\n- Fixed the lyrics overlay so it automatically reloads when the track changes during playback.\n- Fixed images for top results not working on the search page.\n- The search page now shows clean, unified results without section headers.\n- Fixed iOS being unable to play audio.\n- Fixed the \"Now Playing\" screen overflowing when a large font size is used.\n                - Fixed Linux builds not properly initializing the database.",
-            },
-          ],
-      },
+    "name": "OpenLyst Repository",
+    "subtitle": "Every Openlyst iOS app.",
+    "description": "FOSS apps for iOS, Android, and Desktop made for everyone. Focused on more unique apps.",
+    "iconURL": "/favicon.svg",
+    "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads", 
+    "website": "https://openlyst.onrender.com",
+    "tintColor": "#dc2626",
+    "featuredApps": [
+        "doudou",
+        "baobao"
     ],
+    "apps": [
+        {
+            "name": "Doudou",
+            "bundleIdentifier": "doudou",
+            "subtitle": "Revolutionary Music Player",
+            "localizedDescription": "Break free from corporate streaming platforms. Doudou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
+            "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
+            "tintColor": "#dc2626",
+            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+            "screenshots": [
+                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
+                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
+                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/albums.PNG?ref_type=heads"
+            ],
+            "versions": [
+                {
+                    "version": "6.0.0",
+                    "date": "2025-10-29",
+                    "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                        "Windows": "Download source and compile yourself from GitLab pipeline.",
+                        "Linux": "Download the latest Linux build from GitLab CI."
+                    },
+                    "downloadURLs": {
+                        "iOS": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                        "Android": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_android",
+                        "macOS": "https://gitlab.com/Openlyst/repos/homebrew/macos/-/raw/main/Casks/doudou.rb?ref_type=heads",
+                        "Windows": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_windows",
+                        "Linux": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux"
+                    },
+                    "localizedDescription": "Note: This version does not work with Plex and Navidome.\n ## Added\n- Added a button to reload all data from the Jellyfin server.\n- Added an animation that plays when album art changes size.\n- Added a background for the \"Now Playing\" screen.\n- Automatically build `.apk` files.\n- Added an indication if a song is playing locally (downloaded) or streaming.\n- Added a \"Shuffle Favorites\" button for downloaded songs.\n- Added new options to the drop-down menu on the \"Now Playing\" screen.\n- Added a kebab menu (three dots) to the album details page with a download option.\n- Enhanced the kebab menu with \"Play Next,\" \"Play Later,\" and \"Add to Favorites\" options.\n- Added Android Auto support.\n- Added support for the macOS platform.\n- Added a new desktop sidebar.\n- Added web builds.\n\n## Changed\n- Lyrics are now greyed out if none are available.\n- Devices are now locked to vertical orientation.\n- Album art is smaller when the song is paused.\n- The entire audio backend was refactored, which should hopefully lead to fewer bugs.\n- The home page was redesigned.\n- The album name is now displayed as the title on the album details page.\n- \"Play All\" was changed to \"Play\" on the album details page.\n- The \"Play\" and \"Shuffle\" buttons are now bolded on the album details page.\n- The \"Download Album\" button was moved to the kebab menu in the navigation bar.\n- The \"Now Playing\" screen was completely redesigned with an improved layout and spacing.\n- The mini-player will no longer show when a keyboard is open.\n- The search page was completely redesigned with unified results and recent searches.\n- Uses a template for the album and playlist screens.\n\n## Removed\n- The music visualizer was removed (this is not possible with the current audio provider).\n- The \"Now Playing\" option was removed from the settings screen.\n- The ability to scroll on the \"Now Playing\" page was removed.\n- The year was removed from the album details page.\n\n## Fixed\n- Fixed synced lyrics text being hidden in some cases.\n- Fixed an issue where offline mode was never set to true.\n- Fixed autoplay.\n- Fixed recently added albums not showing correctly.\n- Fixed the gapless audio playback.\n- Fixed the lyrics overlay so it automatically reloads when the track changes during playback.\n- Fixed images for top results not working on the search page.\n- The search page now shows clean, unified results without section headers.\n- Fixed iOS being unable to play audio.\n- Fixed the \"Now Playing\" screen overflowing when a large font size is used.\n                - Fixed Linux builds not properly initializing the database."
+                }
+            ]
+        },
+        {
+            "name": "BaoBao",
+            "bundleIdentifier": "baobao",
+            "subtitle": "Modern e621 Client",
+            "localizedDescription": "A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
+            "iconURL": "https://example.com/baobao-icon.png",
+            "tintColor": "#ff6b35",
+            "platforms": ["iOS", "Android"],
+            "screenshots": [
+                "https://example.com/baobao_screenshot1.png",
+                "https://example.com/baobao_screenshot2.png"
+            ],
+            "versions": [
+                {
+                    "version": "1.0.0-beta",
+                    "date": "2025-10-29",
+                    "platforms": ["iOS", "Android"],
+                    "platformInstall": {
+                        "iOS": "Coming soon via AltStore",
+                        "Android": "Coming soon via RepStore"
+                    },
+                    "localizedDescription": "Initial beta release with intuitive interface, advanced search, offline favorites, privacy protection, and community features."
+                }
+            ]
+        }
+    ],
+    "news": [
+        {
+            "title": "DouDou v6.0.0 Released",
+            "identifier": "doudou_600_release",
+            "caption": "Revolutionary music player now available across all platforms!",
+            "date": "2025-10-29",
+            "tintColor": "#dc2626",
+            "imageURL": "https://example.com/doudou_release_image.png",
+            "notify": true,
+            "url": "/apps/doudou",
+            "appID": "doudou"
+        }
+    ]
 }
