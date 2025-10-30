@@ -301,7 +301,7 @@
         <!-- Version Description -->
         <div class="mb-6">
           <h4 class="text-lg font-semibold text-gray-900 mb-3">What's New</h4>
-          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 prose prose-blue max-w-none">
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 modal-prose">
             {@html marked(selectedVersion.localizedDescription)}
           </div>
         </div>
