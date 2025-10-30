@@ -263,7 +263,7 @@
     aria-modal="true"
     aria-labelledby="modal-title"
     on:click={() => showModal = false}
-    on:keydown={(e) => e.key === 'Escape' && (showModal = false)}
+    on:keydown={handleModalKeydown}
   >
     <div 
       class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" 
