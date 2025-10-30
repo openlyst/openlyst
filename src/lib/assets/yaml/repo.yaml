@@ -43,7 +43,30 @@
                 }
             ]
         },
-
+        {
+            "name": "BaoBao",
+            "bundleIdentifier": "baobao",
+            "subtitle": "Modern e621 Client",
+            "localizedDescription": "A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
+            "iconURL": "https://example.com/baobao-icon.png",
+            "tintColor": "#ff6b35",
+            "platforms": ["iOS", "Android"],
+            "screenshots": [
+                "https://example.com/baobao_screenshot1.png",
+                "https://example.com/baobao_screenshot2.png"
+            ],
+            "versions": [
+                {
+                    "version": "1.0.0-beta",
+                    "date": "2025-10-29",
+                    "platformInstall": {
+                        "iOS": "Coming soon via AltStore",
+                        "Android": "Coming soon via RepStore"
+                    },
+                    "localizedDescription": "Initial beta release with intuitive interface, advanced search, offline favorites, privacy protection, and community features."
+                }
+            ]
+        }
     ],
     "news": [
         {
