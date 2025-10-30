@@ -24,6 +24,7 @@ export interface PlatformDownloadURLs {
 
 export interface AppVersion {
   version: string;
+  platforms?: string[]; // Platform support for this specific version
   platformInstall: PlatformInstall;
   localizedDescription: string;
   date?: string;
