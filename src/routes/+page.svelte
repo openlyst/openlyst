@@ -1,6 +1,11 @@
 <script lang="ts">
   import { Section, AppCard, Button } from '$lib';
+  import { nameToSlug } from '$lib/utils/repo';
   import favicon from '$lib/assets/favicon.svg';
+  
+  export let data;
+  
+  const { apps, featuredApps, config } = data;
 </script>
 
 <svelte:head>
