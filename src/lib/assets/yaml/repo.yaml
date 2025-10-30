@@ -1,22 +1,22 @@
 {
-    "name": "My Example Source",
-    "subtitle": "All my apps in one place.",
-    "description": "Welcome to my source! Here you'll find all of my apps.",
-    "iconURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/OctoSource.png",
-    "headerURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/OceanHeader.png",
-    "website": "https://example.com",
-    "tintColor": "#4185A9",
+    "name": "OpenLyst Repository",
+    "subtitle": "Free, open-source apps for everyone.",
+    "description": "Welcome to OpenLyst! Here you'll find privacy-focused, open-source applications that put you in control.",
+    "iconURL": "https://example.com/openlyst-icon.png",
+    "headerURL": "https://example.com/openlyst-header.png", 
+    "website": "https://openlyst.onrender.com",
+    "tintColor": "#dc2626",
     "featuredApps": [
-        "myapp",
-        "anotherapp"
+        "doudou"
     ],
     "apps": [
         {
-            "name": "My Example App",
-            "subtitle": "An awesome app.",
-            "localizedDescription": "This is an awesome app available on multiple platforms.",
-            "iconURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/FishApp.png",
-            "tintColor": "#5CA399",
+            "name": "DouDou",
+            "bundleIdentifier": "doudou",
+            "subtitle": "Revolutionary Music Player",
+            "localizedDescription": "Break free from corporate streaming platforms. DouDou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
+            "iconURL": "https://example.com/doudou-icon.png",
+            "tintColor": "#dc2626",
             "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
             "screenshots": [
                 "https://example.com/myapp_portrait_screenshot1.png",
