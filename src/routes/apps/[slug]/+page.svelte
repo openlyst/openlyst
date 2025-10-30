@@ -11,6 +11,13 @@
   let selectedVersion = latestVersion;
   let showModal = false;
   
+  // Function to handle modal keyboard events
+  function handleModalKeydown(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      showModal = false;
+    }
+  }
+  
   // Function to get platform-specific installation instructions
   function getInstallInstructions(platform: string, version = latestVersion): string {
     return version.platformInstall[platform as keyof typeof version.platformInstall] || 'Installation instructions not available';
