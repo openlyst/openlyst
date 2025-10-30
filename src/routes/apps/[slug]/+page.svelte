@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Section, Button } from '$lib';
   import type { PageData } from './$types';
+  import { marked } from 'marked';
   
   export let data: PageData;
   
