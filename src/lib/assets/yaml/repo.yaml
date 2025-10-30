@@ -14,7 +14,7 @@
         {
             "name": "Doudou",
             "bundleIdentifier": "doudou",
-            "subtitle": "Revolutionary Music Player",
+            "subtitle": "Music player for self-hosted services",
             "localizedDescription": "Break free from corporate streaming platforms. Doudou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
             "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
             "tintColor": "#dc2626",
