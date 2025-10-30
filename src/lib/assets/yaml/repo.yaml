@@ -44,22 +44,6 @@
                         "Linux": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux"
                     },
                     "localizedDescription": "Note: This version does not work with Plex and Navidome.\n ## Added\n- Added a button to reload all data from the Jellyfin server.\n- Added an animation that plays when album art changes size.\n- Added a background for the \"Now Playing\" screen.\n- Automatically build `.apk` files.\n- Added an indication if a song is playing locally (downloaded) or streaming.\n- Added a \"Shuffle Favorites\" button for downloaded songs.\n- Added new options to the drop-down menu on the \"Now Playing\" screen.\n- Added a kebab menu (three dots) to the album details page with a download option.\n- Enhanced the kebab menu with \"Play Next,\" \"Play Later,\" and \"Add to Favorites\" options.\n- Added Android Auto support.\n- Added support for the macOS platform.\n- Added a new desktop sidebar.\n- Added web builds.\n\n## Changed\n- Lyrics are now greyed out if none are available.\n- Devices are now locked to vertical orientation.\n- Album art is smaller when the song is paused.\n- The entire audio backend was refactored, which should hopefully lead to fewer bugs.\n- The home page was redesigned.\n- The album name is now displayed as the title on the album details page.\n- \"Play All\" was changed to \"Play\" on the album details page.\n- The \"Play\" and \"Shuffle\" buttons are now bolded on the album details page.\n- The \"Download Album\" button was moved to the kebab menu in the navigation bar.\n- The \"Now Playing\" screen was completely redesigned with an improved layout and spacing.\n- The mini-player will no longer show when a keyboard is open.\n- The search page was completely redesigned with unified results and recent searches.\n- Uses a template for the album and playlist screens.\n\n## Removed\n- The music visualizer was removed (this is not possible with the current audio provider).\n- The \"Now Playing\" option was removed from the settings screen.\n- The ability to scroll on the \"Now Playing\" page was removed.\n- The year was removed from the album details page.\n\n## Fixed\n- Fixed synced lyrics text being hidden in some cases.\n- Fixed an issue where offline mode was never set to true.\n- Fixed autoplay.\n- Fixed recently added albums not showing correctly.\n- Fixed the gapless audio playback.\n- Fixed the lyrics overlay so it automatically reloads when the track changes during playback.\n- Fixed images for top results not working on the search page.\n- The search page now shows clean, unified results without section headers.\n- Fixed iOS being unable to play audio.\n- Fixed the \"Now Playing\" screen overflowing when a large font size is used.\n                - Fixed Linux builds not properly initializing the database."
-                },
-                {
-                    "version": "5.8.0",
-                    "date": "2025-09-15",
-                    "platforms": ["iOS", "Android", "Linux"],
-                    "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-                        "Linux": "Download the latest Linux build from GitLab CI."
-                    },
-                    "downloadURLs": {
-                        "iOS": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
-                        "Android": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/oldcommit123/download?job=build_release_android",
-                        "Linux": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/oldcommit123/download?job=build_release_linux"
-                    },
-                    "localizedDescription": "## Added\n- Improved audio playback performance\n- Better handling of large music libraries\n- Enhanced search functionality\n\n## Fixed\n- Fixed crash when loading certain album art\n- Improved stability on older Android devices\n- Fixed memory leaks in audio processing\n\n**Note**: This version does not support macOS, Windows, or Web platforms."
                 }
             ]
         },
