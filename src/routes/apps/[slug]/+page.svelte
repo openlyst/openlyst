@@ -262,14 +262,13 @@
     role="dialog" 
     aria-modal="true"
     aria-labelledby="modal-title"
+    tabindex="-1"
     on:click={() => showModal = false}
     on:keydown={handleModalKeydown}
   >
     <div 
       class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" 
       role="document"
-      on:click|stopPropagation
-      on:keydown|stopPropagation
     >
       <!-- Modal Header -->
       <div class="flex items-center justify-between p-6 border-b border-gray-200">
