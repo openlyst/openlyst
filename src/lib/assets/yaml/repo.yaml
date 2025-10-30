@@ -22,12 +22,7 @@
             "screenshots": [
                 "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
                 "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
-                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/albums.PNG?ref_type=heads",
-                {
-                    "imageURL": "https://example.com/doudou_landscape.png",
-                    "width": 2556,
-                    "height": 1179
-                }
+                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/albums.PNG?ref_type=heads"
             ],
             "versions": [
                 {
