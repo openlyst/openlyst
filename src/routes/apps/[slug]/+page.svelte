@@ -154,26 +154,18 @@
 
         <!-- Main Content Area -->
         <div class="lg:col-span-3 p-8">
-          <!-- Version Description -->
+          <!-- Version Header -->
           <div class="mb-8">
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-2xl font-bold text-gray-900">Version {selectedVersion.version}</h3>
               <button
-                class="px-4 py-2 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded-lg transition-colors text-sm font-medium"
-                on:click={() => showDescription = !showDescription}
+                class="px-4 py-2 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
+                on:click={() => showModal = true}
               >
-                {showDescription ? 'Hide' : 'Show'} Details
+                <i class="fas fa-info-circle"></i>
+                View Details
               </button>
             </div>
-            
-            {#if showDescription}
-              <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-                <p class="text-blue-900">{selectedVersion.localizedDescription}</p>
-                {#if selectedVersion.date}
-                  <p class="text-blue-700 text-sm mt-2">Released: {selectedVersion.date}</p>
-                {/if}
-              </div>
-            {/if}
           </div>
 
           <!-- Platform Downloads -->
