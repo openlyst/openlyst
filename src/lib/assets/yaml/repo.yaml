@@ -43,72 +43,7 @@
                 }
             ]
         },
-        {
-            "name": "Another Example App",
-            "subtitle": "Another awesome app.",
-            "localizedDescription": "This is another awesome app available on multiple platforms.",
-            "iconURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/SharkApp.png",
-            "tintColor": "#3660A2",
-            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
-            "screenshots": {
-                "iphone": [
-                    "https://example.com/anotherapp_portrait_1.png",
-                    "https://example.com/anotherapp_portrait_2.png",
-                    {
-                        "imageURL": "https://example.com/anotherapp_landscape.png",
-                        "width": 2556,
-                        "height": 1179
-                    }
-                ],
-                "ipad": [
-                    {
-                        "imageURL": "https://example.com/anotherapp_ipad_portrait.png",
-                        "width": 1668,
-                        "height": 2388
-                    },
-                    {
-                        "imageURL": "https://example.com/anotherapp_ipad_landscape.png",
-                        "width": 2388,
-                        "height": 1668
-                    }
-                ]
-            },
-            "versions": [
-                {
-                    "version": "1.2",
-                    "platformInstall": {
-                        "iOS": "Install via AltStore or TestFlight.",
-                        "Android": "Download the APK and allow installation from unknown sources.",
-                        "macOS": "Download the ZIP and move the app to Applications folder.",
-                        "Windows": "Download the EXE and run the installer.",
-                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
-                    },
-                    "localizedDescription": "Bug fixes and performance improvements."
-                },
-                {
-                    "version": "1.1",
-                    "platformInstall": {
-                        "iOS": "Install via AltStore or TestFlight.",
-                        "Android": "Download the APK and allow installation from unknown sources.",
-                        "macOS": "Download the ZIP and move the app to Applications folder.",
-                        "Windows": "Download the EXE and run the installer.",
-                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
-                    },
-                    "localizedDescription": "New features!"
-                },
-                {
-                    "version": "1.0",
-                    "platformInstall": {
-                        "iOS": "Install via AltStore or TestFlight.",
-                        "Android": "Download the APK and allow installation from unknown sources.",
-                        "macOS": "Download the ZIP and move the app to Applications folder.",
-                        "Windows": "Download the EXE and run the installer.",
-                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
-                    },
-                    "localizedDescription": "Initial release."
-                }
-            ]
-        }
+
     ],
     "news": [
         {
