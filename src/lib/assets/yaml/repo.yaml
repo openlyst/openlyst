@@ -39,7 +39,7 @@
                     },
                     "downloadURLs": {
                         "iOS": "https://gitlab.com/Openlyst/doudou/-/jobs/11902858419/artifacts/raw/build/doudou-release-ios.tar.gz",
-                        "Android": "",
+                        "Android": "https://gitlab.com/Openlyst/doudou/-/jobs/11902565276/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
                         "macOS": "https://gitlab.com/Openlyst/doudou/-/jobs/11902791895/artifacts/raw/build/doudou-release-macos.tar.gz",
                         "Windows": "https://gitlab.com/Openlyst/doudou/-/archive/pipeline-2128734644/doudou-pipeline-2128734644.tar.gz",
                         "Linux": "https://gitlab.com/Openlyst/doudou/-/jobs/11902858422/artifacts/download",
