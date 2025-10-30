@@ -2,7 +2,7 @@
     "name": "OpenLyst Repository",
     "subtitle": "Free, open-source apps for everyone.",
     "description": "Welcome to OpenLyst! Here you'll find privacy-focused, open-source applications that put you in control.",
-    "iconURL": "https://example.com/openlyst-icon.png",
+    "iconURL": "/favicon.svg",
     "headerURL": "https://example.com/openlyst-header.png", 
     "website": "https://openlyst.onrender.com",
     "tintColor": "#dc2626",
