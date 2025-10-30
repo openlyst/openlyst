@@ -219,7 +219,9 @@
                 
                 <p class="text-sm text-gray-700 mb-4">{getInstallInstructions(platform, selectedVersion)}</p>
                 
-                {#if selectedVersion.downloadURL && platform === 'Linux'}
+                {#if selectedVersion.downloadURLs && selectedVersion.downloadURLs[platform as keyof typeof selectedVersion.downloadURLs]}
+                  <Button text="Download {platform}" href="{selectedVersion.downloadURLs[platform as keyof typeof selectedVersion.downloadURLs]}" variant="primary" size="sm" />
+                {:else if selectedVersion.downloadURL && platform === 'Linux'}
                   <Button text="Download" href="{selectedVersion.downloadURL}" variant="primary" size="sm" />
                 {:else}
                   <Button text="Get {platform} Version" href="#" variant="primary" size="sm" />
