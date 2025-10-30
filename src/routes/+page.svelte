@@ -115,10 +115,10 @@
         <AppCard
           title="{app.name}"
           description="{app.localizedDescription}"
-          status="released"
+          status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
           platforms="{app.platforms}"
           href="/apps/{nameToSlug(app.name)}"
-          image="🎵"
+          image="{app.name === 'DouDou' ? '🎵' : app.name === 'BaoBao' ? '🦊' : '🚀'}"
         />
       {/each}
       
