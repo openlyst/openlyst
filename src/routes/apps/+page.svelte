@@ -43,10 +43,9 @@
           title="{app.name}"
           description="{app.localizedDescription}"
           href="/apps/{nameToSlug(app.name)}"
-          iconUrl="{app.iconURL}"
+          status="released"
           platforms="{app.platforms}"
-          version="{app.versions[0]?.version || '1.0'}"
-          tintColor="{app.tintColor}"
+          image="🎵"
         />
       {/each}
     </div>
