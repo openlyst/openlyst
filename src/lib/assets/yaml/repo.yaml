@@ -19,36 +19,27 @@
             "tintColor": "#dc2626",
             "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
             "screenshots": [
-                "https://example.com/myapp_portrait_screenshot1.png",
-                "https://example.com/myapp_portrait_screenshot2.png",
+                "https://example.com/doudou_screenshot1.png",
+                "https://example.com/doudou_screenshot2.png",
                 {
-                    "imageURL": "https://example.com/myapp_landscape_screenshot.png",
+                    "imageURL": "https://example.com/doudou_landscape.png",
                     "width": 2556,
                     "height": 1179
                 }
             ],
             "versions": [
                 {
-                    "version": "1.1",
+                    "version": "6.0.0",
+                    "date": "2025-10-29",
                     "platformInstall": {
-                        "iOS": "Install via AltStore or TestFlight.",
-                        "Android": "Download the APK and allow installation from unknown sources.",
-                        "macOS": "Download the ZIP and move the app to Applications folder.",
-                        "Windows": "Download the EXE and run the installer.",
-                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
+                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                        "Windows": "Download source and compile yourself from GitLab pipeline.",
+                        "Linux": "Download the latest Linux build from GitLab CI."
                     },
-                    "localizedDescription": "New features and bug fixes."
-                },
-                {
-                    "version": "1.0",
-                    "platformInstall": {
-                        "iOS": "Install via AltStore or TestFlight.",
-                        "Android": "Download the APK and allow installation from unknown sources.",
-                        "macOS": "Download the ZIP and move the app to Applications folder.",
-                        "Windows": "Download the EXE and run the installer.",
-                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
-                    },
-                    "localizedDescription": "Initial release."
+                    "downloadURL": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux",
+                    "localizedDescription": "Revolutionary music player with multi-server support for Jellyfin, Plex, and Navidrome. Features offline playback, privacy-first design, and cross-platform synchronization."
                 }
             ]
         },
