@@ -3,7 +3,7 @@
     "subtitle": "Free, open-source apps for everyone.",
     "description": "Welcome to OpenLyst! Here you'll find privacy-focused, open-source applications that put you in control.",
     "iconURL": "/favicon.svg",
-    "headerURL": "https://example.com/openlyst-header.png", 
+    "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads", 
     "website": "https://openlyst.onrender.com",
     "tintColor": "#dc2626",
     "featuredApps": [
