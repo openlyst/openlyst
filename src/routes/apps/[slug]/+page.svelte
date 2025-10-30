@@ -211,6 +211,7 @@
                       {:else if platform === 'macOS'}Mac computers
                       {:else if platform === 'Linux'}All distributions  
                       {:else if platform === 'Windows'}PC computers
+                      {:else if platform === 'Web'}Any web browser
                       {:else}{platform} devices{/if}
                     </p>
                   </div>
