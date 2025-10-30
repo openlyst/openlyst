@@ -250,14 +250,26 @@
 
 <!-- Version Details Modal -->
 {#if showModal}
-  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" on:click={() => showModal = false}>
-    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" on:click|stopPropagation>
+  <div 
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" 
+    role="dialog" 
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    on:click={() => showModal = false}
+    on:keydown={(e) => e.key === 'Escape' && (showModal = false)}
+  >
+    <div 
+      class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" 
+      role="document"
+      on:click|stopPropagation
+      on:keydown|stopPropagation
+    >
       <!-- Modal Header -->
       <div class="flex items-center justify-between p-6 border-b border-gray-200">
         <div class="flex items-center gap-3">
           <img src="{app.iconURL}" alt="{app.name} icon" class="w-12 h-12 rounded-xl" />
           <div>
-            <h3 class="text-xl font-bold text-gray-900">{app.name} v{selectedVersion.version}</h3>
+            <h3 id="modal-title" class="text-xl font-bold text-gray-900">{app.name} v{selectedVersion.version}</h3>
             {#if selectedVersion.date}
               <p class="text-sm text-gray-500">Released: {selectedVersion.date}</p>
             {/if}
@@ -265,6 +277,7 @@
         </div>
         <button
           class="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          aria-label="Close modal"
           on:click={() => showModal = false}
         >
           <i class="fas fa-times text-gray-500"></i>
