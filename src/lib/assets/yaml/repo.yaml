@@ -61,8 +61,6 @@
                     },
                     "localizedDescription": "## Added\n- Improved audio playback performance\n- Better handling of large music libraries\n- Enhanced search functionality\n\n## Fixed\n- Fixed crash when loading certain album art\n- Improved stability on older Android devices\n- Fixed memory leaks in audio processing\n\n**Note**: This version does not support macOS, Windows, or Web platforms."
                 }
-            ]"
-                }
             ]
         },
         {
