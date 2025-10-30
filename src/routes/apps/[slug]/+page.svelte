@@ -7,9 +7,9 @@
   const { app } = data;
   const latestVersion = app.versions[0];
   
-  // State for version selection and description visibility
+  // State for version selection and modal visibility
   let selectedVersion = latestVersion;
-  let showDescription = false;
+  let showModal = false;
   
   // Function to get platform-specific installation instructions
   function getInstallInstructions(platform: string, version = latestVersion): string {
