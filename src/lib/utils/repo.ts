@@ -23,8 +23,8 @@ export async function loadRepoConfig(): Promise<RepoConfig> {
   }
 }
 
-export function getApp(slug: string): ReturnType<typeof loadRepoConfig>['apps'][0] | null {
-  const config = loadRepoConfig();
+export async function getApp(slug: string): Promise<RepoConfig['apps'][0] | null> {
+  const config = await loadRepoConfig();
   
   // Find app by converting name to slug format
   const app = config.apps.find(app => 
@@ -35,8 +35,8 @@ export function getApp(slug: string): ReturnType<typeof loadRepoConfig>['apps'][
   return app || null;
 }
 
-export function getAllApps(): ReturnType<typeof loadRepoConfig>['apps'] {
-  const config = loadRepoConfig();
+export async function getAllApps(): Promise<RepoConfig['apps']> {
+  const config = await loadRepoConfig();
   return config.apps;
 }
 
