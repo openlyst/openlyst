@@ -24,6 +24,11 @@
     event.stopPropagation();
   }
   
+  // Function to get platforms supported by a specific version
+  function getVersionPlatforms(version = latestVersion): string[] {
+    return version.platforms || app.platforms;
+  }
+  
   // Function to get platform-specific installation instructions
   function getInstallInstructions(platform: string, version = latestVersion): string {
     return version.platformInstall[platform as keyof typeof version.platformInstall] || 'Installation instructions not available';
