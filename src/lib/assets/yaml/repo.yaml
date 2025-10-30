@@ -40,7 +40,7 @@
                     "downloadURLs": {
                         "iOS": "",
                         "Android": "",
-                        "macOS": "https://gitlab.com/Openlyst/repos/homebrew/macos/-/raw/main/Casks/doudou.rb?ref_type=heads",
+                        "macOS": "",
                         "Windows": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_windows",
                         "Linux": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux",
                         "Web": "https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
