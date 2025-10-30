@@ -38,7 +38,7 @@
                         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
                     },
                     "downloadURLs": {
-                        "iOS": "https://gitlab.com/Openlyst/doudou/-/jobs/11902858419/artifacts/raw/build/doudou-release-ios.tar.gz",
+                        "iOS": "https://github.com/HttpAnimation/awdawd/releases/download/6.0.0/doudou-flutter-7.0.0-ios.ipa",
                         "Android": "https://gitlab.com/Openlyst/doudou/-/jobs/11902565276/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
                         "macOS": "https://gitlab.com/Openlyst/doudou/-/jobs/11902791895/artifacts/raw/build/doudou-release-macos.tar.gz",
                         "Windows": "https://gitlab.com/Openlyst/doudou/-/archive/pipeline-2128734644/doudou-pipeline-2128734644.tar.gz",
