@@ -12,10 +12,10 @@
     ],
     "apps": [
         {
-            "name": "DouDou",
+            "name": "Doudou",
             "bundleIdentifier": "doudou",
             "subtitle": "Revolutionary Music Player",
-            "localizedDescription": "Break free from corporate streaming platforms. DouDou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
+            "localizedDescription": "Break free from corporate streaming platforms. Doudou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
             "iconURL": "https://example.com/doudou-icon.png",
             "tintColor": "#dc2626",
             "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
