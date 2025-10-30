@@ -38,7 +38,7 @@
                         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
                     },
                     "downloadURLs": {
-                        "iOS": "",
+                        "iOS": "https://gitlab.com/Openlyst/doudou/-/jobs/11902858419/artifacts/raw/build/doudou-release-ios.tar.gz",
                         "Android": "",
                         "macOS": "",
                         "Windows": "",
