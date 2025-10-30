@@ -1,0 +1,114 @@
+{
+    "name": "My Example Source",
+    "subtitle": "All my apps in one place.",
+    "description": "Welcome to my source! Here you'll find all of my apps.",
+    "iconURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/OctoSource.png",
+    "headerURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/OceanHeader.png",
+    "website": "https://example.com",
+    "tintColor": "#4185A9",
+    "featuredApps": [
+        "myapp",
+        "anotherapp"
+    ],
+    "apps": [
+        {
+            "name": "My Example App",
+            "subtitle": "An awesome app.",
+            "localizedDescription": "This is an awesome app available on multiple platforms.",
+            "iconURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/FishApp.png",
+            "tintColor": "#5CA399",
+            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
+            "screenshots": [
+                "https://example.com/myapp_portrait_screenshot1.png",
+                "https://example.com/myapp_portrait_screenshot2.png",
+                {
+                    "imageURL": "https://example.com/myapp_landscape_screenshot.png",
+                    "width": 2556,
+                    "height": 1179
+                }
+            ],
+            "versions": [
+                {
+                    "version": "1.1",
+                    "downloadURL": "https://example.com/myapp_v1.1.zip",
+                    "localizedDescription": "New features and bug fixes."
+                },
+                {
+                    "version": "1.0",
+                    "downloadURL": "https://example.com/myapp_v1.0.zip",
+                    "localizedDescription": "Initial release."
+                }
+            ]
+        },
+        {
+            "name": "Another Example App",
+            "subtitle": "Another awesome app.",
+            "localizedDescription": "This is another awesome app available on multiple platforms.",
+            "iconURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/SharkApp.png",
+            "tintColor": "#3660A2",
+            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
+            "screenshots": {
+                "iphone": [
+                    "https://example.com/anotherapp_portrait_1.png",
+                    "https://example.com/anotherapp_portrait_2.png",
+                    {
+                        "imageURL": "https://example.com/anotherapp_landscape.png",
+                        "width": 2556,
+                        "height": 1179
+                    }
+                ],
+                "ipad": [
+                    {
+                        "imageURL": "https://example.com/anotherapp_ipad_portrait.png",
+                        "width": 1668,
+                        "height": 2388
+                    },
+                    {
+                        "imageURL": "https://example.com/anotherapp_ipad_landscape.png",
+                        "width": 2388,
+                        "height": 1668
+                    }
+                ]
+            },
+            "versions": [
+                {
+                    "version": "1.2",
+                    "downloadURL": "https://example.com/anotherapp_v1.2.zip",
+                    "localizedDescription": "Bug fixes and performance improvements."
+                },
+                {
+                    "version": "1.1",
+                    "downloadURL": "https://example.com/anotherapp_v1.1.zip",
+                    "localizedDescription": "New features!"
+                },
+                {
+                    "version": "1.0",
+                    "downloadURL": "https://example.com/anotherapp_v1.0.zip",
+                    "localizedDescription": "Initial release."
+                }
+            ]
+        }
+    ],
+    "news": [
+        {
+            "title": "New Feature Announcement",
+            "identifier": "new_feature",
+            "caption": "Introducing a new feature in AltStore!",
+            "date": "2023-03-15",
+            "tintColor": "#5CA399",
+            "imageURL": "https://example.com/new_feature_image.png",
+            "notify": true,
+            "url": "https://example.com/new_feature_details"
+        },
+        {
+            "title": "App Update Available",
+            "identifier": "app_update",
+            "caption": "An update is available for My Example App.",
+            "date": "2023-03-10T10:00:00-07:00",
+            "tintColor": "#3660A2",
+            "imageURL": "https://example.com/app_update_image.png",
+            "notify": false,
+            "appID": "myapp"
+        }
+    ]
+}
