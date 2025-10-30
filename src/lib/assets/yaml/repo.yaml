@@ -30,12 +30,24 @@
             "versions": [
                 {
                     "version": "1.1",
-                    "downloadURL": "https://example.com/myapp_v1.1.zip",
+                    "platformInstall": {
+                        "iOS": "Install via AltStore or TestFlight.",
+                        "Android": "Download the APK and allow installation from unknown sources.",
+                        "macOS": "Download the ZIP and move the app to Applications folder.",
+                        "Windows": "Download the EXE and run the installer.",
+                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
+                    },
                     "localizedDescription": "New features and bug fixes."
                 },
                 {
                     "version": "1.0",
-                    "downloadURL": "https://example.com/myapp_v1.0.zip",
+                    "platformInstall": {
+                        "iOS": "Install via AltStore or TestFlight.",
+                        "Android": "Download the APK and allow installation from unknown sources.",
+                        "macOS": "Download the ZIP and move the app to Applications folder.",
+                        "Windows": "Download the EXE and run the installer.",
+                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
+                    },
                     "localizedDescription": "Initial release."
                 }
             ]
@@ -73,17 +85,35 @@
             "versions": [
                 {
                     "version": "1.2",
-                    "downloadURL": "https://example.com/anotherapp_v1.2.zip",
+                    "platformInstall": {
+                        "iOS": "Install via AltStore or TestFlight.",
+                        "Android": "Download the APK and allow installation from unknown sources.",
+                        "macOS": "Download the ZIP and move the app to Applications folder.",
+                        "Windows": "Download the EXE and run the installer.",
+                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
+                    },
                     "localizedDescription": "Bug fixes and performance improvements."
                 },
                 {
                     "version": "1.1",
-                    "downloadURL": "https://example.com/anotherapp_v1.1.zip",
+                    "platformInstall": {
+                        "iOS": "Install via AltStore or TestFlight.",
+                        "Android": "Download the APK and allow installation from unknown sources.",
+                        "macOS": "Download the ZIP and move the app to Applications folder.",
+                        "Windows": "Download the EXE and run the installer.",
+                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
+                    },
                     "localizedDescription": "New features!"
                 },
                 {
                     "version": "1.0",
-                    "downloadURL": "https://example.com/anotherapp_v1.0.zip",
+                    "platformInstall": {
+                        "iOS": "Install via AltStore or TestFlight.",
+                        "Android": "Download the APK and allow installation from unknown sources.",
+                        "macOS": "Download the ZIP and move the app to Applications folder.",
+                        "Windows": "Download the EXE and run the installer.",
+                        "Linux": "Download the TAR or AppImage and follow distribution instructions."
+                    },
                     "localizedDescription": "Initial release."
                 }
             ]
