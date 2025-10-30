@@ -1,6 +1,6 @@
 import { getAllApps, loadRepoConfig } from '$lib/utils/repo';
 
-export const load: PageLoad = async () => {
+export const load = async () => {
   const [apps, config] = await Promise.all([
     getAllApps(),
     loadRepoConfig()
