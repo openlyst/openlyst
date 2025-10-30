@@ -7,9 +7,13 @@
   const { app } = data;
   const latestVersion = app.versions[0];
   
+  // State for version selection and description visibility
+  let selectedVersion = latestVersion;
+  let showDescription = false;
+  
   // Function to get platform-specific installation instructions
-  function getInstallInstructions(platform: string): string {
-    return latestVersion.platformInstall[platform as keyof typeof latestVersion.platformInstall] || 'Installation instructions not available';
+  function getInstallInstructions(platform: string, version = latestVersion): string {
+    return version.platformInstall[platform as keyof typeof version.platformInstall] || 'Installation instructions not available';
   }
   
   // Function to format screenshots
@@ -119,57 +123,104 @@
 <!-- Downloads Section -->
 <Section 
   title="Download {app.name}" 
-  subtitle="Available on all your favorite platforms"
+  subtitle="Choose your version and platform"
   background="default"
 >
   {#snippet children()}
-    <div id="downloads" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-      {#each app.platforms as platform}
-        <!-- Platform Card -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
-          <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor});">
-              {#if platform === 'iOS'}
-                <i class="fab fa-apple text-2xl text-white"></i>
-              {:else if platform === 'Android'}
-                <i class="fab fa-android text-2xl text-white"></i>
-              {:else if platform === 'macOS'}
-                <i class="fab fa-apple text-2xl text-white"></i>
-              {:else if platform === 'Linux'}
-                <i class="fab fa-linux text-2xl text-white"></i>
-              {:else if platform === 'Windows'}
-                <i class="fab fa-windows text-2xl text-white"></i>
-              {:else}
-                <i class="fas fa-desktop text-2xl text-white"></i>
-              {/if}
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">
-              {platform} 
-              <span class="ml-2 inline-block align-middle text-sm bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full">v{latestVersion.version}</span>
-            </h3>
-            <p class="text-gray-500">
-              {#if platform === 'iOS'}iPhone and iPad
-              {:else if platform === 'Android'}Phones and tablets
-              {:else if platform === 'macOS'}Mac computers
-              {:else if platform === 'Linux'}All distributions  
-              {:else if platform === 'Windows'}PC computers
-              {:else}{platform} devices{/if}
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
-            <div class="text-center">
-              <h4 class="font-semibold text-gray-900 mb-2">Installation</h4>
-              <p class="text-sm text-gray-700 mb-4">{getInstallInstructions(platform)}</p>
-              {#if latestVersion.downloadURL}
-                <Button text="Download" href="{latestVersion.downloadURL}" variant="primary" size="md" />
-              {:else}
-                <Button text="Get {platform} Version" href="#" variant="primary" size="md" />
-              {/if}
-            </div>
+    <div id="downloads" class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-4 min-h-[600px]">
+        <!-- Sidebar with Versions -->
+        <div class="lg:col-span-1 bg-gray-50 border-r border-gray-200 p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Versions</h3>
+          <div class="space-y-2">
+            {#each app.versions as version, index}
+              <button
+                class="w-full text-left p-3 rounded-lg transition-colors {index === 0 ? 'bg-red-100 border border-red-200 text-red-900' : 'hover:bg-gray-100 border border-transparent'}"
+                on:click={() => selectedVersion = version}
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-medium">v{version.version}</span>
+                  {#if index === 0}
+                    <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Latest</span>
+                  {/if}
+                </div>
+                {#if version.date}
+                  <p class="text-xs text-gray-500 mt-1">{version.date}</p>
+                {/if}
+              </button>
+            {/each}
           </div>
         </div>
-      {/each}
+
+        <!-- Main Content Area -->
+        <div class="lg:col-span-3 p-8">
+          <!-- Version Description -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-2xl font-bold text-gray-900">Version {selectedVersion.version}</h3>
+              <button
+                class="px-4 py-2 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded-lg transition-colors text-sm font-medium"
+                on:click={() => showDescription = !showDescription}
+              >
+                {showDescription ? 'Hide' : 'Show'} Details
+              </button>
+            </div>
+            
+            {#if showDescription}
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <p class="text-blue-900">{selectedVersion.localizedDescription}</p>
+                {#if selectedVersion.date}
+                  <p class="text-blue-700 text-sm mt-2">Released: {selectedVersion.date}</p>
+                {/if}
+              </div>
+            {/if}
+          </div>
+
+          <!-- Platform Downloads -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {#each app.platforms as platform}
+              <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor});">
+                    {#if platform === 'iOS'}
+                      <i class="fab fa-apple text-xl text-white"></i>
+                    {:else if platform === 'Android'}
+                      <i class="fab fa-android text-xl text-white"></i>
+                    {:else if platform === 'macOS'}
+                      <i class="fab fa-apple text-xl text-white"></i>
+                    {:else if platform === 'Linux'}
+                      <i class="fab fa-linux text-xl text-white"></i>
+                    {:else if platform === 'Windows'}
+                      <i class="fab fa-windows text-xl text-white"></i>
+                    {:else}
+                      <i class="fas fa-desktop text-xl text-white"></i>
+                    {/if}
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-gray-900">{platform}</h4>
+                    <p class="text-sm text-gray-500">
+                      {#if platform === 'iOS'}iPhone and iPad
+                      {:else if platform === 'Android'}Phones and tablets
+                      {:else if platform === 'macOS'}Mac computers
+                      {:else if platform === 'Linux'}All distributions  
+                      {:else if platform === 'Windows'}PC computers
+                      {:else}{platform} devices{/if}
+                    </p>
+                  </div>
+                </div>
+                
+                <p class="text-sm text-gray-700 mb-4">{getInstallInstructions(platform, selectedVersion)}</p>
+                
+                {#if selectedVersion.downloadURL && platform === 'Linux'}
+                  <Button text="Download" href="{selectedVersion.downloadURL}" variant="primary" size="sm" />
+                {:else}
+                  <Button text="Get {platform} Version" href="#" variant="primary" size="sm" />
+                {/if}
+              </div>
+            {/each}
+          </div>
+        </div>
+      </div>
     </div>
   {/snippet}
 </Section>
