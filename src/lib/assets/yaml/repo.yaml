@@ -18,7 +18,7 @@
             "localizedDescription": "Break free from corporate streaming platforms. Doudou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
             "iconURL": "https://example.com/doudou-icon.png",
             "tintColor": "#dc2626",
-            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
+            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
             "screenshots": [
                 "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
                 "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
