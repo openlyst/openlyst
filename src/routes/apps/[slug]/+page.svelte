@@ -263,7 +263,7 @@
 <!-- Version Details Modal -->
 {#if showModal}
   <div 
-    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" 
+    class="fixed inset-0 backdrop-blur-sm bg-blue-900/20 flex items-center justify-center p-4 z-50" 
     role="dialog" 
     aria-modal="true"
     aria-labelledby="modal-title"
