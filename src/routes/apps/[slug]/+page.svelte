@@ -247,3 +247,107 @@
     </div>
   {/snippet}
 </Section>
+
+<!-- Version Details Modal -->
+{#if showModal}
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" on:click={() => showModal = false}>
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" on:click|stopPropagation>
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-6 border-b border-gray-200">
+        <div class="flex items-center gap-3">
+          <img src="{app.iconURL}" alt="{app.name} icon" class="w-12 h-12 rounded-xl" />
+          <div>
+            <h3 class="text-xl font-bold text-gray-900">{app.name} v{selectedVersion.version}</h3>
+            {#if selectedVersion.date}
+              <p class="text-sm text-gray-500">Released: {selectedVersion.date}</p>
+            {/if}
+          </div>
+        </div>
+        <button
+          class="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          on:click={() => showModal = false}
+        >
+          <i class="fas fa-times text-gray-500"></i>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-6">
+        <!-- Version Description -->
+        <div class="mb-6">
+          <h4 class="text-lg font-semibold text-gray-900 mb-3">What's New</h4>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <p class="text-blue-900 leading-relaxed">{selectedVersion.localizedDescription}</p>
+          </div>
+        </div>
+
+        <!-- Version Info -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-gray-50 rounded-lg p-4">
+            <h5 class="font-medium text-gray-900 mb-2">Version Number</h5>
+            <p class="text-gray-700">{selectedVersion.version}</p>
+          </div>
+          {#if selectedVersion.date}
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h5 class="font-medium text-gray-900 mb-2">Release Date</h5>
+              <p class="text-gray-700">{selectedVersion.date}</p>
+            </div>
+          {/if}
+          {#if selectedVersion.size}
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h5 class="font-medium text-gray-900 mb-2">Download Size</h5>
+              <p class="text-gray-700">{selectedVersion.size}</p>
+            </div>
+          {/if}
+          {#if selectedVersion.minOSVersion}
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h5 class="font-medium text-gray-900 mb-2">Minimum OS</h5>
+              <p class="text-gray-700">{selectedVersion.minOSVersion}</p>
+            </div>
+          {/if}
+        </div>
+
+        <!-- Platform Availability -->
+        <div class="mb-6">
+          <h4 class="text-lg font-semibold text-gray-900 mb-3">Platform Availability</h4>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {#each app.platforms as platform}
+              <div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg p-3">
+                {#if platform === 'iOS'}
+                  <i class="fab fa-apple text-green-600"></i>
+                {:else if platform === 'Android'}
+                  <i class="fab fa-android text-green-600"></i>
+                {:else if platform === 'macOS'}
+                  <i class="fab fa-apple text-green-600"></i>
+                {:else if platform === 'Linux'}
+                  <i class="fab fa-linux text-green-600"></i>
+                {:else if platform === 'Windows'}
+                  <i class="fab fa-windows text-green-600"></i>
+                {:else}
+                  <i class="fas fa-desktop text-green-600"></i>
+                {/if}
+                <span class="text-green-800 font-medium text-sm">{platform}</span>
+              </div>
+            {/each}
+          </div>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="flex justify-end gap-3 pt-4 border-t border-gray-200">
+          <button
+            class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+            on:click={() => showModal = false}
+          >
+            Close
+          </button>
+          <button
+            class="px-4 py-2 bg-red-600 text-white hover:bg-red-700 rounded-lg transition-colors"
+            on:click={() => {showModal = false; document.getElementById('downloads')?.scrollIntoView({behavior: 'smooth'});}}
+          >
+            Download Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+{/if}
