@@ -197,6 +197,8 @@
                       <i class="fab fa-linux text-xl text-white"></i>
                     {:else if platform === 'Windows'}
                       <i class="fab fa-windows text-xl text-white"></i>
+                    {:else if platform === 'Web'}
+                      <i class="fas fa-globe text-xl text-white"></i>
                     {:else}
                       <i class="fas fa-desktop text-xl text-white"></i>
                     {/if}
