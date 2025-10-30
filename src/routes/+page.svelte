@@ -111,38 +111,27 @@
 >
   {#snippet children()}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-      <AppCard
-        title="DouDou"
-        description="A revolutionary music player that connects to your favorite self-hosted music services. Break free from corporate streaming platforms and enjoy your music library on your terms."
-        status="released"
-        platforms={['iOS', 'Android', 'macOS', 'Linux', 'Windows*']}
-        href="/apps/doudou"
-        features={[
-          'Jellyfin integration',
-          'Plex support',
-          'Navidrome compatibility', 
-          'Cross-platform sync',
-          'Offline playback',
-          'No ads or tracking'
-        ]}
-        image="🎵"
-      />
+      {#each apps as app}
+        <AppCard
+          title="{app.name}"
+          description="{app.localizedDescription}"
+          status="released"
+          platforms="{app.platforms}"
+          href="/apps/{nameToSlug(app.name)}"
+          image="🎵"
+        />
+      {/each}
       
-      <AppCard
-        title="BaoBao"
-        description="A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities."
-        status="development"
-        platforms={['iOS', 'Android']}
-        href="/apps/baobao"
-        features={[
-          'Intuitive interface',
-          'Advanced search',
-          'Offline favorites',
-          'Privacy protection',
-          'Community features'
-        ]}
-        image="🦊"
-      />
+      {#if apps.length === 0}
+        <!-- Fallback content if no apps are loaded -->
+        <div class="col-span-full text-center py-12">
+          <div class="text-6xl mb-4">🚀</div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-2">Coming Soon</h3>
+          <p class="text-gray-600 max-w-md mx-auto">
+            We're working on amazing revolutionary applications. Check back soon!
+          </p>
+        </div>
+      {/if}
     </div>
     
     <div class="mt-12 text-center">
