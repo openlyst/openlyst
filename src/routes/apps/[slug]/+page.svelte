@@ -346,7 +346,7 @@
         <div class="mb-6">
           <h4 class="text-lg font-semibold text-gray-900 mb-3">Platform Availability</h4>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {#each app.platforms as platform}
+            {#each getVersionPlatforms(selectedVersion) as platform}
               <div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg p-3">
                 {#if platform === 'iOS'}
                   <i class="fab fa-apple text-green-600"></i>
