@@ -10,6 +10,16 @@ export interface PlatformInstall {
   macOS?: string;
   Windows?: string;
   Linux?: string;
+  Web?: string;
+}
+
+export interface PlatformDownloadURLs {
+  iOS?: string;
+  Android?: string;
+  macOS?: string;
+  Windows?: string;
+  Linux?: string;
+  Web?: string;
 }
 
 export interface AppVersion {
@@ -17,7 +27,8 @@ export interface AppVersion {
   platformInstall: PlatformInstall;
   localizedDescription: string;
   date?: string;
-  downloadURL?: string;
+  downloadURL?: string; // Keep for backward compatibility
+  downloadURLs?: PlatformDownloadURLs;
   size?: number;
   minOSVersion?: string;
 }
