@@ -18,6 +18,11 @@
     }
   }
   
+  // Function to prevent modal from closing when clicking inside
+  function handleModalContentClick(event: MouseEvent) {
+    event.stopPropagation();
+  }
+  
   // Function to get platform-specific installation instructions
   function getInstallInstructions(platform: string, version = latestVersion): string {
     return version.platformInstall[platform as keyof typeof version.platformInstall] || 'Installation instructions not available';
