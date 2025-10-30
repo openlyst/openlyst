@@ -95,4 +95,57 @@
       transform: rotate(360deg);
     }
   }
+  
+  /* Custom markdown styling for modals */
+  .modal-prose {
+    color: #1e40af;
+  }
+  
+  .modal-prose h1,
+  .modal-prose h2,
+  .modal-prose h3,
+  .modal-prose h4,
+  .modal-prose h5,
+  .modal-prose h6 {
+    color: #1e3a8a;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal-prose h1 { font-size: 1.125rem; }
+  .modal-prose h2 { font-size: 1rem; }
+  .modal-prose h3 { font-size: 0.875rem; }
+  
+  .modal-prose p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  
+  .modal-prose ul,
+  .modal-prose ol {
+    margin-left: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .modal-prose li {
+    margin-bottom: 0.25rem;
+  }
+  
+  .modal-prose strong {
+    font-weight: 600;
+    color: #1e3a8a;
+  }
+  
+  .modal-prose em {
+    font-style: italic;
+  }
+  
+  .modal-prose code {
+    background-color: #dbeafe;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: 'Courier New', monospace;
+  }
 }
