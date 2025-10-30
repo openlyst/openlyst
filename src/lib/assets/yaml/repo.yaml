@@ -26,7 +26,7 @@
             ],
             "versions": [
             {
-                    "version": "6.0.0",
+                    "version": "7.0.0",
                     "date": "2025-10-29",
                     "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
                     "platformInstall": {
