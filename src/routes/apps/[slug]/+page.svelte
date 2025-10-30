@@ -188,7 +188,7 @@
 
           <!-- Platform Downloads -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {#each app.platforms as platform}
+            {#each getVersionPlatforms(selectedVersion) as platform}
               <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor});">
