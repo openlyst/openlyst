@@ -20,8 +20,9 @@
             "tintColor": "#dc2626",
             "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
             "screenshots": [
-                "https://example.com/doudou_screenshot1.png",
-                "https://example.com/doudou_screenshot2.png",
+                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
+                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
+                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/albums.PNG?ref_type=heads",
                 {
                     "imageURL": "https://example.com/doudou_landscape.png",
                     "width": 2556,
