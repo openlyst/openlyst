@@ -148,6 +148,72 @@
     return labels[arch] || arch;
   }
   
+  // Get all available download options for a platform
+  interface DownloadOption {
+    label: string;
+    url: string;
+    type?: string;
+    arch?: string;
+  }
+  
+  function getAllDownloadOptions(platform: string, version = selectedVersion): DownloadOption[] {
+    const downloads = getDownloadStructure(platform, version);
+    if (!downloads) return [];
+    
+    // Simple string URL
+    if (typeof downloads === 'string' && downloads) {
+      return [{ label: `Download ${platform}`, url: downloads }];
+    }
+    
+    const options: DownloadOption[] = [];
+    const types = getAvailableTypes(platform, version);
+    
+    if (types.length > 0) {
+      // Platform has type structure (like Linux with zip/deb/rpm or Android with apk/aab)
+      for (const type of types) {
+        const typeObj = downloads[type];
+        if (typeof typeObj === 'string' && typeObj) {
+          options.push({ label: getTypeLabel(type), url: typeObj, type });
+        } else if (typeof typeObj === 'object') {
+          const archs = Object.keys(typeObj).filter(arch => typeObj[arch]);
+          for (const arch of archs) {
+            if (typeObj[arch]) {
+              const label = archs.length > 1 
+                ? `${getTypeLabel(type)} (${getArchLabel(arch)})`
+                : getTypeLabel(type);
+              options.push({ label, url: typeObj[arch], type, arch });
+            }
+          }
+        }
+      }
+    } else {
+      // Platform has only arch structure (like macOS, Windows)
+      const archs = getAvailableArchs(platform, undefined, version);
+      for (const arch of archs) {
+        if (downloads[arch]) {
+          options.push({ 
+            label: archs.length > 1 ? getArchLabel(arch) : `Download ${platform}`, 
+            url: downloads[arch], 
+            arch 
+          });
+        }
+      }
+    }
+    
+    return options;
+  }
+  
+  // State for open dropdown menus
+  let openDropdown: string | null = null;
+  
+  function toggleDropdown(platform: string) {
+    openDropdown = openDropdown === platform ? null : platform;
+  }
+  
+  function closeDropdowns() {
+    openDropdown = null;
+  }
+  
   // Function to format screenshots
   function getScreenshots() {
     if (Array.isArray(app.screenshots)) {
