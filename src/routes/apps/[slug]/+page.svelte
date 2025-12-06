@@ -189,6 +189,7 @@
           <!-- Platform Downloads -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {#each getVersionPlatforms(selectedVersion) as platform}
+              {#if (selectedVersion.downloadURLs && selectedVersion.downloadURLs[platform as keyof typeof selectedVersion.downloadURLs]) || (selectedVersion.downloadURL && platform === 'Linux')}
               <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor});">
@@ -230,6 +231,7 @@
                   <Button text="Download" href="{selectedVersion.downloadURL}" variant="primary" size="sm" />
                 {/if}
               </div>
+              {/if}
             {/each}
           </div>
         </div>
