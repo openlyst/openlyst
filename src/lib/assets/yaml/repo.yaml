@@ -260,6 +260,17 @@
     ],
     "news": [
         {
+            "title": "BaoBao Discontinued - Meet Klit!",
+            "identifier": "baobao_deprecated_klit_release",
+            "caption": "BaoBao is being retired in favor of Klit, our new and improved e621 client.",
+            "date": "2025-12-06",
+            "tintColor": "#ff6b35",
+            "imageURL": "https://example.com/klit_release_image.png",
+            "notify": true,
+            "url": "/apps/klit",
+            "appID": "klit"
+        },
+        {
             "title": "DouDou v6.0.0 Released",
             "identifier": "doudou_600_release",
             "caption": "Revolutionary music player now available across all platforms!",
