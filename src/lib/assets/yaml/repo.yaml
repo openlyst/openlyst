@@ -26,6 +26,28 @@
             ],
             "versions": [
             {
+                    "version": "8.0.0",
+                    "date": "2025-12-06",
+                    "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                        "Windows": "Download source and compile yourself from GitLab pipeline.",
+                        "Linux": "Download the latest Linux build from GitLab CI.",
+                        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+                    },
+                    "downloadURLs": {
+                        "iOS": "",
+                        "Android": "https://gitlab.com/Openlyst/doudou/-/jobs/12346738484/artifacts/file/build/app/outputs/flutter-apk/app-release.apk",
+                        "macOS": "",
+                        "Windows": "",
+                        "Linux": "https://gitlab.com/Openlyst/doudou/-/jobs/12346738485/artifacts/download",
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 8.0.0\nThe stable out.\n\n## Added\n- Added build support for Fastforge.\n- Build support for **deb**, **rpm**, and **appimage**.\n- Support for building OpenHarmony packages.\n- Adds basic support for phoneVR headsets.\n\n## Changed\n- Changed final release builds to have to include a ``final`` var in order to build from main branch.\n- Refactored names of changelogs to markdown.\n- Desktop album, playlists, and others use one template details file.\n- Desktop details page now uses a fully scrollable rather than a content template.\n- Desktop now_playing is now fullscreened.\n- Redesigned the now_playing screen on desktop.\n- Added favorites button to now_playing on desktop.\n- Made the controls on the now_playing more compact.\n- Build details page from top to down.\n- Rewrote the build script.\n- Load app icon in settings.\n- Changed unknown version from \"6.0.0\" to an unknown error.\n\n## Removed\n- Remove subtitle from settings version."
+                },
+                {
                     "version": "7.0.0",
                     "date": "2025-10-29",
                     "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
