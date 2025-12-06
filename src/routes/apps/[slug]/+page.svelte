@@ -405,75 +405,42 @@
                 
                 <p class="text-sm text-gray-700 mb-4">{getInstallInstructions(platform, selectedVersion)}</p>
                 
-                <!-- Download options -->
-                {#if getAvailableTypes(platform, selectedVersion).length > 0}
-                  <!-- Platform has package types (like Linux) -->
-                  <div class="space-y-3 mb-4">
-                    <div>
-                      <label for="{platform}-type" class="block text-sm font-medium text-gray-700 mb-1">Package Type</label>
-                      <select 
-                        id="{platform}-type"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-red-500"
-                        on:change={(e) => {
-                          downloadSelections[platform] = { 
-                            ...downloadSelections[platform], 
-                            type: e.currentTarget.value,
-                            arch: getAvailableArchs(platform, e.currentTarget.value, selectedVersion)[0]
-                          };
-                          downloadSelections = downloadSelections;
-                        }}
-                      >
-                        {#each getAvailableTypes(platform, selectedVersion) as type}
-                          <option value={type}>{getTypeLabel(type)}</option>
-                        {/each}
-                      </select>
-                    </div>
+                <!-- Download button with dropdown -->
+                {#if getAllDownloadOptions(platform, selectedVersion).length === 1}
+                  <!-- Single download option - just a button -->
+                  <Button text="Download {platform}" href="{getAllDownloadOptions(platform, selectedVersion)[0].url}" variant="primary" size="sm" />
+                {:else if getAllDownloadOptions(platform, selectedVersion).length > 1}
+                  <!-- Multiple download options - dropdown button -->
+                  <div class="relative">
+                    <button
+                      class="inline-flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors"
+                      style="background-color: {app.tintColor};"
+                      on:click={() => toggleDropdown(platform)}
+                    >
+                      <span class="flex items-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Download {platform}
+                      </span>
+                      <i class="fas fa-chevron-down ml-2 transition-transform {openDropdown === platform ? 'rotate-180' : ''}"></i>
+                    </button>
                     
-                    {#if getAvailableArchs(platform, downloadSelections[platform]?.type || getAvailableTypes(platform, selectedVersion)[0], selectedVersion).length > 1}
-                      <div>
-                        <label for="{platform}-arch" class="block text-sm font-medium text-gray-700 mb-1">Architecture</label>
-                        <select 
-                          id="{platform}-arch"
-                          class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-red-500"
-                          on:change={(e) => {
-                            downloadSelections[platform] = { 
-                              ...downloadSelections[platform], 
-                              arch: e.currentTarget.value 
-                            };
-                            downloadSelections = downloadSelections;
-                          }}
-                        >
-                          {#each getAvailableArchs(platform, downloadSelections[platform]?.type || getAvailableTypes(platform, selectedVersion)[0], selectedVersion) as arch}
-                            <option value={arch}>{getArchLabel(arch)}</option>
-                          {/each}
-                        </select>
+                    {#if openDropdown === platform}
+                      <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                        {#each getAllDownloadOptions(platform, selectedVersion) as option}
+                          <a
+                            href={option.url}
+                            class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 border-b border-gray-100 last:border-b-0 transition-colors"
+                            on:click={() => closeDropdowns()}
+                          >
+                            <div class="flex items-center gap-2">
+                              <i class="fas fa-download text-gray-400"></i>
+                              {option.label}
+                            </div>
+                          </a>
+                        {/each}
                       </div>
                     {/if}
                   </div>
-                {:else if getAvailableArchs(platform, undefined, selectedVersion).length > 1}
-                  <!-- Platform has only architecture options (like macOS, Windows) -->
-                  <div class="mb-4">
-                    <label for="{platform}-arch" class="block text-sm font-medium text-gray-700 mb-1">Architecture</label>
-                    <select 
-                      id="{platform}-arch"
-                      class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-red-500"
-                      on:change={(e) => {
-                        downloadSelections[platform] = { 
-                          ...downloadSelections[platform], 
-                          arch: e.currentTarget.value 
-                        };
-                        downloadSelections = downloadSelections;
-                      }}
-                    >
-                      {#each getAvailableArchs(platform, undefined, selectedVersion) as arch}
-                        <option value={arch}>{getArchLabel(arch)}</option>
-                      {/each}
-                    </select>
-                  </div>
-                {/if}
-                
-                {#if getDownloadUrl(platform, selectedVersion)}
-                  <Button text="Download {platform}" href="{getDownloadUrl(platform, selectedVersion) || ''}" variant="primary" size="sm" />
                 {/if}
               </div>
               {/if}
