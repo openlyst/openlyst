@@ -13,6 +13,55 @@ export interface PlatformInstall {
   Web?: string;
 }
 
+// Architecture options for platforms
+export interface ArchDownloads {
+  x86_64?: string;
+  arm64?: string;
+  aarch64?: string;
+  i386?: string;
+  universal?: string;
+  [key: string]: string | undefined;
+}
+
+// Package type with architecture options (for Linux)
+export interface PackageTypeDownloads {
+  zip?: ArchDownloads;
+  appimage?: ArchDownloads;
+  deb?: ArchDownloads;
+  rpm?: ArchDownloads;
+  tar?: ArchDownloads;
+  [key: string]: ArchDownloads | undefined;
+}
+
+// Android-specific downloads
+export interface AndroidDownloads {
+  apk?: string;
+  aab?: string;
+  [key: string]: string | undefined;
+}
+
+// Flexible download structure that supports:
+// - Simple string URL
+// - Architecture-based downloads (macOS, Windows)
+// - Package type with architecture (Linux)
+// - Android-specific (apk/aab)
+export type PlatformDownload = 
+  | string 
+  | ArchDownloads 
+  | PackageTypeDownloads 
+  | AndroidDownloads;
+
+export interface PlatformDownloads {
+  iOS?: string;
+  Android?: string | AndroidDownloads;
+  macOS?: string | ArchDownloads;
+  Windows?: string | ArchDownloads;
+  Linux?: string | PackageTypeDownloads;
+  Web?: string;
+  [key: string]: PlatformDownload | undefined;
+}
+
+// Legacy support
 export interface PlatformDownloadURLs {
   iOS?: string;
   Android?: string;
@@ -20,6 +69,7 @@ export interface PlatformDownloadURLs {
   Windows?: string;
   Linux?: string;
   Web?: string;
+  [key: string]: string | undefined;
 }
 
 export interface AppVersion {
@@ -29,7 +79,8 @@ export interface AppVersion {
   localizedDescription: string;
   date?: string;
   downloadURL?: string; // Keep for backward compatibility
-  downloadURLs?: PlatformDownloadURLs;
+  downloadURLs?: PlatformDownloadURLs; // Legacy simple URLs
+  downloads?: PlatformDownloads; // New nested structure
   size?: number;
   minOSVersion?: string;
 }
