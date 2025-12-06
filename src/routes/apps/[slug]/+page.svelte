@@ -303,7 +303,7 @@
           <!-- Platform Downloads -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {#each getVersionPlatforms(selectedVersion) as platform}
-              {#if (selectedVersion.downloadURLs && selectedVersion.downloadURLs[platform as keyof typeof selectedVersion.downloadURLs]) || (selectedVersion.downloadURL && platform === 'Linux')}
+              {#if platformHasDownloads(platform, selectedVersion)}
               <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor});">
@@ -339,10 +339,75 @@
                 
                 <p class="text-sm text-gray-700 mb-4">{getInstallInstructions(platform, selectedVersion)}</p>
                 
-                {#if selectedVersion.downloadURLs && selectedVersion.downloadURLs[platform as keyof typeof selectedVersion.downloadURLs]}
-                  <Button text="Download {platform}" href="{selectedVersion.downloadURLs[platform as keyof typeof selectedVersion.downloadURLs]}" variant="primary" size="sm" />
-                {:else if selectedVersion.downloadURL && platform === 'Linux'}
-                  <Button text="Download" href="{selectedVersion.downloadURL}" variant="primary" size="sm" />
+                <!-- Download options -->
+                {#if getAvailableTypes(platform, selectedVersion).length > 0}
+                  <!-- Platform has package types (like Linux) -->
+                  <div class="space-y-3 mb-4">
+                    <div>
+                      <label for="{platform}-type" class="block text-sm font-medium text-gray-700 mb-1">Package Type</label>
+                      <select 
+                        id="{platform}-type"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                        on:change={(e) => {
+                          downloadSelections[platform] = { 
+                            ...downloadSelections[platform], 
+                            type: e.currentTarget.value,
+                            arch: getAvailableArchs(platform, e.currentTarget.value, selectedVersion)[0]
+                          };
+                          downloadSelections = downloadSelections;
+                        }}
+                      >
+                        {#each getAvailableTypes(platform, selectedVersion) as type}
+                          <option value={type}>{getTypeLabel(type)}</option>
+                        {/each}
+                      </select>
+                    </div>
+                    
+                    {#if getAvailableArchs(platform, downloadSelections[platform]?.type || getAvailableTypes(platform, selectedVersion)[0], selectedVersion).length > 1}
+                      <div>
+                        <label for="{platform}-arch" class="block text-sm font-medium text-gray-700 mb-1">Architecture</label>
+                        <select 
+                          id="{platform}-arch"
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                          on:change={(e) => {
+                            downloadSelections[platform] = { 
+                              ...downloadSelections[platform], 
+                              arch: e.currentTarget.value 
+                            };
+                            downloadSelections = downloadSelections;
+                          }}
+                        >
+                          {#each getAvailableArchs(platform, downloadSelections[platform]?.type || getAvailableTypes(platform, selectedVersion)[0], selectedVersion) as arch}
+                            <option value={arch}>{getArchLabel(arch)}</option>
+                          {/each}
+                        </select>
+                      </div>
+                    {/if}
+                  </div>
+                {:else if getAvailableArchs(platform, undefined, selectedVersion).length > 1}
+                  <!-- Platform has only architecture options (like macOS, Windows) -->
+                  <div class="mb-4">
+                    <label for="{platform}-arch" class="block text-sm font-medium text-gray-700 mb-1">Architecture</label>
+                    <select 
+                      id="{platform}-arch"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                      on:change={(e) => {
+                        downloadSelections[platform] = { 
+                          ...downloadSelections[platform], 
+                          arch: e.currentTarget.value 
+                        };
+                        downloadSelections = downloadSelections;
+                      }}
+                    >
+                      {#each getAvailableArchs(platform, undefined, selectedVersion) as arch}
+                        <option value={arch}>{getArchLabel(arch)}</option>
+                      {/each}
+                    </select>
+                  </div>
+                {/if}
+                
+                {#if getDownloadUrl(platform, selectedVersion)}
+                  <Button text="Download {platform}" href="{getDownloadUrl(platform, selectedVersion) || ''}" variant="primary" size="sm" />
                 {/if}
               </div>
               {/if}
