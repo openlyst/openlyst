@@ -193,6 +193,69 @@
                     "localizedDescription": "Initial beta release with intuitive interface, advanced search, offline favorites, privacy protection, and community features."
                 }
             ]
+        },
+        {
+            "name": "Klit",
+            "bundleIdentifier": "klit",
+            "subtitle": "Modern e621 Client",
+            "localizedDescription": "The successor to BaoBao. A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
+            "iconURL": "https://example.com/klit-icon.png",
+            "tintColor": "#ff6b35",
+            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+            "screenshots": [
+                "https://example.com/klit_screenshot1.png",
+                "https://example.com/klit_screenshot2.png"
+            ],
+            "versions": [
+                {
+                    "version": "1.0.0",
+                    "date": "2025-12-06",
+                    "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository",
+                        "Android": "Use RepStore to install from our repository",
+                        "macOS": "Download the latest macOS build",
+                        "Windows": "Download the latest Windows build",
+                        "Linux": "Download the latest Linux build from GitLab CI",
+                        "Web": "Access the web version"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "https://files.catbox.moe/getct6.AppImage",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "https://files.catbox.moe/axla55.deb",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "https://files.catbox.moe/s88f1n.apk",
+                            "aab": ""
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "Initial release of Klit, the successor to BaoBao.\n\n## Features\n- Modern, clean interface\n- Privacy-focused design\n- Cross-platform support\n- Offline favorites\n- Advanced search capabilities"
+                }
+            ]
         }
     ],
     "news": [
