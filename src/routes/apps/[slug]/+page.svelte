@@ -12,6 +12,9 @@
   let selectedVersion = latestVersion;
   let showModal = false;
   
+  // State for download selections per platform
+  let downloadSelections: Record<string, { type?: string; arch?: string }> = {};
+  
   // Function to handle modal keyboard events
   function handleModalKeydown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
@@ -32,6 +35,117 @@
   // Function to get platform-specific installation instructions
   function getInstallInstructions(platform: string, version = latestVersion): string {
     return version.platformInstall[platform as keyof typeof version.platformInstall] || 'Installation instructions not available';
+  }
+  
+  // Check if a platform has any available downloads
+  function platformHasDownloads(platform: string, version = selectedVersion): boolean {
+    const downloads = (version.downloads as any)?.[platform] || (version.downloadURLs as any)?.[platform];
+    if (!downloads) return false;
+    if (typeof downloads === 'string') return downloads !== '';
+    // Nested object - check if any value is non-empty
+    return hasAnyDownload(downloads);
+  }
+  
+  // Recursively check if any download URL exists
+  function hasAnyDownload(obj: any): boolean {
+    if (typeof obj === 'string') return obj !== '';
+    if (typeof obj === 'object' && obj !== null) {
+      return Object.values(obj).some(v => hasAnyDownload(v));
+    }
+    return false;
+  }
+  
+  // Get download structure for a platform
+  function getDownloadStructure(platform: string, version = selectedVersion): any {
+    return (version.downloads as any)?.[platform] || (version.downloadURLs as any)?.[platform] || null;
+  }
+  
+  // Get available types for a platform (e.g., zip, deb, rpm for Linux)
+  function getAvailableTypes(platform: string, version = selectedVersion): string[] {
+    const downloads = getDownloadStructure(platform, version);
+    if (!downloads || typeof downloads === 'string') return [];
+    
+    // For platforms like Linux with type > arch structure
+    const types = Object.keys(downloads).filter(key => {
+      const value = downloads[key];
+      return typeof value === 'object' && hasAnyDownload(value);
+    });
+    
+    return types;
+  }
+  
+  // Get available architectures for a platform/type
+  function getAvailableArchs(platform: string, type?: string, version = selectedVersion): string[] {
+    const downloads = getDownloadStructure(platform, version);
+    if (!downloads || typeof downloads === 'string') return [];
+    
+    let archObj = downloads;
+    if (type && downloads[type]) {
+      archObj = downloads[type];
+    }
+    
+    if (typeof archObj === 'string') return [];
+    
+    return Object.keys(archObj).filter(arch => {
+      const value = archObj[arch];
+      return typeof value === 'string' && value !== '';
+    });
+  }
+  
+  // Get the download URL based on selections
+  function getDownloadUrl(platform: string, version = selectedVersion): string | null {
+    const downloads = getDownloadStructure(platform, version);
+    if (!downloads) return null;
+    if (typeof downloads === 'string') return downloads || null;
+    
+    const selection = downloadSelections[platform] || {};
+    const types = getAvailableTypes(platform, version);
+    const hasTypes = types.length > 0;
+    
+    if (hasTypes) {
+      // Platform has type structure (like Linux with zip/deb/rpm)
+      const selectedType = selection.type || types[0];
+      const typeObj = downloads[selectedType];
+      if (!typeObj) return null;
+      if (typeof typeObj === 'string') return typeObj || null;
+      
+      const archs = getAvailableArchs(platform, selectedType, version);
+      const selectedArch = selection.arch || archs[0];
+      return typeObj[selectedArch] || null;
+    } else {
+      // Platform has only arch structure (like macOS, Windows)
+      const archs = getAvailableArchs(platform, undefined, version);
+      if (archs.length === 0) return null;
+      const selectedArch = selection.arch || archs[0];
+      return downloads[selectedArch] || null;
+    }
+  }
+  
+  // Get display label for type
+  function getTypeLabel(type: string): string {
+    const labels: Record<string, string> = {
+      'zip': 'ZIP Archive',
+      'appimage': 'AppImage',
+      'deb': 'DEB Package',
+      'rpm': 'RPM Package',
+      'apk': 'APK',
+      'aab': 'AAB Bundle',
+      'dmg': 'DMG',
+      'pkg': 'PKG'
+    };
+    return labels[type] || type.toUpperCase();
+  }
+  
+  // Get display label for architecture
+  function getArchLabel(arch: string): string {
+    const labels: Record<string, string> = {
+      'x86_64': 'x86_64 (Intel/AMD)',
+      'arm64': 'ARM64 (Apple Silicon/ARM)',
+      'aarch64': 'ARM64',
+      'i386': 'x86 (32-bit)',
+      'universal': 'Universal'
+    };
+    return labels[arch] || arch;
   }
   
   // Function to format screenshots
