@@ -171,11 +171,12 @@
         {
             "name": "BaoBao",
             "bundleIdentifier": "baobao",
-            "subtitle": "Modern e621 Client",
-            "localizedDescription": "A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
+            "subtitle": "Modern e621 Client (Deprecated)",
+            "localizedDescription": "⚠️ DEPRECATED: This app is no longer maintained and will not receive updates.\n\nA modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
             "iconURL": "https://example.com/baobao-icon.png",
             "tintColor": "#ff6b35",
             "platforms": ["iOS", "Android"],
+            "deprecated": true,
             "screenshots": [
                 "https://example.com/baobao_screenshot1.png",
                 "https://example.com/baobao_screenshot2.png"
