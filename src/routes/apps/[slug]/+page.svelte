@@ -228,8 +228,6 @@
                   <Button text="Download {platform}" href="{selectedVersion.downloadURLs[platform as keyof typeof selectedVersion.downloadURLs]}" variant="primary" size="sm" />
                 {:else if selectedVersion.downloadURL && platform === 'Linux'}
                   <Button text="Download" href="{selectedVersion.downloadURL}" variant="primary" size="sm" />
-                {:else}
-                  <Button text="Get {platform} Version" href="#" variant="primary" size="sm" />
                 {/if}
               </div>
             {/each}
