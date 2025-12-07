@@ -368,6 +368,10 @@
                             "deb": {
                                 "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/raw/dist/1.0.0/docan-1.0.0-linux.deb",
                                 "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "https://aur.archlinux.org/packages/docan-bin",
+                                "arm64": ""
                             }
                         },
                         "Android": {
