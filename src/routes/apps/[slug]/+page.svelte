@@ -622,35 +622,35 @@
 
         <!-- Platform Availability -->
         <div class="mb-6">
-          <h4 class="text-lg font-semibold text-gray-900 mb-3">Platform Availability</h4>
+          <h4 class="text-lg font-semibold text-white mb-3">Platform Availability</h4>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
             {#each getVersionPlatforms(selectedVersion) as platform}
-              <div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg p-3">
+              <div class="flex items-center gap-2 bg-green-900/30 border border-green-800 rounded-lg p-3">
                 {#if platform === 'iOS'}
-                  <i class="fab fa-apple text-green-600"></i>
+                  <i class="fab fa-apple text-green-400"></i>
                 {:else if platform === 'Android'}
-                  <i class="fab fa-android text-green-600"></i>
+                  <i class="fab fa-android text-green-400"></i>
                 {:else if platform === 'macOS'}
-                  <i class="fab fa-apple text-green-600"></i>
+                  <i class="fab fa-apple text-green-400"></i>
                 {:else if platform === 'Linux'}
-                  <i class="fab fa-linux text-green-600"></i>
+                  <i class="fab fa-linux text-green-400"></i>
                 {:else if platform === 'Windows'}
-                  <i class="fab fa-windows text-green-600"></i>
+                  <i class="fab fa-windows text-green-400"></i>
                 {:else if platform === 'Web'}
-                  <i class="fas fa-globe text-green-600"></i>
+                  <i class="fas fa-globe text-green-400"></i>
                 {:else}
-                  <i class="fas fa-desktop text-green-600"></i>
+                  <i class="fas fa-desktop text-green-400"></i>
                 {/if}
-                <span class="text-green-800 font-medium text-sm">{platform}</span>
+                <span class="text-green-300 font-medium text-sm">{platform}</span>
               </div>
             {/each}
           </div>
         </div>
 
         <!-- Modal Actions -->
-        <div class="flex justify-end gap-3 pt-4 border-t border-gray-200">
+        <div class="flex justify-end gap-3 pt-4 border-t border-gray-700">
           <button
-            class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+            class="px-4 py-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors"
             on:click={() => showModal = false}
           >
             Close
