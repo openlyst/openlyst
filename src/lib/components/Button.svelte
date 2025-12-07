@@ -23,7 +23,7 @@
     secondary:
       "bg-yellow-400 text-red-900 hover:bg-yellow-500 focus:ring-yellow-500",
     outline:
-      "border-2 border-red-600 text-red-600 bg-transparent hover:bg-red-600 hover:text-white focus:ring-red-500",
+      "border-2 border-red-500 text-red-400 bg-transparent hover:bg-red-600 hover:text-white focus:ring-red-500",
   };
 
   const sizeClasses = {
