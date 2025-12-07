@@ -118,7 +118,7 @@
           status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
           platforms="{app.platforms}"
           href="/apps/{nameToSlug(app.name)}"
-          image="{app.name === 'DouDou' ? '🎵' : app.name === 'BaoBao' ? '🦊' : '🚀'}"
+          image="{app.iconURL}"
         />
       {/each}
       
