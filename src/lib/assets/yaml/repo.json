@@ -354,7 +354,7 @@
                         },
                         "Linux": {
                             "zip": {
-                                "x86_64": "",
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/file/dist/docan-linux-x64.zip",
                                 "arm64": ""
                             },
                             "appimage": {
