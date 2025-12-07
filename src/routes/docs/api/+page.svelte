@@ -372,12 +372,12 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 <Section title="Error Handling" subtitle="Understanding API error responses" background="default">
   {#snippet children()}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
-          <span class="px-3 py-1 bg-red-100 text-red-700 font-mono font-bold text-sm rounded-lg">404</span>
-          <span class="font-semibold text-gray-900">Not Found</span>
+          <span class="px-3 py-1 bg-red-900/50 text-red-400 font-mono font-bold text-sm rounded-lg">404</span>
+          <span class="font-semibold text-white">Not Found</span>
         </div>
-        <p class="text-gray-600 mb-4">Returned when the requested resource doesn't exist.</p>
+        <p class="text-gray-400 mb-4">Returned when the requested resource doesn't exist.</p>
         <div class="bg-gray-900 rounded-lg p-4">
           <pre class="text-red-400 text-sm font-mono">{`{
   "success": false,
@@ -386,12 +386,12 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
         </div>
       </div>
       
-      <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
-          <span class="px-3 py-1 bg-red-100 text-red-700 font-mono font-bold text-sm rounded-lg">400</span>
-          <span class="font-semibold text-gray-900">Bad Request</span>
+          <span class="px-3 py-1 bg-red-900/50 text-red-400 font-mono font-bold text-sm rounded-lg">400</span>
+          <span class="font-semibold text-white">Bad Request</span>
         </div>
-        <p class="text-gray-600 mb-4">Returned when required parameters are missing.</p>
+        <p class="text-gray-400 mb-4">Returned when required parameters are missing.</p>
         <div class="bg-gray-900 rounded-lg p-4">
           <pre class="text-red-400 text-sm font-mono">{`{
   "success": false,
@@ -400,12 +400,12 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
         </div>
       </div>
       
-      <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
-          <span class="px-3 py-1 bg-red-100 text-red-700 font-mono font-bold text-sm rounded-lg">500</span>
-          <span class="font-semibold text-gray-900">Server Error</span>
+          <span class="px-3 py-1 bg-red-900/50 text-red-400 font-mono font-bold text-sm rounded-lg">500</span>
+          <span class="font-semibold text-white">Server Error</span>
         </div>
-        <p class="text-gray-600 mb-4">Returned when an internal error occurs.</p>
+        <p class="text-gray-400 mb-4">Returned when an internal error occurs.</p>
         <div class="bg-gray-900 rounded-lg p-4">
           <pre class="text-red-400 text-sm font-mono">{`{
   "success": false,
@@ -414,12 +414,12 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
         </div>
       </div>
       
-      <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
-          <span class="px-3 py-1 bg-green-100 text-green-700 font-mono font-bold text-sm rounded-lg">200</span>
-          <span class="font-semibold text-gray-900">Success</span>
+          <span class="px-3 py-1 bg-green-900/50 text-green-400 font-mono font-bold text-sm rounded-lg">200</span>
+          <span class="font-semibold text-white">Success</span>
         </div>
-        <p class="text-gray-600 mb-4">All successful responses include <code class="bg-gray-100 px-1 rounded">success: true</code>.</p>
+        <p class="text-gray-400 mb-4">All successful responses include <code class="bg-gray-700 px-1 rounded text-gray-300">success: true</code>.</p>
         <div class="bg-gray-900 rounded-lg p-4">
           <pre class="text-emerald-400 text-sm font-mono">{`{
   "success": true,
