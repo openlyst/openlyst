@@ -53,8 +53,8 @@
     {#if apps.length === 0}
       <div class="text-center py-12">
         <div class="text-6xl mb-4">📱</div>
-        <h3 class="text-2xl font-semibold text-gray-900 mb-2">No Apps Yet</h3>
-        <p class="text-gray-600 max-w-md mx-auto">
+        <h3 class="text-2xl font-semibold text-white mb-2">No Apps Yet</h3>
+        <p class="text-gray-400 max-w-md mx-auto">
           We're working on adding amazing apps to our collection. Check back soon!
         </p>
       </div>
@@ -62,10 +62,10 @@
     
     <!-- Link to deprecated apps -->
     <div class="mt-12 text-center">
-      <p class="text-gray-500 text-sm mb-3">Can't find an app you're looking for?</p>
+      <p class="text-gray-400 text-sm mb-3">Can't find an app you're looking for?</p>
       <a 
         href="/deprecated" 
-        class="inline-flex items-center text-gray-600 hover:text-red-600 transition-colors text-sm font-medium"
+        class="inline-flex items-center text-gray-300 hover:text-red-400 transition-colors text-sm font-medium"
       >
         <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
