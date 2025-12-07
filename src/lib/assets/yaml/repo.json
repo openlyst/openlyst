@@ -370,7 +370,7 @@
                             }
                         },
                         "Android": {
-                            "apk": "https://gitlab.com/Openlyst/docan/-/jobs/12347959308/artifacts/browse/build/app/outputs/flutter-apk/app-release.apk",
+                            "apk": "https://gitlab.com/Openlyst/docan/-/jobs/12347959308/artifacts/raw/build/app/outputs/flutter-apk/app-debug.apk",
                             "aab": ""
                         },
                         "Web": ""
