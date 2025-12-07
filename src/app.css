@@ -98,7 +98,7 @@
   
   /* Custom markdown styling for modals */
   .modal-prose {
-    color: #1e40af;
+    color: #d1d5db;
   }
   
   .modal-prose h1,
@@ -107,7 +107,7 @@
   .modal-prose h4,
   .modal-prose h5,
   .modal-prose h6 {
-    color: #1e3a8a;
+    color: #f3f4f6;
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
@@ -134,7 +134,7 @@
   
   .modal-prose strong {
     font-weight: 600;
-    color: #1e3a8a;
+    color: #fbbf24;
   }
   
   .modal-prose em {
@@ -142,10 +142,11 @@
   }
   
   .modal-prose code {
-    background-color: #dbeafe;
+    background-color: #374151;
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
     font-size: 0.875rem;
     font-family: 'Courier New', monospace;
+    color: #fca5a5;
   }
 }
