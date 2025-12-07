@@ -434,34 +434,34 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 <!-- Rate Limits Section -->
 <Section title="Rate Limits & Usage" subtitle="Fair usage guidelines" background="gray">
   {#snippet children()}
-    <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+    <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="text-center">
-          <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-infinity text-2xl text-emerald-600"></i>
+          <div class="w-16 h-16 bg-emerald-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-infinity text-2xl text-emerald-400"></i>
           </div>
-          <h3 class="font-semibold text-gray-900 mb-2">No Rate Limits</h3>
-          <p class="text-gray-600 text-sm">Currently no rate limits are enforced. Please use responsibly.</p>
+          <h3 class="font-semibold text-white mb-2">No Rate Limits</h3>
+          <p class="text-gray-400 text-sm">Currently no rate limits are enforced. Please use responsibly.</p>
         </div>
         <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-key text-2xl text-blue-600"></i>
+          <div class="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-key text-2xl text-blue-400"></i>
           </div>
-          <h3 class="font-semibold text-gray-900 mb-2">No API Key</h3>
-          <p class="text-gray-600 text-sm">No authentication or API keys required to access any endpoint.</p>
+          <h3 class="font-semibold text-white mb-2">No API Key</h3>
+          <p class="text-gray-400 text-sm">No authentication or API keys required to access any endpoint.</p>
         </div>
         <div class="text-center">
-          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-heart text-2xl text-purple-600"></i>
+          <div class="w-16 h-16 bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-heart text-2xl text-purple-400"></i>
           </div>
-          <h3 class="font-semibold text-gray-900 mb-2">Open Source</h3>
-          <p class="text-gray-600 text-sm">This API is part of the OpenLyst open source project.</p>
+          <h3 class="font-semibold text-white mb-2">Open Source</h3>
+          <p class="text-gray-400 text-sm">This API is part of the OpenLyst open source project.</p>
         </div>
       </div>
       
-      <div class="mt-8 pt-8 border-t border-gray-200">
-        <h4 class="font-semibold text-gray-900 mb-4">Fair Usage Guidelines</h4>
-        <ul class="space-y-2 text-gray-600">
+      <div class="mt-8 pt-8 border-t border-gray-700">
+        <h4 class="font-semibold text-white mb-4">Fair Usage Guidelines</h4>
+        <ul class="space-y-2 text-gray-400">
           <li class="flex items-start gap-2">
             <i class="fas fa-check text-green-500 mt-1"></i>
             <span>Cache responses when possible to reduce server load</span>
