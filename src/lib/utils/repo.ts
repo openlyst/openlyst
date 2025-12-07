@@ -40,6 +40,16 @@ export async function getAllApps(): Promise<RepoConfig['apps']> {
   return config.apps;
 }
 
+export async function getActiveApps(): Promise<RepoConfig['apps']> {
+  const config = await loadRepoConfig();
+  return config.apps.filter(app => !app.deprecated);
+}
+
+export async function getDeprecatedApps(): Promise<RepoConfig['apps']> {
+  const config = await loadRepoConfig();
+  return config.apps.filter(app => app.deprecated === true);
+}
+
 export function nameToSlug(name: string): string {
   return name
     .toLowerCase()
