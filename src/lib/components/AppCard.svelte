@@ -20,9 +20,9 @@
   }: Props = $props();
 
   const statusColors = {
-    released: 'bg-green-100 text-green-800 border-green-200',
-    beta: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-    development: 'bg-red-100 text-red-800 border-red-200'
+    released: 'bg-green-900/50 text-green-300 border-green-700',
+    beta: 'bg-yellow-900/50 text-yellow-300 border-yellow-700',
+    development: 'bg-red-900/50 text-red-300 border-red-700'
   };
 
   const statusText = {
@@ -32,7 +32,7 @@
   };
 </script>
 
-<div class="bg-white rounded-lg shadow-lg overflow-hidden border border-red-200 hover:shadow-xl transition-shadow duration-300">
+<div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-red-900 hover:shadow-xl hover:shadow-red-900/20 transition-shadow duration-300">
   <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
     {#if image && (image.startsWith('http') || image.startsWith('/'))}
       <img src={image} alt="{title} icon" class="w-20 h-20 rounded-2xl object-cover shadow-lg" />
@@ -47,18 +47,18 @@
 
   <div class="p-6">
     <div class="flex items-center justify-between mb-3">
-      <h3 class="text-xl font-bold text-gray-900">{title}</h3>
+      <h3 class="text-xl font-bold text-white">{title}</h3>
       <span class="px-3 py-1 text-xs font-medium rounded-full border {statusColors[status]}">
         {statusText[status]}
       </span>
     </div>
 
-    <p class="text-gray-600 mb-4">{description}</p>
+    <p class="text-gray-300 mb-4">{description}</p>
 
     {#if features.length > 0}
       <div class="mb-4">
-        <h4 class="text-sm font-semibold text-gray-900 mb-2">Key Features:</h4>
-        <ul class="text-sm text-gray-600 space-y-1">
+        <h4 class="text-sm font-semibold text-gray-200 mb-2">Key Features:</h4>
+        <ul class="text-sm text-gray-400 space-y-1">
           {#each features as feature}
             <li class="flex items-center">
               <span class="w-1.5 h-1.5 bg-red-500 rounded-full mr-2"></span>
@@ -70,10 +70,10 @@
     {/if}
 
     <div class="mb-4">
-      <h4 class="text-sm font-semibold text-gray-900 mb-2">Platforms:</h4>
+      <h4 class="text-sm font-semibold text-gray-200 mb-2">Platforms:</h4>
       <div class="flex flex-wrap gap-2">
         {#each platforms as platform}
-          <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-md border border-red-200">
+          <span class="px-2 py-1 bg-red-900/50 text-red-200 text-xs rounded-md border border-red-800">
             {platform}
           </span>
         {/each}
