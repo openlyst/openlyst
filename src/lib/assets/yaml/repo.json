@@ -320,7 +320,11 @@
                 "Android",
                 "Web"
             ],
-            "screenshots": [],
+            "screenshots": [
+                "/icons/Docan/chat.png",
+                "/icons/Docan/chats.png",
+                "/icons/Docan/providers.png"
+            ],
             "versions": [
                 {
                     "version": "1.0.0",
