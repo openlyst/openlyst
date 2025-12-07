@@ -671,12 +671,15 @@
 <svelte:window on:keydown={handleLightboxKeydown} />
 
 {#if showLightbox}
+  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <div 
     class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
     on:click={closeLightbox}
+    on:keydown={(e) => e.key === 'Enter' && closeLightbox()}
     role="dialog"
     aria-modal="true"
     aria-label="Image viewer"
+    tabindex="-1"
   >
     <!-- Close button -->
     <button 
@@ -714,9 +717,11 @@
     {/if}
     
     <!-- Image container -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div 
       class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center"
-      on:click|stopPropagation
+      on:click|stopPropagation={() => {}}
+      on:keydown|stopPropagation={() => {}}
     >
       <img 
         src={lightboxImageUrl} 
