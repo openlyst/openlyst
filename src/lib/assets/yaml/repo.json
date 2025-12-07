@@ -310,7 +310,7 @@
             "bundleIdentifier": "docan",
             "subtitle": "Universal AI chat application with Liquid Glass design",
             "localizedDescription": "Docan is a universal AI chat application featuring a stunning Liquid Glass design. Connect with various AI providers and enjoy a seamless chat experience across all your devices.",
-            "iconURL": "https://example.com/docan-icon.png",
+            "iconURL": "/icons/Docan/icon.png",
             "tintColor": "#6366f1",
             "platforms": [
                 "iOS",
