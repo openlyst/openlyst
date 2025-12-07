@@ -16,21 +16,21 @@
   }: Props = $props();
 
   const backgroundClasses = {
-    default: 'bg-white',
-    red: 'bg-red-600 text-white',
-    dark: 'bg-red-950 text-white',
-    gray: 'bg-gray-50'
+    default: 'bg-gray-900',
+    red: 'bg-red-900 text-white',
+    dark: 'bg-gray-950 text-white',
+    gray: 'bg-gray-800'
   };
 </script>
 
 <section class="py-16 {backgroundClasses[background]}">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12 {centered ? '' : 'text-left'}">
-      <h2 class="text-3xl font-bold tracking-tight {background === 'default' || background === 'gray' ? 'text-gray-900' : 'text-white'} sm:text-4xl">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
         {title}
       </h2>
       {#if subtitle}
-        <p class="mt-4 text-lg {background === 'default' || background === 'gray' ? 'text-gray-600' : 'text-gray-300'} max-w-2xl {centered ? 'mx-auto' : ''}">
+        <p class="mt-4 text-lg text-gray-300 max-w-2xl {centered ? 'mx-auto' : ''}">
           {subtitle}
         </p>
       {/if}
