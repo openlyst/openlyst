@@ -12,7 +12,7 @@
   ];
 </script>
 
-<header class="bg-red-900 text-white shadow-lg">
+<header class="bg-red-950 text-white shadow-lg border-b border-red-900">
   <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 justify-between items-center">
       <!-- Logo -->
