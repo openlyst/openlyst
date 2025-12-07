@@ -3,284 +3,309 @@
     "subtitle": "Every Openlyst iOS app.",
     "description": "FOSS apps for iOS, Android, and Desktop made for everyone. Focused on more unique apps.",
     "iconURL": "/favicon.svg",
-    "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads", 
+    "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads",
     "website": "https://openlyst.onrender.com",
     "tintColor": "#dc2626",
-    "featuredApps": [
-        "doudou"
-    ],
-    "apps": [
-        {
-            "name": "Doudou",
-            "bundleIdentifier": "doudou",
-            "subtitle": "Music player for self-hosted services",
-            "localizedDescription": "Break free from corporate streaming platforms. Doudou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
-            "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
-            "tintColor": "#dc2626",
-            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-            "screenshots": [
-                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
-                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
-                "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/albums.PNG?ref_type=heads"
-            ],
-            "versions": [
+    "featuredApps": ["doudou"],
+    "apps":
+        [
             {
-                    "version": "8.0.0",
-                    "date": "2025-12-06",
-                    "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-                    "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
-                        "Windows": "Download source and compile yourself from GitLab pipeline.",
-                        "Linux": "Download the latest Linux build from GitLab CI.",
-                        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
-                    },
-                    "downloads": {
-                        "iOS": "",
-                        "macOS": {
-                            "x86_64": "",
-                            "arm64": ""
+                "name": "Doudou",
+                "bundleIdentifier": "doudou",
+                "subtitle": "Music player for self-hosted services",
+                "localizedDescription": "Break free from corporate streaming platforms. Doudou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
+                "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
+                "tintColor": "#dc2626",
+                "platforms":
+                    ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+                "screenshots":
+                    [
+                        "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
+                        "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
+                        "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/albums.PNG?ref_type=heads",
+                    ],
+                "versions":
+                    [
+                        {
+                            "version": "8.0.0",
+                            "date": "2025-12-06",
+                            "platforms":
+                                [
+                                    "iOS",
+                                    "macOS",
+                                    "Windows",
+                                    "Linux",
+                                    "Android",
+                                    "Web",
+                                ],
+                            "platformInstall":
+                                {
+                                    "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                                    "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                                    "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                                    "Windows": "Download source and compile yourself from GitLab pipeline.",
+                                    "Linux": "Download the latest Linux build from GitLab CI.",
+                                    "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads",
+                                },
+                            "downloads":
+                                {
+                                    "iOS": "",
+                                    "macOS": { "x86_64": "", "arm64": "" },
+                                    "Windows": { "x86_64": "", "arm64": "" },
+                                    "Linux":
+                                        {
+                                            "zip":
+                                                {
+                                                    "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12346738485/artifacts/download",
+                                                    "arm64": "",
+                                                },
+                                            "appimage":
+                                                { "x86_64": "", "arm64": "" },
+                                            "rpm":
+                                                { "x86_64": "", "arm64": "" },
+                                            "deb":
+                                                { "x86_64": "", "arm64": "" },
+                                        },
+                                    "Android":
+                                        {
+                                            "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12346738484/artifacts/file/build/app/outputs/flutter-apk/app-release.apk",
+                                            "aab": "",
+                                        },
+                                    "Web": "",
+                                },
+                            "localizedDescription": "# 8.0.0\nThe stable out.\n\n## Added\n- Added build support for Fastforge.\n- Build support for **deb**, **rpm**, and **appimage**.\n- Support for building OpenHarmony packages.\n- Adds basic support for phoneVR headsets.\n\n## Changed\n- Changed final release builds to have to include a ``final`` var in order to build from main branch.\n- Refactored names of changelogs to markdown.\n- Desktop album, playlists, and others use one template details file.\n- Desktop details page now uses a fully scrollable rather than a content template.\n- Desktop now_playing is now fullscreened.\n- Redesigned the now_playing screen on desktop.\n- Added favorites button to now_playing on desktop.\n- Made the controls on the now_playing more compact.\n- Build details page from top to down.\n- Rewrote the build script.\n- Load app icon in settings.\n- Changed unknown version from \"6.0.0\" to an unknown error.\n\n## Removed\n- Remove subtitle from settings version.",
                         },
-                        "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                        {
+                            "version": "7.0.0",
+                            "date": "2025-10-29",
+                            "platforms":
+                                [
+                                    "iOS",
+                                    "macOS",
+                                    "Windows",
+                                    "Linux",
+                                    "Android",
+                                    "Web",
+                                ],
+                            "platformInstall":
+                                {
+                                    "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                                    "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                                    "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                                    "Windows": "Download source and compile yourself from GitLab pipeline.",
+                                    "Linux": "Download the latest Linux build from GitLab CI.",
+                                    "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads",
+                                },
+                            "downloads":
+                                {
+                                    "iOS": "https://github.com/HttpAnimation/awdawd/releases/download/6.0.0/doudou-flutter-7.0.0-ios.ipa",
+                                    "macOS":
+                                        {
+                                            "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/11902791895/artifacts/raw/build/doudou-release-macos.tar.gz",
+                                            "arm64": "",
+                                        },
+                                    "Windows":
+                                        {
+                                            "x86_64": "https://gitlab.com/Openlyst/doudou/-/archive/pipeline-2128734644/doudou-pipeline-2128734644.tar.gz",
+                                            "arm64": "",
+                                        },
+                                    "Linux":
+                                        {
+                                            "zip":
+                                                {
+                                                    "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/11902858422/artifacts/download",
+                                                    "arm64": "",
+                                                },
+                                            "appimage":
+                                                { "x86_64": "", "arm64": "" },
+                                            "rpm":
+                                                { "x86_64": "", "arm64": "" },
+                                            "deb":
+                                                { "x86_64": "", "arm64": "" },
+                                        },
+                                    "Android":
+                                        {
+                                            "apk": "https://github.com/HttpAnimation/awdawd/releases/download/6.0.0/doudou-flutter-7.0.0-apk.apk",
+                                            "aab": "",
+                                        },
+                                    "Web": "https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads",
+                                },
+                            "localizedDescription": "## Added\n- Comprehensive logging system with file rotation and export capabilities\n- Mobile and desktop log viewer in settings\n- Detailed playback logging for troubleshooting music playback issues\n- Queue operation logging for debugging playlist management\n- User-configurable logging toggle (disabled by default for performance)\n- New desktop UI\n- Show the number of times songs have been played\n- Plex service\n- Navidrome service\n- Added the ability to favorite songs\n- Added debugging info for favorites\n- Ability to download songs on desktop\n- Use real history for the mobile search page\n- Redesigned the mobile search page\n- Allow custom colours for desktop accents\n\n## Changed\n- New description\n- Logging is disabled by default and can be enabled in settings\n- Centralized logic for API requests\n- Rewrote the Jellyfin service\n- Refactored most of the backend for desktop/mobile network connections\n- Refactored the Jellyfin favorite song functionality\n- Refactored `now_playing` to use `app_state` for favorites\n- Refactored Plex service for generated URLs\n- Fixed race issues when pausing music\n- Redesigned mobile home page\n- Redesigned mobile library page\n- Complete rewrite of EVERY audio service file\n- Added smooth scaling animation to desktop now playing screen opening and closing with elastic curve and opacity effects for enhanced user experience.\n- Completely redesigned login screen with elegant responsive design supporting both desktop and mobile layouts. Features animated gradient backgrounds, smooth transitions, modern Material Design elements, and improved visual hierarchy for better user experience.\n- Fixed mobile login screen black screen issue by adding proper MaterialApp wrapper and fixing layout constraints with appropriate scrolling behavior.\n- Added minimal mobile login header with \"Doudou - Welcome\" text and slide-in animation for better branding while maintaining clean, focused mobile experience.\n- Mobile login screen now respects phone's system theme (light/dark mode) while desktop maintains custom MaterialApp theming.\n- Build release rather than debug.\n- Movies player services moved to their own folder.\n\n## Removed\n- Removed crossfades\n- Removed debugging for images\n- Removed debugging for audio states\n\n## Fixed\n- Fixed skipping on Linux\n- Improved playback diagnostics with comprehensive logging throughout the audio system\n- Fixed a bug that often caused the audio player to not work when using local addresses\n- Fixed local addresses often failing\n- Fixed clutter in the debugging terminal\n- Fixed main album art using old Jellyfin code\n- Fixed switching queues breaking the audio stream\n- Fixed Custom Spinlock System: Replaced 9 custom spinlock implementations with proper async Mutex system to eliminate busy-wait loops causing CPU spikes and deadlocks\n- Fixed Concurrent Player Operations: Implemented AudioOperationQueue to prevent \"Loading interrupted\" errors from concurrent _resetPlayerStateCompletely and _tryGaplessPlayback operations\n- Fixed User Intent vs Player State Desynchronization: Implemented AudioStateMachine to prevent UI showing play button while audio is paused, ensuring synchronized user intent tracking\n- Fixed Concatenation Race Conditions: Added operation cancellation tokens to gapless playback operations to prevent conflicts when new audio source changes interrupt ongoing concatenating transitions\n- Fixed Android Bypass Mode Race: Replaced mutable boolean flags with immutable AndroidServiceManager state machine to prevent inconsistent platform-specific behavior during AudioService errors\n- Fixed Preloader Race Conditions: Implemented reference counting system in AudioPreloader to prevent cleanup of audio sources while they're being prepared or used by the player\n- Fixed Queue Modification Race: Added proper mutex synchronization to all AudioQueueManager operations to prevent concurrent queue modifications during shuffle, add, remove operations\n- Fixed Player Position Race: Implemented atomic position updates with debouncing and seek protection to prevent position jumps during seek operations and buffering events\n- Fixed State Persistence Race: Added debouncing to state persistence calls with StatePersistenceManager to prevent file corruption during rapid state transitions\n- Fixed Radio Mode Race Conditions: Implemented synchronized RadioModeStateManager to prevent radio mode UI state from becoming inconsistent with actual streaming behavior during mode transitions\n- Fixed Touch Bar Race Conditions: Added synchronized TouchBarUpdateManager to prevent concurrent Touch Bar updates during rapid track changes from causing visual glitches on macOS\n- Fixed Download Service Race: Implemented DownloadServiceCoordinator to prevent download operations from interfering with active audio streaming by protecting tracks during playback\n- Fixed bug for foreground services audio_ui's may not update causing ui state on mobile to break until tick update.\n- Fixed desktop automatic track advancement failing when network timeouts occur. Added retry logic with fallback to transcoded streams and skip to next track on persistent failures to prevent silent playback stops.\n- Fixed web version audio playback failing due to CORS restrictions by implementing direct download URL fallback for better browser compatibility with Jellyfin media servers.\n- Fixed web version track switching playing multiple audio streams simultaneously by ensuring previous audio source is properly stopped before loading new tracks.\n- Fixed web version audio controls being unresponsive by implementing immediate UI state updates with asynchronous audio operations, matching mobile and desktop handler behavior patterns.",
                         },
-                        "Linux": {
-                            "zip": {
-                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12346738485/artifacts/download",
-                                "arm64": ""
-                            },
-                            "appimage": {
-                                "x86_64": "",
-                                "arm64": ""
-                            },
-                            "rpm": {
-                                "x86_64": "",
-                                "arm64": ""
-                            },
-                            "deb": {
-                                "x86_64": "",
-                                "arm64": ""
-                            }
+                        {
+                            "version": "6.0.0",
+                            "date": "2025-10-29",
+                            "platforms":
+                                ["iOS", "macOS", "Windows", "Linux", "Android"],
+                            "platformInstall":
+                                {
+                                    "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                                    "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                                    "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                                    "Windows": "Download source and compile yourself from GitLab pipeline.",
+                                    "Linux": "Download the latest Linux build from GitLab CI.",
+                                },
+                            "downloads":
+                                {
+                                    "iOS": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                                    "macOS":
+                                        {
+                                            "x86_64": "https://gitlab.com/Openlyst/repos/homebrew/macos/-/raw/main/Casks/doudou.rb?ref_type=heads",
+                                            "arm64": "",
+                                        },
+                                    "Windows":
+                                        {
+                                            "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_windows",
+                                            "arm64": "",
+                                        },
+                                    "Linux":
+                                        {
+                                            "zip":
+                                                {
+                                                    "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux",
+                                                    "arm64": "",
+                                                },
+                                            "appimage":
+                                                { "x86_64": "", "arm64": "" },
+                                            "rpm":
+                                                { "x86_64": "", "arm64": "" },
+                                            "deb":
+                                                { "x86_64": "", "arm64": "" },
+                                        },
+                                    "Android":
+                                        {
+                                            "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_android",
+                                            "aab": "",
+                                        },
+                                },
+                            "localizedDescription": "Note: This version does not work with Plex and Navidome.\n ## Added\n- Added a button to reload all data from the Jellyfin server.\n- Added an animation that plays when album art changes size.\n- Added a background for the \"Now Playing\" screen.\n- Automatically build `.apk` files.\n- Added an indication if a song is playing locally (downloaded) or streaming.\n- Added a \"Shuffle Favorites\" button for downloaded songs.\n- Added new options to the drop-down menu on the \"Now Playing\" screen.\n- Added a kebab menu (three dots) to the album details page with a download option.\n- Enhanced the kebab menu with \"Play Next,\" \"Play Later,\" and \"Add to Favorites\" options.\n- Added Android Auto support.\n- Added support for the macOS platform.\n- Added a new desktop sidebar.\n- Added web builds.\n\n## Changed\n- Lyrics are now greyed out if none are available.\n- Devices are now locked to vertical orientation.\n- Album art is smaller when the song is paused.\n- The entire audio backend was refactored, which should hopefully lead to fewer bugs.\n- The home page was redesigned.\n- The album name is now displayed as the title on the album details page.\n- \"Play All\" was changed to \"Play\" on the album details page.\n- The \"Play\" and \"Shuffle\" buttons are now bolded on the album details page.\n- The \"Download Album\" button was moved to the kebab menu in the navigation bar.\n- The \"Now Playing\" screen was completely redesigned with an improved layout and spacing.\n- The mini-player will no longer show when a keyboard is open.\n- The search page was completely redesigned with unified results and recent searches.\n- Uses a template for the album and playlist screens.\n\n## Removed\n- The music visualizer was removed (this is not possible with the current audio provider).\n- The \"Now Playing\" option was removed from the settings screen.\n- The ability to scroll on the \"Now Playing\" page was removed.\n- The year was removed from the album details page.\n\n## Fixed\n- Fixed synced lyrics text being hidden in some cases.\n- Fixed an issue where offline mode was never set to true.\n- Fixed autoplay.\n- Fixed recently added albums not showing correctly.\n- Fixed the gapless audio playback.\n- Fixed the lyrics overlay so it automatically reloads when the track changes during playback.\n- Fixed images for top results not working on the search page.\n- The search page now shows clean, unified results without section headers.\n- Fixed iOS being unable to play audio.\n- Fixed the \"Now Playing\" screen overflowing when a large font size is used.\n                - Fixed Linux builds not properly initializing the database.",
                         },
-                        "Android": {
-                            "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12346738484/artifacts/file/build/app/outputs/flutter-apk/app-release.apk",
-                            "aab": ""
+                    ],
+            },
+            {
+                "name": "BaoBao",
+                "bundleIdentifier": "baobao",
+                "subtitle": "Modern e621 Client (Deprecated)",
+                "localizedDescription": "⚠️ DEPRECATED: This app is no longer maintained and will not receive updates.\n\nA modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
+                "iconURL": "https://example.com/baobao-icon.png",
+                "tintColor": "#ff6b35",
+                "platforms": ["iOS", "Android"],
+                "deprecated": true,
+                "screenshots":
+                    [
+                        "https://example.com/baobao_screenshot1.png",
+                        "https://example.com/baobao_screenshot2.png",
+                    ],
+                "versions":
+                    [
+                        {
+                            "version": "1.0.0-beta",
+                            "date": "2025-10-29",
+                            "platforms": ["iOS", "Android"],
+                            "platformInstall":
+                                {
+                                    "iOS": "Coming soon via AltStore",
+                                    "Android": "Coming soon via RepStore",
+                                },
+                            "localizedDescription": "Initial beta release with intuitive interface, advanced search, offline favorites, privacy protection, and community features.",
                         },
-                        "Web": ""
-                    },
-                    "localizedDescription": "# 8.0.0\nThe stable out.\n\n## Added\n- Added build support for Fastforge.\n- Build support for **deb**, **rpm**, and **appimage**.\n- Support for building OpenHarmony packages.\n- Adds basic support for phoneVR headsets.\n\n## Changed\n- Changed final release builds to have to include a ``final`` var in order to build from main branch.\n- Refactored names of changelogs to markdown.\n- Desktop album, playlists, and others use one template details file.\n- Desktop details page now uses a fully scrollable rather than a content template.\n- Desktop now_playing is now fullscreened.\n- Redesigned the now_playing screen on desktop.\n- Added favorites button to now_playing on desktop.\n- Made the controls on the now_playing more compact.\n- Build details page from top to down.\n- Rewrote the build script.\n- Load app icon in settings.\n- Changed unknown version from \"6.0.0\" to an unknown error.\n\n## Removed\n- Remove subtitle from settings version."
-                },
-                {
-                    "version": "7.0.0",
-                    "date": "2025-10-29",
-                    "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-                    "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
-                        "Windows": "Download source and compile yourself from GitLab pipeline.",
-                        "Linux": "Download the latest Linux build from GitLab CI.",
-                        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
-                    },
-                    "downloads": {
-                        "iOS": "https://github.com/HttpAnimation/awdawd/releases/download/6.0.0/doudou-flutter-7.0.0-ios.ipa",
-                        "macOS": {
-                            "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/11902791895/artifacts/raw/build/doudou-release-macos.tar.gz",
-                            "arm64": ""
+                    ],
+            },
+            {
+                "name": "Klit",
+                "bundleIdentifier": "klit",
+                "subtitle": "Modern e621 Client",
+                "localizedDescription": "The successor to BaoBao. A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
+                "iconURL": "/icons/Klit/icon.png",
+                "tintColor": "#ff6b35",
+                "platforms":
+                    ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+                "screenshots":
+                    [
+                        "/icons/Klit/home.png",
+                        "/icons/Klit/popular.png",
+                        "/icons/Klit/post.png",
+                    ],
+                "versions":
+                    [
+                        {
+                            "version": "1.0.0",
+                            "date": "2025-12-06",
+                            "platforms":
+                                [
+                                    "iOS",
+                                    "macOS",
+                                    "Windows",
+                                    "Linux",
+                                    "Android",
+                                    "Web",
+                                ],
+                            "platformInstall":
+                                {
+                                    "iOS": "Use AltStore to install from our repository",
+                                    "Android": "Use RepStore to install from our repository",
+                                    "macOS": "Download the latest macOS build",
+                                    "Windows": "Download the latest Windows build",
+                                    "Linux": "Download the latest Linux build from GitLab CI",
+                                    "Web": "Access the web version",
+                                },
+                            "downloads":
+                                {
+                                    "iOS": "",
+                                    "macOS": { "x86_64": "", "arm64": "" },
+                                    "Windows": { "x86_64": "", "arm64": "" },
+                                    "Linux":
+                                        {
+                                            "zip":
+                                                { "x86_64": "", "arm64": "" },
+                                            "appimage":
+                                                {
+                                                    "x86_64": "https://files.catbox.moe/getct6.AppImage",
+                                                    "arm64": "",
+                                                },
+                                            "rpm":
+                                                { "x86_64": "", "arm64": "" },
+                                            "deb":
+                                                {
+                                                    "x86_64": "https://files.catbox.moe/axla55.deb",
+                                                    "arm64": "",
+                                                },
+                                        },
+                                    "Android":
+                                        {
+                                            "apk": "https://files.catbox.moe/s88f1n.apk",
+                                            "aab": "",
+                                        },
+                                    "Web": "",
+                                },
+                            "localizedDescription": "Initial release of Klit, the successor to BaoBao.\n\n## Features\n- Modern, clean interface\n- Privacy-focused design\n- Cross-platform support\n- Offline favorites\n- Advanced search capabilities",
                         },
-                        "Windows": {
-                            "x86_64": "https://gitlab.com/Openlyst/doudou/-/archive/pipeline-2128734644/doudou-pipeline-2128734644.tar.gz",
-                            "arm64": ""
-                        },
-                        "Linux": {
-                            "zip": {
-                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/11902858422/artifacts/download",
-                                "arm64": ""
-                            },
-                            "appimage": {
-                                "x86_64": "",
-                                "arm64": ""
-                            },
-                            "rpm": {
-                                "x86_64": "",
-                                "arm64": ""
-                            },
-                            "deb": {
-                                "x86_64": "",
-                                "arm64": ""
-                            }
-                        },
-                        "Android": {
-                            "apk": "https://github.com/HttpAnimation/awdawd/releases/download/6.0.0/doudou-flutter-7.0.0-apk.apk",
-                            "aab": ""
-                        },
-                        "Web": "https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
-                    },
-                     "localizedDescription": "## Added\n- Comprehensive logging system with file rotation and export capabilities\n- Mobile and desktop log viewer in settings\n- Detailed playback logging for troubleshooting music playback issues\n- Queue operation logging for debugging playlist management\n- User-configurable logging toggle (disabled by default for performance)\n- New desktop UI\n- Show the number of times songs have been played\n- Plex service\n- Navidrome service\n- Added the ability to favorite songs\n- Added debugging info for favorites\n- Ability to download songs on desktop\n- Use real history for the mobile search page\n- Redesigned the mobile search page\n- Allow custom colours for desktop accents\n\n## Changed\n- New description\n- Logging is disabled by default and can be enabled in settings\n- Centralized logic for API requests\n- Rewrote the Jellyfin service\n- Refactored most of the backend for desktop/mobile network connections\n- Refactored the Jellyfin favorite song functionality\n- Refactored `now_playing` to use `app_state` for favorites\n- Refactored Plex service for generated URLs\n- Fixed race issues when pausing music\n- Redesigned mobile home page\n- Redesigned mobile library page\n- Complete rewrite of EVERY audio service file\n- Added smooth scaling animation to desktop now playing screen opening and closing with elastic curve and opacity effects for enhanced user experience.\n- Completely redesigned login screen with elegant responsive design supporting both desktop and mobile layouts. Features animated gradient backgrounds, smooth transitions, modern Material Design elements, and improved visual hierarchy for better user experience.\n- Fixed mobile login screen black screen issue by adding proper MaterialApp wrapper and fixing layout constraints with appropriate scrolling behavior.\n- Added minimal mobile login header with \"Doudou - Welcome\" text and slide-in animation for better branding while maintaining clean, focused mobile experience.\n- Mobile login screen now respects phone's system theme (light/dark mode) while desktop maintains custom MaterialApp theming.\n- Build release rather than debug.\n- Movies player services moved to their own folder.\n\n## Removed\n- Removed crossfades\n- Removed debugging for images\n- Removed debugging for audio states\n\n## Fixed\n- Fixed skipping on Linux\n- Improved playback diagnostics with comprehensive logging throughout the audio system\n- Fixed a bug that often caused the audio player to not work when using local addresses\n- Fixed local addresses often failing\n- Fixed clutter in the debugging terminal\n- Fixed main album art using old Jellyfin code\n- Fixed switching queues breaking the audio stream\n- Fixed Custom Spinlock System: Replaced 9 custom spinlock implementations with proper async Mutex system to eliminate busy-wait loops causing CPU spikes and deadlocks\n- Fixed Concurrent Player Operations: Implemented AudioOperationQueue to prevent \"Loading interrupted\" errors from concurrent _resetPlayerStateCompletely and _tryGaplessPlayback operations\n- Fixed User Intent vs Player State Desynchronization: Implemented AudioStateMachine to prevent UI showing play button while audio is paused, ensuring synchronized user intent tracking\n- Fixed Concatenation Race Conditions: Added operation cancellation tokens to gapless playback operations to prevent conflicts when new audio source changes interrupt ongoing concatenating transitions\n- Fixed Android Bypass Mode Race: Replaced mutable boolean flags with immutable AndroidServiceManager state machine to prevent inconsistent platform-specific behavior during AudioService errors\n- Fixed Preloader Race Conditions: Implemented reference counting system in AudioPreloader to prevent cleanup of audio sources while they're being prepared or used by the player\n- Fixed Queue Modification Race: Added proper mutex synchronization to all AudioQueueManager operations to prevent concurrent queue modifications during shuffle, add, remove operations\n- Fixed Player Position Race: Implemented atomic position updates with debouncing and seek protection to prevent position jumps during seek operations and buffering events\n- Fixed State Persistence Race: Added debouncing to state persistence calls with StatePersistenceManager to prevent file corruption during rapid state transitions\n- Fixed Radio Mode Race Conditions: Implemented synchronized RadioModeStateManager to prevent radio mode UI state from becoming inconsistent with actual streaming behavior during mode transitions\n- Fixed Touch Bar Race Conditions: Added synchronized TouchBarUpdateManager to prevent concurrent Touch Bar updates during rapid track changes from causing visual glitches on macOS\n- Fixed Download Service Race: Implemented DownloadServiceCoordinator to prevent download operations from interfering with active audio streaming by protecting tracks during playback\n- Fixed bug for foreground services audio_ui's may not update causing ui state on mobile to break until tick update.\n- Fixed desktop automatic track advancement failing when network timeouts occur. Added retry logic with fallback to transcoded streams and skip to next track on persistent failures to prevent silent playback stops.\n- Fixed web version audio playback failing due to CORS restrictions by implementing direct download URL fallback for better browser compatibility with Jellyfin media servers.\n- Fixed web version track switching playing multiple audio streams simultaneously by ensuring previous audio source is properly stopped before loading new tracks.\n- Fixed web version audio controls being unresponsive by implementing immediate UI state updates with asynchronous audio operations, matching mobile and desktop handler behavior patterns."
-                },
-                {
-                    "version": "6.0.0",
-                    "date": "2025-10-29",
-                    "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
-                    "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
-                        "Windows": "Download source and compile yourself from GitLab pipeline.",
-                        "Linux": "Download the latest Linux build from GitLab CI."
-                    },
-                    "downloads": {
-                        "iOS": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
-                        "macOS": {
-                            "x86_64": "https://gitlab.com/Openlyst/repos/homebrew/macos/-/raw/main/Casks/doudou.rb?ref_type=heads",
-                            "arm64": ""
-                        },
-                        "Windows": {
-                            "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_windows",
-                            "arm64": ""
-                        },
-                        "Linux": {
-                            "zip": {
-                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_linux",
-                                "arm64": ""
-                            },
-                            "appimage": {
-                                "x86_64": "",
-                                "arm64": ""
-                            },
-                            "rpm": {
-                                "x86_64": "",
-                                "arm64": ""
-                            },
-                            "deb": {
-                                "x86_64": "",
-                                "arm64": ""
-                            }
-                        },
-                        "Android": {
-                            "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_android",
-                            "aab": ""
-                        }
-                    },
-                    "localizedDescription": "Note: This version does not work with Plex and Navidome.\n ## Added\n- Added a button to reload all data from the Jellyfin server.\n- Added an animation that plays when album art changes size.\n- Added a background for the \"Now Playing\" screen.\n- Automatically build `.apk` files.\n- Added an indication if a song is playing locally (downloaded) or streaming.\n- Added a \"Shuffle Favorites\" button for downloaded songs.\n- Added new options to the drop-down menu on the \"Now Playing\" screen.\n- Added a kebab menu (three dots) to the album details page with a download option.\n- Enhanced the kebab menu with \"Play Next,\" \"Play Later,\" and \"Add to Favorites\" options.\n- Added Android Auto support.\n- Added support for the macOS platform.\n- Added a new desktop sidebar.\n- Added web builds.\n\n## Changed\n- Lyrics are now greyed out if none are available.\n- Devices are now locked to vertical orientation.\n- Album art is smaller when the song is paused.\n- The entire audio backend was refactored, which should hopefully lead to fewer bugs.\n- The home page was redesigned.\n- The album name is now displayed as the title on the album details page.\n- \"Play All\" was changed to \"Play\" on the album details page.\n- The \"Play\" and \"Shuffle\" buttons are now bolded on the album details page.\n- The \"Download Album\" button was moved to the kebab menu in the navigation bar.\n- The \"Now Playing\" screen was completely redesigned with an improved layout and spacing.\n- The mini-player will no longer show when a keyboard is open.\n- The search page was completely redesigned with unified results and recent searches.\n- Uses a template for the album and playlist screens.\n\n## Removed\n- The music visualizer was removed (this is not possible with the current audio provider).\n- The \"Now Playing\" option was removed from the settings screen.\n- The ability to scroll on the \"Now Playing\" page was removed.\n- The year was removed from the album details page.\n\n## Fixed\n- Fixed synced lyrics text being hidden in some cases.\n- Fixed an issue where offline mode was never set to true.\n- Fixed autoplay.\n- Fixed recently added albums not showing correctly.\n- Fixed the gapless audio playback.\n- Fixed the lyrics overlay so it automatically reloads when the track changes during playback.\n- Fixed images for top results not working on the search page.\n- The search page now shows clean, unified results without section headers.\n- Fixed iOS being unable to play audio.\n- Fixed the \"Now Playing\" screen overflowing when a large font size is used.\n                - Fixed Linux builds not properly initializing the database."
-                }
-            ]
-        },
-        {
-            "name": "BaoBao",
-            "bundleIdentifier": "baobao",
-            "subtitle": "Modern e621 Client (Deprecated)",
-            "localizedDescription": "⚠️ DEPRECATED: This app is no longer maintained and will not receive updates.\n\nA modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
-            "iconURL": "https://example.com/baobao-icon.png",
-            "tintColor": "#ff6b35",
-            "platforms": ["iOS", "Android"],
-            "deprecated": true,
-            "screenshots": [
-                "https://example.com/baobao_screenshot1.png",
-                "https://example.com/baobao_screenshot2.png"
-            ],
-            "versions": [
-                {
-                    "version": "1.0.0-beta",
-                    "date": "2025-10-29",
-                    "platforms": ["iOS", "Android"],
-                    "platformInstall": {
-                        "iOS": "Coming soon via AltStore",
-                        "Android": "Coming soon via RepStore"
-                    },
-                    "localizedDescription": "Initial beta release with intuitive interface, advanced search, offline favorites, privacy protection, and community features."
-                }
-            ]
-        },
-        {
-            "name": "Klit",
-            "bundleIdentifier": "klit",
-            "subtitle": "Modern e621 Client",
-            "localizedDescription": "The successor to BaoBao. A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
-            "iconURL": "/icons/Klit/icon.png",
-            "tintColor": "#ff6b35",
-            "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-            "screenshots": [
-                "/icons/Klit/home.png",
-                "/icons/Klit/popular.png",
-                "/icons/Klit/post.png"
-            ],
-            "versions": [
-                {
-                    "version": "1.0.0",
-                    "date": "2025-12-06",
-                    "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-                    "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository",
-                        "Android": "Use RepStore to install from our repository",
-                        "macOS": "Download the latest macOS build",
-                        "Windows": "Download the latest Windows build",
-                        "Linux": "Download the latest Linux build from GitLab CI",
-                        "Web": "Access the web version"
-                    },
-                    "downloads": {
-                        "iOS": "",
-                        "macOS": {
-                            "x86_64": "",
-                            "arm64": ""
-                        },
-                        "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
-                        },
-                        "Linux": {
-                            "zip": {
-                                "x86_64": "",
-                                "arm64": ""
-                            },
-                            "appimage": {
-                                "x86_64": "https://files.catbox.moe/getct6.AppImage",
-                                "arm64": ""
-                            },
-                            "rpm": {
-                                "x86_64": "",
-                                "arm64": ""
-                            },
-                            "deb": {
-                                "x86_64": "https://files.catbox.moe/axla55.deb",
-                                "arm64": ""
-                            }
-                        },
-                        "Android": {
-                            "apk": "https://files.catbox.moe/s88f1n.apk",
-                            "aab": ""
-                        },
-                        "Web": ""
-                    },
-                    "localizedDescription": "Initial release of Klit, the successor to BaoBao.\n\n## Features\n- Modern, clean interface\n- Privacy-focused design\n- Cross-platform support\n- Offline favorites\n- Advanced search capabilities"
-                }
-            ]
-        }
-    ],
-    "news": [
-        {
-            "title": "BaoBao Discontinued - Meet Klit!",
-            "identifier": "baobao_deprecated_klit_release",
-            "caption": "BaoBao is being retired in favor of Klit, our new and improved e621 client.",
-            "date": "2025-12-06",
-            "tintColor": "#ff6b35",
-            "imageURL": "/icons/Klit/klit_release_image.png",
-            "notify": true,
-            "url": "/apps/klit",
-            "appID": "klit"
-        },
-        {
-            "title": "DouDou v6.0.0 Released",
-            "identifier": "doudou_600_release",
-            "caption": "Revolutionary music player now available across all platforms!",
-            "date": "2025-10-29",
-            "tintColor": "#dc2626",
-            "imageURL": "https://example.com/doudou_release_image.png",
-            "notify": true,
-            "url": "/apps/doudou",
-            "appID": "doudou"
-        }
-    ]
+                    ],
+            },
+        ],
+    "news":
+        [
+            {
+                "title": "BaoBao Discontinued - Meet Klit!",
+                "identifier": "baobao_deprecated_klit_release",
+                "caption": "BaoBao is being retired in favor of Klit, our new and improved e621 client.",
+                "date": "2025-12-06",
+                "tintColor": "#ff6b35",
+                "imageURL": "/icons/Klit/klit_release_image.png",
+                "notify": true,
+                "url": "/apps/klit",
+                "appID": "klit",
+            },
+            {
+                "title": "DouDou v6.0.0 Released",
+                "identifier": "doudou_600_release",
+                "caption": "Revolutionary music player now available across all platforms!",
+                "date": "2025-10-29",
+                "tintColor": "#dc2626",
+                "imageURL": "https://example.com/doudou_release_image.png",
+                "notify": true,
+                "url": "/apps/doudou",
+                "appID": "doudou",
+            },
+        ],
 }
