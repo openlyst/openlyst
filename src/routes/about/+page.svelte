@@ -198,8 +198,8 @@
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">👩‍💻</span>
         </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-1">Core Developers</h3>
-        <p class="text-gray-600 text-sm mb-3">The backbone of our development team</p>
+        <h3 class="text-lg font-semibold text-white mb-1">Core Developers</h3>
+        <p class="text-gray-400 text-sm mb-3">The backbone of our development team</p>
         <p class="text-gray-500 text-sm">Writing code, fixing bugs, and architecting the future</p>
       </div>
       
@@ -207,8 +207,8 @@
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">🎨</span>
         </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-1">Designers</h3>
-        <p class="text-gray-600 text-sm mb-3">Creating beautiful, accessible interfaces</p>
+        <h3 class="text-lg font-semibold text-white mb-1">Designers</h3>
+        <p class="text-gray-400 text-sm mb-3">Creating beautiful, accessible interfaces</p>
         <p class="text-gray-500 text-sm">Making complex software simple and intuitive</p>
       </div>
       
@@ -216,8 +216,8 @@
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">🔒</span>
         </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-1">Security Experts</h3>
-        <p class="text-gray-600 text-sm mb-3">Protecting user privacy and data</p>
+        <h3 class="text-lg font-semibold text-white mb-1">Security Experts</h3>
+        <p class="text-gray-400 text-sm mb-3">Protecting user privacy and data</p>
         <p class="text-gray-500 text-sm">Auditing code and implementing security best practices</p>
       </div>
       
@@ -225,8 +225,8 @@
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">📝</span>
         </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-1">Documentation</h3>
-        <p class="text-gray-600 text-sm mb-3">Making our software accessible to everyone</p>
+        <h3 class="text-lg font-semibold text-white mb-1">Documentation</h3>
+        <p class="text-gray-400 text-sm mb-3">Making our software accessible to everyone</p>
         <p class="text-gray-500 text-sm">Writing guides, tutorials, and API documentation</p>
       </div>
       
@@ -234,8 +234,8 @@
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">🌍</span>
         </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-1">Translators</h3>
-        <p class="text-gray-600 text-sm mb-3">Breaking down language barriers</p>
+        <h3 class="text-lg font-semibold text-white mb-1">Translators</h3>
+        <p class="text-gray-400 text-sm mb-3">Breaking down language barriers</p>
         <p class="text-gray-500 text-sm">Localizing our applications for global accessibility</p>
       </div>
       
@@ -243,14 +243,14 @@
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">💬</span>
         </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-1">Community</h3>
-        <p class="text-gray-600 text-sm mb-3">Supporting users and building connections</p>
+        <h3 class="text-lg font-semibold text-white mb-1">Community</h3>
+        <p class="text-gray-400 text-sm mb-3">Supporting users and building connections</p>
         <p class="text-gray-500 text-sm">Moderating forums, answering questions, and fostering community</p>
       </div>
     </div>
     
     <div class="mt-12 text-center">
-      <p class="text-gray-600 mb-6">
+      <p class="text-gray-400 mb-6">
         Want to join our collective? We're always looking for passionate people who share our values.
       </p>
       <Button text="Join the Revolution" href="/contribute" variant="primary" size="lg" />
