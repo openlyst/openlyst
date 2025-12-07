@@ -267,7 +267,7 @@
   {#snippet children()}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">JavaScript / Fetch</h3>
+        <h3 class="text-lg font-semibold text-white mb-4">JavaScript / Fetch</h3>
         <div class="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
           <pre class="text-gray-300"><span class="text-purple-400">const</span> response = <span class="text-purple-400">await</span> <span class="text-yellow-400">fetch</span>(<span class="text-emerald-400">'{baseUrl}/api/v1/apps'</span>);
 <span class="text-purple-400">const</span> data = <span class="text-purple-400">await</span> response.<span class="text-yellow-400">json</span>();
@@ -277,11 +277,11 @@
         </div>
       </div>
       <div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">cURL</h3>
+        <h3 class="text-lg font-semibold text-white mb-4">cURL</h3>
         <div class="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
           <pre class="text-gray-300"><span class="text-emerald-400">curl</span> {baseUrl}/api/v1/apps</pre>
         </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-4 mt-6">Python</h3>
+        <h3 class="text-lg font-semibold text-white mb-4 mt-6">Python</h3>
         <div class="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
           <pre class="text-gray-300"><span class="text-purple-400">import</span> requests
 
@@ -298,38 +298,38 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
   {#snippet children()}
     <div class="space-y-8">
       {#each endpoints as endpoint}
-        <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+        <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden">
           <!-- Endpoint Header -->
-          <div class="p-6 border-b border-gray-200">
+          <div class="p-6 border-b border-gray-700">
             <div class="flex flex-wrap items-center gap-3 mb-3">
-              <span class="px-3 py-1 bg-green-100 text-green-700 font-mono font-bold text-sm rounded-lg">
+              <span class="px-3 py-1 bg-green-900/50 text-green-400 font-mono font-bold text-sm rounded-lg">
                 {endpoint.method}
               </span>
-              <code class="text-lg font-mono text-gray-900">{endpoint.path}</code>
+              <code class="text-lg font-mono text-white">{endpoint.path}</code>
               <button 
-                class="ml-auto px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg transition-colors text-sm flex items-center gap-2"
+                class="ml-auto px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors text-sm flex items-center gap-2"
                 on:click={() => copyToClipboard(`${baseUrl}${endpoint.path.replace(':slug', 'doudou')}`, endpoint.path)}
               >
                 <i class="fas fa-copy"></i>
                 {copiedEndpoint === endpoint.path ? 'Copied!' : 'Copy URL'}
               </button>
             </div>
-            <p class="text-gray-600">{endpoint.description}</p>
+            <p class="text-gray-400">{endpoint.description}</p>
           </div>
           
           <!-- Parameters -->
           {#if endpoint.params && endpoint.params.length > 0}
-            <div class="p-6 border-b border-gray-200 bg-gray-50">
-              <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">Path Parameters</h4>
+            <div class="p-6 border-b border-gray-700 bg-gray-900">
+              <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">Path Parameters</h4>
               <div class="space-y-3">
                 {#each endpoint.params as param}
                   <div class="flex items-start gap-4">
-                    <code class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-sm font-mono">{param.name}</code>
-                    <span class="px-2 py-1 bg-gray-200 text-gray-600 rounded text-xs">{param.type}</span>
+                    <code class="px-2 py-1 bg-purple-900/50 text-purple-300 rounded text-sm font-mono">{param.name}</code>
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">{param.type}</span>
                     {#if param.required}
-                      <span class="px-2 py-1 bg-red-100 text-red-600 rounded text-xs">required</span>
+                      <span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">required</span>
                     {/if}
-                    <span class="text-gray-600 text-sm">{param.description}</span>
+                    <span class="text-gray-400 text-sm">{param.description}</span>
                   </div>
                 {/each}
               </div>
@@ -338,16 +338,16 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
           
           <!-- Query Parameters -->
           {#if endpoint.queryParams && endpoint.queryParams.length > 0}
-            <div class="p-6 border-b border-gray-200 bg-gray-50">
-              <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">Query Parameters</h4>
+            <div class="p-6 border-b border-gray-700 bg-gray-900">
+              <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">Query Parameters</h4>
               <div class="space-y-3">
                 {#each endpoint.queryParams as param}
                   <div class="flex flex-wrap items-start gap-2 sm:gap-4">
-                    <code class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-sm font-mono">{param.name}</code>
-                    <span class="px-2 py-1 bg-gray-200 text-gray-600 rounded text-xs">{param.type}</span>
-                    <span class="text-gray-600 text-sm flex-1">{param.description}</span>
+                    <code class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-sm font-mono">{param.name}</code>
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">{param.type}</span>
+                    <span class="text-gray-400 text-sm flex-1">{param.description}</span>
                     {#if param.default}
-                      <span class="text-gray-400 text-sm">Default: {param.default}</span>
+                      <span class="text-gray-500 text-sm">Default: {param.default}</span>
                     {/if}
                   </div>
                 {/each}
@@ -357,7 +357,7 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
           
           <!-- Response -->
           <div class="p-6">
-            <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">Example Response</h4>
+            <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">Example Response</h4>
             <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
               <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{endpoint.response}</pre>
             </div>
