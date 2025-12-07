@@ -37,7 +37,6 @@
         </h3>
         <ul class="space-y-2">
           <li><a href="/apps/doudou" class="text-gray-300 hover:text-yellow-400 transition-colors">DouDou</a></li>
-          <li><a href="/apps/baobao" class="text-gray-300 hover:text-yellow-400 transition-colors">BaoBao</a></li>
         </ul>
       </div>
 
