@@ -207,10 +207,7 @@
                 "Android"
             ],
             "deprecated": true,
-            "screenshots": [
-                "https://example.com/baobao_screenshot1.png",
-                "https://example.com/baobao_screenshot2.png"
-            ],
+            "screenshots": [],
             "versions": [
                 {
                     "version": "1.0.0-beta",
