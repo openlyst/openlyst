@@ -366,7 +366,7 @@
                                 "arm64": ""
                             },
                             "deb": {
-                                "x86_64": "",
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/file/dist/1.0.0/docan-1.0.0-linux.deb",
                                 "arm64": ""
                             }
                         },
