@@ -1,12 +1,12 @@
-import { getAllApps, loadRepoConfig } from '$lib/utils/repo';
+import { getActiveApps, loadRepoConfig } from '$lib/utils/repo';
 
 export const load = async () => {
   const [apps, config] = await Promise.all([
-    getAllApps(),
+    getActiveApps(),
     loadRepoConfig()
   ]);
   
-  // Get featured apps based on the featuredApps array in config
+  // Get featured apps based on the featuredApps array in config (only non-deprecated)
   const featuredApps = config.featuredApps
     .map(featuredId => apps.find(app => 
       app.bundleIdentifier === featuredId || 
