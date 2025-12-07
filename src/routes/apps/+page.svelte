@@ -43,9 +43,9 @@
           title="{app.name}"
           description="{app.localizedDescription}"
           href="/apps/{nameToSlug(app.name)}"
-          status="released"
+          status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
           platforms="{app.platforms}"
-          image="🎵"
+          image="{app.iconURL}"
         />
       {/each}
     </div>
