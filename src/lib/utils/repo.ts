@@ -9,7 +9,7 @@ export async function loadRepoConfig(): Promise<RepoConfig> {
 
   try {
     // Import the YAML file as a module in SvelteKit
-    const configModule = await import('$lib/assets/yaml/repo.yaml?raw');
+    const configModule = await import('$lib/assets/yaml/repo.json?raw');
     const yamlContent = configModule.default;
     
     // The file contains JSON format, so we parse it as JSON
