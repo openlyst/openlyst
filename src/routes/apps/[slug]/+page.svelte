@@ -367,14 +367,17 @@
 >
   {#snippet children()}
     <div id="screenshots" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {#each screenshots.slice(0, 6) as screenshot}
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      {#each screenshots.slice(0, 6) as screenshot, index}
+        <button 
+          class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          on:click={() => openLightbox(screenshot.imageURL || screenshot, index)}
+        >
           <img 
             src="{screenshot.imageURL || screenshot}" 
-            alt="{app.name} screenshot" 
+            alt="{app.name} screenshot {index + 1}" 
             class="w-full h-64 sm:h-80 object-cover"
           />
-        </div>
+        </button>
       {/each}
     </div>
   {/snippet}
