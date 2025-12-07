@@ -386,6 +386,17 @@
     ],
     "news": [
         {
+            "title": "Introducing Docan - AI Chat with Liquid Glass",
+            "identifier": "docan_100_release",
+            "caption": "Meet Docan, our new universal AI chat application featuring stunning Liquid Glass design.",
+            "date": "2025-12-07",
+            "tintColor": "#6366f1",
+            "imageURL": "/icons/Docan/icon.png",
+            "notify": true,
+            "url": "/apps/docan",
+            "appID": "docan"
+        },
+        {
             "title": "BaoBao Discontinued - Meet Klit!",
             "identifier": "baobao_deprecated_klit_release",
             "caption": "BaoBao is being retired in favor of Klit, our new and improved e621 client.",
