@@ -358,7 +358,7 @@
                                 "arm64": ""
                             },
                             "appimage": {
-                                "x86_64": "",
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/file/dist/1.0.0/docan-1.0.0-linux.AppImage",
                                 "arm64": ""
                             },
                             "rpm": {
