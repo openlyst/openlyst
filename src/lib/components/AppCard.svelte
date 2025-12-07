@@ -33,17 +33,17 @@
 </script>
 
 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-red-200 hover:shadow-xl transition-shadow duration-300">
-  {#if image}
-    <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+  <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+    {#if image && (image.startsWith('http') || image.startsWith('/'))}
+      <img src={image} alt="{title} icon" class="w-20 h-20 rounded-2xl object-cover shadow-lg" />
+    {:else if image}
       <span class="text-6xl text-white">{image}</span>
-    </div>
-  {:else}
-    <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+    {:else}
       <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
         <span class="text-red-900 font-bold text-2xl">★</span>
       </div>
-    </div>
-  {/if}
+    {/if}
+  </div>
 
   <div class="p-6">
     <div class="flex items-center justify-between mb-3">
