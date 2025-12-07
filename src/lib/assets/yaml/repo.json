@@ -354,11 +354,11 @@
                         },
                         "Linux": {
                             "zip": {
-                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/file/dist/docan-linux-x64.zip",
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/raw/dist/docan-linux-x64.zip",
                                 "arm64": ""
                             },
                             "appimage": {
-                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/file/dist/1.0.0/docan-1.0.0-linux.AppImage",
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/raw/dist/1.0.0/docan-1.0.0-linux.AppImage",
                                 "arm64": ""
                             },
                             "rpm": {
@@ -366,7 +366,7 @@
                                 "arm64": ""
                             },
                             "deb": {
-                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/file/dist/1.0.0/docan-1.0.0-linux.deb",
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12347959312/artifacts/raw/dist/1.0.0/docan-1.0.0-linux.deb",
                                 "arm64": ""
                             }
                         },
