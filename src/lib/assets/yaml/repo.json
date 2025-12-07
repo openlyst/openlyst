@@ -76,6 +76,10 @@
                             "deb": {
                                 "x86_64": "",
                                 "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "https://aur.archlinux.org/packages/doudou-bin",
+                                "arm64": ""
                             }
                         },
                         "Android": {
