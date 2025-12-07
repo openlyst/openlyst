@@ -61,8 +61,8 @@
     {#if apps.length === 0}
       <div class="text-center py-12">
         <div class="text-6xl mb-4">✨</div>
-        <h3 class="text-2xl font-semibold text-gray-900 mb-2">No Deprecated Apps</h3>
-        <p class="text-gray-600 max-w-md mx-auto">
+        <h3 class="text-2xl font-semibold text-white mb-2">No Deprecated Apps</h3>
+        <p class="text-gray-400 max-w-md mx-auto">
           All our apps are currently active and maintained!
         </p>
       </div>
