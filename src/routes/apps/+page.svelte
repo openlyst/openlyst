@@ -59,6 +59,20 @@
         </p>
       </div>
     {/if}
+    
+    <!-- Link to deprecated apps -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-500 text-sm mb-3">Can't find an app you're looking for?</p>
+      <a 
+        href="/deprecated" 
+        class="inline-flex items-center text-gray-600 hover:text-red-600 transition-colors text-sm font-medium"
+      >
+        <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Check our deprecated apps
+      </a>
+    </div>
   {/snippet}
 </Section>
 
