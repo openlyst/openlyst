@@ -247,6 +247,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </svelte:head>
 
+<!-- Deprecation Warning Banner -->
+{#if app.deprecated}
+<div class="bg-yellow-500 text-yellow-900">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center justify-center gap-3">
+      <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+      </svg>
+      <div class="text-center">
+        <p class="font-bold">This app has been deprecated</p>
+        <p class="text-sm">This application is no longer maintained and will not receive updates. Consider using an alternative.</p>
+      </div>
+      <a href="/apps" class="ml-4 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-medium rounded-lg transition-colors whitespace-nowrap">
+        View Active Apps
+      </a>
+    </div>
+  </div>
+</div>
+{/if}
+
 <!-- Hero Section -->
 <section class="bg-gradient-to-br from-purple-600 via-red-600 to-red-700 text-white py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
