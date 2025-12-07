@@ -199,12 +199,13 @@
             "bundleIdentifier": "klit",
             "subtitle": "Modern e621 Client",
             "localizedDescription": "The successor to BaoBao. A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
-            "iconURL": "https://example.com/klit-icon.png",
+            "iconURL": "/icons/Klit/klit_release_image.png",
             "tintColor": "#ff6b35",
             "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
             "screenshots": [
-                "https://example.com/klit_screenshot1.png",
-                "https://example.com/klit_screenshot2.png"
+                "/icons/Klit/home.png",
+                "/icons/Klit/popular.png",
+                "/icons/Klit/post.png"
             ],
             "versions": [
                 {
@@ -265,7 +266,7 @@
             "caption": "BaoBao is being retired in favor of Klit, our new and improved e621 client.",
             "date": "2025-12-06",
             "tintColor": "#ff6b35",
-            "imageURL": "https://example.com/klit_release_image.png",
+            "imageURL": "/icons/Klit/klit_release_image.png",
             "notify": true,
             "url": "/apps/klit",
             "appID": "klit"
