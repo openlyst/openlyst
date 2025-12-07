@@ -666,3 +666,70 @@
     </div>
   </div>
 {/if}
+
+<!-- Image Lightbox -->
+<svelte:window on:keydown={handleLightboxKeydown} />
+
+{#if showLightbox}
+  <div 
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+    on:click={closeLightbox}
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image viewer"
+  >
+    <!-- Close button -->
+    <button 
+      class="absolute top-4 right-4 z-10 p-2 text-white/80 hover:text-white transition-colors bg-black/30 rounded-full"
+      on:click={closeLightbox}
+      aria-label="Close image viewer"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    
+    <!-- Previous button -->
+    {#if screenshots.length > 1}
+      <button 
+        class="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 text-white/80 hover:text-white transition-colors bg-black/30 hover:bg-black/50 rounded-full"
+        on:click|stopPropagation={prevImage}
+        aria-label="Previous image"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      
+      <!-- Next button -->
+      <button 
+        class="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 text-white/80 hover:text-white transition-colors bg-black/30 hover:bg-black/50 rounded-full"
+        on:click|stopPropagation={nextImage}
+        aria-label="Next image"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    {/if}
+    
+    <!-- Image container -->
+    <div 
+      class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center"
+      on:click|stopPropagation
+    >
+      <img 
+        src={lightboxImageUrl} 
+        alt="{app.name} screenshot {lightboxIndex + 1}"
+        class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+      />
+    </div>
+    
+    <!-- Image counter -->
+    {#if screenshots.length > 1}
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/50 text-white text-sm rounded-full">
+        {lightboxIndex + 1} / {screenshots.length}
+      </div>
+    {/if}
+  </div>
+{/if}
