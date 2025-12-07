@@ -3,7 +3,7 @@
     title: string;
     subtitle?: string;
     centered?: boolean;
-    background?: 'default' | 'red' | 'dark';
+    background?: 'default' | 'red' | 'dark' | 'gray';
     children: any;
   }
 
@@ -18,18 +18,19 @@
   const backgroundClasses = {
     default: 'bg-white',
     red: 'bg-red-600 text-white',
-    dark: 'bg-red-950 text-white'
+    dark: 'bg-red-950 text-white',
+    gray: 'bg-gray-50'
   };
 </script>
 
 <section class="py-16 {backgroundClasses[background]}">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12 {centered ? '' : 'text-left'}">
-      <h2 class="text-3xl font-bold tracking-tight {background === 'default' ? 'text-gray-900' : 'text-white'} sm:text-4xl">
+      <h2 class="text-3xl font-bold tracking-tight {background === 'default' || background === 'gray' ? 'text-gray-900' : 'text-white'} sm:text-4xl">
         {title}
       </h2>
       {#if subtitle}
-        <p class="mt-4 text-lg {background === 'default' ? 'text-gray-600' : 'text-gray-300'} max-w-2xl {centered ? 'mx-auto' : ''}">
+        <p class="mt-4 text-lg {background === 'default' || background === 'gray' ? 'text-gray-600' : 'text-gray-300'} max-w-2xl {centered ? 'mx-auto' : ''}">
           {subtitle}
         </p>
       {/if}
