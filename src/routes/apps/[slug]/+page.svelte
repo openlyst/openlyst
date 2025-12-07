@@ -15,6 +15,49 @@
   // State for download selections per platform
   let downloadSelections: Record<string, { type?: string; arch?: string }> = {};
   
+  // State for image lightbox
+  let showLightbox = false;
+  let lightboxImageUrl = '';
+  let lightboxIndex = 0;
+  
+  // Function to open lightbox
+  function openLightbox(imageUrl: string, index: number) {
+    lightboxImageUrl = imageUrl;
+    lightboxIndex = index;
+    showLightbox = true;
+  }
+  
+  // Function to close lightbox
+  function closeLightbox() {
+    showLightbox = false;
+  }
+  
+  // Function to navigate to previous image
+  function prevImage() {
+    const allScreenshots = getScreenshots();
+    lightboxIndex = (lightboxIndex - 1 + allScreenshots.length) % allScreenshots.length;
+    lightboxImageUrl = allScreenshots[lightboxIndex].imageURL || allScreenshots[lightboxIndex];
+  }
+  
+  // Function to navigate to next image
+  function nextImage() {
+    const allScreenshots = getScreenshots();
+    lightboxIndex = (lightboxIndex + 1) % allScreenshots.length;
+    lightboxImageUrl = allScreenshots[lightboxIndex].imageURL || allScreenshots[lightboxIndex];
+  }
+  
+  // Function to handle lightbox keyboard events
+  function handleLightboxKeydown(event: KeyboardEvent) {
+    if (!showLightbox) return;
+    if (event.key === 'Escape') {
+      closeLightbox();
+    } else if (event.key === 'ArrowLeft') {
+      prevImage();
+    } else if (event.key === 'ArrowRight') {
+      nextImage();
+    }
+  }
+  
   // Function to handle modal keyboard events
   function handleModalKeydown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
