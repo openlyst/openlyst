@@ -107,6 +107,7 @@ export interface App {
     privacy?: string[];
   };
   beta?: boolean;
+  deprecated?: boolean;
   patreon?: {
     pledgeURL: string;
   };
