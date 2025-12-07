@@ -31,8 +31,8 @@
   {#snippet children()}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">Power to the People</h3>
-        <p class="text-gray-600 mb-6">
+        <h3 class="text-2xl font-bold text-white mb-4">Power to the People</h3>
+        <p class="text-gray-400 mb-6">
           In a world where technology increasingly serves corporate interests and surveillance capitalism, 
           we stand for digital freedom. Every application we build is designed to give users complete 
           control over their data, their experience, and their digital life.
@@ -41,32 +41,32 @@
         <ul class="space-y-3">
           <li class="flex items-start">
             <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <span class="text-gray-700">No tracking, no surveillance, no data collection</span>
+            <span class="text-gray-300">No tracking, no surveillance, no data collection</span>
           </li>
           <li class="flex items-start">
             <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <span class="text-gray-700">Transparent development and open source code</span>
+            <span class="text-gray-300">Transparent development and open source code</span>
           </li>
           <li class="flex items-start">
             <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <span class="text-gray-700">Community-driven features and development</span>
+            <span class="text-gray-300">Community-driven features and development</span>
           </li>
           <li class="flex items-start">
             <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <span class="text-gray-700">Free for everyone, forever</span>
+            <span class="text-gray-300">Free for everyone, forever</span>
           </li>
         </ul>
       </div>
       
-      <div class="bg-red-50 rounded-lg p-8 border border-red-200">
-        <blockquote class="text-lg text-gray-800 italic mb-4">
+      <div class="bg-gray-800 rounded-lg p-8 border border-red-900">
+        <blockquote class="text-lg text-gray-200 italic mb-4">
           "The master's tools will never dismantle the master's house. They may allow us temporarily 
           to beat him at his own game, but they will never enable us to bring about genuine change."
         </blockquote>
         <cite class="text-red-600 font-semibold">- Audre Lorde</cite>
         
-        <div class="mt-6 p-4 bg-white rounded border border-red-200">
-          <p class="text-sm text-gray-600">
+        <div class="mt-6 p-4 bg-gray-900 rounded border border-red-800">
+          <p class="text-sm text-gray-400">
             We believe that to create truly free software, we must build new tools with revolutionary 
             principles from the ground up, not just replicate existing exploitative systems.
           </p>
