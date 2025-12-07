@@ -369,7 +369,7 @@
     <div id="screenshots" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {#each screenshots.slice(0, 6) as screenshot, index}
         <button 
-          class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          class="bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-red-900/20 transition-shadow focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900"
           on:click={() => openLightbox(screenshot.imageURL || screenshot, index)}
         >
           <img 
@@ -391,15 +391,15 @@
   background="default"
 >
   {#snippet children()}
-    <div id="downloads" class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+    <div id="downloads" class="bg-gray-800 rounded-2xl shadow-xl border border-red-900 overflow-hidden">
       <div class="grid grid-cols-1 lg:grid-cols-4 min-h-[600px]">
         <!-- Sidebar with Versions -->
-        <div class="lg:col-span-1 bg-gray-50 border-r border-gray-200 p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-4">Versions</h3>
+        <div class="lg:col-span-1 bg-gray-900 border-r border-gray-700 p-6">
+          <h3 class="text-lg font-semibold text-white mb-4">Versions</h3>
           <div class="space-y-2">
             {#each app.versions as version, index}
               <button
-                class="w-full text-left p-3 rounded-lg transition-colors {index === 0 ? 'bg-red-100 border border-red-200 text-red-900' : 'hover:bg-gray-100 border border-transparent'}"
+                class="w-full text-left p-3 rounded-lg transition-colors {index === 0 ? 'bg-red-900/50 border border-red-700 text-red-200' : 'hover:bg-gray-800 border border-transparent text-gray-300'}"
                 on:click={() => selectedVersion = version}
               >
                 <div class="flex items-center justify-between">
@@ -421,9 +421,9 @@
           <!-- Version Header -->
           <div class="mb-8">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-2xl font-bold text-gray-900">Version {selectedVersion.version}</h3>
+              <h3 class="text-2xl font-bold text-white">Version {selectedVersion.version}</h3>
               <button
-                class="px-4 py-2 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
+                class="px-4 py-2 bg-red-900/50 text-red-200 hover:bg-red-900 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
                 on:click={() => showModal = true}
               >
                 <i class="fas fa-info-circle"></i>
@@ -436,7 +436,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {#each getVersionPlatforms(selectedVersion) as platform}
               {#if platformHasDownloads(platform, selectedVersion)}
-              <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <div class="border border-gray-700 rounded-xl p-6 hover:shadow-lg hover:shadow-red-900/10 transition-shadow bg-gray-900">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor});">
                     {#if platform === 'iOS'}
@@ -456,8 +456,8 @@
                     {/if}
                   </div>
                   <div>
-                    <h4 class="text-lg font-semibold text-gray-900">{platform}</h4>
-                    <p class="text-sm text-gray-500">
+                    <h4 class="text-lg font-semibold text-white">{platform}</h4>
+                    <p class="text-sm text-gray-400">
                       {#if platform === 'iOS'}iPhone and iPad
                       {:else if platform === 'Android'}Phones and tablets
                       {:else if platform === 'macOS'}Mac computers
@@ -469,7 +469,7 @@
                   </div>
                 </div>
                 
-                <p class="text-sm text-gray-700 mb-4">{getInstallInstructions(platform, selectedVersion)}</p>
+                <p class="text-sm text-gray-300 mb-4">{getInstallInstructions(platform, selectedVersion)}</p>
                 
                 <!-- Download button with dropdown -->
                 {#if getAllDownloadOptions(platform, selectedVersion).length === 1}
@@ -491,11 +491,11 @@
                     </button>
                     
                     {#if openDropdown === platform}
-                      <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                      <div class="absolute z-10 mt-2 w-full bg-gray-800 border border-gray-700 rounded-lg shadow-lg overflow-hidden">
                         {#each getAllDownloadOptions(platform, selectedVersion) as option}
                           <a
                             href={option.url}
-                            class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 border-b border-gray-100 last:border-b-0 transition-colors"
+                            class="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 border-b border-gray-700 last:border-b-0 transition-colors"
                             on:click={() => closeDropdowns()}
                           >
                             <div class="flex items-center gap-2">
@@ -552,7 +552,7 @@
 <!-- Version Details Modal -->
 {#if showModal}
   <div 
-    class="fixed inset-0 backdrop-blur-sm bg-blue-900/20 flex items-center justify-center p-4 z-50" 
+    class="fixed inset-0 backdrop-blur-sm bg-black/50 flex items-center justify-center p-4 z-50" 
     role="dialog" 
     aria-modal="true"
     aria-labelledby="modal-title"
@@ -561,26 +561,26 @@
     on:keydown={handleModalKeydown}
   >
     <div 
-      class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" 
+      class="bg-gray-800 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl border border-gray-700" 
       role="document"
     >
       <!-- Modal Header -->
-      <div class="flex items-center justify-between p-6 border-b border-gray-200">
+      <div class="flex items-center justify-between p-6 border-b border-gray-700">
         <div class="flex items-center gap-3">
           <img src="{app.iconURL}" alt="{app.name} icon" class="w-12 h-12 rounded-xl" />
           <div>
-            <h3 id="modal-title" class="text-xl font-bold text-gray-900">{app.name} v{selectedVersion.version}</h3>
+            <h3 id="modal-title" class="text-xl font-bold text-white">{app.name} v{selectedVersion.version}</h3>
             {#if selectedVersion.date}
-              <p class="text-sm text-gray-500">Released: {selectedVersion.date}</p>
+              <p class="text-sm text-gray-400">Released: {selectedVersion.date}</p>
             {/if}
           </div>
         </div>
         <button
-          class="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          class="p-2 hover:bg-gray-700 rounded-lg transition-colors"
           aria-label="Close modal"
           on:click={() => showModal = false}
         >
-          <i class="fas fa-times text-gray-500"></i>
+          <i class="fas fa-times text-gray-400"></i>
         </button>
       </div>
 
@@ -588,34 +588,34 @@
       <div class="p-6">
         <!-- Version Description -->
         <div class="mb-6">
-          <h4 class="text-lg font-semibold text-gray-900 mb-3">What's New</h4>
-          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 modal-prose">
+          <h4 class="text-lg font-semibold text-white mb-3">What's New</h4>
+          <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 modal-prose">
             {@html marked(selectedVersion.localizedDescription)}
           </div>
         </div>
 
         <!-- Version Info -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div class="bg-gray-50 rounded-lg p-4">
-            <h5 class="font-medium text-gray-900 mb-2">Version Number</h5>
-            <p class="text-gray-700">{selectedVersion.version}</p>
+          <div class="bg-gray-900 rounded-lg p-4">
+            <h5 class="font-medium text-gray-200 mb-2">Version Number</h5>
+            <p class="text-gray-300">{selectedVersion.version}</p>
           </div>
           {#if selectedVersion.date}
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h5 class="font-medium text-gray-900 mb-2">Release Date</h5>
-              <p class="text-gray-700">{selectedVersion.date}</p>
+            <div class="bg-gray-900 rounded-lg p-4">
+              <h5 class="font-medium text-gray-200 mb-2">Release Date</h5>
+              <p class="text-gray-300">{selectedVersion.date}</p>
             </div>
           {/if}
           {#if selectedVersion.size}
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h5 class="font-medium text-gray-900 mb-2">Download Size</h5>
-              <p class="text-gray-700">{selectedVersion.size}</p>
+            <div class="bg-gray-900 rounded-lg p-4">
+              <h5 class="font-medium text-gray-200 mb-2">Download Size</h5>
+              <p class="text-gray-300">{selectedVersion.size}</p>
             </div>
           {/if}
           {#if selectedVersion.minOSVersion}
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h5 class="font-medium text-gray-900 mb-2">Minimum OS</h5>
-              <p class="text-gray-700">{selectedVersion.minOSVersion}</p>
+            <div class="bg-gray-900 rounded-lg p-4">
+              <h5 class="font-medium text-gray-200 mb-2">Minimum OS</h5>
+              <p class="text-gray-300">{selectedVersion.minOSVersion}</p>
             </div>
           {/if}
         </div>
