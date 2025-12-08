@@ -421,7 +421,7 @@
                     "downloads": {
                         "iOS": "",
                         "Android": {
-                            "apk": "",
+                            "apk": "https://gitlab.com/Openlyst/repstore/-/jobs/12351424890/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
                             "aab": ""
                         }
                     },
