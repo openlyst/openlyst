@@ -294,6 +294,10 @@
                             "deb": {
                                 "x86_64": "https://files.catbox.moe/axla55.deb",
                                 "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "https://aur.archlinux.org/packages/klit-bin",
+                                "arm64": ""
                             }
                         },
                         "Android": {
