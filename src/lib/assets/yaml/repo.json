@@ -387,9 +387,55 @@
                     "localizedDescription": "# Docan 1.0.0\n\nInitial release of Docan - Universal AI Chat Application.\n\n## Features\n- Liquid Glass design system\n- Multi-provider AI support\n- Cross-platform compatibility\n- Secure local storage with Hive and Flutter Secure Storage\n- Beautiful animations powered by flutter_animate\n- Markdown rendering for AI responses\n- Code syntax highlighting\n\n## Tech Stack\n- Flutter SDK ^3.10.3\n- HTTP & API: http, dio\n- State Management: provider\n- Storage: shared_preferences, hive, flutter_secure_storage\n- UI: flutter_markdown, flutter_highlight, google_fonts\n- Animations: flutter_animate"
                 }
             ]
+        },
+        {
+            "name": "RepStore",
+            "bundleIdentifier": "repstore",
+            "subtitle": "Alternative App Store for Android",
+            "localizedDescription": "Alternative app store for iOS*/Android based on repositories compatible with AltStore repos. Browse and install APKs from repositories with a clean, modern interface.",
+            "iconURL": "/icons/RepStore/icon.png",
+            "tintColor": "#10b981",
+            "platforms": [
+                "iOS",
+                "Android"
+            ],
+            "screenshots": [],
+            "versions": [
+                {
+                    "version": "1.0.0",
+                    "date": "2025-12-07",
+                    "platforms": [
+                        "iOS",
+                        "Android"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Coming soon via AltStore",
+                        "Android": "Download the APK directly from our repository"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "Android": {
+                            "apk": "",
+                            "aab": ""
+                        }
+                    },
+                    "localizedDescription": "# RepStore 1.0.0\n\nInitial release of RepStore - Alternative App Store.\n\n## Features\n- Browse and install APKs from AltStore-compatible repositories\n- Clean, modern Material Design interface\n- Cached network images for fast loading\n- APK file management with permissions handling\n- Repository management\n- App update notifications\n\n## Tech Stack\n- Flutter SDK ^3.9.2\n- State Management: provider\n- Networking: dio, http\n- Storage: sqflite, shared_preferences\n- UI: cached_network_image, flutter_svg, shimmer, photo_view\n- File Management: open_file, permission_handler"
+                }
+            ]
         }
     ],
     "news": [
+        {
+            "title": "RepStore - Alternative App Store Now Available",
+            "identifier": "repstore_100_release",
+            "caption": "Browse and install apps from AltStore-compatible repositories on Android and iOS*.",
+            "date": "2025-12-07",
+            "tintColor": "#10b981",
+            "imageURL": "/icons/RepStore/icon.png",
+            "notify": true,
+            "url": "/apps/repstore",
+            "appID": "repstore"
+        },
         {
             "title": "Introducing Docan - AI Chat with Liquid Glass",
             "identifier": "docan_100_release",
