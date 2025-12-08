@@ -393,13 +393,19 @@
             "bundleIdentifier": "repstore",
             "subtitle": "Alternative App Store for Android",
             "localizedDescription": "Alternative app store for iOS*/Android based on repositories compatible with AltStore repos. Browse and install APKs from repositories with a clean, modern interface.",
-            "iconURL": "/icons/RepStore/icon.png",
+            "iconURL": "https://gitlab.com/Openlyst/repstore/-/raw/main/icon.png?ref_type=heads",
             "tintColor": "#10b981",
             "platforms": [
                 "iOS",
                 "Android"
             ],
-            "screenshots": [],
+            "screenshots": [
+                "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/app.png?ref_type=heads",
+                "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/home.png?ref_type=heads",
+                "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/search.png?ref_type=heads",
+                "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/news.png?ref_type=heads",
+                "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/sources.png?ref_type=heads"
+            ],
             "versions": [
                 {
                     "version": "1.0.0",
