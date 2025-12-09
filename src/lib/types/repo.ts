@@ -83,6 +83,7 @@ export interface AppVersion {
   downloads?: PlatformDownloads; // New nested structure
   size?: number;
   minOSVersion?: string;
+  sourceCode?: string; // URL to source code for this version
 }
 
 export interface AppScreenshots {
