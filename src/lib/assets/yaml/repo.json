@@ -65,7 +65,7 @@
                         },
                         "Linux": {
                             "zip": {
-                                "x86_64": "",
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12379012338/artifacts/raw/doudou-8.2.0-linux-x64.zip",
                                 "arm64": ""
                             },
                             "appimage": {
