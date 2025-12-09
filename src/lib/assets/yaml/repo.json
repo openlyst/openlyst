@@ -57,7 +57,7 @@
                             "x86_64": "",
                             "arm64": "",
                             "universal": "https://files.catbox.moe/a69opm.zip",
-                            "homebrew": ""
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
                         },
                         "Windows": {
                             "x86_64": "",
