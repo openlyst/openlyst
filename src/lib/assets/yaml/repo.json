@@ -358,7 +358,9 @@
                         "iOS": "",
                         "macOS": {
                             "x86_64": "",
-                            "arm64": ""
+                            "arm64": "",
+                            "universal": "https://files.catbox.moe/zy6gg9.zip",
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
                             "x86_64": "",
