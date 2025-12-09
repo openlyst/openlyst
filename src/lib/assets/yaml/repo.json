@@ -34,7 +34,7 @@
                 {
                     "version": "8.1.0",
                     "date": "2025-12-08",
-                    "sourceCode": "",
+                    "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/856908361cd25bce0244c8cf7b94eebb1b83bebf",
                     "platforms": [
                         "iOS",
                         "macOS",
