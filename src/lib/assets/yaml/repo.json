@@ -367,7 +367,7 @@
                         },
                         "Android": {
                             "apk": "https://files.catbox.moe/s88f1n.apk",
-                            "aab": ""
+                            "aab": "https://gitlab.com/Openlyst/klit/-/jobs/12365966201/artifacts/raw/build/app/outputs/bundle/release/app-release.aab"
                         },
                         "Web": ""
                     },
