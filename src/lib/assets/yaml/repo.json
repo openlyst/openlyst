@@ -32,6 +32,68 @@
             ],
             "versions": [
                 {
+                    "version": "8.2.0",
+                    "date": "2025-12-09",
+                    "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/61c88a54cc424b7f8f0d9e3ea5f792c46419f692",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                        "Windows": "Download source and compile yourself from GitLab pipeline.",
+                        "Linux": "Download the latest Linux build from GitLab CI.",
+                        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "https://files.catbox.moe/hdaan0.zip",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "",
+                            "aab": ""
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 8.2.0\n\n## Added\n- Added support for multiple languages.\n- Added support for English.\n- Added support for Russian.\n\n## Changed\n- Load in either the desktop or mobile UI depending on screen size rather than system.\n\n## Fixed\n- Fixed builds expiring. So now builds will no longer be broken after a week.\n\n## Removed\n- Removed big screen UI for mobile."
+                },
+                {
                     "version": "8.1.0",
                     "date": "2025-12-08",
                     "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/856908361cd25bce0244c8cf7b94eebb1b83bebf",
