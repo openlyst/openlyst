@@ -53,8 +53,8 @@
                     "downloads": {
                         "iOS": "",
                         "macOS": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "x86_64": "https://files.catbox.moe/3dcdb1.zip",
+                            "arm64": "https://files.catbox.moe/3dcdb1.zip"
                         },
                         "Windows": {
                             "x86_64": "",
