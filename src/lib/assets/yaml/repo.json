@@ -81,7 +81,7 @@
                                 "arm64": ""
                             },
                             "aur": {
-                                "x86_64": "https://aur.archlinux.org/packages/doudou-bin",
+                                "x86_64": "",
                                 "arm64": ""
                             }
                         },
