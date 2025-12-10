@@ -1,15 +1,17 @@
 <script lang="ts">
-  import { Section, Button } from '$lib';
+  import { Section, Button, Skeleton } from '$lib';
   import type { PageData } from './$types';
   import { marked } from 'marked';
+  import { onMount } from 'svelte';
   
   export let data: PageData;
   
-  const { app } = data;
-  const latestVersion = app.versions[0];
+  let isLoaded = false;
+  let app: typeof data.app;
+  let latestVersion: typeof data.app.versions[0];
   
   // State for version selection and modal visibility
-  let selectedVersion = latestVersion;
+  let selectedVersion: typeof data.app.versions[0];
   let showModal = false;
   
   // State for download selections per platform
@@ -19,6 +21,15 @@
   let showLightbox = false;
   let lightboxImageUrl = '';
   let lightboxIndex = 0;
+  
+  onMount(() => {
+    setTimeout(() => {
+      app = data.app;
+      latestVersion = app.versions[0];
+      selectedVersion = latestVersion;
+      isLoaded = true;
+    }, 100);
+  });
   
   // Function to open lightbox
   function openLightbox(imageUrl: string, index: number) {
