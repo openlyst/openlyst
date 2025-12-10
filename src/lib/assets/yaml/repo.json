@@ -69,7 +69,7 @@
                                 "arm64": ""
                             },
                             "appimage": {
-                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12379012340/artifacts/file/artifacts/klit-linux-x86_64.AppImage",
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12379012340/artifacts/raw/artifacts/klit-linux-x86_64.AppImage",
                                 "arm64": ""
                             },
                             "rpm": {
