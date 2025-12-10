@@ -1,11 +1,25 @@
 <script lang="ts">
-  import { Section, AppCard, Button } from '$lib';
+  import { Section, AppCard, Button, Skeleton } from '$lib';
   import { nameToSlug } from '$lib/utils/repo';
   import favicon from '$lib/assets/favicon.svg';
+  import { onMount } from 'svelte';
   
   export let data;
   
-  const { apps, featuredApps, config } = data;
+  let isLoaded = false;
+  let apps: typeof data.apps = [];
+  let featuredApps: typeof data.featuredApps = [];
+  let config: typeof data.config;
+  
+  onMount(() => {
+    // Simulate async content loading for smooth transition
+    setTimeout(() => {
+      apps = data.apps;
+      featuredApps = data.featuredApps;
+      config = data.config;
+      isLoaded = true;
+    }, 100);
+  });
 </script>
 
 <svelte:head>
