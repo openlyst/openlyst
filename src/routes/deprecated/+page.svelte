@@ -1,11 +1,20 @@
 <script lang="ts">
-  import { Section, AppCard } from '$lib';
+  import { Section, AppCard, Skeleton } from '$lib';
   import { nameToSlug } from '$lib/utils/repo';
   import type { PageData } from './$types';
+  import { onMount } from 'svelte';
   
   export let data: PageData;
   
-  const { apps } = data;
+  let isLoaded = false;
+  let apps: typeof data.apps = [];
+  
+  onMount(() => {
+    setTimeout(() => {
+      apps = data.apps;
+      isLoaded = true;
+    }, 100);
+  });
 </script>
 
 <svelte:head>
