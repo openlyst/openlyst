@@ -573,17 +573,6 @@
     ],
     "news": [
         {
-            "title": "Bad News for Apple Users",
-            "identifier": "we_broke_lol",
-            "caption": "The MacBook we use for building iOS and macOS decided to just stop charging. Because of this, we can no longer provide builds for Apple devices until further notice.",
-            "date": "2025-12-08",
-            "tintColor": "#10b981",
-            "imageURL": "",
-            "notify": true,
-            "url": "",
-            "appID": ""
-        },
-        {
             "title": "RepStore - Alternative App Store Now Available",
             "identifier": "repstore_100_release",
             "caption": "Browse and install apps from AltStore-compatible repositories on Android and iOS*.",
