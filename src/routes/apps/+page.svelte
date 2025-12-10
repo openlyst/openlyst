@@ -47,19 +47,28 @@
 >
   {#snippet children()}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {#each apps as app}
-        <AppCard 
-          title="{app.name}"
-          description="{app.localizedDescription}"
-          href="/apps/{nameToSlug(app.name)}"
-          status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
-          platforms="{app.platforms}"
-          image="{app.iconURL}"
-        />
-      {/each}
+      {#if !isLoaded}
+        <!-- Skeleton loading state -->
+        {#each Array(6) as _}
+          <Skeleton variant="card" />
+        {/each}
+      {:else}
+        {#each apps as app}
+          <div class="animate-fadeIn">
+            <AppCard 
+              title="{app.name}"
+              description="{app.localizedDescription}"
+              href="/apps/{nameToSlug(app.name)}"
+              status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
+              platforms="{app.platforms}"
+              image="{app.iconURL}"
+            />
+          </div>
+        {/each}
+      {/if}
     </div>
     
-    {#if apps.length === 0}
+    {#if isLoaded && apps.length === 0}
       <div class="text-center py-12">
         <div class="text-6xl mb-4">📱</div>
         <h3 class="text-2xl font-semibold text-white mb-2">No Apps Yet</h3>
