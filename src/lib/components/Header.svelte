@@ -8,7 +8,8 @@
     { name: 'Home', href: '/' },
     { name: 'Apps', href: '/apps' },
     { name: 'About', href: '/about' },
-    { name: 'Contribute', href: '/contribute' }
+    { name: 'Contribute', href: '/contribute' },
+    { name: 'Support', href: 'https://communistparty.ie/en/' }
   ];
 </script>
 
