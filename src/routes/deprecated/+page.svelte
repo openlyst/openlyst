@@ -48,26 +48,33 @@
 >
   {#snippet children()}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {#each apps as app}
-        <div class="relative">
-          <div class="absolute -top-2 -right-2 z-10">
-            <span class="px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded-full shadow-lg">
-              DEPRECATED
-            </span>
+      {#if !isLoaded}
+        <!-- Skeleton loading state -->
+        {#each Array(3) as _}
+          <Skeleton variant="card" />
+        {/each}
+      {:else}
+        {#each apps as app}
+          <div class="relative animate-fadeIn">
+            <div class="absolute -top-2 -right-2 z-10">
+              <span class="px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded-full shadow-lg">
+                DEPRECATED
+              </span>
+            </div>
+            <AppCard 
+              title="{app.name}"
+              description="{app.localizedDescription}"
+              href="/apps/{nameToSlug(app.name)}"
+              status="released"
+              platforms="{app.platforms}"
+              image="{app.iconURL}"
+            />
           </div>
-          <AppCard 
-            title="{app.name}"
-            description="{app.localizedDescription}"
-            href="/apps/{nameToSlug(app.name)}"
-            status="released"
-            platforms="{app.platforms}"
-            image="{app.iconURL}"
-          />
-        </div>
-      {/each}
+        {/each}
+      {/if}
     </div>
     
-    {#if apps.length === 0}
+    {#if isLoaded && apps.length === 0}
       <div class="text-center py-12">
         <div class="text-6xl mb-4">✨</div>
         <h3 class="text-2xl font-semibold text-white mb-2">No Deprecated Apps</h3>
@@ -90,3 +97,20 @@
     </div>
   {/snippet}
 </Section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  :global(.animate-fadeIn) {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+</style>
