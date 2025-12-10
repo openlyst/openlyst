@@ -125,26 +125,35 @@
 >
   {#snippet children()}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-      {#each apps as app}
-        <AppCard
-          title="{app.name}"
-          description="{app.localizedDescription}"
-          status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
-          platforms="{app.platforms}"
-          href="/apps/{nameToSlug(app.name)}"
-          image="{app.iconURL}"
-        />
-      {/each}
-      
-      {#if apps.length === 0}
-        <!-- Fallback content if no apps are loaded -->
-        <div class="col-span-full text-center py-12">
-          <div class="text-6xl mb-4">🚀</div>
-          <h3 class="text-2xl font-semibold text-white mb-2">Coming Soon</h3>
-          <p class="text-gray-400 max-w-md mx-auto">
-            We're working on amazing revolutionary applications. Check back soon!
-          </p>
-        </div>
+      {#if !isLoaded}
+        <!-- Skeleton loading state -->
+        {#each Array(4) as _}
+          <Skeleton variant="card" />
+        {/each}
+      {:else}
+        {#each apps as app}
+          <div class="animate-fadeIn">
+            <AppCard
+              title="{app.name}"
+              description="{app.localizedDescription}"
+              status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
+              platforms="{app.platforms}"
+              href="/apps/{nameToSlug(app.name)}"
+              image="{app.iconURL}"
+            />
+          </div>
+        {/each}
+        
+        {#if apps.length === 0}
+          <!-- Fallback content if no apps are loaded -->
+          <div class="col-span-full text-center py-12">
+            <div class="text-6xl mb-4">🚀</div>
+            <h3 class="text-2xl font-semibold text-white mb-2">Coming Soon</h3>
+            <p class="text-gray-400 max-w-md mx-auto">
+              We're working on amazing revolutionary applications. Check back soon!
+            </p>
+          </div>
+        {/if}
       {/if}
     </div>
     
@@ -176,3 +185,20 @@
     </div>
   {/snippet}
 </Section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  :global(.animate-fadeIn) {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+</style>
