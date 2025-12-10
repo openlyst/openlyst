@@ -270,6 +270,7 @@
   
   // Function to format screenshots
   function getScreenshots() {
+    if (!app) return [];
     if (Array.isArray(app.screenshots)) {
       return app.screenshots.map(screenshot => 
         typeof screenshot === 'string' 
@@ -292,14 +293,62 @@
     return allScreenshots;
   }
   
-  const screenshots = getScreenshots();
+  $: screenshots = isLoaded ? getScreenshots() : [];
 </script>
 
 <svelte:head>
-  <title>{app.name} - OpenLyst</title>
-  <meta name="description" content="{app.localizedDescription}" />
+  <title>{isLoaded ? app.name : 'Loading...'} - OpenLyst</title>
+  <meta name="description" content="{isLoaded ? app.localizedDescription : 'Loading app details...'}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </svelte:head>
+
+{#if !isLoaded}
+  <!-- Loading State -->
+  <section class="bg-gradient-to-br from-purple-600 via-red-600 to-red-700 text-white py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-white/20 rounded-2xl mr-4 animate-pulse"></div>
+            <div class="flex-1">
+              <div class="h-10 bg-white/20 rounded-lg w-48 animate-pulse mb-2"></div>
+              <div class="h-6 bg-white/20 rounded-lg w-64 animate-pulse"></div>
+            </div>
+          </div>
+          <div class="space-y-3 mb-8">
+            <div class="h-5 bg-white/20 rounded animate-pulse"></div>
+            <div class="h-5 bg-white/20 rounded animate-pulse w-5/6"></div>
+            <div class="h-5 bg-white/20 rounded animate-pulse w-4/6"></div>
+          </div>
+          <div class="flex gap-4">
+            <div class="h-12 w-40 bg-white/20 rounded-lg animate-pulse"></div>
+            <div class="h-12 w-40 bg-white/20 rounded-lg animate-pulse"></div>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+          <div class="space-y-4">
+            {#each Array(4) as _}
+              <div class="flex items-center space-x-3">
+                <div class="w-4 h-4 bg-white/20 rounded-full animate-pulse"></div>
+                <div class="h-5 bg-white/20 rounded w-32 animate-pulse"></div>
+              </div>
+            {/each}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Section title="Loading..." subtitle="Please wait while we load the app details" background="default">
+    {#snippet children()}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {#each Array(3) as _}
+          <div class="bg-gray-800 rounded-lg h-64 animate-pulse"></div>
+        {/each}
+      </div>
+    {/snippet}
+  </Section>
+{:else}
 
 <!-- Deprecation Warning Banner -->
 {#if app.deprecated}
@@ -325,7 +374,7 @@
 <section class="bg-gradient-to-br from-purple-600 via-red-600 to-red-700 text-white py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
+      <div class="animate-fadeIn">
         <div class="flex items-center mb-4">
           <img src="{app.iconURL}" alt="{app.name} icon" class="w-16 h-16 rounded-2xl mr-4" />
           <div>
