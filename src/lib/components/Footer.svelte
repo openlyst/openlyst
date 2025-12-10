@@ -43,7 +43,7 @@
           <li><a href="/contribute" class="text-gray-300 hover:text-yellow-400 transition-colors">Contribute</a></li>
           <li><a href="/about" class="text-gray-300 hover:text-yellow-400 transition-colors">About Us</a></li>
           <li><a href="/docs/api" class="text-gray-300 hover:text-yellow-400 transition-colors">Documentation</a></li>
-          <li><a href="/" class="text-gray-300 hover:text-yellow-400 transition-colors">Support</a></li>
+          <li><a href="https://communistparty.ie/en/" class="text-gray-300 hover:text-yellow-400 transition-colors">Support</a></li>
         </ul>
       </div>
     </div>
