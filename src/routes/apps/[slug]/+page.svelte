@@ -751,10 +751,13 @@
   </div>
 {/if}
 
-<!-- Image Lightbox -->
+{/if}
+<!-- End of isLoaded check -->
+
+<!-- Image Lightbox (always available for keyboard handling) -->
 <svelte:window on:keydown={handleLightboxKeydown} />
 
-{#if showLightbox}
+{#if isLoaded && showLightbox}
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <div 
     class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
