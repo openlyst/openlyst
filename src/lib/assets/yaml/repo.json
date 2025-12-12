@@ -380,6 +380,68 @@
             ],
             "versions": [
                 {
+                    "version": "2.0.0",
+                    "date": "2025-12-11",
+                    "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/56a77864f64d63ac85cd94d14ee07d75ced3467b",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository",
+                        "Android": "Use RepStore to install from our repository",
+                        "macOS": "Download the latest macOS build",
+                        "Windows": "Download the latest Windows build",
+                        "Linux": "Download the latest Linux build from GitLab CI",
+                        "Web": "Access the web version"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "https://aur.archlinux.org/packages/klit-bin",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "",
+                            "aab": ""
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 2.0.0\n\n## Added\n- Adds guest mode.\n- Adds keyboard shortcuts for desktop.\n- Adds support for a web proxy.\n- Adds support for blocklists.\n\n## Changed\n- Removed e621 as the default host.\n- Updated desktop theme.\n- Redesigned the login page.\n- Deprecates RawKeyboardListener.\n- Updated mobile theme.\n- No longer shows a full-screen button for desktop post views if it's a video.\n\n## Fixed\n- Fixed the keyboard not being able to be reopened in search.\n- Fixed tag suggestions not closing.\n- Fixed saving credentials on desktop.\n- Fixed tag suggestion prompt not closing in some cases."
+                },
+                {
                     "version": "1.0.0",
                     "date": "2025-12-06",
                     "sourceCode": "",
