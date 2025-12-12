@@ -451,10 +451,10 @@
   background="default"
 >
   {#snippet children()}
-    <div id="downloads" class="bg-gray-800 rounded-2xl shadow-xl border border-red-900 overflow-hidden">
+    <div id="downloads" class="bg-gray-800 rounded-2xl shadow-xl border border-red-900 overflow-visible">
       <div class="grid grid-cols-1 lg:grid-cols-4 min-h-[600px]">
         <!-- Sidebar with Versions -->
-        <div class="lg:col-span-1 bg-gray-900 border-r border-gray-700 p-6">
+        <div class="lg:col-span-1 bg-gray-900 border-r border-gray-700 p-6 rounded-l-2xl">
           <h3 class="text-lg font-semibold text-white mb-4">Versions</h3>
           <div class="space-y-2">
             {#each app.versions as version, index}
