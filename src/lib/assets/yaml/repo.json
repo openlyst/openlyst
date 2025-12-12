@@ -88,7 +88,8 @@
                         },
                         "Android": {
                             "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12379977587/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
-                            "aab": "https://gitlab.com/Openlyst/doudou/-/jobs/12379977590/artifacts/raw/build/app/outputs/bundle/release/app-release.aab"
+                            "aab": "https://gitlab.com/Openlyst/doudou/-/jobs/12379977590/artifacts/raw/build/app/outputs/bundle/release/app-release.aab",
+                            "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
                         },
                         "Web": ""
                     },
