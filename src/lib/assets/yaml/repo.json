@@ -413,7 +413,7 @@
                         },
                         "Linux": {
                             "zip": {
-                                "x86_64": "",
+                                "x86_64": "https://gitlab.com/Openlyst/klit/-/jobs/12412859553/artifacts/file/klit-linux-x64.zip",
                                 "arm64": ""
                             },
                             "appimage": {
