@@ -425,7 +425,7 @@
                                 "arm64": ""
                             },
                             "deb": {
-                                "x86_64": "",
+                                "x86_64": "https://gitlab.com/Openlyst/klit/-/jobs/12412859554/artifacts/file/artifacts/klit-linux-amd64.deb",
                                 "arm64": ""
                             },
                             "aur": {
