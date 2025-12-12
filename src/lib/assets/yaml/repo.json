@@ -431,7 +431,8 @@
                             "aur": {
                                 "x86_64": "https://aur.archlinux.org/packages/klit-bin",
                                 "arm64": ""
-                            }
+                            },
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/linux/"
                         },
                         "Android": {
                             "apk": "https://gitlab.com/Openlyst/klit/-/jobs/12412859551/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
