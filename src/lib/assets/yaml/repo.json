@@ -400,7 +400,7 @@
                         "Web": "Access the web version"
                     },
                     "downloads": {
-                        "iOS": "",
+                        "iOS": "https://files.catbox.moe/zhstx9.ipa",
                         "macOS": {
                             "x86_64": "",
                             "arm64": "",
