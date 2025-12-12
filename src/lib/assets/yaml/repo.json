@@ -417,7 +417,7 @@
                                 "arm64": ""
                             },
                             "appimage": {
-                                "x86_64": "",
+                                "x86_64": "https://gitlab.com/Openlyst/klit/-/jobs/12412859555/artifacts/file/artifacts/klit-linux-x86_64.AppImage",
                                 "arm64": ""
                             },
                             "rpm": {
