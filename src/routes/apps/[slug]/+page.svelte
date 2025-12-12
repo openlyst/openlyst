@@ -843,4 +843,81 @@
   :global(.animate-fadeIn) {
     animation: fadeIn 0.3s ease-out forwards;
   }
+  
+  /* Version History Markdown Styling */
+  :global(.version-prose h1),
+  :global(.version-prose h2),
+  :global(.version-prose h3),
+  :global(.version-prose h4),
+  :global(.version-prose h5),
+  :global(.version-prose h6) {
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(.version-prose h1) { font-size: 1.25rem; }
+  :global(.version-prose h2) { font-size: 1.125rem; }
+  :global(.version-prose h3) { font-size: 1rem; }
+  
+  :global(.version-prose p) {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+  
+  :global(.version-prose ul),
+  :global(.version-prose ol) {
+    margin-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  :global(.version-prose ul) {
+    list-style-type: disc;
+  }
+  
+  :global(.version-prose ol) {
+    list-style-type: decimal;
+  }
+  
+  :global(.version-prose li) {
+    margin-bottom: 0.375rem;
+    line-height: 1.5;
+  }
+  
+  :global(.version-prose strong) {
+    font-weight: 600;
+    color: #fef08a;
+  }
+  
+  :global(.version-prose em) {
+    font-style: italic;
+  }
+  
+  :global(.version-prose code) {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: 'Courier New', monospace;
+    color: #fef08a;
+  }
+  
+  :global(.version-prose a) {
+    color: #fef08a;
+    text-decoration: underline;
+  }
+  
+  :global(.version-prose a:hover) {
+    color: #fde047;
+  }
+  
+  :global(.version-prose blockquote) {
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    color: #fecaca;
+  }
 </style>
