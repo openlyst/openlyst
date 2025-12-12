@@ -611,7 +611,9 @@
                 </span>
               {/if}
             </div>
-            <p class="text-red-100 mb-4">{version.localizedDescription}</p>
+            <div class="version-prose text-red-100 mb-4">
+              {@html marked(version.localizedDescription)}
+            </div>
             {#if version.date}
               <p class="text-red-200 text-sm">Released: {version.date}</p>
             {/if}
