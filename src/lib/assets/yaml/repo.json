@@ -87,7 +87,7 @@
                             "homebrew": ""
                         },
                         "Android": {
-                            "apk": "",
+                            "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12423843208/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
                             "aab": "https://gitlab.com/Openlyst/doudou/-/jobs/12423843211/artifacts/raw/build/app/outputs/bundle/release/app-release.aab",
                             "apkpure": ""
                         },
