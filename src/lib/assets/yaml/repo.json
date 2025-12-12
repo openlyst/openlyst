@@ -404,7 +404,7 @@
                         "macOS": {
                             "x86_64": "",
                             "arm64": "",
-                            "universal": "",
+                            "universal": "https://files.catbox.moe/sd4ojy.zip",
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
