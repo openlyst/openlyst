@@ -32,6 +32,70 @@
             ],
             "versions": [
                 {
+                    "version": "9.0.0",
+                    "date": "2025-12-12",
+                    "sourceCode": "",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                        "Windows": "Download source and compile yourself from GitLab pipeline.",
+                        "Linux": "Download the latest Linux build from GitLab CI.",
+                        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": ""
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "homebrew": ""
+                        },
+                        "Android": {
+                            "apk": "",
+                            "aab": "",
+                            "apkpure": ""
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 9.0.0\n\n## Added\n\n## Changed\n- Redesign the desktop style sheet.\n- New search page for desktop.\n- Redesigned the login page for desktop and mobile.\n\n## Fixed\n\n## Removed\n- Removed downloads from the repo."
+                },
+                {
                     "version": "8.2.0",
                     "date": "2025-12-09",
                     "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/c428e74f3c4fd36f4e461e3a0e88353901f20747",
