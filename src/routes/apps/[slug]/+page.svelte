@@ -509,7 +509,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {#each getVersionPlatforms(selectedVersion) as platform}
               {#if platformHasDownloads(platform, selectedVersion)}
-              <div class="border border-gray-700 rounded-xl p-6 hover:shadow-lg hover:shadow-red-900/10 transition-shadow bg-gray-900">
+              <div class="border border-gray-700 rounded-xl p-6 hover:shadow-lg hover:shadow-red-900/10 transition-shadow bg-gray-900 overflow-visible">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor});">
                     {#if platform === 'iOS'}
