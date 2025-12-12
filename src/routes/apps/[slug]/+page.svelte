@@ -120,9 +120,11 @@
     if (!downloads || typeof downloads === 'string') return [];
     
     // For platforms like Linux with type > arch structure
+    // Also include direct string URLs (like homebrew, apkpure) as types
     const types = Object.keys(downloads).filter(key => {
       const value = downloads[key];
-      return typeof value === 'object' && hasAnyDownload(value);
+      // Include if it's an object with downloads OR a non-empty string URL
+      return (typeof value === 'object' && hasAnyDownload(value)) || (typeof value === 'string' && value !== '');
     });
     
     return types;
@@ -185,7 +187,9 @@
       'apk': 'APK',
       'aab': 'AAB Bundle',
       'dmg': 'DMG',
-      'pkg': 'PKG'
+      'pkg': 'PKG',
+      'homebrew': 'Homebrew',
+      'apkpure': 'APKPure'
     };
     return labels[type] || type.toUpperCase();
   }
@@ -222,11 +226,15 @@
     const options: DownloadOption[] = [];
     const types = getAvailableTypes(platform, version);
     
+    // Special store types that are direct links (not architecture-based)
+    const storeTypes = ['homebrew', 'apkpure'];
+    
     if (types.length > 0) {
       // Platform has type structure (like Linux with zip/deb/rpm or Android with apk/aab)
       for (const type of types) {
         const typeObj = downloads[type];
         if (typeof typeObj === 'string' && typeObj) {
+          // Direct URL type (like homebrew, apkpure)
           options.push({ label: getTypeLabel(type), url: typeObj, type });
         } else if (typeof typeObj === 'object') {
           const archs = Object.keys(typeObj).filter(arch => typeObj[arch]);
