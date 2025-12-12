@@ -550,7 +550,7 @@
                   <Button text="Download {platform}" href="{getAllDownloadOptions(platform, selectedVersion)[0].url}" variant="primary" size="sm" />
                 {:else if getAllDownloadOptions(platform, selectedVersion).length > 1}
                   <!-- Multiple download options - dropdown button -->
-                  <div class="relative">
+                  <div class="relative" style="z-index: 50;">
                     <button
                       class="inline-flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors"
                       style="background-color: {app.tintColor};"
@@ -564,7 +564,7 @@
                     </button>
                     
                     {#if openDropdown === platform}
-                      <div class="absolute z-10 mt-2 w-full bg-gray-800 border border-gray-700 rounded-lg shadow-lg overflow-hidden">
+                      <div class="absolute z-[100] mt-2 w-full bg-gray-800 border border-gray-700 rounded-lg shadow-2xl overflow-visible" style="position: absolute; z-index: 9999;">
                         {#each getAllDownloadOptions(platform, selectedVersion) as option}
                           <a
                             href={option.url}
