@@ -56,8 +56,8 @@
                         "macOS": {
                             "x86_64": "",
                             "arm64": "",
-                            "universal": "",
-                            "homebrew": ""
+                            "universal": "https://files.catbox.moe/0773y8.zip",
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
                         },
                         "Windows": {
                             "x86_64": "",
