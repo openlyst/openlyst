@@ -84,7 +84,7 @@
                                 "x86_64": "htttp://aur.archlinux.org/packages/doudou-bin",
                                 "arm64": ""
                             },
-                            "homebrew": ""
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
                         },
                         "Android": {
                             "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12423843208/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
