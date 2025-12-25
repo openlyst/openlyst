@@ -467,7 +467,7 @@
           <div class="space-y-2">
             {#each app.versions as version, index}
               <button
-                class="w-full text-left p-3 rounded-lg transition-colors {selectedVersion === version ? 'bg-red-900/50 border border-red-700 text-red-200' : 'hover:bg-gray-800 border border-transparent text-gray-300'}"
+                class="w-full text-left p-3 rounded-lg transition-all duration-300 ease-in-out {selectedVersion === version ? 'bg-red-900/50 border border-red-700 text-red-200 scale-[1.02] shadow-lg shadow-red-900/30' : 'hover:bg-gray-800 border border-transparent text-gray-300 hover:scale-[1.01]'}"
                 on:click={() => selectedVersion = version}
               >
                 <div class="flex items-center justify-between">
@@ -486,6 +486,8 @@
 
         <!-- Main Content Area -->
         <div class="lg:col-span-3 p-8">
+          {#key selectedVersion.version}
+          <div class="animate-version-change">
           <!-- Version Header -->
           <div class="mb-8">
             <div class="flex items-center justify-between mb-4">
