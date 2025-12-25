@@ -932,4 +932,20 @@
     font-style: italic;
     color: #fecaca;
   }
+
+  /* Version change animation */
+  .animate-version-change {
+    animation: versionFadeIn 0.3s ease-out;
+  }
+
+  @keyframes versionFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
