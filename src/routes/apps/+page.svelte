@@ -62,6 +62,7 @@
               status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
               platforms="{app.platforms}"
               image="{app.iconURL}"
+              tintColor="{app.tintColor}"
             />
           </div>
         {/each}
