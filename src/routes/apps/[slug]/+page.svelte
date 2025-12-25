@@ -783,7 +783,7 @@
 {#if isLoaded && showLightbox}
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <div 
-    class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md animate-lightbox-open"
     on:click={closeLightbox}
     on:keydown={(e) => e.key === 'Enter' && closeLightbox()}
     role="dialog"
