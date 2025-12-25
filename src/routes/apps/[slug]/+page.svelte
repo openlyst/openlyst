@@ -574,11 +574,12 @@
                     </button>
                     
                     {#if openDropdown === platform}
-                      <div class="absolute z-[100] mt-2 w-full bg-gray-800 border border-gray-700 rounded-lg shadow-2xl overflow-visible" style="position: absolute; z-index: 9999;">
-                        {#each getAllDownloadOptions(platform, selectedVersion) as option}
+                      <div class="absolute z-[100] mt-2 w-full bg-gray-800 border border-gray-700 rounded-lg shadow-2xl overflow-hidden animate-dropdown-open" style="position: absolute; z-index: 9999;">
+                        {#each getAllDownloadOptions(platform, selectedVersion) as option, i}
                           <a
                             href={option.url}
-                            class="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 border-b border-gray-700 last:border-b-0 transition-colors"
+                            class="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 border-b border-gray-700 last:border-b-0 transition-all duration-200 hover:pl-6 animate-dropdown-item"
+                            style="animation-delay: {i * 50}ms;"
                             on:click={() => closeDropdowns()}
                           >
                             <div class="flex items-center gap-2">
@@ -946,6 +947,39 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* Dropdown animations */
+  .animate-dropdown-open {
+    animation: dropdownSlideIn 0.2s ease-out;
+    transform-origin: top;
+  }
+
+  @keyframes dropdownSlideIn {
+    from {
+      opacity: 0;
+      transform: scaleY(0.8) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1) translateY(0);
+    }
+  }
+
+  .animate-dropdown-item {
+    animation: dropdownItemFadeIn 0.2s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes dropdownItemFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 </style>
