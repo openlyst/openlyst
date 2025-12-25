@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   
-  const baseUrl = 'https://openlyst.onrender.com';
+  const baseUrl = 'https://openlyst.ink';
   
   interface Endpoint {
     method: string;
@@ -25,7 +25,7 @@
     "description": "FOSS apps for iOS, Android, and Desktop...",
     "iconURL": "/favicon.svg",
     "headerURL": "https://...",
-    "website": "https://openlyst.onrender.com",
+    "website": "https://openlyst.ink",
     "tintColor": "#dc2626",
     "featuredApps": ["doudou"],
     "totalApps": 3,

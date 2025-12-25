@@ -4,7 +4,7 @@
     "description": "FOSS apps for iOS, Android, and Desktop made for everyone. Focused on more unique apps.",
     "iconURL": "/favicon.svg",
     "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads",
-    "website": "https://openlyst.onrender.com",
+    "website": "https://openlyst.ink",
     "tintColor": "#dc2626",
     "featuredApps": [
         "doudou"
