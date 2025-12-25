@@ -718,6 +718,87 @@
                     "localizedDescription": "# RepStore 1.0.0\n\nInitial release of RepStore - Alternative App Store.\n\n## Features\n- Browse and install APKs from AltStore-compatible repositories\n- Clean, modern Material Design interface\n- Cached network images for fast loading\n- APK file management with permissions handling\n- Repository management\n- App update notifications\n\n## Tech Stack\n- Flutter SDK ^3.9.2\n- State Management: provider\n- Networking: dio, http\n- Storage: sqflite, shared_preferences\n- UI: cached_network_image, flutter_svg, shimmer, photo_view\n- File Management: open_file, permission_handler"
                 }
             ]
+        },
+        {
+            "name": "Finar",
+            "bundleIdentifier": "finar",
+            "subtitle": "Replacement frontend for Jellyfin",
+            "localizedDescription": "A beautiful, modern multi-platform Jellyfin client built with Flutter. Features native video playback powered by media_kit, glassmorphism design with blur effects and glass-like components, dark mode, offline support with Hive, and adaptive UI optimized for desktop, mobile, and TV.",
+            "iconURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
+            "tintColor": "#6366f1",
+            "platforms": [
+                "iOS",
+                "macOS",
+                "Windows",
+                "Linux",
+                "Android",
+                "Web"
+            ],
+            "screenshots": [],
+            "versions": [
+                {
+                    "version": "1.0.0",
+                    "date": "2025-12-25",
+                    "sourceCode": "https://gitlab.com/Openlyst/finar",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Coming soon via AltStore",
+                        "Android": "Download the APK directly from GitLab CI",
+                        "macOS": "Download from GitLab CI or compile from source",
+                        "Windows": "Download from GitLab CI or compile from source",
+                        "Linux": "Download from GitLab CI or compile from source",
+                        "Web": "Access the web version or self-host with Docker"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": ""
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "",
+                            "aab": ""
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# Finar 1.0.0\n\nInitial release of Finar - A beautiful Jellyfin client.\n\n## Features\n- 🎬 Native Video Playback - Powered by media_kit for smooth, high-quality video streaming\n- 📱 Multi-Platform Support - Runs on Android, iOS, macOS, Windows, Linux, Web, and TV\n- 🎨 Glassmorphism Design - Beautiful, modern UI with blur effects and glass-like components\n- 🌙 Dark Mode - Sleek dark theme designed for comfortable viewing\n- 💾 Offline Support - Cache media and settings locally with Hive\n- 🔄 State Management - Efficient state handling with Riverpod\n- 📺 Adaptive UI - Separate interfaces optimized for desktop, mobile, and TV\n\n## Tech Stack\n- Flutter SDK ^3.10.3\n- State Management: Riverpod\n- Video Playback: media_kit\n- Local Storage: Hive\n- Networking: Dio\n- UI Effects: Glassmorphism, Flutter Animate"
+                }
+            ]
         }
     ],
     "news": [
