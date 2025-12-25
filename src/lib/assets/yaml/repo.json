@@ -701,6 +701,16 @@
     ],
     "news": [
         {
+            "title": "We're Moving to openlyst.ink!",
+            "identifier": "website_migration_2024",
+            "caption": "We are currently migrating all our services to our new home at https://openlyst.ink. Update your bookmarks!",
+            "date": "2025-12-24",
+            "tintColor": "#dc2626",
+            "imageURL": "/favicon.svg",
+            "notify": true,
+            "url": "https://openlyst.ink"
+        },
+        {
             "title": "RepStore - Alternative App Store Now Available",
             "identifier": "repstore_100_release",
             "caption": "Browse and install apps from AltStore-compatible repositories on Android and iOS*.",
