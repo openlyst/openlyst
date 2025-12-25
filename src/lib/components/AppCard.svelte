@@ -62,19 +62,25 @@
     </div>
 
     <div class="mb-4 flex-grow">
-      <p class="text-gray-300 text-sm leading-relaxed">
-        {#if expanded || !isLongDescription}
+      <div class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: {expanded ? '500px' : '4.5rem'};">
+        <p class="text-gray-300 text-sm leading-relaxed">
           {description}
-        {:else}
-          {truncatedDescription}
-        {/if}
-      </p>
+        </p>
+      </div>
       {#if isLongDescription}
         <button 
           onclick={() => expanded = !expanded}
-          class="text-red-400 hover:text-red-300 text-sm font-medium mt-1 transition-colors"
+          class="text-red-400 hover:text-red-300 text-sm font-medium mt-2 transition-colors inline-flex items-center gap-1"
         >
           {expanded ? 'Show less' : 'Read more'}
+          <svg 
+            class="w-4 h-4 transition-transform duration-300 {expanded ? 'rotate-180' : ''}" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
         </button>
       {/if}
     </div>
