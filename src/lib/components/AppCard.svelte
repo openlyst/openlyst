@@ -22,6 +22,8 @@
   }: Props = $props();
 
   let expanded = $state(false);
+  let displayedText = $state('');
+  let isAnimating = $state(false);
   
   // Parse tintColor to RGB for various uses
   function parseColor(color: string): { r: number; g: number; b: number } {
@@ -50,6 +52,38 @@
   const truncatedDescription = isLongDescription 
     ? description.slice(0, MAX_DESCRIPTION_LENGTH).trim() + '...' 
     : description;
+
+  // Initialize displayed text
+  displayedText = isLongDescription ? truncatedDescription : description;
+
+  function typeText(targetText: string, startFrom: number = 0) {
+    isAnimating = true;
+    let currentIndex = startFrom;
+    
+    const interval = setInterval(() => {
+      if (currentIndex <= targetText.length) {
+        displayedText = targetText.slice(0, currentIndex);
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+        isAnimating = false;
+      }
+    }, 8); // Speed of typing
+  }
+
+  function toggleExpanded() {
+    if (isAnimating) return;
+    
+    expanded = !expanded;
+    
+    if (expanded) {
+      // Expanding: type out the rest of the text
+      typeText(description, truncatedDescription.length - 3); // Start from where truncation ended (minus "...")
+    } else {
+      // Collapsing: quickly shrink back
+      displayedText = truncatedDescription;
+    }
+  }
 
   const statusColors = {
     released: { bg: 'rgba(16, 185, 129, 0.2)', text: '#10b981', border: 'rgba(16, 185, 129, 0.3)' },
@@ -94,16 +128,17 @@
   <div class="content">
     <div class="description-container">
       <p class="description">
-        {#if expanded || !isLongDescription}
-          {description}
+        {#if isLongDescription}
+          {displayedText}<span class="cursor {isAnimating ? 'blinking' : 'hidden'}">|</span>
         {:else}
-          {truncatedDescription}
+          {description}
         {/if}
       </p>
       {#if isLongDescription}
         <button 
           class="read-more-btn"
-          onclick={() => expanded = !expanded}
+          onclick={toggleExpanded}
+          disabled={isAnimating}
           style="color: {baseColor};"
         >
           {expanded ? 'Show less' : 'Read more'}
