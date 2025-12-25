@@ -595,6 +595,8 @@
               {/if}
             {/each}
           </div>
+          </div>
+          {/key}
         </div>
       </div>
     </div>
