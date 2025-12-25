@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   interface Props {
     title: string;
     description: string;
@@ -20,6 +22,8 @@
   }: Props = $props();
 
   let expanded = $state(false);
+  let dominantColor = $state('rgb(239, 68, 68)'); // Default red-500
+  let secondaryColor = $state('rgb(185, 28, 28)'); // Default red-700
   
   const MAX_DESCRIPTION_LENGTH = 120;
   const isLongDescription = description.length > MAX_DESCRIPTION_LENGTH;
@@ -38,12 +42,86 @@
     beta: 'Beta',
     development: 'In Development'
   };
+
+  function extractColors(img: HTMLImageElement) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = img.naturalWidth || 64;
+    canvas.height = img.naturalHeight || 64;
+    
+    try {
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      
+      let r = 0, g = 0, b = 0, count = 0;
+      
+      // Sample pixels to get average color
+      for (let i = 0; i < data.length; i += 16) { // Sample every 4th pixel
+        const red = data[i];
+        const green = data[i + 1];
+        const blue = data[i + 2];
+        const alpha = data[i + 3];
+        
+        // Skip transparent pixels
+        if (alpha < 128) continue;
+        
+        // Skip very light or very dark pixels
+        const brightness = (red + green + blue) / 3;
+        if (brightness < 30 || brightness > 225) continue;
+        
+        r += red;
+        g += green;
+        b += blue;
+        count++;
+      }
+      
+      if (count > 0) {
+        r = Math.round(r / count);
+        g = Math.round(g / count);
+        b = Math.round(b / count);
+        
+        dominantColor = `rgb(${r}, ${g}, ${b})`;
+        // Create a darker shade for the gradient
+        secondaryColor = `rgb(${Math.round(r * 0.6)}, ${Math.round(g * 0.6)}, ${Math.round(b * 0.6)})`;
+      }
+    } catch (e) {
+      // CORS error or other issue, keep default colors
+      console.log('Could not extract color from image');
+    }
+  }
+
+  function handleImageLoad(event: Event) {
+    const img = event.target as HTMLImageElement;
+    extractColors(img);
+  }
+
+  onMount(() => {
+    // If we already have an image URL, try to extract colors
+    if (image && (image.startsWith('http') || image.startsWith('/'))) {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => extractColors(img);
+      img.src = image;
+    }
+  });
 </script>
 
 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-red-900 hover:shadow-xl hover:shadow-red-900/20 transition-shadow duration-300 h-full flex flex-col">
-  <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center flex-shrink-0">
+  <div 
+    class="h-48 flex items-center justify-center flex-shrink-0 transition-all duration-500"
+    style="background: linear-gradient(to bottom right, {dominantColor}, {secondaryColor});"
+  >
     {#if image && (image.startsWith('http') || image.startsWith('/'))}
-      <img src={image} alt="{title} icon" class="w-20 h-20 rounded-2xl object-cover shadow-lg" />
+      <img 
+        src={image} 
+        alt="{title} icon" 
+        class="w-20 h-20 rounded-2xl object-cover shadow-lg" 
+        crossorigin="anonymous"
+        onload={handleImageLoad}
+      />
     {:else if image}
       <span class="text-6xl text-white">{image}</span>
     {:else}
