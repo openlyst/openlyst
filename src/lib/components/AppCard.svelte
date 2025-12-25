@@ -296,6 +296,25 @@
     margin: 0;
   }
 
+  .cursor {
+    color: #cbd5e1;
+    font-weight: 300;
+    margin-left: 1px;
+  }
+
+  .cursor.blinking {
+    animation: blink 0.7s infinite;
+  }
+
+  .cursor.hidden {
+    opacity: 0;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
   .read-more-btn {
     display: inline-flex;
     align-items: center;
@@ -312,6 +331,11 @@
 
   .read-more-btn:hover {
     opacity: 0.8;
+  }
+
+  .read-more-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 
   .read-more-icon {
