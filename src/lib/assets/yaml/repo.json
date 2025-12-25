@@ -803,6 +803,17 @@
     ],
     "news": [
         {
+            "title": "Introducing Finar - A Beautiful Jellyfin Client",
+            "identifier": "finar_100_release",
+            "caption": "Meet Finar, our new multi-platform Jellyfin client with glassmorphism design. Releases will be added over the next few hours as they become ready.",
+            "date": "2025-12-25",
+            "tintColor": "#6366f1",
+            "imageURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
+            "notify": true,
+            "url": "/apps/finar",
+            "appID": "finar"
+        },
+        {
             "title": "We're Moving to openlyst.ink!",
             "identifier": "website_migration_2024",
             "caption": "We are currently migrating all our services to our new home at https://openlyst.ink. Update your bookmarks!",
