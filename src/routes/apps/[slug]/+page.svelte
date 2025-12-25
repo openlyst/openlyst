@@ -990,4 +990,35 @@
       transform: translateX(0);
     }
   }
+
+  /* Lightbox animations */
+  .animate-lightbox-open {
+    animation: lightboxFadeIn 0.3s ease-out;
+  }
+
+  @keyframes lightboxFadeIn {
+    from {
+      opacity: 0;
+      backdrop-filter: blur(0px);
+    }
+    to {
+      opacity: 1;
+      backdrop-filter: blur(12px);
+    }
+  }
+
+  .animate-lightbox-image {
+    animation: lightboxImageZoom 0.3s ease-out;
+  }
+
+  @keyframes lightboxImageZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 </style>
