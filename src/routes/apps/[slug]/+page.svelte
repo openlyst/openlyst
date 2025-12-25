@@ -829,7 +829,7 @@
     <!-- Image container -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div 
-      class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center"
+      class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center animate-lightbox-image"
       on:click|stopPropagation={() => {}}
       on:keydown|stopPropagation={() => {}}
     >
