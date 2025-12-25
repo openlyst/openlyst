@@ -676,6 +676,27 @@
             ],
             "versions": [
                 {
+                    "version": "2.0.0",
+                    "date": "2025-12-24",
+                    "sourceCode": "https://gitlab.com/Openlyst/repstore/-/tree/2e88bab29edc86db5c0a44f14b4addde7ef56870",
+                    "platforms": [
+                        "iOS",
+                        "Android"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Coming soon via AltStore",
+                        "Android": "Download the APK directly from our repository"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "Android": {
+                            "apk": "https://gitlab.com/Openlyst/repstore/-/jobs/artifacts/2e88bab29edc86db5c0a44f14b4addde7ef56870/raw/build/app/outputs/flutter-apk/app-release.apk?job=build_release_apk",
+                            "aab": ""
+                        }
+                    },
+                    "localizedDescription": "# 2.0.0\n\n## Added\n- Added a new API backend for Openlyst apps.\n\n## Changed\n- Updated website URL to the new Openlyst website.\n- Updated share prompt.\n\n## Removed\n- Removed default repo."
+                },
+                {
                     "version": "1.0.0",
                     "date": "2025-12-07",
                     "sourceCode": "",
