@@ -792,7 +792,7 @@
                         },
                         "Android": {
                             "apk": "",
-                            "aab": ""
+                            "aab": "https://gitlab.com/Openlyst/finar/-/jobs/12540893854/artifacts/raw/build/app/outputs/bundle/release/app-release.aab"
                         },
                         "Web": ""
                     },
