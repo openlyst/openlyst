@@ -19,6 +19,14 @@
     features = []
   }: Props = $props();
 
+  let expanded = $state(false);
+  
+  const MAX_DESCRIPTION_LENGTH = 120;
+  const isLongDescription = description.length > MAX_DESCRIPTION_LENGTH;
+  const truncatedDescription = isLongDescription 
+    ? description.slice(0, MAX_DESCRIPTION_LENGTH).trim() + '...' 
+    : description;
+
   const statusColors = {
     released: 'bg-green-900/50 text-green-300 border-green-700',
     beta: 'bg-yellow-900/50 text-yellow-300 border-yellow-700',
@@ -32,8 +40,8 @@
   };
 </script>
 
-<div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-red-900 hover:shadow-xl hover:shadow-red-900/20 transition-shadow duration-300">
-  <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+<div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-red-900 hover:shadow-xl hover:shadow-red-900/20 transition-shadow duration-300 h-full flex flex-col">
+  <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center flex-shrink-0">
     {#if image && (image.startsWith('http') || image.startsWith('/'))}
       <img src={image} alt="{title} icon" class="w-20 h-20 rounded-2xl object-cover shadow-lg" />
     {:else if image}
@@ -45,15 +53,31 @@
     {/if}
   </div>
 
-  <div class="p-6">
+  <div class="p-6 flex flex-col flex-grow">
     <div class="flex items-center justify-between mb-3">
       <h3 class="text-xl font-bold text-white">{title}</h3>
-      <span class="px-3 py-1 text-xs font-medium rounded-full border {statusColors[status]}">
+      <span class="px-3 py-1 text-xs font-medium rounded-full border {statusColors[status]} flex-shrink-0">
         {statusText[status]}
       </span>
     </div>
 
-    <p class="text-gray-300 mb-4">{description}</p>
+    <div class="mb-4 flex-grow">
+      <p class="text-gray-300 text-sm leading-relaxed">
+        {#if expanded || !isLongDescription}
+          {description}
+        {:else}
+          {truncatedDescription}
+        {/if}
+      </p>
+      {#if isLongDescription}
+        <button 
+          onclick={() => expanded = !expanded}
+          class="text-red-400 hover:text-red-300 text-sm font-medium mt-1 transition-colors"
+        >
+          {expanded ? 'Show less' : 'Read more'}
+        </button>
+      {/if}
+    </div>
 
     {#if features.length > 0}
       <div class="mb-4">
@@ -80,14 +104,16 @@
       </div>
     </div>
 
-    <a 
-      {href} 
-      class="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors duration-200"
-    >
-      Learn More
-      <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </a>
+    <div class="mt-auto pt-2">
+      <a 
+        {href} 
+        class="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors duration-200"
+      >
+        Learn More
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
   </div>
 </div>
