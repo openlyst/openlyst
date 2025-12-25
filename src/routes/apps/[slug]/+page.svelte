@@ -437,14 +437,22 @@
     <div id="screenshots" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {#each screenshots.slice(0, 6) as screenshot, index}
         <button 
-          class="bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-red-900/20 transition-shadow focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+          class="group bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-red-900/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900 hover:-translate-y-2"
           on:click={() => openLightbox(screenshot.imageURL || screenshot, index)}
         >
-          <img 
-            src="{screenshot.imageURL || screenshot}" 
-            alt="{app.name} screenshot {index + 1}" 
-            class="w-full h-64 sm:h-80 object-cover"
-          />
+          <div class="relative overflow-hidden">
+            <img 
+              src="{screenshot.imageURL || screenshot}" 
+              alt="{app.name} screenshot {index + 1}" 
+              class="w-full h-64 sm:h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+              <span class="text-white text-sm font-medium flex items-center gap-2">
+                <i class="fas fa-expand"></i>
+                Click to expand
+              </span>
+            </div>
+          </div>
         </button>
       {/each}
     </div>
