@@ -794,7 +794,7 @@
                             "apk": "https://gitlab.com/Openlyst/finar/-/jobs/12544240287/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
                             "aab": "https://gitlab.com/Openlyst/finar/-/jobs/12540893854/artifacts/raw/build/app/outputs/bundle/release/app-release.aab"
                         },
-                        "Web": ""
+                        "Web": "https://gitlab.com/Openlyst/finar/-/jobs/12544240292/artifacts/raw/finar-1.0.0-web.zip"
                     },
                     "localizedDescription": "# Finar 1.0.0\n\nInitial release of Finar - A beautiful Jellyfin client.\n\n## Features\n- 🎬 Native Video Playback - Powered by media_kit for smooth, high-quality video streaming\n- 📱 Multi-Platform Support - Runs on Android, iOS, macOS, Windows, Linux, Web, and TV\n- 🎨 Glassmorphism Design - Beautiful, modern UI with blur effects and glass-like components\n- 🌙 Dark Mode - Sleek dark theme designed for comfortable viewing\n- 💾 Offline Support - Cache media and settings locally with Hive\n- 🔄 State Management - Efficient state handling with Riverpod\n- 📺 Adaptive UI - Separate interfaces optimized for desktop, mobile, and TV\n\n## Tech Stack\n- Flutter SDK ^3.10.3\n- State Management: Riverpod\n- Video Playback: media_kit\n- Local Storage: Hive\n- Networking: Dio\n- UI Effects: Glassmorphism, Flutter Animate"
                 }
