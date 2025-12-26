@@ -791,7 +791,7 @@
                             }
                         },
                         "Android": {
-                            "apk": "",
+                            "apk": "https://gitlab.com/Openlyst/finar/-/jobs/12544240287/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
                             "aab": "https://gitlab.com/Openlyst/finar/-/jobs/12540893854/artifacts/raw/build/app/outputs/bundle/release/app-release.aab"
                         },
                         "Web": ""
