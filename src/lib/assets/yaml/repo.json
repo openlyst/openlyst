@@ -770,7 +770,7 @@
                         },
                         "Linux": {
                             "zip": {
-                                "x86_64": "",
+                                "x86_64": "https://gitlab.com/Openlyst/finar/-/jobs/12544240289/artifacts/raw/doudou-1.0.0-linux-x64.zip",
                                 "arm64": ""
                             },
                             "appimage": {
