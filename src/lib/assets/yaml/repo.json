@@ -32,6 +32,70 @@
             ],
             "versions": [
                 {
+                    "version": "10.0.0",
+                    "date": "2025-12-28",
+                    "sourceCode": "",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                        "Windows": "Download source and compile yourself from GitLab pipeline.",
+                        "Linux": "Download the latest Linux build from GitLab CI.",
+                        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12547769377/artifacts/raw/doudou-10.0.0-linux-x64.zip",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12547769380/artifacts/raw/artifacts/klit-linux-x86_64.AppImage",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12547769378/artifacts/raw/artifacts/klit-linux-amd64.deb",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "htttp://aur.archlinux.org/packages/doudou-bin",
+                                "arm64": ""
+                            },
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+                        },
+                        "Android": {
+                            "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12547769375/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
+                            "aab": "https://gitlab.com/Openlyst/doudou/-/jobs/12547769374/artifacts/raw/build/app/outputs/bundle/release/app-release.aab",
+                            "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 10.0.0\n\n## Added\n\n- Added swipe left/right gesture on the mini player to skip to next or previous songs.\n- Added API key authentication for Jellyfin (X-Emby-Token) as an alternative to username/password login.\n- Login screen now shows a toggle between \"Account\" and \"API Key\" auth methods for Jellyfin.\n- Added MarqueeText widget for auto-scrolling text display.\n- Added iOS-style haptic feedback when tapping navbar buttons.\n- Added Developer Website button in Settings to open the Openlyst website.\n- Added Quick Connect support for Jellyfin - login by entering a code displayed in your Jellyfin server dashboard.\n- Added new `DesktopTheme` system with modern liquid glass styling for desktop.\n- Added reusable desktop components: `DesktopGlassContainer`, `DesktopPlayButton`, `DesktopIconButton`, `DesktopNavItem`, `DesktopProgressSlider`, `DesktopGlassButton`.\n- Added \"Add to Playlist\" button in desktop Now Playing screen to quickly add the current track to any playlist.\n- Added new music card components: `MusicCard`, `MusicListTile`, `FeaturedMusicCard`, `QuickAccessCard` with hover effects and glow.\n- **Local Music Support** - Play music directly from local filesystem directories without a media server.\n- Added `LocalMusicService` for scanning and playing local audio files (MP3, FLAC, WAV, OGG, M4A, AAC, WMA, OPUS, AIFF, ALAC, APE, WEBM).\n- Added `AlbumArtService` for fetching album artwork from multiple sources:\n  - Embedded metadata extraction using audiotags package\n  - Local image files (cover.jpg, folder.png, etc.)\n  - Online providers: MusicBrainz and Cover Art Archive APIs\n- Added Local Music settings screen for managing music directories.\n- Added artwork settings with online artwork toggle and cache management.\n- **Local Playlists** - Full playlist support for local music with create, rename, delete, add/remove tracks, and reorder functionality.\n- Added playlist persistence for local music using SharedPreferences.\n- **Swing Music Server Support** - Added support for Swing Music, a self-hosted music player and server.\n  - Full authentication support using JWT tokens\n  - Browse albums, artists, and tracks\n  - Playlist management (create, rename, delete, add/remove tracks)\n  - Search functionality\n  - Favorites/starring support\n  - Audio streaming via the Swing Music API\n\n## Changed\n\n- Desktop Now Playing album art glow now uses the dominant color extracted from the album artwork for a more dynamic and immersive visual effect.\n- Redesigned the Favorites screen with iOS 26 liquid glass styling.\n- Favorites screen now uses LiquidGradientBackground with glassmorphism effects.\n- Updated Favorites empty state with glass card and gradient heart icon.\n- Added stats card with track count badge to Favorites screen.\n- Jellyfin service now reads app version from pubspec.yaml for User-Agent headers instead of hardcoded \"1.0.0\".\n- Now Playing screen title now displays on a single line with YouTube Music-style scrolling for long titles.\n- Support button in Settings now opens the Communist Party of Ireland website.\n- **Complete desktop UI redesign** with modern liquid glass aesthetic matching mobile styling.\n- Desktop sidebar now uses frosted glass effect with gradient accent colors.\n- Desktop bottom player bar redesigned with glass effect, gradient progress slider, and modern controls.\n- Desktop Now Playing screen updated with album art glow effects and modern styling.\n- Desktop home page updated with `QuickAccessCard` components and time-based greeting.\n- Desktop page templates now support gradient headers.\n- **Desktop Settings** now adapts to local music mode - shows directory management, rescan, and artwork options instead of server settings.\n- **Mobile Settings** Account Information section now shows local music info (directories count, music source) when using local music.\n- Settings sidebar shows \"Local Music\" with folder icon when in local mode instead of \"Server\".\n- Login screen server type cards now have standardized 88x100 pixel dimensions with proper centering.\n- Login screen server type section now scrolls horizontally on desktop to prevent overflow.\n- `CachedImageWidget` and `CachedImage` now support local file paths (file:// URLs and absolute paths).\n- Improved logout functionality to fully clear all persisted data including local music cache.\n- Updated to new Openlyst url.\n\n## Fixed\n\n- Fixed download button not responding when tapped (download service listener not connected to AppState).\n- Fixed Settings screen logout button being covered by navbar and mini player.\n- Fixed account login failing after attempting API key authentication (stale X-Emby-Token header).\n- Fixed album/artist cards overflowing by 4 pixels on desktop home page.\n- Fixed \"Callback invoked after it has been deleted\" crash when changing tracks on desktop by recreating the AudioPlayer instance for each track, fully isolating native media_kit/mpv callbacks.\n- Fixed track duration timestamps in desktop Now Playing \"Up Next\" queue showing incorrect values (was treating milliseconds as seconds).\n- Fixed Subsonic track durations displaying incorrectly (Subsonic API returns seconds, now properly converted to milliseconds).\n- Fixed Subsonic service skipping the 2nd song in queue.\n- Fixed Subsonic favoriting not persisting (track refresh was replacing starred tracks with new random songs).\n- Fixed Subsonic API implementation to spec - shuffle all and favorites now properly fetch all tracks using search3 pagination and getStarred2 endpoints instead of only loading random songs.\n- Fixed local music album art not displaying (CachedNetworkImage only worked with HTTP URLs, not local file paths).\n- Fixed local music cache serialization losing imageUrl paths due to Jellyfin-specific JSON format.\n- Fixed Continue button not working on Local Music Settings screen during initial setup.\n- Fixed server type cards overflowing on narrow desktop windows.\n- Fixed desktop lyrics scrolling off-screen or going too low by adding proper clipping and scroll physics constraints."
+                },
+                {
                     "version": "9.0.0",
                     "date": "2025-12-12",
                     "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/24829916abe1bb4415cce77ac4cb42b5a0f56bf1",
