@@ -510,6 +510,68 @@
             ],
             "versions": [
                 {
+                    "version": "3.1.0",
+                    "date": "2025-12-28",
+                    "sourceCode": "",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository",
+                        "Android": "Use RepStore to install from our repository",
+                        "macOS": "Download the latest macOS build",
+                        "Windows": "Download the latest Windows build",
+                        "Linux": "Download the latest Linux build from GitLab CI",
+                        "Web": "Access the web version"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "https://gitlab.com/Openlyst/klit/-/jobs/12555480330/artifacts/raw/klit-linux-x64.zip",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "https://gitlab.com/Openlyst/klit/-/jobs/12555480333/artifacts/raw/artifacts/klit-linux-x86_64.AppImage",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "https://gitlab.com/Openlyst/klit/-/jobs/12555480331/artifacts/raw/artifacts/klit-linux-amd64.deb",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "https://aur.archlinux.org/packages/klit-bin",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "https://gitlab.com/Openlyst/klit/-/jobs/12555480327/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
+                            "aab": "https://gitlab.com/Openlyst/klit/-/jobs/12555480329/artifacts/raw/build/app/outputs/bundle/release/app-release.aab"
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 3.1.0\n- Add a lightweight theme.\n- Fixed desktop video player not updateing on new posts.\n- Updated openlyst url."
+                },
+                {
                     "version": "2.0.0",
                     "date": "2025-12-11",
                     "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/56a77864f64d63ac85cd94d14ee07d75ced3467b",
