@@ -305,8 +305,28 @@
 </script>
 
 <svelte:head>
-  <title>{isLoaded ? app.name : 'Loading...'} - OpenLyst</title>
-  <meta name="description" content="{isLoaded ? app.localizedDescription : 'Loading app details...'}" />
+  <!-- Basic Meta -->
+  <title>{data.meta.title}</title>
+  <meta name="description" content={data.meta.description} />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={data.meta.url} />
+  <meta property="og:title" content={data.meta.title} />
+  <meta property="og:description" content={data.meta.description} />
+  <meta property="og:image" content={data.meta.image} />
+  <meta property="og:site_name" content={data.meta.siteName} />
+  
+  <!-- Twitter / Discord -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content={data.meta.url} />
+  <meta name="twitter:title" content={data.meta.title} />
+  <meta name="twitter:description" content={data.meta.description} />
+  <meta name="twitter:image" content={data.meta.image} />
+  
+  <!-- Additional app info -->
+  <meta name="theme-color" content={data.meta.tintColor} />
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </svelte:head>
 
