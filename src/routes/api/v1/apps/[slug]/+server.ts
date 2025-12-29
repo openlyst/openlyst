@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getApp, nameToSlug } from '$lib/utils/repo';
+import { getApp, nameToSlug, resolveAppUrls } from '$lib/utils/repo';
 
 export const GET: RequestHandler = async ({ params }) => {
   try {
@@ -14,7 +14,7 @@ export const GET: RequestHandler = async ({ params }) => {
     return json({
       success: true,
       data: {
-        ...app,
+        ...resolveAppUrls(app),
         slug: nameToSlug(app.name)
       }
     });

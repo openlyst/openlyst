@@ -2,6 +2,58 @@ import type { RepoConfig } from '$lib/types/repo';
 
 let cachedConfig: RepoConfig | null = null;
 
+const BASE_URL = 'https://openlyst.ink';
+
+/**
+ * Resolves a relative URL path to a full URL
+ * Paths starting with / are converted to full URLs using BASE_URL
+ * Already absolute URLs (http://, https://) are returned as-is
+ */
+export function resolveUrl(path: string): string {
+  if (!path) return path;
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path;
+  }
+  if (path.startsWith('/')) {
+    return `${BASE_URL}${path}`;
+  }
+  return path;
+}
+
+/**
+ * Transforms an app object to resolve all relative URLs to absolute URLs
+ */
+export function resolveAppUrls<T extends RepoConfig['apps'][0]>(app: T): T {
+  return {
+    ...app,
+    iconURL: resolveUrl(app.iconURL),
+    screenshots: app.screenshots?.map(resolveUrl) || []
+  };
+}
+
+/**
+ * Transforms a news item to resolve all relative URLs to absolute URLs
+ */
+export function resolveNewsUrls<T extends RepoConfig['news'][0]>(news: T): T {
+  return {
+    ...news,
+    imageURL: resolveUrl(news.imageURL),
+    url: news.url?.startsWith('/') ? resolveUrl(news.url) : news.url
+  };
+}
+
+/**
+ * Transforms repo config to resolve all relative URLs to absolute URLs
+ */
+export function resolveRepoUrls(config: RepoConfig): RepoConfig {
+  return {
+    ...config,
+    iconURL: resolveUrl(config.iconURL),
+    apps: config.apps.map(resolveAppUrls),
+    news: config.news.map(resolveNewsUrls)
+  };
+}
+
 export async function loadRepoConfig(): Promise<RepoConfig> {
   if (cachedConfig) {
     return cachedConfig;

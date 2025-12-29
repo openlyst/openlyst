@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getAllApps, nameToSlug } from '$lib/utils/repo';
+import { getAllApps, nameToSlug, resolveAppUrls } from '$lib/utils/repo';
 
 export const GET: RequestHandler = async ({ url }) => {
   try {
@@ -21,7 +21,7 @@ export const GET: RequestHandler = async ({ url }) => {
       (app.bundleIdentifier && app.bundleIdentifier.toLowerCase().includes(searchTerm))
     );
     
-    // Transform results to include slug and relevance score
+    // Transform results to include slug, resolve URLs, and calculate relevance score
     const transformedResults = results.map(app => {
       // Calculate simple relevance score
       let score = 0;
@@ -31,7 +31,7 @@ export const GET: RequestHandler = async ({ url }) => {
       if (app.localizedDescription.toLowerCase().includes(searchTerm)) score += 1;
       
       return {
-        ...app,
+        ...resolveAppUrls(app),
         slug: nameToSlug(app.name),
         relevanceScore: score
       };

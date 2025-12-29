@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { loadRepoConfig } from '$lib/utils/repo';
+import { loadRepoConfig, resolveUrl } from '$lib/utils/repo';
 
 export const GET: RequestHandler = async () => {
   try {
@@ -12,8 +12,8 @@ export const GET: RequestHandler = async () => {
         name: config.name,
         subtitle: config.subtitle,
         description: config.description,
-        iconURL: config.iconURL,
-        headerURL: config.headerURL,
+        iconURL: resolveUrl(config.iconURL),
+        headerURL: resolveUrl(config.headerURL),
         website: config.website,
         tintColor: config.tintColor,
         featuredApps: config.featuredApps,

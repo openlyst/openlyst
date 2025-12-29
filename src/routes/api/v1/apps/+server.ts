@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getAllApps, getActiveApps, getDeprecatedApps, nameToSlug } from '$lib/utils/repo';
+import { getAllApps, getActiveApps, getDeprecatedApps, nameToSlug, resolveAppUrls } from '$lib/utils/repo';
 
 export const GET: RequestHandler = async ({ url }) => {
   try {
@@ -27,9 +27,9 @@ export const GET: RequestHandler = async ({ url }) => {
       );
     }
     
-    // Transform apps to include slug
+    // Transform apps to include slug and resolve URLs
     const transformedApps = apps.map(app => ({
-      ...app,
+      ...resolveAppUrls(app),
       slug: nameToSlug(app.name)
     }));
     

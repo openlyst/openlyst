@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { loadRepoConfig } from '$lib/utils/repo';
+import { loadRepoConfig, resolveNewsUrls } from '$lib/utils/repo';
 
 export const GET: RequestHandler = async ({ url }) => {
   try {
@@ -26,10 +26,13 @@ export const GET: RequestHandler = async ({ url }) => {
       }
     }
     
+    // Resolve relative URLs to absolute URLs
+    const resolvedNews = news.map(resolveNewsUrls);
+    
     return json({
       success: true,
-      count: news.length,
-      data: news
+      count: resolvedNews.length,
+      data: resolvedNews
     });
   } catch (error) {
     return json({ success: false, error: 'Failed to load news' }, { status: 500 });
