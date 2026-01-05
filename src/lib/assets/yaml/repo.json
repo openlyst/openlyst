@@ -912,7 +912,7 @@
                                 "arm64": ""
                             },
                             "aur": {
-                                "x86_64": "",
+                                "x86_64": "https://aur.archlinux.org/packages/finar-bin",
                                 "arm64": ""
                             }
                         },
