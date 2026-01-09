@@ -32,6 +32,70 @@
             ],
             "versions": [
                 {
+                    "version": "11.0.0",
+                    "date": "2026-01-09",
+                    "sourceCode": "",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Use AltStore to install from our repository: https://gitlab.com/Openlyst/repos/altstore/-/raw/main/altstore.json?ref_type=heads",
+                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+                        "Windows": "Download source and compile yourself from GitLab pipeline.",
+                        "Linux": "Download the latest Linux build from GitLab CI.",
+                        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": ""
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232642/artifacts/raw/doudou-11.0.0-linux-x64.zip",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232644/artifacts/raw/artifacts/klit-linux-x86_64.AppImage",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232643/artifacts/raw/artifacts/klit-linux-amd64.deb",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "htttp://aur.archlinux.org/packages/doudou-bin",
+                                "arm64": ""
+                            },
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+                        },
+                        "Android": {
+                            "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232637/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
+                            "aab": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232635/artifacts/raw/build/app/outputs/bundle/release/app-release.aab",
+                            "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 11.0.0\n\n## Added\n\n- **Desktop System Media Controls** - Control playback from your OS taskbar/system tray without focusing Doudou.\n  - Windows: System Media Transport Controls (SMTC) via `audio_service_win` plugin\n  - Linux: MPRIS (D-Bus media controls) via `audio_service_mpris` plugin\n  - macOS: Control Center integration (built into `audio_service`)\n- **Google Assistant Support** - Voice commands for Android via Google Assistant App Actions:\n  - \"Play music on Doudou\"\n  - \"Play [artist/song/album] on Doudou\"\n  - \"Play my favorites on Doudou\"\n  - \"Shuffle my music on Doudou\"\n  - \"Next/Previous song on Doudou\"\n  - \"Pause/Resume music on Doudou\"\n- **Autoplay** - Automatically plays similar music when the queue ends (same artist, album, or random tracks from library). Can be toggled in Audio Settings.\n- Added favorite button to the desktop fullscreen Now Playing overlay.\n- Added favorite button to the desktop player bar.\n- Added Easter Egg: Desktop Now Playing view flips horizontally when \"The Mind Electric\" plays its reversed section (before 2:50).\n\n## Changed\n\n- Refactored audio system from 4 platform-specific handlers (~4,200 lines) into a single cross-platform `UnifiedAudioHandler` (~1,550 lines).\n- Changed app description to \"Play your music with ease\".\n- **Complete Desktop UI Redesign** with modern styling:\n  - Reduced desktop layout code from ~4,055 lines to ~1,940 lines (52% reduction)\n  - Modern sidebar with hover effects, accent color highlighting, and organized library sections\n  - Sleek bottom player bar with hoverable progress bar, track info, and playback controls\n  - Full-screen Now Playing overlay with blurred album art background and tabbed queue/lyrics panel\n  - Keyboard shortcuts: Space for play/pause, Ctrl+Arrow for skip\n- Desktop Now Playing panel tabs (Up Next, Lyrics) now share the same album art background as the main player view.\n- Album, artist, and playlist detail views now render inline within the desktop layout instead of navigating to a separate page.\n- Desktop sidebar is now scrollable when the window height is very small.\n- Desktop player bar is now hidden when no music is playing.\n\n## Fixed\n\n- Removed external service references (Spotify, YouTube Music) from code comments.\n- Removed implementation-specific developer notes and bash script references from service files.\n- Simplified verbose doc comments in UI components while keeping section headers.\n- Fixed squished artist cards on desktop by implementing responsive grid (2-8 columns based on width).\n- Fixed \"RenderAspectRatio has unbounded constraints\" crash in desktop search results.\n- Fixed mounted check issues causing setState calls after widget disposal in hover callbacks.\n- Fixed Now Playing overlay not updating when the current song changes.\n- Fixed \"BOTTOM OVERFLOWED BY X PIXELS\" error on desktop album cards.\n- Fixed sidebar overflowing when window is resized very short vertically.\n- Fixed detail pages staying open when clicking a different sidebar item.\n- Fixed Subsonic library only loading 500 tracks (now uses `search3` pagination to fetch complete library)."
+                },
+                {
                     "version": "10.0.0",
                     "date": "2025-12-28",
                     "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/8efd71f2ea8777dd6c13546b805dba5549490338",
