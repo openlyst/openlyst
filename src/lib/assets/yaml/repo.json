@@ -586,7 +586,7 @@
                         "Web"
                     ],
                     "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository",
+                        "iOS": "",
                         "Android": "Use RepStore to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
@@ -598,7 +598,7 @@
                         "macOS": {
                             "x86_64": "",
                             "arm64": "",
-                            "universal": "",
+                            "universal": "https://files.catbox.moe/u4td77.zip",
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
@@ -648,7 +648,7 @@
                         "Web"
                     ],
                     "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository",
+                        "iOS": "",
                         "Android": "Use RepStore to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
@@ -710,7 +710,7 @@
                         "Web"
                     ],
                     "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository",
+                        "iOS": "",
                         "Android": "Use RepStore to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
@@ -795,7 +795,7 @@
                         "Web"
                     ],
                     "platformInstall": {
-                        "iOS": "Use AltStore to install from our repository",
+                        "iOS": "",
                         "Android": "Use RepStore to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
