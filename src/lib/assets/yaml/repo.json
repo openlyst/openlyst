@@ -555,7 +555,7 @@
         {
             "name": "Klit",
             "bundleIdentifier": "klit",
-            "subtitle": "Modern e621 Client",
+            "subtitle": "Advanced E926 client",
             "localizedDescription": "The successor to BaoBao. A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
             "iconURL": "/icons/Klit/icon.png",
             "tintColor": "#ff6b35",
@@ -573,6 +573,68 @@
                 "/icons/Klit/post.png"
             ],
             "versions": [
+                {
+                    "version": "4.0.0",
+                    "date": "2026-01-09",
+                    "sourceCode": "",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "",
+                        "Android": "Use RepStore to install from our repository",
+                        "macOS": "Download the latest macOS build",
+                        "Windows": "Download the latest Windows build",
+                        "Linux": "Download the latest Linux build from GitLab CI",
+                        "Web": "Access the web version"
+                    },
+                    "downloads": {
+                        "iOS": "https://files.catbox.moe/lqof2q.ipa",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "https://files.catbox.moe/u4td77.zip",
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "https://aur.archlinux.org/packages/klit-bin",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "",
+                            "aab": ""
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 4.0.0\n\n- Bumped version to **4.0.0**.\n- Updated description to \"Advanced E926 client\"\n- Dont show profile button if in guest mode.\n- Center selectors.\n- Fixed GIFs not playing.\n- Dont show post actions for guest users.\n- Load the next page of posts before hits the bottom.\n- Support for custom date ranges.\n- Fixed finished guest accounts able to countiune to use the app, navigate back to the login screen.\n- Updated the Server Managment screen UI.\n- Reload post data when changing a host.\n- Fixed logging out of accounts not working."
+                },
                 {
                     "version": "3.1.0",
                     "date": "2025-12-28",
@@ -598,7 +660,7 @@
                         "macOS": {
                             "x86_64": "",
                             "arm64": "",
-                            "universal": "https://files.catbox.moe/u4td77.zip",
+                            "universal": "",
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
