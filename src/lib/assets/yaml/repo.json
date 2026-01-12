@@ -979,7 +979,10 @@
             "tintColor": "#10b981",
             "platforms": [
                 "iOS",
-                "Android"
+                "Android",
+                "macOS",
+                "Windows",
+                "Linux"
             ],
             "screenshots": [
                 "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/app.png?ref_type=heads",
@@ -989,6 +992,66 @@
                 "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/sources.png?ref_type=heads"
             ],
             "versions": [
+                {
+                    "version": "3.0.0",
+                    "date": "2026-01-11",
+                    "sourceCode": "https://gitlab.com/Openlyst/repstore/-/tree/c678d769370b58d511329d0cc604d8d6a3c6261d",
+                    "platforms": [
+                        "iOS",
+                        "Android",
+                        "macOS",
+                        "Windows",
+                        "Linux"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Coming soon via AltStore",
+                        "Android": "Download the APK directly from our repository",
+                        "macOS": "Download from GitLab CI or compile from source",
+                        "Windows": "Download from GitLab CI or compile from source",
+                        "Linux": "Download from GitLab CI or compile from source"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "Android": {
+                            "apk": "https://gitlab.com/Openlyst/repstore/-/jobs/artifacts/c678d769370b58d511329d0cc604d8d6a3c6261d/raw/build/app/outputs/flutter-apk/app-release.apk?job=build_release_apk",
+                            "aab": ""
+                        },
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": ""
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "homebrew": ""
+                        }
+                    },
+                    "localizedDescription": "# 3.0.0\n\n## Added\n- Added F-Droid repository support with opt-in toggle in Settings (Android only).\n- Added responsive shell system (mobile/desktop layouts).\n- Added bottom padding to all screens for navbar visibility.\n- Added desktop app store layout for app details (Mac App Store inspired).\n- Added desktop platform support (Linux, macOS, Windows).\n- Added platform utility helpers for cross-platform detection.\n- Implemented download settings (auto-install, WiFi only, custom download path).\n- Implemented notification settings with persistence.\n- Implemented cache clearing functionality.\n- Implemented source sharing functionality.\n- Implemented news detail view in source screen.\n\n## Changed\n- Refactored screenshot gallery with carousel effect.\n- News page now scales responsively with grid layout on desktop.\n- News cards gracefully handle missing/failed images with styled text-only layout.\n- Centered news filter chips.\n- Converted VersionListItem to StatefulWidget for proper async handling.\n- App detail screen now shows side-by-side layout with info sidebar on desktop.\n- OpenLyst API service now prioritizes downloads for current platform.\n- Download service now handles desktop file formats (AppImage, DMG, EXE).\n- Platform status widget now supports desktop platforms.\n- F-Droid toggle only shown on Android (not supported on desktop).\n\n## Fixed\n- Fixed F-Droid app name parsing for localized names.\n- Fixed F-Droid icon URLs.\n- Fixed search to use F-Droid search API.\n- Fixed app details loading from search results.\n- Fixed deprecated `withOpacity` calls across the codebase.\n- Fixed deprecated `Color.value` usage in theme provider.\n- Fixed `use_build_context_synchronously` warnings in version list item."
+                },
                 {
                     "version": "2.0.0",
                     "date": "2025-12-24",
