@@ -611,7 +611,7 @@
                                 "arm64": ""
                             },
                             "appimage": {
-                                "x86_64": "",
+                                "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-26/klit-5.0.0-2026-01-12-linux-x86_64.AppImage",
                                 "arm64": ""
                             },
                             "rpm": {
@@ -619,7 +619,7 @@
                                 "arm64": ""
                             },
                             "deb": {
-                                "x86_64": "",
+                                "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-26/klit-5.0.0-2026-01-12-linux-amd64.deb",
                                 "arm64": ""
                             },
                             "aur": {
