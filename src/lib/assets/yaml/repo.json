@@ -847,7 +847,7 @@
                 {
                     "version": "3.0.0",
                     "date": "2026-01-11",
-                    "sourceCode": "",
+                    "sourceCode": "https://gitlab.com/Openlyst/docan/-/tree/a879b79ddb6acdff0cb2492c96466f3603a1801c",
                     "platforms": [
                         "iOS",
                         "macOS",
