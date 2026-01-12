@@ -21,37 +21,64 @@ export function resolveUrl(path: string): string {
 }
 
 /**
+ * Recursively resolves all URL-like strings in an object
+ * Handles nested objects, arrays, and string values
+ * Resolves paths starting with / to full URLs using BASE_URL
+ */
+export function resolveUrlsDeep<T>(obj: T): T {
+  if (obj === null || obj === undefined) {
+    return obj;
+  }
+
+  if (typeof obj === 'string') {
+    return resolveUrl(obj) as T;
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(item => resolveUrlsDeep(item)) as T;
+  }
+
+  if (typeof obj === 'object') {
+    const resolved: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(obj)) {
+      // Only resolve URL-like keys or values that look like paths
+      if (key.toLowerCase().includes('url') || key.toLowerCase().includes('icon') || key.toLowerCase().includes('image') || key.toLowerCase().includes('header')) {
+        resolved[key] = resolveUrlsDeep(value);
+      } else if (typeof value === 'string' && value.startsWith('/')) {
+        // Resolve any string value that starts with /
+        resolved[key] = resolveUrl(value);
+      } else if (typeof value === 'object' && value !== null) {
+        // Recursively process nested objects and arrays
+        resolved[key] = resolveUrlsDeep(value);
+      } else {
+        resolved[key] = value;
+      }
+    }
+    return resolved as T;
+  }
+
+  return obj;
+}
+
+/**
  * Transforms an app object to resolve all relative URLs to absolute URLs
  */
 export function resolveAppUrls<T extends RepoConfig['apps'][0]>(app: T): T {
-  return {
-    ...app,
-    iconURL: resolveUrl(app.iconURL),
-    screenshots: app.screenshots?.map(resolveUrl) || []
-  };
+  return resolveUrlsDeep(app);
 }
 
 /**
  * Transforms a news item to resolve all relative URLs to absolute URLs
  */
 export function resolveNewsUrls<T extends RepoConfig['news'][0]>(news: T): T {
-  return {
-    ...news,
-    imageURL: resolveUrl(news.imageURL),
-    url: news.url?.startsWith('/') ? resolveUrl(news.url) : news.url
-  };
+  return resolveUrlsDeep(news);
 }
 
 /**
  * Transforms repo config to resolve all relative URLs to absolute URLs
  */
 export function resolveRepoUrls(config: RepoConfig): RepoConfig {
-  return {
-    ...config,
-    iconURL: resolveUrl(config.iconURL),
-    apps: config.apps.map(resolveAppUrls),
-    news: config.news.map(resolveNewsUrls)
-  };
+  return resolveUrlsDeep(config);
 }
 
 export async function loadRepoConfig(): Promise<RepoConfig> {
