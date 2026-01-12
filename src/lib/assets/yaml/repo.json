@@ -576,7 +576,7 @@
                 {
                     "version": "4.0.0",
                     "date": "2026-01-09",
-                    "sourceCode": "",
+                    "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/3e1a8d7268fb3c4ff69c110bf428de4a52f8f129",
                     "platforms": [
                         "iOS",
                         "macOS",
