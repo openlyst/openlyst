@@ -845,6 +845,68 @@
             ],
             "versions": [
                 {
+                    "version": "3.0.0",
+                    "date": "2026-01-11",
+                    "sourceCode": "",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "",
+                        "Android": "Use RepStore to install from our repository",
+                        "macOS": "Download the latest macOS build",
+                        "Windows": "Download the latest Windows build",
+                        "Linux": "Download the latest Linux build",
+                        "Web": "Access the web version"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
+                        },
+                        "Windows": {
+                            "x86_64": "",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/docan-linux-x64.zip",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/3.0.0/docan-3.0.0-linux.AppImage",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/3.0.0/docan-3.0.0-linux.deb",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "https://aur.archlinux.org/packages/docan-bin",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "https://gitlab.com/Openlyst/docan/-/jobs/12674147402/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
+                            "aab": ""
+                        },
+                        "Web": ""
+                    },
+                    "localizedDescription": "# 3.0.0\n\n## New Features\n\n### AI Providers\n- Added DeepSeek AI support with `deepseek-chat` and `deepseek-reasoner` models.\n- Added LM Studio support with OpenAI-compatible API.\n- Dynamic model fetching from API (no hardcoded model lists).\n\n### Image Creator\n- Added dedicated Image Creator screen for generating images with AI.\n- Supports Gemini and OpenAI DALL-E providers.\n- Gallery view to browse generated images.\n- Multiple image size options.\n- Save images to downloads folder.\n- Copy prompt to clipboard.\n\n### Playbooks\n- Added Playbooks: User-created YAML integrations for extending Docan.\n- Create custom API integrations with a simple YAML SDK.\n- Trigger-based activation using regex patterns.\n- Multiple step types: HTTP requests, webhooks, transforms, conditions, loops.\n- Template syntax for dynamic variable substitution.\n- Configuration fields for API keys and settings (with secret support).\n- Import/export playbooks as YAML files.\n- Platform-specific playbook support.\n- Built-in example playbooks for OpenLyst APIs.\n- Full documentation at `docs/playbooks.md`.\n- Use `/playbook <name>` command to explicitly use a specific playbook.\n- Auto-detection: Playbooks automatically activate based on trigger patterns.\n- Added help button to open online documentation from Playbooks screen.\n- New Playbook button opens YAML editor with template.\n\n### Playbook Engine Upgrade\n- Multi-step logic with state memory across execution.\n- Configurable `retries` and `retryDelayMs` per step.\n- `onFailure` option supports `throw`, `continue`, or `returnError`.\n- Secure storage for secret config values (API keys).\n- Input validation with `validateParameters()`.\n- Progress streaming via `executeStream()` for real-time updates.\n- Dry run capability with `dryRun()`.\n- Fuzzy matching for improved trigger confidence.\n- Configurable timeout support for HTTP requests.\n\n### Attachments & Drag-and-Drop\n- Added support for attachments in chat.\n- Show images that the user sent in chats.\n- Drag and drop files directly onto the app.\n- Visual overlay indicator when dragging files.\n- Supported formats: txt, pdf, doc, docx, md, json, csv, png, jpg, jpeg, gif, webp.\n\n### Chat Improvements\n- Added support for custom system prompts.\n- Links in chat messages are now clickable and open in external browser.\n- Restored LaTeX math rendering support in chat messages.\n- Auto-scroll to bottom when sending messages and during AI streaming.\n- Smart auto-scroll pauses if user scrolls up to read previous content.\n\n## UI/UX Improvements\n- Use dropdowns instead of popouts.\n- Scrollable model selector for phones.\n- Bigger and more spacious settings dialog on desktop.\n- Disable hover tinting on settings dialog.\n- Attachment button opens file picker directly on desktop.\n- Hide camera option on non-mobile platforms.\n- Darken AI chat bubbles for better contrast.\n- Move less rounded corner to top of chat bubbles.\n- Close button added to desktop Playbooks screen.\n- Improved playbook configuration UI with field types and password visibility toggle.\n- Responsive design for desktop and mobile.\n\n## Bug Fixes\n- Fixed saving API keys on Linux.\n- Fixed new line in text box when sending a message.\n- Fixed provider selector overflow on smaller screens.\n- Fixed playbook `returnData` step not returning data.\n- Improved API error handling for quota limits, rate limits, and authentication errors.\n\n## Other Changes\n- Removed agents.\n- Removed old Gemini model (2.0-flash).\n- Use temperature settings for Claude.\n- Refactored playbook integration in chat service with cleaner system prompts."
+                },
+                {
                     "version": "1.0.0",
                     "date": "2025-12-06",
                     "sourceCode": "",
