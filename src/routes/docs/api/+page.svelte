@@ -368,8 +368,189 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
   {/snippet}
 </Section>
 
+<!-- Download Structure Section -->
+<Section title="Download Structure" subtitle="Understanding the platform-specific download formats" background="default">
+  {#snippet children()}
+    <p class="text-gray-400 mb-6">
+      The <code class="bg-gray-700 px-2 py-1 rounded text-gray-300">downloads</code> field in version objects contains platform-specific download URLs. 
+      Different platforms support different installer types and architectures.
+    </p>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Windows Downloads -->
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fab fa-windows text-2xl text-blue-400"></i>
+          <h3 class="font-semibold text-white text-lg">Windows Downloads</h3>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Windows supports multiple installer types and package managers.</p>
+        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+          <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{`"Windows": {
+  "exe": {
+    "x86_64": "https://.../app-setup-x64.exe",
+    "arm64": "https://.../app-setup-arm64.exe"
+  },
+  "msi": {
+    "x86_64": "https://.../app-x64.msi",
+    "arm64": ""
+  },
+  "msix": {
+    "x86_64": "https://.../app.msix",
+    "arm64": ""
+  },
+  "zip": {
+    "x86_64": "https://.../app-win-x64.zip",
+    "arm64": ""
+  },
+  "portable": {
+    "x86_64": "https://.../app-portable.exe",
+    "arm64": ""
+  },
+  "winget": "Publisher.AppName",
+  "chocolatey": "app-name",
+  "scoop": "extras/app-name"
+}`}</pre>
+        </div>
+        <div class="mt-4 space-y-2">
+          <h4 class="text-sm font-semibold text-gray-300">Installer Types:</h4>
+          <ul class="text-gray-400 text-sm space-y-1">
+            <li><code class="bg-gray-700 px-1 rounded">exe</code> - NSIS, Inno Setup, or other installers</li>
+            <li><code class="bg-gray-700 px-1 rounded">msi</code> - Windows Installer packages</li>
+            <li><code class="bg-gray-700 px-1 rounded">msix</code> - Modern Windows app packages</li>
+            <li><code class="bg-gray-700 px-1 rounded">zip</code> - Portable zip archives</li>
+            <li><code class="bg-gray-700 px-1 rounded">portable</code> - Standalone portable executables</li>
+          </ul>
+          <h4 class="text-sm font-semibold text-gray-300 mt-3">Package Managers:</h4>
+          <ul class="text-gray-400 text-sm space-y-1">
+            <li><code class="bg-gray-700 px-1 rounded">winget</code> - Windows Package Manager ID</li>
+            <li><code class="bg-gray-700 px-1 rounded">chocolatey</code> - Chocolatey package name</li>
+            <li><code class="bg-gray-700 px-1 rounded">scoop</code> - Scoop bucket/package name</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Linux Downloads -->
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fab fa-linux text-2xl text-yellow-400"></i>
+          <h3 class="font-semibold text-white text-lg">Linux Downloads</h3>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Linux supports various package formats and package managers.</p>
+        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+          <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{`"Linux": {
+  "zip": {
+    "x86_64": "https://.../app-linux-x64.zip",
+    "arm64": ""
+  },
+  "appimage": {
+    "x86_64": "https://.../app-x86_64.AppImage",
+    "arm64": ""
+  },
+  "deb": {
+    "x86_64": "https://.../app-amd64.deb",
+    "arm64": ""
+  },
+  "rpm": {
+    "x86_64": "https://.../app-x86_64.rpm",
+    "arm64": ""
+  },
+  "aur": {
+    "x86_64": "https://aur.archlinux.org/packages/app-bin"
+  },
+  "homebrew": "https://.../homebrew/tap"
+}`}</pre>
+        </div>
+        <div class="mt-4 space-y-2">
+          <h4 class="text-sm font-semibold text-gray-300">Package Types:</h4>
+          <ul class="text-gray-400 text-sm space-y-1">
+            <li><code class="bg-gray-700 px-1 rounded">appimage</code> - Universal Linux packages</li>
+            <li><code class="bg-gray-700 px-1 rounded">deb</code> - Debian/Ubuntu packages</li>
+            <li><code class="bg-gray-700 px-1 rounded">rpm</code> - Fedora/RHEL packages</li>
+            <li><code class="bg-gray-700 px-1 rounded">zip</code> / <code class="bg-gray-700 px-1 rounded">tar</code> - Archive formats</li>
+            <li><code class="bg-gray-700 px-1 rounded">aur</code> - Arch User Repository</li>
+            <li><code class="bg-gray-700 px-1 rounded">homebrew</code> - Homebrew tap URL</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- macOS Downloads -->
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fab fa-apple text-2xl text-gray-300"></i>
+          <h3 class="font-semibold text-white text-lg">macOS Downloads</h3>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">macOS supports architecture-specific downloads.</p>
+        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+          <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{`"macOS": {
+  "x86_64": "https://.../app-mac-x64.zip",
+  "arm64": "https://.../app-mac-arm64.zip",
+  "universal": "https://.../app-mac-universal.zip",
+  "homebrew": "https://.../homebrew/tap"
+}`}</pre>
+        </div>
+        <div class="mt-4 space-y-2">
+          <h4 class="text-sm font-semibold text-gray-300">Architectures:</h4>
+          <ul class="text-gray-400 text-sm space-y-1">
+            <li><code class="bg-gray-700 px-1 rounded">x86_64</code> - Intel Macs</li>
+            <li><code class="bg-gray-700 px-1 rounded">arm64</code> - Apple Silicon (M1/M2/M3)</li>
+            <li><code class="bg-gray-700 px-1 rounded">universal</code> - Universal binary (both)</li>
+            <li><code class="bg-gray-700 px-1 rounded">homebrew</code> - Homebrew cask/tap</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Android Downloads -->
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fab fa-android text-2xl text-green-400"></i>
+          <h3 class="font-semibold text-white text-lg">Android Downloads</h3>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Android supports APK and AAB formats.</p>
+        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+          <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{`"Android": {
+  "apk": "https://.../app-release.apk",
+  "aab": "https://.../app-release.aab",
+  "apkpure": "https://apkpure.com/p/..."
+}`}</pre>
+        </div>
+        <div class="mt-4 space-y-2">
+          <h4 class="text-sm font-semibold text-gray-300">Formats:</h4>
+          <ul class="text-gray-400 text-sm space-y-1">
+            <li><code class="bg-gray-700 px-1 rounded">apk</code> - Android Package (direct install)</li>
+            <li><code class="bg-gray-700 px-1 rounded">aab</code> - Android App Bundle</li>
+            <li><code class="bg-gray-700 px-1 rounded">apkpure</code> - APKPure store link</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Architecture Notes -->
+    <div class="mt-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
+      <h3 class="font-semibold text-white text-lg mb-4">Architecture Reference</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-gray-900 rounded-lg">
+          <code class="text-blue-400 font-mono">x86_64</code>
+          <p class="text-gray-400 text-sm mt-1">64-bit Intel/AMD</p>
+        </div>
+        <div class="text-center p-4 bg-gray-900 rounded-lg">
+          <code class="text-purple-400 font-mono">arm64</code>
+          <p class="text-gray-400 text-sm mt-1">64-bit ARM (Apple Silicon, Snapdragon)</p>
+        </div>
+        <div class="text-center p-4 bg-gray-900 rounded-lg">
+          <code class="text-green-400 font-mono">universal</code>
+          <p class="text-gray-400 text-sm mt-1">Multi-architecture binary</p>
+        </div>
+        <div class="text-center p-4 bg-gray-900 rounded-lg">
+          <code class="text-yellow-400 font-mono">i386</code>
+          <p class="text-gray-400 text-sm mt-1">32-bit Intel (legacy)</p>
+        </div>
+      </div>
+    </div>
+  {/snippet}
+</Section>
+
 <!-- Error Handling Section -->
-<Section title="Error Handling" subtitle="Understanding API error responses" background="default">
+<Section title="Error Handling" subtitle="Understanding API error responses" background="gray">
   {#snippet children()}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">

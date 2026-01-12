@@ -60,8 +60,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
                         },
                         "Windows": {
-                            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-15/doudou-windows-x64.zip",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-15/doudou-windows-x64.zip",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -124,8 +145,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -188,8 +230,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -252,8 +315,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -316,8 +400,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -378,8 +483,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -438,8 +564,29 @@
                             "arm64": ""
                         },
                         "Windows": {
-                            "x86_64": "https://gitlab.com/Openlyst/doudou/-/archive/pipeline-2128734644/doudou-pipeline-2128734644.tar.gz",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/archive/pipeline-2128734644/doudou-pipeline-2128734644.tar.gz",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -492,8 +639,29 @@
                             "arm64": ""
                         },
                         "Windows": {
-                            "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_windows",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/artifacts/9801d626eb5dd23eb6cdc146adc5a2f78631817f/download?job=build_release_windows",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -602,8 +770,29 @@
                             "homebrew": ""
                         },
                         "Windows": {
-                            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-windows-x64.zip",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-windows-x64.zip",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -664,8 +853,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
-                            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-18/klit-windows-x64.zip",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-18/klit-windows-x64.zip",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -726,8 +936,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -788,8 +1019,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -850,8 +1102,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -935,8 +1208,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
-                            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-14/docan-windows-x64.zip",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-14/docan-windows-x64.zip",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -997,8 +1291,29 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -1085,8 +1400,29 @@
                             "homebrew": ""
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -1204,8 +1540,29 @@
                             "homebrew": ""
                         },
                         "Windows": {
-                            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-18/finar-windows-x64.zip",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-18/finar-windows-x64.zip",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {
@@ -1266,8 +1623,29 @@
                             "homebrew": ""
                         },
                         "Windows": {
-                            "x86_64": "",
-                            "arm64": ""
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
                         },
                         "Linux": {
                             "zip": {

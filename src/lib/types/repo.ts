@@ -30,7 +30,22 @@ export interface PackageTypeDownloads {
   deb?: ArchDownloads;
   rpm?: ArchDownloads;
   tar?: ArchDownloads;
-  [key: string]: ArchDownloads | undefined;
+  aur?: ArchDownloads;
+  homebrew?: string;
+  [key: string]: ArchDownloads | string | undefined;
+}
+
+// Windows-specific downloads with installer types
+export interface WindowsDownloads {
+  exe?: ArchDownloads;      // NSIS, Inno Setup, or other exe installers
+  msi?: ArchDownloads;      // Windows Installer packages
+  msix?: ArchDownloads;     // Modern Windows app packages
+  zip?: ArchDownloads;      // Portable zip archives
+  portable?: ArchDownloads; // Standalone portable executables
+  winget?: string;          // Windows Package Manager ID
+  chocolatey?: string;      // Chocolatey package name
+  scoop?: string;           // Scoop package bucket/name
+  [key: string]: ArchDownloads | string | undefined;
 }
 
 // Android-specific downloads
@@ -42,20 +57,21 @@ export interface AndroidDownloads {
 
 // Flexible download structure that supports:
 // - Simple string URL
-// - Architecture-based downloads (macOS, Windows)
-// - Package type with architecture (Linux)
+// - Architecture-based downloads (macOS)
+// - Package type with architecture (Linux, Windows)
 // - Android-specific (apk/aab)
 export type PlatformDownload = 
   | string 
   | ArchDownloads 
   | PackageTypeDownloads 
+  | WindowsDownloads
   | AndroidDownloads;
 
 export interface PlatformDownloads {
   iOS?: string;
   Android?: string | AndroidDownloads;
   macOS?: string | ArchDownloads;
-  Windows?: string | ArchDownloads;
+  Windows?: string | ArchDownloads | WindowsDownloads;
   Linux?: string | PackageTypeDownloads;
   Web?: string;
   [key: string]: PlatformDownload | undefined;
