@@ -574,6 +574,68 @@
             ],
             "versions": [
                 {
+                    "version": "5.0.0",
+                    "date": "2026-01-12",
+                    "sourceCode": "",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "",
+                        "Android": "Use RepStore to install from our repository",
+                        "macOS": "Download the latest macOS build",
+                        "Windows": "Download the latest Windows build",
+                        "Linux": "Download the latest Linux build from GitLab CI",
+                        "Web": "Access the web version"
+                    },
+                    "downloads": {
+                        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-ios-unsigned.ipa",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-macos-unsigned.zip",
+                            "homebrew": ""
+                        },
+                        "Windows": {
+                            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-windows-x64.zip",
+                            "arm64": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-linux-x64.zip",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12.apk",
+                            "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12.aab"
+                        },
+                        "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-web.zip"
+                    },
+                    "localizedDescription": "# 5.0.0\n\n- Fixed account manager not working.\n- Reload all data when switching accounts.\n- Fixed some platforms not having icons."
+                },
+                {
                     "version": "4.0.0",
                     "date": "2026-01-09",
                     "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/3e1a8d7268fb3c4ff69c110bf428de4a52f8f129",
