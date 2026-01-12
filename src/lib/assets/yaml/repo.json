@@ -1370,6 +1370,87 @@
             ],
             "versions": [
                 {
+                    "version": "3.1.0",
+                    "date": "2026-01-12",
+                    "sourceCode": "",
+                    "platforms": [
+                        "iOS",
+                        "Android",
+                        "macOS",
+                        "Windows",
+                        "Linux"
+                    ],
+                    "platformInstall": {
+                        "iOS": "Coming soon via AltStore",
+                        "Android": "Download the APK directly from our repository",
+                        "macOS": "Download from GitLab CI or compile from source",
+                        "Windows": "Download from GitLab CI or compile from source",
+                        "Linux": "Download from GitLab CI or compile from source"
+                    },
+                    "downloads": {
+                        "iOS": "",
+                        "Android": {
+                            "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-42/repstore-3.1.0-2026-01-12.aab",
+                            "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-42/repstore-3.1.0-2026-01-12.apk"
+                        },
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "",
+                            "homebrew": ""
+                        },
+                        "Windows": {
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "homebrew": ""
+                        }
+                    },
+                    "localizedDescription": "# 3.1.0\n\n## Added\n- Auto-refresh app install status when returning to the app (after install/uninstall/update)\n\n## Changed\n- Updated description.\n- Download progress now only shows for the specific version being downloaded\n\n## Fixed\n- Fixed app install detection not recognizing installed apps due to bundle identifier mismatch between repository and system package names\n- Apps now correctly show \"Open\" when installed, \"Update\" when an older version is installed, and \"Install\" when not installed\n- Fixed sync logic that was incorrectly removing detected apps from the database"
+                },
+                {
                     "version": "3.0.0",
                     "date": "2026-01-11",
                     "sourceCode": "https://gitlab.com/Openlyst/repstore/-/tree/c678d769370b58d511329d0cc604d8d6a3c6261d",
