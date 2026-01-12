@@ -60,7 +60,7 @@
                             "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
                         },
                         "Windows": {
-                            "x86_64": "",
+                            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-15/doudou-windows-x64.zip",
                             "arm64": ""
                         },
                         "Linux": {
