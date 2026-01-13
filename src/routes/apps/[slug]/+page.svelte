@@ -1,19 +1,24 @@
 <script lang="ts">
   import { Section, Button, Skeleton } from '$lib';
   import type { PageData } from './$types';
+  import type { App, AppVersion } from '$lib/types/repo';
   import { marked } from 'marked';
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
+  import { getApp } from '$lib/services/dataService';
+  import { language, type SupportedLanguage } from '$lib/stores/language';
+  import { page } from '$app/stores';
   
   let { data }: { data: PageData } = $props();
   
   let isLoaded = $state(false);
-  let app = $state<typeof data.app>();
-  let latestVersion = $state<typeof data.app.versions[0]>();
+  let app = $state<App | undefined>();
+  let latestVersion = $state<AppVersion | undefined>();
   let Button3D: any = $state(null);
+  let currentLang = $state<SupportedLanguage>('en');
   
   // State for version selection and modal visibility
-  let selectedVersion = $state<typeof data.app.versions[0]>();
+  let selectedVersion = $state<AppVersion | undefined>();
   let showModal = $state(false);
   
   // State for download selections per platform
@@ -24,6 +29,32 @@
   let lightboxImageUrl = $state('');
   let lightboxIndex = $state(0);
   
+  // Subscribe to language changes and reload data
+  $effect(() => {
+    const unsubscribe = language.subscribe(async (lang) => {
+      if (browser && (lang !== currentLang || !app)) {
+        currentLang = lang;
+        try {
+          // Get the slug from the current page
+          const slug = $page.params.slug;
+          const fetchedApp = await getApp(slug, lang);
+          if (fetchedApp) {
+            app = fetchedApp;
+            latestVersion = fetchedApp.versions[0];
+            if (!selectedVersion) {
+              selectedVersion = latestVersion;
+            }
+            isLoaded = true;
+          }
+        } catch (e) {
+          console.error('Error fetching app:', e);
+        }
+      }
+    });
+    
+    return () => unsubscribe();
+  });
+  
   onMount(() => {
     // Load 3D components client-side only
     if (browser) {
@@ -32,12 +63,13 @@
       });
     }
     
-    setTimeout(() => {
+    // Initial load from SSR data
+    if (data.app && !app) {
       app = data.app;
-      latestVersion = app.versions[0];
+      latestVersion = data.app.versions[0];
       selectedVersion = latestVersion;
       isLoaded = true;
-    }, 100);
+    }
   });
   
   // Function to open lightbox

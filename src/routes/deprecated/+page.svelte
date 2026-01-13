@@ -1,20 +1,42 @@
 <script lang="ts">
   import { Section, AppCard, Skeleton } from '$lib';
-  import { nameToSlug } from '$lib/services/dataService';
+  import { nameToSlug, getDeprecatedApps } from '$lib/services/dataService';
   import type { PageData } from './$types';
+  import type { App } from '$lib/types/repo';
   import { onMount } from 'svelte';
-  import { t } from '$lib/stores/language';
+  import { t, language, type SupportedLanguage } from '$lib/stores/language';
   
-  export let data: PageData;
+  let { data }: { data: PageData } = $props();
   
-  let isLoaded = false;
-  let apps: typeof data.apps = [];
+  let isLoaded = $state(false);
+  let apps = $state<App[]>([]);
+  let currentLang = $state<SupportedLanguage>('en');
+  
+  // Subscribe to language changes and reload data
+  $effect(() => {
+    const unsubscribe = language.subscribe(async (lang) => {
+      if (lang !== currentLang || apps.length === 0) {
+        currentLang = lang;
+        try {
+          const fetchedApps = await getDeprecatedApps(lang);
+          apps = fetchedApps;
+          isLoaded = true;
+        } catch (e) {
+          console.error('Error fetching apps:', e);
+          apps = data.apps;
+          isLoaded = true;
+        }
+      }
+    });
+    
+    return () => unsubscribe();
+  });
   
   onMount(() => {
-    setTimeout(() => {
+    if (data.apps && apps.length === 0) {
       apps = data.apps;
       isLoaded = true;
-    }, 100);
+    }
   });
 </script>
 

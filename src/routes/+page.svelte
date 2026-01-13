@@ -1,18 +1,56 @@
 <script lang="ts">
   import { Section, AppCard, Button, Skeleton } from '$lib';
-  import { nameToSlug } from '$lib/services/dataService';
+  import { nameToSlug, getActiveApps, getRepoConfig } from '$lib/services/dataService';
   import favicon from '$lib/assets/favicon.svg';
   import { onMount } from 'svelte';
-  import { t } from '$lib/stores/language';
+  import { t, language, type SupportedLanguage } from '$lib/stores/language';
   import { browser } from '$app/environment';
+  import type { App, RepoConfig } from '$lib/types/repo';
   
   let { data } = $props();
   
   let isLoaded = $state(false);
-  let apps = $state<typeof data.apps>([]);
-  let featuredApps = $state<typeof data.featuredApps>([]);
-  let config = $state<typeof data.config>();
+  let apps = $state<App[]>([]);
+  let featuredApps = $state<App[]>([]);
+  let config = $state<RepoConfig | undefined>();
   let Button3D: any = $state(null);
+  let currentLang = $state<SupportedLanguage>('en');
+  
+  // Subscribe to language changes and reload data
+  $effect(() => {
+    const unsubscribe = language.subscribe(async (lang) => {
+      if (lang !== currentLang || apps.length === 0) {
+        currentLang = lang;
+        try {
+          const [fetchedApps, fetchedConfig] = await Promise.all([
+            getActiveApps(lang),
+            getRepoConfig(lang)
+          ]);
+          apps = fetchedApps;
+          config = fetchedConfig;
+          
+          // Get featured apps
+          featuredApps = (fetchedConfig.featuredApps || [])
+            .map((featuredId: string) => fetchedApps.find((app: App) => 
+              app.bundleIdentifier === featuredId || 
+              nameToSlug(app.name) === featuredId
+            ))
+            .filter(Boolean) as App[];
+          
+          isLoaded = true;
+        } catch (e) {
+          console.error('Error fetching data:', e);
+          // Fall back to initial data
+          apps = data.apps;
+          featuredApps = data.featuredApps.filter((a): a is App => a !== undefined);
+          config = data.config;
+          isLoaded = true;
+        }
+      }
+    });
+    
+    return () => unsubscribe();
+  });
   
   onMount(async () => {
     // Load 3D button component client-side only
@@ -21,13 +59,13 @@
       Button3D = module.default;
     }
     
-    // Simulate async content loading for smooth transition
-    setTimeout(() => {
+    // Initial load from SSR data if available
+    if (data.apps && data.apps.length > 0 && apps.length === 0) {
       apps = data.apps;
-      featuredApps = data.featuredApps;
+      featuredApps = data.featuredApps.filter((a): a is App => a !== undefined);
       config = data.config;
       isLoaded = true;
-    }, 100);
+    }
   });
 </script>
 
