@@ -2,25 +2,39 @@
   import { Section, AppCard, Button, Skeleton } from '$lib';
   import { getActiveApps, getRepoConfig, nameToSlug } from '$lib/services/dataService';
   import favicon from '$lib/assets/favicon.svg';
-  import { onMount } from 'svelte';
   import { t, language, type SupportedLanguage } from '$lib/stores/language';
   import { browser } from '$app/environment';
   import type { App, RepoConfig } from '$lib/types/repo';
   import Button3D from '$lib/components/Button3D.svelte';
+  import { get } from 'svelte/store';
   
   let { data } = $props();
   
-  let isLoaded = $state(false);
-  let apps = $state<App[]>([]);
-  let featuredApps = $state<App[]>([]);
-  let config = $state<RepoConfig | undefined>();
-  let currentLang = $state<SupportedLanguage>('en');
+  // Initialize immediately from SSR data to avoid flash of unstyled content
+  let isLoaded = $state(true);
+  let apps = $state<App[]>(data.apps || []);
+  let featuredApps = $state<App[]>(data.featuredApps?.filter((a): a is App => a !== undefined) || []);
+  let config = $state<RepoConfig | undefined>(data.config);
+  let currentLang = $state<SupportedLanguage>(get(language));
+  let isRefreshing = $state(false);
   
-  // Subscribe to language changes and reload data
+  // Subscribe to language changes and reload data (only on client-side language changes)
   $effect(() => {
+    if (!browser) return;
+    
     const unsubscribe = language.subscribe(async (lang) => {
-      if (lang !== currentLang || apps.length === 0) {
-        currentLang = lang;
+      // Skip if same language and we already have data
+      if (lang === currentLang && apps.length > 0) return;
+      
+      // Skip if we're already refreshing
+      if (isRefreshing) return;
+      
+      const prevLang = currentLang;
+      currentLang = lang;
+      
+      // Only fetch new data if language actually changed (not on initial subscribe)
+      if (prevLang !== lang && apps.length > 0) {
+        isRefreshing = true;
         try {
           const [fetchedApps, fetchedConfig] = await Promise.all([
             getActiveApps(lang),
@@ -36,30 +50,15 @@
               nameToSlug(app.name) === featuredId
             ))
             .filter(Boolean) as App[];
-          
-          isLoaded = true;
         } catch (e) {
           console.error('Error fetching data:', e);
-          // Fall back to initial data
-          apps = data.apps;
-          featuredApps = data.featuredApps.filter((a): a is App => a !== undefined);
-          config = data.config;
-          isLoaded = true;
+        } finally {
+          isRefreshing = false;
         }
       }
     });
     
     return () => unsubscribe();
-  });
-  
-  onMount(async () => {
-    // Initial load from SSR data if available
-    if (data.apps && data.apps.length > 0 && apps.length === 0) {
-      apps = data.apps;
-      featuredApps = data.featuredApps.filter((a): a is App => a !== undefined);
-      config = data.config;
-      isLoaded = true;
-    }
   });
 </script>
 

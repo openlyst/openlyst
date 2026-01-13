@@ -3,40 +3,47 @@
   import { getDeprecatedApps } from '$lib/services/dataService';
   import type { PageData } from './$types';
   import type { App } from '$lib/types/repo';
-  import { onMount } from 'svelte';
   import { t, language, type SupportedLanguage } from '$lib/stores/language';
+  import { browser } from '$app/environment';
+  import { get } from 'svelte/store';
   
   let { data }: { data: PageData } = $props();
   
-  let isLoaded = $state(false);
-  let apps = $state<App[]>([]);
-  let currentLang = $state<SupportedLanguage>('en');
+  // Initialize immediately from SSR data to avoid flash of unstyled content
+  let isLoaded = $state(true);
+  let apps = $state<App[]>(data.apps || []);
+  let currentLang = $state<SupportedLanguage>(get(language));
+  let isRefreshing = $state(false);
   
-  // Subscribe to language changes and reload data
+  // Subscribe to language changes and reload data (only on client-side language changes)
   $effect(() => {
+    if (!browser) return;
+    
     const unsubscribe = language.subscribe(async (lang) => {
-      if (lang !== currentLang || apps.length === 0) {
-        currentLang = lang;
+      // Skip if same language and we already have data
+      if (lang === currentLang && apps.length > 0) return;
+      
+      // Skip if we're already refreshing
+      if (isRefreshing) return;
+      
+      const prevLang = currentLang;
+      currentLang = lang;
+      
+      // Only fetch new data if language actually changed (not on initial subscribe)
+      if (prevLang !== lang && apps.length > 0) {
+        isRefreshing = true;
         try {
           const fetchedApps = await getDeprecatedApps(lang);
           apps = fetchedApps;
-          isLoaded = true;
         } catch (e) {
           console.error('Error fetching apps:', e);
-          apps = data.apps;
-          isLoaded = true;
+        } finally {
+          isRefreshing = false;
         }
       }
     });
     
     return () => unsubscribe();
-  });
-  
-  onMount(() => {
-    if (data.apps && apps.length === 0) {
-      apps = data.apps;
-      isLoaded = true;
-    }
   });
 </script>
 

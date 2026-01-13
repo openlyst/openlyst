@@ -3,22 +3,24 @@
   import type { PageData } from './$types';
   import type { App, AppVersion } from '$lib/types/repo';
   import { marked } from 'marked';
-  import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import { getApp } from '$lib/services/dataService';
   import { language, t, type SupportedLanguage } from '$lib/stores/language';
   import { page } from '$app/stores';
   import Button3D from '$lib/components/Button3D.svelte';
+  import { get } from 'svelte/store';
   
   let { data }: { data: PageData } = $props();
   
-  let isLoaded = $state(false);
-  let app = $state<App | undefined>();
-  let latestVersion = $state<AppVersion | undefined>();
-  let currentLang = $state<SupportedLanguage>('en');
+  // Initialize immediately from SSR data to avoid flash of unstyled content
+  let isLoaded = $state(true);
+  let app = $state<App | undefined>(data.app);
+  let latestVersion = $state<AppVersion | undefined>(data.app?.versions[0]);
+  let currentLang = $state<SupportedLanguage>(get(language));
+  let isRefreshing = $state(false);
   
   // State for version selection and modal visibility
-  let selectedVersion = $state<AppVersion | undefined>();
+  let selectedVersion = $state<AppVersion | undefined>(data.app?.versions[0]);
   let showModal = $state(false);
   
   // State for download selections per platform
@@ -29,11 +31,23 @@
   let lightboxImageUrl = $state('');
   let lightboxIndex = $state(0);
   
-  // Subscribe to language changes and reload data
+  // Subscribe to language changes and reload data (only on client-side language changes)
   $effect(() => {
+    if (!browser) return;
+    
     const unsubscribe = language.subscribe(async (lang) => {
-      if (browser && (lang !== currentLang || !app)) {
-        currentLang = lang;
+      // Skip if same language and we already have data
+      if (lang === currentLang && app) return;
+      
+      // Skip if we're already refreshing
+      if (isRefreshing) return;
+      
+      const prevLang = currentLang;
+      currentLang = lang;
+      
+      // Only fetch new data if language actually changed (not on initial subscribe)
+      if (prevLang !== lang && app) {
+        isRefreshing = true;
         try {
           // Get the slug from the current page
           const slug = $page.params.slug;
@@ -45,25 +59,16 @@
             if (!selectedVersion) {
               selectedVersion = latestVersion;
             }
-            isLoaded = true;
           }
         } catch (e) {
           console.error('Error fetching app:', e);
+        } finally {
+          isRefreshing = false;
         }
       }
     });
     
     return () => unsubscribe();
-  });
-  
-  onMount(() => {
-    // Initial load from SSR data
-    if (data.app && !app) {
-      app = data.app;
-      latestVersion = data.app.versions[0];
-      selectedVersion = latestVersion;
-      isLoaded = true;
-    }
   });
   
   // Function to open lightbox
