@@ -39,7 +39,7 @@
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "",
+          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-47/finar-1.1.0-2026-01-13-macos-unsigned.zip",
           "homebrew": ""
         },
         "Windows": {
