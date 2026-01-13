@@ -17,7 +17,14 @@
   },
   "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
   "tintColor": "#dc2626",
-  "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+  "platforms": [
+    "iOS",
+    "macOS",
+    "Windows",
+    "Linux",
+    "Android",
+    "Web"
+  ],
   "screenshots": [
     "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
     "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
@@ -26,10 +33,102 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "12.0.0",
+      "date": "2026-01-13",
+      "sourceCode": "",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-ios-unsigned.ipa",
+        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI.",
+        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+      },
+      "downloads": {
+        "iOS": "",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-macos-unsigned.zip",
+          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-windows-x64.zip",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+        },
+        "Android": {
+          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13.apk",
+          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13.aab",
+          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+        },
+        "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-web.zip"
+      },
+      "localizedDescription": {
+        "en": "",
+        "zh": "",
+        "ru": ""
+      }
+    },
+    {
       "version": "11.0.0",
       "date": "2026-01-09",
       "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/bf48d7f525d51d8e5970ccd85bb16d604a95b79a",
-      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
       "platformInstall": {
         "iOS": "",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
