@@ -35,7 +35,7 @@
         "Web": "Access the web version or self-host with Docker"
       },
       "downloads": {
-        "iOS": "",
+        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-47/finar-1.1.0-2026-01-13-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
