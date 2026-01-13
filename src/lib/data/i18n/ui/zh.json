@@ -7,11 +7,11 @@
     "support": "支持"
   },
   "home": {
-    "title": "革命性的自由开源应用",
-    "subtitle": "构建服务于人民而非企业利益的自由开源软件。加入革命，夺回对数字生活的控制权。",
+    "title": "自由开源应用",
+    "subtitle": "构建服务于人民而非企业利益的自由开源软件。夺回对数字生活的控制权。",
     "exploreApps": "探索我们的应用",
-    "joinMovement": "加入运动",
-    "powerToThePeople": "权力属于人民",
+    "joinMovement": "参与贡献",
+    "powerToThePeople": "为每个人构建",
     "powerDescription": "我们相信技术应该服务于人类，而不是剥削人类。我们的应用由社区构建，为社区服务。",
     "privacyFirst": "隐私优先",
     "privacyDesc": "您的数据属于您。没有跟踪，没有监控，没有企业控制。",
@@ -20,12 +20,12 @@
     "openSource": "开源",
     "openSourceDesc": "所有代码都是透明的、可审计的，并且可以自由使用、修改和分发。",
     "ourApps": "我们的应用",
-    "ourAppsDesc": "将用户放在首位的革命性软件。每个应用都以隐私、自由和社区为核心设计。",
+    "ourAppsDesc": "将用户放在首位的软件。每个应用都以隐私、自由和社区为核心设计。",
     "comingSoon": "即将推出",
-    "comingSoonDesc": "我们正在开发令人惊叹的革命性应用。请稍后再来查看！",
-    "moreAppsComing": "更多革命性应用即将推出！",
+    "comingSoonDesc": "我们正在开发令人惊叹的应用。请稍后再来查看！",
+    "moreAppsComing": "更多精彩应用即将推出！",
     "viewAllApps": "查看所有应用",
-    "joinRevolution": "加入革命",
+    "joinRevolution": "参与贡献",
     "joinRevolutionDesc": "帮助我们构建更美好的数字未来。贡献代码、报告错误，或传播自由软件的理念。",
     "startContributing": "开始贡献",
     "downloadApps": "下载应用",
@@ -35,7 +35,7 @@
   "apps": {
     "title": "发现精彩应用",
     "subtitle": "探索我们的免费、开源应用集合。为隐私而构建，为您而设计。",
-    "powerToThePeople": "权力属于人民",
+    "powerToThePeople": "为每个人构建",
     "ourApps": "我们的应用",
     "ourAppsDesc": "免费、开源且注重隐私的应用，面向所有人。",
     "noAppsYet": "暂无应用",
@@ -61,18 +61,18 @@
   },
   "about": {
     "title": "关于 OpenLyst",
-    "subtitle": "我们是一个由开发者、设计师和活动家组成的集体，致力于构建服务于人民而非企业利益的革命性自由开源应用。",
+    "subtitle": "我们是一个由开发者、设计师和爱好者组成的集体，致力于构建服务于人民而非企业利益的自由开源应用。",
     "ourMission": "我们的使命",
     "missionDesc": "技术应该解放人类，而不是剥削人类。我们构建赋予用户权力并尊重其自由的软件。",
-    "powerToThePeople": "权力属于人民",
-    "powerDesc": "在一个技术越来越服务于企业利益和监控资本主义的世界中，我们代表数字自由。我们构建的每个应用都旨在让用户完全控制其数据、体验和数字生活。",
+    "powerToThePeople": "为每个人构建",
+    "powerDesc": "在一个技术越来越服务于企业利益的世界中，我们代表数字自由。我们构建的每个应用都旨在让用户完全控制其数据、体验和数字生活。",
     "noTracking": "无跟踪、无监控、无数据收集",
     "transparentDev": "透明的开发和开源代码",
     "communityDrivenFeatures": "社区驱动的功能和开发",
     "freeForever": "永久免费提供给所有人",
     "quoteAudre": "『主人的工具永远不会拆毁主人的房子。它们可能暂时让我们在他自己的游戏中击败他，但它们永远不会使我们能够带来真正的改变。』",
     "quoteAudreAuthor": "- 奥德雷·洛德",
-    "quoteNote": "我们相信，要创造真正自由的软件，我们必须从头开始用革命性原则构建新工具，而不仅仅是复制现有的剥削系统。",
+    "quoteNote": "我们相信，要创造真正自由的软件，我们必须从头开始用新原则构建新工具，而不仅仅是复制现有的系统。",
     "ourValues": "我们的价值观",
     "valuesDesc": "这些原则指导我们所做的一切，从代码设计到社区互动。",
     "privacyFirst": "隐私优先",
@@ -89,8 +89,8 @@
     "sustainabilityDesc": "我们构建长期软件，采用可持续的开发实践和最小的环境影响。"
   },
   "contribute": {
-    "title": "加入革命",
-    "subtitle": "帮助我们构建服务于人民的革命性自由开源应用。每一份贡献，无论多么小，都在为数字自由的斗争中产生影响。",
+    "title": "参与贡献",
+    "subtitle": "帮助我们构建服务于人民的自由开源应用。每一份贡献，无论多么小，都会产生影响。",
     "waysToContribute": "贡献方式",
     "waysDesc": "无论您的技术背景如何，都有多种方式支持我们的使命。",
     "codeDev": "代码开发",
@@ -153,7 +153,7 @@
     "resourcesDesc": "成为有效 OpenLyst 贡献者所需的一切。"
   },
   "footer": {
-    "description": "为人民构建革命性的自由开源应用。服务于社区而非企业利益的免费和开源软件。",
+    "description": "为人民构建自由开源应用。服务于社区而非企业利益的免费和开源软件。",
     "applications": "应用",
     "community": "社区",
     "contribute": "贡献",
@@ -161,7 +161,7 @@
     "documentation": "文档",
     "support": "支持",
     "copyright": "© 2025 OpenLyst。所有软件均以开源许可证发布。",
-    "powerToThePeople": "通过自由软件让权力属于人民 ✊"
+    "powerToThePeople": "自由软件，人人受益 ✊"
   },
   "common": {
     "loading": "加载中...",
