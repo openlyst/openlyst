@@ -145,37 +145,31 @@
 
 <!-- History Section -->
 <Section 
-  title="Our Story" 
-  subtitle="How a group of passionate developers came together to build revolutionary software."
+  title={$t.about.ourStory} 
+  subtitle={$t.about.ourStoryDesc}
   background="red"
 >
   {#snippet children()}
     <div class="max-w-4xl mx-auto">
       <div class="space-y-8">
         <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-          <h3 class="text-xl font-semibold text-white mb-3">🌱 The Beginning</h3>
+          <h3 class="text-xl font-semibold text-white mb-3">{$t.about.theBeginning}</h3>
           <p class="text-red-100">
-            OpenLyst started as a small group of developers frustrated with the state of proprietary software. 
-            We were tired of applications that tracked users, collected unnecessary data, and prioritized 
-            profit over user experience. We decided to build the applications we wanted to use ourselves.
+            {$t.about.beginningDesc}
           </p>
         </div>
         
         <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-          <h3 class="text-xl font-semibold text-white mb-3">🚀 Growing Movement</h3>
+          <h3 class="text-xl font-semibold text-white mb-3">{$t.about.growingMovement}</h3>
           <p class="text-red-100">
-            What started as personal projects quickly grew into a movement. More developers joined our cause, 
-            bringing diverse skills and perspectives. We realized we could create something bigger - 
-            a collection of applications that truly served users, not shareholders.
+            {$t.about.growingDesc}
           </p>
         </div>
         
         <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-          <h3 class="text-xl font-semibold text-white mb-3">✊ Revolutionary Software</h3>
+          <h3 class="text-xl font-semibold text-white mb-3">{$t.about.revolutionarySoftware}</h3>
           <p class="text-red-100">
-            Today, OpenLyst is a thriving collective of contributors from around the world. 
-            We've released applications that thousands of users rely on daily, and we're just getting started. 
-            Every line of code we write is a step toward a more free and equitable digital future.
+            {$t.about.revolutionaryDesc}
           </p>
         </div>
       </div>
@@ -185,8 +179,8 @@
 
 <!-- Team Section -->
 <Section 
-  title="The Collective" 
-  subtitle="Meet some of the people building the future of free software."
+  title={$t.about.theCollective} 
+  subtitle={$t.about.collectiveDesc}
 >
   {#snippet children()}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -194,62 +188,62 @@
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">👩‍💻</span>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-1">Core Developers</h3>
-        <p class="text-gray-400 text-sm mb-3">The backbone of our development team</p>
-        <p class="text-gray-500 text-sm">Writing code, fixing bugs, and architecting the future</p>
+        <h3 class="text-lg font-semibold text-white mb-1">{$t.about.coreDevelopers}</h3>
+        <p class="text-gray-400 text-sm mb-3">{$t.about.coreDevelopersSubtitle}</p>
+        <p class="text-gray-500 text-sm">{$t.about.coreDevelopersDesc}</p>
       </div>
       
       <div class="text-center">
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">🎨</span>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-1">Designers</h3>
-        <p class="text-gray-400 text-sm mb-3">Creating beautiful, accessible interfaces</p>
-        <p class="text-gray-500 text-sm">Making complex software simple and intuitive</p>
+        <h3 class="text-lg font-semibold text-white mb-1">{$t.about.designers}</h3>
+        <p class="text-gray-400 text-sm mb-3">{$t.about.designersSubtitle}</p>
+        <p class="text-gray-500 text-sm">{$t.about.designersDesc}</p>
       </div>
       
       <div class="text-center">
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">🔒</span>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-1">Security Experts</h3>
-        <p class="text-gray-400 text-sm mb-3">Protecting user privacy and data</p>
-        <p class="text-gray-500 text-sm">Auditing code and implementing security best practices</p>
+        <h3 class="text-lg font-semibold text-white mb-1">{$t.about.securityExperts}</h3>
+        <p class="text-gray-400 text-sm mb-3">{$t.about.securityExpertsSubtitle}</p>
+        <p class="text-gray-500 text-sm">{$t.about.securityExpertsDesc}</p>
       </div>
       
       <div class="text-center">
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">📝</span>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-1">Documentation</h3>
-        <p class="text-gray-400 text-sm mb-3">Making our software accessible to everyone</p>
-        <p class="text-gray-500 text-sm">Writing guides, tutorials, and API documentation</p>
+        <h3 class="text-lg font-semibold text-white mb-1">{$t.about.documentationTeam}</h3>
+        <p class="text-gray-400 text-sm mb-3">{$t.about.documentationTeamSubtitle}</p>
+        <p class="text-gray-500 text-sm">{$t.about.documentationTeamDesc}</p>
       </div>
       
       <div class="text-center">
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">🌍</span>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-1">Translators</h3>
-        <p class="text-gray-400 text-sm mb-3">Breaking down language barriers</p>
-        <p class="text-gray-500 text-sm">Localizing our applications for global accessibility</p>
+        <h3 class="text-lg font-semibold text-white mb-1">{$t.about.translators}</h3>
+        <p class="text-gray-400 text-sm mb-3">{$t.about.translatorsSubtitle}</p>
+        <p class="text-gray-500 text-sm">{$t.about.translatorsDesc}</p>
       </div>
       
       <div class="text-center">
         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <span class="text-white text-2xl">💬</span>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-1">Community</h3>
-        <p class="text-gray-400 text-sm mb-3">Supporting users and building connections</p>
-        <p class="text-gray-500 text-sm">Moderating forums, answering questions, and fostering community</p>
+        <h3 class="text-lg font-semibold text-white mb-1">{$t.about.communityTeam}</h3>
+        <p class="text-gray-400 text-sm mb-3">{$t.about.communityTeamSubtitle}</p>
+        <p class="text-gray-500 text-sm">{$t.about.communityTeamDesc}</p>
       </div>
     </div>
     
     <div class="mt-12 text-center">
       <p class="text-gray-400 mb-6">
-        Want to join our collective? We're always looking for passionate people who share our values.
+        {$t.about.joinCollective}
       </p>
-      <Button text="Join the Revolution" href="/contribute" variant="primary" size="lg" />
+      <Button text={$t.about.joinRevolution} href="/contribute" variant="primary" size="lg" />
     </div>
   {/snippet}
 </Section>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Section } from '$lib';
+  import { t } from '$lib/stores/language';
   
   const baseUrl = 'https://openlyst.ink';
   
@@ -204,8 +205,8 @@
 </script>
 
 <svelte:head>
-  <title>API Documentation - OpenLyst</title>
-  <meta name="description" content="Free API documentation for accessing OpenLyst repository data" />
+  <title>{$t.api.pageTitle} - OpenLyst</title>
+  <meta name="description" content={$t.api.pageDescription} />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </svelte:head>
 
@@ -215,30 +216,30 @@
     <div class="text-center">
       <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full mb-6">
         <i class="fas fa-code text-emerald-200"></i>
-        <span class="text-emerald-100 font-medium">REST API v1</span>
+        <span class="text-emerald-100 font-medium">{$t.api.restApiVersion}</span>
       </div>
       <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
-        OpenLyst API
+        {$t.api.title}
       </h1>
       <p class="text-xl text-emerald-100 max-w-2xl mx-auto mb-8">
-        Access our complete app repository programmatically. Free to use, no authentication required.
+        {$t.api.subtitle}
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
           <i class="fas fa-check-circle text-green-300"></i>
-          <span>100% Free</span>
+          <span>{$t.api.free}</span>
         </div>
         <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
           <i class="fas fa-lock-open text-green-300"></i>
-          <span>No Auth Required</span>
+          <span>{$t.api.noAuth}</span>
         </div>
         <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
           <i class="fas fa-bolt text-yellow-300"></i>
-          <span>JSON Responses</span>
+          <span>{$t.api.jsonResponses}</span>
         </div>
         <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
           <i class="fas fa-globe text-blue-300"></i>
-          <span>CORS Enabled</span>
+          <span>{$t.api.corsEnabled}</span>
         </div>
       </div>
     </div>
@@ -246,7 +247,7 @@
 </section>
 
 <!-- Base URL Section -->
-<Section title="Base URL" subtitle="All API requests should be made to this URL" background="gray">
+<Section title={$t.api.baseUrl} subtitle={$t.api.baseUrlSubtitle} background="gray">
   {#snippet children()}
     <div class="bg-gray-900 rounded-xl p-6 font-mono text-lg">
       <div class="flex items-center justify-between">
@@ -255,7 +256,7 @@
           class="px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors text-sm"
           onclick={() => copyToClipboard(`${baseUrl}/api/v1`, 'base')}
         >
-          {copiedEndpoint === 'base' ? 'Copied!' : 'Copy'}
+          {copiedEndpoint === 'base' ? $t.api.copied : $t.api.copy}
         </button>
       </div>
     </div>
@@ -263,16 +264,16 @@
 </Section>
 
 <!-- Quick Start Section -->
-<Section title="Quick Start" subtitle="Get started with a simple example" background="default">
+<Section title={$t.api.quickStart} subtitle={$t.api.quickStartSubtitle} background="default">
   {#snippet children()}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div>
-        <h3 class="text-lg font-semibold text-white mb-4">JavaScript / Fetch</h3>
+        <h3 class="text-lg font-semibold text-white mb-4">{$t.api.javascriptFetch}</h3>
         <div class="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
           <pre class="text-gray-300"><span class="text-purple-400">const</span> response = <span class="text-purple-400">await</span> <span class="text-yellow-400">fetch</span>(<span class="text-emerald-400">'{baseUrl}/api/v1/apps'</span>);
 <span class="text-purple-400">const</span> data = <span class="text-purple-400">await</span> response.<span class="text-yellow-400">json</span>();
 
-<span class="text-gray-500">// Get all apps</span>
+<span class="text-gray-500">// {$t.api.getAllApps}</span>
 <span class="text-yellow-400">console</span>.<span class="text-yellow-400">log</span>(data.data);</pre>
         </div>
       </div>
@@ -294,7 +295,7 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 </Section>
 
 <!-- Endpoints Section -->
-<Section title="API Endpoints" subtitle="Complete reference for all available endpoints" background="gray">
+<Section title={$t.api.apiEndpoints} subtitle={$t.api.apiEndpointsSubtitle} background="gray">
   {#snippet children()}
     <div class="space-y-8">
       {#each endpoints as endpoint}
@@ -311,7 +312,7 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
                 onclick={() => copyToClipboard(`${baseUrl}${endpoint.path.replace(':slug', 'doudou')}`, endpoint.path)}
               >
                 <i class="fas fa-copy"></i>
-                {copiedEndpoint === endpoint.path ? 'Copied!' : 'Copy URL'}
+                {copiedEndpoint === endpoint.path ? $t.api.copied : $t.api.copyUrl}
               </button>
             </div>
             <p class="text-gray-400">{endpoint.description}</p>
@@ -320,14 +321,14 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
           <!-- Parameters -->
           {#if endpoint.params && endpoint.params.length > 0}
             <div class="p-6 border-b border-gray-700 bg-gray-900">
-              <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">Path Parameters</h4>
+              <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">{$t.api.pathParameters}</h4>
               <div class="space-y-3">
                 {#each endpoint.params as param}
                   <div class="flex items-start gap-4">
                     <code class="px-2 py-1 bg-purple-900/50 text-purple-300 rounded text-sm font-mono">{param.name}</code>
                     <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">{param.type}</span>
                     {#if param.required}
-                      <span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">required</span>
+                      <span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">{$t.api.required}</span>
                     {/if}
                     <span class="text-gray-400 text-sm">{param.description}</span>
                   </div>
@@ -339,7 +340,7 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
           <!-- Query Parameters -->
           {#if endpoint.queryParams && endpoint.queryParams.length > 0}
             <div class="p-6 border-b border-gray-700 bg-gray-900">
-              <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">Query Parameters</h4>
+              <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">{$t.api.queryParameters}</h4>
               <div class="space-y-3">
                 {#each endpoint.queryParams as param}
                   <div class="flex flex-wrap items-start gap-2 sm:gap-4">
@@ -347,7 +348,7 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
                     <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">{param.type}</span>
                     <span class="text-gray-400 text-sm flex-1">{param.description}</span>
                     {#if param.default}
-                      <span class="text-gray-500 text-sm">Default: {param.default}</span>
+                      <span class="text-gray-500 text-sm">{$t.api.default}: {param.default}</span>
                     {/if}
                   </div>
                 {/each}
@@ -357,7 +358,7 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
           
           <!-- Response -->
           <div class="p-6">
-            <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">Example Response</h4>
+            <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wide mb-4">{$t.api.exampleResponse}</h4>
             <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
               <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{endpoint.response}</pre>
             </div>
@@ -369,11 +370,10 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 </Section>
 
 <!-- Download Structure Section -->
-<Section title="Download Structure" subtitle="Understanding the platform-specific download formats" background="default">
+<Section title={$t.api.downloadStructure} subtitle={$t.api.downloadStructureSubtitle} background="default">
   {#snippet children()}
     <p class="text-gray-400 mb-6">
-      The <code class="bg-gray-700 px-2 py-1 rounded text-gray-300">downloads</code> field in version objects contains platform-specific download URLs. 
-      Different platforms support different installer types and architectures.
+      {$t.api.downloadsFieldDesc}
     </p>
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -381,9 +381,9 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
           <i class="fab fa-windows text-2xl text-blue-400"></i>
-          <h3 class="font-semibold text-white text-lg">Windows Downloads</h3>
+          <h3 class="font-semibold text-white text-lg">{$t.api.windowsDownloads}</h3>
         </div>
-        <p class="text-gray-400 text-sm mb-4">Windows supports multiple installer types and package managers.</p>
+        <p class="text-gray-400 text-sm mb-4">{$t.api.windowsDownloadsDesc}</p>
         <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
           <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{`"Windows": {
   "exe": {
@@ -412,19 +412,19 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 }`}</pre>
         </div>
         <div class="mt-4 space-y-2">
-          <h4 class="text-sm font-semibold text-gray-300">Installer Types:</h4>
+          <h4 class="text-sm font-semibold text-gray-300">{$t.api.installerTypes}:</h4>
           <ul class="text-gray-400 text-sm space-y-1">
-            <li><code class="bg-gray-700 px-1 rounded">exe</code> - NSIS, Inno Setup, or other installers</li>
-            <li><code class="bg-gray-700 px-1 rounded">msi</code> - Windows Installer packages</li>
-            <li><code class="bg-gray-700 px-1 rounded">msix</code> - Modern Windows app packages</li>
-            <li><code class="bg-gray-700 px-1 rounded">zip</code> - Portable zip archives</li>
-            <li><code class="bg-gray-700 px-1 rounded">portable</code> - Standalone portable executables</li>
+            <li><code class="bg-gray-700 px-1 rounded">exe</code> - {$t.api.exeDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">msi</code> - {$t.api.msiDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">msix</code> - {$t.api.msixDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">zip</code> - {$t.api.zipDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">portable</code> - {$t.api.portableDesc}</li>
           </ul>
-          <h4 class="text-sm font-semibold text-gray-300 mt-3">Package Managers:</h4>
+          <h4 class="text-sm font-semibold text-gray-300 mt-3">{$t.api.packageManagers}:</h4>
           <ul class="text-gray-400 text-sm space-y-1">
-            <li><code class="bg-gray-700 px-1 rounded">winget</code> - Windows Package Manager ID</li>
-            <li><code class="bg-gray-700 px-1 rounded">chocolatey</code> - Chocolatey package name</li>
-            <li><code class="bg-gray-700 px-1 rounded">scoop</code> - Scoop bucket/package name</li>
+            <li><code class="bg-gray-700 px-1 rounded">winget</code> - {$t.api.wingetDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">chocolatey</code> - {$t.api.chocolateyDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">scoop</code> - {$t.api.scoopDesc}</li>
           </ul>
         </div>
       </div>
@@ -433,9 +433,9 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
           <i class="fab fa-linux text-2xl text-yellow-400"></i>
-          <h3 class="font-semibold text-white text-lg">Linux Downloads</h3>
+          <h3 class="font-semibold text-white text-lg">{$t.api.linuxDownloads}</h3>
         </div>
-        <p class="text-gray-400 text-sm mb-4">Linux supports various package formats and package managers.</p>
+        <p class="text-gray-400 text-sm mb-4">{$t.api.linuxDownloadsDesc}</p>
         <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
           <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{`"Linux": {
   "zip": {
@@ -461,14 +461,14 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 }`}</pre>
         </div>
         <div class="mt-4 space-y-2">
-          <h4 class="text-sm font-semibold text-gray-300">Package Types:</h4>
+          <h4 class="text-sm font-semibold text-gray-300">{$t.api.packageTypes}:</h4>
           <ul class="text-gray-400 text-sm space-y-1">
-            <li><code class="bg-gray-700 px-1 rounded">appimage</code> - Universal Linux packages</li>
-            <li><code class="bg-gray-700 px-1 rounded">deb</code> - Debian/Ubuntu packages</li>
-            <li><code class="bg-gray-700 px-1 rounded">rpm</code> - Fedora/RHEL packages</li>
-            <li><code class="bg-gray-700 px-1 rounded">zip</code> / <code class="bg-gray-700 px-1 rounded">tar</code> - Archive formats</li>
-            <li><code class="bg-gray-700 px-1 rounded">aur</code> - Arch User Repository</li>
-            <li><code class="bg-gray-700 px-1 rounded">homebrew</code> - Homebrew tap URL</li>
+            <li><code class="bg-gray-700 px-1 rounded">appimage</code> - {$t.api.appimageDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">deb</code> - {$t.api.debDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">rpm</code> - {$t.api.rpmDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">zip</code> / <code class="bg-gray-700 px-1 rounded">tar</code> - {$t.api.archiveDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">aur</code> - {$t.api.aurDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">homebrew</code> - {$t.api.homebrewDesc}</li>
           </ul>
         </div>
       </div>
@@ -477,9 +477,9 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
           <i class="fab fa-apple text-2xl text-gray-300"></i>
-          <h3 class="font-semibold text-white text-lg">macOS Downloads</h3>
+          <h3 class="font-semibold text-white text-lg">{$t.api.macosDownloads}</h3>
         </div>
-        <p class="text-gray-400 text-sm mb-4">macOS supports architecture-specific downloads.</p>
+        <p class="text-gray-400 text-sm mb-4">{$t.api.macosDownloadsDesc}</p>
         <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
           <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{`"macOS": {
   "x86_64": "https://.../app-mac-x64.zip",
@@ -489,12 +489,12 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 }`}</pre>
         </div>
         <div class="mt-4 space-y-2">
-          <h4 class="text-sm font-semibold text-gray-300">Architectures:</h4>
+          <h4 class="text-sm font-semibold text-gray-300">{$t.api.architectures}:</h4>
           <ul class="text-gray-400 text-sm space-y-1">
-            <li><code class="bg-gray-700 px-1 rounded">x86_64</code> - Intel Macs</li>
-            <li><code class="bg-gray-700 px-1 rounded">arm64</code> - Apple Silicon (M1/M2/M3)</li>
-            <li><code class="bg-gray-700 px-1 rounded">universal</code> - Universal binary (both)</li>
-            <li><code class="bg-gray-700 px-1 rounded">homebrew</code> - Homebrew cask/tap</li>
+            <li><code class="bg-gray-700 px-1 rounded">x86_64</code> - {$t.api.intelMacs}</li>
+            <li><code class="bg-gray-700 px-1 rounded">arm64</code> - {$t.api.appleSilicon}</li>
+            <li><code class="bg-gray-700 px-1 rounded">universal</code> - {$t.api.universalBinary}</li>
+            <li><code class="bg-gray-700 px-1 rounded">homebrew</code> - {$t.api.homebrewCask}</li>
           </ul>
         </div>
       </div>
@@ -503,9 +503,9 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
           <i class="fab fa-android text-2xl text-green-400"></i>
-          <h3 class="font-semibold text-white text-lg">Android Downloads</h3>
+          <h3 class="font-semibold text-white text-lg">{$t.api.androidDownloads}</h3>
         </div>
-        <p class="text-gray-400 text-sm mb-4">Android supports APK and AAB formats.</p>
+        <p class="text-gray-400 text-sm mb-4">{$t.api.androidDownloadsDesc}</p>
         <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
           <pre class="text-emerald-400 text-sm font-mono whitespace-pre">{`"Android": {
   "apk": "https://.../app-release.apk",
@@ -514,11 +514,11 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 }`}</pre>
         </div>
         <div class="mt-4 space-y-2">
-          <h4 class="text-sm font-semibold text-gray-300">Formats:</h4>
+          <h4 class="text-sm font-semibold text-gray-300">{$t.api.formats}:</h4>
           <ul class="text-gray-400 text-sm space-y-1">
-            <li><code class="bg-gray-700 px-1 rounded">apk</code> - Android Package (direct install)</li>
-            <li><code class="bg-gray-700 px-1 rounded">aab</code> - Android App Bundle</li>
-            <li><code class="bg-gray-700 px-1 rounded">apkpure</code> - APKPure store link</li>
+            <li><code class="bg-gray-700 px-1 rounded">apk</code> - {$t.api.apkDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">aab</code> - {$t.api.aabDesc}</li>
+            <li><code class="bg-gray-700 px-1 rounded">apkpure</code> - {$t.api.apkpureDesc}</li>
           </ul>
         </div>
       </div>
@@ -526,23 +526,23 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
     
     <!-- Architecture Notes -->
     <div class="mt-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
-      <h3 class="font-semibold text-white text-lg mb-4">Architecture Reference</h3>
+      <h3 class="font-semibold text-white text-lg mb-4">{$t.api.architectureReference}</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="text-center p-4 bg-gray-900 rounded-lg">
           <code class="text-blue-400 font-mono">x86_64</code>
-          <p class="text-gray-400 text-sm mt-1">64-bit Intel/AMD</p>
+          <p class="text-gray-400 text-sm mt-1">{$t.api.arch64BitIntel}</p>
         </div>
         <div class="text-center p-4 bg-gray-900 rounded-lg">
           <code class="text-purple-400 font-mono">arm64</code>
-          <p class="text-gray-400 text-sm mt-1">64-bit ARM (Apple Silicon, Snapdragon)</p>
+          <p class="text-gray-400 text-sm mt-1">{$t.api.arch64BitArm}</p>
         </div>
         <div class="text-center p-4 bg-gray-900 rounded-lg">
           <code class="text-green-400 font-mono">universal</code>
-          <p class="text-gray-400 text-sm mt-1">Multi-architecture binary</p>
+          <p class="text-gray-400 text-sm mt-1">{$t.api.archUniversal}</p>
         </div>
         <div class="text-center p-4 bg-gray-900 rounded-lg">
           <code class="text-yellow-400 font-mono">i386</code>
-          <p class="text-gray-400 text-sm mt-1">32-bit Intel (legacy)</p>
+          <p class="text-gray-400 text-sm mt-1">{$t.api.arch32BitIntel}</p>
         </div>
       </div>
     </div>
@@ -550,15 +550,15 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 </Section>
 
 <!-- Error Handling Section -->
-<Section title="Error Handling" subtitle="Understanding API error responses" background="gray">
+<Section title={$t.api.errorHandling} subtitle={$t.api.errorHandlingSubtitle} background="gray">
   {#snippet children()}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
           <span class="px-3 py-1 bg-red-900/50 text-red-400 font-mono font-bold text-sm rounded-lg">404</span>
-          <span class="font-semibold text-white">Not Found</span>
+          <span class="font-semibold text-white">{$t.api.notFound}</span>
         </div>
-        <p class="text-gray-400 mb-4">Returned when the requested resource doesn't exist.</p>
+        <p class="text-gray-400 mb-4">{$t.api.notFoundDesc}</p>
         <div class="bg-gray-900 rounded-lg p-4">
           <pre class="text-red-400 text-sm font-mono">{`{
   "success": false,
@@ -570,9 +570,9 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
           <span class="px-3 py-1 bg-red-900/50 text-red-400 font-mono font-bold text-sm rounded-lg">400</span>
-          <span class="font-semibold text-white">Bad Request</span>
+          <span class="font-semibold text-white">{$t.api.badRequest}</span>
         </div>
-        <p class="text-gray-400 mb-4">Returned when required parameters are missing.</p>
+        <p class="text-gray-400 mb-4">{$t.api.badRequestDesc}</p>
         <div class="bg-gray-900 rounded-lg p-4">
           <pre class="text-red-400 text-sm font-mono">{`{
   "success": false,
@@ -584,9 +584,9 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
           <span class="px-3 py-1 bg-red-900/50 text-red-400 font-mono font-bold text-sm rounded-lg">500</span>
-          <span class="font-semibold text-white">Server Error</span>
+          <span class="font-semibold text-white">{$t.api.serverError}</span>
         </div>
-        <p class="text-gray-400 mb-4">Returned when an internal error occurs.</p>
+        <p class="text-gray-400 mb-4">{$t.api.serverErrorDesc}</p>
         <div class="bg-gray-900 rounded-lg p-4">
           <pre class="text-red-400 text-sm font-mono">{`{
   "success": false,
@@ -598,9 +598,9 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
       <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6">
         <div class="flex items-center gap-3 mb-4">
           <span class="px-3 py-1 bg-green-900/50 text-green-400 font-mono font-bold text-sm rounded-lg">200</span>
-          <span class="font-semibold text-white">Success</span>
+          <span class="font-semibold text-white">{$t.api.success}</span>
         </div>
-        <p class="text-gray-400 mb-4">All successful responses include <code class="bg-gray-700 px-1 rounded text-gray-300">success: true</code>.</p>
+        <p class="text-gray-400 mb-4">{$t.api.successDesc}</p>
         <div class="bg-gray-900 rounded-lg p-4">
           <pre class="text-emerald-400 text-sm font-mono">{`{
   "success": true,
@@ -613,7 +613,7 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
 </Section>
 
 <!-- Rate Limits Section -->
-<Section title="Rate Limits & Usage" subtitle="Fair usage guidelines" background="gray">
+<Section title={$t.api.rateLimits} subtitle={$t.api.rateLimitsSubtitle} background="gray">
   {#snippet children()}
     <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -621,43 +621,43 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
           <div class="w-16 h-16 bg-emerald-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
             <i class="fas fa-infinity text-2xl text-emerald-400"></i>
           </div>
-          <h3 class="font-semibold text-white mb-2">No Rate Limits</h3>
-          <p class="text-gray-400 text-sm">Currently no rate limits are enforced. Please use responsibly.</p>
+          <h3 class="font-semibold text-white mb-2">{$t.api.noRateLimits}</h3>
+          <p class="text-gray-400 text-sm">{$t.api.noRateLimitsDesc}</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
             <i class="fas fa-key text-2xl text-blue-400"></i>
           </div>
-          <h3 class="font-semibold text-white mb-2">No API Key</h3>
-          <p class="text-gray-400 text-sm">No authentication or API keys required to access any endpoint.</p>
+          <h3 class="font-semibold text-white mb-2">{$t.api.noApiKey}</h3>
+          <p class="text-gray-400 text-sm">{$t.api.noApiKeyDesc}</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
             <i class="fas fa-heart text-2xl text-purple-400"></i>
           </div>
-          <h3 class="font-semibold text-white mb-2">Open Source</h3>
-          <p class="text-gray-400 text-sm">This API is part of the OpenLyst open source project.</p>
+          <h3 class="font-semibold text-white mb-2">{$t.api.openSource}</h3>
+          <p class="text-gray-400 text-sm">{$t.api.openSourceDesc}</p>
         </div>
       </div>
       
       <div class="mt-8 pt-8 border-t border-gray-700">
-        <h4 class="font-semibold text-white mb-4">Fair Usage Guidelines</h4>
+        <h4 class="font-semibold text-white mb-4">{$t.api.fairUsageGuidelines}</h4>
         <ul class="space-y-2 text-gray-400">
           <li class="flex items-start gap-2">
             <i class="fas fa-check text-green-500 mt-1"></i>
-            <span>Cache responses when possible to reduce server load</span>
+            <span>{$t.api.cacheResponses}</span>
           </li>
           <li class="flex items-start gap-2">
             <i class="fas fa-check text-green-500 mt-1"></i>
-            <span>Use specific endpoints instead of fetching all data repeatedly</span>
+            <span>{$t.api.useSpecificEndpoints}</span>
           </li>
           <li class="flex items-start gap-2">
             <i class="fas fa-check text-green-500 mt-1"></i>
-            <span>Include a User-Agent header identifying your application</span>
+            <span>{$t.api.includeUserAgent}</span>
           </li>
           <li class="flex items-start gap-2">
             <i class="fas fa-times text-red-500 mt-1"></i>
-            <span>Don't make excessive requests in short time periods</span>
+            <span>{$t.api.dontMakeExcessiveRequests}</span>
           </li>
         </ul>
       </div>

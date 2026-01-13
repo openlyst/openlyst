@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { t } from '$lib/stores/language';
+
   interface Props {
     title: string;
     description: string;
@@ -91,10 +93,14 @@
     development: { bg: 'rgba(239, 68, 68, 0.2)', text: '#ef4444', border: 'rgba(239, 68, 68, 0.3)' }
   };
 
-  const statusText = {
-    released: 'Released',
-    beta: 'Beta',
-    development: 'In Development'
+  // Use reactive derived values for status text
+  const getStatusText = (s: 'released' | 'beta' | 'development') => {
+    const texts = {
+      released: $t.appCard.released,
+      beta: $t.appCard.beta,
+      development: $t.appCard.inDevelopment
+    };
+    return texts[s];
   };
 </script>
 
@@ -118,7 +124,7 @@
           class="status-badge"
           style="background: {statusColors[status].bg}; color: {statusColors[status].text}; border-color: {statusColors[status].border};"
         >
-          {statusText[status]}
+          {getStatusText(status)}
         </span>
       </div>
     </div>
@@ -141,7 +147,7 @@
           disabled={isAnimating}
           style="color: {baseColor};"
         >
-          {expanded ? 'Show less' : 'Read more'}
+          {expanded ? $t.appCard.showLess : $t.appCard.readMore}
           <svg 
             class="read-more-icon {expanded ? 'rotated' : ''}" 
             fill="none" 
@@ -155,7 +161,7 @@
     </div>
 
     <div class="platforms-section">
-      <div class="platforms-label">Available Platforms</div>
+      <div class="platforms-label">{$t.appCard.availablePlatforms}</div>
       <div class="platforms-grid">
         {#each platforms as platform}
           <span 
@@ -173,7 +179,7 @@
       class="cta-button"
       style="background: linear-gradient(135deg, {baseColor} 0%, {darkerColor} 100%); box-shadow: 0 4px 16px rgba({r}, {g}, {b}, 0.3);"
     >
-      Learn More
+      {$t.appCard.learnMore}
       <span class="cta-arrow">→</span>
     </a>
   </div>

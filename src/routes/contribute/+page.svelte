@@ -198,9 +198,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Developer Docs</h3>
-        <p class="text-red-100 text-sm mb-4">Setup guides, API docs, and architecture overview</p>
-        <Button text="Read Docs" href="#" variant="outline" />
+        <h3 class="text-lg font-semibold text-white mb-2">{$t.contribute.developerDocs}</h3>
+        <p class="text-red-100 text-sm mb-4">{$t.contribute.developerDocsDesc}</p>
+        <Button text={$t.contribute.readDocs} href="#" variant="outline" />
       </div>
       
       <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 text-center">
@@ -209,9 +209,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Chat Rooms</h3>
-        <p class="text-red-100 text-sm mb-4">Real-time discussion with the community</p>
-        <Button text="Join Chat" href="#" variant="outline" />
+        <h3 class="text-lg font-semibold text-white mb-2">{$t.contribute.chatRooms}</h3>
+        <p class="text-red-100 text-sm mb-4">{$t.contribute.chatRoomsDesc}</p>
+        <Button text={$t.contribute.joinChat} href="#" variant="outline" />
       </div>
       
       <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 text-center">
@@ -220,9 +220,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Source Code</h3>
-        <p class="text-red-100 text-sm mb-4">All our repositories on GitHub and GitLab</p>
-        <Button text="Browse Code" href="#" variant="outline" />
+        <h3 class="text-lg font-semibold text-white mb-2">{$t.contribute.sourceCode}</h3>
+        <p class="text-red-100 text-sm mb-4">{$t.contribute.sourceCodeDesc}</p>
+        <Button text={$t.contribute.browseCode} href="#" variant="outline" />
       </div>
       
       <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 text-center">
@@ -231,9 +231,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Issue Tracker</h3>
-        <p class="text-red-100 text-sm mb-4">Report bugs and request features</p>
-        <Button text="View Issues" href="#" variant="outline" />
+        <h3 class="text-lg font-semibold text-white mb-2">{$t.contribute.issueTracker}</h3>
+        <p class="text-red-100 text-sm mb-4">{$t.contribute.issueTrackerDesc}</p>
+        <Button text={$t.contribute.viewIssues} href="#" variant="outline" />
       </div>
     </div>
   {/snippet}
@@ -241,45 +241,43 @@
 
 <!-- Code of Conduct -->
 <Section 
-  title="Our Code of Conduct" 
-  subtitle="We are committed to providing a welcoming and inclusive environment for all contributors."
+  title={$t.contribute.codeOfConduct} 
+  subtitle={$t.contribute.codeOfConductDesc}
 >
   {#snippet children()}
     <div class="max-w-4xl mx-auto">
       <div class="bg-gray-800 rounded-lg p-8 border border-red-900">
-        <h3 class="text-xl font-semibold text-white mb-4">Creating a Safe Space</h3>
+        <h3 class="text-xl font-semibold text-white mb-4">{$t.contribute.safeSpace}</h3>
         <p class="text-gray-400 mb-6">
-          OpenLyst is committed to fostering an inclusive, welcoming community where everyone can contribute 
-          regardless of their background, experience level, gender identity, sexual orientation, disability, 
-          race, ethnicity, religion, or nationality.
+          {$t.contribute.safeSpaceDesc}
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h4 class="font-semibold text-white mb-2">We Encourage:</h4>
+            <h4 class="font-semibold text-white mb-2">{$t.contribute.weEncourage}</h4>
             <ul class="space-y-1 text-gray-400">
-              <li>• Respectful and constructive communication</li>
-              <li>• Welcoming newcomers and helping them learn</li>
-              <li>• Gracefully accepting constructive criticism</li>
-              <li>• Focusing on what's best for the community</li>
-              <li>• Showing empathy toward other contributors</li>
+              <li>• {$t.contribute.respectfulCommunication}</li>
+              <li>• {$t.contribute.welcomingNewcomers}</li>
+              <li>• {$t.contribute.constructiveFeedback}</li>
+              <li>• {$t.contribute.focusingOnCommunity}</li>
+              <li>• {$t.contribute.showingEmpathy}</li>
             </ul>
           </div>
           
           <div>
-            <h4 class="font-semibold text-white mb-2">We Don't Tolerate:</h4>
+            <h4 class="font-semibold text-white mb-2">{$t.contribute.weDontTolerate}</h4>
             <ul class="space-y-1 text-gray-400">
-              <li>• Harassment or discriminatory behavior</li>
-              <li>• Trolling, insulting, or derogatory comments</li>
-              <li>• Public or private harassment</li>
-              <li>• Publishing others' private information</li>
-              <li>• Any conduct that could reasonably be considered inappropriate</li>
+              <li>• {$t.contribute.harassment}</li>
+              <li>• {$t.contribute.trolling}</li>
+              <li>• {$t.contribute.personalAttacks}</li>
+              <li>• {$t.contribute.publishingPrivateInfo}</li>
+              <li>• {$t.contribute.inappropriateConduct}</li>
             </ul>
           </div>
         </div>
         
         <div class="mt-6 text-center">
-          <Button text="Read Full Code of Conduct" href="#" variant="primary" />
+          <Button text={$t.contribute.readFullCodeOfConduct} href="#" variant="primary" />
         </div>
       </div>
     </div>
@@ -288,23 +286,22 @@
 
 <!-- Call to Action -->
 <Section 
-  title="Ready to Make a Difference?" 
-  subtitle="Join thousands of contributors building the future of free software."
+  title={$t.contribute.readyToMakeDifference} 
+  subtitle={$t.contribute.readyToMakeDifferenceDesc}
   background="red"
   centered={true}
 >
   {#snippet children()}
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-      <Button text="Start Contributing Today" href="#" variant="secondary" size="lg" />
-      <Button text="Join Our Community" href="#" variant="outline" size="lg" />
+      <Button text={$t.contribute.startContributingToday} href="#" variant="secondary" size="lg" />
+      <Button text={$t.contribute.joinOurCommunity} href="#" variant="outline" size="lg" />
     </div>
     
     <div class="mt-12 text-center">
       <p class="text-red-100 text-lg font-medium">
-        "Never doubt that a small group of thoughtful, committed citizens can change the world; 
-        indeed, it's the only thing that ever has."
+        {$t.contribute.meadQuote}
       </p>
-      <p class="text-red-200 mt-2">- Margaret Mead</p>
+      <p class="text-red-200 mt-2">{$t.contribute.meadQuoteAuthor}</p>
     </div>
   {/snippet}
 </Section>
