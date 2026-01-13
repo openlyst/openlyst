@@ -26,17 +26,17 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-amber-600 via-orange-600 to-red-700 text-white py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<section class="relative text-white overflow-hidden min-h-[60vh] flex items-center">
+  <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
     <div class="text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full mb-6">
-        <i class="fas fa-heart text-pink-200"></i>
-        <span class="text-amber-100 font-medium">{$t.support.openSource}</span>
+      <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full mb-6">
+        <i class="fas fa-heart text-pink-400"></i>
+        <span class="text-purple-200 font-medium">{$t.support.openSource}</span>
       </div>
-      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
         {$t.support.title}
       </h1>
-      <p class="text-xl text-amber-100 max-w-2xl mx-auto mb-8">
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
         {$t.support.subtitle}
       </p>
     </div>
