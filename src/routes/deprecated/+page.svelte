@@ -85,12 +85,12 @@
               </span>
             </div>
             <AppCard 
-              title="{app.name}"
-              description="{app.localizedDescription}"
+              title={app.name}
+              description={app.localizedDescription}
               href="/apps/{nameToSlug(app.name)}"
               status="released"
-              platforms="{app.platforms}"
-              image="{app.iconURL}"
+              platforms={app.platforms}
+              image={app.iconURL}
             />
           </div>
         {/each}

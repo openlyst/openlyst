@@ -159,6 +159,7 @@
 	}
 </script>
 
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <div 
 	class="widget-3d-wrapper"
 	style="width: {width}px; height: {height}px;"

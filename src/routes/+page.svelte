@@ -172,12 +172,12 @@
         {#each apps as app}
           <div class="animate-fadeIn">
             <AppCard
-              title="{app.name}"
-              description="{app.localizedDescription}"
-              status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
-              platforms="{app.platforms}"
-              href="/apps/{nameToSlug(app.name)}"
-              image="{app.iconURL}"
+              title={app.name}
+              description={app.localizedDescription}
+              status={app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}
+              platforms={app.platforms}
+              href={`/apps/${nameToSlug(app.name)}`}
+              image={app.iconURL}
             />
           </div>
         {/each}
