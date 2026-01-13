@@ -18,8 +18,12 @@
       method: 'GET',
       path: '/api/v1/repo',
       description: 'Get repository metadata and basic statistics.',
+      queryParams: [
+        { name: 'lang', type: 'string', description: 'Language code for localized content (en, zh, ru)', default: 'en' }
+      ],
       response: `{
   "success": true,
+  "language": "en",
   "data": {
     "name": "OpenLyst Repository",
     "subtitle": "Every Openlyst iOS app.",
@@ -29,8 +33,8 @@
     "website": "https://openlyst.ink",
     "tintColor": "#dc2626",
     "featuredApps": ["doudou"],
-    "totalApps": 3,
-    "totalNews": 2
+    "totalApps": 6,
+    "totalNews": 5
   }
 }`
     },
@@ -39,12 +43,14 @@
       path: '/api/v1/apps',
       description: 'Get all apps in the repository with optional filtering.',
       queryParams: [
-        { name: 'filter', type: 'string', description: 'Filter apps by status', default: 'none (returns all)' },
-        { name: 'platform', type: 'string', description: 'Filter apps by platform (iOS, Android, macOS, Windows, Linux, Web)' }
+        { name: 'filter', type: 'string', description: 'Filter apps by status: "active" (non-deprecated), "deprecated", or omit for all', default: 'none (returns all)' },
+        { name: 'platform', type: 'string', description: 'Filter apps by platform (iOS, Android, macOS, Windows, Linux, Web)' },
+        { name: 'lang', type: 'string', description: 'Language code for localized content (en, zh, ru)', default: 'en' }
       ],
       response: `{
   "success": true,
-  "count": 3,
+  "count": 6,
+  "language": "en",
   "data": [
     {
       "name": "Doudou",
@@ -66,8 +72,12 @@
       params: [
         { name: 'slug', type: 'string', description: 'The app slug (e.g., "doudou", "klit")', required: true }
       ],
+      queryParams: [
+        { name: 'lang', type: 'string', description: 'Language code for localized content (en, zh, ru)', default: 'en' }
+      ],
       response: `{
   "success": true,
+  "language": "en",
   "data": {
     "name": "Doudou",
     "slug": "doudou",
@@ -89,18 +99,22 @@
       params: [
         { name: 'slug', type: 'string', description: 'The app slug', required: true }
       ],
+      queryParams: [
+        { name: 'lang', type: 'string', description: 'Language code for localized content (en, zh, ru)', default: 'en' }
+      ],
       response: `{
   "success": true,
+  "language": "en",
   "appName": "Doudou",
   "count": 3,
   "data": [
     {
-      "version": "8.0.0",
-      "date": "2025-12-06",
+      "version": "12.0.0",
+      "date": "2026-01-13",
       "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
       "platformInstall": {...},
       "downloads": {...},
-      "localizedDescription": "# 8.0.0\\n..."
+      "sourceCode": "https://..."
     }
   ]
 }`
@@ -112,17 +126,21 @@
       params: [
         { name: 'slug', type: 'string', description: 'The app slug', required: true }
       ],
+      queryParams: [
+        { name: 'lang', type: 'string', description: 'Language code for localized content (en, zh, ru)', default: 'en' }
+      ],
       response: `{
   "success": true,
+  "language": "en",
   "appName": "Doudou",
   "appSlug": "doudou",
   "data": {
-    "version": "8.0.0",
-    "date": "2025-12-06",
+    "version": "12.0.0",
+    "date": "2026-01-13",
     "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
     "platformInstall": {...},
     "downloads": {...},
-    "localizedDescription": "..."
+    "sourceCode": "https://..."
   }
 }`
     },
@@ -132,22 +150,24 @@
       description: 'Get news and announcements.',
       queryParams: [
         { name: 'limit', type: 'number', description: 'Maximum number of news items to return' },
-        { name: 'appId', type: 'string', description: 'Filter news by app ID (bundleIdentifier)' }
+        { name: 'appId', type: 'string', description: 'Filter news by app ID (bundleIdentifier)' },
+        { name: 'lang', type: 'string', description: 'Language code for localized content (en, zh, ru)', default: 'en' }
       ],
       response: `{
   "success": true,
-  "count": 2,
+  "language": "en",
+  "count": 5,
   "data": [
     {
-      "title": "BaoBao Discontinued - Meet Klit!",
-      "identifier": "baobao_deprecated_klit_release",
-      "caption": "BaoBao is being retired...",
-      "date": "2025-12-06",
-      "tintColor": "#ff6b35",
-      "imageURL": "/icons/Klit/klit_release_image.png",
-      "notify": true,
-      "url": "/apps/klit",
-      "appID": "klit"
+      "identifier": "gone_but_not_forgotten",
+      "title": "Old builds are deprecated",
+      "caption": "We have removed old builds from the main website...",
+      "date": "2026-01-13",
+      "tintColor": "#6366f1",
+      "imageURL": "",
+      "notify": false,
+      "url": "",
+      "appID": ""
     }
   ]
 }`
@@ -157,11 +177,13 @@
       path: '/api/v1/search',
       description: 'Search for apps by name, description, or bundle identifier.',
       queryParams: [
-        { name: 'q', type: 'string', description: 'Search query (required)' }
+        { name: 'q', type: 'string', description: 'Search query (required)' },
+        { name: 'lang', type: 'string', description: 'Language code for localized content (en, zh, ru)', default: 'en' }
       ],
       response: `{
   "success": true,
   "query": "music",
+  "language": "en",
   "count": 1,
   "data": [
     {
@@ -178,16 +200,20 @@
       method: 'GET',
       path: '/api/v1/platforms',
       description: 'Get all available platforms and app counts.',
+      queryParams: [
+        { name: 'lang', type: 'string', description: 'Language code for localized content (en, zh, ru)', default: 'en' }
+      ],
       response: `{
   "success": true,
+  "language": "en",
   "count": 6,
   "data": [
-    { "name": "iOS", "appCount": 3 },
-    { "name": "Android", "appCount": 3 },
-    { "name": "macOS", "appCount": 2 },
-    { "name": "Windows", "appCount": 2 },
-    { "name": "Linux", "appCount": 2 },
-    { "name": "Web", "appCount": 2 }
+    { "name": "iOS", "appCount": 6 },
+    { "name": "Android", "appCount": 6 },
+    { "name": "macOS", "appCount": 4 },
+    { "name": "Windows", "appCount": 4 },
+    { "name": "Linux", "appCount": 4 },
+    { "name": "Web", "appCount": 3 }
   ]
 }`
     }
@@ -274,20 +300,28 @@
 <span class="text-purple-400">const</span> data = <span class="text-purple-400">await</span> response.<span class="text-yellow-400">json</span>();
 
 <span class="text-gray-500">// {$t.api.getAllApps}</span>
-<span class="text-yellow-400">console</span>.<span class="text-yellow-400">log</span>(data.data);</pre>
+<span class="text-yellow-400">console</span>.<span class="text-yellow-400">log</span>(data.data);
+
+<span class="text-gray-500">// With language parameter (zh = Chinese, ru = Russian)</span>
+<span class="text-purple-400">const</span> zhResponse = <span class="text-purple-400">await</span> <span class="text-yellow-400">fetch</span>(<span class="text-emerald-400">'{baseUrl}/api/v1/apps?lang=zh'</span>);</pre>
         </div>
       </div>
       <div>
         <h3 class="text-lg font-semibold text-white mb-4">cURL</h3>
         <div class="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
-          <pre class="text-gray-300"><span class="text-emerald-400">curl</span> {baseUrl}/api/v1/apps</pre>
+          <pre class="text-gray-300"><span class="text-emerald-400">curl</span> {baseUrl}/api/v1/apps
+<span class="text-gray-500"># With language parameter</span>
+<span class="text-emerald-400">curl</span> "{baseUrl}/api/v1/apps?lang=zh"</pre>
         </div>
         <h3 class="text-lg font-semibold text-white mb-4 mt-6">Python</h3>
         <div class="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
           <pre class="text-gray-300"><span class="text-purple-400">import</span> requests
 
 response = requests.<span class="text-yellow-400">get</span>(<span class="text-emerald-400">'{baseUrl}/api/v1/apps'</span>)
-data = response.<span class="text-yellow-400">json</span>()</pre>
+data = response.<span class="text-yellow-400">json</span>()
+
+<span class="text-gray-500"># With language parameter</span>
+response = requests.<span class="text-yellow-400">get</span>(<span class="text-emerald-400">'{baseUrl}/api/v1/apps'</span>, params={'{'}lang': 'ru'{'}'})</pre>
         </div>
       </div>
     </div>
