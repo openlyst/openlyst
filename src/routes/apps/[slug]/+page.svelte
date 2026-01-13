@@ -6,7 +6,7 @@
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import { getApp } from '$lib/services/dataService';
-  import { language, type SupportedLanguage } from '$lib/stores/language';
+  import { language, t, type SupportedLanguage } from '$lib/stores/language';
   import { page } from '$app/stores';
   import Button3D from '$lib/components/Button3D.svelte';
   
@@ -417,7 +417,7 @@
     </div>
   </section>
   
-  <Section title="Loading..." subtitle="Please wait while we load the app details" background="default">
+  <Section title={$t.common.loading} subtitle={$t.deprecated.loadingDetails} background="default">
     {#snippet children()}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {#each Array(3) as _}
@@ -438,11 +438,11 @@
         <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
       </svg>
       <div class="text-center">
-        <p class="font-bold">This app has been deprecated</p>
-        <p class="text-sm">This application is no longer maintained and will not receive updates. Consider using an alternative.</p>
+        <p class="font-bold">{$t.deprecated.appDeprecated}</p>
+        <p class="text-sm">{$t.deprecated.appDeprecatedDesc}</p>
       </div>
       <a href="/apps" class="ml-4 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-medium rounded-lg transition-colors whitespace-nowrap">
-        View Active Apps
+        {$t.deprecated.viewActiveApps}
       </a>
     </div>
   </div>
@@ -474,15 +474,15 @@
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">
-          <Button3D text="Download Now" href="#downloads" variant="secondary" size="lg" />
-          <Button3D text="View Screenshots" href="#screenshots" variant="outline" size="lg" />
+          <Button3D text={$t.appDetail.downloadNow} href="#downloads" variant="secondary" size="lg" />
+          <Button3D text={$t.appDetail.viewScreenshots} href="#screenshots" variant="outline" size="lg" />
         </div>
         
         <div class="mt-6 flex items-center">
           <span class="px-3 py-1 glass-card text-cyan-400 text-sm font-medium rounded-full">
             v{latestVersion.version}
           </span>
-          <span class="ml-4 text-gray-300">🚀 Latest Release</span>
+          <span class="ml-4 text-gray-300">🚀 {$t.appDetail.latestRelease}</span>
         </div>
       </div>
       
@@ -492,7 +492,7 @@
             {#each app.platforms as platform}
               <div class="flex items-center space-x-3">
                 <div class="w-4 h-4 bg-emerald-400 rounded-full shadow-lg shadow-emerald-400/50"></div>
-                <span>Available on {platform}</span>
+                <span>{$t.appDetail.availableOn.replace('{platform}', platform)}</span>
               </div>
             {/each}
           </div>
@@ -505,8 +505,8 @@
 <!-- Screenshots Section -->
 {#if screenshots.length > 0}
 <Section 
-  title="Screenshots" 
-  subtitle="See {app.name} in action"
+  title={$t.common.screenshots} 
+  subtitle={$t.appDetail.seeInAction.replace('{appName}', app.name)}
   background="default"
 >
   {#snippet children()}
@@ -525,7 +525,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
               <span class="text-white text-sm font-medium flex items-center gap-2">
                 <i class="fas fa-expand"></i>
-                Click to expand
+                {$t.appDetail.clickToExpand}
               </span>
             </div>
           </div>
@@ -538,8 +538,8 @@
 
 <!-- Downloads Section -->
 <Section 
-  title="Download {app.name}" 
-  subtitle="Choose your version and platform"
+  title="{$t.common.download} {app.name}" 
+  subtitle={$t.appDetail.chooseDownload}
   background="glass"
 >
   {#snippet children()}
@@ -547,7 +547,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-4 min-h-[600px]">
         <!-- Sidebar with Versions -->
         <div class="lg:col-span-1 glass border-r border-white/10 p-6 rounded-l-2xl">
-          <h3 class="text-lg font-semibold text-white mb-4">Versions</h3>
+          <h3 class="text-lg font-semibold text-white mb-4">{$t.appDetail.versions}</h3>
           <div class="space-y-2">
             {#each appVersions as version, index}
               <button
@@ -557,7 +557,7 @@
                 <div class="flex items-center justify-between">
                   <span class="font-medium">v{version.version}</span>
                   {#if index === 0}
-                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full border border-cyan-500/30">Latest</span>
+                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full border border-cyan-500/30">{$t.appDetail.latest}</span>
                   {/if}
                 </div>
                 {#if version.date}
@@ -575,7 +575,7 @@
           <!-- Version Header -->
           <div class="mb-8">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-2xl font-bold text-white">Version {selectedVersionNumber}</h3>
+              <h3 class="text-2xl font-bold text-white">{$t.common.version} {selectedVersionNumber}</h3>
               <div class="flex items-center gap-2">
                 {#if selectedVersionSourceCode}
                   <a
@@ -585,7 +585,7 @@
                     class="px-4 py-2 glass-card text-gray-200 hover:bg-white/10 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
                   >
                     <i class="fas fa-code"></i>
-                    Source Code
+                    {$t.appDetail.sourceCode}
                   </a>
                 {/if}
                 <button
@@ -593,7 +593,7 @@
                   onclick={() => showModal = true}
                 >
                   <i class="fas fa-info-circle"></i>
-                  View Details
+                  {$t.appDetail.viewDetails}
                 </button>
               </div>
             </div>
@@ -625,13 +625,13 @@
                   <div>
                     <h4 class="text-lg font-semibold text-white">{platform}</h4>
                     <p class="text-sm text-gray-400">
-                      {#if platform === 'iOS'}iPhone and iPad
-                      {:else if platform === 'Android'}Phones and tablets
-                      {:else if platform === 'macOS'}Mac computers
-                      {:else if platform === 'Linux'}All distributions  
-                      {:else if platform === 'Windows'}PC computers
-                      {:else if platform === 'Web'}Any web browser
-                      {:else}{platform} devices{/if}
+                      {#if platform === 'iOS'}{$t.appDetail.iphoneIpad}
+                      {:else if platform === 'Android'}{$t.appDetail.phonesTablets}
+                      {:else if platform === 'macOS'}{$t.appDetail.macComputers}
+                      {:else if platform === 'Linux'}{$t.appDetail.allDistributions}  
+                      {:else if platform === 'Windows'}{$t.appDetail.pcComputers}
+                      {:else if platform === 'Web'}{$t.appDetail.anyBrowser}
+                      {:else}{$t.appDetail.devices.replace('{platform}', platform)}{/if}
                     </p>
                   </div>
                 </div>
@@ -641,7 +641,7 @@
                 <!-- Download button with dropdown -->
                 {#if getAllDownloadOptions(platform, selectedVersion).length === 1}
                   <!-- Single download option - just a button -->
-                  <Button text={`Download ${platform}`} href={getAllDownloadOptions(platform, selectedVersion)[0]?.url ?? ''} variant="primary" size="sm" />
+                  <Button text={$t.appDetail.downloadPlatform.replace('{platform}', platform)} href={getAllDownloadOptions(platform, selectedVersion)[0]?.url ?? ''} variant="primary" size="sm" />
                 {:else if getAllDownloadOptions(platform, selectedVersion).length > 1}
                   <!-- Multiple download options - dropdown button -->
                   <div class="relative" style="z-index: 50;">
@@ -652,7 +652,7 @@
                     >
                       <span class="flex items-center gap-2">
                         <i class="fas fa-download"></i>
-                        Download {platform}
+                        {$t.appDetail.downloadPlatform.replace('{platform}', platform)}
                       </span>
                       <i class="fas fa-chevron-down ml-2 transition-transform {openDropdown === platform ? 'rotate-180' : ''}"></i>
                     </button>
@@ -690,8 +690,8 @@
 
 <!-- Version History Section -->
 <Section 
-  title="Version History" 
-  subtitle="Latest updates and improvements"
+  title={$t.appDetail.versionHistory} 
+  subtitle={$t.appDetail.updatesAndImprovements}
   background="red"
   centered={true}
 >
@@ -701,10 +701,10 @@
         {#each appVersions as version, index}
           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-xl font-bold text-white">Version {version.version}</h3>
+              <h3 class="text-xl font-bold text-white">{$t.common.version} {version.version}</h3>
               {#if index === 0}
                 <span class="px-3 py-1 bg-yellow-400 text-red-900 text-sm font-medium rounded-full">
-                  Latest
+                  {$t.appDetail.latest}
                 </span>
               {/if}
             </div>
@@ -712,7 +712,7 @@
               {@html marked(version.localizedDescription)}
             </div>
             {#if version.date}
-              <p class="text-red-200 text-sm">Released: {version.date}</p>
+              <p class="text-red-200 text-sm">{$t.appDetail.released}: {version.date}</p>
             {/if}
           </div>
         {/each}
@@ -743,7 +743,7 @@
           <div>
             <h3 id="modal-title" class="text-xl font-bold text-white">{app.name} v{selectedVersion.version}</h3>
             {#if selectedVersion.date}
-              <p class="text-sm text-gray-400">Released: {selectedVersion.date}</p>
+              <p class="text-sm text-gray-400">{$t.appDetail.released}: {selectedVersion.date}</p>
             {/if}
           </div>
         </div>
@@ -760,7 +760,7 @@
       <div class="p-6">
         <!-- Version Description -->
         <div class="mb-6">
-          <h4 class="text-lg font-semibold text-white mb-3">What's New</h4>
+          <h4 class="text-lg font-semibold text-white mb-3">{$t.appDetail.whatsNew}</h4>
           <div class="bg-gray-900 border border-gray-700 rounded-lg p-4 modal-prose">
             {@html marked(selectedVersion.localizedDescription)}
           </div>
@@ -769,24 +769,24 @@
         <!-- Version Info -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div class="bg-gray-900 rounded-lg p-4">
-            <h5 class="font-medium text-gray-200 mb-2">Version Number</h5>
+            <h5 class="font-medium text-gray-200 mb-2">{$t.appDetail.versionNumber}</h5>
             <p class="text-gray-300">{selectedVersion.version}</p>
           </div>
           {#if selectedVersion.date}
             <div class="bg-gray-900 rounded-lg p-4">
-              <h5 class="font-medium text-gray-200 mb-2">Release Date</h5>
+              <h5 class="font-medium text-gray-200 mb-2">{$t.appDetail.releaseDate}</h5>
               <p class="text-gray-300">{selectedVersion.date}</p>
             </div>
           {/if}
           {#if selectedVersion.size}
             <div class="bg-gray-900 rounded-lg p-4">
-              <h5 class="font-medium text-gray-200 mb-2">Download Size</h5>
+              <h5 class="font-medium text-gray-200 mb-2">{$t.appDetail.downloadSize}</h5>
               <p class="text-gray-300">{selectedVersion.size}</p>
             </div>
           {/if}
           {#if selectedVersion.minOSVersion}
             <div class="bg-gray-900 rounded-lg p-4">
-              <h5 class="font-medium text-gray-200 mb-2">Minimum OS</h5>
+              <h5 class="font-medium text-gray-200 mb-2">{$t.appDetail.minimumOS}</h5>
               <p class="text-gray-300">{selectedVersion.minOSVersion}</p>
             </div>
           {/if}
@@ -794,7 +794,7 @@
 
         <!-- Platform Availability -->
         <div class="mb-6">
-          <h4 class="text-lg font-semibold text-white mb-3">Platform Availability</h4>
+          <h4 class="text-lg font-semibold text-white mb-3">{$t.appDetail.platformAvailability}</h4>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
             {#each getVersionPlatforms(selectedVersion) as platform}
               <div class="flex items-center gap-2 bg-green-900/30 border border-green-800 rounded-lg p-3">
@@ -825,7 +825,7 @@
             class="px-4 py-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors"
             onclick={(e) => { e.stopPropagation(); showModal = false; }}
           >
-            Close
+            {$t.common.close}
           </button>
           {#if selectedVersion.sourceCode}
             <a
@@ -835,14 +835,14 @@
               class="px-4 py-2 bg-gray-700 text-white hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-2"
             >
               <i class="fas fa-code"></i>
-              Source Code
+              {$t.appDetail.sourceCode}
             </a>
           {/if}
           <button
             class="px-4 py-2 bg-red-600 text-white hover:bg-red-700 rounded-lg transition-colors"
             onclick={(e) => { e.stopPropagation(); showModal = false; document.getElementById('downloads')?.scrollIntoView({behavior: 'smooth'}); }}
           >
-            Download Now
+            {$t.appDetail.downloadNow}
           </button>
         </div>
       </div>
