@@ -253,7 +253,7 @@
         <code class="text-emerald-400">{baseUrl}/api/v1</code>
         <button 
           class="px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors text-sm"
-          on:click={() => copyToClipboard(`${baseUrl}/api/v1`, 'base')}
+          onclick={() => copyToClipboard(`${baseUrl}/api/v1`, 'base')}
         >
           {copiedEndpoint === 'base' ? 'Copied!' : 'Copy'}
         </button>
@@ -308,7 +308,7 @@ data = response.<span class="text-yellow-400">json</span>()</pre>
               <code class="text-lg font-mono text-white">{endpoint.path}</code>
               <button 
                 class="ml-auto px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors text-sm flex items-center gap-2"
-                on:click={() => copyToClipboard(`${baseUrl}${endpoint.path.replace(':slug', 'doudou')}`, endpoint.path)}
+                onclick={() => copyToClipboard(`${baseUrl}${endpoint.path.replace(':slug', 'doudou')}`, endpoint.path)}
               >
                 <i class="fas fa-copy"></i>
                 {copiedEndpoint === endpoint.path ? 'Copied!' : 'Copy URL'}

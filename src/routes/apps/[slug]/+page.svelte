@@ -3,26 +3,35 @@
   import type { PageData } from './$types';
   import { marked } from 'marked';
   import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   
-  export let data: PageData;
+  let { data }: { data: PageData } = $props();
   
-  let isLoaded = false;
-  let app: typeof data.app;
-  let latestVersion: typeof data.app.versions[0];
+  let isLoaded = $state(false);
+  let app = $state<typeof data.app>();
+  let latestVersion = $state<typeof data.app.versions[0]>();
+  let Button3D: any = $state(null);
   
   // State for version selection and modal visibility
-  let selectedVersion: typeof data.app.versions[0];
-  let showModal = false;
+  let selectedVersion = $state<typeof data.app.versions[0]>();
+  let showModal = $state(false);
   
   // State for download selections per platform
-  let downloadSelections: Record<string, { type?: string; arch?: string }> = {};
+  let downloadSelections = $state<Record<string, { type?: string; arch?: string }>>({});
   
   // State for image lightbox
-  let showLightbox = false;
-  let lightboxImageUrl = '';
-  let lightboxIndex = 0;
+  let showLightbox = $state(false);
+  let lightboxImageUrl = $state('');
+  let lightboxIndex = $state(0);
   
   onMount(() => {
+    // Load 3D components client-side only
+    if (browser) {
+      import('$lib/components/Button3D.svelte').then(module => {
+        Button3D = module.default;
+      });
+    }
+    
     setTimeout(() => {
       app = data.app;
       latestVersion = app.versions[0];
@@ -266,7 +275,7 @@
   }
   
   // State for open dropdown menus
-  let openDropdown: string | null = null;
+  let openDropdown = $state<string | null>(null);
   
   function toggleDropdown(platform: string) {
     openDropdown = openDropdown === platform ? null : platform;
@@ -301,7 +310,7 @@
     return allScreenshots;
   }
   
-  $: screenshots = isLoaded ? getScreenshots() : [];
+  let screenshots = $derived(isLoaded ? getScreenshots() : []);
 </script>
 
 <svelte:head>
@@ -399,43 +408,53 @@
 {/if}
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-purple-600 via-red-600 to-red-700 text-white py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<section class="relative text-white py-20 overflow-hidden">
+  <!-- Gradient overlay that works with 3D background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-600/80 via-violet-600/60 to-transparent pointer-events-none" style="background: linear-gradient(135deg, rgba(139,92,246,0.4) 0%, rgba(6,182,212,0.2) 100%);"></div>
+  
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="animate-fadeIn">
         <div class="flex items-center mb-4">
-          <img src="{app.iconURL}" alt="{app.name} icon" class="w-16 h-16 rounded-2xl mr-4" />
+          <div class="w-20 h-20 rounded-2xl mr-4 glass-card p-2 shadow-lg shadow-purple-500/20">
+            <img src="{app.iconURL}" alt="{app.name} icon" class="w-full h-full rounded-xl" />
+          </div>
           <div>
-            <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 class="text-4xl font-bold tracking-tight sm:text-5xl bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
               {app.name}
             </h1>
-            <p class="text-xl text-red-100 mt-2">{app.subtitle}</p>
+            <p class="text-xl text-gray-300 mt-2">{app.subtitle}</p>
           </div>
         </div>
         
-        <p class="text-lg text-red-100 mb-8">
+        <p class="text-lg text-gray-300 mb-8">
           {app.localizedDescription}
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">
-          <Button text="Download Now" href="#downloads" variant="secondary" size="lg" />
-          <Button text="View Screenshots" href="#screenshots" variant="outline" size="lg" />
+          {#if Button3D}
+            <Button3D text="Download Now" href="#downloads" variant="secondary" size="lg" />
+            <Button3D text="View Screenshots" href="#screenshots" variant="outline" size="lg" />
+          {:else}
+            <Button text="Download Now" href="#downloads" variant="secondary" size="lg" />
+            <Button text="View Screenshots" href="#screenshots" variant="outline" size="lg" />
+          {/if}
         </div>
         
         <div class="mt-6 flex items-center">
-          <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full border border-green-200">
+          <span class="px-3 py-1 glass-card text-cyan-400 text-sm font-medium rounded-full">
             v{latestVersion.version}
           </span>
-          <span class="ml-4 text-red-100">🚀 Latest Release</span>
+          <span class="ml-4 text-gray-300">🚀 Latest Release</span>
         </div>
       </div>
       
       <div class="relative">
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <div class="glass-card rounded-2xl p-8">
           <div class="space-y-4">
             {#each app.platforms as platform}
               <div class="flex items-center space-x-3">
-                <div class="w-4 h-4 bg-green-400 rounded-full"></div>
+                <div class="w-4 h-4 bg-emerald-400 rounded-full shadow-lg shadow-emerald-400/50"></div>
                 <span>Available on {platform}</span>
               </div>
             {/each}
@@ -458,7 +477,7 @@
       {#each screenshots.slice(0, 6) as screenshot, index}
         <button 
           class="group bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-red-900/30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900 hover:-translate-y-2"
-          on:click={() => openLightbox(screenshot.imageURL || screenshot, index)}
+          onclick={() => openLightbox(screenshot.imageURL || screenshot, index)}
         >
           <div class="relative overflow-hidden">
             <img 
@@ -484,24 +503,24 @@
 <Section 
   title="Download {app.name}" 
   subtitle="Choose your version and platform"
-  background="default"
+  background="glass"
 >
   {#snippet children()}
-    <div id="downloads" class="bg-gray-800 rounded-2xl shadow-xl border border-red-900 overflow-visible">
+    <div id="downloads" class="glass-card rounded-2xl shadow-xl overflow-visible">
       <div class="grid grid-cols-1 lg:grid-cols-4 min-h-[600px]">
         <!-- Sidebar with Versions -->
-        <div class="lg:col-span-1 bg-gray-900 border-r border-gray-700 p-6 rounded-l-2xl">
+        <div class="lg:col-span-1 glass border-r border-white/10 p-6 rounded-l-2xl">
           <h3 class="text-lg font-semibold text-white mb-4">Versions</h3>
           <div class="space-y-2">
             {#each app.versions as version, index}
               <button
-                class="w-full text-left p-3 rounded-lg transition-all duration-300 ease-in-out {selectedVersion === version ? 'bg-red-900/50 border border-red-700 text-red-200 scale-[1.02] shadow-lg shadow-red-900/30' : 'hover:bg-gray-800 border border-transparent text-gray-300 hover:scale-[1.01]'}"
-                on:click={() => selectedVersion = version}
+                class="w-full text-left p-3 rounded-lg transition-all duration-300 ease-in-out {selectedVersion === version ? 'bg-purple-600/30 border border-purple-500/50 text-purple-200 scale-[1.02] shadow-lg shadow-purple-500/20' : 'hover:bg-white/5 border border-transparent text-gray-300 hover:scale-[1.01]'}"
+                onclick={() => selectedVersion = version}
               >
                 <div class="flex items-center justify-between">
                   <span class="font-medium">v{version.version}</span>
                   {#if index === 0}
-                    <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Latest</span>
+                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full border border-cyan-500/30">Latest</span>
                   {/if}
                 </div>
                 {#if version.date}
@@ -526,15 +545,15 @@
                     href={selectedVersion.sourceCode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="px-4 py-2 bg-gray-700 text-gray-200 hover:bg-gray-600 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
+                    class="px-4 py-2 glass-card text-gray-200 hover:bg-white/10 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
                   >
                     <i class="fas fa-code"></i>
                     Source Code
                   </a>
                 {/if}
                 <button
-                  class="px-4 py-2 bg-red-900/50 text-red-200 hover:bg-red-900 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
-                  on:click={() => showModal = true}
+                  class="px-4 py-2 bg-purple-600/30 text-purple-200 hover:bg-purple-600/50 rounded-lg transition-colors text-sm font-medium flex items-center gap-2 border border-purple-500/30"
+                  onclick={() => showModal = true}
                 >
                   <i class="fas fa-info-circle"></i>
                   View Details
@@ -547,9 +566,9 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {#each getVersionPlatforms(selectedVersion) as platform}
               {#if platformHasDownloads(platform, selectedVersion)}
-              <div class="border border-gray-700 rounded-xl p-6 hover:shadow-lg hover:shadow-red-900/10 transition-shadow bg-gray-900 overflow-visible">
+              <div class="glass-card rounded-xl p-6 transition-all duration-300 overflow-visible hover:shadow-lg hover:shadow-purple-500/10">
                 <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor});">
+                  <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4 shadow-lg" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor}); box-shadow: 0 4px 20px {app.tintColor}40;">
                     {#if platform === 'iOS'}
                       <i class="fab fa-apple text-xl text-white"></i>
                     {:else if platform === 'Android'}
@@ -590,9 +609,9 @@
                   <!-- Multiple download options - dropdown button -->
                   <div class="relative" style="z-index: 50;">
                     <button
-                      class="inline-flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors"
+                      class="inline-flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors cursor-pointer"
                       style="background-color: {app.tintColor};"
-                      on:click={() => toggleDropdown(platform)}
+                      onclick={() => toggleDropdown(platform)}
                     >
                       <span class="flex items-center gap-2">
                         <i class="fas fa-download"></i>
@@ -602,13 +621,13 @@
                     </button>
                     
                     {#if openDropdown === platform}
-                      <div class="absolute z-[100] mt-2 w-full bg-gray-800 border border-gray-700 rounded-lg shadow-2xl overflow-hidden animate-dropdown-open" style="position: absolute; z-index: 9999;">
+                      <div class="absolute z-[100] mt-2 w-full glass rounded-lg shadow-2xl overflow-hidden animate-dropdown-open" style="position: absolute; z-index: 9999;">
                         {#each getAllDownloadOptions(platform, selectedVersion) as option, i}
                           <a
                             href={option.url}
-                            class="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 border-b border-gray-700 last:border-b-0 transition-all duration-200 hover:pl-6 animate-dropdown-item"
+                            class="block px-4 py-3 text-sm text-gray-200 hover:bg-white/10 border-b border-white/10 last:border-b-0 transition-all duration-200 hover:pl-6 animate-dropdown-item"
                             style="animation-delay: {i * 50}ms;"
-                            on:click={() => closeDropdowns()}
+                            onclick={() => closeDropdowns()}
                           >
                             <div class="flex items-center gap-2">
                               <i class="fas fa-download text-gray-400"></i>
@@ -673,8 +692,8 @@
     aria-modal="true"
     aria-labelledby="modal-title"
     tabindex="-1"
-    on:click={() => showModal = false}
-    on:keydown={handleModalKeydown}
+    onclick={() => showModal = false}
+    onkeydown={handleModalKeydown}
   >
     <div 
       class="bg-gray-800 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl border border-gray-700" 
@@ -694,7 +713,7 @@
         <button
           class="p-2 hover:bg-gray-700 rounded-lg transition-colors"
           aria-label="Close modal"
-          on:click={() => showModal = false}
+          onclick={(e) => { e.stopPropagation(); showModal = false; }}
         >
           <i class="fas fa-times text-gray-400"></i>
         </button>
@@ -767,7 +786,7 @@
         <div class="flex justify-end gap-3 pt-4 border-t border-gray-700">
           <button
             class="px-4 py-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors"
-            on:click={() => showModal = false}
+            onclick={(e) => { e.stopPropagation(); showModal = false; }}
           >
             Close
           </button>
@@ -784,7 +803,7 @@
           {/if}
           <button
             class="px-4 py-2 bg-red-600 text-white hover:bg-red-700 rounded-lg transition-colors"
-            on:click={() => {showModal = false; document.getElementById('downloads')?.scrollIntoView({behavior: 'smooth'});}}
+            onclick={(e) => { e.stopPropagation(); showModal = false; document.getElementById('downloads')?.scrollIntoView({behavior: 'smooth'}); }}
           >
             Download Now
           </button>
@@ -798,14 +817,14 @@
 <!-- End of isLoaded check -->
 
 <!-- Image Lightbox (always available for keyboard handling) -->
-<svelte:window on:keydown={handleLightboxKeydown} />
+<svelte:window onkeydown={handleLightboxKeydown} />
 
 {#if isLoaded && showLightbox}
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <div 
     class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md animate-lightbox-open"
-    on:click={closeLightbox}
-    on:keydown={(e) => e.key === 'Enter' && closeLightbox()}
+    onclick={closeLightbox}
+    onkeydown={(e) => e.key === 'Enter' && closeLightbox()}
     role="dialog"
     aria-modal="true"
     aria-label="Image viewer"
@@ -814,7 +833,7 @@
     <!-- Close button -->
     <button 
       class="absolute top-4 right-4 z-10 p-2 text-white/80 hover:text-white transition-colors bg-black/30 rounded-full"
-      on:click={closeLightbox}
+      onclick={(e) => { e.stopPropagation(); closeLightbox(); }}
       aria-label="Close image viewer"
     >
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -826,7 +845,7 @@
     {#if screenshots.length > 1}
       <button 
         class="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 text-white/80 hover:text-white transition-colors bg-black/30 hover:bg-black/50 rounded-full"
-        on:click|stopPropagation={prevImage}
+        onclick={(e) => { e.stopPropagation(); prevImage(); }}
         aria-label="Previous image"
       >
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -837,7 +856,7 @@
       <!-- Next button -->
       <button 
         class="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 text-white/80 hover:text-white transition-colors bg-black/30 hover:bg-black/50 rounded-full"
-        on:click|stopPropagation={nextImage}
+        onclick={(e) => { e.stopPropagation(); nextImage(); }}
         aria-label="Next image"
       >
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -850,8 +869,8 @@
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div 
       class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center animate-lightbox-image"
-      on:click|stopPropagation={() => {}}
-      on:keydown|stopPropagation={() => {}}
+      onclick={(e) => e.stopPropagation()}
+      onkeydown={(e) => e.stopPropagation()}
     >
       <img 
         src={lightboxImageUrl} 

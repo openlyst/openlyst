@@ -8,3 +8,6 @@ export { default as Section } from './components/Section.svelte';
 export { default as Button } from './components/Button.svelte';
 export { default as Skeleton } from './components/Skeleton.svelte';
 export { default as Background3D } from './components/Background3D.svelte';
+export { default as Button3D } from './components/Button3D.svelte';
+export { default as Widget3D } from './components/Widget3D.svelte';
+export { default as PlatformCard3D } from './components/PlatformCard3D.svelte';

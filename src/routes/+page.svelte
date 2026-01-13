@@ -4,15 +4,23 @@
   import favicon from '$lib/assets/favicon.svg';
   import { onMount } from 'svelte';
   import { t } from '$lib/stores/language';
+  import { browser } from '$app/environment';
   
-  export let data;
+  let { data } = $props();
   
-  let isLoaded = false;
-  let apps: typeof data.apps = [];
-  let featuredApps: typeof data.featuredApps = [];
-  let config: typeof data.config;
+  let isLoaded = $state(false);
+  let apps = $state<typeof data.apps>([]);
+  let featuredApps = $state<typeof data.featuredApps>([]);
+  let config = $state<typeof data.config>();
+  let Button3D: any = $state(null);
   
-  onMount(() => {
+  onMount(async () => {
+    // Load 3D button component client-side only
+    if (browser) {
+      const module = await import('$lib/components/Button3D.svelte');
+      Button3D = module.default;
+    }
+    
     // Simulate async content loading for smooth transition
     setTimeout(() => {
       apps = data.apps;
@@ -55,9 +63,14 @@
         {$t.home.subtitle}
       </p>
       
-      <div class="mt-10 flex items-center justify-center gap-x-6">
-        <Button text={$t.home.exploreApps} href="/apps" variant="secondary" size="lg" />
-        <Button text={$t.home.joinMovement} href="/contribute" variant="outline" size="lg" />
+      <div class="mt-10 flex items-center justify-center gap-x-6 flex-wrap">
+        {#if Button3D}
+          <Button3D text={$t.home.exploreApps} href="/apps" variant="secondary" size="lg" />
+          <Button3D text={$t.home.joinMovement} href="/contribute" variant="outline" size="lg" />
+        {:else}
+          <Button text={$t.home.exploreApps} href="/apps" variant="secondary" size="lg" />
+          <Button text={$t.home.joinMovement} href="/contribute" variant="outline" size="lg" />
+        {/if}
       </div>
     </div>
   </div>
