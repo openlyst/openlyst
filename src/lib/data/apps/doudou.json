@@ -57,7 +57,7 @@
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-macos-unsigned.zip",
+          "universal": "",
           "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
         },
         "Windows": {
@@ -66,7 +66,7 @@
             "arm64": ""
           },
           "exe": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-windows-x64-setup.exe",
+            "x86_64": "",
             "arm64": ""
           },
           "msi": {
@@ -78,7 +78,7 @@
             "arm64": ""
           },
           "portable": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-windows-x64.zip",
+            "x86_64": "",
             "arm64": ""
           },
           "winget": "",
@@ -87,15 +87,15 @@
         },
         "Linux": {
           "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-linux-x64.zip",
+            "x86_64": "",
             "arm64": ""
           },
           "appimage": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-linux-x86_64.AppImage",
+            "x86_64": "",
             "arm64": ""
           },
           "deb": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-linux-amd64.deb",
+            "x86_64": "",
             "arm64": ""
           },
           "aur": {
@@ -105,11 +105,11 @@
           "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
         },
         "Android": {
-          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13.apk",
-          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13.aab",
+          "apk": "",
+          "aab": "",
           "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
         },
-        "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-44/doudou-12.0.0-2026-01-13-web.zip"
+        "Web": ""
       },
       "localizedDescription": {
         "en": "",
