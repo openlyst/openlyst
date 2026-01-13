@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { t } from '$lib/stores/language';
+</script>
+
 <footer class="bg-black text-white border-t border-red-900">
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -10,9 +14,7 @@
           <span class="text-xl font-bold">OpenLyst</span>
         </div>
         <p class="text-gray-300 max-w-md">
-          Building revolutionary FOSS applications for the people. 
-          Free and open source software that serves the community, 
-          not corporate interests.
+          {$t.footer.description}
         </p>
         <div class="mt-4 flex space-x-4">
           <a href="https://gitlab.com/openlyst" class="text-gray-400 hover:text-yellow-400 transition-colors">
@@ -27,7 +29,7 @@
       <!-- Quick Links -->
       <div>
         <h3 class="text-sm font-semibold text-yellow-400 uppercase tracking-wider mb-4">
-          Applications
+          {$t.footer.applications}
         </h3>
         <ul class="space-y-2">
           <li><a href="/apps/doudou" class="text-gray-300 hover:text-yellow-400 transition-colors">DouDou</a></li>
@@ -37,13 +39,13 @@
       <!-- Community -->
       <div>
         <h3 class="text-sm font-semibold text-yellow-400 uppercase tracking-wider mb-4">
-          Community
+          {$t.footer.community}
         </h3>
         <ul class="space-y-2">
-          <li><a href="/contribute" class="text-gray-300 hover:text-yellow-400 transition-colors">Contribute</a></li>
-          <li><a href="/about" class="text-gray-300 hover:text-yellow-400 transition-colors">About Us</a></li>
-          <li><a href="/docs/api" class="text-gray-300 hover:text-yellow-400 transition-colors">Documentation</a></li>
-          <li><a href="https://communistparty.ie/en/" class="text-gray-300 hover:text-yellow-400 transition-colors">Support</a></li>
+          <li><a href="/contribute" class="text-gray-300 hover:text-yellow-400 transition-colors">{$t.footer.contribute}</a></li>
+          <li><a href="/about" class="text-gray-300 hover:text-yellow-400 transition-colors">{$t.footer.aboutUs}</a></li>
+          <li><a href="/docs/api" class="text-gray-300 hover:text-yellow-400 transition-colors">{$t.footer.documentation}</a></li>
+          <li><a href="https://communistparty.ie/en/" class="text-gray-300 hover:text-yellow-400 transition-colors">{$t.footer.support}</a></li>
         </ul>
       </div>
     </div>
@@ -51,10 +53,10 @@
     <div class="mt-8 pt-8 border-t border-red-800">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-gray-400 text-sm">
-          © 2025 OpenLyst. All software released under open source licenses.
+          {$t.footer.copyright}
         </p>
         <p class="text-gray-400 text-sm mt-2 md:mt-0">
-          Power to the people through free software ✊
+          {$t.footer.powerToThePeople}
         </p>
       </div>
     </div>

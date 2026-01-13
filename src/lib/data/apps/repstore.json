@@ -1,0 +1,74 @@
+{
+  "bundleIdentifier": "repstore",
+  "name": {
+    "en": "RepStore",
+    "zh": "RepStore",
+    "ru": "RepStore"
+  },
+  "subtitle": {
+    "en": "Alternative App Store for Android",
+    "zh": "Android 替代应用商店",
+    "ru": "Альтернативный магазин приложений для Android"
+  },
+  "localizedDescription": {
+    "en": "Alternative app store for iOS*/Android based on repositories compatible with AltStore repos. Browse and install APKs from repositories with a clean, modern interface.",
+    "zh": "基于与 AltStore 仓库兼容的存储库的 iOS*/Android 替代应用商店。使用简洁、现代的界面从存储库浏览和安装 APK。",
+    "ru": "Альтернативный магазин приложений для iOS*/Android на основе репозиториев, совместимых с AltStore. Просматривайте и устанавливайте APK из репозиториев с чистым современным интерфейсом."
+  },
+  "iconURL": "https://gitlab.com/Openlyst/repstore/-/raw/main/icon.png?ref_type=heads",
+  "tintColor": "#10b981",
+  "platforms": ["iOS", "Android", "macOS", "Windows", "Linux"],
+  "screenshots": [
+    "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/app.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/home.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/search.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/news.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/sources.png?ref_type=heads"
+  ],
+  "deprecated": false,
+  "versions": [
+    {
+      "version": "3.1.0",
+      "date": "2026-01-12",
+      "sourceCode": "",
+      "platforms": ["iOS", "Android", "macOS", "Windows", "Linux"],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK directly from our repository",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source"
+      },
+      "downloads": {
+        "iOS": "",
+        "Android": {
+          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-42/repstore-3.1.0-2026-01-12.apk",
+          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-42/repstore-3.1.0-2026-01-12.aab"
+        },
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "",
+            "arm64": ""
+          }
+        }
+      },
+      "localizedDescription": {
+        "en": "# 3.1.0\n\n## Added\n- Auto-refresh app install status when returning to the app\n\n## Changed\n- Updated description.\n- Download progress now only shows for the specific version being downloaded\n\n## Fixed\n- Fixed app install detection not recognizing installed apps\n- Apps now correctly show \"Open\" when installed, \"Update\" when older version is installed",
+        "zh": "# 3.1.0\n\n## 新增\n- 返回应用时自动刷新应用安装状态\n\n## 更改\n- 更新了描述。\n- 下载进度现在只显示正在下载的特定版本\n\n## 修复\n- 修复了应用安装检测无法识别已安装应用的问题\n- 应用现在正确显示'打开'（已安装）、'更新'（旧版本已安装）",
+        "ru": "# 3.1.0\n\n## Добавлено\n- Автоматическое обновление статуса установки при возврате в приложение\n\n## Изменено\n- Обновлено описание.\n- Прогресс загрузки теперь отображается только для конкретной загружаемой версии\n\n## Исправлено\n- Исправлено обнаружение установленных приложений\n- Приложения теперь правильно показывают \"Открыть\" (установлено), \"Обновить\" (установлена старая версия)"
+      }
+    }
+  ]
+}

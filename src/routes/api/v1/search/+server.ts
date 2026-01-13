@@ -1,17 +1,18 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getAllApps, nameToSlug, resolveAppUrls } from '$lib/utils/repo';
+import { getAllApps, nameToSlug, normalizeLanguage } from '$lib/services/dataService';
 
 export const GET: RequestHandler = async ({ url }) => {
   try {
     const query = url.searchParams.get('q');
+    const lang = normalizeLanguage(url.searchParams.get('lang'));
     
     if (!query || query.trim().length === 0) {
       return json({ success: false, error: 'Search query is required' }, { status: 400 });
     }
     
     const searchTerm = query.toLowerCase().trim();
-    const allApps = await getAllApps();
+    const allApps = await getAllApps(lang);
     
     // Search in app name, subtitle, and description
     const results = allApps.filter(app => 
@@ -21,7 +22,7 @@ export const GET: RequestHandler = async ({ url }) => {
       (app.bundleIdentifier && app.bundleIdentifier.toLowerCase().includes(searchTerm))
     );
     
-    // Transform results to include slug, resolve URLs, and calculate relevance score
+    // Transform results to include slug and calculate relevance score
     const transformedResults = results.map(app => {
       // Calculate simple relevance score
       let score = 0;
@@ -31,7 +32,7 @@ export const GET: RequestHandler = async ({ url }) => {
       if (app.localizedDescription.toLowerCase().includes(searchTerm)) score += 1;
       
       return {
-        ...resolveAppUrls(app),
+        ...app,
         slug: nameToSlug(app.name),
         relevanceScore: score
       };
@@ -43,6 +44,7 @@ export const GET: RequestHandler = async ({ url }) => {
     return json({
       success: true,
       query: query,
+      language: lang,
       count: transformedResults.length,
       data: transformedResults
     });

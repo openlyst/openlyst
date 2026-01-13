@@ -1,14 +1,14 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { loadRepoConfig, resolveNewsUrls } from '$lib/utils/repo';
+import { getAllNews, normalizeLanguage } from '$lib/services/dataService';
 
 export const GET: RequestHandler = async ({ url }) => {
   try {
-    const config = await loadRepoConfig();
     const limit = url.searchParams.get('limit');
     const appId = url.searchParams.get('appId');
+    const lang = normalizeLanguage(url.searchParams.get('lang'));
     
-    let news = config.news;
+    let news = await getAllNews(lang);
     
     // Filter by app ID if specified
     if (appId) {
@@ -26,13 +26,11 @@ export const GET: RequestHandler = async ({ url }) => {
       }
     }
     
-    // Resolve relative URLs to absolute URLs
-    const resolvedNews = news.map(resolveNewsUrls);
-    
     return json({
       success: true,
-      count: resolvedNews.length,
-      data: resolvedNews
+      language: lang,
+      count: news.length,
+      data: news
     });
   } catch (error) {
     return json({ success: false, error: 'Failed to load news' }, { status: 500 });

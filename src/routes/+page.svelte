@@ -1,8 +1,9 @@
 <script lang="ts">
   import { Section, AppCard, Button, Skeleton } from '$lib';
-  import { nameToSlug } from '$lib/utils/repo';
+  import { nameToSlug } from '$lib/services/dataService';
   import favicon from '$lib/assets/favicon.svg';
   import { onMount } from 'svelte';
+  import { t } from '$lib/stores/language';
   
   export let data;
   
@@ -23,8 +24,8 @@
 </script>
 
 <svelte:head>
-  <title>OpenLyst - Revolutionary FOSS Applications</title>
-  <meta name="description" content="Building revolutionary free and open source applications for the people. Power to the community through free software." />
+  <title>OpenLyst - {$t.home.title}</title>
+  <meta name="description" content={$t.home.subtitle} />
 </svelte:head>
 
 <!-- Hero Section -->
@@ -60,17 +61,16 @@
       </div>
       
       <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
-        Revolutionary FOSS Applications
+        {$t.home.title}
       </h1>
       
       <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-red-100">
-        Building free and open source software that serves the people, not corporate interests. 
-        Join the revolution and take back control of your digital life.
+        {$t.home.subtitle}
       </p>
       
       <div class="mt-10 flex items-center justify-center gap-x-6">
-        <Button text="Explore Our Apps" href="/apps" variant="secondary" size="lg" />
-        <Button text="Join the Movement" href="/contribute" variant="outline" size="lg" />
+        <Button text={$t.home.exploreApps} href="/apps" variant="secondary" size="lg" />
+        <Button text={$t.home.joinMovement} href="/contribute" variant="outline" size="lg" />
       </div>
     </div>
   </div>
@@ -78,8 +78,8 @@
 
 <!-- Mission Section -->
 <Section 
-  title="Power to the People" 
-  subtitle="We believe technology should serve humanity, not exploit it. Our applications are built by the community, for the community."
+  title={$t.home.powerToThePeople}
+  subtitle={$t.home.powerDescription}
   centered={true}
 >
   {#snippet children()}
@@ -90,8 +90,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2">Privacy First</h3>
-        <p class="text-gray-400">Your data belongs to you. No tracking, no surveillance, no corporate control.</p>
+        <h3 class="text-xl font-semibold text-white mb-2">{$t.home.privacyFirst}</h3>
+        <p class="text-gray-400">{$t.home.privacyDesc}</p>
       </div>
       
       <div class="text-center">
@@ -100,8 +100,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2">Community Driven</h3>
-        <p class="text-gray-400">Built by volunteers who care about creating better software for everyone.</p>
+        <h3 class="text-xl font-semibold text-white mb-2">{$t.home.communityDriven}</h3>
+        <p class="text-gray-400">{$t.home.communityDesc}</p>
       </div>
       
       <div class="text-center">
@@ -110,8 +110,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2">Open Source</h3>
-        <p class="text-gray-400">All code is transparent, auditable, and free to use, modify, and distribute.</p>
+        <h3 class="text-xl font-semibold text-white mb-2">{$t.home.openSource}</h3>
+        <p class="text-gray-400">{$t.home.openSourceDesc}</p>
       </div>
     </div>
   {/snippet}
@@ -119,8 +119,8 @@
 
 <!-- Applications Section -->
 <Section 
-  title="Our Applications" 
-  subtitle="Revolutionary software that puts users first. Each application is designed with privacy, freedom, and community in mind."
+  title={$t.home.ourApps}
+  subtitle={$t.home.ourAppsDesc}
   background="default"
 >
   {#snippet children()}
@@ -148,9 +148,9 @@
           <!-- Fallback content if no apps are loaded -->
           <div class="col-span-full text-center py-12">
             <div class="text-6xl mb-4">🚀</div>
-            <h3 class="text-2xl font-semibold text-white mb-2">Coming Soon</h3>
+            <h3 class="text-2xl font-semibold text-white mb-2">{$t.home.comingSoon}</h3>
             <p class="text-gray-400 max-w-md mx-auto">
-              We're working on amazing revolutionary applications. Check back soon!
+              {$t.home.comingSoonDesc}
             </p>
           </div>
         {/if}
@@ -158,30 +158,30 @@
     </div>
     
     <div class="mt-12 text-center">
-      <p class="text-gray-400 mb-6">More revolutionary applications coming soon!</p>
-      <Button text="View All Applications" href="/apps" variant="primary" />
+      <p class="text-gray-400 mb-6">{$t.home.moreAppsComing}</p>
+      <Button text={$t.home.viewAllApps} href="/apps" variant="primary" />
     </div>
   {/snippet}
 </Section>
 
 <!-- Call to Action -->
 <Section 
-  title="Join the Revolution" 
-  subtitle="Help us build a better digital future. Contribute code, report bugs, or spread the word about free software."
+  title={$t.home.joinRevolution}
+  subtitle={$t.home.joinRevolutionDesc}
   background="red"
   centered={true}
 >
   {#snippet children()}
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-      <Button text="Start Contributing" href="/contribute" variant="secondary" size="lg" />
-      <Button text="Download Apps" href="/apps" variant="outline" size="lg" />
+      <Button text={$t.home.startContributing} href="/contribute" variant="secondary" size="lg" />
+      <Button text={$t.home.downloadApps} href="/apps" variant="outline" size="lg" />
     </div>
     
     <div class="mt-12 text-center">
       <p class="text-red-100 text-lg font-medium">
-        "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion."
+        {$t.home.quote}
       </p>
-      <p class="text-red-200 mt-2">- Albert Camus</p>
+      <p class="text-red-200 mt-2">{$t.home.quoteAuthor}</p>
     </div>
   {/snippet}
 </Section>

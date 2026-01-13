@@ -1,0 +1,88 @@
+{
+  "bundleIdentifier": "doudou",
+  "name": {
+    "en": "Doudou",
+    "zh": "豆豆",
+    "ru": "Doudou"
+  },
+  "subtitle": {
+    "en": "Music player for self-hosted services",
+    "zh": "自托管服务的音乐播放器",
+    "ru": "Музыкальный плеер для самостоятельного хостинга"
+  },
+  "localizedDescription": {
+    "en": "Break free from corporate streaming platforms. Doudou connects to your self-hosted music services like Jellyfin, Plex, and Navidrome, giving you complete control over your music library.",
+    "zh": "摆脱企业流媒体平台的束缚。豆豆连接您的自托管音乐服务，如 Jellyfin、Plex 和 Navidrome，让您完全掌控自己的音乐库。",
+    "ru": "Освободитесь от корпоративных стриминговых платформ. Doudou подключается к вашим самостоятельно размещённым музыкальным сервисам, таким как Jellyfin, Plex и Navidrome, предоставляя вам полный контроль над вашей музыкальной библиотекой."
+  },
+  "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
+  "tintColor": "#dc2626",
+  "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+  "screenshots": [
+    "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
+    "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/nowplaying.PNG?ref_type=heads",
+    "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/albums.PNG?ref_type=heads"
+  ],
+  "deprecated": false,
+  "versions": [
+    {
+      "version": "11.0.0",
+      "date": "2026-01-09",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/bf48d7f525d51d8e5970ccd85bb16d604a95b79a",
+      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platformInstall": {
+        "iOS": "",
+        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI.",
+        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+      },
+      "downloads": {
+        "iOS": "https://files.catbox.moe/smjwse.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://files.catbox.moe/lsbnev.zip",
+          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-15/doudou-windows-x64.zip",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232642/artifacts/raw/doudou-11.0.0-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232644/artifacts/raw/artifacts/klit-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232643/artifacts/raw/artifacts/klit-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+        },
+        "Android": {
+          "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232637/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
+          "aab": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232635/artifacts/raw/build/app/outputs/bundle/release/app-release.aab",
+          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+        },
+        "Web": ""
+      },
+      "localizedDescription": {
+        "en": "# 11.0.0\n\n## Added\n\n- **Desktop System Media Controls** - Control playback from your OS taskbar/system tray without focusing Doudou.\n- **Google Assistant Support** - Voice commands for Android via Google Assistant App Actions.\n- **Autoplay** - Automatically plays similar music when the queue ends.\n- Added favorite button to the desktop fullscreen Now Playing overlay.\n- Added Easter Egg: Desktop Now Playing view flips horizontally when \"The Mind Electric\" plays its reversed section.\n\n## Changed\n\n- Refactored audio system from 4 platform-specific handlers into a single cross-platform UnifiedAudioHandler.\n- **Complete Desktop UI Redesign** with modern styling.\n\n## Fixed\n\n- Fixed mounted check issues causing setState calls after widget disposal.\n- Fixed Now Playing overlay not updating when the current song changes.",
+        "zh": "# 11.0.0\n\n## 新增\n\n- **桌面系统媒体控制** - 无需聚焦豆豆即可从操作系统任务栏/系统托盘控制播放。\n- **Google 助手支持** - 通过 Google 助手应用操作进行语音命令。\n- **自动播放** - 队列结束时自动播放相似音乐。\n\n## 更改\n\n- 将音频系统从 4 个平台特定处理程序重构为单一的跨平台 UnifiedAudioHandler。\n- **桌面 UI 完全重新设计**，采用现代化样式。\n\n## 修复\n\n- 修复了导致 widget 销毁后调用 setState 的挂载检查问题。",
+        "ru": "# 11.0.0\n\n## Добавлено\n\n- **Управление медиа на рабочем столе** - Управляйте воспроизведением из панели задач/системного трея без фокусировки на Doudou.\n- **Поддержка Google Ассистента** - Голосовые команды для Android.\n- **Автовоспроизведение** - Автоматически воспроизводит похожую музыку, когда очередь заканчивается.\n\n## Изменено\n\n- Рефакторинг аудиосистемы в единый кроссплатформенный UnifiedAudioHandler.\n- **Полный редизайн интерфейса рабочего стола** в современном стиле.\n\n## Исправлено\n\n- Исправлены проблемы с проверкой монтирования, вызывающие вызовы setState после удаления виджета."
+      }
+    }
+  ]
+}

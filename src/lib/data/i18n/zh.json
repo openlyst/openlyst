@@ -1,0 +1,58 @@
+{
+  "common": {
+    "apps": "应用",
+    "news": "新闻",
+    "about": "关于",
+    "contribute": "贡献",
+    "search": "搜索",
+    "download": "下载",
+    "install": "安装",
+    "version": "版本",
+    "platforms": "平台",
+    "screenshots": "截图",
+    "changelog": "更新日志",
+    "sourceCode": "源代码",
+    "deprecated": "已弃用",
+    "featured": "精选",
+    "all": "全部",
+    "active": "活跃",
+    "latestVersion": "最新版本",
+    "releaseDate": "发布日期",
+    "noResults": "未找到结果",
+    "loading": "加载中...",
+    "error": "错误",
+    "retry": "重试"
+  },
+  "platforms": {
+    "iOS": "iOS",
+    "Android": "安卓",
+    "macOS": "macOS",
+    "Windows": "Windows",
+    "Linux": "Linux",
+    "Web": "网页版"
+  },
+  "installMethods": {
+    "apk": "APK 下载",
+    "aab": "Android App Bundle",
+    "ipa": "iOS 应用",
+    "dmg": "macOS 磁盘映像",
+    "zip": "ZIP 压缩包",
+    "exe": "Windows 安装程序",
+    "msi": "MSI 安装包",
+    "deb": "Debian 软件包",
+    "rpm": "RPM 软件包",
+    "appimage": "AppImage",
+    "homebrew": "Homebrew",
+    "aur": "Arch 用户仓库",
+    "winget": "Windows 包管理器",
+    "chocolatey": "Chocolatey",
+    "scoop": "Scoop"
+  },
+  "api": {
+    "success": "成功",
+    "failed": "失败",
+    "notFound": "未找到",
+    "invalidRequest": "无效请求",
+    "searchQueryRequired": "需要搜索关键词"
+  }
+}

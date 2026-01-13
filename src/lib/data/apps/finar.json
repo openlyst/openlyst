@@ -1,0 +1,78 @@
+{
+  "bundleIdentifier": "finar",
+  "name": {
+    "en": "Finar",
+    "zh": "Finar",
+    "ru": "Finar"
+  },
+  "subtitle": {
+    "en": "Replacement frontend for Jellyfin",
+    "zh": "Jellyfin 的替代前端",
+    "ru": "Альтернативный интерфейс для Jellyfin"
+  },
+  "localizedDescription": {
+    "en": "A beautiful, modern multi-platform Jellyfin client built with Flutter. Features native video playback powered by media_kit, glassmorphism design with blur effects and glass-like components, dark mode, offline support with Hive, and adaptive UI optimized for desktop, mobile, and TV.",
+    "zh": "一款使用 Flutter 构建的美观、现代的多平台 Jellyfin 客户端。具有由 media_kit 驱动的原生视频播放、具有模糊效果和玻璃组件的玻璃态设计、深色模式、使用 Hive 的离线支持，以及针对桌面、移动和电视优化的自适应 UI。",
+    "ru": "Красивый, современный мультиплатформенный клиент Jellyfin, созданный на Flutter. Функции: нативное воспроизведение видео на media_kit, дизайн glassmorphism с эффектами размытия, тёмный режим, офлайн-поддержка с Hive и адаптивный интерфейс для ПК, мобильных устройств и ТВ."
+  },
+  "iconURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
+  "tintColor": "#6366f1",
+  "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+  "screenshots": [],
+  "deprecated": false,
+  "versions": [
+    {
+      "version": "1.1.0",
+      "date": "2026-01-11",
+      "sourceCode": "",
+      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK directly from GitLab CI",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source",
+        "Web": "Access the web version or self-host with Docker"
+      },
+      "downloads": {
+        "iOS": "",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-18/finar-windows-x64.zip",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/Openlyst/finar/-/jobs/12639939011/artifacts/raw/doudou-1.1.0-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/Openlyst/finar/-/jobs/12639939013/artifacts/raw/artifacts/klit-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/Openlyst/finar/-/jobs/12639939012/artifacts/raw/artifacts/klit-linux-amd64.deb",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://gitlab.com/Openlyst/finar/-/jobs/12639939009/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
+          "aab": "https://gitlab.com/Openlyst/finar/-/jobs/12639939007/artifacts/raw/build/app/outputs/bundle/release/app-release.aab"
+        },
+        "Web": "https://gitlab.com/Openlyst/finar/-/jobs/12639939015/artifacts/raw/finar-1.1.0-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 1.1.0\n\n## Fixed\n- Fixed controller input in SteamOS",
+        "zh": "# 1.1.0\n\n## 修复\n- 修复了 SteamOS 中的控制器输入问题",
+        "ru": "# 1.1.0\n\n## Исправлено\n- Исправлен ввод контроллера в SteamOS"
+      }
+    }
+  ]
+}

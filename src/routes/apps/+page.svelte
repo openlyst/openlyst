@@ -1,8 +1,9 @@
 <script lang="ts">
   import { Section, AppCard, Skeleton } from '$lib';
-  import { nameToSlug } from '$lib/utils/repo';
+  import { nameToSlug } from '$lib/services/dataService';
   import type { PageData } from './$types';
   import { onMount } from 'svelte';
+  import { t } from '$lib/stores/language';
   
   export let data: PageData;
   
@@ -18,22 +19,22 @@
 </script>
 
 <svelte:head>
-  <title>Apps - OpenLyst</title>
-  <meta name="description" content="Discover amazing open-source applications. Free, privacy-focused, and community-driven." />
+  <title>{$t.apps.title} - OpenLyst</title>
+  <meta name="description" content={$t.apps.subtitle} />
 </svelte:head>
 
 <!-- Hero Section -->
 <section class="bg-gradient-to-br from-purple-600 via-red-600 to-red-700 text-white py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
     <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
-      Discover Amazing Apps
+      {$t.apps.title}
     </h1>
     <p class="text-xl text-red-100 max-w-3xl mx-auto mb-8">
-      Explore our collection of free, open-source applications. Built for privacy, designed for you.
+      {$t.apps.subtitle}
     </p>
     <div class="flex items-center justify-center">
       <span class="px-4 py-2 bg-green-100 text-green-800 text-lg font-medium rounded-full border border-green-200">
-        ✊ Power to the people
+        ✊ {$t.apps.powerToThePeople}
       </span>
     </div>
   </div>
@@ -41,8 +42,8 @@
 
 <!-- Apps Grid Section -->
 <Section 
-  title="Our Applications" 
-  subtitle="Free, open-source, and privacy-focused apps for everyone."
+  title={$t.apps.ourApps}
+  subtitle={$t.apps.ourAppsDesc}
   background="default"
 >
   {#snippet children()}
@@ -72,16 +73,16 @@
     {#if isLoaded && apps.length === 0}
       <div class="text-center py-12">
         <div class="text-6xl mb-4">📱</div>
-        <h3 class="text-2xl font-semibold text-white mb-2">No Apps Yet</h3>
+        <h3 class="text-2xl font-semibold text-white mb-2">{$t.apps.noAppsYet}</h3>
         <p class="text-gray-400 max-w-md mx-auto">
-          We're working on adding amazing apps to our collection. Check back soon!
+          {$t.apps.noAppsDesc}
         </p>
       </div>
     {/if}
     
     <!-- Link to deprecated apps -->
     <div class="mt-12 text-center">
-      <p class="text-gray-400 text-sm mb-3">Can't find an app you're looking for?</p>
+      <p class="text-gray-400 text-sm mb-3">{$t.apps.cantFind}</p>
       <a 
         href="/deprecated" 
         class="inline-flex items-center text-gray-300 hover:text-red-400 transition-colors text-sm font-medium"
@@ -89,7 +90,7 @@
         <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        Check our deprecated apps
+        {$t.apps.checkDeprecated}
       </a>
     </div>
   {/snippet}
@@ -97,23 +98,22 @@
 
 <!-- Call to Action -->
 <Section 
-  title="Want to Contribute?" 
-  subtitle="Help us build the future of open-source applications."
+  title={$t.apps.wantToContribute}
+  subtitle={$t.apps.wantToContributeDesc}
   background="red"
   centered={true}
 >
   {#snippet children()}
     <div class="text-center">
       <p class="text-lg text-red-100 mb-8 max-w-2xl mx-auto">
-        Join our community of developers and users who believe in free, open-source software. 
-        Together, we can create alternatives to corporate-controlled platforms.
+        {$t.apps.contributeText}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
           href="/contribute" 
           class="inline-flex items-center px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:text-red-600 transition-colors"
         >
-          Get Involved
+          {$t.apps.getInvolved}
         </a>
         <a 
           href="https://gitlab.com/openlyst" 
@@ -121,7 +121,7 @@
           rel="noopener noreferrer"
           class="inline-flex items-center px-6 py-3 bg-yellow-400 text-red-900 font-medium rounded-lg hover:bg-yellow-300 transition-colors"
         >
-          View Source Code
+          {$t.apps.viewSourceCode}
         </a>
       </div>
     </div>

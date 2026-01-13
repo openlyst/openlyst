@@ -1,4 +1,4 @@
-import { getActiveApps } from '$lib/utils/repo';
+import { getActiveApps } from '$lib/services/dataService';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async () => {

@@ -1,0 +1,86 @@
+{
+  "bundleIdentifier": "docan",
+  "name": {
+    "en": "Docan",
+    "zh": "多灿",
+    "ru": "Docan"
+  },
+  "subtitle": {
+    "en": "Universal AI chat application with Liquid Glass design",
+    "zh": "具有液态玻璃设计的通用 AI 聊天应用",
+    "ru": "Универсальное приложение для AI-чата с дизайном Liquid Glass"
+  },
+  "localizedDescription": {
+    "en": "Docan is a universal AI chat application featuring a stunning Liquid Glass design. Connect with various AI providers and enjoy a seamless chat experience across all your devices.",
+    "zh": "多灿是一款具有令人惊艳的液态玻璃设计的通用 AI 聊天应用。连接各种 AI 提供商，在您的所有设备上享受无缝的聊天体验。",
+    "ru": "Docan — универсальное приложение для AI-чата с потрясающим дизайном Liquid Glass. Подключайтесь к различным AI-провайдерам и наслаждайтесь бесперебойным общением на всех ваших устройствах."
+  },
+  "iconURL": "/icons/Docan/icon.png",
+  "tintColor": "#6366f1",
+  "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+  "screenshots": [
+    "/icons/Docan/chat.png",
+    "/icons/Docan/chats.png",
+    "/icons/Docan/providers.png"
+  ],
+  "deprecated": false,
+  "versions": [
+    {
+      "version": "3.0.0",
+      "date": "2026-01-11",
+      "sourceCode": "https://gitlab.com/Openlyst/docan/-/tree/a879b79ddb6acdff0cb2492c96466f3603a1801c",
+      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platformInstall": {
+        "iOS": "",
+        "Android": "Use RepStore to install from our repository",
+        "macOS": "Download the latest macOS build",
+        "Windows": "Download the latest Windows build",
+        "Linux": "Download the latest Linux build",
+        "Web": "Access the web version"
+      },
+      "downloads": {
+        "iOS": "",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "",
+          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-14/docan-windows-x64.zip",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/docan-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/3.0.0/docan-3.0.0-linux.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/3.0.0/docan-3.0.0-linux.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "https://aur.archlinux.org/packages/docan-bin",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://gitlab.com/Openlyst/docan/-/jobs/12674147402/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
+          "aab": ""
+        },
+        "Web": ""
+      },
+      "localizedDescription": {
+        "en": "# 3.0.0\n\n## New Features\n\n### AI Providers\n- Added DeepSeek AI support with `deepseek-chat` and `deepseek-reasoner` models.\n- Added LM Studio support with OpenAI-compatible API.\n- Dynamic model fetching from API.\n\n### Image Creator\n- Added dedicated Image Creator screen for generating images with AI.\n- Supports Gemini and OpenAI DALL-E providers.\n\n### Playbooks\n- Added Playbooks: User-created YAML integrations for extending Docan.\n- Create custom API integrations with a simple YAML SDK.\n\n### Attachments & Drag-and-Drop\n- Added support for attachments in chat.\n- Drag and drop files directly onto the app.",
+        "zh": "# 3.0.0\n\n## 新功能\n\n### AI 提供商\n- 添加了 DeepSeek AI 支持，包含 `deepseek-chat` 和 `deepseek-reasoner` 模型。\n- 添加了 LM Studio 支持，兼容 OpenAI API。\n- 从 API 动态获取模型。\n\n### 图像创建器\n- 添加了专用的图像创建器屏幕，用于使用 AI 生成图像。\n- 支持 Gemini 和 OpenAI DALL-E 提供商。\n\n### 剧本\n- 添加了剧本：用户创建的 YAML 集成，用于扩展多灿。\n\n### 附件和拖放\n- 添加了聊天中的附件支持。\n- 直接将文件拖放到应用程序中。",
+        "ru": "# 3.0.0\n\n## Новые функции\n\n### AI-провайдеры\n- Добавлена поддержка DeepSeek AI с моделями `deepseek-chat` и `deepseek-reasoner`.\n- Добавлена поддержка LM Studio с API, совместимым с OpenAI.\n- Динамическое получение моделей из API.\n\n### Создатель изображений\n- Добавлен специальный экран для создания изображений с помощью AI.\n- Поддержка провайдеров Gemini и OpenAI DALL-E.\n\n### Playbooks\n- Добавлены Playbooks: пользовательские YAML-интеграции для расширения Docan.\n\n### Вложения и перетаскивание\n- Добавлена поддержка вложений в чате.\n- Перетаскивание файлов прямо в приложение."
+      }
+    }
+  ]
+}

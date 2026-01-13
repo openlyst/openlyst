@@ -1,19 +1,21 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { loadRepoConfig, resolveUrl } from '$lib/utils/repo';
+import { getRepoConfig, resolveUrl, normalizeLanguage } from '$lib/services/dataService';
 
-export const GET: RequestHandler = async () => {
+export const GET: RequestHandler = async ({ url }) => {
   try {
-    const config = await loadRepoConfig();
+    const lang = normalizeLanguage(url.searchParams.get('lang'));
+    const config = await getRepoConfig(lang);
     
     return json({
       success: true,
+      language: lang,
       data: {
         name: config.name,
         subtitle: config.subtitle,
         description: config.description,
         iconURL: resolveUrl(config.iconURL),
-        headerURL: resolveUrl(config.headerURL),
+        headerURL: config.headerURL ? resolveUrl(config.headerURL) : undefined,
         website: config.website,
         tintColor: config.tintColor,
         featuredApps: config.featuredApps,

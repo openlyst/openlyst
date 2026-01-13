@@ -1,10 +1,11 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getAllApps } from '$lib/utils/repo';
+import { getAllApps, normalizeLanguage } from '$lib/services/dataService';
 
-export const GET: RequestHandler = async () => {
+export const GET: RequestHandler = async ({ url }) => {
   try {
-    const allApps = await getAllApps();
+    const lang = normalizeLanguage(url.searchParams.get('lang'));
+    const allApps = await getAllApps(lang);
     
     // Collect all unique platforms
     const platformSet = new Set<string>();
@@ -30,6 +31,7 @@ export const GET: RequestHandler = async () => {
     
     return json({
       success: true,
+      language: lang,
       count: platforms.length,
       data: platforms
     });

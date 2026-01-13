@@ -1,8 +1,9 @@
 <script lang="ts">
   import { Section, AppCard, Skeleton } from '$lib';
-  import { nameToSlug } from '$lib/utils/repo';
+  import { nameToSlug } from '$lib/services/dataService';
   import type { PageData } from './$types';
   import { onMount } from 'svelte';
+  import { t } from '$lib/stores/language';
   
   export let data: PageData;
   
@@ -18,8 +19,8 @@
 </script>
 
 <svelte:head>
-  <title>Deprecated Apps - OpenLyst</title>
-  <meta name="description" content="View deprecated and discontinued applications from OpenLyst." />
+  <title>{$t.deprecated.title} - OpenLyst</title>
+  <meta name="description" content={$t.deprecated.subtitle} />
 </svelte:head>
 
 <!-- Hero Section -->
@@ -27,14 +28,14 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
     <div class="text-6xl mb-6">📦</div>
     <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
-      Deprecated Apps
+      {$t.deprecated.title}
     </h1>
     <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-      These applications are no longer actively maintained. They may still work but won't receive updates or support.
+      {$t.deprecated.subtitle}
     </p>
     <div class="flex items-center justify-center">
       <span class="px-4 py-2 bg-yellow-100 text-yellow-800 text-lg font-medium rounded-full border border-yellow-200">
-        ⚠️ No longer maintained
+        ⚠️ {$t.deprecated.noLongerMaintained}
       </span>
     </div>
   </div>
@@ -42,8 +43,8 @@
 
 <!-- Deprecated Apps Grid Section -->
 <Section 
-  title="Discontinued Applications" 
-  subtitle="These apps have been replaced or discontinued. Check our active apps for alternatives."
+  title={$t.deprecated.discontinuedApps}
+  subtitle={$t.deprecated.discontinuedDesc}
   background="default"
 >
   {#snippet children()}
@@ -58,7 +59,7 @@
           <div class="relative animate-fadeIn">
             <div class="absolute -top-2 -right-2 z-10">
               <span class="px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded-full shadow-lg">
-                DEPRECATED
+                {$t.deprecated.deprecatedBadge}
               </span>
             </div>
             <AppCard 
@@ -77,9 +78,9 @@
     {#if isLoaded && apps.length === 0}
       <div class="text-center py-12">
         <div class="text-6xl mb-4">✨</div>
-        <h3 class="text-2xl font-semibold text-white mb-2">No Deprecated Apps</h3>
+        <h3 class="text-2xl font-semibold text-white mb-2">{$t.deprecated.noDeprecated}</h3>
         <p class="text-gray-400 max-w-md mx-auto">
-          All our apps are currently active and maintained!
+          {$t.deprecated.noDeprecatedDesc}
         </p>
       </div>
     {/if}
@@ -92,7 +93,7 @@
         <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        View Active Apps
+        {$t.deprecated.viewActiveApps}
       </a>
     </div>
   {/snippet}

@@ -1,9 +1,9 @@
-import { getActiveApps, loadRepoConfig } from '$lib/utils/repo';
+import { getActiveApps, getRepoConfig } from '$lib/services/dataService';
 
 export const load = async () => {
   const [apps, config] = await Promise.all([
     getActiveApps(),
-    loadRepoConfig()
+    getRepoConfig()
   ]);
   
   // Get featured apps based on the featuredApps array in config (only non-deprecated)

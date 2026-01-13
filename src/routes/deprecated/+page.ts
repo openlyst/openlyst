@@ -1,4 +1,4 @@
-import { getDeprecatedApps } from '$lib/utils/repo';
+import { getDeprecatedApps } from '$lib/services/dataService';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async () => {

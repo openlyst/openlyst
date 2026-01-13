@@ -1,4 +1,5 @@
 {
+    "comment": "file here for backwards compatibility, dont change anymore",
     "name": "OpenLyst Repository",
     "subtitle": "Every Openlyst iOS app.",
     "description": "FOSS apps for iOS, Android, and Desktop made for everyone. Focused on more unique apps.",

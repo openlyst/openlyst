@@ -1,11 +1,12 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getApp, nameToSlug, resolveAppUrls } from '$lib/utils/repo';
+import { getApp, nameToSlug, normalizeLanguage } from '$lib/services/dataService';
 
-export const GET: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params, url }) => {
   try {
     const { slug } = params;
-    const app = await getApp(slug);
+    const lang = normalizeLanguage(url.searchParams.get('lang'));
+    const app = await getApp(slug, lang);
     
     if (!app) {
       return json({ success: false, error: 'App not found' }, { status: 404 });
@@ -13,8 +14,9 @@ export const GET: RequestHandler = async ({ params }) => {
     
     return json({
       success: true,
+      language: lang,
       data: {
-        ...resolveAppUrls(app),
+        ...app,
         slug: nameToSlug(app.name)
       }
     });

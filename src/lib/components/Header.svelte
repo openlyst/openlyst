@@ -1,16 +1,24 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import favicon from '$lib/assets/favicon.svg';
+  import { language, t, SUPPORTED_LANGUAGES, LANGUAGE_NAMES, LANGUAGE_FLAGS, type SupportedLanguage } from '$lib/stores/language';
   
   let isMenuOpen = $state(false);
+  let isLangMenuOpen = $state(false);
   
-  const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Apps', href: '/apps' },
-    { name: 'About', href: '/about' },
-    { name: 'Contribute', href: '/contribute' },
-    { name: 'Support', href: 'https://communistparty.ie/en/' }
-  ];
+  // Reactive navigation based on current language
+  const navigation = $derived([
+    { name: $t.nav.home, href: '/' },
+    { name: $t.nav.apps, href: '/apps' },
+    { name: $t.nav.about, href: '/about' },
+    { name: $t.nav.contribute, href: '/contribute' },
+    { name: $t.nav.support, href: 'https://communistparty.ie/en/' }
+  ]);
+  
+  function setLanguage(lang: SupportedLanguage) {
+    language.set(lang);
+    isLangMenuOpen = false;
+  }
 </script>
 
 <header class="bg-red-950 text-white shadow-lg border-b border-red-900">
@@ -25,8 +33,8 @@
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-4">
+      <div class="hidden md:flex items-center">
+        <div class="flex items-baseline space-x-4">
           {#each navigation as item}
             <a 
               href={item.href} 
@@ -39,10 +47,54 @@
             </a>
           {/each}
         </div>
+        
+        <!-- Language Selector Desktop -->
+        <div class="relative ml-4">
+          <button
+            onclick={() => isLangMenuOpen = !isLangMenuOpen}
+            class="flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium bg-red-900 hover:bg-red-800 transition-colors"
+          >
+            <span>{LANGUAGE_FLAGS[$language]}</span>
+            <span class="hidden lg:inline">{LANGUAGE_NAMES[$language]}</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          {#if isLangMenuOpen}
+            <div class="absolute right-0 mt-2 w-40 bg-red-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+              <div class="py-1">
+                {#each SUPPORTED_LANGUAGES as lang}
+                  <button
+                    onclick={() => setLanguage(lang)}
+                    class="w-full flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-red-800 transition-colors
+                           {$language === lang ? 'bg-red-700' : ''}"
+                  >
+                    <span>{LANGUAGE_FLAGS[lang]}</span>
+                    <span>{LANGUAGE_NAMES[lang]}</span>
+                    {#if $language === lang}
+                      <svg class="w-4 h-4 ml-auto text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    {/if}
+                  </button>
+                {/each}
+              </div>
+            </div>
+          {/if}
+        </div>
       </div>
 
       <!-- Mobile menu button -->
-      <div class="md:hidden">
+      <div class="md:hidden flex items-center gap-2">
+        <!-- Mobile Language Button -->
+        <button
+          onclick={() => isLangMenuOpen = !isLangMenuOpen}
+          class="p-2 rounded-md text-white hover:bg-red-800"
+        >
+          <span>{LANGUAGE_FLAGS[$language]}</span>
+        </button>
+        
         <button
           onclick={() => isMenuOpen = !isMenuOpen}
           class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-yellow-400 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-yellow-400"
@@ -54,6 +106,29 @@
         </button>
       </div>
     </div>
+
+    <!-- Mobile Language Menu -->
+    {#if isLangMenuOpen}
+      <div class="md:hidden absolute right-4 mt-2 w-40 bg-red-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+        <div class="py-1">
+          {#each SUPPORTED_LANGUAGES as lang}
+            <button
+              onclick={() => setLanguage(lang)}
+              class="w-full flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-red-800 transition-colors
+                     {$language === lang ? 'bg-red-700' : ''}"
+            >
+              <span>{LANGUAGE_FLAGS[lang]}</span>
+              <span>{LANGUAGE_NAMES[lang]}</span>
+              {#if $language === lang}
+                <svg class="w-4 h-4 ml-auto text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              {/if}
+            </button>
+          {/each}
+        </div>
+      </div>
+    {/if}
 
     <!-- Mobile Navigation -->
     {#if isMenuOpen}
