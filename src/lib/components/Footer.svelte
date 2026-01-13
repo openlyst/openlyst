@@ -45,7 +45,7 @@
           <li><a href="/contribute" class="text-gray-300 hover:text-purple-400 transition-colors">{$t.footer.contribute}</a></li>
           <li><a href="/about" class="text-gray-300 hover:text-purple-400 transition-colors">{$t.footer.aboutUs}</a></li>
           <li><a href="/docs/api" class="text-gray-300 hover:text-purple-400 transition-colors">{$t.footer.documentation}</a></li>
-          <li><a href="https://communistparty.ie/en/" class="text-gray-300 hover:text-purple-400 transition-colors">{$t.footer.support}</a></li>
+          <li><a href="/support" class="text-gray-300 hover:text-purple-400 transition-colors">{$t.footer.support}</a></li>
         </ul>
       </div>
     </div>

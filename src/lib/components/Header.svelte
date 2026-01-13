@@ -12,7 +12,7 @@
     { name: $t.nav.apps, href: '/apps' },
     { name: $t.nav.about, href: '/about' },
     { name: $t.nav.contribute, href: '/contribute' },
-    { name: $t.nav.support, href: 'https://communistparty.ie/en/' }
+    { name: $t.nav.support, href: '/support' }
   ]);
   
   function setLanguage(lang: SupportedLanguage) {
