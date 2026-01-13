@@ -15,7 +15,7 @@
   const cryptoAddresses = {
     btc: '',
     xmr: '4Ah4JgyvAXtJ2a5wgGUS3bBeXPMciJo62NMwZ7cY11xF3ok9tfwvhoF2hE8hiSmfdf1yGDpFD8NrcVEk5iFsonWcBCcRdAh',
-    etc: ''
+    etc: '0x85e045778Cac44fa0ba2cE88C1D1B8464Be83fAf'
   };
 </script>
 
