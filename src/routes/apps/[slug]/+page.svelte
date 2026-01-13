@@ -311,13 +311,36 @@
   // State for open dropdown menus
   let openDropdown = $state<string | null>(null);
   
-  function toggleDropdown(platform: string) {
+  function toggleDropdown(platform: string, event?: MouseEvent) {
+    event?.stopPropagation();
     openDropdown = openDropdown === platform ? null : platform;
   }
   
   function closeDropdowns() {
     openDropdown = null;
   }
+  
+  // Close dropdown when clicking outside
+  $effect(() => {
+    if (browser && openDropdown) {
+      const handleClickOutside = (event: MouseEvent) => {
+        const target = event.target as HTMLElement;
+        // Check if click is outside the dropdown
+        if (!target.closest('.dropdown-container')) {
+          closeDropdowns();
+        }
+      };
+      
+      // Add listener with a small delay to prevent immediate closing
+      setTimeout(() => {
+        document.addEventListener('click', handleClickOutside);
+      }, 0);
+      
+      return () => {
+        document.removeEventListener('click', handleClickOutside);
+      };
+    }
+  });
   
   // Function to format screenshots
   function getScreenshots() {
@@ -644,11 +667,11 @@
                   <Button text={$t.appDetail.downloadPlatform.replace('{platform}', platform)} href={getAllDownloadOptions(platform, selectedVersion)[0]?.url ?? ''} variant="primary" size="sm" />
                 {:else if getAllDownloadOptions(platform, selectedVersion).length > 1}
                   <!-- Multiple download options - dropdown button -->
-                  <div class="relative" style="z-index: 50;">
+                  <div class="relative dropdown-container" style="z-index: 50;">
                     <button
                       class="inline-flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors cursor-pointer"
                       style="background-color: {appTintColor};"
-                      onclick={() => toggleDropdown(platform)}
+                      onclick={(e) => toggleDropdown(platform, e)}
                     >
                       <span class="flex items-center gap-2">
                         <i class="fas fa-download"></i>
