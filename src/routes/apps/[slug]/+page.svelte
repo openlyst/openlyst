@@ -8,13 +8,13 @@
   import { getApp } from '$lib/services/dataService';
   import { language, type SupportedLanguage } from '$lib/stores/language';
   import { page } from '$app/stores';
+  import Button3D from '$lib/components/Button3D.svelte';
   
   let { data }: { data: PageData } = $props();
   
   let isLoaded = $state(false);
   let app = $state<App | undefined>();
   let latestVersion = $state<AppVersion | undefined>();
-  let Button3D: any = $state(null);
   let currentLang = $state<SupportedLanguage>('en');
   
   // State for version selection and modal visibility
@@ -57,13 +57,6 @@
   });
   
   onMount(() => {
-    // Load 3D components client-side only
-    if (browser) {
-      import('$lib/components/Button3D.svelte').then(module => {
-        Button3D = module.default;
-      });
-    }
-    
     // Initial load from SSR data
     if (data.app && !app) {
       app = data.app;
@@ -481,13 +474,8 @@
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">
-          {#if Button3D}
-            <Button3D text="Download Now" href="#downloads" variant="secondary" size="lg" />
-            <Button3D text="View Screenshots" href="#screenshots" variant="outline" size="lg" />
-          {:else}
-            <Button text="Download Now" href="#downloads" variant="secondary" size="lg" />
-            <Button text="View Screenshots" href="#screenshots" variant="outline" size="lg" />
-          {/if}
+          <Button3D text="Download Now" href="#downloads" variant="secondary" size="lg" />
+          <Button3D text="View Screenshots" href="#screenshots" variant="outline" size="lg" />
         </div>
         
         <div class="mt-6 flex items-center">

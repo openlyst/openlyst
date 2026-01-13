@@ -6,6 +6,7 @@
   import { t, language, type SupportedLanguage } from '$lib/stores/language';
   import { browser } from '$app/environment';
   import type { App, RepoConfig } from '$lib/types/repo';
+  import Button3D from '$lib/components/Button3D.svelte';
   
   let { data } = $props();
   
@@ -13,7 +14,6 @@
   let apps = $state<App[]>([]);
   let featuredApps = $state<App[]>([]);
   let config = $state<RepoConfig | undefined>();
-  let Button3D: any = $state(null);
   let currentLang = $state<SupportedLanguage>('en');
   
   // Subscribe to language changes and reload data
@@ -53,12 +53,6 @@
   });
   
   onMount(async () => {
-    // Load 3D button component client-side only
-    if (browser) {
-      const module = await import('$lib/components/Button3D.svelte');
-      Button3D = module.default;
-    }
-    
     // Initial load from SSR data if available
     if (data.apps && data.apps.length > 0 && apps.length === 0) {
       apps = data.apps;
@@ -102,13 +96,8 @@
       </p>
       
       <div class="mt-10 flex items-center justify-center gap-x-6 flex-wrap">
-        {#if Button3D}
-          <Button3D text={$t.home.exploreApps} href="/apps" variant="secondary" size="lg" />
-          <Button3D text={$t.home.joinMovement} href="/contribute" variant="outline" size="lg" />
-        {:else}
-          <Button text={$t.home.exploreApps} href="/apps" variant="secondary" size="lg" />
-          <Button text={$t.home.joinMovement} href="/contribute" variant="outline" size="lg" />
-        {/if}
+        <Button3D text={$t.home.exploreApps} href="/apps" variant="secondary" size="lg" />
+        <Button3D text={$t.home.joinMovement} href="/contribute" variant="outline" size="lg" />
       </div>
     </div>
   </div>
