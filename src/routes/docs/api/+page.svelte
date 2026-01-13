@@ -211,26 +211,26 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<section class="relative text-white overflow-hidden min-h-[60vh] flex items-center">
+  <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
     <div class="text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full mb-6">
-        <i class="fas fa-code text-emerald-200"></i>
-        <span class="text-emerald-100 font-medium">{$t.api.restApiVersion}</span>
+      <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full mb-6">
+        <i class="fas fa-code text-cyan-300"></i>
+        <span class="text-cyan-200 font-medium">{$t.api.restApiVersion}</span>
       </div>
-      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
         {$t.api.title}
       </h1>
-      <p class="text-xl text-emerald-100 max-w-2xl mx-auto mb-8">
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
         {$t.api.subtitle}
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
-          <i class="fas fa-check-circle text-green-300"></i>
+        <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-lg">
+          <i class="fas fa-check-circle text-green-400"></i>
           <span>{$t.api.free}</span>
         </div>
-        <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
-          <i class="fas fa-lock-open text-green-300"></i>
+        <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-lg">
+          <i class="fas fa-lock-open text-green-400"></i>
           <span>{$t.api.noAuth}</span>
         </div>
         <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">

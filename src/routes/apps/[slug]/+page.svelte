@@ -410,33 +410,33 @@
 
 {#if !isLoaded}
   <!-- Loading State -->
-  <section class="bg-gradient-to-br from-purple-600 via-red-600 to-red-700 text-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="relative text-white overflow-hidden min-h-[60vh] flex items-center">
+    <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <div class="flex items-center mb-4">
-            <div class="w-16 h-16 bg-white/20 rounded-2xl mr-4 animate-pulse"></div>
+            <div class="w-16 h-16 glass-card rounded-2xl mr-4 animate-pulse"></div>
             <div class="flex-1">
-              <div class="h-10 bg-white/20 rounded-lg w-48 animate-pulse mb-2"></div>
-              <div class="h-6 bg-white/20 rounded-lg w-64 animate-pulse"></div>
+              <div class="h-10 glass-card rounded-lg w-48 animate-pulse mb-2"></div>
+              <div class="h-6 glass-card rounded-lg w-64 animate-pulse"></div>
             </div>
           </div>
           <div class="space-y-3 mb-8">
-            <div class="h-5 bg-white/20 rounded animate-pulse"></div>
-            <div class="h-5 bg-white/20 rounded animate-pulse w-5/6"></div>
-            <div class="h-5 bg-white/20 rounded animate-pulse w-4/6"></div>
+            <div class="h-5 glass-card rounded animate-pulse"></div>
+            <div class="h-5 glass-card rounded animate-pulse w-5/6"></div>
+            <div class="h-5 glass-card rounded animate-pulse w-4/6"></div>
           </div>
           <div class="flex gap-4">
-            <div class="h-12 w-40 bg-white/20 rounded-lg animate-pulse"></div>
-            <div class="h-12 w-40 bg-white/20 rounded-lg animate-pulse"></div>
+            <div class="h-12 w-40 glass-card rounded-lg animate-pulse"></div>
+            <div class="h-12 w-40 glass-card rounded-lg animate-pulse"></div>
           </div>
         </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <div class="glass-card rounded-2xl p-8">
           <div class="space-y-4">
             {#each Array(4) as _}
               <div class="flex items-center space-x-3">
-                <div class="w-4 h-4 bg-white/20 rounded-full animate-pulse"></div>
-                <div class="h-5 bg-white/20 rounded w-32 animate-pulse"></div>
+                <div class="w-4 h-4 bg-purple-500/30 rounded-full animate-pulse"></div>
+                <div class="h-5 glass-card rounded w-32 animate-pulse"></div>
               </div>
             {/each}
           </div>

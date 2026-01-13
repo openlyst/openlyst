@@ -9,15 +9,15 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-r from-red-700 to-red-800 text-white py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-    <div class="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-8">
-      <span class="text-red-900 font-bold text-4xl">★</span>
+<section class="relative text-white overflow-hidden min-h-[60vh] flex items-center">
+  <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8 text-center">
+    <div class="glass-card w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 border-purple-500/30">
+      <span class="text-purple-400 font-bold text-4xl">★</span>
     </div>
-    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
       {$t.about.title}
     </h1>
-    <p class="mx-auto max-w-2xl text-lg text-red-100">
+    <p class="mx-auto max-w-2xl text-lg text-gray-300">
       {$t.about.subtitle}
     </p>
   </div>

@@ -53,16 +53,16 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-purple-600 via-red-600 to-red-700 text-white py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
+<section class="relative text-white overflow-hidden min-h-[60vh] flex items-center">
+  <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
       {$t.apps.title}
     </h1>
-    <p class="text-xl text-red-100 max-w-3xl mx-auto mb-8">
+    <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
       {$t.apps.subtitle}
     </p>
     <div class="flex items-center justify-center">
-      <span class="px-4 py-2 bg-green-100 text-green-800 text-lg font-medium rounded-full border border-green-200">
+      <span class="glass-card px-4 py-2 text-purple-300 text-lg font-medium rounded-full">
         ✊ {$t.apps.powerToThePeople}
       </span>
     </div>

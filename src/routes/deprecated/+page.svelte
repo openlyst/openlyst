@@ -53,17 +53,17 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-gray-600 via-gray-700 to-gray-800 text-white py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+<section class="relative text-white overflow-hidden min-h-[60vh] flex items-center">
+  <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8 text-center">
     <div class="text-6xl mb-6">📦</div>
-    <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
       {$t.deprecated.title}
     </h1>
     <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
       {$t.deprecated.subtitle}
     </p>
     <div class="flex items-center justify-center">
-      <span class="px-4 py-2 bg-yellow-100 text-yellow-800 text-lg font-medium rounded-full border border-yellow-200">
+      <span class="glass-card px-4 py-2 text-yellow-300 text-lg font-medium rounded-full">
         ⚠️ {$t.deprecated.noLongerMaintained}
       </span>
     </div>
