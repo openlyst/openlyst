@@ -37,6 +37,7 @@
         try {
           // Get the slug from the current page
           const slug = $page.params.slug;
+          if (!slug) return;
           const fetchedApp = await getApp(slug, lang);
           if (fetchedApp) {
             app = fetchedApp;
@@ -123,18 +124,24 @@
   }
   
   // Function to get platforms supported by a specific version
-  function getVersionPlatforms(version = latestVersion): string[] {
-    return version.platforms || app.platforms;
+  function getVersionPlatforms(version?: AppVersion): string[] {
+    const v = version || latestVersion;
+    if (!v || !app) return [];
+    return v.platforms || app.platforms;
   }
   
   // Function to get platform-specific installation instructions
-  function getInstallInstructions(platform: string, version = latestVersion): string {
-    return version.platformInstall[platform as keyof typeof version.platformInstall] || 'Installation instructions not available';
+  function getInstallInstructions(platform: string, version?: AppVersion): string {
+    const v = version || latestVersion;
+    if (!v) return 'Installation instructions not available';
+    return v.platformInstall[platform as keyof typeof v.platformInstall] || 'Installation instructions not available';
   }
   
   // Check if a platform has any available downloads
-  function platformHasDownloads(platform: string, version = selectedVersion): boolean {
-    const downloads = (version.downloads as any)?.[platform] || (version.downloadURLs as any)?.[platform];
+  function platformHasDownloads(platform: string, version?: AppVersion): boolean {
+    const v = version || selectedVersion;
+    if (!v) return false;
+    const downloads = (v.downloads as any)?.[platform] || (v.downloadURLs as any)?.[platform];
     if (!downloads) return false;
     if (typeof downloads === 'string') return downloads !== '';
     // Nested object - check if any value is non-empty
@@ -151,12 +158,14 @@
   }
   
   // Get download structure for a platform
-  function getDownloadStructure(platform: string, version = selectedVersion): any {
-    return (version.downloads as any)?.[platform] || (version.downloadURLs as any)?.[platform] || null;
+  function getDownloadStructure(platform: string, version?: AppVersion): any {
+    const v = version || selectedVersion;
+    if (!v) return null;
+    return (v.downloads as any)?.[platform] || (v.downloadURLs as any)?.[platform] || null;
   }
   
   // Get available types for a platform (e.g., zip, deb, rpm for Linux)
-  function getAvailableTypes(platform: string, version = selectedVersion): string[] {
+  function getAvailableTypes(platform: string, version?: AppVersion): string[] {
     const downloads = getDownloadStructure(platform, version);
     if (!downloads || typeof downloads === 'string') return [];
     
@@ -172,7 +181,7 @@
   }
   
   // Get available architectures for a platform/type
-  function getAvailableArchs(platform: string, type?: string, version = selectedVersion): string[] {
+  function getAvailableArchs(platform: string, type?: string, version?: AppVersion): string[] {
     const downloads = getDownloadStructure(platform, version);
     if (!downloads || typeof downloads === 'string') return [];
     
@@ -190,7 +199,7 @@
   }
   
   // Get the download URL based on selections
-  function getDownloadUrl(platform: string, version = selectedVersion): string | null {
+  function getDownloadUrl(platform: string, version?: AppVersion): string | null {
     const downloads = getDownloadStructure(platform, version);
     if (!downloads) return null;
     if (typeof downloads === 'string') return downloads || null;
@@ -255,7 +264,7 @@
     arch?: string;
   }
   
-  function getAllDownloadOptions(platform: string, version = selectedVersion): DownloadOption[] {
+  function getAllDownloadOptions(platform: string, version?: AppVersion): DownloadOption[] {
     const downloads = getDownloadStructure(platform, version);
     if (!downloads) return [];
     
@@ -343,6 +352,13 @@
   }
   
   let screenshots = $derived(isLoaded ? getScreenshots() : []);
+  
+  // Non-null helpers for template use (only used after isLoaded check)
+  let appName = $derived(app?.name ?? '');
+  let appTintColor = $derived(app?.tintColor ?? '#8b5cf6');
+  let appVersions = $derived(app?.versions ?? []);
+  let selectedVersionNumber = $derived(selectedVersion?.version ?? '');
+  let selectedVersionSourceCode = $derived(selectedVersion?.sourceCode ?? '');
 </script>
 
 <svelte:head>
@@ -419,6 +435,7 @@
   </Section>
 {:else}
 
+{#if app && latestVersion && selectedVersion}
 <!-- Deprecation Warning Banner -->
 {#if app.deprecated}
 <div class="bg-yellow-500 text-yellow-900">
@@ -514,7 +531,7 @@
           <div class="relative overflow-hidden">
             <img 
               src="{screenshot.imageURL || screenshot}" 
-              alt="{app.name} screenshot {index + 1}" 
+              alt="{appName} screenshot {index + 1}" 
               class="w-full h-64 sm:h-80 object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -544,7 +561,7 @@
         <div class="lg:col-span-1 glass border-r border-white/10 p-6 rounded-l-2xl">
           <h3 class="text-lg font-semibold text-white mb-4">Versions</h3>
           <div class="space-y-2">
-            {#each app.versions as version, index}
+            {#each appVersions as version, index}
               <button
                 class="w-full text-left p-3 rounded-lg transition-all duration-300 ease-in-out {selectedVersion === version ? 'bg-purple-600/30 border border-purple-500/50 text-purple-200 scale-[1.02] shadow-lg shadow-purple-500/20' : 'hover:bg-white/5 border border-transparent text-gray-300 hover:scale-[1.01]'}"
                 onclick={() => selectedVersion = version}
@@ -565,16 +582,16 @@
 
         <!-- Main Content Area -->
         <div class="lg:col-span-3 p-8">
-          {#key selectedVersion.version}
+          {#key selectedVersionNumber}
           <div class="animate-version-change">
           <!-- Version Header -->
           <div class="mb-8">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-2xl font-bold text-white">Version {selectedVersion.version}</h3>
+              <h3 class="text-2xl font-bold text-white">Version {selectedVersionNumber}</h3>
               <div class="flex items-center gap-2">
-                {#if selectedVersion.sourceCode}
+                {#if selectedVersionSourceCode}
                   <a
-                    href={selectedVersion.sourceCode}
+                    href={selectedVersionSourceCode}
                     target="_blank"
                     rel="noopener noreferrer"
                     class="px-4 py-2 glass-card text-gray-200 hover:bg-white/10 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
@@ -600,7 +617,7 @@
               {#if platformHasDownloads(platform, selectedVersion)}
               <div class="glass-card rounded-xl p-6 transition-all duration-300 overflow-visible hover:shadow-lg hover:shadow-purple-500/10">
                 <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4 shadow-lg" style="background: linear-gradient(135deg, {app.tintColor}88, {app.tintColor}); box-shadow: 0 4px 20px {app.tintColor}40;">
+                  <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4 shadow-lg" style="background: linear-gradient(135deg, {appTintColor}88, {appTintColor}); box-shadow: 0 4px 20px {appTintColor}40;">
                     {#if platform === 'iOS'}
                       <i class="fab fa-apple text-xl text-white"></i>
                     {:else if platform === 'Android'}
@@ -636,13 +653,13 @@
                 <!-- Download button with dropdown -->
                 {#if getAllDownloadOptions(platform, selectedVersion).length === 1}
                   <!-- Single download option - just a button -->
-                  <Button text="Download {platform}" href="{getAllDownloadOptions(platform, selectedVersion)[0].url}" variant="primary" size="sm" />
+                  <Button text={`Download ${platform}`} href={getAllDownloadOptions(platform, selectedVersion)[0]?.url ?? ''} variant="primary" size="sm" />
                 {:else if getAllDownloadOptions(platform, selectedVersion).length > 1}
                   <!-- Multiple download options - dropdown button -->
                   <div class="relative" style="z-index: 50;">
                     <button
                       class="inline-flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors cursor-pointer"
-                      style="background-color: {app.tintColor};"
+                      style="background-color: {appTintColor};"
                       onclick={() => toggleDropdown(platform)}
                     >
                       <span class="flex items-center gap-2">
@@ -693,7 +710,7 @@
   {#snippet children()}
     <div class="max-w-4xl mx-auto">
       <div class="space-y-6">
-        {#each app.versions as version, index}
+        {#each appVersions as version, index}
           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-xl font-bold text-white">Version {version.version}</h3>
@@ -846,12 +863,15 @@
 {/if}
 
 {/if}
+<!-- End of app && latestVersion && selectedVersion check -->
+
+{/if}
 <!-- End of isLoaded check -->
 
 <!-- Image Lightbox (always available for keyboard handling) -->
 <svelte:window onkeydown={handleLightboxKeydown} />
 
-{#if isLoaded && showLightbox}
+{#if isLoaded && showLightbox && app}
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <div 
     class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md animate-lightbox-open"
@@ -906,7 +926,7 @@
     >
       <img 
         src={lightboxImageUrl} 
-        alt="{app.name} screenshot {lightboxIndex + 1}"
+        alt="{appName} screenshot {lightboxIndex + 1}"
         class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
       />
     </div>
