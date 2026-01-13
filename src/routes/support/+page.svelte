@@ -13,7 +13,7 @@
   }
   
   const cryptoAddresses = {
-    btc: '',
+    btc: 'bc1qfq57dqfkawnwdvdczcyx20gqzqre8q2jhcq2qv',
     xmr: '4Ah4JgyvAXtJ2a5wgGUS3bBeXPMciJo62NMwZ7cY11xF3ok9tfwvhoF2hE8hiSmfdf1yGDpFD8NrcVEk5iFsonWcBCcRdAh',
     etc: '0x85e045778Cac44fa0ba2cE88C1D1B8464Be83fAf'
   };
