@@ -88,11 +88,6 @@
             <h3 class="text-xl font-bold text-white">Bitcoin</h3>
             <span class="text-orange-400 font-mono text-sm">BTC</span>
           </div>
-          <div class="ml-auto">
-            <span class="px-3 py-1 bg-orange-900/50 text-orange-300 text-sm rounded-full font-medium">
-              1 {$t.support.donation}
-            </span>
-          </div>
         </div>
         <div class="bg-gray-900 rounded-lg p-4 flex-grow">
           <code class="text-orange-400 text-xs break-all font-mono">{cryptoAddresses.btc}</code>
@@ -116,11 +111,7 @@
             <h3 class="text-xl font-bold text-white">Monero</h3>
             <span class="text-orange-400 font-mono text-sm">XMR</span>
           </div>
-          <div class="ml-auto">
-            <span class="px-3 py-1 bg-orange-900/50 text-orange-300 text-sm rounded-full font-medium">
-              1 {$t.support.donation}
-            </span>
-          </div>
+
         </div>
         <div class="bg-gray-900 rounded-lg p-4 flex-grow">
           <code class="text-orange-400 text-xs break-all font-mono">{cryptoAddresses.xmr}</code>
@@ -143,11 +134,6 @@
           <div>
             <h3 class="text-xl font-bold text-white">Ethereum Classic</h3>
             <span class="text-emerald-400 font-mono text-sm">ETC</span>
-          </div>
-          <div class="ml-auto">
-            <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 text-sm rounded-full font-medium">
-              1 {$t.support.donation}
-            </span>
           </div>
         </div>
         <div class="bg-gray-900 rounded-lg p-4 flex-grow">
