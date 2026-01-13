@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Section, AppCard, Skeleton } from '$lib';
-  import { nameToSlug, getDeprecatedApps } from '$lib/services/dataService';
+  import { getDeprecatedApps } from '$lib/services/dataService';
   import type { PageData } from './$types';
   import type { App } from '$lib/types/repo';
   import { onMount } from 'svelte';
@@ -87,7 +87,7 @@
             <AppCard 
               title={app.name}
               description={app.localizedDescription}
-              href="/apps/{nameToSlug(app.name)}"
+              href={`/apps/${app.slug}`}
               status="released"
               platforms={app.platforms}
               image={app.iconURL}

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Section, AppCard, Button, Skeleton } from '$lib';
-  import { nameToSlug, getActiveApps, getRepoConfig } from '$lib/services/dataService';
+  import { getActiveApps, getRepoConfig, nameToSlug } from '$lib/services/dataService';
   import favicon from '$lib/assets/favicon.svg';
   import { onMount } from 'svelte';
   import { t, language, type SupportedLanguage } from '$lib/stores/language';
@@ -165,7 +165,7 @@
               description={app.localizedDescription}
               status={app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}
               platforms={app.platforms}
-              href={`/apps/${nameToSlug(app.name)}`}
+              href={`/apps/${app.slug}`}
               image={app.iconURL}
             />
           </div>

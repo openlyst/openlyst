@@ -111,6 +111,7 @@ export interface AppScreenshots {
 
 export interface App {
   name: string;
+  slug: string;
   bundleIdentifier?: string;
   subtitle: string;
   localizedDescription: string;

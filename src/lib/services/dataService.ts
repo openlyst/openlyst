@@ -244,8 +244,11 @@ async function loadNews(): Promise<LocalizedNewsItem[]> {
  * Convert localized app data to standard App format
  */
 function localizedAppToApp(appData: LocalizedAppData, lang: SupportedLanguage): App {
+  // Always use English name for slug to ensure consistent URLs
+  const englishName = getLocalizedValue(appData.name, 'en');
   return {
     name: getLocalizedValue(appData.name, lang),
+    slug: nameToSlug(englishName),
     bundleIdentifier: appData.bundleIdentifier,
     subtitle: getLocalizedValue(appData.subtitle, lang),
     localizedDescription: getLocalizedValue(appData.localizedDescription, lang),
