@@ -45,7 +45,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "",
+        "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
@@ -130,7 +130,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "",
+        "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
