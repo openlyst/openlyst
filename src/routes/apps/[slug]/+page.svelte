@@ -626,7 +626,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {#each getVersionPlatforms(selectedVersion) as platform}
               {#if platformHasDownloads(platform, selectedVersion)}
-              <div class="glass-card rounded-xl p-6 transition-all duration-300 overflow-visible hover:shadow-lg hover:shadow-purple-500/10">
+              <div class="glass-card rounded-xl p-6 transition-all duration-300 overflow-visible hover:shadow-lg hover:shadow-purple-500/10 {openDropdown === platform ? 'relative z-[100]' : 'relative z-[1]'}">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4 shadow-lg" style="background: linear-gradient(135deg, {appTintColor}88, {appTintColor}); box-shadow: 0 4px 20px {appTintColor}40;">
                     {#if platform === 'iOS'}
