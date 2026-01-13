@@ -181,7 +181,9 @@
 
 <style>
   .card {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    background: rgba(17, 24, 39, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 24px;
     width: 100%;
     overflow: hidden;
@@ -190,6 +192,13 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    background: rgba(17, 24, 39, 0.7);
+    transform: translateY(-4px);
+    box-shadow: 0 25px 70px rgba(139, 92, 246, 0.2);
   }
 
   .card::before {
@@ -201,7 +210,7 @@
     bottom: 0;
     border-radius: 24px;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(59, 130, 246, 0.3));
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(6, 182, 212, 0.4));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
