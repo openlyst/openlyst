@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "gone_but_not_forgotten",
+    "title": {
+      "en": "Old builds are deprecated",
+      "zh": "旧版本已弃用",
+      "ru": "Старые сборки устарели"
+    },
+    "caption": {
+      "en": "We have removed old builds from the main website. However, they are still available here: https://gitlab.com/Openlyst/openlyst/-/blob/main/src/lib/assets/yaml/repo.json?ref_type=heads",
+      "zh": "我们已从主网站删除了旧版本。不过，您仍可以在此处找到它们：https://gitlab.com/Openlyst/openlyst/-/blob/main/src/lib/assets/yaml/repo.json?ref_type=heads",
+      "ru": "Мы удалили старые сборки с основного сайта. Однако они по-прежнему доступны здесь: https://gitlab.com/Openlyst/openlyst/-/blob/main/src/lib/assets/yaml/repo.json?ref_type=heads"
+    },
+    "date": "2026-01-13",
+    "tintColor": "#6366f1",
+    "imageURL": "",
+    "notify": false,
+    "url": "",
+    "appID": ""
+  },
+  {
     "identifier": "removeal_gitlab_ci_2026",
     "title": {
       "en": "Goodbye Gitlab CI.",
