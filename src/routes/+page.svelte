@@ -6,6 +6,7 @@
   import { browser } from '$app/environment';
   import type { App, RepoConfig } from '$lib/types/repo';
   import Button3D from '$lib/components/Button3D.svelte';
+  import PlatformIcons from '$lib/components/PlatformIcons.svelte';
   import { get } from 'svelte/store';
   
   let { data } = $props();
@@ -71,20 +72,8 @@
 <section class="relative text-white overflow-hidden min-h-screen flex items-center">
   <div class="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
     <div class="text-center">
-      <!-- Platform icons bar with glass effect -->
-      <div class="mb-8 flex justify-center">
-        <div class="glass-card rounded-2xl px-8 py-4 shadow-2xl">
-          <div class="flex items-center space-x-4">
-            <!-- Platform indicators with glow -->
-            <div class="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-lg shadow-green-500/30"></div>
-            <div class="w-8 h-8 bg-gradient-to-br from-orange-400 to-amber-500 rounded-lg shadow-lg shadow-orange-500/30"></div>
-            <div class="w-8 h-8 bg-gradient-to-br from-purple-400 to-violet-500 rounded shadow-lg shadow-purple-500/30"></div>
-            <div class="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full shadow-lg shadow-cyan-500/30"></div>
-            <div class="w-8 h-8 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full shadow-lg shadow-pink-500/30"></div>
-            <div class="w-8 h-8 bg-gradient-to-br from-gray-400 to-slate-500 rounded shadow-lg shadow-gray-500/30"></div>
-          </div>
-        </div>
-      </div>
+      <!-- Interactive Platform icons bar -->
+      <PlatformIcons />
       
       <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
         {$t.home.title}
