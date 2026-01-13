@@ -168,42 +168,52 @@
 <!-- Robux Donations -->
 <Section title={$t.support.robuxDonations} subtitle={$t.support.robuxDonationsDesc} background="default">
   {#snippet children()}
-    <div class="max-w-2xl mx-auto">
-      <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl shadow-2xl border border-red-500/30 p-8 text-center">
-        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
-          <span class="text-4xl">🎮</span>
-        </div>
-        <h3 class="text-3xl font-bold text-white mb-2">Robux</h3>
-        <p class="text-red-100 mb-6">{$t.support.robuxDesc}</p>
-        
-        <div class="bg-red-900/50 rounded-xl p-6 mb-6">
-          <div class="flex items-center justify-center gap-4">
-            <div class="text-center">
-              <div class="text-5xl font-bold text-white mb-1">14</div>
-              <div class="text-red-200 text-sm">{$t.support.totalDonations}</div>
-            </div>
-            <div class="w-px h-16 bg-red-400/30"></div>
-            <div class="text-center">
-              <div class="text-5xl font-bold text-yellow-400 mb-1">R$</div>
-              <div class="text-red-200 text-sm">Robux</div>
-            </div>
-          </div>
-        </div>
-        
-        <a 
-          href="https://www.roblox.com/games" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:bg-red-50 transition-colors shadow-lg"
-        >
-          <span class="text-xl">🎁</span>
-          {$t.support.donateRobux}
-        </a>
-        
-        <p class="mt-4 text-red-200 text-sm">
-          {$t.support.robuxNote}
-        </p>
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-3 glass-card rounded-full px-6 py-3">
+        <span class="text-3xl">🎮</span>
+        <span class="text-2xl font-bold text-white">Robux</span>
+        <span class="text-yellow-400 font-bold">R$</span>
       </div>
+      <p class="text-gray-400 mt-4 max-w-xl mx-auto">{$t.support.robuxDesc}</p>
+    </div>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+      {#each [
+        { amount: 2, passId: '1669891372' },
+        { amount: 10, passId: '1669885186' },
+        { amount: 20, passId: '1669457807' },
+        { amount: 50, passId: '1669859327' },
+        { amount: 67, passId: '1669841286' },
+        { amount: 100, passId: '1670027201' },
+        { amount: 120, passId: '1670254535' },
+        { amount: 200, passId: '1670045170' },
+        { amount: 250, passId: '1670051194' },
+        { amount: 500, passId: '1669967184' },
+        { amount: 1000, passId: '1669819242' },
+        { amount: 2, passId: '1670009098' },
+        { amount: 5000, passId: '1670234550' },
+        { amount: 10000, passId: '1669915209' }
+      ] as pass}
+        <a 
+          href="https://www.roblox.com/game-pass/{pass.passId}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="glass-card rounded-xl p-4 text-center hover:bg-white/10 transition-all hover:scale-105 group"
+        >
+          <div class="text-2xl font-bold text-yellow-400 group-hover:text-yellow-300 transition-colors">
+            R${pass.amount.toLocaleString()}
+          </div>
+          <div class="text-xs text-gray-500 mt-1 font-mono truncate">
+            #{pass.passId.slice(-6)}
+          </div>
+        </a>
+      {/each}
+    </div>
+    
+    <div class="text-center mt-8">
+      <p class="text-gray-500 text-sm">
+        {$t.support.robuxNote}
+      </p>
     </div>
   {/snippet}
 </Section>
