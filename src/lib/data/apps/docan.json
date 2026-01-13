@@ -39,7 +39,7 @@
         "Web": "Access the web version"
       },
       "downloads": {
-        "iOS": "",
+        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-46/docan-3.0.0-2026-01-13-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
