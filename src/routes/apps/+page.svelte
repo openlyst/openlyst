@@ -81,13 +81,13 @@
         {#each apps as app}
           <div class="animate-fadeIn">
             <AppCard 
-              title="{app.name}"
-              description="{app.localizedDescription}"
+              title={app.name}
+              description={app.localizedDescription}
               href="/apps/{nameToSlug(app.name)}"
-              status="{app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}"
-              platforms="{app.platforms}"
-              image="{app.iconURL}"
-              tintColor="{app.tintColor}"
+              status={app.versions[0]?.version.includes('beta') ? 'beta' : 'released'}
+              platforms={app.platforms}
+              image={app.iconURL}
+              tintColor={app.tintColor}
             />
           </div>
         {/each}
