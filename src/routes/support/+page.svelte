@@ -79,7 +79,7 @@
   {#snippet children()}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
       <!-- Bitcoin -->
-      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6 hover:border-orange-500/50 transition-colors">
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6 hover:border-orange-500/50 transition-colors flex flex-col h-full">
         <div class="flex items-center gap-4 mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg shadow-orange-500/30">
             <i class="fab fa-bitcoin text-3xl text-white"></i>
@@ -94,7 +94,7 @@
             </span>
           </div>
         </div>
-        <div class="bg-gray-900 rounded-lg p-4">
+        <div class="bg-gray-900 rounded-lg p-4 flex-grow">
           <code class="text-orange-400 text-xs break-all font-mono">{cryptoAddresses.btc}</code>
         </div>
         <button 
@@ -107,7 +107,7 @@
       </div>
       
       <!-- Monero -->
-      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6 hover:border-orange-500/50 transition-colors">
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6 hover:border-orange-500/50 transition-colors flex flex-col h-full">
         <div class="flex items-center gap-4 mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center shadow-lg shadow-orange-500/30">
             <span class="text-2xl font-bold text-white">ɱ</span>
@@ -122,7 +122,7 @@
             </span>
           </div>
         </div>
-        <div class="bg-gray-900 rounded-lg p-4">
+        <div class="bg-gray-900 rounded-lg p-4 flex-grow">
           <code class="text-orange-400 text-xs break-all font-mono">{cryptoAddresses.xmr}</code>
         </div>
         <button 
@@ -135,7 +135,7 @@
       </div>
       
       <!-- Ethereum Classic -->
-      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6 hover:border-emerald-500/50 transition-colors">
+      <div class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-6 hover:border-emerald-500/50 transition-colors flex flex-col h-full">
         <div class="flex items-center gap-4 mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30">
             <i class="fab fa-ethereum text-3xl text-white"></i>
@@ -150,7 +150,7 @@
             </span>
           </div>
         </div>
-        <div class="bg-gray-900 rounded-lg p-4">
+        <div class="bg-gray-900 rounded-lg p-4 flex-grow">
           <code class="text-emerald-400 text-xs break-all font-mono">{cryptoAddresses.etc}</code>
         </div>
         <button 
