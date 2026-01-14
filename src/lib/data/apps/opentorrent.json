@@ -35,7 +35,7 @@
     {
       "version": "1.0.0",
       "date": "2026-01-14",
-      "sourceCode": "",
+      "sourceCode": "https://gitlab.com/Openlyst/opentorrent/-/tree/20d2dd15d0cf61a090837cb3165ed3fc4f11c053",
       "platforms": [
         "iOS",
         "macOS",
