@@ -52,7 +52,7 @@
             "arm64": ""
           },
           "exe": {
-            "x86_64": "",
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-windows-x64-setup.exe",
             "arm64": ""
           },
           "msix": {
