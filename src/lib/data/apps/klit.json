@@ -44,7 +44,7 @@
           "x86_64": "",
           "arm64": "",
           "universal": "",
-          "homebrew": ""
+          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
         },
         "Windows": {
           "zip": {
