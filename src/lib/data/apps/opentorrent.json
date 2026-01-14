@@ -53,7 +53,7 @@
         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
       },
       "downloads": {
-        "iOS": "",
+        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
