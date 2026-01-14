@@ -83,7 +83,7 @@
         },
         "Android": {
           "apk": "",
-          "aab": ""
+          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14.aab"
         },
         "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-web.zip"
       },
