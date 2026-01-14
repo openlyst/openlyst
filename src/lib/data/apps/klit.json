@@ -39,7 +39,7 @@
         "Web": "Access the web version"
       },
       "downloads": {
-        "iOS": "",
+        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
