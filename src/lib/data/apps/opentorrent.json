@@ -87,7 +87,7 @@
         },
         "Linux": {
           "zip": {
-            "x86_64": "",
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-linux-x64.zip",
             "arm64": ""
           },
           "appimage": {
