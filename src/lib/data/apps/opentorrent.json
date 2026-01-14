@@ -15,7 +15,7 @@
     "zh": "",
     "ru": ""
   },
-  "iconURL": "",
+  "iconURL": "https://gitlab.com/Openlyst/opentorrent/-/raw/main/assets/icons/app_icon.png?ref_type=heads",
   "tintColor": "#dc2626",
   "platforms": [
     "iOS",
