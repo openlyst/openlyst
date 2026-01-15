@@ -33,6 +33,91 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "12.0.1",
+      "date": "2026-01-15",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/9128badfb8110270acaf2914d109f143ad509f5e",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
+        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI.",
+        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+      },
+      "downloads": {
+        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-macos-unsigned.zip",
+          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-windows-x64.zip",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+        },
+        "Android": {
+          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15.apk",
+          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15.aab",
+          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+        },
+        "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 12.0.1\n\n- Updated donate URL | https://openlyst.ink/support\n- Version bump to 12.0.1\n- Haptic feedback for favorite button",
+        "zh": "# 12.0.1\n\n- 更新捐赠链接 | https://openlyst.ink/support\n- 版本升级至 12.0.1\n- 收藏按钮添加触觉反馈",
+        "ru": "# 12.0.1\n\n- Обновлён URL для пожертвований | https://openlyst.ink/support\n- Версия обновлена до 12.0.1\n- Тактильная обратная связь для кнопки избранного"
+      }
+    },
+    {
       "version": "12.0.0",
       "date": "2026-01-13",
       "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/9128badfb8110270acaf2914d109f143ad509f5e",
