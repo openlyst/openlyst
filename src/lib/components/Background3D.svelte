@@ -13,12 +13,19 @@
 	let mouseY = 0;
 	let targetMouseX = 0;
 	let targetMouseY = 0;
+	let isInitialized = false;
 
 	onMount(() => {
-		init();
-		animate();
-		window.addEventListener('resize', onWindowResize);
-		window.addEventListener('mousemove', onMouseMove);
+		// Wait for next frame to ensure container is mounted
+		requestAnimationFrame(() => {
+			if (container && !isInitialized) {
+				isInitialized = true;
+				init();
+				animate();
+				window.addEventListener('resize', onWindowResize);
+				window.addEventListener('mousemove', onMouseMove);
+			}
+		});
 
 		return () => {
 			cleanup();
@@ -30,6 +37,7 @@
 	});
 
 	function cleanup() {
+		isInitialized = false;
 		if (animationId) {
 			cancelAnimationFrame(animationId);
 		}
@@ -41,6 +49,7 @@
 	}
 
 	function init() {
+		if (!container) return;
 		// Scene
 		scene = new THREE.Scene();
 		scene.fog = new THREE.FogExp2(0x0a0a1a, 0.0008);
@@ -232,6 +241,8 @@
 	}
 
 	function animate() {
+		if (!isInitialized || !renderer || !scene || !camera) return;
+		
 		animationId = requestAnimationFrame(animate);
 
 		// Smooth mouse following

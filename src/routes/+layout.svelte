@@ -6,12 +6,20 @@
 	import { onMount } from 'svelte';
 	
 	let { children } = $props();
-	let Background3D: any = $state(null);
+	let showBackground = $state(false);
+	let Background3DComponent: any = $state(null);
 	
 	onMount(async () => {
 		if (browser) {
-			const module = await import('$lib/components/Background3D.svelte');
-			Background3D = module.default;
+			try {
+				const module = await import('$lib/components/Background3D.svelte');
+				Background3DComponent = module.default;
+				// Use tick to ensure the component is ready before showing
+				await new Promise(resolve => requestAnimationFrame(resolve));
+				showBackground = true;
+			} catch (e) {
+				console.error('Failed to load Background3D:', e);
+			}
 		}
 	});
 </script>
@@ -20,8 +28,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-{#if Background3D}
-	<Background3D />
+{#if showBackground && Background3DComponent}
+	<Background3DComponent />
 {/if}
 
 <div class="min-h-screen flex flex-col bg-transparent">
