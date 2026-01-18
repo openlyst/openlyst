@@ -47,7 +47,7 @@
       "platformInstall": {
         "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask opentorrent",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask opentorrent",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
         "Linux": "Download the latest Linux build from GitLab CI.",
         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
@@ -58,7 +58,7 @@
           "x86_64": "",
           "arm64": "",
           "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-macos-unsigned.zip",
-          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Windows": {
           "zip": {

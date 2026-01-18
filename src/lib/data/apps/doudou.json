@@ -47,7 +47,7 @@
       "platformInstall": {
         "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
         "Linux": "Download the latest Linux build from GitLab CI.",
         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
@@ -58,7 +58,7 @@
           "x86_64": "",
           "arm64": "",
           "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15-macos-unsigned.zip",
-          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Windows": {
           "zip": {
@@ -102,7 +102,7 @@
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
           },
-          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Android": {
           "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-53/doudou-12.0.1-2026-01-15.apk",
@@ -132,7 +132,7 @@
       "platformInstall": {
         "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
         "Linux": "Download the latest Linux build from GitLab CI.",
         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
@@ -143,7 +143,7 @@
           "x86_64": "",
           "arm64": "",
           "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-45/doudou-12.0.0-2026-01-13-macos-unsigned.zip",
-          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Windows": {
           "zip": {
@@ -187,7 +187,7 @@
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
           },
-          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Android": {
           "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-45/doudou-12.0.0-2026-01-13.apk",
@@ -217,7 +217,7 @@
       "platformInstall": {
         "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
-        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://gitlab.com/Openlyst/repos/homebrew/macos.git && brew install --cask doudou",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
         "Linux": "Download the latest Linux build from GitLab CI.",
         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
@@ -228,7 +228,7 @@
           "x86_64": "",
           "arm64": "",
           "universal": "https://files.catbox.moe/lsbnev.zip",
-          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Windows": {
           "zip": {
@@ -253,7 +253,7 @@
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
           },
-          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos"
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Android": {
           "apk": "https://gitlab.com/Openlyst/doudou/-/jobs/12655232637/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",

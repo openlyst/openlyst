@@ -44,7 +44,7 @@
           "x86_64": "",
           "arm64": "",
           "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-47/docan-3.0.0-2026-01-13-macos-unsigned.zip",
-          "homebrew": "https://gitlab.com/Openlyst/repos/homebrew/macos/"
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux/"
         },
         "Windows": {
           "zip": {
