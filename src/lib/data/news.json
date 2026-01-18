@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "server_downtime_relocation_2026",
+    "title": {
+      "en": "Upcoming Server Downtime - Relocation Notice",
+      "zh": "即将到来的服务器停机 - 搬迁通知",
+      "ru": "Предстоящий простой сервера — уведомление о переезде"
+    },
+    "caption": {
+      "en": "HttpAnimations (Server Hoster/Lead Developer) will be relocating to rural China in about a month. As a result, the servers WILL go offline for approximately 1-2 days during the transition. We apologize for any inconvenience this may cause. In the meantime, you can always access our GitLab repository: https://gitlab.com/Openlyst",
+      "zh": "HttpAnimations（服务器托管者/首席开发者）将在大约一个月后搬迁至中国农村地区。因此，服务器将在过渡期间停机约1-2天。对于可能造成的任何不便，我们深表歉意。在此期间，您可以随时访问我们的 GitLab 仓库：https://gitlab.com/Openlyst",
+      "ru": "HttpAnimations (хостер серверов/ведущий разработчик) переезжает в сельский Китай примерно через месяц. В результате серверы будут недоступны примерно 1-2 дня во время переезда. Приносим извинения за возможные неудобства. В это время вы всегда можете посетить наш репозиторий GitLab: https://gitlab.com/Openlyst"
+    },
+    "date": "2026-01-18",
+    "tintColor": "#f59e0b",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "https://gitlab.com/Openlyst",
+    "appID": ""
+  },
+  {
     "identifier": "altstore_repo_2026",
     "title": {
       "en": "New AltStore Repository Available",
