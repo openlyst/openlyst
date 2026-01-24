@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "lead_dev_readonly_2026",
+    "title": {
+      "en": "Development Update - Lead Developer Status",
+      "zh": "开发更新 - 首席开发者状态",
+      "ru": "Обновление разработки — статус ведущего разработчика"
+    },
+    "caption": {
+      "en": "One of our lead developers has gone into read-only mode and probably won't be back. This isn't the end of the project since pull requests and releases will still happen, but they will be much slower than before.",
+      "zh": "我们的一位首席开发者已进入只读模式，可能不会回来了。这并不是项目的终结，因为我们仍会处理合并请求并发布版本，但速度会比以前慢很多。",
+      "ru": "Один из наших ведущих разработчиков перешел в режим «только чтение» и, скорее всего, не вернется. Это не конец проекта, так как pull-запросы и релизы все еще будут выходить, но гораздо реже, чем раньше."
+    },
+    "date": "2026-01-23",
+    "tintColor": "#4b5563",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "https://gitlab.com/Openlyst",
+    "appID": ""
+},
+  {
     "identifier": "server_downtime_relocation_2026",
     "title": {
       "en": "Upcoming Server Downtime - Relocation Notice",
