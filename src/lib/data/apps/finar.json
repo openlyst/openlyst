@@ -35,38 +35,42 @@
         "Web": "Access the web version or self-host with Docker"
       },
       "downloads": {
-        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-47/finar-1.1.0-2026-01-13-ios-unsigned.ipa",
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-47/finar-1.1.0-2026-01-13-macos-unsigned.zip",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08-macos-unsigned.zip",
           "homebrew": ""
         },
         "Windows": {
           "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-18/finar-windows-x64.zip",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08-windows-x64-setup.exe",
             "arm64": ""
           }
         },
         "Linux": {
           "zip": {
-            "x86_64": "https://gitlab.com/Openlyst/finar/-/jobs/12639939011/artifacts/raw/doudou-1.1.0-linux-x64.zip",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08-linux-x64.zip",
             "arm64": ""
           },
           "appimage": {
-            "x86_64": "https://gitlab.com/Openlyst/finar/-/jobs/12639939013/artifacts/raw/artifacts/klit-linux-x86_64.AppImage",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08-linux-x86_64.AppImage",
             "arm64": ""
           },
           "deb": {
-            "x86_64": "https://gitlab.com/Openlyst/finar/-/jobs/12639939012/artifacts/raw/artifacts/klit-linux-amd64.deb",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08-linux-amd64.deb",
             "arm64": ""
           }
         },
         "Android": {
-          "apk": "https://gitlab.com/Openlyst/finar/-/jobs/12639939009/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
-          "aab": "https://gitlab.com/Openlyst/finar/-/jobs/12639939007/artifacts/raw/build/app/outputs/bundle/release/app-release.aab"
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08.aab"
         },
-        "Web": "https://gitlab.com/Openlyst/finar/-/jobs/12639939015/artifacts/raw/finar-1.1.0-web.zip"
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/finar-1.1.0-2026-02-08-web.zip"
       },
       "localizedDescription": {
         "en": "# 1.1.0\n\n## Fixed\n- Fixed controller input in SteamOS",
