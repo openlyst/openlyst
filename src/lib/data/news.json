@@ -1,23 +1,23 @@
 [
   {
-    "identifier": "lead_dev_readonly_2026",
+    "identifier": "github_account_status_update_2026",
     "title": {
-      "en": "Development Update - Lead Developer Status",
-      "zh": "开发更新 - 首席开发者状态",
-      "ru": "Обновление разработки — статус ведущего разработчика"
+      "en": "GitHub Account Update",
+      "zh": "GitHub 账户更新",
+      "ru": "Обновление аккаунта GitHub"
     },
     "caption": {
-      "en": "One of our lead developers has gone into read-only mode and probably won't be back. This isn't the end of the project since pull requests and releases will still happen, but they will be much slower than before.",
-      "zh": "我们的一位首席开发者已进入只读模式，可能不会回来了。这并不是项目的终结，因为我们仍会处理合并请求并发布版本，但速度会比以前慢很多。",
-      "ru": "Один из наших ведущих разработчиков перешел в режим «только чтение» и, скорее всего, не вернется. Это не конец проекта, так как pull-запросы и релизы все еще будут выходить, но гораздо реже, чем раньше."
+      "en": "Hello, it's been a while. Although I no longer work here, I still love Openlyst and the project. GitHub recently banned my account—which hosted Openlyst builds—for using the global site in China. I have created a new account and will be fixing the Openlyst builds soon. Goodbye, hope to see you again. — Zhenxi",
+      "zh": "大家好，好久不见。虽然我不再这里工作，但我依然热爱 Openlyst 这个项目并支持它。GitHub 最近封禁了我的账号（曾用于托管 Openlyst 构建版本），理由是在中国使用了全球站点。我已经创建了新账号，很快会修复 Openlyst 的构建。再见，期待与大家再次相遇。—— 镇西",
+      "ru": "Привет, давно не виделись. Хотя я здесь больше не работаю, я по-прежнему люблю Openlyst и этот проект. GitHub недавно заблокировал мой аккаунт, на котором размещались сборки Openlyst, за использование глобального сайта в Китае. Я создал новый аккаунт и скоро исправлю сборки Openlyst. До свидания, надеюсь на новую встречу. — Zhenxi"
     },
-    "date": "2026-01-23",
+    "date": "2026-02-08",
     "tintColor": "#4b5563",
     "imageURL": "/favicon.svg",
     "notify": true,
-    "url": "https://gitlab.com/Openlyst",
+    "url": "https://github.com/justacalico/Openlyst-more-builds",
     "appID": ""
-},
+  },
   {
     "identifier": "server_downtime_relocation_2026",
     "title": {
