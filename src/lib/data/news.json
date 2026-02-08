@@ -45,15 +45,15 @@
       "ru": "Доступен новый репозиторий AltStore"
     },
     "caption": {
-      "en": "We now have an official AltStore repository! Add this URL to AltStore to easily install our iOS apps: https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
-      "zh": "我们现在有了官方的 AltStore 仓库！将此 URL 添加到 AltStore 以轻松安装我们的 iOS 应用：https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
-      "ru": "Теперь у нас есть официальный репозиторий AltStore! Добавьте этот URL в AltStore для удобной установки наших iOS-приложений: https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json"
+      "en": "We now have an official AltStore repository! Add this URL to AltStore to easily install our iOS apps: https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
+      "zh": "我们现在有了官方的 AltStore 仓库！将此 URL 添加到 AltStore 以轻松安装我们的 iOS 应用：https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
+      "ru": "Теперь у нас есть официальный репозиторий AltStore! Добавьте этот URL в AltStore для удобной установки наших iOS-приложений: https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json"
     },
     "date": "2026-01-13",
     "tintColor": "#dc2626",
     "imageURL": "/favicon.svg",
     "notify": true,
-    "url": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
+    "url": "https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
     "appID": ""
   },
   {
