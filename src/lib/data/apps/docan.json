@@ -39,30 +39,30 @@
         "Web": "Access the web version"
       },
       "downloads": {
-        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-46/docan-3.0.0-2026-01-13-ios-unsigned.ipa",
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-47/docan-3.0.0-2026-01-13-macos-unsigned.zip",
-          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux/"
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux/"
         },
         "Windows": {
           "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-14/docan-windows-x64.zip",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08-windows-x64-setup.exe",
             "arm64": ""
           }
         },
         "Linux": {
           "zip": {
-            "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/docan-linux-x64.zip",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08-linux-x64.zip",
             "arm64": ""
           },
           "appimage": {
-            "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/3.0.0/docan-3.0.0-linux.AppImage",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08-linux-x86_64.AppImage",
             "arm64": ""
           },
           "deb": {
-            "x86_64": "https://gitlab.com/Openlyst/docan/-/jobs/12674147403/artifacts/raw/dist/3.0.0/docan-3.0.0-linux.deb",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08-linux-amd64.deb",
             "arm64": ""
           },
           "aur": {
@@ -71,10 +71,10 @@
           }
         },
         "Android": {
-          "apk": "https://gitlab.com/Openlyst/docan/-/jobs/12674147402/artifacts/raw/build/app/outputs/flutter-apk/app-release.apk",
-          "aab": ""
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08.aab"
         },
-        "Web": ""
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/docan-3.0.0-2026-02-08-web.zip"
       },
       "localizedDescription": {
         "en": "# 3.0.0\n\n## New Features\n\n### AI Providers\n- Added DeepSeek AI support with `deepseek-chat` and `deepseek-reasoner` models.\n- Added LM Studio support with OpenAI-compatible API.\n- Dynamic model fetching from API.\n\n### Image Creator\n- Added dedicated Image Creator screen for generating images with AI.\n- Supports Gemini and OpenAI DALL-E providers.\n\n### Playbooks\n- Added Playbooks: User-created YAML integrations for extending Docan.\n- Create custom API integrations with a simple YAML SDK.\n\n### Attachments & Drag-and-Drop\n- Added support for attachments in chat.\n- Drag and drop files directly onto the app.",
