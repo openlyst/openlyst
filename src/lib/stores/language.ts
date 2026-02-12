@@ -54,7 +54,9 @@ function getInitialLanguage(): SupportedLanguage {
 
 // Create the language store
 function createLanguageStore() {
-	const { subscribe, set, update } = writable<SupportedLanguage>(getInitialLanguage());
+	// Always start with SSR-safe default to avoid hydration mismatches.
+	// We detect browser preference after mount via initialize().
+	const { subscribe, set: internalSet } = writable<SupportedLanguage>(DEFAULT_LANGUAGE);
 	
 	return {
 		subscribe,
@@ -66,12 +68,12 @@ function createLanguageStore() {
 				url.searchParams.set('lang', lang);
 				window.history.replaceState({}, '', url.toString());
 			}
-			set(lang);
+			internalSet(lang);
 		},
 		initialize: () => {
 			if (browser) {
 				const lang = getInitialLanguage();
-				set(lang);
+				internalSet(lang);
 				localStorage.setItem('language', lang);
 			}
 		}

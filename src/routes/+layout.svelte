@@ -1,7 +1,9 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import { Header, Footer } from '$lib';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import { language } from '$lib/stores/language';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	
@@ -11,6 +13,7 @@
 	
 	onMount(async () => {
 		if (browser) {
+			language.initialize();
 			try {
 				const module = await import('$lib/components/Background3D.svelte');
 				Background3DComponent = module.default;
