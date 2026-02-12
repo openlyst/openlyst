@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "downloads_android_signing_issue_2026",
+    "title": {
+      "en": "Known Issue: Downloads and Android Signing",
+      "zh": "已知问题：下载和 Android 签名",
+      "ru": "Известная проблема: загрузки и подпись Android"
+    },
+    "caption": {
+      "en": "We are aware that downloads are currently not working and Android signing is also not working. We are doing our best to fix this as quickly as possible.",
+      "zh": "我们已注意到当前下载功能无法使用，同时 Android 签名也无法正常工作。我们正在尽最大努力尽快修复这些问题。",
+      "ru": "Мы знаем, что загрузки сейчас не работают, и подпись Android тоже не работает. Мы делаем все возможное, чтобы исправить это как можно скорее."
+    },
+    "date": "2026-02-12",
+    "tintColor": "#f59e0b",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
     "identifier": "github_account_status_update_2026",
     "title": {
       "en": "GitHub Account Update",
