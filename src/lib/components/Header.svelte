@@ -9,6 +9,7 @@
   // Reactive navigation based on current language
   const navigation = $derived([
     { name: $t.nav.home, href: '/' },
+    { name: $t.nav.news, href: '/news' },
     { name: $t.nav.apps, href: '/apps' },
     { name: $t.nav.about, href: '/about' },
     { name: $t.nav.contribute, href: '/contribute' },

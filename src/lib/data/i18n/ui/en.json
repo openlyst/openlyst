@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "news": "News",
     "apps": "Apps",
     "about": "About",
     "contribute": "Contribute",
@@ -25,6 +26,11 @@
     "comingSoonDesc": "We're working on amazing applications. Check back soon!",
     "moreAppsComing": "More applications coming soon!",
     "viewAllApps": "View All Applications",
+    "latestNews": "Latest News",
+    "latestNewsDesc": "Stay up to date with build status, releases, and important project announcements.",
+    "viewAllNews": "View All News",
+    "readMore": "Read more",
+    "noNewsYet": "No news yet.",
     "joinRevolution": "Get Involved",
     "joinRevolutionDesc": "Help us build a better digital future. Contribute code, report bugs, or spread the word about free software.",
     "startContributing": "Start Contributing",
@@ -47,6 +53,15 @@
     "contributeText": "Join our community of developers and users who believe in free, open-source software. Together, we can create alternatives to corporate-controlled platforms.",
     "getInvolved": "Get Involved",
     "viewSourceCode": "View Source Code"
+  },
+  "news": {
+    "title": "Project News",
+    "subtitle": "Official updates about builds, releases, and service status.",
+    "latestUpdates": "Latest Updates",
+    "latestUpdatesDesc": "Recent announcements from the OpenLyst team.",
+    "noNews": "No news has been published yet.",
+    "readMore": "Read more",
+    "openApp": "Open App"
   },
   "deprecated": {
     "title": "Deprecated Apps",

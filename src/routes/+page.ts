@@ -1,9 +1,10 @@
-import { getActiveApps, getRepoConfig } from '$lib/services/dataService';
+import { getActiveApps, getAllNews, getRepoConfig } from '$lib/services/dataService';
 
 export const load = async () => {
-  const [apps, config] = await Promise.all([
+  const [apps, config, news] = await Promise.all([
     getActiveApps(),
-    getRepoConfig()
+    getRepoConfig(),
+    getAllNews()
   ]);
   
   // Get featured apps based on the featuredApps array in config (only non-deprecated)
@@ -17,6 +18,7 @@ export const load = async () => {
   return {
     apps,
     featuredApps,
-    config
+    config,
+    news
   };
 };

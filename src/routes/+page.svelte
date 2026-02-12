@@ -1,10 +1,10 @@
 <script lang="ts">
   import { Section, AppCard, Button, Skeleton } from '$lib';
-  import { getActiveApps, getRepoConfig, nameToSlug } from '$lib/services/dataService';
+  import { getActiveApps, getAllNews, getRepoConfig, nameToSlug } from '$lib/services/dataService';
   import favicon from '$lib/assets/favicon.svg';
   import { t, language, type SupportedLanguage } from '$lib/stores/language';
   import { browser } from '$app/environment';
-  import type { App, RepoConfig } from '$lib/types/repo';
+  import type { App, NewsItem, RepoConfig } from '$lib/types/repo';
   import Button3D from '$lib/components/Button3D.svelte';
   import PlatformIcons from '$lib/components/PlatformIcons.svelte';
   import { get } from 'svelte/store';
@@ -15,6 +15,7 @@
   let isLoaded = $state(true);
   let apps = $state<App[]>(data.apps || []);
   let featuredApps = $state<App[]>(data.featuredApps?.filter((a): a is App => a !== undefined) || []);
+  let news = $state<NewsItem[]>(data.news || []);
   let config = $state<RepoConfig | undefined>(data.config);
   let currentLang = $state<SupportedLanguage>(get(language));
   let isRefreshing = $state(false);
@@ -37,12 +38,14 @@
       if (prevLang !== lang && apps.length > 0) {
         isRefreshing = true;
         try {
-          const [fetchedApps, fetchedConfig] = await Promise.all([
+          const [fetchedApps, fetchedConfig, fetchedNews] = await Promise.all([
             getActiveApps(lang),
-            getRepoConfig(lang)
+            getRepoConfig(lang),
+            getAllNews(lang)
           ]);
           apps = fetchedApps;
           config = fetchedConfig;
+          news = fetchedNews;
           
           // Get featured apps
           featuredApps = (fetchedConfig.featuredApps || [])
@@ -128,6 +131,49 @@
         <h3 class="text-xl font-semibold text-white mb-2">{$t.home.openSource}</h3>
         <p class="text-gray-400">{$t.home.openSourceDesc}</p>
       </div>
+    </div>
+  {/snippet}
+</Section>
+
+<!-- News Section -->
+<Section
+  title={$t.home.latestNews}
+  subtitle={$t.home.latestNewsDesc}
+  background="default"
+>
+  {#snippet children()}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+      {#if news.length > 0}
+        {#each news.slice(0, 4) as item}
+          <article class="glass-card rounded-xl p-6">
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h3 class="text-lg font-semibold text-white">{item.title}</h3>
+              <span class="text-xs text-gray-400 whitespace-nowrap">{item.date}</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed">{item.caption}</p>
+            {#if item.url}
+              <div class="mt-4">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-300 hover:text-cyan-200 text-sm font-medium"
+                >
+                  {$t.home.readMore}
+                </a>
+              </div>
+            {/if}
+          </article>
+        {/each}
+      {:else}
+        <div class="col-span-full text-center py-8 text-gray-400">
+          {$t.home.noNewsYet}
+        </div>
+      {/if}
+    </div>
+
+    <div class="mt-10 text-center">
+      <Button text={$t.home.viewAllNews} href="/news" variant="secondary" />
     </div>
   {/snippet}
 </Section>

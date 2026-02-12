@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "首页",
+    "news": "新闻",
     "apps": "应用",
     "about": "关于",
     "contribute": "贡献",
@@ -25,6 +26,11 @@
     "comingSoonDesc": "我们正在开发令人惊叹的应用。请稍后再来查看！",
     "moreAppsComing": "更多精彩应用即将推出！",
     "viewAllApps": "查看所有应用",
+    "latestNews": "最新动态",
+    "latestNewsDesc": "及时了解构建状态、版本发布和重要项目公告。",
+    "viewAllNews": "查看所有新闻",
+    "readMore": "了解更多",
+    "noNewsYet": "暂无新闻。",
     "joinRevolution": "参与贡献",
     "joinRevolutionDesc": "帮助我们构建更美好的数字未来。贡献代码、报告错误，或传播自由软件的理念。",
     "startContributing": "开始贡献",
@@ -47,6 +53,15 @@
     "contributeText": "加入我们相信免费、开源软件的开发者和用户社区。我们可以共同创造企业控制平台的替代品。",
     "getInvolved": "参与其中",
     "viewSourceCode": "查看源代码"
+  },
+  "news": {
+    "title": "项目新闻",
+    "subtitle": "关于构建、发布和服务状态的官方更新。",
+    "latestUpdates": "最新更新",
+    "latestUpdatesDesc": "来自 OpenLyst 团队的最新公告。",
+    "noNews": "尚未发布新闻。",
+    "readMore": "了解更多",
+    "openApp": "打开应用"
   },
   "deprecated": {
     "title": "已弃用的应用",
