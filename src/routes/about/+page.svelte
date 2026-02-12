@@ -243,7 +243,7 @@
       <p class="text-gray-400 mb-6">
         {$t.about.joinCollective}
       </p>
-      <Button text={$t.about.joinRevolution} href="/contribute" variant="primary" size="lg" />
+      <Button text={$t.about.joinRevolution} href="https://gitlab.com/Openlyst/" variant="primary" size="lg" />
     </div>
   {/snippet}
 </Section>

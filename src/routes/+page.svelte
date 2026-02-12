@@ -88,7 +88,7 @@
       
       <div class="mt-10 flex items-center justify-center gap-x-6 flex-wrap">
         <Button3D text={$t.home.exploreApps} href="/apps" variant="secondary" size="lg" />
-        <Button3D text={$t.home.joinMovement} href="/contribute" variant="outline" size="lg" />
+        <Button3D text={$t.home.joinMovement} href="https://gitlab.com/Openlyst/" variant="outline" size="lg" />
       </div>
     </div>
   </div>
@@ -234,7 +234,7 @@
 >
   {#snippet children()}
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-      <Button text={$t.home.startContributing} href="/contribute" variant="secondary" size="lg" />
+      <Button text={$t.home.startContributing} href="https://gitlab.com/Openlyst/" variant="secondary" size="lg" />
       <Button text={$t.home.downloadApps} href="/apps" variant="outline" size="lg" />
     </div>
     

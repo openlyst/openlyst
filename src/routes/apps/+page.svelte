@@ -139,7 +139,7 @@
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
-          href="/contribute" 
+          href="https://gitlab.com/Openlyst/" 
           class="inline-flex items-center px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:text-red-600 transition-colors"
         >
           {$t.apps.getInvolved}

@@ -12,7 +12,7 @@
     { name: $t.nav.news, href: '/news' },
     { name: $t.nav.apps, href: '/apps' },
     { name: $t.nav.about, href: '/about' },
-    { name: $t.nav.contribute, href: '/contribute' },
+    { name: $t.nav.gitlab, href: 'https://gitlab.com/Openlyst/' },
     { name: $t.nav.support, href: '/support' }
   ]);
   

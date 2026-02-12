@@ -214,7 +214,7 @@
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a 
-          href="/contribute" 
+          href="https://gitlab.com/Openlyst/" 
           class="inline-flex items-center gap-2 px-6 py-3 bg-white text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors"
         >
           <i class="fas fa-code"></i>
