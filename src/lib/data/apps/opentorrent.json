@@ -53,12 +53,12 @@
         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
       },
       "downloads": {
-        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-ios-unsigned.ipa",
+        "iOS": "",
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-macos-unsigned.zip",
-          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          "universal": "",
+          "homebrew": ""
         },
         "Windows": {
           "zip": {
@@ -66,7 +66,7 @@
             "arm64": ""
           },
           "exe": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-windows-x64-setup.exe",
+            "x86_64": "",
             "arm64": ""
           },
           "msi": {
@@ -78,7 +78,7 @@
             "arm64": ""
           },
           "portable": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-windows-x64.zip",
+            "x86_64": "",
             "arm64": ""
           },
           "winget": "",
@@ -87,7 +87,7 @@
         },
         "Linux": {
           "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-linux-x64.zip",
+            "x86_64": "",
             "arm64": ""
           },
           "appimage": {
@@ -105,11 +105,11 @@
           "homebrew": ""
         },
         "Android": {
-          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14.apk",
-          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14.aab",
+          "apk": "",
+          "aab": "",
           "apkpure": ""
         },
-        "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-52/opentorrent-1.0.0-2026-01-14-web.zip"
+        "Web": ""
       },
       "localizedDescription": {
         "en": "Initial release of Opentorrent, a cross-platform qBittorrent client that brings seamless torrenting to iOS, macOS, Windows, Linux, Android, and the Web.",
