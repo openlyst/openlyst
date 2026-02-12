@@ -42,8 +42,8 @@
       "downloads": {
         "iOS": "",
         "Android": {
-          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-42/repstore-3.1.0-2026-01-12.apk",
-          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-42/repstore-3.1.0-2026-01-12.aab"
+          "apk": "",
+          "aab": ""
         },
         "macOS": {
           "x86_64": "",
