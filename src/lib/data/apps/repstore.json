@@ -42,7 +42,7 @@
       "downloads": {
         "iOS": "",
         "Android": {
-          "apk": "",
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/repstore-3.1.0-2026-02-08.apk",
           "aab": ""
         },
         "macOS": {

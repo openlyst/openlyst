@@ -53,20 +53,20 @@
         "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
       },
       "downloads": {
-        "iOS": "",
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/opentorrent-1.0.0-2026-02-08-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/opentorrent-1.0.0-2026-02-08-macos-unsigned.zip",
           "homebrew": ""
         },
         "Windows": {
           "zip": {
-            "x86_64": "",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/opentorrent-1.0.0-2026-02-08-windows-x64.zip",
             "arm64": ""
           },
           "exe": {
-            "x86_64": "",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/opentorrent-1.0.0-2026-02-08-windows-x64-setup.exe",
             "arm64": ""
           },
           "msi": {
@@ -87,7 +87,7 @@
         },
         "Linux": {
           "zip": {
-            "x86_64": "",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/opentorrent-1.0.0-2026-02-08-linux-x64.zip",
             "arm64": ""
           },
           "appimage": {
@@ -105,11 +105,11 @@
           "homebrew": ""
         },
         "Android": {
-          "apk": "",
-          "aab": "",
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/opentorrent-1.0.0-2026-02-08.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/opentorrent-1.0.0-2026-02-08.aab",
           "apkpure": ""
         },
-        "Web": ""
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/opentorrent-1.0.0-2026-02-08-web.zip"
       },
       "localizedDescription": {
         "en": "Initial release of Opentorrent, a cross-platform qBittorrent client that brings seamless torrenting to iOS, macOS, Windows, Linux, Android, and the Web.",

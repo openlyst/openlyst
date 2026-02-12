@@ -59,20 +59,20 @@
         }
       },
       "downloads": {
-        "iOS": "",
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08-macos-unsigned.zip",
           "homebrew": ""
         },
         "Windows": {
           "zip": {
-            "x86_64": "",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08-windows-x64.zip",
             "arm64": ""
           },
           "exe": {
-            "x86_64": "",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08-windows-x64-setup.exe",
             "arm64": ""
           },
           "msix": {
@@ -89,23 +89,23 @@
         },
         "Linux": {
           "zip": {
-            "x86_64": "",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08-linux-x64.zip",
             "arm64": ""
           },
           "appimage": {
-            "x86_64": "",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08-linux-x86_64.AppImage",
             "arm64": ""
           },
           "deb": {
-            "x86_64": "",
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08-linux-amd64.deb",
             "arm64": ""
           }
         },
         "Android": {
-          "apk": "",
-          "aab": ""
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08.aab"
         },
-        "Web": ""
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/klit-7.0.0-2026-02-08-web.zip"
       },
       "localizedDescription": {
         "en": "# 7.0.0\n\n- Updates version to **7.0.0**.\n- Updated description to \"E926 API client\"\n\n## Added\n\n### 🔄 Pull-to-Refresh on Mobile Home Page\n- Added native pull-down-to-refresh support on the mobile Home page\n- Swipe down from the top of the post grid to refresh latest posts\n- Smooth refresh indicator animation with haptic feedback\n\n### ⌨️ Keyboard Controls for Mobile Post Viewer\nAdded keyboard navigation support to the mobile post detail viewer, matching the desktop experience:\n\n**Navigation:**\n- `A` / `←` — Previous post\n- `D` / `→` — Next post\n\n**Actions:**\n- `F` — Toggle favorite\n- `W` / `↑` — Upvote (toggle)\n- `S` / `↓` — Downvote (toggle)\n\n### 📱 Material Style Navigation Bar\n- Added a proper Material-style bottom navigation bar when Material UI mode is enabled\n- Full-width design with simple icon/label layout (no floating pill style)\n- Clean top border separator instead of shadow/blur effects\n- Consistent with Android Material Design guidelines\n\n### ⚙️ Material Style Settings Page\n- Settings page now responds to UI style mode\n- Material mode uses solid containers without blur effects\n- Clean borders and simple dividers in Material mode\n- Removes glass effects and shadows for better performance on lower-end devices\n\n### 🌈 Rating Aura on Post Cards\n- Posts now display a colored glow/aura around the card based on content rating\n- **Green** — Safe content\n- **Orange** — Questionable content\n- **Red** — Explicit content\n- Removed the text badge from the bottom-left corner for a cleaner look\n- Rating is now instantly visible at a glance without reading text\n- **Liquid Glass mode**: Enhanced glass-like aura with layered glows, soft outer bloom, and subtle highlight reflection\n- **Material mode**: Simple, performance-focused aura effect\n\n### 📐 Centralized Post Grid Settings\n- New **POST GRID** section in Settings with comprehensive controls:\n  - **Auto Mode** — Automatically adjusts grid columns based on screen width (2 cols for phones, 3 for tablets, up to 8 for large monitors)\n  - **Grid Size** — Manual control for number of columns (disabled when Auto Mode is on)\n  - **Spacing** — Slider to control gap between post cards (0-16pt)\n  - **Padding** — Slider to control outer padding around the grid (0-24pt)\n  - **Score Threshold** — Configurable minimum score filter for latest posts (0-100, default: 20). Posts automatically reload when changed.\n- Added same POST GRID settings to desktop settings page (Content section)\n- Removed per-page grid size controls from Home, Hot, Popular, Favorites, and Search pages\n- Removed grid size selectors from desktop toolbar (Home, Hot, Popular, Favorites, Search)\n- All pages now use centralized settings for consistent appearance\n\n### 🚫 Blacklist Management\n- New **BLACKLIST** section in Settings (mobile and desktop):\n  - **Enable Blacklist** — Toggle to enable/disable blacklist filtering globally\n  - **Manage Blacklist** — Opens dedicated page to edit blacklist rules\n- **Blacklist Settings Page** with full management:\n  - **Sync from Account** — Pull blacklisted tags from your e621/e926 account\n  - **Text Editor** — Edit blacklist entries directly (one tag/rule per line)\n  - **Help Dialog** — Documents blacklist syntax (AND logic, rating filters, wildcards, metatags)\n  - Shows active rule count and enabled status\n- All pages automatically filter posts based on blacklist rules\n\n## Fixed\n\n### 🎊 Left-Handed Mode Confetti Position\n- Fixed confetti animation playing from the wrong side when left-handed mode is enabled\n- Confetti now correctly originates near the favorite button position in both left and right-handed modes\n\n### 📐 Auto Mode Grid Scaling\n- Fixed auto mode only using up to 4 columns even on large screens\n- Auto mode now scales properly: 2 cols (phones) → 3 (tablets) → 4-5 (small desktops) → 6-8 (large monitors)\n- Grid now properly responds to window resizing using LayoutBuilder\n\n### 🔍 Tag Suggestions Overhaul\n- **Fixed `-tag` and `~tag` prefix handling**: Tag suggestions now properly work when typing exclusion tags (e.g., `-scat`, `-young`) or optional tags (`~tag`)\n- **Fixed suggestions closing unexpectedly**: Removed aggressive focus-based closing that caused suggestions to disappear while typing\n- **Fixed suggestions appearing when not wanted**: Suggestions now only appear when actively typing a tag (2+ characters)\n- **Tap outside to close**: Suggestions close when tapping anywhere outside the suggestion list\n- **Better word detection**: Properly extracts the current word being typed, handling cursor position correctly\n- **Prefix preservation**: When selecting a suggestion for `-tag` or `~tag`, the prefix is correctly preserved\n\n### 🖼️ Full Resolution Image Loading\n- Fixed mobile post viewer not loading full resolution images\n- Mobile now uses the same resolution priority as desktop: full file → sample → preview\n- Fixes issues with small images (e.g., 512x512) not displaying at full quality on alternative servers",
