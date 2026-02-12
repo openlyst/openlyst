@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "downloads_fixed_signing_still_broken_2026",
+    "title": {
+      "en": "Update: Downloads Fixed, Signing Still Broken",
+      "zh": "更新：下载已修复，签名仍有问题",
+      "ru": "Обновление: загрузки исправлены, подпись все еще не работает"
+    },
+    "caption": {
+      "en": "We have fixed the download links. Signing is still broken, and we will fix it as soon as we can.",
+      "zh": "我们已经修复了下载链接。签名功能仍然有问题，我们会尽快修复。",
+      "ru": "Мы исправили ссылки на загрузку. Подпись все еще не работает, и мы исправим это как можно скорее."
+    },
+    "date": "2026-02-12",
+    "tintColor": "#f59e0b",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
     "identifier": "downloads_android_signing_issue_2026",
     "title": {
       "en": "Known Issue: Downloads and Android Signing",
