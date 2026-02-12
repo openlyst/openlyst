@@ -17,7 +17,14 @@
   },
   "iconURL": "/icons/Klit/icon.png",
   "tintColor": "#ff6b35",
-  "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+  "platforms": [
+    "iOS",
+    "macOS",
+    "Windows",
+    "Linux",
+    "Android",
+    "Web"
+  ],
   "screenshots": [
     "/icons/Klit/home.png",
     "/icons/Klit/popular.png",
@@ -29,7 +36,14 @@
       "version": "7.0.0",
       "date": "2026-01-18",
       "sourceCode": "",
-      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
       "platformInstall": {
         "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository",
@@ -45,20 +59,20 @@
         }
       },
       "downloads": {
-        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18-ios-unsigned.ipa",
+        "iOS": "",
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18-macos-unsigned.zip",
-          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          "universal": "",
+          "homebrew": ""
         },
         "Windows": {
           "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18-windows-x64.zip",
+            "x86_64": "",
             "arm64": ""
           },
           "exe": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18-windows-x64-setup.exe",
+            "x86_64": "",
             "arm64": ""
           },
           "msix": {
@@ -75,149 +89,28 @@
         },
         "Linux": {
           "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18-linux-x64.zip",
+            "x86_64": "",
             "arm64": ""
           },
           "appimage": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18-linux-x86_64.AppImage",
+            "x86_64": "",
             "arm64": ""
           },
           "deb": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18-linux-amd64.deb",
+            "x86_64": "",
             "arm64": ""
           }
         },
         "Android": {
-          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18.apk",
-          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18.aab"
+          "apk": "",
+          "aab": ""
         },
-        "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-60/klit-7.0.0-2026-01-18-web.zip"
+        "Web": ""
       },
       "localizedDescription": {
         "en": "# 7.0.0\n\n- Updates version to **7.0.0**.\n- Updated description to \"E926 API client\"\n\n## Added\n\n### 🔄 Pull-to-Refresh on Mobile Home Page\n- Added native pull-down-to-refresh support on the mobile Home page\n- Swipe down from the top of the post grid to refresh latest posts\n- Smooth refresh indicator animation with haptic feedback\n\n### ⌨️ Keyboard Controls for Mobile Post Viewer\nAdded keyboard navigation support to the mobile post detail viewer, matching the desktop experience:\n\n**Navigation:**\n- `A` / `←` — Previous post\n- `D` / `→` — Next post\n\n**Actions:**\n- `F` — Toggle favorite\n- `W` / `↑` — Upvote (toggle)\n- `S` / `↓` — Downvote (toggle)\n\n### 📱 Material Style Navigation Bar\n- Added a proper Material-style bottom navigation bar when Material UI mode is enabled\n- Full-width design with simple icon/label layout (no floating pill style)\n- Clean top border separator instead of shadow/blur effects\n- Consistent with Android Material Design guidelines\n\n### ⚙️ Material Style Settings Page\n- Settings page now responds to UI style mode\n- Material mode uses solid containers without blur effects\n- Clean borders and simple dividers in Material mode\n- Removes glass effects and shadows for better performance on lower-end devices\n\n### 🌈 Rating Aura on Post Cards\n- Posts now display a colored glow/aura around the card based on content rating\n- **Green** — Safe content\n- **Orange** — Questionable content\n- **Red** — Explicit content\n- Removed the text badge from the bottom-left corner for a cleaner look\n- Rating is now instantly visible at a glance without reading text\n- **Liquid Glass mode**: Enhanced glass-like aura with layered glows, soft outer bloom, and subtle highlight reflection\n- **Material mode**: Simple, performance-focused aura effect\n\n### 📐 Centralized Post Grid Settings\n- New **POST GRID** section in Settings with comprehensive controls:\n  - **Auto Mode** — Automatically adjusts grid columns based on screen width (2 cols for phones, 3 for tablets, up to 8 for large monitors)\n  - **Grid Size** — Manual control for number of columns (disabled when Auto Mode is on)\n  - **Spacing** — Slider to control gap between post cards (0-16pt)\n  - **Padding** — Slider to control outer padding around the grid (0-24pt)\n  - **Score Threshold** — Configurable minimum score filter for latest posts (0-100, default: 20). Posts automatically reload when changed.\n- Added same POST GRID settings to desktop settings page (Content section)\n- Removed per-page grid size controls from Home, Hot, Popular, Favorites, and Search pages\n- Removed grid size selectors from desktop toolbar (Home, Hot, Popular, Favorites, Search)\n- All pages now use centralized settings for consistent appearance\n\n### 🚫 Blacklist Management\n- New **BLACKLIST** section in Settings (mobile and desktop):\n  - **Enable Blacklist** — Toggle to enable/disable blacklist filtering globally\n  - **Manage Blacklist** — Opens dedicated page to edit blacklist rules\n- **Blacklist Settings Page** with full management:\n  - **Sync from Account** — Pull blacklisted tags from your e621/e926 account\n  - **Text Editor** — Edit blacklist entries directly (one tag/rule per line)\n  - **Help Dialog** — Documents blacklist syntax (AND logic, rating filters, wildcards, metatags)\n  - Shows active rule count and enabled status\n- All pages automatically filter posts based on blacklist rules\n\n## Fixed\n\n### 🎊 Left-Handed Mode Confetti Position\n- Fixed confetti animation playing from the wrong side when left-handed mode is enabled\n- Confetti now correctly originates near the favorite button position in both left and right-handed modes\n\n### 📐 Auto Mode Grid Scaling\n- Fixed auto mode only using up to 4 columns even on large screens\n- Auto mode now scales properly: 2 cols (phones) → 3 (tablets) → 4-5 (small desktops) → 6-8 (large monitors)\n- Grid now properly responds to window resizing using LayoutBuilder\n\n### 🔍 Tag Suggestions Overhaul\n- **Fixed `-tag` and `~tag` prefix handling**: Tag suggestions now properly work when typing exclusion tags (e.g., `-scat`, `-young`) or optional tags (`~tag`)\n- **Fixed suggestions closing unexpectedly**: Removed aggressive focus-based closing that caused suggestions to disappear while typing\n- **Fixed suggestions appearing when not wanted**: Suggestions now only appear when actively typing a tag (2+ characters)\n- **Tap outside to close**: Suggestions close when tapping anywhere outside the suggestion list\n- **Better word detection**: Properly extracts the current word being typed, handling cursor position correctly\n- **Prefix preservation**: When selecting a suggestion for `-tag` or `~tag`, the prefix is correctly preserved\n\n### 🖼️ Full Resolution Image Loading\n- Fixed mobile post viewer not loading full resolution images\n- Mobile now uses the same resolution priority as desktop: full file → sample → preview\n- Fixes issues with small images (e.g., 512x512) not displaying at full quality on alternative servers",
         "zh": "# 7.0.0\n\n- 更新版本至 **7.0.0**\n- 更新描述为E926 API 客户端\n\n## 新增\n\n### 🔄 移动端主页下拉刷新\n- 在移动端主页添加原生下拉刷新支持\n- 从帖子网格顶部向下滑动以刷新最新帖子\n- 带有触觉反馈的平滑刷新指示器动画\n\n### ⌨️ 移动端帖子查看器键盘控制\n为移动端帖子详情查看器添加键盘导航支持，与桌面端体验一致\n\n### 📱 Material 风格导航栏\n- 启用 Material UI 模式时添加适当的 Material 风格底部导航栏\n\n### ⚙️ Material 风格设置页面\n- 设置页面现在响应 UI 风格模式\n- Material 模式使用无模糊效果的实心容器\n\n### 🌈 帖子卡片评级光环\n- 帖子现在根据内容评级在卡片周围显示彩色光晕\n\n### 📐 集中式帖子网格设置\n- 设置中新增 **帖子网格** 部分\n\n### 🚫 黑名单管理\n- 设置中新增 **黑名单** 部分\n\n## 修复\n\n- 修复左手模式下纸屑动画位置问题\n- 修复自动模式网格缩放问题\n- 修复标签建议相关问题\n- 修复移动端帖子查看器全分辨率图像加载问题",
         "ru": "# 7.0.0\n\n- Обновление версии до **7.0.0**\n- Обновлено описание на \"Клиент E926 API\"\n\n## Добавлено\n\n### 🔄 Обновление по свайпу на мобильной главной странице\n- Добавлена нативная поддержка обновления по свайпу на мобильной главной странице\n- Проведите вниз от верхней части сетки постов для обновления последних постов\n- Плавная анимация индикатора обновления с тактильной обратной связью\n\n### ⌨️ Управление с клавиатуры для мобильного просмотра постов\nДобавлена поддержка навигации с клавиатуры для мобильного просмотра деталей поста\n\n### 📱 Навигационная панель в стиле Material\n- Добавлена правильная нижняя навигационная панель в стиле Material при включении режима Material UI\n\n### ⚙️ Страница настроек в стиле Material\n- Страница настроек теперь реагирует на режим стиля UI\n- Режим Material использует сплошные контейнеры без эффектов размытия\n\n### 🌈 Аура рейтинга на карточках постов\n- Посты теперь отображают цветное свечение вокруг карточки в зависимости от рейтинга контента\n\n### 📐 Централизованные настройки сетки постов\n- Новый раздел **СЕТКА ПОСТОВ** в настройках\n\n### 🚫 Управление чёрным списком\n- Новый раздел **ЧЁРНЫЙ СПИСОК** в настройках\n\n## Исправлено\n\n- Исправлена позиция конфетти в режиме для левшей\n- Исправлено масштабирование сетки в автоматическом режиме\n- Исправлены проблемы с предложениями тегов\n- Исправлена загрузка изображений в полном разрешении в мобильном просмотре постов"
-      }
-    },
-    {
-      "version": "6.0.0",
-      "date": "2026-01-13",
-      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/84de251dae75d2cce130329c6d748873254d6901",
-      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-      "platformInstall": {
-        "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
-        "Android": "Use RepStore to install from our repository",
-        "macOS": "Download the latest macOS build",
-        "Windows": "Download the latest Windows build",
-        "Linux": "Download the latest Linux build from GitLab CI",
-        "Web": "Access the web version"
-      },
-      "downloads": {
-        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-ios-unsigned.ipa",
-        "macOS": {
-          "x86_64": "",
-          "arm64": "",
-          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-macos-unsigned.zip",
-          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
-        },
-        "Windows": {
-          "zip": {
-            "x86_64": "",
-            "arm64": ""
-          },
-          "exe": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-windows-x64-setup.exe",
-            "arm64": ""
-          },
-          "msix": {
-            "x86_64": "",
-            "arm64": ""
-          },
-          "portable": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-windows-x64.zip",
-            "arm64": ""
-          },
-          "winget": "",
-          "chocolatey": "",
-          "scoop": ""
-        },
-        "Linux": {
-          "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-linux-x64.zip",
-            "arm64": ""
-          },
-          "appimage": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-linux-x86_64.AppImage",
-            "arm64": ""
-          },
-          "deb": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-linux-amd64.deb",
-            "arm64": ""
-          }
-        },
-        "Android": {
-          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14.apk",
-          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14.aab"
-        },
-        "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-49/klit-6.0.0-2026-01-14-web.zip"
-      },
-      "localizedDescription": {
-        "en": "# 6.0.0\n\n## Added\n\n### 🎮 Gamepad & Controller Support (Desktop)\nFull gamepad/controller support for desktop UI — SteamOS and Steam Deck compatible.\n\n**Post Detail View Controls:**\n- `LB` / `RB` — Navigate between posts\n- `A` — Toggle fullscreen\n- `B` — Close/go back\n- `Y` — Toggle favorite\n- `RT` — Upvote\n- `X` — Downvote\n- Thumbstick / D-pad — Sidebar menu navigation\n- Visual button hints overlay when controller is connected\n- Haptic feedback for all actions\n\n**Login Screen Controls:**\n- D-pad — Navigate between form fields and buttons\n- `A` — Select/activate focused item\n- `Y` — Quick guest login\n- `X` — Toggle custom host\n- Visual focus indicators on all interactive elements\n\n**New Input System:**\n- `GamepadController` service for centralized input handling\n- `GamepadInputMixin` for easy widget integration\n\n### 💾 Desktop Download Functionality\n- Download posts directly from the detail view\n- Files saved to user's Downloads folder with progress indicator\n- Confirmation dialog with option to open folder\n- Automatic detection of existing files\n\n### 📱 Live Responsive UI\n- Automatic switching between mobile and desktop layouts on window resize\n- Post detail, search, favorites, and profile pages all support live layout switching\n- Threshold: Desktop UI at ≥1024px width, Mobile UI below\n\n### 🔗 Shared Navigation State\n- Current page preserved when resizing between mobile and desktop\n- Navigation indices automatically mapped between UI modes\n- Seamless experience when switching layouts\n\n### 🎬 Video Settings\nNew video settings section in both mobile and desktop settings:\n- **Auto Play** — Control whether videos automatically play when viewing posts\n- **Mute by Default** — Start videos muted to avoid unexpected audio\n- Settings apply to both inline video player and fullscreen viewer\n\n### 🔄 Check for Updates\n- \"Check for Updates\" option in About section (mobile and desktop)\n- Fetches latest version info via Openlyst API\n- Shows current vs latest version comparison\n- Direct link to download page when update available\n- Glassmorphic dialog design on desktop\n- Graceful network error handling\n\n### 🔒 Search History Privacy\n- Toggle to disable search history recording (mobile and desktop)\n- New \"Data\" category in desktop settings\n- Clear search history button with item count\n- When disabled, searches are not saved to history\n\n---\n\n## Changed\n\n### 📦 Dependency Updates\n| Package | From | To |\n|---------|------|-----|\n| dio | ^5.4.0 | ^5.9.0 |\n| flutter_secure_storage | ^9.2.2 | ^10.0.0 |\n| provider | ^6.1.2 | ^6.1.5+1 |\n| shared_preferences | ^2.2.3 | ^2.5.4 |\n| connectivity_plus | ^6.0.3 | ^7.0.0 |\n| video_player | ^2.8.0 | ^2.10.1 |\n| chewie | ^1.8.0 | ^1.13.0 |\n| media_kit | ^1.2.3 | ^1.2.6 |\n| url_launcher | ^6.2.5 | ^6.3.2 |\n| flutter_launcher_icons | ^0.14.3 | ^0.14.4 |\n\n### 🎨 UI Improvements\n\n**Sidebar Collapse Button:**\n- Animated icon rotation when toggling\n- \"Collapse\" label with chevron indicator in expanded mode\n- Tooltip for better accessibility\n- Enhanced hover effects with purple gradient and shadow\n- Better visual consistency in both states\n\n**Desktop Time Range Selector (Hot & Popular Pages):**\n- Modern glassmorphic design with purple/indigo gradient theme\n- Hover effects on time range options (Today, This Week, This Month)\n- Sleek calendar button with divider separator\n- Desktop-optimized date picker dialog with gradient styling\n- Enhanced \"Done\" button with purple gradient\n- Full date format (MMM d, yyyy) for custom date selection\n\n**Account Management Page:**\n- Responsive layout adapting to desktop and mobile\n- Glassmorphic design with backdrop blur effects on desktop\n- Gradient header with stylish back button\n- Improved account cards with hover effects and gradient active state\n- Desktop-optimized modal dialogs\n- Consistent purple/indigo gradient theme\n\n---\n\n## Fixed\n\n- Fixed `use_build_context_synchronously` warnings in account management page by adding proper mounted checks after async operations\n- Fixed tag suggestion popup not closing when clicking search button with meta tags (e.g., \"video\")\n- Fixed tag suggestions appearing when search field is not focused\n- Tag suggestion overlay now properly checks focus state before displaying\n- Cancels pending tag fetch requests when searching to prevent race conditions\n\n---\n\n## Removed\n\n### 🗑️ List View Option\nRemoved list view from the entire app for a cleaner, more consistent experience:\n- Home, Hot, Popular, and Search pages now use grid view only\n- Removed grid/list toggle button from toolbars\n- Removed `PostsList` widget\n- Removed `ViewToggleButton` widget\n- Removed `PostListShimmer` widget",
-        "zh": "# 6.0.0\n\n## 新增\n\n### 🎮 手柄和控制器支持（桌面端）\n桌面端 UI 完全支持手柄/控制器 — 兼容 SteamOS 和 Steam Deck。\n\n### 💾 桌面端下载功能\n- 直接从详情视图下载帖子\n- 文件保存到用户下载文件夹，带进度指示器\n\n### 📱 实时响应式 UI\n- 窗口调整大小时自动切换移动端和桌面端布局\n\n### 🎬 视频设置\n移动端和桌面端设置中新增视频设置部分\n\n### 🔄 检查更新\n- 关于部分中的'检查更新'选项\n\n### 🔒 搜索历史隐私\n- 禁用搜索历史记录的开关\n\n---\n\n## 更改\n\n### 📦 依赖更新\n多个软件包已更新到最新版本\n\n### 🎨 UI 改进\n- 侧边栏折叠按钮改进\n- 桌面端时间范围选择器改进\n- 账户管理页面改进\n\n---\n\n## 修复\n\n- 修复了账户管理页面中的 `use_build_context_synchronously` 警告\n- 修复了点击搜索按钮时标签建议弹窗不关闭的问题\n- 修复了搜索字段未聚焦时标签建议仍然出现的问题\n\n---\n\n## 移除\n\n### 🗑️ 列表视图选项\n从整个应用程序中移除了列表视图，以获得更简洁、更一致的体验",
-        "ru": "# 6.0.0\n\n## Добавлено\n\n### 🎮 Поддержка геймпада и контроллера (ПК)\nПолная поддержка геймпада/контроллера для интерфейса ПК — совместимо с SteamOS и Steam Deck.\n\n### 💾 Функция загрузки для ПК\n- Загрузка постов прямо из детального просмотра\n- Файлы сохраняются в папку загрузок с индикатором прогресса\n\n### 📱 Живой адаптивный интерфейс\n- Автоматическое переключение между мобильным и десктопным макетами при изменении размера окна\n\n### 🎬 Настройки видео\nНовый раздел настроек видео в мобильных и десктопных настройках\n\n### 🔄 Проверка обновлений\n- Опция \"Проверить обновления\" в разделе О приложении\n\n### 🔒 Конфиденциальность истории поиска\n- Переключатель для отключения записи истории поиска\n\n---\n\n## Изменено\n\n### 📦 Обновления зависимостей\nНесколько пакетов обновлены до последних версий\n\n### 🎨 Улучшения интерфейса\n- Улучшения кнопки сворачивания боковой панели\n- Улучшения селектора временного диапазона для ПК\n- Улучшения страницы управления аккаунтами\n\n---\n\n## Исправлено\n\n- Исправлены предупреждения `use_build_context_synchronously` на странице управления аккаунтами\n- Исправлено незакрытие всплывающего окна подсказок тегов при нажатии кнопки поиска\n- Исправлено появление подсказок тегов когда поле поиска не в фокусе\n\n---\n\n## Удалено\n\n### 🗑️ Опция списочного вида\nУдалён списочный вид из всего приложения для более чистого и последовательного опыта"
-      }
-    },
-    {
-      "version": "5.0.0",
-      "date": "2026-01-12",
-      "sourceCode": "",
-      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-      "platformInstall": {
-        "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
-        "Android": "Use RepStore to install from our repository",
-        "macOS": "Download the latest macOS build",
-        "Windows": "Download the latest Windows build",
-        "Linux": "Download the latest Linux build from GitLab CI",
-        "Web": "Access the web version"
-      },
-      "downloads": {
-        "iOS": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-ios-unsigned.ipa",
-        "macOS": {
-          "x86_64": "",
-          "arm64": "",
-          "universal": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-macos-unsigned.zip",
-          "homebrew": ""
-        },
-        "Windows": {
-          "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-windows-x64.zip",
-            "arm64": ""
-          }
-        },
-        "Linux": {
-          "zip": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-linux-x64.zip",
-            "arm64": ""
-          },
-          "appimage": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-26/klit-5.0.0-2026-01-12-linux-x86_64.AppImage",
-            "arm64": ""
-          },
-          "deb": {
-            "x86_64": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-26/klit-5.0.0-2026-01-12-linux-amd64.deb",
-            "arm64": ""
-          }
-        },
-        "Android": {
-          "apk": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12.apk",
-          "aab": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12.aab"
-        },
-        "Web": "https://github.com/HttpAnimation/Openlyst-more-builds/releases/download/build-25/klit-5.0.0-2026-01-12-web.zip"
-      },
-      "localizedDescription": {
-        "en": "# 5.0.0\n\n- Fixed account manager not working.\n- Reload all data when switching accounts.\n- Fixed some platforms not having icons.",
-        "zh": "# 5.0.0\n\n- 修复了账户管理器不工作的问题。\n- 切换账户时重新加载所有数据。\n- 修复了某些平台没有图标的问题。",
-        "ru": "# 5.0.0\n\n- Исправлена работа менеджера аккаунтов.\n- Перезагрузка всех данных при переключении аккаунтов.\n- Исправлено отсутствие иконок на некоторых платформах."
       }
     }
   ]
