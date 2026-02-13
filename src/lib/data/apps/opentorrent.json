@@ -6,14 +6,14 @@
     "ru": "Opentorrent"
   },
   "subtitle": {
-    "en": "qBittorrent client.",
-    "zh": "qBittorrent 客户端。",
-    "ru": "Клиент qBittorrent."
+    "en": "qBittorrent client",
+    "zh": "qBittorrent 客户端",
+    "ru": "Клиент qBittorrent"
   },
   "localizedDescription": {
-    "en": "Manage your torrents with Opentorrent, a cross-platform qBittorrent client that brings seamless torrenting to iOS, macOS, Windows, Linux, Android, and the Web.",
-    "zh": "使用开放种子管理您的种子文件，这是一款跨平台的 qBittorrent 客户端，为 iOS、macOS、Windows、Linux、Android 和 Web 带来无缝的种子下载体验。",
-    "ru": "Управляйте своими торрентами с помощью Opentorrent — кроссплатформенного клиента qBittorrent, который обеспечивает бесперебойную работу с торрентами на iOS, macOS, Windows, Linux, Android и в веб-браузере."
+    "en": "Opentorrent is a cross-platform qBittorrent client for iOS, macOS, Windows, Linux, Android, and web.",
+    "zh": "Opentorrent 是一款跨平台 qBittorrent 客户端，支持 iOS、macOS、Windows、Linux、Android 和 Web。",
+    "ru": "Opentorrent — кроссплатформенный клиент qBittorrent для iOS, macOS, Windows, Linux, Android и веба."
   },
   "iconURL": "https://gitlab.com/Openlyst/opentorrent/-/raw/main/assets/icons/app_icon.png?ref_type=heads",
   "tintColor": "#dc2626",
