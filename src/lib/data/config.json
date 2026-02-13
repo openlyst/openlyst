@@ -10,9 +10,9 @@
     "ru": "Каждое приложение Openlyst для iOS."
   },
   "description": {
-    "en": "FOSS apps for iOS, Android, and Desktop made for everyone. Focused on more unique apps.",
-    "zh": "为所有人打造的 iOS、Android 和桌面端开源应用。专注于更独特的应用。",
-    "ru": "FOSS-приложения для iOS, Android и ПК, созданные для всех. Фокус на уникальных приложениях."
+    "en": "Free and open-source apps for iOS, Android, and desktop, focused on practical and unique tools.",
+    "zh": "面向 iOS、Android 和桌面的免费开源应用，专注于实用且有特色的工具。",
+    "ru": "Бесплатные приложения с открытым кодом для iOS, Android и ПК с фокусом на практичных и уникальных инструментах."
   },
   "iconURL": "/favicon.svg",
   "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads",
