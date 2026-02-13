@@ -6,14 +6,14 @@
     "ru": "Finar"
   },
   "subtitle": {
-    "en": "Replacement frontend for Jellyfin",
-    "zh": "Jellyfin 的替代前端",
-    "ru": "Альтернативный интерфейс для Jellyfin"
+    "en": "Jellyfin frontend client",
+    "zh": "Jellyfin 前端客户端",
+    "ru": "Клиент-фронтенд для Jellyfin"
   },
   "localizedDescription": {
-    "en": "A beautiful, modern multi-platform Jellyfin client built with Flutter. Features native video playback powered by media_kit, glassmorphism design with blur effects and glass-like components, dark mode, offline support with Hive, and adaptive UI optimized for desktop, mobile, and TV.",
-    "zh": "一款使用 Flutter 构建的美观、现代的多平台 Jellyfin 客户端。具有由 media_kit 驱动的原生视频播放、具有模糊效果和玻璃组件的玻璃态设计、深色模式、使用 Hive 的离线支持，以及针对桌面、移动和电视优化的自适应 UI。",
-    "ru": "Красивый, современный мультиплатформенный клиент Jellyfin, созданный на Flutter. Функции: нативное воспроизведение видео на media_kit, дизайн glassmorphism с эффектами размытия, тёмный режим, офлайн-поддержка с Hive и адаптивный интерфейс для ПК, мобильных устройств и ТВ."
+    "en": "Finar is a cross-platform Jellyfin client built with Flutter. It includes native playback with media_kit, offline support with Hive, and an adaptive interface for desktop, mobile, and TV.",
+    "zh": "Finar 是一个基于 Flutter 的跨平台 Jellyfin 客户端。它提供由 media_kit 驱动的原生播放、基于 Hive 的离线支持，以及适配桌面、移动端和电视的界面。",
+    "ru": "Finar — кроссплатформенный клиент Jellyfin на Flutter. В нём есть нативное воспроизведение через media_kit, офлайн-поддержка на Hive и адаптивный интерфейс для ПК, мобильных устройств и ТВ."
   },
   "iconURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
   "tintColor": "#6366f1",
