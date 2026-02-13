@@ -121,9 +121,9 @@
       "ru": "Прощай, Gitlab CI."
     },
     "caption": {
-      "en": "We have decided to remove Gitlab CI from our infrastructure and replace it with Github Actions. The reason we have decided to do this is due to reliability issues and long build times on Gitlab CI. We believe that Github Actions will provide a more stable and faster experience for our users. We would love to move back to Gitlab CI in the future if the issues are resolved.",
-      "zh": "我们决定从基础设施中移除 Gitlab CI，并用 Github Actions 替代。我们做出这个决定的原因是 Gitlab CI 存在可靠性问题和较长的构建时间。我们相信 Github Actions 将为用户提供更稳定、更快速的体验。如果问题得到解决，我们很乐意在未来回到 Gitlab CI。",
-      "ru": "Мы решили убрать Gitlab CI из нашей инфраструктуры и заменить его на Github Actions. Причина этого решения — проблемы с надёжностью и длительное время сборки в Gitlab CI. Мы считаем, что Github Actions обеспечит более стабильный и быстрый опыт для наших пользователей. Мы будем рады вернуться к Gitlab CI в будущем, если проблемы будут решены."
+      "en": "We've moved CI from GitLab CI to GitHub Actions because build reliability and build times were better for us there. If GitLab CI improves, we're open to moving back later.",
+      "zh": "我们已将 CI 从 GitLab CI 切换到 GitHub Actions，因为后者在构建稳定性和构建速度上更适合我们。如果 GitLab CI 后续改进，我们也会考虑再迁回去。",
+      "ru": "Мы перенесли CI с GitLab CI на GitHub Actions, потому что там у нас лучше стабильность и время сборки. Если GitLab CI улучшится, мы готовы рассмотреть возврат позже."
     },
     "date": "2026-01-12",
     "tintColor": "#6366f1",
@@ -135,14 +135,14 @@
   {
     "identifier": "finar_100_release",
     "title": {
-      "en": "Introducing Finar - A Beautiful Jellyfin Client",
-      "zh": "介绍 Finar - 一款美丽的 Jellyfin 客户端",
-      "ru": "Представляем Finar — красивый клиент Jellyfin"
+      "en": "Finar Is Available",
+      "zh": "Finar 已上线",
+      "ru": "Finar уже доступен"
     },
     "caption": {
-      "en": "Meet Finar, our new multi-platform Jellyfin client with glassmorphism design. Releases will be added over the next few hours as they become ready.",
-      "zh": "认识 Finar，我们新的多平台 Jellyfin 客户端，采用玻璃态设计。发布版本将在接下来的几个小时内准备就绪后添加。",
-      "ru": "Встречайте Finar — наш новый мультиплатформенный клиент Jellyfin с дизайном glassmorphism. Релизы будут добавляться в течение следующих нескольких часов по мере готовности."
+      "en": "Finar, our multi-platform Jellyfin client, is now on OpenLyst. Platform builds are added as they finish.",
+      "zh": "Finar（我们的多平台 Jellyfin 客户端）现已上线 OpenLyst。各平台构建完成后会陆续发布。",
+      "ru": "Finar, наш мультиплатформенный клиент Jellyfin, теперь доступен в OpenLyst. Сборки для платформ добавляются по мере готовности."
     },
     "date": "2025-12-25",
     "tintColor": "#6366f1",
@@ -191,14 +191,14 @@
   {
     "identifier": "docan_100_release",
     "title": {
-      "en": "Introducing Docan - AI Chat with Liquid Glass",
-      "zh": "介绍多灿 - 具有液态玻璃设计的 AI 聊天",
-      "ru": "Представляем Docan — AI-чат с Liquid Glass"
+      "en": "Docan Is Available",
+      "zh": "多灿已上线",
+      "ru": "Docan уже доступен"
     },
     "caption": {
-      "en": "Meet Docan, our new universal AI chat application featuring stunning Liquid Glass design.",
-      "zh": "认识多灿，我们新的通用 AI 聊天应用程序，具有令人惊艳的液态玻璃设计。",
-      "ru": "Встречайте Docan — наше новое универсальное приложение для AI-чата с потрясающим дизайном Liquid Glass."
+      "en": "Docan, our cross-platform AI chat app, is now available.",
+      "zh": "多灿（我们的跨平台 AI 聊天应用）现已可用。",
+      "ru": "Docan, наше кроссплатформенное приложение для AI-чата, теперь доступно."
     },
     "date": "2025-12-07",
     "tintColor": "#6366f1",
@@ -215,9 +215,9 @@
       "ru": "BaoBao прекращён — встречайте Klit!"
     },
     "caption": {
-      "en": "BaoBao is being retired in favor of Klit, our new and improved e621 client.",
-      "zh": "BaoBao 正在退役，由我们新的改进版 e621 客户端 Klit 取代。",
-      "ru": "BaoBao прекращается в пользу Klit — нашего нового и улучшенного клиента e621."
+      "en": "BaoBao is being retired in favor of Klit, our new e621 client.",
+      "zh": "BaoBao 正在退役，由新的 e621 客户端 Klit 取代。",
+      "ru": "BaoBao прекращается в пользу Klit — нашего нового клиента e621."
     },
     "date": "2025-12-06",
     "tintColor": "#ff6b35",
@@ -234,9 +234,9 @@
       "ru": "DouDou v6.0.0 выпущен"
     },
     "caption": {
-      "en": "Revolutionary music player now available across all platforms!",
-      "zh": "革命性的音乐播放器现已在所有平台上可用！",
-      "ru": "Революционный музыкальный плеер теперь доступен на всех платформах!"
+      "en": "Doudou music player is now available across all platforms.",
+      "zh": "豆豆音乐播放器现已支持所有平台。",
+      "ru": "Музыкальный плеер Doudou теперь доступен на всех платформах."
     },
     "date": "2025-10-29",
     "tintColor": "#dc2626",
