@@ -11,9 +11,9 @@
     "ru": "Клиент E926 API"
   },
   "localizedDescription": {
-    "en": "The successor to BaoBao. A modern, privacy-focused client for the e621 community. Built with user experience and data protection as top priorities.",
-    "zh": "BaoBao 的继任者。一个现代化、注重隐私的 e621 社区客户端。以用户体验和数据保护为首要目标构建。",
-    "ru": "Преемник BaoBao. Современный клиент для сообщества e621, ориентированный на конфиденциальность. Создан с приоритетом на пользовательский опыт и защиту данных."
+    "en": "Klit is the successor to BaoBao, built for the e621 community with privacy-focused defaults and a fast browsing workflow.",
+    "zh": "Klit 是 BaoBao 的后继应用，为 e621 社区打造，默认注重隐私，并提供快速浏览体验。",
+    "ru": "Klit — преемник BaoBao для сообщества e621 с приватными настройками по умолчанию и быстрым просмотром."
   },
   "iconURL": "/icons/Klit/icon.png",
   "tintColor": "#ff6b35",
