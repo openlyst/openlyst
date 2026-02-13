@@ -6,14 +6,14 @@
     "ru": "Docan"
   },
   "subtitle": {
-    "en": "Universal AI chat application with Liquid Glass design",
-    "zh": "具有液态玻璃设计的通用 AI 聊天应用",
-    "ru": "Универсальное приложение для AI-чата с дизайном Liquid Glass"
+    "en": "AI chat app with Liquid Glass UI",
+    "zh": "采用液态玻璃界面的 AI 聊天应用",
+    "ru": "AI-чат с интерфейсом Liquid Glass"
   },
   "localizedDescription": {
-    "en": "Docan is a universal AI chat application featuring a stunning Liquid Glass design. Connect with various AI providers and enjoy a seamless chat experience across all your devices.",
-    "zh": "多灿是一款具有令人惊艳的液态玻璃设计的通用 AI 聊天应用。连接各种 AI 提供商，在您的所有设备上享受无缝的聊天体验。",
-    "ru": "Docan — универсальное приложение для AI-чата с потрясающим дизайном Liquid Glass. Подключайтесь к различным AI-провайдерам и наслаждайтесь бесперебойным общением на всех ваших устройствах."
+    "en": "Docan is a cross-platform AI chat app. Connect multiple providers and keep conversations in one interface across desktop, mobile, and web.",
+    "zh": "Docan 是一款跨平台 AI 聊天应用。你可以连接多个 AI 提供商，并在桌面、移动端和网页端使用统一的聊天界面。",
+    "ru": "Docan — кроссплатформенное приложение для AI-чата. Подключайте разных AI-провайдеров и ведите диалоги в одном интерфейсе на ПК, мобильных устройствах и в вебе."
   },
   "iconURL": "/icons/Docan/icon.png",
   "tintColor": "#6366f1",
