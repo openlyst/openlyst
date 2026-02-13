@@ -11,9 +11,9 @@
     "ru": "Альтернативный магазин приложений для Android"
   },
   "localizedDescription": {
-    "en": "Alternative app store for iOS*/Android based on repositories compatible with AltStore repos. Browse and install APKs from repositories with a clean, modern interface.",
-    "zh": "基于与 AltStore 仓库兼容的存储库的 iOS*/Android 替代应用商店。使用简洁、现代的界面从存储库浏览和安装 APK。",
-    "ru": "Альтернативный магазин приложений для iOS*/Android на основе репозиториев, совместимых с AltStore. Просматривайте и устанавливайте APK из репозиториев с чистым современным интерфейсом."
+    "en": "RepStore is an alternative app store for iOS*/Android built around AltStore-compatible repositories. Browse repositories and install APKs in one place.",
+    "zh": "RepStore 是面向 iOS*/Android 的替代应用商店，基于与 AltStore 兼容的仓库。你可以在一个地方浏览仓库并安装 APK。",
+    "ru": "RepStore — альтернативный магазин приложений для iOS*/Android на базе репозиториев, совместимых с AltStore. Просматривайте репозитории и устанавливайте APK в одном месте."
   },
   "iconURL": "https://gitlab.com/Openlyst/repstore/-/raw/main/icon.png?ref_type=heads",
   "tintColor": "#10b981",
