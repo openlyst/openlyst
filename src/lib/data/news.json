@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "signing_fixed_finar_200_2026",
+    "title": {
+      "en": "Signing Fixed + Finar 2.0.0",
+      "zh": "签名已修复 + Finar 2.0.0",
+      "ru": "Подпись исправлена + Finar 2.0.0"
+    },
+    "caption": {
+      "en": "Signing is now fixed. Finar has been updated to version 2.0.0.",
+      "zh": "签名问题现已修复。Finar 已更新到 2.0.0 版本。",
+      "ru": "Проблема с подписью исправлена. Finar обновлён до версии 2.0.0."
+    },
+    "date": "2026-02-13",
+    "tintColor": "#10b981",
+    "imageURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
+    "notify": true,
+    "url": "/apps/finar",
+    "appID": "finar"
+  },
+  {
     "identifier": "downloads_fixed_signing_still_broken_2026",
     "title": {
       "en": "Update: Downloads Fixed, Signing Still Broken",
