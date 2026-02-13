@@ -24,7 +24,7 @@
     {
       "version": "2.0.0",
       "date": "2026-02-13",
-      "sourceCode": "",
+      "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/5a6add7ed0feabc15fc507563fe655a84db11344",
       "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
       "platformInstall": {
         "iOS": "Coming soon via AltStore",
