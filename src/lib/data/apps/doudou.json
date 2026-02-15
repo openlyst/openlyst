@@ -33,6 +33,91 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "13.0.0",
+      "date": "2026-02-15",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/0d1d59a8951a749861b887d239b88a285c5081ae",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
+        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI.",
+        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+      },
+      "downloads": {
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "",
+          "aab": "",
+          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+        },
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 13.0.0\n\n- Version bump to 13.0.0.",
+        "zh": "# 13.0.0\n\n- 版本升级至 13.0.0。",
+        "ru": "# 13.0.0\n\n- Версия обновлена до 13.0.0."
+      }
+    },
+    {
       "version": "12.0.1",
       "date": "2026-01-15",
       "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/9128badfb8110270acaf2914d109f143ad509f5e",
