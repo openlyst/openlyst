@@ -105,8 +105,8 @@
           "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Android": {
-          "apk": "",
-          "aab": "",
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-23/doudou-13.0.0-2026-02-15.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-23/doudou-13.0.0-2026-02-15.aab",
           "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
         },
         "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-web.zip"
