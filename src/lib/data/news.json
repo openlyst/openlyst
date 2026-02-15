@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_apk_updates_paused_2026",
+    "title": {
+      "en": "DouDou APK Updates Paused Until Further Notice",
+      "zh": "豆豆 APK 更新暂停，另行通知",
+      "ru": "Обновления APK DouDou приостановлены до дальнейшего уведомления"
+    },
+    "caption": {
+      "en": "We cannot update APKs for DouDou until further notice. We are working hard to fix this.",
+      "zh": "在另行通知之前，我们无法为豆豆更新 APK。我们正在努力修复此问题。",
+      "ru": "Мы не можем обновлять APK для DouDou до дальнейшего уведомления. Мы усердно работаем над исправлением."
+    },
+    "date": "2026-02-15",
+    "tintColor": "#f59e0b",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "signing_fixed_finar_200_2026",
     "title": {
       "en": "Signing Fixed + Finar 2.0.0",
