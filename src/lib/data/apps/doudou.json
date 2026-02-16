@@ -33,6 +33,91 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "14.0.0",
+      "date": "2026-02-16",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/09eba224946e3f087da2141f864ca633a6239041",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
+        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI.",
+        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+      },
+      "downloads": {
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16.aab",
+          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+        },
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 14.0.0\n\n- New UI for both desktop and mobile.\n- Don't show desktop sidebar when on small screens.\n- Remove logging.\n- Expand the about Doudou section.\n- Port the old navbar.\n- Settings scales.\n- New app layouts.\n- Port the now playing screen.\n- Spec bump to 14.0.0.\n- Mobile track now goes left from right.\n- Lyrics icon is now a microphone; only shown when lyrics are available.\n- Fixed animation when reversing a song.",
+        "zh": "# 14.0.0\n\n- 桌面与移动端全新界面。\n- 小屏幕不显示桌面侧边栏。\n- 移除日志。\n- 扩展关于 Doudou 部分。\n- 移植旧导航栏。\n- 设置缩放。\n- 新应用布局。\n- 移植正在播放界面。\n- 版本号升级至 14.0.0。\n- 移动端进度条改为自右向左。\n- 歌词图标改为麦克风；仅在存在歌词时显示。\n- 修复倒放时的动画。",
+        "ru": "# 14.0.0\n\n- Новый интерфейс для десктопа и мобильных.\n- Не показывать боковую панель на маленьких экранах.\n- Удалено логирование.\n- Расширен раздел «О Doudou».\n- Перенесена старая навигационная панель.\n- Масштабирование настроек.\n- Новые макеты приложения.\n- Перенесён экран «Сейчас играет».\n- Обновление версии до 14.0.0.\n- Мобильный трек теперь идёт слева направо.\n- Иконка текста песни заменена на микрофон; показывается только при наличии текста.\n- Исправлена анимация при перемотке назад."
+      }
+    },
+    {
       "version": "13.0.0",
       "date": "2026-02-15",
       "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/0d1d59a8951a749861b887d239b88a285c5081ae",

@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_140_release",
+    "title": {
+      "en": "DouDou v14.0.0 Released",
+      "zh": "豆豆 v14.0.0 发布",
+      "ru": "DouDou v14.0.0 выпущен"
+    },
+    "caption": {
+      "en": "New UI for desktop and mobile, improved layouts, now playing screen, and more.",
+      "zh": "桌面与移动端全新界面、布局改进、正在播放界面等。",
+      "ru": "Новый интерфейс для десктопа и мобильных, улучшенные макеты, экран «Сейчас играет» и другое."
+    },
+    "date": "2026-02-16",
+    "tintColor": "#dc2626",
+    "imageURL": "https://example.com/doudou_release_image.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "moving_to_tauri_2026",
     "title": {
       "en": "Moving to Tauri: Our Path Forward",
