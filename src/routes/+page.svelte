@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Section, AppCard, Button, Skeleton } from '$lib';
+  import LinkifiedText from '$lib/components/LinkifiedText.svelte';
   import { getActiveApps, getAllNews, getRepoConfig, nameToSlug } from '$lib/services/dataService';
   import favicon from '$lib/assets/favicon.svg';
   import { t, language, type SupportedLanguage } from '$lib/stores/language';
@@ -147,10 +148,14 @@
         {#each news.slice(0, 4) as item}
           <article class="glass-card rounded-xl p-6">
             <div class="flex items-center justify-between gap-4 mb-3">
-              <h3 class="text-lg font-semibold text-white">{item.title}</h3>
+              <h3 class="text-lg font-semibold text-white">
+                <LinkifiedText text={item.title} />
+              </h3>
               <span class="text-xs text-gray-400 whitespace-nowrap">{item.date}</span>
             </div>
-            <p class="text-gray-300 text-sm leading-relaxed">{item.caption}</p>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              <LinkifiedText text={item.caption} />
+            </p>
             {#if item.url}
               <div class="mt-4">
                 <a

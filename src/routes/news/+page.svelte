@@ -1,5 +1,8 @@
 <script lang="ts">
   import { Section, Button } from '$lib';
+  import LinkifiedText from '$lib/components/LinkifiedText.svelte';
+  import LinkPreview from '$lib/components/LinkPreview.svelte';
+  import { extractUrls } from '$lib/utils/linkify';
   import { getAllNews } from '$lib/services/dataService';
   import type { NewsItem } from '$lib/types/repo';
   import type { PageData } from './$types';
@@ -66,11 +69,23 @@
         {#each news as item}
           <article class="glass-card rounded-xl p-6">
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-              <h2 class="text-xl font-semibold text-white">{item.title}</h2>
+              <h2 class="text-xl font-semibold text-white">
+                <LinkifiedText text={item.title} />
+              </h2>
               <span class="text-sm text-gray-400">{item.date}</span>
             </div>
 
-            <p class="text-gray-300 leading-relaxed">{item.caption}</p>
+            <p class="text-gray-300 leading-relaxed">
+              <LinkifiedText text={item.caption} />
+            </p>
+
+            {#if extractUrls(item.caption).length > 0}
+              <div class="mt-4 space-y-3">
+                {#each extractUrls(item.caption) as previewUrl}
+                  <LinkPreview url={previewUrl} />
+                {/each}
+              </div>
+            {/if}
 
             <div class="mt-5 flex flex-wrap gap-3">
               {#if item.url}
