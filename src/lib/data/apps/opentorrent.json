@@ -33,6 +33,91 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "2.0.0",
+      "date": "2026-02-17",
+      "sourceCode": "https://gitlab.com/Openlyst/opentorrent/-/tree/4f2f719e7a777b54bf6e57fc55d22f3e73744677",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
+        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask opentorrent",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI.",
+        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+      },
+      "downloads": {
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-32/opentorrent-2.0.0-2026-02-17-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-32/opentorrent-2.0.0-2026-02-17-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-32/opentorrent-2.0.0-2026-02-17-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-32/opentorrent-2.0.0-2026-02-17-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-32/opentorrent-2.0.0-2026-02-17-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "homebrew": ""
+        },
+        "Android": {
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-32/opentorrent-2.0.0-2026-02-17.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-32/opentorrent-2.0.0-2026-02-17.aab",
+          "apkpure": ""
+        },
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-32/opentorrent-2.0.0-2026-02-17-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 2.0.0\n\n- fixed sub-buttons on ios theme\n- fixed navbar white coloured on ios\n- better iso support\n- new ios theme\n- System option for design system\n- Change your login from the login screen\n- start on v2\n- Torznab search category label: show \"Adult\" instead of placeholder \"XXX\"\n- Add torrent page: scrollable layout so options and button do not overflow on small screens\n- Torrent detail: localized tab labels and loading/error/not-found messages\n- Login page: localized connection messages and default server name\n- Settings and server preferences: localized update-check messages and preferences saved / not connected\n- Torrent list: localized Select All tooltip, selected count, and delete confirmation\n- Adaptive navigation: use CupertinoPageRoute when design system is Cupertino (torrent list, settings, server selection)\n- Torrent list: Cupertino-style scaffold and nav bar when design system is Cupertino\n- Add torrent: Cupertino scaffold with segmented control when design system is Cupertino\n- Torrent detail: Cupertino scaffold with segmented control for tabs when design system is Cupertino\n- Desktop: minimize/close to system tray using window_manager and tray_manager\n- Desktop: global download/upload speed shown in sidebar (Material and Cupertino layouts)\n- Torrent list: fix \"No Material widget found\" for FilterChip when using Cupertino design (wrap filter bar in Material)\n- Fix Formatters usage: use formatDownloadSpeed/formatUploadSpeed instead of formatSpeedDown/formatSpeedUp",
+        "zh": "# 2.0.0\n\n- fixed sub-buttons on ios theme\n- fixed navbar white coloured on ios\n- better iso support\n- new ios theme\n- System option for design system\n- Change your login from the login screen\n- start on v2\n- Torznab search category label: show \"Adult\" instead of placeholder \"XXX\"\n- Add torrent page: scrollable layout so options and button do not overflow on small screens\n- Torrent detail: localized tab labels and loading/error/not-found messages\n- Login page: localized connection messages and default server name\n- Settings and server preferences: localized update-check messages and preferences saved / not connected\n- Torrent list: localized Select All tooltip, selected count, and delete confirmation\n- Adaptive navigation: use CupertinoPageRoute when design system is Cupertino (torrent list, settings, server selection)\n- Torrent list: Cupertino-style scaffold and nav bar when design system is Cupertino\n- Add torrent: Cupertino scaffold with segmented control when design system is Cupertino\n- Torrent detail: Cupertino scaffold with segmented control for tabs when design system is Cupertino\n- Desktop: minimize/close to system tray using window_manager and tray_manager\n- Desktop: global download/upload speed shown in sidebar (Material and Cupertino layouts)\n- Torrent list: fix \"No Material widget found\" for FilterChip when using Cupertino design (wrap filter bar in Material)\n- Fix Formatters usage: use formatDownloadSpeed/formatUploadSpeed instead of formatSpeedDown/formatSpeedUp",
+        "ru": "# 2.0.0\n\n- fixed sub-buttons on ios theme\n- fixed navbar white coloured on ios\n- better iso support\n- new ios theme\n- System option for design system\n- Change your login from the login screen\n- start on v2\n- Torznab search category label: show \"Adult\" instead of placeholder \"XXX\"\n- Add torrent page: scrollable layout so options and button do not overflow on small screens\n- Torrent detail: localized tab labels and loading/error/not-found messages\n- Login page: localized connection messages and default server name\n- Settings and server preferences: localized update-check messages and preferences saved / not connected\n- Torrent list: localized Select All tooltip, selected count, and delete confirmation\n- Adaptive navigation: use CupertinoPageRoute when design system is Cupertino (torrent list, settings, server selection)\n- Torrent list: Cupertino-style scaffold and nav bar when design system is Cupertino\n- Add torrent: Cupertino scaffold with segmented control when design system is Cupertino\n- Torrent detail: Cupertino scaffold with segmented control for tabs when design system is Cupertino\n- Desktop: minimize/close to system tray using window_manager and tray_manager\n- Desktop: global download/upload speed shown in sidebar (Material and Cupertino layouts)\n- Torrent list: fix \"No Material widget found\" for FilterChip when using Cupertino design (wrap filter bar in Material)\n- Fix Formatters usage: use formatDownloadSpeed/formatUploadSpeed instead of formatSpeedDown/formatSpeedUp"
+      }
+    },
+    {
       "version": "1.0.0",
       "date": "2026-01-14",
       "sourceCode": "https://gitlab.com/Openlyst/opentorrent/-/tree/20d2dd15d0cf61a090837cb3165ed3fc4f11c053",
@@ -98,7 +183,7 @@
             "x86_64": "",
             "arm64": ""
           },
-          "aur": { 
+          "aur": {
             "x86_64": "",
             "arm64": ""
           },
