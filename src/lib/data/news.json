@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "docan_finar_apkpure_2026",
+    "title": {
+      "en": "Docan and Finar Join APKPure with Doudou",
+      "zh": "Docan 和 Finar 与 Doudou 一同登陆 APKPure",
+      "ru": "Docan и Finar присоединились к APKPure вместе с Doudou"
+    },
+    "caption": {
+      "en": "Docan and Finar are now on APKPure alongside Doudou. We are super proud of this. Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar",
+      "zh": "Docan 和 Finar 现已与 Doudou 一起登陆 APKPure，我们为此感到非常自豪。Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar",
+      "ru": "Docan и Finar теперь на APKPure вместе с Doudou. Мы очень гордимся этим. Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar"
+    },
+    "date": "2026-02-17",
+    "tintColor": "#10b981",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
     "identifier": "doudou_140_release",
     "title": {
       "en": "DouDou v14.0.0 Released",
