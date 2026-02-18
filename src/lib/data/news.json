@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_spotify_support_canceled_2026",
+    "title": {
+      "en": "Spotify Support Canceled for Doudou",
+      "zh": "豆豆取消 Spotify 支持",
+      "ru": "Поддержка Spotify отменена для Doudou"
+    },
+    "caption": {
+      "en": "Support for Spotify has been canceled for Doudou due to Spotify supporting I.E.E. and other MAGA US politics. We do not support those nazis.",
+      "zh": "由于 Spotify 支持 I.E.E. 和其他 MAGA 美国政治，豆豆已取消对 Spotify 的支持。我们不支持那些纳粹。",
+      "ru": "Поддержка Spotify отменена для Doudou из-за поддержки Spotify I.E.E. и других политик MAGA в США. Мы не поддерживаем этих нацистов."
+    },
+    "date": "2026-02-18",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "docan_finar_apkpure_2026",
     "title": {
       "en": "Docan and Finar Join APKPure with Doudou",
