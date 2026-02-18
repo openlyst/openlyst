@@ -11,13 +11,13 @@
     "ru": "Альтернативный магазин приложений для Android"
   },
   "localizedDescription": {
-    "en": "RepStore is an alternative app store for iOS*/Android built around AltStore-compatible repositories. Browse repositories and install APKs in one place.",
-    "zh": "RepStore 是面向 iOS*/Android 的替代应用商店，基于与 AltStore 兼容的仓库。你可以在一个地方浏览仓库并安装 APK。",
-    "ru": "RepStore — альтернативный магазин приложений для iOS*/Android на базе репозиториев, совместимых с AltStore. Просматривайте репозитории и устанавливайте APK в одном месте."
+    "en": "RepStore is an alternative app store for Android built around AltStore-compatible repositories. Browse repositories and install APKs in one place.",
+    "zh": "RepStore 是面向 Android 的替代应用商店，基于与 AltStore 兼容的仓库。你可以在一个地方浏览仓库并安装 APK。",
+    "ru": "RepStore — альтернативный магазин приложений для Android на базе репозиториев, совместимых с AltStore. Просматривайте репозитории и устанавливайте APK в одном месте."
   },
   "iconURL": "https://gitlab.com/Openlyst/repstore/-/raw/main/icon.png?ref_type=heads",
   "tintColor": "#10b981",
-  "platforms": ["iOS", "Android", "macOS", "Windows", "Linux"],
+  "platforms": ["Android"],
   "screenshots": [
     "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/app.png?ref_type=heads",
     "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/home.png?ref_type=heads",
@@ -31,37 +31,14 @@
       "version": "3.1.0",
       "date": "2026-01-12",
       "sourceCode": "",
-      "platforms": ["iOS", "Android", "macOS", "Windows", "Linux"],
+      "platforms": ["Android"],
       "platformInstall": {
-        "iOS": "Coming soon via AltStore",
-        "Android": "Download the APK directly from our repository",
-        "macOS": "Download from GitLab CI or compile from source",
-        "Windows": "Download from GitLab CI or compile from source",
-        "Linux": "Download from GitLab CI or compile from source"
+        "Android": "Download the APK directly from our repository"
       },
       "downloads": {
-        "iOS": "",
         "Android": {
           "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/repstore-3.1.0-2026-02-08.apk",
           "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/repstore-3.1.0-2026-02-08.aab"
-        },
-        "macOS": {
-          "x86_64": "",
-          "arm64": "",
-          "universal": "",
-          "homebrew": ""
-        },
-        "Windows": {
-          "zip": {
-            "x86_64": "",
-            "arm64": ""
-          }
-        },
-        "Linux": {
-          "zip": {
-            "x86_64": "",
-            "arm64": ""
-          }
         }
       },
       "localizedDescription": {
