@@ -22,8 +22,7 @@
     "macOS",
     "Windows",
     "Linux",
-    "Android",
-    "Web"
+    "Android"
   ],
   "screenshots": [
     "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/photos/doudou/7.0.0/home.PNG?ref_type=heads",
@@ -41,16 +40,14 @@
         "macOS",
         "Windows",
         "Linux",
-        "Android",
-        "Web"
+        "Android"
       ],
       "platformInstall": {
         "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
-        "Linux": "Download the latest Linux build from GitLab CI.",
-        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+        "Linux": "Download the latest Linux build from GitLab CI."
       },
       "downloads": {
         "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-ios-unsigned.ipa",
@@ -126,16 +123,14 @@
         "macOS",
         "Windows",
         "Linux",
-        "Android",
-        "Web"
+        "Android"
       ],
       "platformInstall": {
         "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
-        "Linux": "Download the latest Linux build from GitLab CI.",
-        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+        "Linux": "Download the latest Linux build from GitLab CI."
       },
       "downloads": {
         "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-ios-unsigned.ipa",
@@ -211,16 +206,14 @@
         "macOS",
         "Windows",
         "Linux",
-        "Android",
-        "Web"
+        "Android"
       ],
       "platformInstall": {
         "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
-        "Linux": "Download the latest Linux build from GitLab CI.",
-        "Web": "Access the web version at https://gitlab.com/Openlyst/doudou/-/blob/main/docs/DOCKER.md?ref_type=heads"
+        "Linux": "Download the latest Linux build from GitLab CI."
       },
       "downloads": {
         "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/doudou-12.1.0-2026-02-08-ios-unsigned.ipa",
