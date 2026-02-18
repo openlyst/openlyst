@@ -16,7 +16,7 @@
   }: Props = $props();
 
   const baseClasses =
-    "inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
+    "inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 btn-interactive";
 
   const variantClasses = {
     primary: "bg-gradient-to-r from-purple-600 to-violet-600 text-white hover:from-purple-500 hover:to-violet-500 focus:ring-purple-500 shadow-lg shadow-purple-500/25",

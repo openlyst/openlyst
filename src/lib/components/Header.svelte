@@ -27,7 +27,7 @@
     <div class="flex h-16 justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="/" class="flex items-center space-x-2">
+        <a href="/" class="header-logo-link flex items-center space-x-2">
           <img src={favicon} alt="OpenLyst Logo" class="w-8 h-8" />
           <span class="text-xl font-bold">OpenLyst</span>
         </a>

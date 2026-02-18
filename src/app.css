@@ -214,4 +214,191 @@
     font-family: 'Courier New', monospace;
     color: #fca5a5;
   }
+
+  /* ========== Fun mode: interactive, playful UI (excluded from /docs/api) ========== */
+  .fun-mode .glass-card,
+  .fun-mode .card,
+  .fun-mode header a,
+  .fun-mode header button,
+  .fun-mode footer a,
+  .fun-mode .btn-interactive {
+    touch-action: manipulation;
+  }
+
+  .fun-mode .glass-card {
+    cursor: default;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode .glass-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 40px -12px rgba(139, 92, 246, 0.35);
+    }
+  }
+
+  .fun-mode .glass-card:active {
+    transform: translateY(-2px) scale(0.99);
+    transition-duration: 0.1s;
+  }
+
+  .fun-mode .card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 28px 56px -12px rgba(139, 92, 246, 0.3);
+    }
+  }
+
+  .fun-mode .card:active {
+    transform: translateY(-2px) scale(0.99);
+    transition-duration: 0.1s;
+  }
+
+  .fun-mode .header-logo-link {
+    transition: transform 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode .header-logo-link:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .fun-mode .header-logo-link:active {
+    transform: scale(0.98);
+  }
+
+  .fun-mode header nav a,
+  .fun-mode header nav button {
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode header nav a:hover,
+    .fun-mode header nav button:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .fun-mode header nav a:active,
+  .fun-mode header nav button:active {
+    transform: scale(0.98);
+  }
+
+  .fun-mode footer a {
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+  }
+
+  @media (hover: hover) {
+    .fun-mode footer a:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  .fun-mode footer a:active {
+    transform: scale(0.97);
+  }
+
+  .fun-mode a.inline-flex.items-center.justify-center.font-medium.rounded-md,
+  .fun-mode .btn-interactive {
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode a.inline-flex.items-center.justify-center.font-medium.rounded-md:hover,
+    .fun-mode .btn-interactive:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .fun-mode a.inline-flex.items-center.justify-center.font-medium.rounded-md:active,
+  .fun-mode .btn-interactive:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .fun-mode .platform-tag {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode .platform-tag:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .fun-mode section.bg-gray-800.rounded-lg,
+  .fun-mode .bg-gray-800.rounded-lg {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode section.bg-gray-800.rounded-lg:hover,
+    .fun-mode .bg-gray-800.rounded-lg:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .fun-mode [class*="bg-white/10"][class*="backdrop-blur"] {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode [class*="bg-white/10"][class*="backdrop-blur"]:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  .fun-mode .glass-card.rounded-full {
+    transition: transform 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    .fun-mode .glass-card.rounded-full:hover {
+      transform: scale(1.08) rotate(5deg);
+    }
+  }
+
+  .fun-mode .glass-card.rounded-full:active {
+    transform: scale(0.95);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fun-mode .glass-card,
+    .fun-mode .card,
+    .fun-mode .header-logo-link,
+    .fun-mode header nav a,
+    .fun-mode header nav button,
+    .fun-mode footer a,
+    .fun-mode a.inline-flex.items-center.justify-center.font-medium.rounded-md,
+    .fun-mode .btn-interactive,
+    .fun-mode .platform-tag,
+    .fun-mode .bg-gray-800.rounded-lg,
+    .fun-mode [class*="bg-white/10"][class*="backdrop-blur"],
+    .fun-mode .glass-card.rounded-full {
+      transition-duration: 0.01ms;
+    }
+
+    .fun-mode .glass-card:hover,
+    .fun-mode .card:hover,
+    .fun-mode .glass-card:active,
+    .fun-mode .card:active,
+    .fun-mode .header-logo-link:hover,
+    .fun-mode .header-logo-link:active,
+    .fun-mode header nav a:hover,
+    .fun-mode header nav a:active,
+    .fun-mode footer a:hover,
+    .fun-mode footer a:active,
+    .fun-mode .glass-card.rounded-full:hover,
+    .fun-mode .glass-card.rounded-full:active,
+    .fun-mode [class*="bg-white/10"][class*="backdrop-blur"]:hover {
+      transform: none;
+    }
+  }
 }
