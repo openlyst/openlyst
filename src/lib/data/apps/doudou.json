@@ -32,6 +32,89 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "15.0.0",
+      "date": "2026-02-19",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/78a8685e79c35d957584acf44dfca9f0459c367a",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
+        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-39/doudou-15.0.0-2026-02-19.aab",
+          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+        },
+        "Web": ""
+      },
+      "localizedDescription": {
+        "en": "# 15.0.0\n\nFinal Flutter release of Doudou. After this version we are doing a complete rewrite for a more stable and less laggy experience. See the source repository for the full changelog.",
+        "zh": "# 15.0.0\n\n豆豆的最后一个 Flutter 版本。此版本之后我们将进行完整重写，以提供更稳定、更流畅的体验。完整更新日志请见源代码仓库。",
+        "ru": "# 15.0.0\n\nФинальный релиз Doudou на Flutter. После этой версии мы делаем полную переработку для более стабильной и отзывчивой работы. Полный список изменений см. в репозитории исходного кода."
+      }
+    },
+    {
       "version": "14.0.0",
       "date": "2026-02-16",
       "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/09eba224946e3f087da2141f864ca633a6239041",

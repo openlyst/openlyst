@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_150_final_flutter_2026",
+    "title": {
+      "en": "Doudou v15.0.0 — Final Flutter Release",
+      "zh": "豆豆 v15.0.0 — 最后一个 Flutter 版本",
+      "ru": "Doudou v15.0.0 — финальный релиз на Flutter"
+    },
+    "caption": {
+      "en": "This is the final version of Doudou made in Flutter. After this version we are doing a complete rewrite into something a lot more stable and less laggy.",
+      "zh": "这是豆豆在 Flutter 上的最后一个版本。此版本之后我们将进行完整重写，打造更稳定、更流畅的应用。",
+      "ru": "Это финальная версия Doudou на Flutter. После неё мы делаем полную переработку в более стабильное и отзывчивое приложение."
+    },
+    "date": "2026-02-19",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "doudou_spotify_support_canceled_2026",
     "title": {
       "en": "Spotify Support Canceled for Doudou",
