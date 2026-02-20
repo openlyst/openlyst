@@ -1,15 +1,15 @@
 [
   {
-    "identifier": "doudou_150_final_flutter_2026",
+    "identifier": "doudou_prefer_stable_old_version_2026",
     "title": {
-      "en": "Doudou v15.0.0 — Final Flutter Release",
-      "zh": "豆豆 v15.0.0 — 最后一个 Flutter 版本",
-      "ru": "Doudou v15.0.0 — финальный релиз на Flutter"
+      "en": "We're Sorry — Staying on a Good Old Version",
+      "zh": "致歉 — 我们选择保留稳定旧版本",
+      "ru": "Мы сожалеем — остаёмся на стабильной старой версии"
     },
     "caption": {
-      "en": "This is the final version of Doudou made in Flutter. After this version we are doing a complete rewrite into something a lot more stable and less laggy.",
-      "zh": "这是豆豆在 Flutter 上的最后一个版本。此版本之后我们将进行完整重写，打造更稳定、更流畅的应用。",
-      "ru": "Это финальная версия Doudou на Flutter. После неё мы делаем полную переработку в более стабильное и отзывчивое приложение."
+      "en": "We are sorry, but we would much rather users have a good experience with an old version than a new update with a terrible experience.",
+      "zh": "我们深表歉意，但我们更希望用户能在旧版本上获得良好体验，而不是在新更新中遭遇糟糕的体验。",
+      "ru": "Мы сожалеем, но мы предпочитаем, чтобы у пользователей был хороший опыт со старой версией, чем плохой — с новым обновлением."
     },
     "date": "2026-02-19",
     "tintColor": "#dc2626",
