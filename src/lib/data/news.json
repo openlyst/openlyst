@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "finar_klit_rust_tauri_roadmap_2026",
+    "title": {
+      "en": "Finar and Klit Join the Rust Roadmap",
+      "zh": "Finar 与 Klit 加入 Rust 路线图",
+      "ru": "Finar и Klit присоединяются к Rust-дорожной карте"
+    },
+    "caption": {
+      "en": "Finar and Klit have both been rewritten into Tauri, which is our main stack for now. They will come out any day now. We are super excited to show you these new apps — they are faster, smoother, less buggy and jank. We are still sad we had to leave Flutter, but it left us no other option; we just could not ruin apps, so they're native now.",
+      "zh": "Finar 和 Klit 均已用 Tauri 重写，Tauri 是我们目前的主技术栈。它们即将发布。我们非常期待向大家展示这些新应用——更快、更流畅、更少卡顿与 bug。我们仍对离开 Flutter 感到遗憾，但别无选择；我们无法眼睁睁看着应用变糟，所以它们现在是原生应用。",
+      "ru": "Finar и Klit полностью переписаны на Tauri — нашем текущем основном стеке. Они выйдут со дня на день. Мы очень рады показать вам эти приложения — они быстрее, плавнее, с меньшим количеством багов и лагов. Нам по-прежнему грустно, что пришлось уйти с Flutter, но он не оставил нам выбора; мы не могли позволить приложениям деградировать, поэтому теперь они нативные."
+    },
+    "date": "2026-02-20",
+    "tintColor": "#6366f1",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
     "identifier": "doudou_prefer_stable_old_version_2026",
     "title": {
       "en": "We're Sorry — Staying on a Good Old Version",
