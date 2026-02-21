@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "github_banned_again_self_infra_2026",
+    "title": {
+      "en": "GitHub Access Revoked — Again. We're Building Our Own Infrastructure.",
+      "zh": "GitHub 再次封禁 — 我们正在自建基础设施",
+      "ru": "Доступ к GitHub снова отозван — строим собственную инфраструктуру"
+    },
+    "caption": {
+      "en": "We have once again been banned from GitHub. We are deeply disappointed in GitHub's continued hostile and arbitrary enforcement, which has repeatedly disrupted our ability to serve our users. We do not find their conduct acceptable. Downloads will be unavailable for a period while we address this. Rather than remain dependent on a platform that has proven unreliable and adversarial, we are building our own infrastructure so we can deliver our apps without being at the mercy of third-party gatekeepers. We apologize for the inconvenience and thank you for your patience.",
+      "zh": "我们再次遭到 GitHub 封禁。我们对 GitHub 持续敌对且武断的执法深感失望，这已多次影响我们为用户提供服务的能力。我们认为其行为不可接受。在解决此事期间，下载将暂时不可用。我们不愿继续依赖已被证明不可靠且充满敌意的平台，因此正在自建基础设施，以便在不受第三方掣肘的情况下交付我们的应用。对由此带来的不便深表歉意，感谢您的耐心。",
+      "ru": "Нас снова заблокировали на GitHub. Мы крайне разочарованы продолжающейся враждебной и произвольной политикой GitHub, которая неоднократно мешала нам обслуживать пользователей. Мы считаем такое поведение неприемлемым. Загрузки будут недоступны в течение некоторого времени, пока мы решаем эту проблему. Вместо того чтобы оставаться зависимыми от платформы, которая показала себя ненадёжной и враждебной, мы строим собственную инфраструктуру, чтобы доставлять приложения без оглядки на сторонних привратников. Приносим извинения за неудобства и благодарим за терпение."
+    },
+    "date": "2026-02-21",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
     "identifier": "finar_klit_rust_roadmap_2026",
     "title": {
       "en": "Finar and Klit Join the Rust Roadmap",
