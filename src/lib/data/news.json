@@ -1,15 +1,15 @@
 [
   {
-    "identifier": "finar_klit_rust_tauri_roadmap_2026",
+    "identifier": "finar_klit_rust_roadmap_2026",
     "title": {
       "en": "Finar and Klit Join the Rust Roadmap",
       "zh": "Finar 与 Klit 加入 Rust 路线图",
       "ru": "Finar и Klit присоединяются к Rust-дорожной карте"
     },
     "caption": {
-      "en": "Finar and Klit have both been rewritten into Tauri, which is our main stack for now. They will come out any day now. We are super excited to show you these new apps — they are faster, smoother, less buggy and jank. We are still sad we had to leave Flutter, but it left us no other option; we just could not ruin apps, so they're native now.",
-      "zh": "Finar 和 Klit 均已用 Tauri 重写，Tauri 是我们目前的主技术栈。它们即将发布。我们非常期待向大家展示这些新应用——更快、更流畅、更少卡顿与 bug。我们仍对离开 Flutter 感到遗憾，但别无选择；我们无法眼睁睁看着应用变糟，所以它们现在是原生应用。",
-      "ru": "Finar и Klit полностью переписаны на Tauri — нашем текущем основном стеке. Они выйдут со дня на день. Мы очень рады показать вам эти приложения — они быстрее, плавнее, с меньшим количеством багов и лагов. Нам по-прежнему грустно, что пришлось уйти с Flutter, но он не оставил нам выбора; мы не могли позволить приложениям деградировать, поэтому теперь они нативные."
+      "en": "Finar and Klit have both been rewritten as native apps, which is our main stack for now. They will come out any day now. We are super excited to show you these new apps — they are faster, smoother, less buggy and jank. We are still sad we had to leave Flutter, but it left us no other option; we just could not ruin apps, so they're native now.",
+      "zh": "Finar 和 Klit 均已重写为原生应用，这是我们目前的主技术栈。它们即将发布。我们非常期待向大家展示这些新应用——更快、更流畅、更少卡顿与 bug。我们仍对离开 Flutter 感到遗憾，但别无选择；我们无法眼睁睁看着应用变糟，所以它们现在是原生应用。",
+      "ru": "Finar и Klit полностью переписаны как нативные приложения — наш текущий основной стек. Они выйдут со дня на день. Мы очень рады показать вам эти приложения — они быстрее, плавнее, с меньшим количеством багов и лагов. Нам по-прежнему грустно, что пришлось уйти с Flutter, но он не оставил нам выбора; мы не могли позволить приложениям деградировать, поэтому теперь они нативные."
     },
     "date": "2026-02-20",
     "tintColor": "#6366f1",
@@ -95,16 +95,16 @@
     "appID": "doudou"
   },
   {
-    "identifier": "moving_to_tauri_2026",
+    "identifier": "path_forward_2026",
     "title": {
-      "en": "Moving to Tauri: Our Path Forward",
-      "zh": "转向 Tauri：我们的前进方向",
-      "ru": "Переход на Tauri: наш путь вперёд"
+      "en": "Our Path Forward",
+      "zh": "我们的前进方向",
+      "ru": "Наш путь вперёд"
     },
     "caption": {
-      "en": "This was one of the hardest decisions we've had to make. We are moving away from Flutter for future applications—Flutter's performance and design simply weren't meeting our standards. Some of our existing applications will be ported to Tauri. Tauri will be the base for everything we build from here on, except for the main official website. Thank you for your understanding and support.",
-      "zh": "这是我们做过的最艰难的决定之一。我们将在未来的应用中逐步告别 Flutter——Flutter 的性能和设计已无法满足我们的标准。部分现有应用将迁移到 Tauri。除主官网外，Tauri 将成为我们一切新项目的基础。感谢大家的理解与支持。",
-      "ru": "Это было одно из самых сложных решений для нас. Мы отказываемся от Flutter в пользу будущих приложений — производительность и дизайн Flutter не соответствовали нашим стандартам. Некоторые из наших приложений будут перенесены на Tauri. Tauri станет основой для всего, что мы создаём, кроме основного официального сайта. Спасибо за понимание и поддержку."
+      "en": "This was one of the hardest decisions we've had to make. We are moving away from Flutter for future applications—Flutter's performance and design simply weren't meeting our standards. Some of our existing applications will be ported to our new native stack. Native will be the base for everything we build from here on, except for the main official website. Thank you for your understanding and support.",
+      "zh": "这是我们做过的最艰难的决定之一。我们将在未来的应用中逐步告别 Flutter——Flutter 的性能和设计已无法满足我们的标准。部分现有应用将迁移到新的原生技术栈。除主官网外，原生技术栈将成为我们一切新项目的基础。感谢大家的理解与支持。",
+      "ru": "Это было одно из самых сложных решений для нас. Мы отказываемся от Flutter в пользу будущих приложений — производительность и дизайн Flutter не соответствовали нашим стандартам. Некоторые из наших приложений будут перенесены на наш новый нативный стек. Нативный стек станет основой для всего, что мы создаём, кроме основного официального сайта. Спасибо за понимание и поддержку."
     },
     "date": "2026-02-15",
     "tintColor": "#6366f1",
