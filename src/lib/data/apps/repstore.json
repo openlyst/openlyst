@@ -57,8 +57,8 @@
       },
       "downloads": {
         "Android": {
-          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/repstore-3.1.0-2026-02-08.apk",
-          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-1/repstore-3.1.0-2026-02-08.aab"
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/repstore-3.1.0-2026-02-22.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/repstore-3.1.0-2026-02-08.aab"
         }
       },
       "localizedDescription": {
