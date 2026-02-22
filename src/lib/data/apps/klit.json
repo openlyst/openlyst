@@ -45,7 +45,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
+        "iOS": "https://cdn.jsdelivr.net/gh/openlyst/builds@main/repo/apps.json",
         "Android": "Use RepStore to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
@@ -53,7 +53,7 @@
         "Web": "Access the web version"
       },
       "repos": {
-        "iOS": "https://cdn.jsdelivr.net/gh/HttpAnimation/Openlyst-more-builds@main/repo/apps.json",
+        "iOS": "https://cdn.jsdelivr.net/gh/openlyst/builds@main/repo/apps.json",
         "macOS": {
           "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         }

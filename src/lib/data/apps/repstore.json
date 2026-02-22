@@ -28,6 +28,26 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "3.2.0",
+      "date": "2026-02-22",
+      "sourceCode": "https://gitlab.com/Openlyst/repstore/-/tree/6228381dc89f9df35906882397d45471e517d934",
+      "platforms": ["Android"],
+      "platformInstall": {
+        "Android": "Download the APK directly from our repository"
+      },
+      "downloads": {
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-3/repstore-3.2.0-2026-02-22.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-3/repstore-3.2.0-2026-02-22.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 3.2.0\n\n## Changed\n- Support OpenLyst API `tempDownloadsOff` flag: when the repo has downloads temporarily disabled, the app shows \"Unavailable\" for install/update and a message that hosted builds are temporarily unavailable\n- Share app from app detail (More menu) shares app name, subtitle, and repo link\n- Report Issue in app detail opens repository website or support URL\n- App detail desktop sidebar: Website and Support open repository website when available\n- News cards: share uses system share with title, caption, and URL\n- App version in API User-Agent and elsewhere now comes from pubspec (via PackageInfo at startup)\n\n## Added\n- APKPure as an optional repository source (enable in Settings). Browse and search APKPure apps; install via in-app download. Data is loaded from the APKPure website.\n\n## Fixed\n- F-Droid repository now loads all apps instead of only 100\n- Lint: prefer conditional assignment, use_build_context_synchronously, unnecessary getters/setters",
+        "zh": "# 3.2.0\n\n## 更改\n- 支持 OpenLyst API tempDownloadsOff 标志：仓库临时关闭下载时，应用显示「不可用」及托管构建暂时不可用的提示\n- 应用详情更多菜单分享应用名称、副标题和仓库链接\n- 应用详情中的「报告问题」打开仓库网站或支持链接\n- 应用详情桌面侧栏：网站与支持在可用时打开仓库网站\n- 新闻卡片：分享使用系统分享，含标题、说明和链接\n- API User-Agent 等处的应用版本现来自 pubspec（启动时通过 PackageInfo）\n\n## 新增\n- APKPure 作为可选仓库源（在设置中启用）。浏览和搜索 APKPure 应用，应用内下载安装。数据来自 APKPure 网站。\n\n## 修复\n- F-Droid 仓库现加载全部应用而非仅 100 个\n- Lint：条件赋值、use_build_context_synchronously、不必要的 getter/setter",
+        "ru": "# 3.2.0\n\n## Изменено\n- Поддержка флага OpenLyst API tempDownloadsOff: при временном отключении загрузок показывается «Недоступно» и сообщение о временной недоступности сборок\n- Поделиться из деталей приложения (меню Ещё) передаёт название, подзаголовок и ссылку на репозиторий\n- «Сообщить о проблеме» в деталях открывает сайт репозитория или URL поддержки\n- Боковая панель на десктопе: Сайт и Поддержка открывают сайт репозитория при наличии\n- Карточки новостей: общий доступ через системный шаринг с заголовком, подписью и URL\n- Версия приложения в User-Agent API и др. теперь берётся из pubspec (через PackageInfo при запуске)\n\n## Добавлено\n- APKPure как опциональный источник (включить в Настройках). Просмотр и поиск приложений APKPure, установка через загрузку в приложении. Данные с сайта APKPure.\n\n## Исправлено\n- Репозиторий F-Droid теперь загружает все приложения, а не только 100\n- Lint: условное присваивание, use_build_context_synchronously, лишние геттеры/сеттеры"
+      }
+    },
+    {
       "version": "3.1.0",
       "date": "2026-01-12",
       "sourceCode": "",
