@@ -35,7 +35,7 @@
     {
       "version": "7.0.0",
       "date": "2026-01-18",
-      "sourceCode": "",
+      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/4d06d6e18f9c9467a4cf44c79916e7371bc3328f",
       "platforms": [
         "iOS",
         "macOS",
