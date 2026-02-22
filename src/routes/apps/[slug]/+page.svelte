@@ -32,7 +32,7 @@
   let lightboxIndex = $state(0);
 
   /** When true, downloads are temporarily disabled (e.g. hosted builds banned). Shows notice and blurs download section. */
-  const tempDownloadsOff = true;
+  const tempDownloadsOff = data.tempDownloadsOff ?? false;
   
   // Subscribe to language changes and reload data (only on client-side language changes)
   $effect(() => {

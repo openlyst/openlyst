@@ -378,6 +378,8 @@
     "downloadStructure": "Структура загрузок",
     "downloadStructureSubtitle": "Понимание форматов загрузки для разных платформ",
     "downloadsFieldDesc": "Поле downloads в объектах версий содержит URL-адреса загрузки для конкретных платформ. Разные платформы поддерживают разные типы установщиков и архитектуры.",
+    "tempDownloadsOffLabel": "Флаг репозитория: tempDownloadsOff",
+    "tempDownloadsOffDesc": "Эндпоинт репозитория (GET /api/v1/repo) может возвращать tempDownloadsOff: true. При true клиенты должны скрывать или отключать UI загрузок и показывать соответствующее сообщение (например, что хостинг-сборки временно недоступны).",
     "windowsDownloads": "Загрузки для Windows",
     "windowsDownloadsDesc": "Windows поддерживает несколько типов установщиков и менеджеров пакетов.",
     "linuxDownloads": "Загрузки для Linux",

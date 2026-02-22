@@ -154,4 +154,6 @@ export interface RepoConfig {
   featuredApps: string[];
   apps: App[];
   news: NewsItem[];
+  /** When true, downloads are temporarily disabled. Other apps should hide/disable download UI. */
+  tempDownloadsOff?: boolean;
 }

@@ -68,6 +68,8 @@ export interface LocalizedConfig {
   featuredApps: string[];
   supportedLanguages: string[];
   defaultLanguage: string;
+  /** When true, downloads are temporarily disabled (e.g. hosted builds banned). Other apps should hide/disable download UI. */
+  tempDownloadsOff?: boolean;
 }
 
 export interface I18nStrings {
@@ -313,7 +315,8 @@ export async function getRepoConfig(lang: SupportedLanguage = DEFAULT_LANGUAGE):
     tintColor: config.tintColor,
     featuredApps: config.featuredApps,
     apps: apps.map(app => localizedAppToApp(app, lang)),
-    news: news.map(n => localizedNewsToNews(n, lang))
+    news: news.map(n => localizedNewsToNews(n, lang)),
+    tempDownloadsOff: config.tempDownloadsOff
   };
 }
 

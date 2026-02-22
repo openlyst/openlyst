@@ -378,6 +378,8 @@
     "downloadStructure": "Download Structure",
     "downloadStructureSubtitle": "Understanding the platform-specific download formats",
     "downloadsFieldDesc": "The downloads field in version objects contains platform-specific download URLs. Different platforms support different installer types and architectures.",
+    "tempDownloadsOffLabel": "Repository flag: tempDownloadsOff",
+    "tempDownloadsOffDesc": "The repo endpoint (GET /api/v1/repo) may include tempDownloadsOff: true. When true, clients should hide or disable download UI and show an appropriate message (e.g. that hosted builds are temporarily unavailable).",
     "windowsDownloads": "Windows Downloads",
     "windowsDownloadsDesc": "Windows supports multiple installer types and package managers.",
     "linuxDownloads": "Linux Downloads",

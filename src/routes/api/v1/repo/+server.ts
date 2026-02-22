@@ -20,7 +20,8 @@ export const GET: RequestHandler = async ({ url }) => {
         tintColor: config.tintColor,
         featuredApps: config.featuredApps,
         totalApps: config.apps.length,
-        totalNews: config.news.length
+        totalNews: config.news.length,
+        tempDownloadsOff: config.tempDownloadsOff
       }
     });
   } catch (error) {

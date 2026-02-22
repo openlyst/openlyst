@@ -20,5 +20,6 @@
   "tintColor": "#dc2626",
   "featuredApps": ["doudou"],
   "supportedLanguages": ["en", "zh", "ru"],
-  "defaultLanguage": "en"
+  "defaultLanguage": "en",
+  "tempDownloadsOff": true
 }

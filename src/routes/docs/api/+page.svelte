@@ -34,7 +34,8 @@
     "tintColor": "#dc2626",
     "featuredApps": ["doudou"],
     "totalApps": 6,
-    "totalNews": 5
+    "totalNews": 5,
+    "tempDownloadsOff": true
   }
 }`
     },
@@ -408,6 +409,9 @@ response = requests.<span class="text-yellow-400">get</span>(<span class="text-e
   {#snippet children()}
     <p class="text-gray-400 mb-6">
       {$t.api.downloadsFieldDesc}
+    </p>
+    <p class="text-amber-200/90 text-sm mb-6 rounded-lg bg-amber-900/20 border border-amber-700/50 px-4 py-3">
+      <strong class="text-amber-200">{$t.api.tempDownloadsOffLabel}</strong> {$t.api.tempDownloadsOffDesc}
     </p>
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">

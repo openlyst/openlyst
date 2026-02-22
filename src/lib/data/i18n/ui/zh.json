@@ -378,6 +378,8 @@
     "downloadStructure": "下载结构",
     "downloadStructureSubtitle": "了解特定平台的下载格式",
     "downloadsFieldDesc": "版本对象中的 downloads 字段包含特定平台的下载 URL。不同平台支持不同的安装程序类型和架构。",
+    "tempDownloadsOffLabel": "仓库标志：tempDownloadsOff",
+    "tempDownloadsOffDesc": "仓库接口（GET /api/v1/repo）可能返回 tempDownloadsOff: true。为 true 时，客户端应隐藏或禁用下载 UI 并显示相应提示（例如托管构建暂时不可用）。",
     "windowsDownloads": "Windows 下载",
     "windowsDownloadsDesc": "Windows 支持多种安装程序类型和包管理器。",
     "linuxDownloads": "Linux 下载",

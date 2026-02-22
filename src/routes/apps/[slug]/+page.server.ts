@@ -1,9 +1,9 @@
 import { error } from '@sveltejs/kit';
-import { getApp } from '$lib/services/dataService';
+import { getApp, loadConfig } from '$lib/services/dataService';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, url }) => {
-  const app = await getApp(params.slug);
+  const [app, config] = await Promise.all([getApp(params.slug), loadConfig()]);
   
   if (!app) {
     throw error(404, 'App not found');
@@ -54,6 +54,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 
   return {
     app,
+    tempDownloadsOff: config.tempDownloadsOff ?? false,
     meta: {
       title: `${app.name} - Openlyst`,
       description: metaDescription,
