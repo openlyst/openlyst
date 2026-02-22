@@ -30,6 +30,9 @@
   let showLightbox = $state(false);
   let lightboxImageUrl = $state('');
   let lightboxIndex = $state(0);
+
+  /** When true, downloads are temporarily disabled (e.g. hosted builds banned). Shows notice and blurs download section. */
+  const tempDownloadsOff = true;
   
   // Subscribe to language changes and reload data (only on client-side language changes)
   $effect(() => {
@@ -571,7 +574,16 @@
   background="glass"
 >
   {#snippet children()}
-    <div id="downloads" class="glass-card rounded-2xl shadow-xl overflow-visible">
+    {#if tempDownloadsOff}
+      <div class="mb-6 p-4 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-200">
+        <p class="font-semibold">{$t.appDetail.downloadsPausedTitle}</p>
+        <p class="text-sm mt-1 opacity-90">{$t.appDetail.downloadsPausedReason}</p>
+      </div>
+    {/if}
+    <div
+      id="downloads"
+      class="glass-card rounded-2xl shadow-xl overflow-visible transition-all duration-300 {tempDownloadsOff ? 'select-none pointer-events-none blur-md opacity-60' : ''}"
+    >
       <div class="grid grid-cols-1 lg:grid-cols-4 min-h-[600px]">
         <!-- Sidebar with Versions -->
         <div class="lg:col-span-1 glass border-r border-white/10 p-6 rounded-l-2xl">

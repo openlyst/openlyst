@@ -307,7 +307,9 @@
     "platformAvailability": "Platform Availability",
     "versionHistory": "Version History",
     "updatesAndImprovements": "Latest updates and improvements",
-    "installInstructionsNotAvailable": "Installation instructions not available"
+    "installInstructionsNotAvailable": "Installation instructions not available",
+    "downloadsPausedTitle": "Downloads temporarily paused",
+    "downloadsPausedReason": "Our GitHub-hosted builds were banned. We're working on restoring download availability. Check back soon or build from source."
   },
   "support": {
     "title": "Support OpenLyst",

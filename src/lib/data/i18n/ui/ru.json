@@ -307,7 +307,9 @@
     "platformAvailability": "Доступность платформ",
     "versionHistory": "История версий",
     "updatesAndImprovements": "Последние обновления и улучшения",
-    "installInstructionsNotAvailable": "Инструкции по установке недоступны"
+    "installInstructionsNotAvailable": "Инструкции по установке недоступны",
+    "downloadsPausedTitle": "Загрузки временно приостановлены",
+    "downloadsPausedReason": "Наши сборки на GitHub были заблокированы. Мы работаем над восстановлением загрузок. Зайдите позже или соберите из исходников."
   },
   "support": {
     "title": "Поддержать OpenLyst",

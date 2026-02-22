@@ -307,7 +307,9 @@
     "platformAvailability": "平台可用性",
     "versionHistory": "版本历史",
     "updatesAndImprovements": "最新更新和改进",
-    "installInstructionsNotAvailable": "安装说明暂不可用"
+    "installInstructionsNotAvailable": "安装说明暂不可用",
+    "downloadsPausedTitle": "下载暂时暂停",
+    "downloadsPausedReason": "我们在 GitHub 上的构建已被封禁。我们正在恢复下载可用性。请稍后再试或从源码构建。"
   },
   "support": {
     "title": "支持 OpenLyst",
