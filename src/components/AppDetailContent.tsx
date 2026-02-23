@@ -239,6 +239,7 @@ export function AppDetailContent({
                         {byPlatform.map((group) => {
                           const platform = group[0].platform;
                           const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
+                          const singleOption = group.length === 1;
                           return (
                             <div
                               key={platform}
@@ -246,19 +247,21 @@ export function AppDetailContent({
                             >
                               <span className="text-sm font-semibold text-white">{platform}</span>
                               <div className="flex flex-col sm:flex-row gap-2">
-                                <select
-                                  className="flex-1 min-w-0 rounded-lg border border-gray-600 bg-gray-700 text-white text-sm px-3 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                  value={selectedUrl}
-                                  onChange={(e) =>
-                                    setSelectedUrlByPlatform((prev) => ({ ...prev, [platform]: e.target.value }))
-                                  }
-                                >
-                                  {group.map(({ optionLabel, url }) => (
-                                    <option key={url} value={url}>
-                                      {optionLabel}
-                                    </option>
-                                  ))}
-                                </select>
+                                {!singleOption && (
+                                  <select
+                                    className="flex-1 min-w-0 rounded-lg border border-gray-600 bg-gray-700 text-white text-sm px-3 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                    value={selectedUrl}
+                                    onChange={(e) =>
+                                      setSelectedUrlByPlatform((prev) => ({ ...prev, [platform]: e.target.value }))
+                                    }
+                                  >
+                                    {group.map(({ optionLabel, url }) => (
+                                      <option key={url} value={url}>
+                                        {optionLabel}
+                                      </option>
+                                    ))}
+                                  </select>
+                                )}
                                 <a
                                   href={selectedUrl}
                                   target="_blank"
