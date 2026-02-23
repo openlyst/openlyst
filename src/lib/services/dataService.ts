@@ -119,10 +119,15 @@ export function normalizeLanguage(lang?: string | null): SupportedLanguage {
   return SUPPORTED_LANGUAGES.includes(normalized) ? normalized : DEFAULT_LANGUAGE;
 }
 
-export function resolveUrl(path: string): string {
+/**
+ * Resolves a path to a URL. When baseUrl is omitted, paths starting with / are returned
+ * as-is (relative) so the browser requests from the current origin (fixes CORS in dev).
+ * When baseUrl is provided (e.g. in API routes), paths are made absolute.
+ */
+export function resolveUrl(path: string, baseUrl?: string): string {
   if (!path) return path;
   if (path.startsWith('http://') || path.startsWith('https://')) return path;
-  if (path.startsWith('/')) return `${BASE_URL}${path}`;
+  if (path.startsWith('/')) return baseUrl ? `${baseUrl.replace(/\/$/, '')}${path}` : path;
   return path;
 }
 
