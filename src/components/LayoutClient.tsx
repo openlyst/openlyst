@@ -25,7 +25,7 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
   }, [mounted, isFunMode]);
 
   return (
-    <div className={isFunMode ? 'fun-mode' : ''}>
+    <div className={isFunMode ? 'fun-mode' : 'min-h-screen bg-gray-950'}>
       {isFunMode && showBackground && <Background3D />}
       {children}
     </div>
