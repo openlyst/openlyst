@@ -211,6 +211,21 @@
     color: #fca5a5;
   }
 
+  @keyframes app-detail-version-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .app-detail-version-content {
+    animation: app-detail-version-slide-in 0.25s ease-out forwards;
+  }
+
   .fun-mode .glass-card,
   .fun-mode .card,
   .fun-mode header a,

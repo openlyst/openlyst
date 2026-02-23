@@ -118,12 +118,17 @@ export function AppDetailContent({
 
   // Selected download URL per platform (for dropdowns). Default to first option when version/entries change.
   const [selectedUrlByPlatform, setSelectedUrlByPlatform] = useState<Record<string, string>>({});
+  const [changelogOpen, setChangelogOpen] = useState(false);
   useEffect(() => {
     const next: Record<string, string> = {};
     for (const group of byPlatform) {
       if (group.length > 0) next[group[0].platform] = group[0].url;
     }
     setSelectedUrlByPlatform(next);
+  }, [version?.version]);
+
+  useEffect(() => {
+    if (changelogOpen) setChangelogOpen(false);
   }, [version?.version]);
 
   const descriptionHtml = { __html: marked(app.localizedDescription || '') };
@@ -192,10 +197,34 @@ export function AppDetailContent({
                 </button>
               ))}
             </nav>
-            {/* Main content: downloads, source code, changelog */}
-            <div className="flex-1 p-4 sm:p-6 overflow-auto space-y-6">
+            {/* Main content: top bar, then downloads (with slide animation on version change) */}
+            <div className="flex-1 overflow-auto flex flex-col min-h-0">
               {version && (
-                <>
+                <div
+                  key={version.version}
+                  className="app-detail-version-content p-4 sm:p-6 flex flex-col gap-4"
+                >
+                  {/* Top bar: View source + View changelog */}
+                  <div className="flex flex-wrap items-center gap-2 border-b border-gray-600 pb-3">
+                    {version.sourceCode && (
+                      <a
+                        href={version.sourceCode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-3 py-2 bg-gray-700 hover:bg-purple-600 text-gray-200 hover:text-white text-sm font-medium rounded-lg transition-colors"
+                      >
+                        {t.appDetail.viewSource}
+                      </a>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setChangelogOpen(true)}
+                      className="inline-flex items-center px-3 py-2 bg-gray-700 hover:bg-purple-600 text-gray-200 hover:text-white text-sm font-medium rounded-lg transition-colors"
+                    >
+                      {t.appDetail.viewChangelog}
+                    </button>
+                  </div>
+                  {/* Download options */}
                   <div>
                     <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
                       {t.appDetail.downloads}
@@ -247,33 +276,48 @@ export function AppDetailContent({
                       <p className="text-gray-400 text-sm">{t.appDetail.noDownloads}</p>
                     )}
                   </div>
-                  {version.sourceCode && (
-                    <div>
-                      <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                        {t.appDetail.sourceCode}
-                      </h3>
-                      <a
-                        href={version.sourceCode}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-3 py-2 bg-gray-700 hover:bg-purple-600 text-gray-200 hover:text-white text-sm font-medium rounded-lg transition-colors"
-                      >
-                        {t.appDetail.viewSource}
-                      </a>
-                    </div>
-                  )}
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                      {t.appDetail.whatsNew}
-                    </h3>
-                    <div
-                      className="modal-prose prose-invert prose-sm max-w-none"
-                      dangerouslySetInnerHTML={{ __html: marked(version.localizedDescription || '') }}
-                    />
-                  </div>
-                </>
+                </div>
               )}
             </div>
+          </div>
+
+          {/* Changelog modal */}
+          {changelogOpen && version && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+              onClick={() => setChangelogOpen(false)}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="changelog-title"
+            >
+              <div
+                className="bg-gray-800 border border-gray-600 rounded-xl shadow-xl max-w-2xl w-full max-h-[85vh] flex flex-col"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-center justify-between px-4 py-3 border-b border-gray-600">
+                  <h2 id="changelog-title" className="text-lg font-semibold text-white">
+                    {t.appDetail.changelog} — {version.version}
+                  </h2>
+                  <button
+                    type="button"
+                    onClick={() => setChangelogOpen(false)}
+                    className="text-gray-400 hover:text-white p-1 rounded-lg transition-colors"
+                    aria-label={t.common.close}
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="overflow-y-auto p-4 flex-1">
+                  <div
+                    className="modal-prose prose-invert prose-sm max-w-none"
+                    dangerouslySetInnerHTML={{ __html: marked(version.localizedDescription || '') }}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
           </div>
         </Section>
       )}
