@@ -33,6 +33,81 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "8.0.0",
+      "date": "2026-02-23",
+      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/e06527ade9feebe7b6e693eba1363c1d4377c60f",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "https://cdn.jsdelivr.net/gh/openlyst/builds@main/repo/apps.json",
+        "Android": "Use RepStore to install from our repository",
+        "macOS": "Download the latest macOS build",
+        "Windows": "Download the latest Windows build",
+        "Linux": "Download the latest Linux build from GitLab CI",
+        "Web": "Access the web version"
+      },
+      "repos": {
+        "iOS": "https://cdn.jsdelivr.net/gh/openlyst/builds@main/repo/apps.json",
+        "macOS": {
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        }
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msix": { "x86_64": "", "arm64": "" },
+          "portable": { "x86_64": "", "arm64": "" },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-linux-amd64.deb",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23.aab"
+        },
+        "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 8.0.0\n\n- README: expanded with features, prerequisites, getting started, and build instructions\n- Settings Account: visual refresh; Accounts section with description and filled Add button\n- Settings Account (mobile): fix semantics assertion (parentDataDirty) by giving embedded account list bounded height\n- OLED theme: use pure black for all backgrounds and bar\n- Android: opt out of edge-to-edge so status bar can be hidden on Android 15+\n- Fix black-on-black text in Settings Account, Feeds, Profile, Favorites, and Blacklist empty states\n- Android: hide system status bar for a cleaner full-screen look\n- Settings (Android): system back button returns to main settings list from sub-pages\n- Post detail: show instantly when opened from list using already-loaded post data\n- Feeds: multi-host support; feed list global (same for all accounts)\n- Post detail: preload comments; comments sheet shows them immediately and lazy-loads more on scroll\n- Post detail: vote buttons and score/comment indicators use thumbs up / thumbs down icons\n- Post grid: cache dimensions from post preview aspect ratio; wrap each cell in AspectRatio\n- Performance: offload API JSON parsing to background isolate; storage JSON decode moved to background isolate\n- macOS: minimum deployment target raised to 11.0\n- Post detail: tag chips coloured by tag category; preload preview and full image for adjacent posts\n- I-finished milk animation and Gallery button for finished posts in Settings Behavior\n- App starts in guest mode; login page only when user chooses to log in\n- Mobile nav bar: default Home, Search, Profile, Settings; More menu opens Hot, Popular, Favorites, Feeds\n- Profile: three tabs (Main, Uploads, Favorites) with pill-style tab bar\n- Search history and feeds per-account\n- Feeds: Both type (image + video); And tags and Or tags\n- Settings: Back button when opened as route; reorder categories; Feeds in desktop sidebar\n- Account options: Test connection; Account management in Settings > Account only\n- Optional I-finished button (default off) with milk-style animation and optional camera photo\n- Feeds: e621 file-type metatags for image/video; create image or video feeds with include/exclude tags\n- Post detail: View profile opens in-app profile; resolve uploader username by ID; uploader profile card\n- OLED theme: pure black across shell, nav bar, sidebar, settings, search, profile, login, post cards\n- Profile page redesign: hero card with avatar, stats grid, account info, styled action buttons\n- Settings Account: avatar glow and border from profile image; show user profile picture when available\n- Post detail: tapping a tag navigates to search tab; e621-style DText in descriptions and comments\n- Download: Android/iOS save to photo gallery; desktop save to Downloads/openlyst/klit with Open folder\n- Complete UI redo: responsive UI layer with layout scope, shell, widgets, pages; desktop sidebar, mobile bottom nav\n- New unified UI system (single codebase for desktop and mobile); major performance optimizations\n- New navbar engine; stateless",
+        "zh": "# 8.0.0\n\n- 完整更新说明请参阅英文版。",
+        "ru": "# 8.0.0\n\n- Полный список изменений см. в английской версии."
+      }
+    },
+    {
       "version": "7.0.0",
       "date": "2026-01-18",
       "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/4d06d6e18f9c9467a4cf44c79916e7371bc3328f",
