@@ -266,7 +266,7 @@ export function AppDetailContent({
                                   href={selectedUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center justify-center px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium rounded-lg transition-colors whitespace-nowrap"
+                                  className={`inline-flex items-center justify-center px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${singleOption ? 'w-full' : ''}`}
                                 >
                                   {t.appDetail.downloadNow}
                                 </a>
