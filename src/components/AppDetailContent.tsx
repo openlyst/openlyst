@@ -296,7 +296,7 @@ export function AppDetailContent({
               >
                 <div className="flex items-center justify-between px-4 py-3 border-b border-gray-600">
                   <h2 id="changelog-title" className="text-lg font-semibold text-white">
-                    {t.appDetail.changelog} — {version.version}
+                    {t.common.changelog} — {version.version}
                   </h2>
                   <button
                     type="button"
@@ -318,8 +318,7 @@ export function AppDetailContent({
               </div>
             </div>
           )}
-          </div>
-        </Section>
+          </Section>
       )}
 
       {screenshots.length > 0 && (
