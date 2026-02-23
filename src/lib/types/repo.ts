@@ -13,7 +13,6 @@ export interface PlatformInstall {
   Web?: string;
 }
 
-// Architecture options for platforms
 export interface ArchDownloads {
   x86_64?: string;
   arm64?: string;
@@ -23,7 +22,6 @@ export interface ArchDownloads {
   [key: string]: string | undefined;
 }
 
-// Package type with architecture options (for Linux)
 export interface PackageTypeDownloads {
   zip?: ArchDownloads;
   appimage?: ArchDownloads;
@@ -35,35 +33,28 @@ export interface PackageTypeDownloads {
   [key: string]: ArchDownloads | string | undefined;
 }
 
-// Windows-specific downloads with installer types
 export interface WindowsDownloads {
-  exe?: ArchDownloads;      // NSIS, Inno Setup, or other exe installers
-  msi?: ArchDownloads;      // Windows Installer packages
-  msix?: ArchDownloads;     // Modern Windows app packages
-  zip?: ArchDownloads;      // Portable zip archives
-  portable?: ArchDownloads; // Standalone portable executables
-  winget?: string;          // Windows Package Manager ID
-  chocolatey?: string;      // Chocolatey package name
-  scoop?: string;           // Scoop package bucket/name
+  exe?: ArchDownloads;
+  msi?: ArchDownloads;
+  msix?: ArchDownloads;
+  zip?: ArchDownloads;
+  portable?: ArchDownloads;
+  winget?: string;
+  chocolatey?: string;
+  scoop?: string;
   [key: string]: ArchDownloads | string | undefined;
 }
 
-// Android-specific downloads
 export interface AndroidDownloads {
   apk?: string;
   aab?: string;
   [key: string]: string | undefined;
 }
 
-// Flexible download structure that supports:
-// - Simple string URL
-// - Architecture-based downloads (macOS)
-// - Package type with architecture (Linux, Windows)
-// - Android-specific (apk/aab)
-export type PlatformDownload = 
-  | string 
-  | ArchDownloads 
-  | PackageTypeDownloads 
+export type PlatformDownload =
+  | string
+  | ArchDownloads
+  | PackageTypeDownloads
   | WindowsDownloads
   | AndroidDownloads;
 
@@ -77,7 +68,6 @@ export interface PlatformDownloads {
   [key: string]: PlatformDownload | undefined;
 }
 
-// Legacy support
 export interface PlatformDownloadURLs {
   iOS?: string;
   Android?: string;
@@ -90,16 +80,16 @@ export interface PlatformDownloadURLs {
 
 export interface AppVersion {
   version: string;
-  platforms?: string[]; // Platform support for this specific version
+  platforms?: string[];
   platformInstall: PlatformInstall;
   localizedDescription: string;
   date?: string;
-  downloadURL?: string; // Keep for backward compatibility
-  downloadURLs?: PlatformDownloadURLs; // Legacy simple URLs
-  downloads?: PlatformDownloads; // New nested structure
+  downloadURL?: string;
+  downloadURLs?: PlatformDownloadURLs;
+  downloads?: PlatformDownloads;
   size?: number;
   minOSVersion?: string;
-  sourceCode?: string; // URL to source code for this version
+  sourceCode?: string;
 }
 
 export interface AppScreenshots {
@@ -154,6 +144,5 @@ export interface RepoConfig {
   featuredApps: string[];
   apps: App[];
   news: NewsItem[];
-  /** When true, downloads are temporarily disabled. Other apps should hide/disable download UI. */
   tempDownloadsOff?: boolean;
 }

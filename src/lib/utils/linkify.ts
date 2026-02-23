@@ -1,14 +1,8 @@
-/**
- * Match URLs (http/https). Trailing punctuation like . , ; : ) is not included.
- */
 const URL_REGEX =
   /https?:\/\/[^\s<>"{}|\\^`[\]]+(?:[^\s<>"{}|\\^`[\].);:,!?]*)?/gi;
 
 export type TextSegment = { type: 'text'; value: string } | { type: 'url'; value: string };
 
-/**
- * Split text into segments of plain text and URLs so they can be rendered as links.
- */
 export function parseTextWithUrls(text: string): TextSegment[] {
   if (!text || typeof text !== 'string') return [];
   const segments: TextSegment[] = [];
@@ -28,9 +22,6 @@ export function parseTextWithUrls(text: string): TextSegment[] {
   return segments.length ? segments : [{ type: 'text', value: text }];
 }
 
-/**
- * Extract all URLs from a string (for rendering previews).
- */
 export function extractUrls(text: string): string[] {
   if (!text || typeof text !== 'string') return [];
   const re = new RegExp(URL_REGEX.source, 'gi');

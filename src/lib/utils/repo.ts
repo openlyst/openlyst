@@ -1,4 +1,4 @@
-import type { RepoConfig } from '$lib/types/repo';
+import type { RepoConfig } from '@/lib/types/repo';
 
 let cachedConfig: RepoConfig | null = null;
 
@@ -87,13 +87,8 @@ export async function loadRepoConfig(): Promise<RepoConfig> {
   }
 
   try {
-    // Import the YAML file as a module in SvelteKit
-    const configModule = await import('$lib/assets/yaml/repo.json?raw');
-    const yamlContent = configModule.default;
-    
-    // The file contains JSON format, so we parse it as JSON
-    const config = JSON.parse(yamlContent) as RepoConfig;
-    
+    const configModule = await import('@/lib/assets/yaml/repo.json');
+    const config = configModule.default as unknown as RepoConfig;
     cachedConfig = config;
     return config;
   } catch (error) {
