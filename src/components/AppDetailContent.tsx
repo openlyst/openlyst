@@ -37,14 +37,34 @@ function getFirstDownloadUrl(d: unknown): string | null {
   return null;
 }
 
-function getVersionDownloads(version: AppVersion, platforms: string[]): { platform: string; url: string }[] {
-  const out: { platform: string; url: string }[] = [];
+/** Collect all download links for a version with labels from the key path (e.g. "Android · APK"). */
+function getVersionDownloadEntries(version: AppVersion): { label: string; url: string }[] {
+  const out: { label: string; url: string }[] = [];
   const dl = version.downloads || version.downloadURLs;
   if (!dl || typeof dl !== 'object') return out;
-  for (const platform of platforms) {
-    const p = (dl as Record<string, unknown>)[platform];
-    const url = getFirstDownloadUrl(p);
-    if (url) out.push({ platform, url });
+
+  function walk(obj: unknown, parts: string[]) {
+    if (typeof obj === 'string' && obj) {
+      const label = parts.join(' · ');
+      if (label) out.push({ label, url: obj });
+      return;
+    }
+    if (obj && typeof obj === 'object') {
+      const rec = obj as Record<string, unknown>;
+      for (const [key, value] of Object.entries(rec)) {
+        const next = [...parts];
+        if (key !== 'x86_64' && key !== 'arm64' && key !== 'aarch64' && key !== 'universal') {
+          next.push(key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()));
+        } else {
+          next.push(key.toUpperCase());
+        }
+        walk(value, next);
+      }
+    }
+  }
+
+  for (const [platform, value] of Object.entries(dl)) {
+    walk(value, [platform]);
   }
   return out;
 }
@@ -72,7 +92,7 @@ export function AppDetailContent({
 
   const version = selectedVersion || app.versions[0];
   const screenshots = getScreenshotsList(app);
-  const downloadLinks = version ? getVersionDownloads(version, app.platforms) : [];
+  const downloadEntries = version ? getVersionDownloadEntries(version) : [];
 
   const descriptionHtml = { __html: marked(app.localizedDescription || '') };
 
@@ -118,57 +138,87 @@ export function AppDetailContent({
       </Section>
 
       {app.versions.length > 0 && (
-        <Section title={t.appDetail.versions} background="gray">
-          <div className="space-y-4">
-            <p className="text-gray-400">{t.appDetail.versionHistory}</p>
-            <select
-              className="bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white"
-              value={version?.version}
-              onChange={(e) => {
-                const v = app.versions.find((x) => x.version === e.target.value);
-                setSelectedVersion(v);
-              }}
-            >
+        <Section title={t.appDetail.downloads} background="gray">
+          <div className="rounded-xl border border-gray-600 bg-gray-800/50 overflow-hidden flex flex-col sm:flex-row min-h-[320px]">
+            {/* Version sidebar */}
+            <nav className="sm:w-52 flex-shrink-0 border-b sm:border-b-0 sm:border-r border-gray-600 bg-gray-800/80 p-2 flex sm:flex-col gap-1 overflow-x-auto sm:overflow-x-visible sm:overflow-y-auto">
               {app.versions.map((v) => (
-                <option key={v.version} value={v.version}>
-                  {v.version} {v.date ? `(${v.date})` : ''}
-                </option>
-              ))}
-            </select>
-            {version && (
-              <div
-                className="modal-prose prose-invert max-w-none text-sm"
-                dangerouslySetInnerHTML={{ __html: marked(version.localizedDescription || '') }}
-              />
-            )}
-          </div>
-        </Section>
-      )}
-
-      {version && (
-        <Section title={t.appDetail.downloads} background="default">
-          {tempDownloadsOff ? (
-            <div className="rounded-xl bg-amber-900/20 border border-amber-700/50 p-6">
-              <h3 className="text-lg font-semibold text-amber-200">{t.appDetail.downloadsPausedTitle}</h3>
-              <p className="text-gray-400 mt-2">{t.appDetail.downloadsPausedReason}</p>
-            </div>
-          ) : downloadLinks.length > 0 ? (
-            <div className="flex flex-wrap gap-3">
-              {downloadLinks.map(({ platform, url }) => (
-                <a
-                  key={platform}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-lg transition-colors"
+                <button
+                  key={v.version}
+                  type="button"
+                  onClick={() => setSelectedVersion(v)}
+                  className={`text-left px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
+                    version?.version === v.version
+                      ? 'bg-purple-600 text-white'
+                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  }`}
                 >
-                  {t.appDetail.downloadPlatform.replace('{platform}', platform)}
-                </a>
+                  {v.version}
+                  {v.date ? (
+                    <span className="block text-xs font-normal opacity-80 mt-0.5">{v.date}</span>
+                  ) : null}
+                </button>
               ))}
+            </nav>
+            {/* Main content: downloads, source code, changelog */}
+            <div className="flex-1 p-4 sm:p-6 overflow-auto space-y-6">
+              {version && (
+                <>
+                  <div>
+                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                      {t.appDetail.downloads}
+                    </h3>
+                    {tempDownloadsOff ? (
+                      <div className="rounded-lg bg-amber-900/20 border border-amber-700/50 p-4">
+                        <h4 className="font-semibold text-amber-200">{t.appDetail.downloadsPausedTitle}</h4>
+                        <p className="text-gray-400 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
+                      </div>
+                    ) : downloadEntries.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {downloadEntries.map(({ label, url }) => (
+                          <a
+                            key={url + label}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-3 py-2 bg-gray-700 hover:bg-purple-600 text-gray-200 hover:text-white text-sm font-medium rounded-lg transition-colors"
+                          >
+                            {label}
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-400 text-sm">{t.appDetail.noDownloads}</p>
+                    )}
+                  </div>
+                  {version.sourceCode && (
+                    <div>
+                      <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                        {t.appDetail.sourceCode}
+                      </h3>
+                      <a
+                        href={version.sourceCode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-3 py-2 bg-gray-700 hover:bg-purple-600 text-gray-200 hover:text-white text-sm font-medium rounded-lg transition-colors"
+                      >
+                        {t.appDetail.viewSource}
+                      </a>
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                      {t.appDetail.whatsNew}
+                    </h3>
+                    <div
+                      className="modal-prose prose-invert prose-sm max-w-none"
+                      dangerouslySetInnerHTML={{ __html: marked(version.localizedDescription || '') }}
+                    />
+                  </div>
+                </>
+              )}
             </div>
-          ) : (
-            <p className="text-gray-400">{t.appDetail.noDownloads}</p>
-          )}
+          </div>
         </Section>
       )}
 
