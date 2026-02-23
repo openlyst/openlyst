@@ -367,7 +367,7 @@
     "responseFormatDesc": "Successful responses are JSON with success: true, a data field (array or object), and often language and count. Add ?lang=en|zh|ru to any request for localized strings (default: en).",
     "langParam": "lang",
     "langParamDesc": "Optional. Localized content: en, zh, or ru.",
-    "copied": "Copied!", "Copied!",
+    "copied": "Copied!",
     "copy": "Copy",
     "copyUrl": "Copy URL",
     "quickStart": "Quick Start",
