@@ -69,6 +69,27 @@ function getVersionDownloadEntries(version: AppVersion): { label: string; url: s
   return out;
 }
 
+/** Group entries by platform (first segment of label). Option label = rest after platform. */
+function groupDownloadsByPlatform(
+  entries: { label: string; url: string }[]
+): { platform: string; optionLabel: string; url: string }[][] {
+  const byPlatform = new Map<string, { optionLabel: string; url: string }[]>();
+  for (const { label, url } of entries) {
+    const i = label.indexOf(' · ');
+    const platform = i >= 0 ? label.slice(0, i) : label;
+    const optionLabel = i >= 0 ? label.slice(i + 3) : label;
+    let list = byPlatform.get(platform);
+    if (!list) {
+      list = [];
+      byPlatform.set(platform, list);
+    }
+    list.push({ optionLabel, url });
+  }
+  return Array.from(byPlatform.entries()).map(([platform, list]) =>
+    list.map(({ optionLabel, url }) => ({ platform, optionLabel, url }))
+  );
+}
+
 export function AppDetailContent({
   app: initialApp,
   tempDownloadsOff,
@@ -93,6 +114,17 @@ export function AppDetailContent({
   const version = selectedVersion || app.versions[0];
   const screenshots = getScreenshotsList(app);
   const downloadEntries = version ? getVersionDownloadEntries(version) : [];
+  const byPlatform = groupDownloadsByPlatform(downloadEntries);
+
+  // Selected download URL per platform (for dropdowns). Default to first option when version/entries change.
+  const [selectedUrlByPlatform, setSelectedUrlByPlatform] = useState<Record<string, string>>({});
+  useEffect(() => {
+    const next: Record<string, string> = {};
+    for (const group of byPlatform) {
+      if (group.length > 0) next[group[0].platform] = group[0].url;
+    }
+    setSelectedUrlByPlatform(next);
+  }, [version?.version]);
 
   const descriptionHtml = { __html: marked(app.localizedDescription || '') };
 
@@ -165,7 +197,7 @@ export function AppDetailContent({
               {version && (
                 <>
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
                       {t.appDetail.downloads}
                     </h3>
                     {tempDownloadsOff ? (
@@ -173,19 +205,43 @@ export function AppDetailContent({
                         <h4 className="font-semibold text-amber-200">{t.appDetail.downloadsPausedTitle}</h4>
                         <p className="text-gray-400 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
                       </div>
-                    ) : downloadEntries.length > 0 ? (
-                      <div className="flex flex-wrap gap-2">
-                        {downloadEntries.map(({ label, url }) => (
-                          <a
-                            key={url + label}
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-3 py-2 bg-gray-700 hover:bg-purple-600 text-gray-200 hover:text-white text-sm font-medium rounded-lg transition-colors"
-                          >
-                            {label}
-                          </a>
-                        ))}
+                    ) : byPlatform.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        {byPlatform.map((group) => {
+                          const platform = group[0].platform;
+                          const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
+                          return (
+                            <div
+                              key={platform}
+                              className="rounded-lg border border-gray-600 bg-gray-800/80 p-3 flex flex-col gap-2"
+                            >
+                              <span className="text-sm font-semibold text-white">{platform}</span>
+                              <div className="flex flex-col sm:flex-row gap-2">
+                                <select
+                                  className="flex-1 min-w-0 rounded-lg border border-gray-600 bg-gray-700 text-white text-sm px-3 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                  value={selectedUrl}
+                                  onChange={(e) =>
+                                    setSelectedUrlByPlatform((prev) => ({ ...prev, [platform]: e.target.value }))
+                                  }
+                                >
+                                  {group.map(({ optionLabel, url }) => (
+                                    <option key={url} value={url}>
+                                      {optionLabel}
+                                    </option>
+                                  ))}
+                                </select>
+                                <a
+                                  href={selectedUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center justify-center px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium rounded-lg transition-colors whitespace-nowrap"
+                                >
+                                  {t.appDetail.downloadNow}
+                                </a>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     ) : (
                       <p className="text-gray-400 text-sm">{t.appDetail.noDownloads}</p>
