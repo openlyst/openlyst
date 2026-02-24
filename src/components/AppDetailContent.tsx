@@ -90,15 +90,6 @@ function groupDownloadsByPlatform(
   );
 }
 
-const platformIcons: Record<string, string> = {
-  iOS: '📱',
-  macOS: '💻',
-  Windows: '🪟',
-  Linux: '🐧',
-  Android: '🤖',
-  Web: '🌐',
-};
-
 export function AppDetailContent({
   app: initialApp,
   tempDownloadsOff,
@@ -255,16 +246,12 @@ export function AppDetailContent({
                           const platform = group[0].platform;
                           const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
                           const singleOption = group.length === 1;
-                          const icon = platformIcons[platform] ?? '📦';
                           return (
                             <div
                               key={platform}
                               className="rounded-xl border border-white/10 bg-gray-800/60 p-4 flex flex-col gap-3 hover:border-purple-500/30 transition-colors fun-mode:glass-card fun-mode:hover:border-purple-500/40"
                             >
-                              <div className="flex items-center gap-3">
-                                <span className="text-2xl" aria-hidden>{icon}</span>
-                                <span className="text-base font-semibold text-white">{platform}</span>
-                              </div>
+                              <span className="text-base font-semibold text-white">{platform}</span>
                               <div className="flex flex-col gap-2 mt-auto">
                                 {!singleOption && (
                                   <select
