@@ -15,7 +15,7 @@
     "zh": "Klit 是 BaoBao 的后继应用，为 e621 社区打造，默认注重隐私，并提供快速浏览体验。",
     "ru": "Klit — преемник BaoBao для сообщества e621 с приватными настройками по умолчанию и быстрым просмотром."
   },
-  "iconURL": "/icons/Klit/icon.png",
+  "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/icon.png?ref_type=heads",
   "tintColor": "#ff6b35",
   "platforms": [
     "iOS",
@@ -26,9 +26,9 @@
     "Web"
   ],
   "screenshots": [
-    "/icons/Klit/home.png",
-    "/icons/Klit/popular.png",
-    "/icons/Klit/post.png"
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/home.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/popular.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/post.png?ref_type=heads"
   ],
   "deprecated": false,
   "versions": [
