@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "going_production_new_infra_2026",
+    "title": {
+      "en": "Getting Ready for Full Production — New Infrastructure Coming Soon",
+      "zh": "即将全面投产 — 新基础设施即将就绪",
+      "ru": "Готовимся к полному продакшену — новая инфраструктура скоро"
+    },
+    "caption": {
+      "en": "We are getting ready to go to full production and we are setting up our new infrastructure soon. Stay tuned for updates.",
+      "zh": "我们即将全面投产，并很快部署新的基础设施。敬请关注后续动态。",
+      "ru": "Мы готовимся к полному продакшену и скоро развернём новую инфраструктуру. Следите за обновлениями."
+    },
+    "date": "2026-02-23",
+    "tintColor": "#10b981",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
     "identifier": "github_banned_again_self_infra_2026",
     "title": {
       "en": "GitHub Access Revoked — Again. We're Building Our Own Infrastructure.",
