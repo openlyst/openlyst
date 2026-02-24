@@ -22,6 +22,63 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "3.0.0",
+      "date": "2026-02-24",
+      "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/main",
+      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK or AAB from the links below",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source",
+        "Web": "Access the web version or self-host with Docker"
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-windows-x64-setup.exe",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-linux-amd64.deb",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24.aab"
+        },
+        "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 3.0.0\n\n# Added\n- Who's watching? screen for multiple Jellyfin accounts (Netflix-style profile picker)\n- Multiple accounts: save and switch between several server/user profiles\n- Add profile and Manage profiles flows; sign out removes current profile from device\n- Watchlist row on home (desktop and mobile); home data includes watchlist, invalidated when toggling from detail\n- Sleep timer: Settings > Playback (Off, 15/30/45/60 min, End of current); player overlay shows remaining time and Cancel\n- Theme and appearance: Settings > Appearance — Theme (System / Light / Dark), Use system accent, Accent color (Teal, Purple, Blue, Pink, Orange)\n\n# Changed\n- Unified UI: removed separate desktop/ and mobile/ page folders; single responsive pages (home, settings, detail, player, library, music_library, downloads) with sidebar on wide screens and bottom nav/single column on narrow\n- Library page (mobile): list-style cards with icon, type label, and item count instead of large gradient grid\n- Upgraded dependencies: dio, riverpod, flutter_riverpod, intl, package_info_plus, share_plus, gamepads; Riverpod 3 migration with legacy imports; share_plus 12 SharePlus API; AsyncValue.when for null fallbacks\n- App startup: with 2+ saved profiles, Who's watching is shown instead of auto-restoring; with 1 profile, behavior unchanged\n- Sidebar and Settings: Switch profile opens Who's watching; Sign out removes current profile (with confirmation)\n\n# Fixed\n- Theme and accent: theme mode (System/Light/Dark) and accent color now apply across the app; settings load before first frame so stored theme is used on launch; \"Use system accent\" is persisted via setUseSystemAccent\n- Detail more-options sheet: Download, Share, and Media Info now work; Add to Playlist / Report Issue show \"Coming soon\"\n- Home media card Add button adds/removes item from watchlist with SnackBar feedback\n- Music library track row: favorite button toggles favorite and refreshes list\n- Music player bar: Shuffle shuffles playlist and plays from start; Repeat cycles off → one → all; More shows \"Coming soon\" SnackBar\n- Queue \"Now Playing\" tap triggers play/pause; library sort button no longer appears disabled\n- Who's watching: show current session as a profile when saved list was empty (recovery); avoid row overflow with horizontal scroll or wrap\n- Login page: hide scrollbar on form scrollables; fix contrast (solid dark form card so white text is readable); Quick Connect tip uses textSecondary for readability",
+        "zh": "# 3.0.0\n\n# Added\n- Who's watching? screen for multiple Jellyfin accounts (Netflix-style profile picker)\n- Multiple accounts: save and switch between several server/user profiles\n- Add profile and Manage profiles flows; sign out removes current profile from device\n- Watchlist row on home (desktop and mobile); home data includes watchlist, invalidated when toggling from detail\n- Sleep timer: Settings > Playback (Off, 15/30/45/60 min, End of current); player overlay shows remaining time and Cancel\n- Theme and appearance: Settings > Appearance — Theme (System / Light / Dark), Use system accent, Accent color (Teal, Purple, Blue, Pink, Orange)\n\n# Changed\n- Unified UI: removed separate desktop/ and mobile/ page folders; single responsive pages (home, settings, detail, player, library, music_library, downloads) with sidebar on wide screens and bottom nav/single column on narrow\n- Library page (mobile): list-style cards with icon, type label, and item count instead of large gradient grid\n- Upgraded dependencies: dio, riverpod, flutter_riverpod, intl, package_info_plus, share_plus, gamepads; Riverpod 3 migration with legacy imports; share_plus 12 SharePlus API; AsyncValue.when for null fallbacks\n- App startup: with 2+ saved profiles, Who's watching is shown instead of auto-restoring; with 1 profile, behavior unchanged\n- Sidebar and Settings: Switch profile opens Who's watching; Sign out removes current profile (with confirmation)\n\n# Fixed\n- Theme and accent: theme mode (System/Light/Dark) and accent color now apply across the app; settings load before first frame so stored theme is used on launch; \"Use system accent\" is persisted via setUseSystemAccent\n- Detail more-options sheet: Download, Share, and Media Info now work; Add to Playlist / Report Issue show \"Coming soon\"\n- Home media card Add button adds/removes item from watchlist with SnackBar feedback\n- Music library track row: favorite button toggles favorite and refreshes list\n- Music player bar: Shuffle shuffles playlist and plays from start; Repeat cycles off → one → all; More shows \"Coming soon\" SnackBar\n- Queue \"Now Playing\" tap triggers play/pause; library sort button no longer appears disabled\n- Who's watching: show current session as a profile when saved list was empty (recovery); avoid row overflow with horizontal scroll or wrap\n- Login page: hide scrollbar on form scrollables; fix contrast (solid dark form card so white text is readable); Quick Connect tip uses textSecondary for readability",
+        "ru": "# 3.0.0\n\n# Added\n- Who's watching? screen for multiple Jellyfin accounts (Netflix-style profile picker)\n- Multiple accounts: save and switch between several server/user profiles\n- Add profile and Manage profiles flows; sign out removes current profile from device\n- Watchlist row on home (desktop and mobile); home data includes watchlist, invalidated when toggling from detail\n- Sleep timer: Settings > Playback (Off, 15/30/45/60 min, End of current); player overlay shows remaining time and Cancel\n- Theme and appearance: Settings > Appearance — Theme (System / Light / Dark), Use system accent, Accent color (Teal, Purple, Blue, Pink, Orange)\n\n# Changed\n- Unified UI: removed separate desktop/ and mobile/ page folders; single responsive pages (home, settings, detail, player, library, music_library, downloads) with sidebar on wide screens and bottom nav/single column on narrow\n- Library page (mobile): list-style cards with icon, type label, and item count instead of large gradient grid\n- Upgraded dependencies: dio, riverpod, flutter_riverpod, intl, package_info_plus, share_plus, gamepads; Riverpod 3 migration with legacy imports; share_plus 12 SharePlus API; AsyncValue.when for null fallbacks\n- App startup: with 2+ saved profiles, Who's watching is shown instead of auto-restoring; with 1 profile, behavior unchanged\n- Sidebar and Settings: Switch profile opens Who's watching; Sign out removes current profile (with confirmation)\n\n# Fixed\n- Theme and accent: theme mode (System/Light/Dark) and accent color now apply across the app; settings load before first frame so stored theme is used on launch; \"Use system accent\" is persisted via setUseSystemAccent\n- Detail more-options sheet: Download, Share, and Media Info now work; Add to Playlist / Report Issue show \"Coming soon\"\n- Home media card Add button adds/removes item from watchlist with SnackBar feedback\n- Music library track row: favorite button toggles favorite and refreshes list\n- Music player bar: Shuffle shuffles playlist and plays from start; Repeat cycles off → one → all; More shows \"Coming soon\" SnackBar\n- Queue \"Now Playing\" tap triggers play/pause; library sort button no longer appears disabled\n- Who's watching: show current session as a profile when saved list was empty (recovery); avoid row overflow with horizontal scroll or wrap\n- Login page: hide scrollbar on form scrollables; fix contrast (solid dark form card so white text is readable); Quick Connect tip uses textSecondary for readability"
+      }
+    },
+    {
       "version": "2.0.0",
       "date": "2026-02-13",
       "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/5a6add7ed0feabc15fc507563fe655a84db11344",
