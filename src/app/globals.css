@@ -5,7 +5,7 @@
 /* Custom styles for OpenLyst */
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
 
   body {
@@ -224,6 +224,12 @@
 
   .app-detail-version-content {
     animation: app-detail-version-slide-in 0.25s ease-out forwards;
+  }
+
+  /* Scroll performance: skip painting off-screen cards */
+  .scroll-contain-cards {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 200px;
   }
 
   .fun-mode .glass-card,

@@ -13,6 +13,9 @@ export function Background3D() {
   const shapesRef = useRef<THREE.Group | null>(null);
   const mouseRef = useRef({ x: 0, y: 0, targetX: 0, targetY: 0 });
   const initializedRef = useRef(false);
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const frameCountRef = useRef(0);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -32,9 +35,9 @@ export function Background3D() {
       camera.position.z = 500;
       cameraRef.current = camera;
 
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
       renderer.setClearColor(0x030712, 1);
       container.appendChild(renderer.domElement);
       rendererRef.current = renderer;
@@ -187,6 +190,15 @@ export function Background3D() {
       mouseRef.current.targetY = (e.clientY - window.innerHeight / 2) * 0.05;
     };
 
+    const onScroll = () => {
+      isScrollingRef.current = true;
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false;
+        scrollTimeoutRef.current = null;
+      }, 150);
+    };
+
     const animate = () => {
       const scene = sceneRef.current;
       const camera = cameraRef.current;
@@ -196,7 +208,20 @@ export function Background3D() {
 
       if (!initializedRef.current || !renderer || !scene || !camera) return;
 
+      if (document.hidden) {
+        return;
+      }
+
       animationIdRef.current = requestAnimationFrame(animate);
+
+      if (isScrollingRef.current) {
+        frameCountRef.current += 1;
+        if (frameCountRef.current % 2 !== 0) {
+          return;
+        }
+      } else {
+        frameCountRef.current = 0;
+      }
 
       const m = mouseRef.current;
       m.x += (m.targetX - m.x) * 0.02;
@@ -224,11 +249,20 @@ export function Background3D() {
       renderer.render(scene, camera);
     };
 
+    const onVisibilityChange = () => {
+      if (!document.hidden && initializedRef.current && rendererRef.current) {
+        animationIdRef.current = requestAnimationFrame(animate);
+      }
+    };
+
     const cleanup = () => {
       initializedRef.current = false;
       if (animationIdRef.current) cancelAnimationFrame(animationIdRef.current);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
       window.removeEventListener('resize', onWindowResize);
       window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('scroll', onScroll, true);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
       const renderer = rendererRef.current;
       if (renderer) {
         renderer.dispose();
@@ -244,6 +278,8 @@ export function Background3D() {
       animate();
       window.addEventListener('resize', onWindowResize);
       window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('scroll', onScroll, true);
+      document.addEventListener('visibilitychange', onVisibilityChange);
     }
 
     return cleanup;

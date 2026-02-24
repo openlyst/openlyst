@@ -37,7 +37,7 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
       <Section title={t.apps.ourApps} subtitle={t.apps.ourAppsDesc} background="default">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {apps.map((app) => (
-            <div key={app.slug} className="animate-fadeIn">
+            <div key={app.slug} className="animate-fadeIn scroll-contain-cards">
               <AppCard
                 title={app.name}
                 description={app.localizedDescription}

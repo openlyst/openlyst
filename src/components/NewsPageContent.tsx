@@ -37,7 +37,7 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
         ) : (
           <div className="space-y-6">
             {news.map((item) => (
-              <article key={item.identifier} className="glass-card rounded-xl p-6">
+              <article key={item.identifier} className="glass-card rounded-xl p-6 scroll-contain-cards">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
                   <h2 className="text-xl font-semibold text-white">
                     <LinkifiedText text={item.title} />
