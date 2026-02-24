@@ -15,13 +15,13 @@
     "zh": "Docan 是一款跨平台 AI 聊天应用。你可以连接多个 AI 提供商，并在桌面、移动端和网页端使用统一的聊天界面。",
     "ru": "Docan — кроссплатформенное приложение для AI-чата. Подключайте разных AI-провайдеров и ведите диалоги в одном интерфейсе на ПК, мобильных устройствах и в вебе."
   },
-  "iconURL": "/icons/Docan/icon.png",
+  "iconURL": "https://gitlab.com/Openlyst/docan/-/raw/main/assets/icon_1024.png",
   "tintColor": "#6366f1",
   "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
   "screenshots": [
-    "/icons/Docan/chat.png",
-    "/icons/Docan/chats.png",
-    "/icons/Docan/providers.png"
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Docan/chat.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Docan/chats.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Docan/providers.png?ref_type=heads"
   ],
   "deprecated": false,
   "versions": [
