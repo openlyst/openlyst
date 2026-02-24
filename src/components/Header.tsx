@@ -27,7 +27,7 @@ export function Header() {
   }));
 
   return (
-    <header className="glass text-white shadow-lg sticky top-0 z-50 will-change-transform">
+    <header className="glass-header text-white shadow-lg sticky top-0 z-50 will-change-transform">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 justify-between items-center">
           <div className="flex items-center">
