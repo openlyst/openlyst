@@ -90,6 +90,15 @@ function groupDownloadsByPlatform(
   );
 }
 
+const platformIcons: Record<string, string> = {
+  iOS: '📱',
+  macOS: '💻',
+  Windows: '🪟',
+  Linux: '🐧',
+  Android: '🤖',
+  Web: '🌐',
+};
+
 export function AppDetailContent({
   app: initialApp,
   tempDownloadsOff,
@@ -176,80 +185,90 @@ export function AppDetailContent({
 
       {app.versions.length > 0 && (
         <Section title={t.appDetail.downloads} background="gray">
-          <div className="rounded-xl border border-gray-600 bg-gray-800/50 overflow-hidden flex flex-col sm:flex-row min-h-[320px]">
+          <div className="rounded-2xl border border-white/10 bg-gray-800/40 overflow-hidden flex flex-col sm:flex-row min-h-[340px] shadow-xl fun-mode:border-purple-500/20 fun-mode:glass-card">
             {/* Version sidebar */}
-            <nav className="sm:w-52 flex-shrink-0 border-b sm:border-b-0 sm:border-r border-gray-600 bg-gray-800/80 p-2 flex sm:flex-col gap-1 overflow-x-auto sm:overflow-x-visible sm:overflow-y-auto">
+            <nav className="sm:w-56 flex-shrink-0 border-b sm:border-b-0 sm:border-r border-white/10 bg-gray-900/50 p-3 flex sm:flex-col gap-1 overflow-x-auto sm:overflow-x-visible sm:overflow-y-auto">
               {app.versions.map((v) => (
                 <button
                   key={v.version}
                   type="button"
                   onClick={() => setSelectedVersion(v)}
-                  className={`text-left px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
+                  className={`text-left px-4 py-3 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
                     version?.version === v.version
-                      ? 'bg-purple-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                      ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
+                      : 'text-gray-400 hover:bg-white/5 hover:text-white'
                   }`}
                 >
-                  {v.version}
+                  <span className="block">{v.version}</span>
                   {v.date ? (
-                    <span className="block text-xs font-normal opacity-80 mt-0.5">{v.date}</span>
+                    <span className="block text-xs font-normal opacity-70 mt-1">{v.date}</span>
                   ) : null}
                 </button>
               ))}
             </nav>
-            {/* Main content: top bar, then downloads (with slide animation on version change) */}
+            {/* Main content */}
             <div className="flex-1 overflow-auto flex flex-col min-h-0">
               {version && (
                 <div
                   key={version.version}
-                  className="app-detail-version-content p-4 sm:p-6 flex flex-col gap-4"
+                  className="app-detail-version-content p-5 sm:p-6 flex flex-col gap-5"
                 >
-                  {/* Top bar: View source + View changelog */}
-                  <div className="flex flex-wrap items-center gap-2 border-b border-gray-600 pb-3">
+                  {/* Action bar: subtle links */}
+                  <div className="flex flex-wrap items-center gap-3">
                     {version.sourceCode && (
                       <a
                         href={version.sourceCode}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-3 py-2 bg-gray-700 hover:bg-purple-600 text-gray-200 hover:text-white text-sm font-medium rounded-lg transition-colors"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-purple-400 transition-colors"
                       >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
                         {t.appDetail.viewSource}
                       </a>
                     )}
                     <button
                       type="button"
                       onClick={() => setChangelogOpen(true)}
-                      className="inline-flex items-center px-3 py-2 bg-gray-700 hover:bg-purple-600 text-gray-200 hover:text-white text-sm font-medium rounded-lg transition-colors"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-purple-400 transition-colors"
                     >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
                       {t.appDetail.viewChangelog}
                     </button>
                   </div>
-                  {/* Download options */}
+                  {/* Download cards */}
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
+                    <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">
                       {t.appDetail.downloads}
                     </h3>
                     {tempDownloadsOff ? (
-                      <div className="rounded-lg bg-amber-900/20 border border-amber-700/50 p-4">
+                      <div className="rounded-xl bg-amber-900/20 border border-amber-600/40 p-4">
                         <h4 className="font-semibold text-amber-200">{t.appDetail.downloadsPausedTitle}</h4>
                         <p className="text-gray-400 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
                       </div>
                     ) : byPlatform.length > 0 ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {byPlatform.map((group) => {
                           const platform = group[0].platform;
                           const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
                           const singleOption = group.length === 1;
+                          const icon = platformIcons[platform] ?? '📦';
                           return (
                             <div
                               key={platform}
-                              className="rounded-lg border border-gray-600 bg-gray-800/80 p-3 flex flex-col gap-2"
+                              className="rounded-xl border border-white/10 bg-gray-800/60 p-4 flex flex-col gap-3 hover:border-purple-500/30 transition-colors fun-mode:glass-card fun-mode:hover:border-purple-500/40"
                             >
-                              <span className="text-sm font-semibold text-white">{platform}</span>
-                              <div className="flex flex-col sm:flex-row gap-2">
+                              <div className="flex items-center gap-3">
+                                <span className="text-2xl" aria-hidden>{icon}</span>
+                                <span className="text-base font-semibold text-white">{platform}</span>
+                              </div>
+                              <div className="flex flex-col gap-2 mt-auto">
                                 {!singleOption && (
                                   <select
-                                    className="flex-1 min-w-0 rounded-lg border border-gray-600 bg-gray-700 text-white text-sm px-3 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                    className="w-full rounded-lg border border-white/10 bg-gray-700/80 text-white text-sm px-3 py-2.5 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                                     value={selectedUrl}
                                     onChange={(e) =>
                                       setSelectedUrlByPlatform((prev) => ({ ...prev, [platform]: e.target.value }))
@@ -266,8 +285,11 @@ export function AppDetailContent({
                                   href={selectedUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className={`inline-flex items-center justify-center px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${singleOption ? 'w-full' : ''}`}
+                                  className={`inline-flex items-center justify-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold rounded-xl transition-colors whitespace-nowrap shadow-lg shadow-purple-600/20 ${singleOption ? 'w-full' : ''}`}
                                 >
+                                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                  </svg>
                                   {t.appDetail.downloadNow}
                                 </a>
                               </div>
@@ -287,24 +309,24 @@ export function AppDetailContent({
           {/* Changelog modal */}
           {changelogOpen && version && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
               onClick={() => setChangelogOpen(false)}
               role="dialog"
               aria-modal="true"
               aria-labelledby="changelog-title"
             >
               <div
-                className="bg-gray-800 border border-gray-600 rounded-xl shadow-xl max-w-2xl w-full max-h-[85vh] flex flex-col"
+                className="bg-gray-800 border border-white/10 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="flex items-center justify-between px-4 py-3 border-b border-gray-600">
+                <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-gray-800/80">
                   <h2 id="changelog-title" className="text-lg font-semibold text-white">
                     {t.common.changelog} — {version.version}
                   </h2>
                   <button
                     type="button"
                     onClick={() => setChangelogOpen(false)}
-                    className="text-gray-400 hover:text-white p-1 rounded-lg transition-colors"
+                    className="text-gray-400 hover:text-white p-2 rounded-lg transition-colors hover:bg-white/10"
                     aria-label={t.common.close}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -312,7 +334,7 @@ export function AppDetailContent({
                     </svg>
                   </button>
                 </div>
-                <div className="overflow-y-auto p-4 flex-1">
+                <div className="overflow-y-auto p-5 flex-1">
                   <div
                     className="modal-prose prose-invert prose-sm max-w-none"
                     dangerouslySetInnerHTML={{ __html: marked(version.localizedDescription || '') }}
