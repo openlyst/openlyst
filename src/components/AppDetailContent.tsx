@@ -335,8 +335,7 @@ export function AppDetailContent({
             <div className="flex-1 overflow-auto flex flex-col min-h-0">
               {version && (
                 <div
-                  key={version.version}
-                  className="app-detail-version-content p-5 sm:p-6 flex flex-col gap-5 bg-[rgba(52,73,101,0.42)] backdrop-blur-lg min-h-full"
+                  className="p-5 sm:p-6 flex flex-col gap-5 bg-[rgba(52,73,101,0.42)] backdrop-blur-lg min-h-full"
                 >
                   <div className="space-y-1">
                     <h3 className="text-white text-2xl font-semibold">{app.name}</h3>
