@@ -743,6 +743,89 @@
             ],
             "versions": [
                 {
+                    "version": "8.0.1",
+                    "date": "2026-02-27",
+                    "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/33a3b7560c14d356b8619201f0ce2a1e0cb8714f",
+                    "platforms": [
+                        "iOS",
+                        "macOS",
+                        "Windows",
+                        "Linux",
+                        "Android",
+                        "Web"
+                    ],
+                    "platformInstall": {
+                        "iOS": "",
+                        "Android": "Use Openlyst to install from our repository",
+                        "macOS": "Download the latest macOS build",
+                        "Windows": "Download the latest Windows build",
+                        "Linux": "Download the latest Linux build from GitLab CI",
+                        "Web": "Access the web version"
+                    },
+                    "downloads": {
+                        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-ios-unsigned.ipa",
+                        "macOS": {
+                            "x86_64": "",
+                            "arm64": "",
+                            "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-macos-unsigned.zip",
+                            "homebrew": ""
+                        },
+                        "Windows": {
+                            "zip": {
+                                "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-windows-x64.zip",
+                                "arm64": ""
+                            },
+                            "exe": {
+                                "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-windows-x64-setup.exe",
+                                "arm64": ""
+                            },
+                            "msi": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "msix": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "portable": {
+                                "x86_64": "",
+                                "arm64": ""
+                            },
+                            "winget": "",
+                            "chocolatey": "",
+                            "scoop": ""
+                        },
+                        "Linux": {
+                            "zip": {
+                                "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-linux-x64.zip",
+                                "arm64": ""
+                            },
+                            "appimage": {
+                                "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-linux-x86_64.AppImage",
+                                "arm64": ""
+                            },
+                            "rpm": {
+                                "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-linux-amd64.rpm",
+                                "arm64": ""
+                            },
+                            "deb": {
+                                "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-linux-amd64.deb",
+                                "arm64": ""
+                            },
+                            "aur": {
+                                "x86_64": "https://aur.archlinux.org/packages/klit-bin",
+                                "arm64": ""
+                            }
+                        },
+                        "Android": {
+                            "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27.apk",
+                            "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27.aab"
+                        },
+                        "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-web.zip"
+                    },
+                    "localizedDescription": "# 8.0.1\n\n- top bar refactor"
+                },
+                {
                     "version": "5.0.0",
                     "date": "2026-01-12",
                     "sourceCode": "",
