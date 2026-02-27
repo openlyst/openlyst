@@ -30,7 +30,7 @@
     {
       "version": "4.0.0",
       "date": "2026-02-27",
-      "sourceCode": "",
+      "sourceCode": "https://gitlab.com/Openlyst/repstore/-/tree/197fdebb8b05ba36e8192c0f9e4eb3ca28a7c16b",
       "platforms": ["Android"],
       "platformInstall": {
         "Android": "Download the APK directly from our repository"
