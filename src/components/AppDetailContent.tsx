@@ -152,6 +152,7 @@ export function AppDetailContent({
   const [selectedUrlByPlatform, setSelectedUrlByPlatform] = useState<Record<string, string>>({});
   const [changelogOpen, setChangelogOpen] = useState(false);
   const [activeScreenshotIndex, setActiveScreenshotIndex] = useState<number | null>(null);
+  const [mobileVersionsOpen, setMobileVersionsOpen] = useState(false);
   useEffect(() => {
     const next: Record<string, string> = {};
     for (const group of byPlatform) {
@@ -248,33 +249,88 @@ export function AppDetailContent({
         <Section title={t.appDetail.downloads} background="gray">
           <div className="mx-auto w-full max-w-7xl rounded-3xl border border-red-400/40 bg-[rgba(24,45,70,0.5)] backdrop-blur-xl overflow-hidden flex flex-col lg:flex-row min-h-[540px] shadow-2xl shadow-black/40 ring-1 ring-white/10">
             {/* Version sidebar */}
-            <nav className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-red-400/25 bg-[rgba(11,31,56,0.45)] backdrop-blur-lg p-3 flex lg:flex-col gap-1.5 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto">
-              <p className="text-white text-xs font-semibold px-2 pb-1.5">{t.appDetail.versions}</p>
-              {app.versions.map((v, index) => (
+            <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-red-400/25 bg-[rgba(11,31,56,0.45)] backdrop-blur-lg p-3">
+              <div className="lg:hidden">
                 <button
-                  key={v.version}
                   type="button"
-                  onClick={() => setSelectedVersion(v)}
-                  className={`text-left px-3 py-2.5 rounded-lg text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-200 border ${
-                    version?.version === v.version
-                      ? 'bg-[rgba(125,34,48,0.75)] border-[#f05a55] text-white'
-                      : 'border-transparent text-gray-300 hover:bg-white/5 hover:text-white'
-                  }`}
+                  onClick={() => setMobileVersionsOpen((prev) => !prev)}
+                  className="w-full flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-left"
+                  aria-expanded={mobileVersionsOpen}
+                  aria-controls="mobile-versions-list"
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="block">{v.version}</span>
-                    {index === 0 ? (
-                      <span className="rounded-full bg-emerald-300 text-emerald-900 text-[10px] font-semibold px-2 py-0.5">
-                        {t.appDetail.latest}
-                      </span>
-                    ) : null}
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-300">
+                      {t.appDetail.versions}
+                    </p>
+                    <p className="text-sm font-semibold text-white">
+                      {t.common.version} {version?.version}
+                    </p>
                   </div>
-                  {v.date ? (
-                    <span className="block text-xs font-normal text-gray-400 mt-1">{v.date}</span>
-                  ) : null}
+                  <span className={`text-gray-300 transition-transform ${mobileVersionsOpen ? 'rotate-180' : ''}`}>
+                    ▼
+                  </span>
                 </button>
-              ))}
-            </nav>
+                {mobileVersionsOpen && (
+                  <div id="mobile-versions-list" className="mt-2 max-h-64 overflow-y-auto space-y-1">
+                    {app.versions.map((v, index) => (
+                      <button
+                        key={v.version}
+                        type="button"
+                        onClick={() => {
+                          setSelectedVersion(v);
+                          setMobileVersionsOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 border ${
+                          version?.version === v.version
+                            ? 'bg-[rgba(125,34,48,0.75)] border-[#f05a55] text-white'
+                            : 'border-transparent text-gray-300 hover:bg-white/5 hover:text-white'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between gap-3">
+                          <span className="block">{v.version}</span>
+                          {index === 0 ? (
+                            <span className="rounded-full bg-emerald-300 text-emerald-900 text-[10px] font-semibold px-2 py-0.5">
+                              {t.appDetail.latest}
+                            </span>
+                          ) : null}
+                        </div>
+                        {v.date ? (
+                          <span className="block text-xs font-normal text-gray-400 mt-1">{v.date}</span>
+                        ) : null}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <nav className="hidden lg:flex lg:flex-col gap-1.5 overflow-y-auto">
+                <p className="text-white text-xs font-semibold px-2 pb-1.5">{t.appDetail.versions}</p>
+                {app.versions.map((v, index) => (
+                  <button
+                    key={v.version}
+                    type="button"
+                    onClick={() => setSelectedVersion(v)}
+                    className={`text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 border ${
+                      version?.version === v.version
+                        ? 'bg-[rgba(125,34,48,0.75)] border-[#f05a55] text-white'
+                        : 'border-transparent text-gray-300 hover:bg-white/5 hover:text-white'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="block">{v.version}</span>
+                      {index === 0 ? (
+                        <span className="rounded-full bg-emerald-300 text-emerald-900 text-[10px] font-semibold px-2 py-0.5">
+                          {t.appDetail.latest}
+                        </span>
+                      ) : null}
+                    </div>
+                    {v.date ? (
+                      <span className="block text-xs font-normal text-gray-400 mt-1">{v.date}</span>
+                    ) : null}
+                  </button>
+                ))}
+              </nav>
+            </aside>
             {/* Main content */}
             <div className="flex-1 overflow-auto flex flex-col min-h-0">
               {version && (
