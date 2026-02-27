@@ -32,7 +32,7 @@
       "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
       "platformInstall": {
         "iOS": "https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
-        "Android": "Use RepStore to install from our repository",
+        "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
         "Linux": "Download the latest Linux build",

@@ -168,9 +168,11 @@ export async function loadI18n(lang: SupportedLanguage = DEFAULT_LANGUAGE): Prom
 
 function localizedAppToApp(appData: LocalizedAppData, lang: SupportedLanguage): App {
   const englishName = getLocalizedValue(appData.name, 'en');
+  const slug =
+    appData.bundleIdentifier === 'repstore' ? 'repstore' : nameToSlug(englishName);
   return {
     name: getLocalizedValue(appData.name, lang),
-    slug: nameToSlug(englishName),
+    slug,
     bundleIdentifier: appData.bundleIdentifier,
     subtitle: getLocalizedValue(appData.subtitle, lang),
     localizedDescription: getLocalizedValue(appData.localizedDescription, lang),

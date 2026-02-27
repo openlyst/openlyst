@@ -44,7 +44,7 @@
       ],
       "platformInstall": {
         "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
-        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
         "Linux": "Download the latest Linux build from GitLab CI."
@@ -127,7 +127,7 @@
       ],
       "platformInstall": {
         "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
-        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
         "Linux": "Download the latest Linux build from GitLab CI."
@@ -210,7 +210,7 @@
       ],
       "platformInstall": {
         "iOS": "Add the altstore repo https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
-        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
         "Windows": "Download source and compile yourself from GitLab pipeline.",
         "Linux": "Download the latest Linux build from GitLab CI."

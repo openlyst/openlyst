@@ -46,7 +46,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
                         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
                         "Windows": "Download source and compile yourself from GitLab pipeline.",
                         "Linux": "Download the latest Linux build from GitLab CI.",
@@ -131,7 +131,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
                         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
                         "Windows": "Download source and compile yourself from GitLab pipeline.",
                         "Linux": "Download the latest Linux build from GitLab CI.",
@@ -216,7 +216,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
                         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
                         "Windows": "Download source and compile yourself from GitLab pipeline.",
                         "Linux": "Download the latest Linux build from GitLab CI.",
@@ -301,7 +301,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
                         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
                         "Windows": "Download source and compile yourself from GitLab pipeline.",
                         "Linux": "Download the latest Linux build from GitLab CI.",
@@ -386,7 +386,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
                         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
                         "Windows": "Download source and compile yourself from GitLab pipeline.",
                         "Linux": "Download the latest Linux build from GitLab CI.",
@@ -469,7 +469,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
                         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
                         "Windows": "Download source and compile yourself from GitLab pipeline.",
                         "Linux": "Download the latest Linux build from GitLab CI.",
@@ -552,7 +552,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
                         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
                         "Windows": "Download source and compile yourself from GitLab pipeline.",
                         "Linux": "Download the latest Linux build from GitLab CI.",
@@ -628,7 +628,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+                        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
                         "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
                         "Windows": "Download source and compile yourself from GitLab pipeline.",
                         "Linux": "Download the latest Linux build from GitLab CI."
@@ -715,7 +715,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "Coming soon via AltStore",
-                        "Android": "Coming soon via RepStore"
+                        "Android": "Coming soon via Openlyst"
                     },
                     "localizedDescription": "Initial beta release with intuitive interface, advanced search, offline favorites, privacy protection, and community features."
                 }
@@ -756,7 +756,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository",
+                        "Android": "Use Openlyst to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
                         "Linux": "Download the latest Linux build from GitLab CI",
@@ -839,7 +839,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository",
+                        "Android": "Use Openlyst to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
                         "Linux": "Download the latest Linux build from GitLab CI",
@@ -922,7 +922,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository",
+                        "Android": "Use Openlyst to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
                         "Linux": "Download the latest Linux build from GitLab CI",
@@ -1005,7 +1005,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository",
+                        "Android": "Use Openlyst to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
                         "Linux": "Download the latest Linux build from GitLab CI",
@@ -1088,7 +1088,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository",
+                        "Android": "Use Openlyst to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
                         "Linux": "Download the latest Linux build from GitLab CI",
@@ -1194,7 +1194,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository",
+                        "Android": "Use Openlyst to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
                         "Linux": "Download the latest Linux build",
@@ -1277,7 +1277,7 @@
                     ],
                     "platformInstall": {
                         "iOS": "",
-                        "Android": "Use RepStore to install from our repository",
+                        "Android": "Use Openlyst to install from our repository",
                         "macOS": "Download the latest macOS build",
                         "Windows": "Download the latest Windows build",
                         "Linux": "Download the latest Linux build",
@@ -1349,7 +1349,7 @@
             ]
         },
         {
-            "name": "RepStore",
+            "name": "Openlyst",
             "bundleIdentifier": "repstore",
             "subtitle": "Alternative App Store for Android",
             "localizedDescription": "Alternative app store for iOS*/Android based on repositories compatible with AltStore repos. Browse and install APKs from repositories with a clean, modern interface.",
@@ -1796,14 +1796,14 @@
             "url": "https://openlyst.ink"
         },
         {
-            "title": "RepStore - Alternative App Store Now Available",
+            "title": "Openlyst - Alternative App Store Now Available",
             "identifier": "repstore_100_release",
             "caption": "Browse and install apps from AltStore-compatible repositories on Android and iOS*.",
             "date": "2025-12-07",
             "tintColor": "#10b981",
             "imageURL": "/icons/RepStore/icon.png",
             "notify": true,
-            "url": "/apps/repstore",
+            "url": "/apps/openlyst",
             "appID": "repstore"
         },
         {

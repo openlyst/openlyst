@@ -46,7 +46,7 @@
       ],
       "platformInstall": {
         "iOS": "https://cdn.jsdelivr.net/gh/openlyst/builds@main/repo/apps.json",
-        "Android": "Use RepStore to install from our repository",
+        "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
         "Linux": "Download the latest Linux build from GitLab CI",
@@ -121,7 +121,7 @@
       ],
       "platformInstall": {
         "iOS": "https://cdn.jsdelivr.net/gh/openlyst/builds@main/repo/apps.json",
-        "Android": "Use RepStore to install from our repository",
+        "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
         "Linux": "Download the latest Linux build from GitLab CI",

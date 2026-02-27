@@ -1,9 +1,9 @@
 {
   "bundleIdentifier": "repstore",
   "name": {
-    "en": "RepStore",
-    "zh": "RepStore",
-    "ru": "RepStore"
+    "en": "Openlyst",
+    "zh": "Openlyst",
+    "ru": "Openlyst"
   },
   "subtitle": {
     "en": "Alternative App Store for Android",
@@ -11,9 +11,9 @@
     "ru": "Альтернативный магазин приложений для Android"
   },
   "localizedDescription": {
-    "en": "RepStore is an alternative app store for Android built around AltStore-compatible repositories. Browse repositories and install APKs in one place.",
-    "zh": "RepStore 是面向 Android 的替代应用商店，基于与 AltStore 兼容的仓库。你可以在一个地方浏览仓库并安装 APK。",
-    "ru": "RepStore — альтернативный магазин приложений для Android на базе репозиториев, совместимых с AltStore. Просматривайте репозитории и устанавливайте APK в одном месте."
+    "en": "Openlyst is an alternative app store for Android built around AltStore-compatible repositories. Browse repositories and install APKs in one place.",
+    "zh": "Openlyst 是面向 Android 的替代应用商店，基于与 AltStore 兼容的仓库。你可以在一个地方浏览仓库并安装 APK。",
+    "ru": "Openlyst — альтернативный магазин приложений для Android на базе репозиториев, совместимых с AltStore. Просматривайте репозитории и устанавливайте APK в одном месте."
   },
   "iconURL": "https://gitlab.com/Openlyst/repstore/-/raw/main/icon.png?ref_type=heads",
   "tintColor": "#10b981",
@@ -27,6 +27,24 @@
   ],
   "deprecated": false,
   "versions": [
+    {
+      "version": "4.0.0",
+      "date": "2026-02-27",
+      "sourceCode": "",
+      "platforms": ["Android"],
+      "platformInstall": {
+        "Android": "Download the APK directly from our repository"
+      },
+      "downloads": {
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-18/repstore-4.0.0-2026-02-27.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-18/repstore-4.0.0-2026-02-27.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 4.0.0\n- Rebrand to Openlyst\n- Removed F-Droid support\n- Removed APKPure support\n- Removed repository/source management UI (single Openlyst API mode)\n- Check for Updates\n- Cleanup\n- New UI\n- Removed Desktop UI files\n- OLED Theme\n- Accent colours"
+      }
+    },
     {
       "version": "3.2.0",
       "date": "2026-02-22",

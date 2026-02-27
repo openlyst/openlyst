@@ -362,9 +362,9 @@
   {
     "identifier": "repstore_100_release",
     "title": {
-      "en": "RepStore - Alternative App Store Now Available",
-      "zh": "RepStore - 替代应用商店现已推出",
-      "ru": "RepStore — Альтернативный магазин приложений доступен"
+      "en": "Openlyst - Alternative App Store Now Available",
+      "zh": "Openlyst - 替代应用商店现已推出",
+      "ru": "Openlyst — Альтернативный магазин приложений доступен"
     },
     "caption": {
       "en": "Browse and install apps from AltStore-compatible repositories on Android and iOS*.",
@@ -375,7 +375,7 @@
     "tintColor": "#10b981",
     "imageURL": "/icons/RepStore/icon.png",
     "notify": true,
-    "url": "/apps/repstore",
+    "url": "/apps/openlyst",
     "appID": "repstore"
   },
   {
