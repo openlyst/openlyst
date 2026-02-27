@@ -206,43 +206,43 @@ export function AppDetailContent({
       <section className="relative text-white py-10 sm:py-12">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-white/15 bg-[rgba(18,31,52,0.45)] backdrop-blur-xl p-5 sm:p-7 shadow-xl shadow-black/25">
-          <Link
-            href="/apps"
-            className="inline-flex items-center text-gray-400 hover:text-purple-400 text-sm font-medium mb-8"
-          >
-            ← {t.appDetail.backToApps}
-          </Link>
-          <div className="flex flex-col sm:flex-row items-start gap-6">
-            <img
-              src={app.iconURL}
-              alt=""
-              className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover shadow-xl flex-shrink-0"
-            />
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white">{app.name}</h1>
-              <p className="text-lg text-gray-300 mt-1">{app.subtitle}</p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {app.platforms.map((p) => (
-                  <span
-                    key={p}
-                    className="px-3 py-1 rounded-lg text-sm font-medium bg-white/10 text-gray-200 border border-white/10"
-                  >
-                    {p}
-                  </span>
-                ))}
+            <Link
+              href="/apps"
+              className="inline-flex items-center text-gray-400 hover:text-purple-400 text-sm font-medium mb-8"
+            >
+              ← {t.appDetail.backToApps}
+            </Link>
+            <div className="flex flex-col sm:flex-row items-start gap-6">
+              <img
+                src={app.iconURL}
+                alt=""
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover shadow-xl flex-shrink-0"
+              />
+              <div>
+                <h1 className="text-3xl sm:text-4xl font-bold text-white">{app.name}</h1>
+                <p className="text-lg text-gray-300 mt-1">{app.subtitle}</p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {app.platforms.map((p) => (
+                    <span
+                      key={p}
+                      className="px-3 py-1 rounded-lg text-sm font-medium bg-white/10 text-gray-200 border border-white/10"
+                    >
+                      {p}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <h2 className="text-2xl font-bold tracking-tight text-white">{t.appDetail.about}</h2>
+              <div
+                className="modal-prose prose-invert max-w-none mt-4"
+                dangerouslySetInnerHTML={descriptionHtml}
+              />
+            </div>
           </div>
         </div>
       </section>
-
-      <Section title={t.appDetail.about} background="default">
-        <div
-          className="modal-prose prose-invert max-w-none"
-          dangerouslySetInnerHTML={descriptionHtml}
-        />
-      </Section>
 
       {app.versions.length > 0 && (
         <Section title={t.appDetail.downloads} background="gray">
