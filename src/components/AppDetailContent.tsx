@@ -90,6 +90,38 @@ function groupDownloadsByPlatform(
   );
 }
 
+function getPlatformSubtitle(platform: string, t: ReturnType<typeof useLanguage>['t']): string {
+  const key = platform.trim().toLowerCase();
+  if (key === 'macos') return t.appDetail.macComputers;
+  if (key === 'linux') return t.appDetail.allDistributions;
+  if (key === 'windows') return t.appDetail.pcComputers;
+  if (key === 'ios') return t.appDetail.iphoneIpad;
+  if (key === 'android') return t.appDetail.phonesTablets;
+  if (key === 'web') return t.appDetail.anyBrowser;
+  return t.appDetail.devices.replace('{platform}', platform);
+}
+
+function getPlatformInstallInstruction(version: AppVersion, platform: string): string {
+  const install = version.platformInstall as Record<string, string | undefined>;
+  return (
+    install?.[platform] ||
+    install?.[platform.toLowerCase()] ||
+    install?.[platform.toUpperCase()] ||
+    ''
+  );
+}
+
+function getPlatformIcon(platform: string) {
+  const key = platform.trim().toLowerCase();
+  if (key === 'macos') return 'M';
+  if (key === 'linux') return 'L';
+  if (key === 'windows') return 'W';
+  if (key === 'ios') return 'I';
+  if (key === 'android') return 'A';
+  if (key === 'web') return 'W';
+  return 'D';
+}
+
 export function AppDetailContent({
   app: initialApp,
   tempDownloadsOff,
@@ -119,6 +151,7 @@ export function AppDetailContent({
   // Selected download URL per platform (for dropdowns). Default to first option when version/entries change.
   const [selectedUrlByPlatform, setSelectedUrlByPlatform] = useState<Record<string, string>>({});
   const [changelogOpen, setChangelogOpen] = useState(false);
+  const [activeScreenshotIndex, setActiveScreenshotIndex] = useState<number | null>(null);
   useEffect(() => {
     const next: Record<string, string> = {};
     for (const group of byPlatform) {
@@ -131,12 +164,48 @@ export function AppDetailContent({
     if (changelogOpen) setChangelogOpen(false);
   }, [version?.version]);
 
+  useEffect(() => {
+    if (activeScreenshotIndex === null) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveScreenshotIndex(null);
+      if (e.key === 'ArrowLeft') {
+        setActiveScreenshotIndex((prev) => {
+          if (prev === null) return prev;
+          return (prev - 1 + screenshots.length) % screenshots.length;
+        });
+      }
+      if (e.key === 'ArrowRight') {
+        setActiveScreenshotIndex((prev) => {
+          if (prev === null) return prev;
+          return (prev + 1) % screenshots.length;
+        });
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [activeScreenshotIndex, screenshots.length]);
+
+  const showPrevScreenshot = () => {
+    setActiveScreenshotIndex((prev) => {
+      if (prev === null) return prev;
+      return (prev - 1 + screenshots.length) % screenshots.length;
+    });
+  };
+
+  const showNextScreenshot = () => {
+    setActiveScreenshotIndex((prev) => {
+      if (prev === null) return prev;
+      return (prev + 1) % screenshots.length;
+    });
+  };
+
   const descriptionHtml = { __html: marked(app.localizedDescription || '') };
 
   return (
     <>
-      <section className="relative text-white overflow-hidden min-h-[40vh] flex items-center">
-        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="relative text-white py-10 sm:py-12">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-white/15 bg-[rgba(18,31,52,0.45)] backdrop-blur-xl p-5 sm:p-7 shadow-xl shadow-black/25">
           <Link
             href="/apps"
             className="inline-flex items-center text-gray-400 hover:text-purple-400 text-sm font-medium mb-8"
@@ -156,13 +225,14 @@ export function AppDetailContent({
                 {app.platforms.map((p) => (
                   <span
                     key={p}
-                    className="px-3 py-1 rounded-lg text-sm font-medium bg-white/10 text-gray-300"
+                    className="px-3 py-1 rounded-lg text-sm font-medium bg-white/10 text-gray-200 border border-white/10"
                   >
                     {p}
                   </span>
                 ))}
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -176,23 +246,31 @@ export function AppDetailContent({
 
       {app.versions.length > 0 && (
         <Section title={t.appDetail.downloads} background="gray">
-          <div className="rounded-2xl border border-white/10 bg-gray-800/40 overflow-hidden flex flex-col sm:flex-row min-h-[340px] shadow-xl fun-mode:border-purple-500/20 fun-mode:glass-card">
+          <div className="mx-auto w-full max-w-7xl rounded-3xl border border-red-400/40 bg-[rgba(24,45,70,0.5)] backdrop-blur-xl overflow-hidden flex flex-col lg:flex-row min-h-[540px] shadow-2xl shadow-black/40 ring-1 ring-white/10">
             {/* Version sidebar */}
-            <nav className="sm:w-56 flex-shrink-0 border-b sm:border-b-0 sm:border-r border-white/10 bg-gray-900/50 p-3 flex sm:flex-col gap-1 overflow-x-auto sm:overflow-x-visible sm:overflow-y-auto">
-              {app.versions.map((v) => (
+            <nav className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-red-400/25 bg-[rgba(11,31,56,0.45)] backdrop-blur-lg p-3 flex lg:flex-col gap-1.5 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto">
+              <p className="text-white text-xs font-semibold px-2 pb-1.5">{t.appDetail.versions}</p>
+              {app.versions.map((v, index) => (
                 <button
                   key={v.version}
                   type="button"
                   onClick={() => setSelectedVersion(v)}
-                  className={`text-left px-4 py-3 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
+                  className={`text-left px-3 py-2.5 rounded-lg text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-200 border ${
                     version?.version === v.version
-                      ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
-                      : 'text-gray-400 hover:bg-white/5 hover:text-white'
+                      ? 'bg-[rgba(125,34,48,0.75)] border-[#f05a55] text-white'
+                      : 'border-transparent text-gray-300 hover:bg-white/5 hover:text-white'
                   }`}
                 >
-                  <span className="block">{v.version}</span>
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="block">{v.version}</span>
+                    {index === 0 ? (
+                      <span className="rounded-full bg-emerald-300 text-emerald-900 text-[10px] font-semibold px-2 py-0.5">
+                        {t.appDetail.latest}
+                      </span>
+                    ) : null}
+                  </div>
                   {v.date ? (
-                    <span className="block text-xs font-normal opacity-70 mt-1">{v.date}</span>
+                    <span className="block text-xs font-normal text-gray-400 mt-1">{v.date}</span>
                   ) : null}
                 </button>
               ))}
@@ -202,60 +280,64 @@ export function AppDetailContent({
               {version && (
                 <div
                   key={version.version}
-                  className="app-detail-version-content p-5 sm:p-6 flex flex-col gap-5"
+                  className="app-detail-version-content p-5 sm:p-6 flex flex-col gap-5 bg-[rgba(52,73,101,0.42)] backdrop-blur-lg min-h-full"
                 >
-                  {/* Action bar: subtle links */}
-                  <div className="flex flex-wrap items-center gap-3">
-                    {version.sourceCode && (
-                      <a
-                        href={version.sourceCode}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-purple-400 transition-colors"
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
-                        {t.appDetail.viewSource}
-                      </a>
-                    )}
+                  <div className="space-y-1">
+                    <h3 className="text-white text-2xl font-semibold">{app.name}</h3>
+                    <p className="text-gray-300 text-xs">{t.appDetail.chooseDownload}</p>
+                  </div>
+
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <h4 className="text-white text-4xl md:text-5xl font-bold leading-tight">{t.common.version} {version.version}</h4>
                     <button
                       type="button"
                       onClick={() => setChangelogOpen(true)}
-                      className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-purple-400 transition-colors"
+                      className="inline-flex items-center gap-2 rounded-lg border border-red-300/35 bg-[rgba(125,34,48,0.72)] hover:bg-[rgba(139,42,57,0.82)] text-white px-3 py-1.5 text-sm font-semibold transition-colors"
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                      </svg>
-                      {t.appDetail.viewChangelog}
+                      <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-white/20 text-xs">•</span>
+                      {t.appDetail.viewDetails}
                     </button>
                   </div>
+
                   {/* Download cards */}
                   <div>
-                    <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">
-                      {t.appDetail.downloads}
-                    </h3>
                     {tempDownloadsOff ? (
                       <div className="rounded-xl bg-amber-900/20 border border-amber-600/40 p-4">
                         <h4 className="font-semibold text-amber-200">{t.appDetail.downloadsPausedTitle}</h4>
                         <p className="text-gray-400 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
                       </div>
                     ) : byPlatform.length > 0 ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                         {byPlatform.map((group) => {
                           const platform = group[0].platform;
                           const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
                           const singleOption = group.length === 1;
+                          const installInstruction = getPlatformInstallInstruction(version, platform);
+                          const buttonText = t.appDetail.downloadPlatform.includes('{platform}')
+                            ? t.appDetail.downloadPlatform.replace('{platform}', platform)
+                            : `${t.common.download} ${platform}`;
+
                           return (
                             <div
                               key={platform}
-                              className="rounded-xl border border-white/10 bg-gray-800/60 p-4 flex flex-col gap-3 hover:border-purple-500/30 transition-colors fun-mode:glass-card fun-mode:hover:border-purple-500/40"
+                              className="rounded-xl border border-white/15 bg-[rgba(13,34,58,0.62)] backdrop-blur-md p-3.5 flex flex-col gap-2.5 text-white shadow-lg shadow-black/20"
                             >
-                              <span className="text-base font-semibold text-white">{platform}</span>
+                              <div className="flex items-start gap-3">
+                                <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-[#d74545] text-xs font-bold">
+                                  {getPlatformIcon(platform)}
+                                </span>
+                                <div className="min-w-0">
+                                  <span className="block text-xl md:text-2xl font-semibold text-white">{platform}</span>
+                                  <span className="block text-xs text-gray-300">{getPlatformSubtitle(platform, t)}</span>
+                                </div>
+                              </div>
+                              {installInstruction && (
+                                <p className="text-xs text-gray-200 leading-relaxed max-h-[3.75rem] overflow-hidden">{installInstruction}</p>
+                              )}
                               <div className="flex flex-col gap-2 mt-auto">
                                 {!singleOption && (
                                   <select
-                                    className="w-full rounded-lg border border-white/10 bg-gray-700/80 text-white text-sm px-3 py-2.5 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                    className="w-full rounded-lg border border-white/10 bg-[rgba(36,59,88,0.75)] text-white text-xs px-3 py-2 focus:ring-2 focus:ring-red-400 focus:border-transparent"
                                     value={selectedUrl}
                                     onChange={(e) =>
                                       setSelectedUrlByPlatform((prev) => ({ ...prev, [platform]: e.target.value }))
@@ -272,13 +354,23 @@ export function AppDetailContent({
                                   href={selectedUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className={`inline-flex items-center justify-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold rounded-xl transition-colors whitespace-nowrap shadow-lg shadow-purple-600/20 ${singleOption ? 'w-full' : ''}`}
+                                  className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#ef3a2d] hover:bg-[#ff4f44] text-white text-sm font-semibold rounded-md transition-colors whitespace-nowrap shadow-md shadow-red-900/25 ${singleOption ? 'w-full' : ''}`}
                                 >
                                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                   </svg>
-                                  {t.appDetail.downloadNow}
+                                  {buttonText}
                                 </a>
+                                {version.sourceCode && (
+                                  <a
+                                    href={version.sourceCode}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xs text-gray-400 hover:text-white transition-colors"
+                                  >
+                                    {t.appDetail.viewSource}
+                                  </a>
+                                )}
                               </div>
                             </div>
                           );
@@ -337,18 +429,73 @@ export function AppDetailContent({
         <Section title={t.appDetail.viewScreenshots} background="gray">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {screenshots.map((src, i) => (
-              <a
+              <button
                 key={i}
-                href={src}
-                target="_blank"
-                rel="noopener noreferrer"
+                type="button"
+                onClick={() => setActiveScreenshotIndex(i)}
                 className="rounded-xl overflow-hidden border border-gray-600 hover:border-purple-500 transition-colors"
+                aria-label={`${t.appDetail.viewScreenshots} ${i + 1}`}
               >
                 <img src={src} alt="" className="w-full aspect-video object-cover" />
-              </a>
+              </button>
             ))}
           </div>
         </Section>
+      )}
+
+      {activeScreenshotIndex !== null && screenshots[activeScreenshotIndex] && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setActiveScreenshotIndex(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={t.appDetail.viewScreenshots}
+        >
+          <div
+            className="relative w-full max-w-6xl max-h-[90vh] rounded-2xl border border-white/15 bg-[rgba(12,20,36,0.8)] p-3 sm:p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={screenshots[activeScreenshotIndex]}
+              alt=""
+              className="w-full max-h-[78vh] object-contain rounded-xl"
+            />
+
+            <button
+              type="button"
+              onClick={() => setActiveScreenshotIndex(null)}
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/45 border border-white/15 text-white hover:bg-black/70"
+              aria-label={t.common.close}
+            >
+              ×
+            </button>
+
+            {screenshots.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={showPrevScreenshot}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/45 border border-white/15 text-white hover:bg-black/70"
+                  aria-label={t.common.back}
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  onClick={showNextScreenshot}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/45 border border-white/15 text-white hover:bg-black/70"
+                  aria-label={t.common.next}
+                >
+                  ›
+                </button>
+              </>
+            )}
+
+            <p className="mt-3 text-center text-xs text-gray-300">
+              {activeScreenshotIndex + 1} / {screenshots.length}
+            </p>
+          </div>
+        </div>
       )}
 
       <Section title="" background="default">
