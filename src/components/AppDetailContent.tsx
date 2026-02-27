@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { marked } from 'marked';
-import { Section, Button } from '@/components';
+import { Section } from '@/components';
 import { useLanguage } from '@/lib/contexts/LanguageContext';
 import { getApp } from '@/lib/services/dataService';
 import type { App, AppVersion } from '@/lib/types/repo';
@@ -572,12 +572,6 @@ export function AppDetailContent({
           </div>
         </div>
       )}
-
-      <Section title="" background="default">
-        <div className="text-center">
-          <Button text={t.appDetail.backToApps} href="/apps" variant="secondary" />
-        </div>
-      </Section>
     </>
   );
 }
