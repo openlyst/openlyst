@@ -90,36 +90,61 @@ function groupDownloadsByPlatform(
   );
 }
 
-function getPlatformSubtitle(platform: string, t: ReturnType<typeof useLanguage>['t']): string {
-  const key = platform.trim().toLowerCase();
-  if (key === 'macos') return t.appDetail.macComputers;
-  if (key === 'linux') return t.appDetail.allDistributions;
-  if (key === 'windows') return t.appDetail.pcComputers;
-  if (key === 'ios') return t.appDetail.iphoneIpad;
-  if (key === 'android') return t.appDetail.phonesTablets;
-  if (key === 'web') return t.appDetail.anyBrowser;
-  return t.appDetail.devices.replace('{platform}', platform);
-}
-
-function getPlatformInstallInstruction(version: AppVersion, platform: string): string {
-  const install = version.platformInstall as Record<string, string | undefined>;
-  return (
-    install?.[platform] ||
-    install?.[platform.toLowerCase()] ||
-    install?.[platform.toUpperCase()] ||
-    ''
-  );
-}
-
 function getPlatformIcon(platform: string) {
   const key = platform.trim().toLowerCase();
-  if (key === 'macos') return 'M';
-  if (key === 'linux') return 'L';
-  if (key === 'windows') return 'W';
-  if (key === 'ios') return 'I';
-  if (key === 'android') return 'A';
-  if (key === 'web') return 'W';
-  return 'D';
+  if (key === 'ios') {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="7" y="3.5" width="10" height="17" rx="2.2" />
+        <circle cx="12" cy="17.5" r="0.8" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+  if (key === 'macos') {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3.5" y="5" width="17" height="11" rx="1.5" />
+        <path d="M9 19h6M12 16v3" />
+      </svg>
+    );
+  }
+  if (key === 'windows') {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 4.5l8-1.2V11H3V4.5zm10-1.5L21 1.8V11h-8V3zM3 13h8v7.7L3 19.5V13zm10 0h8v9.2l-8-1.1V13z" />
+      </svg>
+    );
+  }
+  if (key === 'linux') {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
+        <path d="M8 10l2 2-2 2M12.5 14H16" />
+      </svg>
+    );
+  }
+  if (key === 'android') {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="6" y="8" width="12" height="10" rx="3" />
+        <path d="M9 8L7.5 5.5M15 8l1.5-2.5M9.5 12h.01M14.5 12h.01" />
+      </svg>
+    );
+  }
+  if (key === 'web') {
+    return (
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+      </svg>
+    );
+  }
+  return (
+    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9 12h6" />
+    </svg>
+  );
 }
 
 export function AppDetailContent({
@@ -247,7 +272,7 @@ export function AppDetailContent({
 
       {app.versions.length > 0 && (
         <Section title={t.appDetail.downloads} background="gray">
-          <div className="mx-auto w-full max-w-7xl rounded-3xl border border-red-400/40 bg-[rgba(24,45,70,0.5)] backdrop-blur-xl overflow-hidden flex flex-col lg:flex-row min-h-[540px] shadow-2xl shadow-black/40 ring-1 ring-white/10">
+          <div className="font-display mx-auto w-full max-w-7xl rounded-3xl border border-red-400/40 bg-[rgba(24,45,70,0.5)] backdrop-blur-xl overflow-hidden flex flex-col lg:flex-row min-h-[540px] shadow-2xl shadow-black/40 ring-1 ring-white/10">
             {/* Version sidebar */}
             <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-red-400/25 bg-[rgba(11,31,56,0.45)] backdrop-blur-lg p-3">
               <div className="lg:hidden">
@@ -367,7 +392,6 @@ export function AppDetailContent({
                           const platform = group[0].platform;
                           const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
                           const singleOption = group.length === 1;
-                          const installInstruction = getPlatformInstallInstruction(version, platform);
                           const buttonText = t.appDetail.downloadPlatform.includes('{platform}')
                             ? t.appDetail.downloadPlatform.replace('{platform}', platform)
                             : `${t.common.download} ${platform}`;
@@ -378,17 +402,13 @@ export function AppDetailContent({
                               className="rounded-xl border border-white/15 bg-[rgba(13,34,58,0.62)] backdrop-blur-md p-3.5 flex flex-col gap-2.5 text-white shadow-lg shadow-black/20"
                             >
                               <div className="flex items-start gap-3">
-                                <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-[#d74545] text-xs font-bold">
+                                <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#d74545] text-white">
                                   {getPlatformIcon(platform)}
                                 </span>
                                 <div className="min-w-0">
                                   <span className="block text-xl md:text-2xl font-semibold text-white">{platform}</span>
-                                  <span className="block text-xs text-gray-300">{getPlatformSubtitle(platform, t)}</span>
                                 </div>
                               </div>
-                              {installInstruction && (
-                                <p className="text-xs text-gray-200 leading-relaxed max-h-[3.75rem] overflow-hidden">{installInstruction}</p>
-                              )}
                               <div className="flex flex-col gap-2 mt-auto">
                                 {!singleOption && (
                                   <select

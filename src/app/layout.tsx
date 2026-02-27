@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/contexts/LanguageContext';
 import { Header } from '@/components/Header';
@@ -6,6 +7,12 @@ import { Footer } from '@/components/Footer';
 import { LayoutClient } from '@/components/LayoutClient';
 
 export const dynamic = 'force-dynamic';
+
+const displayFont = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+  weight: ['500', '700'],
+});
 
 export const metadata: Metadata = {
   title: { default: 'OpenLyst - Free & Open Source Applications', template: '%s - OpenLyst' },
@@ -25,7 +32,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
       </head>
-      <body>
+      <body className={displayFont.variable}>
         <script
           dangerouslySetInnerHTML={{
             __html: `

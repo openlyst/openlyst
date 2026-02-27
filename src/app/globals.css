@@ -12,6 +12,10 @@
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: transparent;
   }
+
+  .font-display {
+    font-family: var(--font-display), 'Inter', system-ui, sans-serif;
+  }
 }
 
 @layer components {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage, LANGUAGE_FLAGS, LANGUAGE_NAMES, type SupportedLanguage } from '@/lib/contexts/LanguageContext';
@@ -20,6 +20,25 @@ export function Header() {
   const { language, setLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const desktopLangMenuRef = useRef<HTMLDivElement | null>(null);
+  const mobileLangMenuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleDocumentClick(event: MouseEvent) {
+      if (!isLangMenuOpen) return;
+      const target = event.target as Node | null;
+      if (!target) return;
+
+      const clickedDesktopMenu = desktopLangMenuRef.current?.contains(target) ?? false;
+      const clickedMobileMenu = mobileLangMenuRef.current?.contains(target) ?? false;
+      if (!clickedDesktopMenu && !clickedMobileMenu) {
+        setIsLangMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleDocumentClick);
+    return () => document.removeEventListener('mousedown', handleDocumentClick);
+  }, [isLangMenuOpen]);
 
   const navigation = navigationKeys.map((key) => ({
     name: (t.nav as Record<string, string>)[key],
@@ -54,7 +73,7 @@ export function Header() {
               ))}
             </div>
 
-            <div className="relative ml-4">
+            <div ref={desktopLangMenuRef} className="relative ml-4">
               <button
                 type="button"
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
@@ -127,7 +146,10 @@ export function Header() {
         </div>
 
         {isLangMenuOpen && (
-          <div className="md:hidden absolute right-4 mt-2 w-40 glass rounded-md shadow-lg ring-1 ring-white/10 z-50">
+          <div
+            ref={mobileLangMenuRef}
+            className="md:hidden absolute right-4 mt-2 w-40 glass rounded-md shadow-lg ring-1 ring-white/10 z-50"
+          >
             <div className="py-1">
               {(['en', 'zh', 'ru'] as SupportedLanguage[]).map((lang) => (
                 <button
