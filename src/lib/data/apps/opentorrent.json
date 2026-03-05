@@ -30,7 +30,7 @@
     "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/opentorrent/photo_2026-01-14_09-17-59.jpg?ref_type=heads",
     "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/opentorrent/photo_2026-01-14_09-17-33.jpg?ref_type=heads"
   ],
-  "deprecated": false,
+  "deprecated": true,
   "versions": [
     {
       "version": "2.0.0",
