@@ -257,6 +257,16 @@ export function AppDetailContent({
                     </span>
                   ))}
                 </div>
+                {app.deprecated && (
+                  <div className="mt-5 rounded-xl border border-red-400/45 bg-red-950/30 p-4">
+                    <p className="text-sm font-bold uppercase tracking-wide text-red-200">
+                      {t.deprecated.deprecatedBadge}
+                    </p>
+                    <p className="mt-1 text-base font-semibold text-red-100">{t.deprecated.appDeprecated}</p>
+                    <p className="mt-1 text-sm text-red-200/90">{t.deprecated.appDeprecatedDesc}</p>
+                    <p className="mt-2 text-sm font-semibold text-red-100">{t.deprecated.doNotUseWarning}</p>
+                  </div>
+                )}
               </div>
             </div>
             <div className="mt-8 border-t border-white/10 pt-6">

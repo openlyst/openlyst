@@ -76,6 +76,7 @@
     "viewActiveApps": "View Active Apps",
     "appDeprecated": "This app has been deprecated",
     "appDeprecatedDesc": "This application is no longer maintained and will not receive updates. Consider using an alternative.",
+    "doNotUseWarning": "Do not use this app unless absolutely necessary.",
     "loadingDetails": "Please wait while we load the app details"
   },
   "about": {
