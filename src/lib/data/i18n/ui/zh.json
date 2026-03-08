@@ -76,7 +76,6 @@
     "viewActiveApps": "查看活跃应用",
     "appDeprecated": "此应用已被弃用",
     "appDeprecatedDesc": "此应用程序不再维护，将不会收到更新。请考虑使用替代方案。",
-    "doNotUseWarning": "除非绝对必要，请不要使用此应用。",
     "loadingDetails": "请稍等，正在加载应用详情"
   },
   "about": {
