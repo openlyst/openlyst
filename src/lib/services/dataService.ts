@@ -43,11 +43,18 @@ export interface LocalizedAppData {
 
 export interface LocalizedAppVersion {
   version: string;
+  buildVersion?: string;
+  buildNumber?: string;
+  releaseTag?: string;
+  sourceCommit?: string;
+  generatedAt?: string;
+  publishedAt?: string;
   date?: string;
   sourceCode?: string;
   platforms?: string[];
   platformInstall: Record<string, string>;
   downloads: Record<string, unknown>;
+  checksums?: Record<string, string>;
   localizedDescription: LocalizedString;
 }
 
@@ -170,6 +177,14 @@ function localizedAppToApp(appData: LocalizedAppData, lang: SupportedLanguage): 
   const englishName = getLocalizedValue(appData.name, 'en');
   const slug =
     appData.bundleIdentifier === 'repstore' ? 'repstore' : nameToSlug(englishName);
+  const versions = appData.versions.map((v) => localizedVersionToVersion(v, lang));
+  versions.sort((a, b) => {
+    const bnA = Number(a.buildNumber || 0);
+    const bnB = Number(b.buildNumber || 0);
+    if (bnA !== bnB) return bnB - bnA;
+    return String(b.date || '').localeCompare(String(a.date || ''));
+  });
+
   return {
     name: getLocalizedValue(appData.name, lang),
     slug,
@@ -181,18 +196,25 @@ function localizedAppToApp(appData: LocalizedAppData, lang: SupportedLanguage): 
     platforms: appData.platforms,
     screenshots: appData.screenshots.map((s) => resolveUrl(s)),
     deprecated: appData.deprecated,
-    versions: appData.versions.map((v) => localizedVersionToVersion(v, lang)),
+    versions,
   };
 }
 
 function localizedVersionToVersion(version: LocalizedAppVersion, lang: SupportedLanguage): AppVersion {
   return {
     version: version.version,
+    buildVersion: version.buildVersion,
+    buildNumber: version.buildNumber,
+    releaseTag: version.releaseTag,
+    sourceCommit: version.sourceCommit,
+    generatedAt: version.generatedAt,
+    publishedAt: version.publishedAt,
     date: version.date,
     sourceCode: version.sourceCode,
     platforms: version.platforms,
     platformInstall: version.platformInstall,
     downloads: resolveUrlsDeep(version.downloads) as PlatformDownloads,
+    checksums: version.checksums,
     localizedDescription: getLocalizedValue(version.localizedDescription, lang),
   };
 }

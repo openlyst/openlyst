@@ -80,6 +80,12 @@ export interface PlatformDownloadURLs {
 
 export interface AppVersion {
   version: string;
+  buildVersion?: string;
+  buildNumber?: string;
+  releaseTag?: string;
+  sourceCommit?: string;
+  generatedAt?: string;
+  publishedAt?: string;
   platforms?: string[];
   platformInstall: PlatformInstall;
   localizedDescription: string;
@@ -87,6 +93,7 @@ export interface AppVersion {
   downloadURL?: string;
   downloadURLs?: PlatformDownloadURLs;
   downloads?: PlatformDownloads;
+  checksums?: Record<string, string>;
   size?: number;
   minOSVersion?: string;
   sourceCode?: string;

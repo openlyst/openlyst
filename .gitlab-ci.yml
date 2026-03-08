@@ -1,5 +1,15 @@
 stages:
+  - validate
   - test
+
+validate-release-data:
+  stage: validate
+  image: node:22-alpine
+  rules:
+    - when: on_success
+  script:
+    - npm ci --no-audit --no-fund
+    - npm run validate-release-data
 
 variables:
   API_BASE_URL: "https://openlyst.ink/api/v1"
