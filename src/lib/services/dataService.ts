@@ -30,6 +30,8 @@ export interface LocalizedString {
 
 export interface LocalizedAppData {
   bundleIdentifier: string;
+  /** Full bundle / package id (e.g. gitlab.openlyst.doudou). API injects apkpure etc. from this. */
+  applicationId?: string;
   name: LocalizedString;
   subtitle: LocalizedString;
   localizedDescription: LocalizedString;
@@ -173,11 +175,34 @@ export async function loadI18n(lang: SupportedLanguage = DEFAULT_LANGUAGE): Prom
   return uiTranslations[lang] ?? uiTranslations[DEFAULT_LANGUAGE];
 }
 
+const APKPURE_BASE = 'https://apkpure.com/p';
+
+function injectApkpureFromApplicationId(
+  versions: AppVersion[],
+  applicationId: string | undefined
+): void {
+  if (!applicationId?.trim()) return;
+  const apkpureUrl = `${APKPURE_BASE}/${applicationId.trim()}`;
+  for (const v of versions) {
+    const d = v.downloads;
+    if (!d || typeof d !== 'object') continue;
+    const android = d.Android;
+    if (android && typeof android === 'object' && !Array.isArray(android)) {
+      const a = android as Record<string, string | undefined>;
+      const existing = a.apkpure;
+      if (existing === undefined || existing === '' || existing.startsWith(APKPURE_BASE)) {
+        a.apkpure = apkpureUrl;
+      }
+    }
+  }
+}
+
 function localizedAppToApp(appData: LocalizedAppData, lang: SupportedLanguage): App {
   const englishName = getLocalizedValue(appData.name, 'en');
   const slug =
     appData.bundleIdentifier === 'repstore' ? 'repstore' : nameToSlug(englishName);
   const versions = appData.versions.map((v) => localizedVersionToVersion(v, lang));
+  injectApkpureFromApplicationId(versions, appData.applicationId);
   versions.sort((a, b) => {
     const bnA = Number(a.buildNumber || 0);
     const bnB = Number(b.buildNumber || 0);
@@ -189,6 +214,7 @@ function localizedAppToApp(appData: LocalizedAppData, lang: SupportedLanguage): 
     name: getLocalizedValue(appData.name, lang),
     slug,
     bundleIdentifier: appData.bundleIdentifier,
+    applicationId: appData.applicationId,
     subtitle: getLocalizedValue(appData.subtitle, lang),
     localizedDescription: getLocalizedValue(appData.localizedDescription, lang),
     iconURL: resolveUrl(appData.iconURL),

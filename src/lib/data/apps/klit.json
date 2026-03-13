@@ -1,5 +1,6 @@
 {
   "bundleIdentifier": "klit",
+  "applicationId": "gitlab.openlyst.klit",
   "name": {
     "en": "Klit",
     "zh": "Klit",
@@ -325,8 +326,14 @@
             "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-13/klit-8.0.0-2026-02-23-windows-x64-setup.exe",
             "arm64": ""
           },
-          "msix": { "x86_64": "", "arm64": "" },
-          "portable": { "x86_64": "", "arm64": "" },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
           "winget": "",
           "chocolatey": "",
           "scoop": ""

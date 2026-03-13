@@ -1,5 +1,6 @@
 {
   "bundleIdentifier": "finar",
+  "applicationId": "gitlab.openlyst.finar",
   "name": {
     "en": "Finar",
     "zh": "Finar",
@@ -17,7 +18,14 @@
   },
   "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/finar.png?ref_type=heads",
   "tintColor": "#6366f1",
-  "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+  "platforms": [
+    "iOS",
+    "macOS",
+    "Windows",
+    "Linux",
+    "Android",
+    "Web"
+  ],
   "screenshots": [
     "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/screen-0.jpg?ref_type=heads",
     "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/screen-1.jpg?ref_type=heads"
@@ -28,7 +36,14 @@
       "version": "3.0.0",
       "date": "2026-02-24",
       "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/main",
-      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
       "platformInstall": {
         "iOS": "Coming soon via AltStore",
         "Android": "Download the APK or AAB from the links below",
@@ -85,7 +100,14 @@
       "version": "2.0.0",
       "date": "2026-02-13",
       "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/5a6add7ed0feabc15fc507563fe655a84db11344",
-      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
       "platformInstall": {
         "iOS": "Coming soon via AltStore",
         "Android": "Download the APK or AAB from the links below",
@@ -142,7 +164,14 @@
       "version": "1.1.0",
       "date": "2026-01-11",
       "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/50ede4397530d4ee9f1459ca8faf82c1b4e354c4",
-      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
       "platformInstall": {
         "iOS": "Coming soon via AltStore",
         "Android": "Download the APK directly from GitLab CI",

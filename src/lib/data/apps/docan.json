@@ -1,5 +1,6 @@
 {
   "bundleIdentifier": "docan",
+  "applicationId": "gitlab.openlyst.docan",
   "name": {
     "en": "Docan",
     "zh": "多灿",
@@ -17,7 +18,14 @@
   },
   "iconURL": "https://gitlab.com/Openlyst/docan/-/raw/main/assets/icon_1024.png",
   "tintColor": "#6366f1",
-  "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+  "platforms": [
+    "iOS",
+    "macOS",
+    "Windows",
+    "Linux",
+    "Android",
+    "Web"
+  ],
   "screenshots": [
     "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Docan/chat.png?ref_type=heads",
     "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Docan/chats.png?ref_type=heads",
@@ -29,7 +37,14 @@
       "version": "3.0.0",
       "date": "2026-01-11",
       "sourceCode": "https://gitlab.com/Openlyst/docan/-/tree/a879b79ddb6acdff0cb2492c96466f3603a1801c",
-      "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
       "platformInstall": {
         "iOS": "https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
         "Android": "Use Openlyst to install from our repository",

@@ -109,7 +109,13 @@ export interface AppScreenshots {
 export interface App {
   name: string;
   slug: string;
+  /** Short repo key / legacy id (e.g. doudou). Prefer applicationId for store/bundle identity. */
   bundleIdentifier?: string;
+  /**
+   * Full application id / bundle id / package name (e.g. gitlab.openlyst.doudou).
+   * Exposed by the API so clients need not hardcode store URLs.
+   */
+  applicationId?: string;
   subtitle: string;
   localizedDescription: string;
   iconURL: string;

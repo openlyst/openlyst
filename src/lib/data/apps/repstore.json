@@ -1,5 +1,6 @@
 {
   "bundleIdentifier": "repstore",
+  "applicationId": "gitlab.openlyst.repstore",
   "name": {
     "en": "Openlyst",
     "zh": "Openlyst",
@@ -17,7 +18,9 @@
   },
   "iconURL": "https://gitlab.com/Openlyst/repstore/-/raw/main/icon.png?ref_type=heads",
   "tintColor": "#10b981",
-  "platforms": ["Android"],
+  "platforms": [
+    "Android"
+  ],
   "screenshots": [
     "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/app.png?ref_type=heads",
     "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/home.png?ref_type=heads",
@@ -31,7 +34,9 @@
       "version": "4.0.0",
       "date": "2026-02-27",
       "sourceCode": "https://gitlab.com/Openlyst/repstore/-/tree/197fdebb8b05ba36e8192c0f9e4eb3ca28a7c16b",
-      "platforms": ["Android"],
+      "platforms": [
+        "Android"
+      ],
       "platformInstall": {
         "Android": "Download the APK directly from our repository"
       },
@@ -49,7 +54,9 @@
       "version": "3.2.0",
       "date": "2026-02-22",
       "sourceCode": "https://gitlab.com/Openlyst/repstore/-/tree/6228381dc89f9df35906882397d45471e517d934",
-      "platforms": ["Android"],
+      "platforms": [
+        "Android"
+      ],
       "platformInstall": {
         "Android": "Download the APK directly from our repository"
       },
@@ -69,7 +76,9 @@
       "version": "3.1.0",
       "date": "2026-01-12",
       "sourceCode": "",
-      "platforms": ["Android"],
+      "platforms": [
+        "Android"
+      ],
       "platformInstall": {
         "Android": "Download the APK directly from our repository"
       },

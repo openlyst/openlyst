@@ -25,7 +25,8 @@ export async function GET(request: NextRequest) {
         app.name.toLowerCase().includes(searchTerm) ||
         app.subtitle.toLowerCase().includes(searchTerm) ||
         app.localizedDescription.toLowerCase().includes(searchTerm) ||
-        (app.bundleIdentifier && app.bundleIdentifier.toLowerCase().includes(searchTerm))
+        (app.bundleIdentifier && app.bundleIdentifier.toLowerCase().includes(searchTerm)) ||
+        (app.applicationId && app.applicationId.toLowerCase().includes(searchTerm))
     );
 
     const transformedResults = results.map((app) => {

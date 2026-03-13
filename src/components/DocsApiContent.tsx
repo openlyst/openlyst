@@ -84,6 +84,7 @@ const endpoints: ApiEndpoint[] = [
     "name": "Doudou",
     "slug": "doudou",
     "bundleIdentifier": "doudou",
+    "applicationId": "gitlab.openlyst.doudou",
     "subtitle": "Music player for self-hosted services",
     "localizedDescription": "...",
     "iconURL": "https://...",

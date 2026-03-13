@@ -1,5 +1,6 @@
 {
   "bundleIdentifier": "doudou",
+  "applicationId": "gitlab.openlyst.doudou",
   "name": {
     "en": "Doudou",
     "zh": "豆豆",
@@ -108,8 +109,7 @@
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11.apk",
-          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11.aab",
-          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11.aab"
         }
       },
       "localizedDescription": {
@@ -195,8 +195,7 @@
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09.apk",
-          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09.aab",
-          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09.aab"
         }
       },
       "localizedDescription": {
@@ -277,8 +276,7 @@
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27.apk",
-          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27.aab",
-          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27.aab"
         }
       },
       "localizedDescription": {
@@ -359,8 +357,7 @@
         },
         "Android": {
           "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16.apk",
-          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16.aab",
-          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16.aab"
         },
         "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-web.zip"
       },
@@ -442,8 +439,7 @@
         },
         "Android": {
           "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-23/doudou-13.0.0-2026-02-15.apk",
-          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-23/doudou-13.0.0-2026-02-15.aab",
-          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-23/doudou-13.0.0-2026-02-15.aab"
         },
         "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-web.zip"
       },
@@ -525,8 +521,7 @@
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08.apk",
-          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08.aab",
-          "apkpure": "https://apkpure.com/p/gitlab.openlyst.doudou"
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08.aab"
         },
         "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-web.zip"
       },
