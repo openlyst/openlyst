@@ -47,7 +47,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
@@ -55,7 +55,7 @@
         "Web": "Access the web version"
       },
       "repos": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "macOS": {
           "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         }
@@ -130,7 +130,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
@@ -138,7 +138,7 @@
         "Web": "Access the web version"
       },
       "repos": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "macOS": {
           "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         }
@@ -213,7 +213,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
@@ -221,7 +221,7 @@
         "Web": "Access the web version"
       },
       "repos": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "macOS": {
           "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         }
@@ -296,7 +296,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
@@ -304,7 +304,7 @@
         "Web": "Access the web version"
       },
       "repos": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "macOS": {
           "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         }
@@ -377,7 +377,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
@@ -385,7 +385,7 @@
         "Web": "Access the web version"
       },
       "repos": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "macOS": {
           "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         }

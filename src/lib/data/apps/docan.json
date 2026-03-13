@@ -46,7 +46,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
         "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",
