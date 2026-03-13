@@ -15,11 +15,12 @@
     "zh": "Finar 是一个基于 Flutter 的跨平台 Jellyfin 客户端。它提供由 media_kit 驱动的原生播放、基于 Hive 的离线支持，以及适配桌面、移动端和电视的界面。",
     "ru": "Finar — кроссплатформенный клиент Jellyfin на Flutter. В нём есть нативное воспроизведение через media_kit, офлайн-поддержка на Hive и адаптивный интерфейс для ПК, мобильных устройств и ТВ."
   },
-  "iconURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
+  "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/finar.png?ref_type=heads",
   "tintColor": "#6366f1",
   "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
   "screenshots": [
-    ""
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/screen-0.jpg?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/screen-1.jpg?ref_type=heads"
   ],
   "deprecated": false,
   "versions": [
