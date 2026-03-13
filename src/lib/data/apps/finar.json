@@ -18,7 +18,9 @@
   "iconURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
   "tintColor": "#6366f1",
   "platforms": ["iOS", "macOS", "Windows", "Linux", "Android", "Web"],
-  "screenshots": [],
+  "screenshots": [
+    ""
+  ],
   "deprecated": false,
   "versions": [
     {
