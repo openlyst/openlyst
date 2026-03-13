@@ -5,11 +5,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage, LANGUAGE_FLAGS, LANGUAGE_NAMES, type SupportedLanguage } from '@/lib/contexts/LanguageContext';
 
-const navigationKeys = ['home', 'news', 'apps', 'about', 'gitlab', 'support'] as const;
+const navigationKeys = ['home', 'news', 'apps', 'repos', 'about', 'gitlab', 'support'] as const;
 const navHrefs: Record<(typeof navigationKeys)[number], string> = {
   home: '/',
   news: '/news',
   apps: '/apps',
+  repos: '/repos',
   about: '/about',
   gitlab: 'https://gitlab.com/Openlyst/',
   support: '/support',

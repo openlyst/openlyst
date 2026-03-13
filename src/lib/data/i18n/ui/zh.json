@@ -3,6 +3,7 @@
     "home": "首页",
     "news": "新闻",
     "apps": "应用",
+    "repos": "仓库",
     "about": "关于",
     "gitlab": "GitLab",
     "contribute": "贡献",
@@ -54,6 +55,15 @@
     "contributeText": "加入我们相信免费、开源软件的开发者和用户社区。我们可以共同创造企业控制平台的替代品。",
     "getInvolved": "参与其中",
     "viewSourceCode": "查看源代码"
+  },
+  "repos": {
+    "title": "仓库",
+    "subtitle": "将以下仓库 URL 添加到 AltStore 或 Openlyst 以安装和更新我们的应用。",
+    "sectionTitle": "可用仓库",
+    "copyUrl": "复制链接",
+    "copied": "已复制！",
+    "addToAltStore": "添加到 AltStore",
+    "typeAltstore": "AltStore"
   },
   "news": {
     "title": "项目新闻",

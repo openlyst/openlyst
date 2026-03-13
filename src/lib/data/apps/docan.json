@@ -46,7 +46,7 @@
         "Web"
       ],
       "platformInstall": {
-        "iOS": "https://cdn.jsdelivr.net/gh/JustACalico/Openlyst-more-builds@main/repo/apps.json",
+        "iOS": "https://build-repos-91172b.gitlab.io/apps.json",
         "Android": "Use Openlyst to install from our repository",
         "macOS": "Download the latest macOS build",
         "Windows": "Download the latest Windows build",

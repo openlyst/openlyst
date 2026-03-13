@@ -3,9 +3,17 @@
  * Loads app data from JSON files with i18n support.
  */
 
-import type { App, NewsItem, RepoConfig, AppVersion, PlatformDownloads } from '@/lib/types/repo';
+import type {
+  App,
+  NewsItem,
+  RepoConfig,
+  AppVersion,
+  PlatformDownloads,
+  RepositoryEntry,
+} from '@/lib/types/repo';
 
 import configData from '@/lib/data/config.json';
+import reposData from '@/lib/data/repos.json';
 import newsData from '@/lib/data/news.json';
 import enI18n from '@/lib/data/i18n/en.json';
 import zhI18n from '@/lib/data/i18n/zh.json';
@@ -300,6 +308,35 @@ export async function getApp(slug: string, lang: SupportedLanguage = DEFAULT_LAN
 
 export async function getAllNews(lang: SupportedLanguage = DEFAULT_LANGUAGE): Promise<NewsItem[]> {
   return newsItems.map((n) => localizedNewsToNews(n, lang));
+}
+
+export interface LocalizedRepositoryData {
+  id: string;
+  name: LocalizedString;
+  type: string;
+  url: string;
+  description?: LocalizedString;
+}
+
+const repoList: LocalizedRepositoryData[] = reposData as LocalizedRepositoryData[];
+
+export async function getRepos(lang: SupportedLanguage = DEFAULT_LANGUAGE): Promise<RepositoryEntry[]> {
+  return repoList.map((r) => ({
+    id: r.id,
+    name: getLocalizedValue(r.name, lang),
+    type: r.type,
+    url: r.url,
+    description: r.description ? getLocalizedValue(r.description, lang) : undefined,
+  }));
+}
+
+export async function getReposByLang(): Promise<Record<SupportedLanguage, RepositoryEntry[]>> {
+  const [en, zh, ru] = await Promise.all([
+    getRepos('en'),
+    getRepos('zh'),
+    getRepos('ru'),
+  ]);
+  return { en, zh, ru };
 }
 
 export function nameToSlug(name: string): string {

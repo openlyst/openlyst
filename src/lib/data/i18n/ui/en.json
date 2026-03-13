@@ -3,6 +3,7 @@
     "home": "Home",
     "news": "News",
     "apps": "Apps",
+    "repos": "Repos",
     "about": "About",
     "gitlab": "GitLab",
     "contribute": "Contribute",
@@ -54,6 +55,15 @@
     "contributeText": "Join our community of developers and users who believe in free, open-source software. Together, we can create alternatives to corporate-controlled platforms.",
     "getInvolved": "Get Involved",
     "viewSourceCode": "View Source Code"
+  },
+  "repos": {
+    "title": "Repositories",
+    "subtitle": "Add these repository URLs to AltStore or Openlyst to install and update our apps.",
+    "sectionTitle": "Available repositories",
+    "copyUrl": "Copy URL",
+    "copied": "Copied!",
+    "addToAltStore": "Add to AltStore",
+    "typeAltstore": "AltStore"
   },
   "news": {
     "title": "Project News",
