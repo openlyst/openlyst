@@ -33,6 +33,92 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "16.2.0",
+      "date": "2026-03-14",
+      "releaseTag": "build-73",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/d6e103f40273800ac249a7852b58dcee4d9f76b6",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art",
+        "zh": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art",
+        "ru": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art"
+      }
+    },
+    {
       "version": "16.1.0",
       "date": "2026-03-11",
       "releaseTag": "build-71",
