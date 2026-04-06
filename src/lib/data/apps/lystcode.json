@@ -24,7 +24,8 @@
     "Linux"
   ],
   "screenshots": [
-    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/app.png?ref_type=heads"
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/app.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/inuse.png?ref_type=heads"
   ],
   "deprecated": false,
   "versions": [
