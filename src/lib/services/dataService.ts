@@ -189,9 +189,11 @@ const APKPURE_BASE = 'https://apkpure.com/p';
 
 function injectApkpureFromApplicationId(
   versions: AppVersion[],
-  applicationId: string | undefined
+  applicationId: string | undefined,
+  platforms: string[]
 ): void {
   if (!applicationId?.trim()) return;
+  if (!platforms.includes('Android')) return;
   const apkpureUrl = `${APKPURE_BASE}/${applicationId.trim()}`;
   for (const v of versions) {
     const d = v.downloads;
@@ -212,7 +214,7 @@ function localizedAppToApp(appData: LocalizedAppData, lang: SupportedLanguage): 
   const slug =
     appData.bundleIdentifier === 'repstore' ? 'repstore' : nameToSlug(englishName);
   const versions = appData.versions.map((v) => localizedVersionToVersion(v, lang));
-  injectApkpureFromApplicationId(versions, appData.applicationId);
+  injectApkpureFromApplicationId(versions, appData.applicationId, appData.platforms);
   versions.sort((a, b) => {
     const bnA = Number(a.buildNumber || 0);
     const bnB = Number(b.buildNumber || 0);
