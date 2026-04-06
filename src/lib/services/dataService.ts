@@ -22,6 +22,7 @@ import doudou from '@/lib/data/apps/doudou.json';
 import docan from '@/lib/data/apps/docan.json';
 import finar from '@/lib/data/apps/finar.json';
 import klit from '@/lib/data/apps/klit.json';
+import lystcode from '@/lib/data/apps/lystcode.json';
 import opentorrent from '@/lib/data/apps/opentorrent.json';
 import repstore from '@/lib/data/apps/repstore.json';
 
@@ -108,6 +109,7 @@ const appModules: LocalizedAppData[] = [
   docan as LocalizedAppData,
   finar as LocalizedAppData,
   klit as LocalizedAppData,
+  lystcode as LocalizedAppData,
   opentorrent as LocalizedAppData,
   repstore as LocalizedAppData,
 ];
