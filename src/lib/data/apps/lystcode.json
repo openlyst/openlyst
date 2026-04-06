@@ -79,7 +79,7 @@
             "arm64": ""
           },
           "aur": {
-            "x86_64": "https://aur.archlinux.org/packages/lystcode",
+            "x86_64": "",
             "arm64": ""
           }
         },
