@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "lystcode_100_release",
+    "title": {
+      "en": "Lystcode 1.0.0 is Here — AI-Powered Coding for Everyone",
+      "zh": "Lystcode 1.0.0 发布 — 人人可用的 AI 驱动编程工具",
+      "ru": "Lystcode 1.0.0 вышел — AI-программирование для всех"
+    },
+    "caption": {
+      "en": "Lystcode 1.0.0 is now available on macOS, Windows, and Linux. This IDE focused on usability and AI features intelligent code completion, multi-language support (Python, JavaScript, TypeScript, Rust, Java, C++, and more), and a clean, distraction-free interface. Download it now via DMG (macOS), EXE (Windows), or AppImage/DEB/RPM/AUR (Linux). Completely free and open source under MIT license.",
+      "zh": "Lystcode 1.0.0 现已支持 macOS、Windows 和 Linux。这款注重可用性和 AI 的 IDE 具有智能代码补全、多语言支持（Python、JavaScript、TypeScript、Rust、Java、C++ 等）以及简洁无干扰的界面。立即通过 DMG（macOS）、EXE（Windows）或 AppImage/DEB/RPM/AUR（Linux）下载。基于 MIT 许可证，完全免费开源。",
+      "ru": "Lystcode 1.0.0 теперь доступен на macOS, Windows и Linux. Этот IDE с фокусом на удобство использования и ИИ предлагает интеллектуальное автодополнение кода, поддержку множества языков (Python, JavaScript, TypeScript, Rust, Java, C++ и др.) и чистый интерфейс без отвлекающих элементов. Скачайте сейчас через DMG (macOS), EXE (Windows) или AppImage/DEB/RPM/AUR (Linux). Полностью бесплатный и открытый под лицензией MIT."
+    },
+    "date": "2026-04-05",
+    "tintColor": "#6366f1",
+    "imageURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/icon.png?ref_type=heads",
+    "notify": true,
+    "url": "/apps/lystcode",
+    "appID": "lystcode"
+  },
+  {
     "identifier": "lystcode_ai_ide_2026",
     "title": {
       "en": "Introducing Lystcode — Our New AI‑Focused IDE",
