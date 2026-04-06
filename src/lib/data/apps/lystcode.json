@@ -1,0 +1,98 @@
+{
+  "bundleIdentifier": "lystcode",
+  "applicationId": "gitlab.openlyst.lystcode",
+  "name": {
+    "en": "LystCode",
+    "zh": "LystCode",
+    "ru": "LystCode"
+  },
+  "subtitle": {
+    "en": "Edit/Create code with ease.",
+    "zh": "轻松编辑/创建代码",
+    "ru": "Легко редактируйте/создавайте код"
+  },
+  "localizedDescription": {
+    "en": "LystCode is a cross-platform code editor. Edit and create code with ease using AI.",
+    "zh": "",
+    "ru": ""
+  },
+  "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/icon.png?ref_type=heads",
+  "tintColor": "#6366f1",
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
+  "screenshots": [
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/app.png?ref_type=heads"
+  ],
+  "deprecated": false,
+  "versions": [
+    {
+      "version": "1.0.0",
+      "date": "2025-10-15",
+      "sourceCode": "",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "platformInstall": {
+        "macOS": "Download the latest macOS build",
+        "Windows": "Download the latest Windows build",
+        "Linux": "Download the latest Linux build"
+      },
+      "downloads": {
+        "iOS": "",
+        "macOS": {
+          "x86_64": "https://github.com/openlyst/builds/releases/download/build-81/Lystcode-1.0.0-x64.dmg",
+          "arm64": "https://github.com/openlyst/builds/releases/download/build-81/Lystcode-1.0.0-arm64.dmg",
+          "universal": "",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-81/Lystcode-1.0.0-x64.exe",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-81/Lystcode-1.0.0-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-81/Lystcode-1.0.0-amd64.deb",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-81/Lystcode-1.0.0-x86_64.rpm",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "https://aur.archlinux.org/packages/lystcode",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "",
+          "aab": ""
+        },
+        "Web": ""
+      },
+      "localizedDescription": {
+        "en": "",
+        "zh": "",
+        "ru": ""
+      }
+    }
+  ]
+}

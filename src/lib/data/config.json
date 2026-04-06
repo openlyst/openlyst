@@ -18,7 +18,7 @@
   "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads",
   "website": "https://openlyst.ink",
   "tintColor": "#dc2626",
-  "featuredApps": ["doudou"],
+  "featuredApps": ["doudou", "lystcode"],
   "supportedLanguages": ["en", "zh", "ru"],
   "defaultLanguage": "en",
   "tempDownloadsOff": false
