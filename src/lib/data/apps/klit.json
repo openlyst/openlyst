@@ -34,6 +34,92 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "9.0.1",
+      "date": "2026-04-12",
+      "releaseTag": "build-90",
+      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/7a97c17f851f36eb8ab4f9817ca4c0d87914e88e",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository",
+        "macOS": "Download the latest macOS build",
+        "Windows": "Download the latest Windows build",
+        "Linux": "Download the latest Linux build from GitLab CI",
+        "Web": "Access the web version"
+      },
+      "repos": {
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "macOS": {
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        }
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12.aab"
+        },
+        "Web": ""
+      },
+      "localizedDescription": {
+        "en": "# 9.0.1\n\n- Fix macos network",
+        "zh": "# 9.0.1\n\n- 修复 macOS 网络问题",
+        "ru": "# 9.0.1\n\n- Исправлена сеть на macOS"
+      }
+    },
+    {
       "version": "9.0.0",
       "date": "2026-03-09",
       "releaseTag": "build-68",
