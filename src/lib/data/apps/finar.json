@@ -33,6 +33,74 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "4.1.1",
+      "date": "2026-05-07",
+      "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/5d1692870a724861e8a282b8f18df59e1700cf60",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK or AAB from the links below",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source",
+        "Web": "Access the web version or self-host with Docker"
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-windows-x64-setup.exe",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-linux-amd64.deb",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-linux-amd64.rpm",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07.aab"
+        },
+        "Web": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 4.1.1\n\n# Fixed\n- Fixed build issues for macOS",
+        "zh": "# 4.1.1\n\n# 修复\n- 修复了 macOS 构建问题",
+        "ru": "# 4.1.1\n\n# Исправлено\n- Исправлены проблемы со сборкой для macOS"
+      }
+    },
+    {
       "version": "3.0.0",
       "date": "2026-02-24",
       "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/main",
