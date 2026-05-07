@@ -33,6 +33,92 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "17.0.0",
+      "date": "2026-05-06",
+      "releaseTag": "build-93",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/17.0.0",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-07-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-07-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-07-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-07-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 17.0.0\n- Fix macOS YouTube Music playback\n- Set a smaller default window size for macOS\n- Fix add to playlist window not matching the theme of the app",
+        "zh": "# 17.0.0\n- 修复 macOS YouTube Music 播放\n- 为 macOS 设置更小的默认窗口大小\n- 修复添加到播放列表窗口与应用主题不匹配的问题",
+        "ru": "# 17.0.0\n- Исправлено воспроизведение YouTube Music на macOS\n- Установлен меньший размер окна по умолчанию для macOS\n- Исправлено несоответствие темы окна добавления в плейлист"
+      }
+    },
+    {
       "version": "16.2.0",
       "date": "2026-03-14",
       "releaseTag": "build-73",
