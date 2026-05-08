@@ -33,6 +33,67 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "18.0.0",
+      "date": "2026-05-08",
+      "releaseTag": "build-95",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/26ee712",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline."
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 18.0.0\n\n# Added\n- Linux build failed in this release",
+        "zh": "# 18.0.0\n\n# 新增\n- 此版本 Linux 构建失败",
+        "ru": "# 18.0.0\n\n# Добавлено\n- Сборка для Linux не удалась в этом выпуске"
+      }
+    },
+    {
       "version": "17.0.0",
       "date": "2026-05-06",
       "releaseTag": "build-93",
