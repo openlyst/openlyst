@@ -355,9 +355,9 @@
         "Web": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-web.zip"
       },
       "localizedDescription": {
-        "en": "# 4.1.0\n\n# Added\n- Poster shows a watched icon if a movie or thing was already watched\n\n# Changed\n- Updated description\n- updated ai stance\n\n# Fixed\n\n# Removed\n- Removed features from login page\n- Removed PiP mode",
-        "zh": "# 4.1.0\n\n# 新增\n- 海报显示已观看图标（如果电影或内容已观看）\n\n# 更改\n- 更新了描述\n- 更新了 AI 立场\n\n# 修复\n\n# 移除\n- 从登录页面移除了功能\n- 移除了画中画模式",
-        "ru": "# 4.1.0\n\n# Добавлено\n- На постере отображается иконка просмотра, если фильм или контент уже просмотрен\n\n# Изменено\n- Обновлено описание\n- Обновлена позиция ИИ\n\n# Исправлено\n\n# Удалено\n- Удалены функции со страницы входа\n- Удален режим Картинка в картинке"
+        "en": "# 4.1.0\n\n# Added\n- Poster shows a watched icon if a movie or thing was already watched\n\n# Changed\n- Updated description\n\n# Fixed\n\n# Removed\n- Removed features from login page\n- Removed PiP mode",
+        "zh": "# 4.1.0\n\n# 新增\n- 海报显示已观看图标（如果电影或内容已观看）\n\n# 更改\n- 更新了描述\n\n# 修复\n\n# 移除\n- 从登录页面移除了功能\n- 移除了画中画模式",
+        "ru": "# 4.1.0\n\n# Добавлено\n- На постере отображается иконка просмотра, если фильм или контент уже просмотрен\n\n# Изменено\n- Обновлено описание\n\n# Исправлено\n\n# Удалено\n- Удалены функции со страницы входа\n- Удален режим Картинка в картинке"
       }
     }
   ]

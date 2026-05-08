@@ -12,9 +12,9 @@
     "ru": "Легко редактируйте/создавайте код"
   },
   "localizedDescription": {
-    "en": "LystCode is a cross-platform code editor focused on usability and AI. Edit and create code with ease using intelligent features.",
-    "zh": "LystCode 是一款注重可用性和 AI 的跨平台代码编辑器。使用智能功能轻松编辑和创建代码。",
-    "ru": "LystCode — это кроссплатформенный редактор кода, ориентированный на удобство использования и ИИ. Легко редактируйте и создавайте код с помощью интеллектуальных функций."
+    "en": "LystCode is a cross-platform code editor focused on usability. Edit and create code with ease using intelligent features.",
+    "zh": "LystCode 是一款注重可用性的跨平台代码编辑器。使用智能功能轻松编辑和创建代码。",
+    "ru": "LystCode — это кроссплатформенный редактор кода, ориентированный на удобство использования. Легко редактируйте и создавайте код с помощью интеллектуальных функций."
   },
   "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/icon.png?ref_type=heads",
   "tintColor": "#6366f1",
@@ -90,9 +90,9 @@
         "Web": ""
       },
       "localizedDescription": {
-        "en": "IDE focused on usability and AI with intelligent code completion and editing features.",
-        "zh": "注重可用性和 AI 的 IDE，具有智能代码补全和编辑功能。",
-        "ru": "IDE с фокусом на удобство использования и ИИ с интеллектуальным автодополнением и функциями редактирования кода."
+        "en": "IDE focused on usability with intelligent code completion and editing features.",
+        "zh": "注重可用性的 IDE，具有智能代码补全和编辑功能。",
+        "ru": "IDE с фокусом на удобство использования с интеллектуальным автодополнением и функциями редактирования кода."
       }
     }
   ]

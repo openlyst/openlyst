@@ -7,14 +7,14 @@
     "ru": "Docan"
   },
   "subtitle": {
-    "en": "AI chat app with Liquid Glass UI",
-    "zh": "采用液态玻璃界面的 AI 聊天应用",
-    "ru": "AI-чат с интерфейсом Liquid Glass"
+    "en": "Chat app with Liquid Glass UI",
+    "zh": "采用液态玻璃界面的聊天应用",
+    "ru": "Чат с интерфейсом Liquid Glass"
   },
   "localizedDescription": {
-    "en": "Docan is a cross-platform AI chat app. Connect multiple providers and keep conversations in one interface across desktop, mobile, and web.",
-    "zh": "Docan 是一款跨平台 AI 聊天应用。你可以连接多个 AI 提供商，并在桌面、移动端和网页端使用统一的聊天界面。",
-    "ru": "Docan — кроссплатформенное приложение для AI-чата. Подключайте разных AI-провайдеров и ведите диалоги в одном интерфейсе на ПК, мобильных устройствах и в вебе."
+    "en": "Docan is a cross-platform chat app. Connect multiple providers and keep conversations in one interface across desktop, mobile, and web.",
+    "zh": "Docan 是一款跨平台聊天应用。你可以连接多个提供商，并在桌面、移动端和网页端使用统一的聊天界面。",
+    "ru": "Docan — кроссплатформенное приложение для чата. Подключайте разных провайдеров и ведите диалоги в одном интерфейсе на ПК, мобильных устройствах и в вебе."
   },
   "iconURL": "https://gitlab.com/Openlyst/docan/-/raw/main/assets/icon_1024.png",
   "tintColor": "#6366f1",
@@ -92,9 +92,9 @@
         "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/docan-3.0.0-2026-02-08-web.zip"
       },
       "localizedDescription": {
-        "en": "# 3.0.0\n\n## New Features\n\n### AI Providers\n- Added DeepSeek AI support with `deepseek-chat` and `deepseek-reasoner` models.\n- Added LM Studio support with OpenAI-compatible API.\n- Dynamic model fetching from API.\n\n### Image Creator\n- Added dedicated Image Creator screen for generating images with AI.\n- Supports Gemini and OpenAI DALL-E providers.\n\n### Playbooks\n- Added Playbooks: User-created YAML integrations for extending Docan.\n- Create custom API integrations with a simple YAML SDK.\n\n### Attachments & Drag-and-Drop\n- Added support for attachments in chat.\n- Drag and drop files directly onto the app.",
-        "zh": "# 3.0.0\n\n## 新功能\n\n### AI 提供商\n- 添加了 DeepSeek AI 支持，包含 `deepseek-chat` 和 `deepseek-reasoner` 模型。\n- 添加了 LM Studio 支持，兼容 OpenAI API。\n- 从 API 动态获取模型。\n\n### 图像创建器\n- 添加了专用的图像创建器屏幕，用于使用 AI 生成图像。\n- 支持 Gemini 和 OpenAI DALL-E 提供商。\n\n### 剧本\n- 添加了剧本：用户创建的 YAML 集成，用于扩展多灿。\n\n### 附件和拖放\n- 添加了聊天中的附件支持。\n- 直接将文件拖放到应用程序中。",
-        "ru": "# 3.0.0\n\n## Новые функции\n\n### AI-провайдеры\n- Добавлена поддержка DeepSeek AI с моделями `deepseek-chat` и `deepseek-reasoner`.\n- Добавлена поддержка LM Studio с API, совместимым с OpenAI.\n- Динамическое получение моделей из API.\n\n### Создатель изображений\n- Добавлен специальный экран для создания изображений с помощью AI.\n- Поддержка провайдеров Gemini и OpenAI DALL-E.\n\n### Playbooks\n- Добавлены Playbooks: пользовательские YAML-интеграции для расширения Docan.\n\n### Вложения и перетаскивание\n- Добавлена поддержка вложений в чате.\n- Перетаскивание файлов прямо в приложение."
+        "en": "# 3.0.0\n\n## New Features\n\n### Providers\n- Added DeepSeek support with `deepseek-chat` and `deepseek-reasoner` models.\n- Added LM Studio support with OpenAI-compatible API.\n- Dynamic model fetching from API.\n\n### Image Creator\n- Added dedicated Image Creator screen for generating images.\n- Supports Gemini and OpenAI DALL-E providers.\n\n### Playbooks\n- Added Playbooks: User-created YAML integrations for extending Docan.\n- Create custom API integrations with a simple YAML SDK.\n\n### Attachments & Drag-and-Drop\n- Added support for attachments in chat.\n- Drag and drop files directly onto the app.",
+        "zh": "# 3.0.0\n\n## 新功能\n\n### 提供商\n- 添加了 DeepSeek 支持，包含 `deepseek-chat` 和 `deepseek-reasoner` 模型。\n- 添加了 LM Studio 支持，兼容 OpenAI API。\n- 从 API 动态获取模型。\n\n### 图像创建器\n- 添加了专用的图像创建器屏幕，用于生成图像。\n- 支持 Gemini 和 OpenAI DALL-E 提供商。\n\n### 剧本\n- 添加了剧本：用户创建的 YAML 集成，用于扩展多灿。\n\n### 附件和拖放\n- 添加了聊天中的附件支持。\n- 直接将文件拖放到应用程序中。",
+        "ru": "# 3.0.0\n\n## Новые функции\n\n### Провайдеры\n- Добавлена поддержка DeepSeek с моделями `deepseek-chat` и `deepseek-reasoner`.\n- Добавлена поддержка LM Studio с API, совместимым с OpenAI.\n- Динамическое получение моделей из API.\n\n### Создатель изображений\n- Добавлен специальный экран для создания изображений.\n- Поддержка провайдеров Gemini и OpenAI DALL-E.\n\n### Playbooks\n- Добавлены Playbooks: пользовательские YAML-интеграции для расширения Docan.\n\n### Вложения и перетаскивание\n- Добавлена поддержка вложений в чате.\n- Перетаскивание файлов прямо в приложение."
       }
     }
   ]
