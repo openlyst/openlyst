@@ -402,7 +402,7 @@ export function AppDetailContent({
                         <p className="text-gray-400 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
                       </div>
                     ) : byPlatform.length > 0 ? (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
                         {byPlatform.map((group) => {
                           const platform = group[0].platform;
                           const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
