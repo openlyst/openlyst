@@ -6,8 +6,7 @@
     "repos": "仓库",
     "about": "关于",
     "gitlab": "GitLab",
-    "contribute": "贡献",
-    "support": "支持"
+    "contribute": "贡献"
   },
   "home": {
     "title": "自由开源应用",
@@ -253,7 +252,6 @@
     "contribute": "贡献",
     "aboutUs": "关于我们",
     "documentation": "文档",
-    "support": "支持",
     "copyright": "© 2025 OpenLyst。所有软件均以开源许可证发布。",
     "powerToThePeople": "自由软件，人人受益 ✊"
   },

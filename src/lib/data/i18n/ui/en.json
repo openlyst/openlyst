@@ -6,8 +6,7 @@
     "repos": "Repos",
     "about": "About",
     "gitlab": "GitLab",
-    "contribute": "Contribute",
-    "support": "Support"
+    "contribute": "Contribute"
   },
   "home": {
     "title": "Free & Open Source Applications",
@@ -253,7 +252,6 @@
     "contribute": "Contribute",
     "aboutUs": "About Us",
     "documentation": "Documentation",
-    "support": "Support",
     "copyright": "© 2025 OpenLyst. All software released under open source licenses.",
     "powerToThePeople": "Free software for everyone ✊"
   },
