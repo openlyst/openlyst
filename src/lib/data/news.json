@@ -1,5 +1,43 @@
 [
   {
+    "identifier": "lystcode_docan_discontinued_2026",
+    "title": {
+      "en": "Lystcode and Docan Discontinued",
+      "zh": "Lystcode 和 Docan 已停止维护",
+      "ru": "Lystcode и Docan прекращены"
+    },
+    "caption": {
+      "en": "Lystcode and Docan have been discontinued. We are no longer maintaining or releasing updates for these applications. Thank you to everyone who used them.",
+      "zh": "Lystcode 和 Docan 已停止维护。我们不再为这些应用程序提供维护或发布更新。感谢所有使用它们的用户。",
+      "ru": "Lystcode и Docan прекращены. Мы больше не поддерживаем и не выпускаем обновления для этих приложений. Спасибо всем, кто ими пользовался."
+    },
+    "date": "2026-06-04",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "doudou_190_release",
+    "title": {
+      "en": "DouDou v19.0.0 Released",
+      "zh": "豆豆 v19.0.0 发布",
+      "ru": "DouDou v19.0.0 выпущен"
+    },
+    "caption": {
+      "en": "Doudou v19.0.0 is now available. Download the latest version for your platform from the app page.",
+      "zh": "豆豆 v19.0.0 现已发布。请从应用页面下载适用于您平台的最新版本。",
+      "ru": "Doudou v19.0.0 теперь доступен. Скачайте последнюю версию для вашей платформы со страницы приложения."
+    },
+    "date": "2026-06-04",
+    "tintColor": "#dc2626",
+    "imageURL": "/icons/Doudou/icon.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "lystcode_100_release",
     "title": {
       "en": "Lystcode 1.0.0 is Here — Powerful Coding for Everyone",
