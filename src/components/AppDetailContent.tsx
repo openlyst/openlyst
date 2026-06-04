@@ -402,7 +402,7 @@ export function AppDetailContent({
                         <p className="text-gray-400 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
                       </div>
                     ) : byPlatform.length > 0 ? (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
                         {byPlatform.map((group) => {
                           const platform = group[0].platform;
                           const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
@@ -414,7 +414,7 @@ export function AppDetailContent({
                           return (
                             <div
                               key={platform}
-                              className="group relative rounded-2xl border border-white/10 bg-gray-800/50 backdrop-blur-xl p-5 flex flex-col gap-4 text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-purple-500/30 hover:bg-gray-800/70"
+                              className="group relative rounded-2xl border border-white/10 bg-gray-800/50 backdrop-blur-xl p-6 flex flex-col gap-5 text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-purple-500/30 hover:bg-gray-800/70"
                             >
                               <div className="flex items-center gap-3">
                                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 text-white shadow-lg shadow-purple-900/30 transition-transform duration-300 group-hover:scale-105">
