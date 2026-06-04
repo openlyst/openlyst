@@ -8,3 +8,4 @@ export { Background3D } from './Background3D';
 export { Button3D } from './Button3D';
 export { Widget3D } from './Widget3D';
 export { PlatformCard3D } from './PlatformCard3D';
+export { PlatformIcon } from './PlatformIcon';

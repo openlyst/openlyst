@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/contexts/LanguageContext';
+import { PlatformIcon } from '@/components/PlatformIcon';
 
 const MAX_DESCRIPTION_LENGTH = 150;
 const statusColors = {
@@ -67,97 +68,81 @@ export function AppCard({
         : t.appCard.inDevelopment;
 
   return (
-    <div className="rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full">
-      <div
-        className="p-10 pb-8 relative overflow-hidden"
+    <div className="rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full p-6">
+      {/* Icon and Name at top */}
+      <div className="flex items-center gap-4 mb-4">
+        {image && (image.startsWith('http') || image.startsWith('/')) ? (
+          <img src={image} alt={`${title} icon`} className="w-16 h-16 rounded-xl object-cover shadow-lg" />
+        ) : image ? (
+          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center text-3xl shadow-lg">
+            {image}
+          </div>
+        ) : (
+          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center text-3xl shadow-lg">
+            🎵
+          </div>
+        )}
+        <div className="flex flex-col">
+          <h3 className="text-white text-xl font-bold">{title}</h3>
+          <span
+            className="inline-block w-fit px-2 py-0.5 rounded-lg text-xs font-semibold border mt-1"
+            style={{
+              background: statusColors[status].bg,
+              color: statusColors[status].text,
+              borderColor: statusColors[status].border,
+            }}
+          >
+            {statusText}
+          </span>
+        </div>
+      </div>
+
+      {/* Platform icons */}
+      <div className="flex items-center gap-3 mb-4">
+        {platforms.map((platform) => (
+          <PlatformIcon
+            key={platform}
+            platform={platform}
+            className="text-slate-400 hover:text-slate-300 transition-colors"
+          />
+        ))}
+      </div>
+
+      {/* App description */}
+      <div className="flex-grow mb-4">
+        <p className="text-slate-300 text-sm leading-relaxed">{displayedText}</p>
+        {isLongDescription && (
+          <button
+            type="button"
+            className="inline-flex items-center gap-1 mt-2 text-sm font-medium bg-transparent border-none cursor-pointer hover:opacity-80"
+            style={{ color: baseColor }}
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? t.appCard.showLess : t.appCard.readMore}
+            <svg
+              className={`w-4 h-4 transition-transform ${expanded ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        )}
+      </div>
+
+      {/* Download button */}
+      <Link
+        href={href}
+        className="w-full text-white py-3 px-6 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:brightness-110 hover:-translate-y-0.5 mt-auto"
         style={{
           background: `linear-gradient(135deg, ${baseColor} 0%, ${darkerColor} 100%)`,
+          boxShadow: `0 4px 16px rgba(${r}, ${g}, ${b}, 0.3)`,
         }}
       >
-        <div className="flex items-center gap-4 relative z-10">
-          {image && (image.startsWith('http') || image.startsWith('/')) ? (
-            <img src={image} alt={`${title} icon`} className="w-[72px] h-[72px] rounded-[18px] object-cover shadow-lg" />
-          ) : image ? (
-            <div className="w-[72px] h-[72px] rounded-[18px] bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center text-3xl shadow-lg">
-              {image}
-            </div>
-          ) : (
-            <div className="w-[72px] h-[72px] rounded-[18px] bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center text-3xl shadow-lg">
-              🎵
-            </div>
-          )}
-          <div className="flex flex-col gap-1.5">
-            <h3 className="text-white text-2xl font-bold">{title}</h3>
-            <span
-              className="inline-block w-fit px-3 py-1 rounded-xl text-xs font-semibold border"
-              style={{
-                background: statusColors[status].bg,
-                color: statusColors[status].text,
-                borderColor: statusColors[status].border,
-              }}
-            >
-              {statusText}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div className="p-7 flex flex-col flex-grow">
-        <div className="mb-6 flex-grow">
-          <p className="text-slate-300 text-[15px] leading-relaxed">{displayedText}</p>
-          {isLongDescription && (
-            <button
-              type="button"
-              className="inline-flex items-center gap-1 mt-2 text-sm font-medium bg-transparent border-none cursor-pointer hover:opacity-80"
-              style={{ color: baseColor }}
-              onClick={() => setExpanded(!expanded)}
-            >
-              {expanded ? t.appCard.showLess : t.appCard.readMore}
-              <svg
-                className={`w-4 h-4 transition-transform ${expanded ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-          )}
-        </div>
-
-        <div className="mb-6">
-          <div className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            {t.appCard.availablePlatforms}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {platforms.map((platform) => (
-              <span
-                key={platform}
-                className="px-3.5 py-1.5 rounded-lg text-sm font-medium border"
-                style={{
-                  background: `rgba(${r}, ${g}, ${b}, 0.1)`,
-                  color: `rgba(${Math.min(r + 50, 255)}, ${Math.min(g + 50, 255)}, ${Math.min(b + 50, 255)}, 1)`,
-                  borderColor: `rgba(${r}, ${g}, ${b}, 0.2)`,
-                }}
-              >
-                {platform}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <Link
-          href={href}
-          className="w-full text-white py-3.5 px-7 rounded-xl font-semibold text-[15px] flex items-center justify-center gap-2 transition-all hover:brightness-110 hover:-translate-y-0.5 mt-auto"
-          style={{
-            background: `linear-gradient(135deg, ${baseColor} 0%, ${darkerColor} 100%)`,
-            boxShadow: `0 4px 16px rgba(${r}, ${g}, ${b}, 0.3)`,
-          }}
-        >
-          {t.appCard.learnMore}
-          <span className="text-lg">→</span>
-        </Link>
-      </div>
+        {t.appCard.learnMore}
+        <span className="text-lg">→</span>
+      </Link>
     </div>
   );
 }
