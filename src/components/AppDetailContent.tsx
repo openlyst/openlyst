@@ -422,7 +422,7 @@ export function AppDetailContent({
                                 </span>
                                 <span className="text-lg font-semibold text-white tracking-tight">{platform}</span>
                               </div>
-                              <div className="flex flex-col gap-3 mt-auto">
+                              <div className="flex flex-col gap-3">
                                 {!singleOption && (
                                   <div className="relative">
                                     <select
