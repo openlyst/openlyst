@@ -274,7 +274,7 @@ export function AppDetailContent({
         <Section title={t.appDetail.downloads} background="gray">
           <div className="font-display mx-auto w-full max-w-7xl rounded-3xl border border-white/10 bg-gray-900/40 backdrop-blur-xl overflow-hidden flex flex-col lg:flex-row min-h-[540px] shadow-2xl shadow-black/40 ring-1 ring-white/5">
             {/* Version sidebar */}
-            <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-white/10 bg-gray-900/30 backdrop-blur-lg p-3">
+            <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-white/10 bg-gray-900/30 backdrop-blur-lg p-3 lg:max-h-[540px] lg:flex lg:flex-col">
               <div className="lg:hidden">
                 <button
                   type="button"
@@ -328,7 +328,7 @@ export function AppDetailContent({
                 )}
               </div>
 
-              <nav className="hidden lg:flex lg:flex-col gap-1.5 overflow-y-auto">
+              <nav className="hidden lg:flex lg:flex-col gap-1.5 overflow-y-auto flex-1 min-h-0">
                 <p className="text-white text-xs font-semibold px-2 pb-1.5">{t.appDetail.versions}</p>
                 {app.versions.map((v, index) => (
                   <button
