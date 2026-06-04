@@ -84,16 +84,18 @@ export function AppCard({
         )}
         <div className="flex flex-col">
           <h3 className="text-white text-xl font-bold">{title}</h3>
-          <span
-            className="inline-block w-fit px-2 py-0.5 rounded-lg text-xs font-semibold border mt-1"
-            style={{
-              background: statusColors[status].bg,
-              color: statusColors[status].text,
-              borderColor: statusColors[status].border,
-            }}
-          >
-            {statusText}
-          </span>
+          {status !== 'released' && (
+            <span
+              className="inline-block w-fit px-2 py-0.5 rounded-lg text-xs font-semibold border mt-1"
+              style={{
+                background: statusColors[status].bg,
+                color: statusColors[status].text,
+                borderColor: statusColors[status].border,
+              }}
+            >
+              {statusText}
+            </span>
+          )}
         </div>
       </div>
 
