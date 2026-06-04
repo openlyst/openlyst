@@ -17,7 +17,7 @@
     "ru": "Doudou — музыкальный плеер для самохост-коллекций. Подключайте Jellyfin, Plex или Navidrome и слушайте музыку со своих серверов."
   },
   "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
-  "tintColor": "#dc2626",
+  "tintColor": "#8b5cf6",
   "platforms": [
     "iOS",
     "macOS",

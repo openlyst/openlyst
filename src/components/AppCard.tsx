@@ -20,7 +20,7 @@ function parseColor(color: string): { r: number; g: number; b: number } {
       b: parseInt(hex.slice(4, 6), 16),
     };
   }
-  return { r: 220, g: 38, b: 38 };
+  return { r: 139, g: 92, b: 246 };
 }
 
 function darkenColor(color: string, factor = 0.8): string {
@@ -46,11 +46,11 @@ export function AppCard({
   platforms,
   image = '',
   href,
-  tintColor = '#dc2626',
+  tintColor = '#8b5cf6',
 }: AppCardProps) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
-  const baseColor = tintColor || '#dc2626';
+  const baseColor = tintColor || '#8b5cf6';
   const darkerColor = darkenColor(baseColor, 0.75);
   const { r, g, b } = parseColor(baseColor);
   const isLongDescription = description.length > MAX_DESCRIPTION_LENGTH;

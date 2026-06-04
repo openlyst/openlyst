@@ -17,7 +17,7 @@
     "ru": "Opentorrent — кроссплатформенный клиент qBittorrent для iOS, macOS, Windows, Linux, Android и веба."
   },
   "iconURL": "https://gitlab.com/Openlyst/opentorrent/-/raw/main/assets/icons/app_icon.png?ref_type=heads",
-  "tintColor": "#dc2626",
+  "tintColor": "#0ea5e9",
   "platforms": [
     "iOS",
     "macOS",

@@ -17,7 +17,7 @@
     "ru": "Klit — преемник BaoBao для сообщества e621 с приватными настройками по умолчанию и быстрым просмотром."
   },
   "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/icon.png?ref_type=heads",
-  "tintColor": "#ff6b35",
+  "tintColor": "#f43f5e",
   "platforms": [
     "iOS",
     "macOS",
