@@ -33,6 +33,92 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "19.0.0",
+      "date": "2026-06-04",
+      "releaseTag": "build-97",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/b312fc3",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 19.0.0\n\n- Settings panels are now scrollable.\n- Adds a new radio mode for YouTube Music\n- Ensure other servers can't affect other servers \n- YouTube Music will show some songs if you have nothing added \n- Fix the desktop bottom bar favorite button not updating when clicked until state refreshed\n- The navbar actions are now centered\n- Switching servers will cancel the current queue\n- Don't show sections with 0 data in the song info panel.\n- Format timestamp for song info.\n- Hide quick action cards if they have 0 data.\n- Fix mini player not updating UI states.\n- Show the time stamps in the desktop player.\n- Detailed artist view will scroll with the user content\n- Fix library songs/artists/downloads tabs appearing empty when using non-English locale.\n- Fix queue crashes when switching servers with an empty or single-item queue.\n- Dont show the username on the top with the back button.",
+        "zh": "# 19.0.0\n\n- 设置面板现在可滚动。\n- 为 YouTube Music 添加新的电台模式\n- 确保其他服务器不会影响其他服务器\n- 如果没有添加任何内容，YouTube Music 将显示一些歌曲\n- 修复桌面底部栏收藏按钮点击后直到状态刷新才更新的问题\n- 导航栏操作现在居中\n- 切换服务器将取消当前队列\n- 不在歌曲信息面板中显示数据为 0 的部分。\n- 格式化歌曲信息的时间戳。\n- 如果快速操作卡片数据为 0 则隐藏。\n- 修复迷你播放器不更新 UI 状态的问题。\n- 在桌面播放器中显示时间戳。\n- 详细艺术家视图将随用户内容滚动\n- 修复使用非英语语言环境时库歌曲/艺术家/下载标签显示为空的问题。\n- 修复切换服务器时队列为空或单项时队列崩溃的问题。\n- 不要在顶部显示用户名和返回按钮。",
+        "ru": "# 19.0.0\n\n- Панели настроек теперь можно прокручивать.\n- Добавлен новый режим радио для YouTube Music\n- Обеспечьте, чтобы другие серверы не влияли на другие серверы\n- YouTube Music покажет несколько песен, если вы ничего не добавили\n- Исправлена проблема, когда кнопка избранного на нижней панели рабочего стола не обновляется при нажатии до обновления состояния\n- Действия навигационной панели теперь центрированы\n- Переключение серверов отменит текущую очередь\n- Не показывать разделы с 0 данными в панели информации о песне.\n- Форматировать временную метку для информации о песне.\n- Скрывать карточки быстрых действий, если в них 0 данных.\n- Исправлена проблема, когда мини-плеер не обновляет состояния UI.\n- Показывать временные метки в настольном плеере.\n- Подробный вид исполнителя будет прокручиваться вместе с пользовательским контентом\n- Исправлена проблема, когда вкладки библиотеки песен/исполнителей/загрузок отображаются пустыми при использовании неанглийской локали.\n- Исправлены сбои очереди при переключении серверов с пустой или одноэлементной очередью.\n- Не показывать имя пользователя вверху с кнопкой назад."
+      }
+    },
+    {
       "version": "18.0.0",
       "date": "2026-05-08",
       "releaseTag": "build-95",
