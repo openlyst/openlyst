@@ -68,7 +68,7 @@ export function AppCard({
         : t.appCard.inDevelopment;
 
   return (
-    <div className="rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full p-6">
+    <div className="rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full p-8">
       {/* Icon and Name at top */}
       <div className="flex items-center gap-4 mb-4">
         {image && (image.startsWith('http') || image.startsWith('/')) ? (
@@ -99,8 +99,10 @@ export function AppCard({
         </div>
       </div>
 
+      <hr className="border-white/10 my-6" />
+
       {/* Platform icons */}
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-3">
         {platforms.map((platform) => (
           <PlatformIcon
             key={platform}
@@ -110,8 +112,10 @@ export function AppCard({
         ))}
       </div>
 
+      <hr className="border-white/10 my-6" />
+
       {/* App description */}
-      <div className="flex-grow mb-4">
+      <div className="flex-grow">
         <p className="text-slate-300 text-sm leading-relaxed">{displayedText}</p>
         {isLongDescription && (
           <button
