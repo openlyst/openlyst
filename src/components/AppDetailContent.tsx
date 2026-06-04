@@ -369,14 +369,29 @@ export function AppDetailContent({
 
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <h4 className="text-white text-4xl md:text-5xl font-bold leading-tight">{t.common.version} {version.version}</h4>
-                    <button
-                      type="button"
-                      onClick={() => setChangelogOpen(true)}
-                      className="inline-flex items-center gap-2 rounded-lg border border-red-300/35 bg-[rgba(125,34,48,0.72)] hover:bg-[rgba(139,42,57,0.82)] text-white px-3 py-1.5 text-sm font-semibold transition-colors"
-                    >
-                      <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-white/20 text-xs">•</span>
-                      {t.appDetail.viewDetails}
-                    </button>
+                    <div className="flex items-center gap-2">
+                      {version.sourceCode && (
+                        <a
+                          href={version.sourceCode}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 text-sm font-semibold transition-colors"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                          </svg>
+                          {t.appDetail.viewSource}
+                        </a>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => setChangelogOpen(true)}
+                        className="inline-flex items-center gap-2 rounded-lg border border-red-300/35 bg-[rgba(125,34,48,0.72)] hover:bg-[rgba(139,42,57,0.82)] text-white px-3 py-1.5 text-sm font-semibold transition-colors"
+                      >
+                        <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-white/20 text-xs">•</span>
+                        {t.appDetail.viewDetails}
+                      </button>
+                    </div>
                   </div>
 
                   {/* Download cards */}
@@ -436,16 +451,6 @@ export function AppDetailContent({
                                   </svg>
                                   {buttonText}
                                 </a>
-                                {version.sourceCode && (
-                                  <a
-                                    href={version.sourceCode}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-xs text-gray-400 hover:text-white transition-colors"
-                                  >
-                                    {t.appDetail.viewSource}
-                                  </a>
-                                )}
                               </div>
                             </div>
                           );
