@@ -66,11 +66,6 @@ export function Footer() {
                   {t.footer.documentation}
                 </Link>
               </li>
-              <li>
-                <Link href="/support" className="text-gray-300 hover:text-purple-400 transition-colors">
-                  {t.footer.support}
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
