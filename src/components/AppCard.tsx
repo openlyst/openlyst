@@ -137,6 +137,8 @@ export function AppCard({
         )}
       </div>
 
+      <hr className="border-white/10 my-6" />
+
       {/* Download button */}
       <Link
         href={href}
