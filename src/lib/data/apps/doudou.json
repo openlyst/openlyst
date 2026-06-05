@@ -35,7 +35,7 @@
     {
       "version": "19.0.0",
       "date": "2026-06-04",
-      "releaseTag": "build-97",
+      "releaseTag": "build-99",
       "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/b312fc3",
       "platforms": [
         "iOS",
@@ -52,20 +52,20 @@
         "Linux": "Download the latest Linux build from GitLab CI."
       },
       "downloads": {
-        "iOS": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-ios-unsigned.ipa",
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-macos-unsigned.zip",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-macos-unsigned.zip",
           "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Windows": {
           "zip": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-windows-x64.zip",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-windows-x64.zip",
             "arm64": ""
           },
           "exe": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-windows-x64-setup.exe",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-windows-x64-setup.exe",
             "arm64": ""
           },
           "msi": {
@@ -86,19 +86,19 @@
         },
         "Linux": {
           "zip": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-linux-x64.zip",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-linux-x64.zip",
             "arm64": ""
           },
           "appimage": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-linux-x86_64.AppImage",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-linux-x86_64.AppImage",
             "arm64": ""
           },
           "rpm": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-linux-amd64.rpm",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-linux-amd64.rpm",
             "arm64": ""
           },
           "deb": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04-linux-amd64.deb",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-linux-amd64.deb",
             "arm64": ""
           },
           "aur": {
@@ -108,8 +108,8 @@
           "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
         },
         "Android": {
-          "apk": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04.apk",
-          "aab": "https://github.com/openlyst/builds/releases/download/build-97/doudou-19.0.0-2026-06-04.aab"
+          "apk": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04.aab"
         }
       },
       "localizedDescription": {
