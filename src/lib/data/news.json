@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_signing_fixed_android_2026",
+    "title": {
+      "en": "Doudou Signing Fixed for Android",
+      "zh": "豆豆 Android 签名已修复",
+      "ru": "Подпись Doudou для Android исправлена"
+    },
+    "caption": {
+      "en": "Signing has been fixed for Android users who were unable to update. You should now be able to install the latest version without issues.",
+      "zh": "Android 用户无法更新的签名问题已修复。您现在应该可以正常安装最新版本。",
+      "ru": "Подпись исправлена для пользователей Android, которые не могли обновиться. Теперь вы должны иметь возможность установить последнюю версию без проблем."
+    },
+    "date": "2026-06-04",
+    "tintColor": "#10b981",
+    "imageURL": "/icons/Doudou/icon.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "lystcode_docan_discontinued_2026",
     "title": {
       "en": "Lystcode and Docan Discontinued",
