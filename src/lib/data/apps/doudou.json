@@ -25,11 +25,6 @@
     "Linux",
     "Android"
   ],
-  "screenshots": [
-    "https://gitlab.com/Openlyst/repos/altstore/-/raw/2d2255e2e84d948e341c90315b9b46019e1a80c0/photos/doudou/7.0.0/home.PNG",
-    "https://gitlab.com/Openlyst/repos/altstore/-/raw/2d2255e2e84d948e341c90315b9b46019e1a80c0/photos/doudou/7.0.0/nowplaying.PNG",
-    "https://gitlab.com/Openlyst/repos/altstore/-/raw/2d2255e2e84d948e341c90315b9b46019e1a80c0/photos/doudou/7.0.0/albums.PNG"
-  ],
   "deprecated": false,
   "versions": [
     {
