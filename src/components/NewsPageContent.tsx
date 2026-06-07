@@ -30,6 +30,33 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">{t.news.subtitle}</p>
         </div>
       </section>
+
+      <Section title={t.news.latestUpdates} subtitle={t.news.latestUpdatesDesc} background="default" centered>
+        {news.length === 0 ? (
+          <div className="text-center py-12 text-gray-400">{t.news.noNews}</div>
+        ) : (
+          <div className="space-y-6">
+            {news.map((item) => (
+              <article key={item.identifier} className="glass-card rounded-xl p-6 scroll-contain-cards">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+                  <h2 className="text-xl font-semibold text-white">
+                    <LinkifiedText text={item.title} />
+                  </h2>
+                  <span className="text-sm text-gray-400">{item.date}</span>
+                </div>
+                <p className="text-gray-300 leading-relaxed">
+                  <LinkifiedText text={item.caption} />
+                </p>
+                {item.url && (
+                  <div className="mt-4">
+                    <LinkPreview url={item.url} />
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        )}
+      </Section>
     </>
   );
 }
