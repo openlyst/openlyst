@@ -120,6 +120,7 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
         title={t.home.latestNews}
         subtitle={t.home.latestNewsDesc}
         background="default"
+        centered
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {news.length > 0 ? (
