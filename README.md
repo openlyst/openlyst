@@ -1,17 +1,16 @@
-# Openlyst
-Source code for [https://openlyst.ink/](https://openlyst.ink/).
+# React + Vite
 
-You are free to do anything you want with this website. You dont need a database everything is JSON.
-Just respect our Liecnce and remeber open-srouce makes everything better. 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-note images out of date
-![](static/icons/openylst/home.png)
-![](static/icons/openylst/app.png) 
-## Release Metadata Automation
+Currently, two official plugins are available:
 
-Release metadata can now be synced from a builder manifest:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- `npm run sync-release-manifest -- --manifest <path/to/build-manifest.json>`
-- `npm run validate-release-data`
+## React Compiler
 
-`validate-release-data` is also enforced in GitLab CI.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
