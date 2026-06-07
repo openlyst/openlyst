@@ -189,27 +189,6 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
           )}
         </div>
       </Section>
-
-      <Section
-        title={t.home.joinRevolution}
-        subtitle={t.home.joinRevolutionDesc}
-        background="default"
-        centered
-      >
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            text={t.home.startContributing}
-            href="https://gitlab.com/Openlyst/"
-            variant="secondary"
-            size="lg"
-          />
-          <Button text={t.home.downloadApps} href="/apps" variant="outline" size="lg" />
-        </div>
-        <div className="mt-12 text-center">
-          <p className="text-gray-200 text-lg font-medium">{t.home.quote}</p>
-          <p className="text-gray-400 mt-2">{t.home.quoteAuthor}</p>
-        </div>
-      </Section>
     </>
   );
 }
