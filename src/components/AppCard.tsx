@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/contexts/LanguageContext';
 import { PlatformIcon } from '@/components/PlatformIcon';
@@ -29,6 +29,20 @@ function darkenColor(color: string, factor = 0.8): string {
   return `rgb(${Math.round(r * factor)}, ${Math.round(g * factor)}, ${Math.round(b * factor)})`;
 }
 
+function getUserPlatform(): string | null {
+  if (typeof window === 'undefined') return null;
+  
+  const userAgent = navigator.userAgent.toLowerCase();
+  
+  if (userAgent.includes('mac') && userAgent.includes('os x')) return 'macOS';
+  if (userAgent.includes('windows')) return 'Windows';
+  if (userAgent.includes('linux')) return 'Linux';
+  if (userAgent.includes('iphone') || userAgent.includes('ipad')) return 'iOS';
+  if (userAgent.includes('android')) return 'Android';
+  
+  return null;
+}
+
 export interface AppCardProps {
   title: string;
   description: string;
@@ -51,6 +65,12 @@ export function AppCard({
 }: AppCardProps) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
+  const [userPlatform, setUserPlatform] = useState<string | null>(null);
+  
+  useEffect(() => {
+    setUserPlatform(getUserPlatform());
+  }, []);
+  
   const baseColor = tintColor || '#8b5cf6';
   const darkerColor = darkenColor(baseColor, 0.75);
   const { r, g, b } = parseColor(baseColor);
@@ -66,6 +86,8 @@ export function AppCard({
       : status === 'beta'
         ? t.appCard.beta
         : t.appCard.inDevelopment;
+
+  const isPlatformSupported = userPlatform && platforms.includes(userPlatform) && userPlatform !== 'Web';
 
   return (
     <div className="rounded-xl overflow-hidden bg-[#0a0a0a] border border-gray-800 hover:border-gray-700 transition-all duration-200 flex flex-col h-full p-5 relative overflow-hidden">
@@ -145,16 +167,30 @@ export function AppCard({
         )}
       </div>
 
-      {/* Download button */}
-      <Link
-        href={href}
-        className="w-full text-white py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all hover:bg-gray-800 mt-auto bg-gray-900 border border-gray-800 hover:border-gray-700 relative z-10"
-      >
-        {t.common.download}
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-      </Link>
+      {/* Buttons */}
+      <div className="flex flex-col gap-2 mt-auto relative z-10">
+        <Link
+          href={href}
+          className="w-full text-white py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all hover:bg-gray-800 bg-gray-900 border border-gray-800 hover:border-gray-700"
+        >
+          Read More
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+        
+        {isPlatformSupported && (
+          <Link
+            href={href}
+            className="w-full text-white py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all hover:bg-gray-800 bg-gray-900 border border-gray-800 hover:border-gray-700"
+          >
+            Download for {userPlatform}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }
