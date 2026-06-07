@@ -1,0 +1,854 @@
+{
+  "bundleIdentifier": "doudou",
+  "applicationId": "gitlab.openlyst.doudou",
+  "name": {
+    "en": "Doudou",
+    "zh": "豆豆",
+    "ru": "Doudou"
+  },
+  "subtitle": {
+    "en": "Music player for self-hosted services",
+    "zh": "自托管服务的音乐播放器",
+    "ru": "Музыкальный плеер для самостоятельного хостинга"
+  },
+  "localizedDescription": {
+    "en": "Doudou is a music player for self-hosted libraries. Connect Jellyfin, Plex, or Navidrome and listen from your own servers.",
+    "zh": "豆豆是一款面向自托管音乐库的播放器。连接 Jellyfin、Plex 或 Navidrome，即可从你自己的服务器收听音乐。",
+    "ru": "Doudou — музыкальный плеер для самохост-коллекций. Подключайте Jellyfin, Plex или Navidrome и слушайте музыку со своих серверов."
+  },
+  "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
+  "tintColor": "#8b5cf6",
+  "platforms": [
+    "iOS",
+    "macOS",
+    "Windows",
+    "Linux",
+    "Android"
+  ],
+  "screenshots": [
+    "https://gitlab.com/Openlyst/repos/altstore/-/raw/2d2255e2e84d948e341c90315b9b46019e1a80c0/photos/doudou/7.0.0/home.PNG",
+    "https://gitlab.com/Openlyst/repos/altstore/-/raw/2d2255e2e84d948e341c90315b9b46019e1a80c0/photos/doudou/7.0.0/nowplaying.PNG",
+    "https://gitlab.com/Openlyst/repos/altstore/-/raw/2d2255e2e84d948e341c90315b9b46019e1a80c0/photos/doudou/7.0.0/albums.PNG"
+  ],
+  "deprecated": false,
+  "versions": [
+    {
+      "version": "19.0.0",
+      "date": "2026-06-04",
+      "releaseTag": "build-99",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/b312fc3",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 19.0.0\n\n- Settings panels are now scrollable.\n- Adds a new radio mode for YouTube Music\n- Ensure other servers can't affect other servers \n- YouTube Music will show some songs if you have nothing added \n- Fix the desktop bottom bar favorite button not updating when clicked until state refreshed\n- The navbar actions are now centered\n- Switching servers will cancel the current queue\n- Don't show sections with 0 data in the song info panel.\n- Format timestamp for song info.\n- Hide quick action cards if they have 0 data.\n- Fix mini player not updating UI states.\n- Show the time stamps in the desktop player.\n- Detailed artist view will scroll with the user content\n- Fix library songs/artists/downloads tabs appearing empty when using non-English locale.\n- Fix queue crashes when switching servers with an empty or single-item queue.\n- Dont show the username on the top with the back button.",
+        "zh": "# 19.0.0\n\n- 设置面板现在可滚动。\n- 为 YouTube Music 添加新的电台模式\n- 确保其他服务器不会影响其他服务器\n- 如果没有添加任何内容，YouTube Music 将显示一些歌曲\n- 修复桌面底部栏收藏按钮点击后直到状态刷新才更新的问题\n- 导航栏操作现在居中\n- 切换服务器将取消当前队列\n- 不在歌曲信息面板中显示数据为 0 的部分。\n- 格式化歌曲信息的时间戳。\n- 如果快速操作卡片数据为 0 则隐藏。\n- 修复迷你播放器不更新 UI 状态的问题。\n- 在桌面播放器中显示时间戳。\n- 详细艺术家视图将随用户内容滚动\n- 修复使用非英语语言环境时库歌曲/艺术家/下载标签显示为空的问题。\n- 修复切换服务器时队列为空或单项时队列崩溃的问题。\n- 不要在顶部显示用户名和返回按钮。",
+        "ru": "# 19.0.0\n\n- Панели настроек теперь можно прокручивать.\n- Добавлен новый режим радио для YouTube Music\n- Обеспечьте, чтобы другие серверы не влияли на другие серверы\n- YouTube Music покажет несколько песен, если вы ничего не добавили\n- Исправлена проблема, когда кнопка избранного на нижней панели рабочего стола не обновляется при нажатии до обновления состояния\n- Действия навигационной панели теперь центрированы\n- Переключение серверов отменит текущую очередь\n- Не показывать разделы с 0 данными в панели информации о песне.\n- Форматировать временную метку для информации о песне.\n- Скрывать карточки быстрых действий, если в них 0 данных.\n- Исправлена проблема, когда мини-плеер не обновляет состояния UI.\n- Показывать временные метки в настольном плеере.\n- Подробный вид исполнителя будет прокручиваться вместе с пользовательским контентом\n- Исправлена проблема, когда вкладки библиотеки песен/исполнителей/загрузок отображаются пустыми при использовании неанглийской локали.\n- Исправлены сбои очереди при переключении серверов с пустой или одноэлементной очередью.\n- Не показывать имя пользователя вверху с кнопкой назад."
+      }
+    },
+    {
+      "version": "18.0.0",
+      "date": "2026-05-08",
+      "releaseTag": "build-95",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/26ee712",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline."
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-95/doudou-18.0.0-2026-05-08.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 18.0.0\n\n# Added\n- Linux build failed in this release",
+        "zh": "# 18.0.0\n\n# 新增\n- 此版本 Linux 构建失败",
+        "ru": "# 18.0.0\n\n# Добавлено\n- Сборка для Linux не удалась в этом выпуске"
+      }
+    },
+    {
+      "version": "17.0.0",
+      "date": "2026-05-06",
+      "releaseTag": "build-93",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/17.0.0",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-07-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-07-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-07-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-07-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 17.0.0\n- Fix macOS YouTube Music playback\n- Set a smaller default window size for macOS\n- Fix add to playlist window not matching the theme of the app",
+        "zh": "# 17.0.0\n- 修复 macOS YouTube Music 播放\n- 为 macOS 设置更小的默认窗口大小\n- 修复添加到播放列表窗口与应用主题不匹配的问题",
+        "ru": "# 17.0.0\n- Исправлено воспроизведение YouTube Music на macOS\n- Установлен меньший размер окна по умолчанию для macOS\n- Исправлено несоответствие темы окна добавления в плейлист"
+      }
+    },
+    {
+      "version": "16.2.0",
+      "date": "2026-03-14",
+      "releaseTag": "build-73",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/d6e103f40273800ac249a7852b58dcee4d9f76b6",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art",
+        "zh": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art",
+        "ru": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art"
+      }
+    },
+    {
+      "version": "16.1.0",
+      "date": "2026-03-11",
+      "releaseTag": "build-71",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/45e082790e7edc7323949962a9c3dc264a0aafe2",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 16.1.0\n- en_AU patches\n- Fix album art animations\n- Fix animations not being smooth\n- Removed GetX",
+        "zh": "# 16.1.0\n- en_AU patches\n- Fix album art animations\n- Fix animations not being smooth\n- Removed GetX",
+        "ru": "# 16.1.0\n- en_AU patches\n- Fix album art animations\n- Fix animations not being smooth\n- Removed GetX"
+      }
+    },
+    {
+      "version": "16.0.0",
+      "date": "2026-03-09",
+      "releaseTag": "build-68",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/789380bb150f9cc91a456777a436549e759f3f03",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 16.0.0\n\n- Brand new app\n- Everything has been rewritten to just work. We are done with bugs and unimplamented features",
+        "zh": "# 16.0.0\n\n- Brand new app\n- Everything has been rewritten to just work. We are done with bugs and unimplamented features",
+        "ru": "# 16.0.0\n\n- Brand new app\n- Everything has been rewritten to just work. We are done with bugs and unimplamented features"
+      }
+    },
+    {
+      "version": "15.0.0",
+      "date": "2026-02-27",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/863213914843d4003e84522abb52f6896a6d79c7",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 15.0.0\n\n## Highlights\n\n- **YouTube Music**: New provider (select in Server type). Search and stream without login. Home shows Harmony-style layout with Quick picks, Popular playlists, Trending; search shows Artists, Playlists, Songs.\n- **General options** (Settings > General): Toggles for Lyrics, Downloads, Volume on player bar, Queue button, Shuffle & repeat (desktop). YouTube Music can be re-enabled on Windows/Linux (off by default on desktop).\n- **Onboarding**: Language -> Theme (System/Light/Dark/OLED) -> Accent colour -> Get Started. Localized (English, 中文, Русский). When not logged in: welcome message and no-server screen after Get Started.\n- **Multi-server**: Add, edit, remove, switch saved servers without reload. Settings > Server lists saved servers; legacy single-server prefs migrate on first load.\n- **Detail headers**: Gradient derived from cover image (dominant color, darkened). Fades in over 280ms; no flicker. Shuffle/Play are circular icon-only; Shuffle in horizontal scroll on narrow panels.\n- **Artist/album/playlist**: Clickable artist names (no underline) open artist page when in library. Albums/Songs tab is animated segmented control (purple pill, 220ms). Tab bar full width, equal segments.\n- **Now playing**: Single responsive screen (mobile & desktop, breakpoint 900px). Compact: carousel, progress, controls, queue/favorite/lyrics/more. Expanded: album + controls left, Up Next / Lyrics right. Download in more-options: start, cancel, or delete download. Volume control. Close button clears queue and stops playback.\n- **Now playing polish (release pass)**:\n  - Desktop uses blurred artwork background and improved spacing for smaller heights.\n  - Play/pause visual treatment unified (no gradient orb styling).\n  - Volume controls support keyboard shortcuts and toggle-style panels.\n  - Queue and lyrics panels now hide/show contextually based on availability.\n- **YouTube Music follow-based home**:\n  - Home supports followed content and guidance when library is empty.\n  - Follow actions for artist/album/playlist with per-server persistence.\n  - Mix-style playlists are excluded from follow surfaces.\n- **Search**: Full-width bar. Shows albums, artists, songs for all providers; YouTube Music also shows community playlists. Server URL validation rejects YouTube Music with clear message.\n- **Dates**: Year/month/day (e.g. 2025/02/21) for album Added, Settings build date, log names.\n\n## Design & UI\n\n- **Organic refined** look: AppTokens (Plus Jakarta Sans + Nunito, teal accent, warm dark palette, soft radii). Same tokens on desktop and mobile; light, dark, OLED.\n- **OLED**: Pure black (#000000) everywhere when OLED theme selected. Dark mode uses charcoal (#1C1C1E).\n- **Gemini-style**: Dark palette (#0a0a0c page, #0e0e11 sidebar, etc.). Sidebar: purple logo box, rounded nav tiles, Library label, Settings at bottom. Settings sidebar: section headers, rounded cards, status (e.g. Connected).\n- **Dialogs**: Apple-style frosted glass (blur, rounded corners, scale/fade). showAppDialog / showAppConfirmDialog / showAppChoiceDialog (Apple* deprecated). Select Language, Theme, accent/custom color redesigned.\n- **Mobile**: extendBody so content under nav/player bars; bars use frosted glass. Bottom padding so content not covered by nav bar.\n- **Empty states**: Full-width centered icon and text. Home: no header; content starts with quick access and sections.\n- **Settings**: iOS-style grouped list (Server, Playback, Appearance, About), sub-pages. Connection shows Jellyfin username (User.Name) or \"Logged in\". Connection box adapts by provider (Local, YouTube Music, Jellyfin/Plex/Subsonic).\n- **Queue/lyrics overlays**:\n  - Current track is pinned at the top of queue presentations.\n  - Lyrics open at the current playback position.\n  - Lyrics tabs/buttons are hidden when lyrics are unavailable.\n\n## Fixes\n\n- **Queue**: Clear queue also clears current track and emits null so player bar hides.\n- **Layout**: Mobile nav no longer overflows on resize (Expanded + FittedBox). KeyedSubtree on breakpoint switch avoids _elements.contains assertion.\n- **Dialogs**: showAppleDialog (and Add/Edit server) use actionsBuilder so Navigator.pop uses dialog context-fixes \"Looking up a deactivated widget's ancestor\" when caller screen already closed.\n- **Search**: Bar no longer Expanded inside PageTemplate (layout crash); use fixed width (320px).\n- **Server settings**: Subsonic/Navidrome config data shown via displayServerUrl and displayUsername on login/restore.\n- **Now playing**: Album/artist lines under title have no underline. Lyrics: no yellow underline (TextDecoration.none).\n- **Now playing**: Volume overlay no longer blocks slider drag; tapping outside closes the overlay.\n- **Now playing**: Added mobile parity for The Mind Electric easter egg behavior.\n- **Settings**: Reliable scrolling (AlwaysScrollableScrollPhysics, ConstrainedBox). Add/switch server no longer kicks you off Settings (shell keeps selection).\n\n## Removed\n\n- Android Auto, voice commands (Google Assistant, deep links, MEDIA_PLAY_FROM_SEARCH, shortcuts).\n- Dynamic Isle / mini player island. Standalone Local Music screen (config in Settings only).\n- Refresh buttons (Library, Albums, Artists, Playlists, Tracks, detail, Rescan). Login screen (main shell always; Connect/Disconnect in Settings).\n- Unused: cached_image.dart, apple_design/glassmorphism.dart. General settings section (OLED/Show album art moved to Theme dialog). Mobile-only UI.\n\n## Linux\n\n- YouTube Music disabled in Server type and saved list by default; if current server was YT Music on startup, app switches or disconnects.\n- YouTube Music playback: media_kit (mpv), setlocale(LC_NUMERIC, \"C\") before mpv to avoid \"Non-C locale\" crash. Fallback: ~/.config/mpv/mpv.conf with ao=pulse,pipewire,alsa. Packaged .desktop uses LC_ALL=C.\n- Other Linux playback: audioplayers (GStreamer). Install gstreamer, gst-plugins-base, gst-plugins-good, gst-libav.\n\n## Refactors & performance\n\n- **Single codebase**: One set of Dart UI for mobile and desktop; sidebar >=768px, bottom nav on mobile. No ui/desktop vs ui/mobile split. Navigation in lib/services; theme in lib/ui/theme.\n- **Dialog API**: showAppDialog, showAppConfirmDialog, showAppChoiceDialog, AppDialogOption. Theme/layout in app_tokens.dart, desktop_theme.dart.\n- **Startup**: System info logging after first frame. Isolates for dominant color, cache/API JSON (Jellyfin, local). List keys, lazy tab loading, Selector for playlists/artists/albums. Now playing: AnimatedBuilder for skip/snap-back (no setState per tick); blur limited to header.\n- **YouTube Music**: Prefer 96-160 kbps stream; position-based completion fallback on mobile for auto-play/next.\n- **Lint**: mounted checks after async (media_details, settings_page); braces in now_playing lyrics.\n- **Cleanup**: Add-to-playlist consolidated (Create New Playlist in DesktopLayout; used from now-playing and home). ArtistDetailScreen vs ArtistDetailsPage clarified. Page template title: TextDecoration.none.",
+        "zh": "# 15.0.0\n\n## Highlights\n\n- **YouTube Music**: New provider (select in Server type). Search and stream without login. Home shows Harmony-style layout with Quick picks, Popular playlists, Trending; search shows Artists, Playlists, Songs.\n- **General options** (Settings > General): Toggles for Lyrics, Downloads, Volume on player bar, Queue button, Shuffle & repeat (desktop). YouTube Music can be re-enabled on Windows/Linux (off by default on desktop).\n- **Onboarding**: Language -> Theme (System/Light/Dark/OLED) -> Accent colour -> Get Started. Localized (English, 中文, Русский). When not logged in: welcome message and no-server screen after Get Started.\n- **Multi-server**: Add, edit, remove, switch saved servers without reload. Settings > Server lists saved servers; legacy single-server prefs migrate on first load.\n- **Detail headers**: Gradient derived from cover image (dominant color, darkened). Fades in over 280ms; no flicker. Shuffle/Play are circular icon-only; Shuffle in horizontal scroll on narrow panels.\n- **Artist/album/playlist**: Clickable artist names (no underline) open artist page when in library. Albums/Songs tab is animated segmented control (purple pill, 220ms). Tab bar full width, equal segments.\n- **Now playing**: Single responsive screen (mobile & desktop, breakpoint 900px). Compact: carousel, progress, controls, queue/favorite/lyrics/more. Expanded: album + controls left, Up Next / Lyrics right. Download in more-options: start, cancel, or delete download. Volume control. Close button clears queue and stops playback.\n- **Now playing polish (release pass)**:\n  - Desktop uses blurred artwork background and improved spacing for smaller heights.\n  - Play/pause visual treatment unified (no gradient orb styling).\n  - Volume controls support keyboard shortcuts and toggle-style panels.\n  - Queue and lyrics panels now hide/show contextually based on availability.\n- **YouTube Music follow-based home**:\n  - Home supports followed content and guidance when library is empty.\n  - Follow actions for artist/album/playlist with per-server persistence.\n  - Mix-style playlists are excluded from follow surfaces.\n- **Search**: Full-width bar. Shows albums, artists, songs for all providers; YouTube Music also shows community playlists. Server URL validation rejects YouTube Music with clear message.\n- **Dates**: Year/month/day (e.g. 2025/02/21) for album Added, Settings build date, log names.\n\n## Design & UI\n\n- **Organic refined** look: AppTokens (Plus Jakarta Sans + Nunito, teal accent, warm dark palette, soft radii). Same tokens on desktop and mobile; light, dark, OLED.\n- **OLED**: Pure black (#000000) everywhere when OLED theme selected. Dark mode uses charcoal (#1C1C1E).\n- **Gemini-style**: Dark palette (#0a0a0c page, #0e0e11 sidebar, etc.). Sidebar: purple logo box, rounded nav tiles, Library label, Settings at bottom. Settings sidebar: section headers, rounded cards, status (e.g. Connected).\n- **Dialogs**: Apple-style frosted glass (blur, rounded corners, scale/fade). showAppDialog / showAppConfirmDialog / showAppChoiceDialog (Apple* deprecated). Select Language, Theme, accent/custom color redesigned.\n- **Mobile**: extendBody so content under nav/player bars; bars use frosted glass. Bottom padding so content not covered by nav bar.\n- **Empty states**: Full-width centered icon and text. Home: no header; content starts with quick access and sections.\n- **Settings**: iOS-style grouped list (Server, Playback, Appearance, About), sub-pages. Connection shows Jellyfin username (User.Name) or \"Logged in\". Connection box adapts by provider (Local, YouTube Music, Jellyfin/Plex/Subsonic).\n- **Queue/lyrics overlays**:\n  - Current track is pinned at the top of queue presentations.\n  - Lyrics open at the current playback position.\n  - Lyrics tabs/buttons are hidden when lyrics are unavailable.\n\n## Fixes\n\n- **Queue**: Clear queue also clears current track and emits null so player bar hides.\n- **Layout**: Mobile nav no longer overflows on resize (Expanded + FittedBox). KeyedSubtree on breakpoint switch avoids _elements.contains assertion.\n- **Dialogs**: showAppleDialog (and Add/Edit server) use actionsBuilder so Navigator.pop uses dialog context-fixes \"Looking up a deactivated widget's ancestor\" when caller screen already closed.\n- **Search**: Bar no longer Expanded inside PageTemplate (layout crash); use fixed width (320px).\n- **Server settings**: Subsonic/Navidrome config data shown via displayServerUrl and displayUsername on login/restore.\n- **Now playing**: Album/artist lines under title have no underline. Lyrics: no yellow underline (TextDecoration.none).\n- **Now playing**: Volume overlay no longer blocks slider drag; tapping outside closes the overlay.\n- **Now playing**: Added mobile parity for The Mind Electric easter egg behavior.\n- **Settings**: Reliable scrolling (AlwaysScrollableScrollPhysics, ConstrainedBox). Add/switch server no longer kicks you off Settings (shell keeps selection).\n\n## Removed\n\n- Android Auto, voice commands (Google Assistant, deep links, MEDIA_PLAY_FROM_SEARCH, shortcuts).\n- Dynamic Isle / mini player island. Standalone Local Music screen (config in Settings only).\n- Refresh buttons (Library, Albums, Artists, Playlists, Tracks, detail, Rescan). Login screen (main shell always; Connect/Disconnect in Settings).\n- Unused: cached_image.dart, apple_design/glassmorphism.dart. General settings section (OLED/Show album art moved to Theme dialog). Mobile-only UI.\n\n## Linux\n\n- YouTube Music disabled in Server type and saved list by default; if current server was YT Music on startup, app switches or disconnects.\n- YouTube Music playback: media_kit (mpv), setlocale(LC_NUMERIC, \"C\") before mpv to avoid \"Non-C locale\" crash. Fallback: ~/.config/mpv/mpv.conf with ao=pulse,pipewire,alsa. Packaged .desktop uses LC_ALL=C.\n- Other Linux playback: audioplayers (GStreamer). Install gstreamer, gst-plugins-base, gst-plugins-good, gst-libav.\n\n## Refactors & performance\n\n- **Single codebase**: One set of Dart UI for mobile and desktop; sidebar >=768px, bottom nav on mobile. No ui/desktop vs ui/mobile split. Navigation in lib/services; theme in lib/ui/theme.\n- **Dialog API**: showAppDialog, showAppConfirmDialog, showAppChoiceDialog, AppDialogOption. Theme/layout in app_tokens.dart, desktop_theme.dart.\n- **Startup**: System info logging after first frame. Isolates for dominant color, cache/API JSON (Jellyfin, local). List keys, lazy tab loading, Selector for playlists/artists/albums. Now playing: AnimatedBuilder for skip/snap-back (no setState per tick); blur limited to header.\n- **YouTube Music**: Prefer 96-160 kbps stream; position-based completion fallback on mobile for auto-play/next.\n- **Lint**: mounted checks after async (media_details, settings_page); braces in now_playing lyrics.\n- **Cleanup**: Add-to-playlist consolidated (Create New Playlist in DesktopLayout; used from now-playing and home). ArtistDetailScreen vs ArtistDetailsPage clarified. Page template title: TextDecoration.none.",
+        "ru": "# 15.0.0\n\n## Highlights\n\n- **YouTube Music**: New provider (select in Server type). Search and stream without login. Home shows Harmony-style layout with Quick picks, Popular playlists, Trending; search shows Artists, Playlists, Songs.\n- **General options** (Settings > General): Toggles for Lyrics, Downloads, Volume on player bar, Queue button, Shuffle & repeat (desktop). YouTube Music can be re-enabled on Windows/Linux (off by default on desktop).\n- **Onboarding**: Language -> Theme (System/Light/Dark/OLED) -> Accent colour -> Get Started. Localized (English, 中文, Русский). When not logged in: welcome message and no-server screen after Get Started.\n- **Multi-server**: Add, edit, remove, switch saved servers without reload. Settings > Server lists saved servers; legacy single-server prefs migrate on first load.\n- **Detail headers**: Gradient derived from cover image (dominant color, darkened). Fades in over 280ms; no flicker. Shuffle/Play are circular icon-only; Shuffle in horizontal scroll on narrow panels.\n- **Artist/album/playlist**: Clickable artist names (no underline) open artist page when in library. Albums/Songs tab is animated segmented control (purple pill, 220ms). Tab bar full width, equal segments.\n- **Now playing**: Single responsive screen (mobile & desktop, breakpoint 900px). Compact: carousel, progress, controls, queue/favorite/lyrics/more. Expanded: album + controls left, Up Next / Lyrics right. Download in more-options: start, cancel, or delete download. Volume control. Close button clears queue and stops playback.\n- **Now playing polish (release pass)**:\n  - Desktop uses blurred artwork background and improved spacing for smaller heights.\n  - Play/pause visual treatment unified (no gradient orb styling).\n  - Volume controls support keyboard shortcuts and toggle-style panels.\n  - Queue and lyrics panels now hide/show contextually based on availability.\n- **YouTube Music follow-based home**:\n  - Home supports followed content and guidance when library is empty.\n  - Follow actions for artist/album/playlist with per-server persistence.\n  - Mix-style playlists are excluded from follow surfaces.\n- **Search**: Full-width bar. Shows albums, artists, songs for all providers; YouTube Music also shows community playlists. Server URL validation rejects YouTube Music with clear message.\n- **Dates**: Year/month/day (e.g. 2025/02/21) for album Added, Settings build date, log names.\n\n## Design & UI\n\n- **Organic refined** look: AppTokens (Plus Jakarta Sans + Nunito, teal accent, warm dark palette, soft radii). Same tokens on desktop and mobile; light, dark, OLED.\n- **OLED**: Pure black (#000000) everywhere when OLED theme selected. Dark mode uses charcoal (#1C1C1E).\n- **Gemini-style**: Dark palette (#0a0a0c page, #0e0e11 sidebar, etc.). Sidebar: purple logo box, rounded nav tiles, Library label, Settings at bottom. Settings sidebar: section headers, rounded cards, status (e.g. Connected).\n- **Dialogs**: Apple-style frosted glass (blur, rounded corners, scale/fade). showAppDialog / showAppConfirmDialog / showAppChoiceDialog (Apple* deprecated). Select Language, Theme, accent/custom color redesigned.\n- **Mobile**: extendBody so content under nav/player bars; bars use frosted glass. Bottom padding so content not covered by nav bar.\n- **Empty states**: Full-width centered icon and text. Home: no header; content starts with quick access and sections.\n- **Settings**: iOS-style grouped list (Server, Playback, Appearance, About), sub-pages. Connection shows Jellyfin username (User.Name) or \"Logged in\". Connection box adapts by provider (Local, YouTube Music, Jellyfin/Plex/Subsonic).\n- **Queue/lyrics overlays**:\n  - Current track is pinned at the top of queue presentations.\n  - Lyrics open at the current playback position.\n  - Lyrics tabs/buttons are hidden when lyrics are unavailable.\n\n## Fixes\n\n- **Queue**: Clear queue also clears current track and emits null so player bar hides.\n- **Layout**: Mobile nav no longer overflows on resize (Expanded + FittedBox). KeyedSubtree on breakpoint switch avoids _elements.contains assertion.\n- **Dialogs**: showAppleDialog (and Add/Edit server) use actionsBuilder so Navigator.pop uses dialog context-fixes \"Looking up a deactivated widget's ancestor\" when caller screen already closed.\n- **Search**: Bar no longer Expanded inside PageTemplate (layout crash); use fixed width (320px).\n- **Server settings**: Subsonic/Navidrome config data shown via displayServerUrl and displayUsername on login/restore.\n- **Now playing**: Album/artist lines under title have no underline. Lyrics: no yellow underline (TextDecoration.none).\n- **Now playing**: Volume overlay no longer blocks slider drag; tapping outside closes the overlay.\n- **Now playing**: Added mobile parity for The Mind Electric easter egg behavior.\n- **Settings**: Reliable scrolling (AlwaysScrollableScrollPhysics, ConstrainedBox). Add/switch server no longer kicks you off Settings (shell keeps selection).\n\n## Removed\n\n- Android Auto, voice commands (Google Assistant, deep links, MEDIA_PLAY_FROM_SEARCH, shortcuts).\n- Dynamic Isle / mini player island. Standalone Local Music screen (config in Settings only).\n- Refresh buttons (Library, Albums, Artists, Playlists, Tracks, detail, Rescan). Login screen (main shell always; Connect/Disconnect in Settings).\n- Unused: cached_image.dart, apple_design/glassmorphism.dart. General settings section (OLED/Show album art moved to Theme dialog). Mobile-only UI.\n\n## Linux\n\n- YouTube Music disabled in Server type and saved list by default; if current server was YT Music on startup, app switches or disconnects.\n- YouTube Music playback: media_kit (mpv), setlocale(LC_NUMERIC, \"C\") before mpv to avoid \"Non-C locale\" crash. Fallback: ~/.config/mpv/mpv.conf with ao=pulse,pipewire,alsa. Packaged .desktop uses LC_ALL=C.\n- Other Linux playback: audioplayers (GStreamer). Install gstreamer, gst-plugins-base, gst-plugins-good, gst-libav.\n\n## Refactors & performance\n\n- **Single codebase**: One set of Dart UI for mobile and desktop; sidebar >=768px, bottom nav on mobile. No ui/desktop vs ui/mobile split. Navigation in lib/services; theme in lib/ui/theme.\n- **Dialog API**: showAppDialog, showAppConfirmDialog, showAppChoiceDialog, AppDialogOption. Theme/layout in app_tokens.dart, desktop_theme.dart.\n- **Startup**: System info logging after first frame. Isolates for dominant color, cache/API JSON (Jellyfin, local). List keys, lazy tab loading, Selector for playlists/artists/albums. Now playing: AnimatedBuilder for skip/snap-back (no setState per tick); blur limited to header.\n- **YouTube Music**: Prefer 96-160 kbps stream; position-based completion fallback on mobile for auto-play/next.\n- **Lint**: mounted checks after async (media_details, settings_page); braces in now_playing lyrics.\n- **Cleanup**: Add-to-playlist consolidated (Create New Playlist in DesktopLayout; used from now-playing and home). ArtistDetailScreen vs ArtistDetailsPage clarified. Page template title: TextDecoration.none."
+      }
+    },
+    {
+      "version": "14.0.0",
+      "date": "2026-02-16",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/09eba224946e3f087da2141f864ca633a6239041",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16.aab"
+        },
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 14.0.0\n\n- New UI for both desktop and mobile.\n- Don't show desktop sidebar when on small screens.\n- Remove logging.\n- Expand the about Doudou section.\n- Port the old navbar.\n- Settings scales.\n- New app layouts.\n- Port the now playing screen.\n- Spec bump to 14.0.0.\n- Mobile track now goes left from right.\n- Lyrics icon is now a microphone; only shown when lyrics are available.\n- Fixed animation when reversing a song.",
+        "zh": "# 14.0.0\n\n- 桌面与移动端全新界面。\n- 小屏幕不显示桌面侧边栏。\n- 移除日志。\n- 扩展关于 Doudou 部分。\n- 移植旧导航栏。\n- 设置缩放。\n- 新应用布局。\n- 移植正在播放界面。\n- 版本号升级至 14.0.0。\n- 移动端进度条改为自右向左。\n- 歌词图标改为麦克风；仅在存在歌词时显示。\n- 修复倒放时的动画。",
+        "ru": "# 14.0.0\n\n- Новый интерфейс для десктопа и мобильных.\n- Не показывать боковую панель на маленьких экранах.\n- Удалено логирование.\n- Расширен раздел «О Doudou».\n- Перенесена старая навигационная панель.\n- Масштабирование настроек.\n- Новые макеты приложения.\n- Перенесён экран «Сейчас играет».\n- Обновление версии до 14.0.0.\n- Мобильный трек теперь идёт слева направо.\n- Иконка текста песни заменена на микрофон; показывается только при наличии текста.\n- Исправлена анимация при перемотке назад."
+      }
+    },
+    {
+      "version": "13.0.0",
+      "date": "2026-02-15",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/0d1d59a8951a749861b887d239b88a285c5081ae",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-23/doudou-13.0.0-2026-02-15.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-23/doudou-13.0.0-2026-02-15.aab"
+        },
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-22/doudou-13.0.0-2026-02-15-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 13.0.0\n\n- Version bump to 13.0.0.",
+        "zh": "# 13.0.0\n\n- 版本升级至 13.0.0。",
+        "ru": "# 13.0.0\n\n- Версия обновлена до 13.0.0."
+      }
+    },
+    {
+      "version": "12.0.1",
+      "date": "2026-01-15",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/9128badfb8110270acaf2914d109f143ad509f5e",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Windows": "Download source and compile yourself from GitLab pipeline.",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msi": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08.aab"
+        },
+        "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 12.0.1\n\n- Updated donate URL | https://openlyst.ink/support\n- Version bump to 12.0.1\n- Haptic feedback for favorite button",
+        "zh": "# 12.0.1\n\n- 更新捐赠链接 | https://openlyst.ink/support\n- 版本升级至 12.0.1\n- 收藏按钮添加触觉反馈",
+        "ru": "# 12.0.1\n\n- Обновлён URL для пожертвований | https://openlyst.ink/support\n- Версия обновлена до 12.0.1\n- Тактильная обратная связь для кнопки избранного"
+      }
+    }
+  ]
+}

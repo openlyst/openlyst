@@ -1,0 +1,25 @@
+{
+  "name": {
+    "en": "OpenLyst Repository",
+    "zh": "OpenLyst 仓库",
+    "ru": "Репозиторий OpenLyst"
+  },
+  "subtitle": {
+    "en": "OpenLyst iOS apps repository.",
+    "zh": "OpenLyst iOS 应用仓库。",
+    "ru": "Репозиторий iOS-приложений OpenLyst."
+  },
+  "description": {
+    "en": "Free and open-source apps for iOS, Android, and desktop, focused on practical and unique tools.",
+    "zh": "面向 iOS、Android 和桌面的免费开源应用，专注于实用且有特色的工具。",
+    "ru": "Бесплатные приложения с открытым кодом для iOS, Android и ПК с фокусом на практичных и уникальных инструментах."
+  },
+  "iconURL": "/favicon.svg",
+  "headerURL": "https://gitlab.com/Openlyst/repos/altstore/-/raw/main/header.png?ref_type=heads",
+  "website": "https://openlyst.ink",
+  "tintColor": "#dc2626",
+  "featuredApps": ["doudou", "lystcode"],
+  "supportedLanguages": ["en", "zh", "ru"],
+  "defaultLanguage": "en",
+  "tempDownloadsOff": false
+}

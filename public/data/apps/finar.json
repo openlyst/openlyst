@@ -1,0 +1,364 @@
+{
+  "bundleIdentifier": "finar",
+  "applicationId": "gitlab.openlyst.finar",
+  "name": {
+    "en": "Finar",
+    "zh": "Finar",
+    "ru": "Finar"
+  },
+  "subtitle": {
+    "en": "Jellyfin frontend client",
+    "zh": "Jellyfin 前端客户端",
+    "ru": "Клиент-фронтенд для Jellyfin"
+  },
+  "localizedDescription": {
+    "en": "Finar is a cross-platform Jellyfin client built with Flutter. It includes native playback with media_kit, offline support with Hive, and an adaptive interface for desktop, mobile, and TV.",
+    "zh": "Finar 是一个基于 Flutter 的跨平台 Jellyfin 客户端。它提供由 media_kit 驱动的原生播放、基于 Hive 的离线支持，以及适配桌面、移动端和电视的界面。",
+    "ru": "Finar — кроссплатформенный клиент Jellyfin на Flutter. В нём есть нативное воспроизведение через media_kit, офлайн-поддержка на Hive и адаптивный интерфейс для ПК, мобильных устройств и ТВ."
+  },
+  "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/finar.png?ref_type=heads",
+  "tintColor": "#6366f1",
+  "platforms": [
+    "iOS",
+    "macOS",
+    "Windows",
+    "Linux",
+    "Android",
+    "Web"
+  ],
+  "screenshots": [
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/screen-0.jpg?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Finar/screen-1.jpg?ref_type=heads"
+  ],
+  "deprecated": false,
+  "versions": [
+    {
+      "version": "4.1.1",
+      "date": "2026-05-07",
+      "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/5d1692870a724861e8a282b8f18df59e1700cf60",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK or AAB from the links below",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source",
+        "Web": "Access the web version or self-host with Docker"
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-windows-x64-setup.exe",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-linux-amd64.deb",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-linux-amd64.rpm",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07.aab"
+        },
+        "Web": "https://github.com/openlyst/builds/releases/download/build-94/finar-4.1.1-2026-05-07-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 4.1.1\n\n# Fixed\n- Fixed build issues for macOS",
+        "zh": "# 4.1.1\n\n# 修复\n- 修复了 macOS 构建问题",
+        "ru": "# 4.1.1\n\n# Исправлено\n- Исправлены проблемы со сборкой для macOS"
+      }
+    },
+    {
+      "version": "3.0.0",
+      "date": "2026-02-24",
+      "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/main",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK or AAB from the links below",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source",
+        "Web": "Access the web version or self-host with Docker"
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-windows-x64-setup.exe",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-linux-amd64.deb",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24.aab"
+        },
+        "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-14/finar-1.1.0-2026-02-24-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 3.0.0\n\n# Added\n- Who's watching? screen for multiple Jellyfin accounts (Netflix-style profile picker)\n- Multiple accounts: save and switch between several server/user profiles\n- Add profile and Manage profiles flows; sign out removes current profile from device\n- Watchlist row on home (desktop and mobile); home data includes watchlist, invalidated when toggling from detail\n- Sleep timer: Settings > Playback (Off, 15/30/45/60 min, End of current); player overlay shows remaining time and Cancel\n- Theme and appearance: Settings > Appearance — Theme (System / Light / Dark), Use system accent, Accent color (Teal, Purple, Blue, Pink, Orange)\n\n# Changed\n- Unified UI: removed separate desktop/ and mobile/ page folders; single responsive pages (home, settings, detail, player, library, music_library, downloads) with sidebar on wide screens and bottom nav/single column on narrow\n- Library page (mobile): list-style cards with icon, type label, and item count instead of large gradient grid\n- Upgraded dependencies: dio, riverpod, flutter_riverpod, intl, package_info_plus, share_plus, gamepads; Riverpod 3 migration with legacy imports; share_plus 12 SharePlus API; AsyncValue.when for null fallbacks\n- App startup: with 2+ saved profiles, Who's watching is shown instead of auto-restoring; with 1 profile, behavior unchanged\n- Sidebar and Settings: Switch profile opens Who's watching; Sign out removes current profile (with confirmation)\n\n# Fixed\n- Theme and accent: theme mode (System/Light/Dark) and accent color now apply across the app; settings load before first frame so stored theme is used on launch; \"Use system accent\" is persisted via setUseSystemAccent\n- Detail more-options sheet: Download, Share, and Media Info now work; Add to Playlist / Report Issue show \"Coming soon\"\n- Home media card Add button adds/removes item from watchlist with SnackBar feedback\n- Music library track row: favorite button toggles favorite and refreshes list\n- Music player bar: Shuffle shuffles playlist and plays from start; Repeat cycles off → one → all; More shows \"Coming soon\" SnackBar\n- Queue \"Now Playing\" tap triggers play/pause; library sort button no longer appears disabled\n- Who's watching: show current session as a profile when saved list was empty (recovery); avoid row overflow with horizontal scroll or wrap\n- Login page: hide scrollbar on form scrollables; fix contrast (solid dark form card so white text is readable); Quick Connect tip uses textSecondary for readability",
+        "zh": "# 3.0.0\n\n# Added\n- Who's watching? screen for multiple Jellyfin accounts (Netflix-style profile picker)\n- Multiple accounts: save and switch between several server/user profiles\n- Add profile and Manage profiles flows; sign out removes current profile from device\n- Watchlist row on home (desktop and mobile); home data includes watchlist, invalidated when toggling from detail\n- Sleep timer: Settings > Playback (Off, 15/30/45/60 min, End of current); player overlay shows remaining time and Cancel\n- Theme and appearance: Settings > Appearance — Theme (System / Light / Dark), Use system accent, Accent color (Teal, Purple, Blue, Pink, Orange)\n\n# Changed\n- Unified UI: removed separate desktop/ and mobile/ page folders; single responsive pages (home, settings, detail, player, library, music_library, downloads) with sidebar on wide screens and bottom nav/single column on narrow\n- Library page (mobile): list-style cards with icon, type label, and item count instead of large gradient grid\n- Upgraded dependencies: dio, riverpod, flutter_riverpod, intl, package_info_plus, share_plus, gamepads; Riverpod 3 migration with legacy imports; share_plus 12 SharePlus API; AsyncValue.when for null fallbacks\n- App startup: with 2+ saved profiles, Who's watching is shown instead of auto-restoring; with 1 profile, behavior unchanged\n- Sidebar and Settings: Switch profile opens Who's watching; Sign out removes current profile (with confirmation)\n\n# Fixed\n- Theme and accent: theme mode (System/Light/Dark) and accent color now apply across the app; settings load before first frame so stored theme is used on launch; \"Use system accent\" is persisted via setUseSystemAccent\n- Detail more-options sheet: Download, Share, and Media Info now work; Add to Playlist / Report Issue show \"Coming soon\"\n- Home media card Add button adds/removes item from watchlist with SnackBar feedback\n- Music library track row: favorite button toggles favorite and refreshes list\n- Music player bar: Shuffle shuffles playlist and plays from start; Repeat cycles off → one → all; More shows \"Coming soon\" SnackBar\n- Queue \"Now Playing\" tap triggers play/pause; library sort button no longer appears disabled\n- Who's watching: show current session as a profile when saved list was empty (recovery); avoid row overflow with horizontal scroll or wrap\n- Login page: hide scrollbar on form scrollables; fix contrast (solid dark form card so white text is readable); Quick Connect tip uses textSecondary for readability",
+        "ru": "# 3.0.0\n\n# Added\n- Who's watching? screen for multiple Jellyfin accounts (Netflix-style profile picker)\n- Multiple accounts: save and switch between several server/user profiles\n- Add profile and Manage profiles flows; sign out removes current profile from device\n- Watchlist row on home (desktop and mobile); home data includes watchlist, invalidated when toggling from detail\n- Sleep timer: Settings > Playback (Off, 15/30/45/60 min, End of current); player overlay shows remaining time and Cancel\n- Theme and appearance: Settings > Appearance — Theme (System / Light / Dark), Use system accent, Accent color (Teal, Purple, Blue, Pink, Orange)\n\n# Changed\n- Unified UI: removed separate desktop/ and mobile/ page folders; single responsive pages (home, settings, detail, player, library, music_library, downloads) with sidebar on wide screens and bottom nav/single column on narrow\n- Library page (mobile): list-style cards with icon, type label, and item count instead of large gradient grid\n- Upgraded dependencies: dio, riverpod, flutter_riverpod, intl, package_info_plus, share_plus, gamepads; Riverpod 3 migration with legacy imports; share_plus 12 SharePlus API; AsyncValue.when for null fallbacks\n- App startup: with 2+ saved profiles, Who's watching is shown instead of auto-restoring; with 1 profile, behavior unchanged\n- Sidebar and Settings: Switch profile opens Who's watching; Sign out removes current profile (with confirmation)\n\n# Fixed\n- Theme and accent: theme mode (System/Light/Dark) and accent color now apply across the app; settings load before first frame so stored theme is used on launch; \"Use system accent\" is persisted via setUseSystemAccent\n- Detail more-options sheet: Download, Share, and Media Info now work; Add to Playlist / Report Issue show \"Coming soon\"\n- Home media card Add button adds/removes item from watchlist with SnackBar feedback\n- Music library track row: favorite button toggles favorite and refreshes list\n- Music player bar: Shuffle shuffles playlist and plays from start; Repeat cycles off → one → all; More shows \"Coming soon\" SnackBar\n- Queue \"Now Playing\" tap triggers play/pause; library sort button no longer appears disabled\n- Who's watching: show current session as a profile when saved list was empty (recovery); avoid row overflow with horizontal scroll or wrap\n- Login page: hide scrollbar on form scrollables; fix contrast (solid dark form card so white text is readable); Quick Connect tip uses textSecondary for readability"
+      }
+    },
+    {
+      "version": "2.0.0",
+      "date": "2026-02-13",
+      "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/5a6add7ed0feabc15fc507563fe655a84db11344",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK or AAB from the links below",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source",
+        "Web": "Access the web version or self-host with Docker"
+      },
+      "downloads": {
+        "iOS": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-13/finar-1.1.0-2026-02-13-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-13/finar-1.1.0-2026-02-13-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-13/finar-1.1.0-2026-02-13-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-13/finar-1.1.0-2026-02-13-windows-x64-setup.exe",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-13/finar-1.1.0-2026-02-13-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-13/finar-1.1.0-2026-02-13-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-13/finar-1.1.0-2026-02-13-linux-amd64.deb",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-19/finar-1.1.0-2026-02-15.apk",
+          "aab": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-19/finar-1.1.0-2026-02-15.aab"
+        },
+        "Web": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-13/finar-1.1.0-2026-02-13-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 2.0.0\n\n- Version bump to 2.0.0.\n- Header now shows TV show name and episode.\n- Desktop search bar now spans the full width.\n- Removed the extra season picker for TV shows.\n- Opening an episode now takes you to the show page with that season expanded.\n- 'See All' buttons now work.\n- On-screen controls appear when you move the mouse.\n- On-screen controls auto-hide after a short delay.\n- Fixed card clipping.\n- Fixed desktop detail clipping/overflow by letting action controls wrap on smaller widths.\n- Fixed desktop detail action bar overflow on narrow widths by using a single-row horizontal action strip.\n- Resizing between desktop and mobile layouts now keeps page context (detail/player/library/downloads/settings).\n- Updated the desktop Details panel to use liquid glass styling.\n- Desktop sidebar profile card now hides the server URL and shows a user avatar (with initials fallback).\n- Focus/hover outlines on media cards now adapt to artwork colors instead of a fixed accent.\n- Updated the desktop Trailer button to match the liquid-glass style used by other controls.\n- Trailer playback flow now works end-to-end: local trailers play in-app, and remote trailers open through URL launcher with URL normalization.",
+        "zh": "# 2.0.0\n\n- 版本升级到 2.0.0。\n- 标题现在会显示“剧名 - 集数”。\n- 桌面端搜索栏现在会横向铺满。\n- 移除了电视剧页面里多余的季选择器。\n- 点开剧集时不再进入单集详情，而是进入剧集所属电视剧页面并自动展开对应季。\n- “See All” 按钮已修复。\n- 移动鼠标时会显示屏幕控制。\n- 屏幕控制会在短暂延时后自动隐藏。\n- 修复了卡片裁剪问题。\n- 修复了桌面详情页在较小宽度下的裁剪/溢出问题：操作按钮现在可以换行。\n- 修复了桌面详情操作栏在窄宽度下的溢出问题：改为单行横向操作条。\n- 调整窗口大小在桌面/移动布局之间切换时，会保留当前页面上下文（详情/播放器/媒体库/下载/设置）。\n- 桌面详情页的 Details 面板已改为液态玻璃风格。\n- 桌面侧边栏个人资料卡片现在会隐藏服务器 URL，并显示用户头像（无头像时使用姓名首字母）。\n- 媒体卡片在聚焦/悬停时的描边现在会跟随封面主色，不再使用固定强调色。\n- 桌面详情页的 Trailer 按钮已更新为与其他控件一致的 liquid-glass 风格。\n- 预告片播放流程已打通：本地预告片可在应用内播放，远程预告片会通过 URL launcher 打开，并做 URL 规范化处理。",
+        "ru": "# 2.0.0\n\n- Версия обновлена до 2.0.0.\n- В заголовке теперь показываются название сериала и эпизод.\n- На десктопе строка поиска теперь растягивается на всю ширину.\n- Удалён лишний селектор сезона для сериалов.\n- При открытии эпизода теперь открывается страница сериала с раскрытым нужным сезоном.\n- Кнопки 'See All' теперь работают.\n- Экранные элементы управления появляются при движении мыши.\n- Экранные элементы управления автоматически скрываются через короткое время.\n- Исправлено обрезание карточек.\n- Исправлены обрезание и переполнение в деталях на десктопе: на узкой ширине кнопки действий теперь переносятся.\n- Исправлено переполнение панели действий в деталях на десктопе: на узкой ширине используется однострочная горизонтальная лента действий.\n- При изменении размера окна переключение между десктопной и мобильной вёрсткой теперь сохраняет контекст страницы (детали/плеер/библиотека/загрузки/настройки).\n- Панель Details в десктопных деталях обновлена до стиля liquid glass.\n- В карточке профиля в десктопном сайдбаре скрыт URL сервера и добавлен аватар пользователя (с fallback по инициалам).\n- Обводка карточек медиа в фокусе/при наведении теперь подстраивается под цвета постера, а не под фиксированный акцент.\n- Кнопка Trailer в десктопных деталях теперь использует тот же liquid-glass стиль, что и остальные элементы управления.\n- Воспроизведение трейлеров теперь работает полностью: локальные трейлеры играют в приложении, удалённые открываются через URL launcher с нормализацией URL."
+      }
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-01-11",
+      "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/50ede4397530d4ee9f1459ca8faf82c1b4e354c4",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK directly from GitLab CI",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source",
+        "Web": "Access the web version or self-host with Docker"
+      },
+      "downloads": {
+        "iOS": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08-windows-x64-setup.exe",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08-linux-amd64.deb",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08.apk",
+          "aab": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08.aab"
+        },
+        "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/finar-1.1.0-2026-02-08-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 1.1.0\n\n## Fixed\n- Fixed controller input in SteamOS",
+        "zh": "# 1.1.0\n\n## 修复\n- 修复了 SteamOS 中的控制器输入问题",
+        "ru": "# 1.1.0\n\n## Исправлено\n- Исправлен ввод контроллера в SteamOS"
+      }
+    },
+    {
+      "version": "4.1.0",
+      "date": "2026-04-30",
+      "sourceCode": "https://gitlab.com/Openlyst/finar/-/tree/308f1dcfa14781dc3c93fd11d94f09432bde2c9b",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "Coming soon via AltStore",
+        "Android": "Download the APK or AAB from the links below",
+        "macOS": "Download from GitLab CI or compile from source",
+        "Windows": "Download from GitLab CI or compile from source",
+        "Linux": "Download from GitLab CI or compile from source",
+        "Web": "Access the web version or self-host with Docker"
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-windows-x64-setup.exe",
+            "arm64": ""
+          }
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-linux-amd64.deb",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-linux-amd64.rpm",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30.aab"
+        },
+        "Web": "https://github.com/openlyst/builds/releases/download/build-92/finar-4.1.0-2026-04-30-web.zip"
+      },
+      "localizedDescription": {
+        "en": "# 4.1.0\n\n# Added\n- Poster shows a watched icon if a movie or thing was already watched\n\n# Changed\n- Updated description\n\n# Fixed\n\n# Removed\n- Removed features from login page\n- Removed PiP mode",
+        "zh": "# 4.1.0\n\n# 新增\n- 海报显示已观看图标（如果电影或内容已观看）\n\n# 更改\n- 更新了描述\n\n# 修复\n\n# 移除\n- 从登录页面移除了功能\n- 移除了画中画模式",
+        "ru": "# 4.1.0\n\n# Добавлено\n- На постере отображается иконка просмотра, если фильм или контент уже просмотрен\n\n# Изменено\n- Обновлено описание\n\n# Исправлено\n\n# Удалено\n- Удалены функции со страницы входа\n- Удален режим Картинка в картинке"
+      }
+    }
+  ]
+}

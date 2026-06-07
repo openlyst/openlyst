@@ -1,0 +1,533 @@
+[
+  {
+    "identifier": "doudou_signing_fixed_android_2026",
+    "title": {
+      "en": "Doudou Signing Fixed for Android",
+      "zh": "豆豆 Android 签名已修复",
+      "ru": "Подпись Doudou для Android исправлена"
+    },
+    "caption": {
+      "en": "Signing has been fixed for Android users who were unable to update. You should now be able to install the latest version without issues.",
+      "zh": "Android 用户无法更新的签名问题已修复。您现在应该可以正常安装最新版本。",
+      "ru": "Подпись исправлена для пользователей Android, которые не могли обновиться. Теперь вы должны иметь возможность установить последнюю версию без проблем."
+    },
+    "date": "2026-06-04",
+    "tintColor": "#10b981",
+    "imageURL": "/icons/Doudou/icon.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
+    "identifier": "lystcode_docan_discontinued_2026",
+    "title": {
+      "en": "Lystcode and Docan Discontinued",
+      "zh": "Lystcode 和 Docan 已停止维护",
+      "ru": "Lystcode и Docan прекращены"
+    },
+    "caption": {
+      "en": "Lystcode and Docan have been discontinued. We are no longer maintaining or releasing updates for these applications. Thank you to everyone who used them.",
+      "zh": "Lystcode 和 Docan 已停止维护。我们不再为这些应用程序提供维护或发布更新。感谢所有使用它们的用户。",
+      "ru": "Lystcode и Docan прекращены. Мы больше не поддерживаем и не выпускаем обновления для этих приложений. Спасибо всем, кто ими пользовался."
+    },
+    "date": "2026-06-04",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "doudou_190_release",
+    "title": {
+      "en": "DouDou v19.0.0 Released",
+      "zh": "豆豆 v19.0.0 发布",
+      "ru": "DouDou v19.0.0 выпущен"
+    },
+    "caption": {
+      "en": "Doudou v19.0.0 is now available. Download the latest version for your platform from the app page.",
+      "zh": "豆豆 v19.0.0 现已发布。请从应用页面下载适用于您平台的最新版本。",
+      "ru": "Doudou v19.0.0 теперь доступен. Скачайте последнюю версию для вашей платформы со страницы приложения."
+    },
+    "date": "2026-06-04",
+    "tintColor": "#dc2626",
+    "imageURL": "/icons/Doudou/icon.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
+    "identifier": "lystcode_100_release",
+    "title": {
+      "en": "Lystcode 1.0.0 is Here — Powerful Coding for Everyone",
+      "zh": "Lystcode 1.0.0 发布 — 人人可用的强大编程工具",
+      "ru": "Lystcode 1.0.0 вышел — мощное программирование для всех"
+    },
+    "caption": {
+      "en": "Lystcode 1.0.0 is now available on macOS, Windows, and Linux. This IDE focused on usability features intelligent code completion, multi-language support (Python, JavaScript, TypeScript, Rust, Java, C++, and more), and a clean, distraction-free interface. Download it now via DMG (macOS), EXE (Windows), or AppImage/DEB/RPM/AUR (Linux). Completely free and open source under MIT license.",
+      "zh": "Lystcode 1.0.0 现已支持 macOS、Windows 和 Linux。这款注重可用性的 IDE 具有智能代码补全、多语言支持（Python、JavaScript、TypeScript、Rust、Java、C++ 等）以及简洁无干扰的界面。立即通过 DMG（macOS）、EXE（Windows）或 AppImage/DEB/RPM/AUR（Linux）下载。基于 MIT 许可证，完全免费开源。",
+      "ru": "Lystcode 1.0.0 теперь доступен на macOS, Windows и Linux. Этот IDE с фокусом на удобство использования предлагает интеллектуальное автодополнение кода, поддержку множества языков (Python, JavaScript, TypeScript, Rust, Java, C++ и др.) и чистый интерфейс без отвлекающих элементов. Скачайте сейчас через DMG (macOS), EXE (Windows) или AppImage/DEB/RPM/AUR (Linux). Полностью бесплатный и открытый под лицензией MIT."
+    },
+    "date": "2026-04-05",
+    "tintColor": "#6366f1",
+    "imageURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/icon.png?ref_type=heads",
+    "notify": true,
+    "url": "/apps/lystcode",
+    "appID": "lystcode"
+  },
+  {
+    "identifier": "lystcode_ai_ide_2026",
+    "title": {
+      "en": "Introducing Lystcode — Our New Feature‑Focused IDE",
+      "zh": "全新 Lystcode — 我们的功能聚焦 IDE",
+      "ru": "Представляем Lystcode — наш новый функционально‑ориентированный IDE"
+    },
+    "caption": {
+      "en": "We are launching Lystcode, a simple, feature‑focused IDE you fully control. Right now we ship native binaries for Linux; on macOS and Windows you can build it yourself from source at https://gitlab.com/Openlyst/Lystcode Lystcode speaks Gemini, Codex, Cursor, Kimi, and Copilot — all via local CLIs, not hosted APIs, so you use your own subscriptions instead of paying us for API markup. The app is completely free and FOSS under the MIT license, which is different from our usual AGPL.",
+      "zh": "我们发布了 Lystcode，这是一款简单易用、以功能为核心的全新 IDE，并且完全由你掌控。当前我们只提供 Linux 原生二进制；在 macOS 和 Windows 上，你可以从源码自行编译（仓库地址：https://gitlab.com/Openlyst/Lystcode ）。Lystcode 支持 Gemini、Codex、Cursor、Kimi 和 Copilot，并通过本地 CLI 而不是托管 API 工作，因此你可以直接使用自己的订阅，而不是为额外的 API 费用买单。Lystcode 完全免费并且开源，采用 MIT 许可证，这与我们通常使用的 AGPL 不同。",
+      "ru": "Мы запускаем Lystcode — простой IDE с фокусом на AIвы полностью управляете. Сейчас мы поставляем нативные бинарники только для Linux; на macOS и Windows вы можете собрать его сами из исходников по адресу https://gitlab.com/Openlyst/Lystcode Lystcode работает с Gemini, Codex, Cursor, Kimi и Copilot через локальные CLI, а не облачные API, поэтому вы используете собственные подписки и не платите нам за наценку на API. Приложение полностью бесплатно и FOSS под лицензией MIT, что отличается от нашего привычного AGPL."
+    },
+    "date": "2026-03-16",
+    "tintColor": "#6366f1",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "https://gitlab.com/Openlyst/Lystcode",
+    "appID": ""
+  },
+  {
+    "identifier": "going_production_new_infra_2026",
+    "title": {
+      "en": "Getting Ready for Full Production — New Infrastructure Coming Soon",
+      "zh": "即将全面投产 — 新基础设施即将就绪",
+      "ru": "Готовимся к полному продакшену — новая инфраструктура скоро"
+    },
+    "caption": {
+      "en": "We are getting ready to go to full production and we are setting up our new infrastructure soon. Stay tuned for updates.",
+      "zh": "我们即将全面投产，并很快部署新的基础设施。敬请关注后续动态。",
+      "ru": "Мы готовимся к полному продакшену и скоро развернём новую инфраструктуру. Следите за обновлениями."
+    },
+    "date": "2026-02-23",
+    "tintColor": "#10b981",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "github_banned_again_self_infra_2026",
+    "title": {
+      "en": "GitHub Access Revoked — Again. We're Building Our Own Infrastructure.",
+      "zh": "GitHub 再次封禁 — 我们正在自建基础设施",
+      "ru": "Доступ к GitHub снова отозван — строим собственную инфраструктуру"
+    },
+    "caption": {
+      "en": "We have once again been banned from GitHub. We are deeply disappointed in GitHub's continued hostile and arbitrary enforcement, which has repeatedly disrupted our ability to serve our users. We do not find their conduct acceptable. Downloads will be unavailable for a period while we address this. Rather than remain dependent on a platform that has proven unreliable and adversarial, we are building our own infrastructure so we can deliver our apps without being at the mercy of third-party gatekeepers. We apologize for the inconvenience and thank you for your patience.",
+      "zh": "我们再次遭到 GitHub 封禁。我们对 GitHub 持续敌对且武断的执法深感失望，这已多次影响我们为用户提供服务的能力。我们认为其行为不可接受。在解决此事期间，下载将暂时不可用。我们不愿继续依赖已被证明不可靠且充满敌意的平台，因此正在自建基础设施，以便在不受第三方掣肘的情况下交付我们的应用。对由此带来的不便深表歉意，感谢您的耐心。",
+      "ru": "Нас снова заблокировали на GitHub. Мы крайне разочарованы продолжающейся враждебной и произвольной политикой GitHub, которая неоднократно мешала нам обслуживать пользователей. Мы считаем такое поведение неприемлемым. Загрузки будут недоступны в течение некоторого времени, пока мы решаем эту проблему. Вместо того чтобы оставаться зависимыми от платформы, которая показала себя ненадёжной и враждебной, мы строим собственную инфраструктуру, чтобы доставлять приложения без оглядки на сторонних привратников. Приносим извинения за неудобства и благодарим за терпение."
+    },
+    "date": "2026-02-21",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "finar_klit_rust_roadmap_2026",
+    "title": {
+      "en": "Finar and Klit Join the Rust Roadmap",
+      "zh": "Finar 与 Klit 加入 Rust 路线图",
+      "ru": "Finar и Klit присоединяются к Rust-дорожной карте"
+    },
+    "caption": {
+      "en": "Finar and Klit have both been rewritten as native apps, which is our main stack for now. They will come out any day now. We are super excited to show you these new apps — they are faster, smoother, less buggy and jank. We are still sad we had to leave Flutter, but it left us no other option; we just could not ruin apps, so they're native now.",
+      "zh": "Finar 和 Klit 均已重写为原生应用，这是我们目前的主技术栈。它们即将发布。我们非常期待向大家展示这些新应用——更快、更流畅、更少卡顿与 bug。我们仍对离开 Flutter 感到遗憾，但别无选择；我们无法眼睁睁看着应用变糟，所以它们现在是原生应用。",
+      "ru": "Finar и Klit полностью переписаны как нативные приложения — наш текущий основной стек. Они выйдут со дня на день. Мы очень рады показать вам эти приложения — они быстрее, плавнее, с меньшим количеством багов и лагов. Нам по-прежнему грустно, что пришлось уйти с Flutter, но он не оставил нам выбора; мы не могли позволить приложениям деградировать, поэтому теперь они нативные."
+    },
+    "date": "2026-02-20",
+    "tintColor": "#6366f1",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "doudou_prefer_stable_old_version_2026",
+    "title": {
+      "en": "We're Sorry — Staying on a Good Old Version",
+      "zh": "致歉 — 我们选择保留稳定旧版本",
+      "ru": "Мы сожалеем — остаёмся на стабильной старой версии"
+    },
+    "caption": {
+      "en": "We are sorry, but we would much rather users have a good experience with an old version than a new update with a terrible experience.",
+      "zh": "我们深表歉意，但我们更希望用户能在旧版本上获得良好体验，而不是在新更新中遭遇糟糕的体验。",
+      "ru": "Мы сожалеем, но мы предпочитаем, чтобы у пользователей был хороший опыт со старой версией, чем плохой — с новым обновлением."
+    },
+    "date": "2026-02-19",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
+    "identifier": "doudou_spotify_support_canceled_2026",
+    "title": {
+      "en": "Spotify Support Canceled for Doudou",
+      "zh": "豆豆取消 Spotify 支持",
+      "ru": "Поддержка Spotify отменена для Doudou"
+    },
+    "caption": {
+      "en": "Support for Spotify has been canceled for Doudou due to Spotify supporting I.E.E. and other MAGA US politics. We do not support those nazis.",
+      "zh": "由于 Spotify 支持 I.E.E. 和其他 MAGA 美国政治，豆豆已取消对 Spotify 的支持。我们不支持那些纳粹。",
+      "ru": "Поддержка Spotify отменена для Doudou из-за поддержки Spotify I.E.E. и других политик MAGA в США. Мы не поддерживаем этих нацистов."
+    },
+    "date": "2026-02-18",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
+    "identifier": "docan_finar_apkpure_2026",
+    "title": {
+      "en": "Docan and Finar Join APKPure with Doudou",
+      "zh": "Docan 和 Finar 与 Doudou 一同登陆 APKPure",
+      "ru": "Docan и Finar присоединились к APKPure вместе с Doudou"
+    },
+    "caption": {
+      "en": "Docan and Finar are now on APKPure alongside Doudou. We are super proud of this. Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar",
+      "zh": "Docan 和 Finar 现已与 Doudou 一起登陆 APKPure，我们为此感到非常自豪。Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar",
+      "ru": "Docan и Finar теперь на APKPure вместе с Doudou. Мы очень гордимся этим. Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar"
+    },
+    "date": "2026-02-17",
+    "tintColor": "#10b981",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "doudou_140_release",
+    "title": {
+      "en": "DouDou v14.0.0 Released",
+      "zh": "豆豆 v14.0.0 发布",
+      "ru": "DouDou v14.0.0 выпущен"
+    },
+    "caption": {
+      "en": "New UI for desktop and mobile, improved layouts, now playing screen, and more.",
+      "zh": "桌面与移动端全新界面、布局改进、正在播放界面等。",
+      "ru": "Новый интерфейс для десктопа и мобильных, улучшенные макеты, экран «Сейчас играет» и другое."
+    },
+    "date": "2026-02-16",
+    "tintColor": "#dc2626",
+    "imageURL": "https://example.com/doudou_release_image.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
+    "identifier": "path_forward_2026",
+    "title": {
+      "en": "Our Path Forward",
+      "zh": "我们的前进方向",
+      "ru": "Наш путь вперёд"
+    },
+    "caption": {
+      "en": "This was one of the hardest decisions we've had to make. We are moving away from Flutter for future applications—Flutter's performance and design simply weren't meeting our standards. Some of our existing applications will be ported to our new native stack. Native will be the base for everything we build from here on, except for the main official website. Thank you for your understanding and support.",
+      "zh": "这是我们做过的最艰难的决定之一。我们将在未来的应用中逐步告别 Flutter——Flutter 的性能和设计已无法满足我们的标准。部分现有应用将迁移到新的原生技术栈。除主官网外，原生技术栈将成为我们一切新项目的基础。感谢大家的理解与支持。",
+      "ru": "Это было одно из самых сложных решений для нас. Мы отказываемся от Flutter в пользу будущих приложений — производительность и дизайн Flutter не соответствовали нашим стандартам. Некоторые из наших приложений будут перенесены на наш новый нативный стек. Нативный стек станет основой для всего, что мы создаём, кроме основного официального сайта. Спасибо за понимание и поддержку."
+    },
+    "date": "2026-02-15",
+    "tintColor": "#6366f1",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "doudou_apk_updates_paused_2026",
+    "title": {
+      "en": "DouDou APK Updates Paused Until Further Notice",
+      "zh": "豆豆 APK 更新暂停，另行通知",
+      "ru": "Обновления APK DouDou приостановлены до дальнейшего уведомления"
+    },
+    "caption": {
+      "en": "We cannot update APKs for DouDou until further notice. We are working hard to fix this.",
+      "zh": "在另行通知之前，我们无法为豆豆更新 APK。我们正在努力修复此问题。",
+      "ru": "Мы не можем обновлять APK для DouDou до дальнейшего уведомления. Мы усердно работаем над исправлением."
+    },
+    "date": "2026-02-15",
+    "tintColor": "#f59e0b",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
+    "identifier": "signing_fixed_finar_200_2026",
+    "title": {
+      "en": "Signing Fixed + Finar 2.0.0",
+      "zh": "签名已修复 + Finar 2.0.0",
+      "ru": "Подпись исправлена + Finar 2.0.0"
+    },
+    "caption": {
+      "en": "Signing is now fixed. Finar has been updated to version 2.0.0.",
+      "zh": "签名问题现已修复。Finar 已更新到 2.0.0 版本。",
+      "ru": "Проблема с подписью исправлена. Finar обновлён до версии 2.0.0."
+    },
+    "date": "2026-02-13",
+    "tintColor": "#10b981",
+    "imageURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
+    "notify": true,
+    "url": "/apps/finar",
+    "appID": "finar"
+  },
+  {
+    "identifier": "downloads_fixed_signing_still_broken_2026",
+    "title": {
+      "en": "Update: Downloads Fixed, Signing Still Broken",
+      "zh": "更新：下载已修复，签名仍有问题",
+      "ru": "Обновление: загрузки исправлены, подпись все еще не работает"
+    },
+    "caption": {
+      "en": "We have fixed the download links. Signing is still broken, and we will fix it as soon as we can.",
+      "zh": "我们已经修复了下载链接。签名功能仍然有问题，我们会尽快修复。",
+      "ru": "Мы исправили ссылки на загрузку. Подпись все еще не работает, и мы исправим это как можно скорее."
+    },
+    "date": "2026-02-12",
+    "tintColor": "#f59e0b",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "downloads_android_signing_issue_2026",
+    "title": {
+      "en": "Known Issue: Downloads and Android Signing",
+      "zh": "已知问题：下载和 Android 签名",
+      "ru": "Известная проблема: загрузки и подпись Android"
+    },
+    "caption": {
+      "en": "We are aware that downloads are currently not working and Android signing is also not working. We are doing our best to fix this as quickly as possible.",
+      "zh": "我们已注意到当前下载功能无法使用，同时 Android 签名也无法正常工作。我们正在尽最大努力尽快修复这些问题。",
+      "ru": "Мы знаем, что загрузки сейчас не работают, и подпись Android тоже не работает. Мы делаем все возможное, чтобы исправить это как можно скорее."
+    },
+    "date": "2026-02-12",
+    "tintColor": "#f59e0b",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "github_account_status_update_2026",
+    "title": {
+      "en": "GitHub Account Update",
+      "zh": "GitHub 账户更新",
+      "ru": "Обновление аккаунта GitHub"
+    },
+    "caption": {
+      "en": "Hello, it's been a while. Although I no longer work here, I still love Openlyst and the project. GitHub recently banned my account—which hosted Openlyst builds—for using the global site in China. I have created a new account and will be fixing the Openlyst builds soon. Goodbye, hope to see you again. — Zhenxi",
+      "zh": "大家好，好久不见。虽然我不再这里工作，但我依然热爱 Openlyst 这个项目并支持它。GitHub 最近封禁了我的账号（曾用于托管 Openlyst 构建版本），理由是在中国使用了全球站点。我已经创建了新账号，很快会修复 Openlyst 的构建。再见，期待与大家再次相遇。—— 镇西",
+      "ru": "Привет, давно не виделись. Хотя я здесь больше не работаю, я по-прежнему люблю Openlyst и этот проект. GitHub недавно заблокировал мой аккаунт, на котором размещались сборки Openlyst, за использование глобального сайта в Китае. Я создал новый аккаунт и скоро исправлю сборки Openlyst. До свидания, надеюсь на новую встречу. — Zhenxi"
+    },
+    "date": "2026-02-08",
+    "tintColor": "#4b5563",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "https://github.com/justacalico/Openlyst-more-builds",
+    "appID": ""
+  },
+  {
+    "identifier": "server_downtime_relocation_2026",
+    "title": {
+      "en": "Upcoming Server Downtime - Relocation Notice",
+      "zh": "即将到来的服务器停机 - 搬迁通知",
+      "ru": "Предстоящий простой сервера — уведомление о переезде"
+    },
+    "caption": {
+      "en": "HttpAnimations (Server Hoster/Lead Developer) will be relocating to rural China in about a month. As a result, the servers WILL go offline for approximately 1-2 days during the transition. We apologize for any inconvenience this may cause. In the meantime, you can always access our GitLab repository: https://gitlab.com/Openlyst",
+      "zh": "HttpAnimations（服务器托管者/首席开发者）将在大约一个月后搬迁至中国农村地区。因此，服务器将在过渡期间停机约1-2天。对于可能造成的任何不便，我们深表歉意。在此期间，您可以随时访问我们的 GitLab 仓库：https://gitlab.com/Openlyst",
+      "ru": "HttpAnimations (хостер серверов/ведущий разработчик) переезжает в сельский Китай примерно через месяц. В результате серверы будут недоступны примерно 1-2 дня во время переезда. Приносим извинения за возможные неудобства. В это время вы всегда можете посетить наш репозиторий GitLab: https://gitlab.com/Openlyst"
+    },
+    "date": "2026-01-18",
+    "tintColor": "#f59e0b",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "https://gitlab.com/Openlyst",
+    "appID": ""
+  },
+  {
+    "identifier": "altstore_repo_2026",
+    "title": {
+      "en": "New AltStore Repository Available",
+      "zh": "新的 AltStore 仓库现已可用",
+      "ru": "Доступен новый репозиторий AltStore"
+    },
+    "caption": {
+      "en": "We now have an official AltStore repository! Add this URL to AltStore to easily install our iOS apps: https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+      "zh": "我们现在有了官方的 AltStore 仓库！将此 URL 添加到 AltStore 以轻松安装我们的 iOS 应用：https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+      "ru": "Теперь у нас есть официальный репозиторий AltStore! Добавьте этот URL в AltStore для удобной установки наших iOS-приложений: https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json"
+    },
+    "date": "2026-01-13",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+    "appID": ""
+  },
+  {
+    "identifier": "gone_but_not_forgotten",
+    "title": {
+      "en": "Old builds are deprecated",
+      "zh": "旧版本已弃用",
+      "ru": "Старые сборки устарели"
+    },
+    "caption": {
+      "en": "We have removed old builds from the main website. However, they are still available here: https://gitlab.com/Openlyst/openlyst/-/blob/main/src/lib/assets/yaml/repo.json?ref_type=heads",
+      "zh": "我们已从主网站删除了旧版本。不过，您仍可以在此处找到它们：https://gitlab.com/Openlyst/openlyst/-/blob/main/src/lib/assets/yaml/repo.json?ref_type=heads",
+      "ru": "Мы удалили старые сборки с основного сайта. Однако они по-прежнему доступны здесь: https://gitlab.com/Openlyst/openlyst/-/blob/main/src/lib/assets/yaml/repo.json?ref_type=heads"
+    },
+    "date": "2026-01-13",
+    "tintColor": "#6366f1",
+    "imageURL": "",
+    "notify": false,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "removeal_gitlab_ci_2026",
+    "title": {
+      "en": "Goodbye Gitlab CI.",
+      "zh": "告别 Gitlab CI。",
+      "ru": "Прощай, Gitlab CI."
+    },
+    "caption": {
+      "en": "We've moved CI from GitLab CI to GitHub Actions because build reliability and build times were better for us there. If GitLab CI improves, we're open to moving back later.",
+      "zh": "我们已将 CI 从 GitLab CI 切换到 GitHub Actions，因为后者在构建稳定性和构建速度上更适合我们。如果 GitLab CI 后续改进，我们也会考虑再迁回去。",
+      "ru": "Мы перенесли CI с GitLab CI на GitHub Actions, потому что там у нас лучше стабильность и время сборки. Если GitLab CI улучшится, мы готовы рассмотреть возврат позже."
+    },
+    "date": "2026-01-12",
+    "tintColor": "#6366f1",
+    "imageURL": "",
+    "notify": false,
+    "url": "",
+    "appID": ""
+  },
+  {
+    "identifier": "finar_100_release",
+    "title": {
+      "en": "Finar Is Available",
+      "zh": "Finar 已上线",
+      "ru": "Finar уже доступен"
+    },
+    "caption": {
+      "en": "Finar, our multi-platform Jellyfin client, is now on OpenLyst. Platform builds are added as they finish.",
+      "zh": "Finar（我们的多平台 Jellyfin 客户端）现已上线 OpenLyst。各平台构建完成后会陆续发布。",
+      "ru": "Finar, наш мультиплатформенный клиент Jellyfin, теперь доступен в OpenLyst. Сборки для платформ добавляются по мере готовности."
+    },
+    "date": "2025-12-25",
+    "tintColor": "#6366f1",
+    "imageURL": "https://gitlab.com/Openlyst/finar/-/raw/main/icon.svg?ref_type=heads",
+    "notify": true,
+    "url": "/apps/finar",
+    "appID": "finar"
+  },
+  {
+    "identifier": "website_migration_2024",
+    "title": {
+      "en": "We're Moving to openlyst.ink!",
+      "zh": "我们正在迁移到 openlyst.ink！",
+      "ru": "Мы переезжаем на openlyst.ink!"
+    },
+    "caption": {
+      "en": "We are currently migrating all our services to our new home at https://openlyst.ink. Update your bookmarks!",
+      "zh": "我们目前正在将所有服务迁移到我们的新家 https://openlyst.ink。请更新您的书签！",
+      "ru": "Мы переносим все наши сервисы на новый адрес https://openlyst.ink. Обновите свои закладки!"
+    },
+    "date": "2025-12-24",
+    "tintColor": "#dc2626",
+    "imageURL": "/favicon.svg",
+    "notify": true,
+    "url": "https://openlyst.ink"
+  },
+  {
+    "identifier": "repstore_100_release",
+    "title": {
+      "en": "Openlyst - Alternative App Store Now Available",
+      "zh": "Openlyst - 替代应用商店现已推出",
+      "ru": "Openlyst — Альтернативный магазин приложений доступен"
+    },
+    "caption": {
+      "en": "Browse and install apps from AltStore-compatible repositories on Android and iOS*.",
+      "zh": "在 Android 和 iOS* 上从与 AltStore 兼容的存储库浏览和安装应用程序。",
+      "ru": "Просматривайте и устанавливайте приложения из репозиториев, совместимых с AltStore, на Android и iOS*."
+    },
+    "date": "2025-12-07",
+    "tintColor": "#10b981",
+    "imageURL": "/icons/RepStore/icon.png",
+    "notify": true,
+    "url": "/apps/openlyst",
+    "appID": "repstore"
+  },
+  {
+    "identifier": "docan_100_release",
+    "title": {
+      "en": "Docan Is Available",
+      "zh": "多灿已上线",
+      "ru": "Docan уже доступен"
+    },
+    "caption": {
+      "en": "Docan, our cross-platform chat app, is now available.",
+      "zh": "多灿（我们的跨平台聊天应用）现已可用。",
+      "ru": "Docan, наше кроссплатформенное приложение для чата, теперь доступно."
+    },
+    "date": "2025-12-07",
+    "tintColor": "#6366f1",
+    "imageURL": "/icons/Docan/icon.png",
+    "notify": true,
+    "url": "/apps/docan",
+    "appID": "docan"
+  },
+  {
+    "identifier": "baobao_deprecated_klit_release",
+    "title": {
+      "en": "BaoBao Discontinued - Meet Klit!",
+      "zh": "BaoBao 停产 - 认识 Klit！",
+      "ru": "BaoBao прекращён — встречайте Klit!"
+    },
+    "caption": {
+      "en": "BaoBao is being retired in favor of Klit, our new e621 client.",
+      "zh": "BaoBao 正在退役，由新的 e621 客户端 Klit 取代。",
+      "ru": "BaoBao прекращается в пользу Klit — нашего нового клиента e621."
+    },
+    "date": "2025-12-06",
+    "tintColor": "#ff6b35",
+    "imageURL": "/icons/Klit/klit_release_image.png",
+    "notify": true,
+    "url": "/apps/klit",
+    "appID": "klit"
+  },
+  {
+    "identifier": "doudou_600_release",
+    "title": {
+      "en": "DouDou v6.0.0 Released",
+      "zh": "豆豆 v6.0.0 发布",
+      "ru": "DouDou v6.0.0 выпущен"
+    },
+    "caption": {
+      "en": "Doudou music player is now available across all platforms.",
+      "zh": "豆豆音乐播放器现已支持所有平台。",
+      "ru": "Музыкальный плеер Doudou теперь доступен на всех платформах."
+    },
+    "date": "2025-10-29",
+    "tintColor": "#dc2626",
+    "imageURL": "https://example.com/doudou_release_image.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  }
+]

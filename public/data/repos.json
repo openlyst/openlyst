@@ -1,0 +1,17 @@
+[
+  {
+    "id": "altstore",
+    "name": {
+      "en": "Openlyst (AltStore)",
+      "zh": "Openlyst (AltStore)",
+      "ru": "Openlyst (AltStore)"
+    },
+    "type": "altstore",
+    "url": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+    "description": {
+      "en": "Official AltStore repository for Openlyst iOS apps. Add this URL in AltStore to install and update our apps.",
+      "zh": "Openlyst 官方 AltStore 仓库。在 AltStore 中添加此 URL 以安装和更新我们的应用。",
+      "ru": "Официальный репозиторий AltStore для приложений Openlyst. Добавьте этот URL в AltStore для установки и обновления."
+    }
+  }
+]
