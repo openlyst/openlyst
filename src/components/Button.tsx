@@ -5,11 +5,11 @@ const baseClasses =
 
 const variantClasses = {
   primary:
-    'bg-gradient-to-r from-purple-600 to-violet-600 text-white hover:from-purple-500 hover:to-violet-500 focus:ring-purple-500 shadow-lg shadow-purple-500/25',
+    'bg-gray-700 text-white hover:bg-gray-600 focus:ring-gray-500',
   secondary:
-    'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-400 hover:to-blue-400 focus:ring-cyan-500 shadow-lg shadow-cyan-500/25',
+    'bg-gray-800 text-white hover:bg-gray-700 focus:ring-gray-500',
   outline:
-    'border-2 border-purple-500 text-purple-400 bg-transparent hover:bg-purple-600/20 hover:text-white focus:ring-purple-500',
+    'border-2 border-gray-600 text-gray-300 bg-transparent hover:bg-gray-800 hover:text-white focus:ring-gray-500',
 };
 
 const sizeClasses = {

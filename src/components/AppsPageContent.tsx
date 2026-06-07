@@ -22,13 +22,13 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
     <>
       <section className="relative text-white overflow-hidden min-h-[60vh] flex items-center">
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 text-white">
             {t.apps.title}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">{t.apps.subtitle}</p>
           <div className="flex items-center justify-center">
-            <span className="glass-card px-4 py-2 text-purple-300 text-lg font-medium rounded-full">
-              ✊ {t.apps.powerToThePeople}
+            <span className="glass-card px-4 py-2 text-gray-300 text-lg font-medium rounded-full">
+              {t.apps.powerToThePeople}
             </span>
           </div>
         </div>
@@ -52,7 +52,6 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
         </div>
         {apps.length === 0 && (
           <div className="text-center py-12">
-            <div className="text-6xl mb-4">📱</div>
             <h3 className="text-2xl font-semibold text-white mb-2">{t.apps.noAppsYet}</h3>
             <p className="text-gray-400 max-w-md mx-auto">{t.apps.noAppsDesc}</p>
           </div>
@@ -61,7 +60,7 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
           <p className="text-gray-400 text-sm mb-3">{t.apps.cantFind}</p>
           <Link
             href="/deprecated"
-            className="inline-flex items-center text-gray-300 hover:text-red-400 transition-colors text-sm font-medium"
+            className="inline-flex items-center text-gray-300 hover:text-white transition-colors text-sm font-medium"
           >
             <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -73,7 +72,7 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
           <p className="text-gray-400 mb-6">{t.apps.wantToContributeDesc}</p>
           <Link
             href="https://gitlab.com/Openlyst/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white font-semibold rounded-lg hover:from-purple-500 hover:to-violet-500 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors"
           >
             {t.apps.getInvolved}
           </Link>

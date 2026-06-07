@@ -68,25 +68,27 @@ export function AppCard({
         : t.appCard.inDevelopment;
 
   return (
-    <div className="rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full p-8">
+    <div className="rounded-xl overflow-hidden bg-gray-900 border border-gray-700 hover:border-gray-600 transition-all duration-200 flex flex-col h-full p-6">
       {/* Icon and Name at top */}
       <div className="flex items-center gap-4 mb-4">
         {image && (image.startsWith('http') || image.startsWith('/')) ? (
-          <img src={image} alt={`${title} icon`} className="w-16 h-16 rounded-xl object-cover shadow-lg" />
+          <img src={image} alt={`${title} icon`} className="w-12 h-12 rounded-lg object-cover" />
         ) : image ? (
-          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center text-3xl shadow-lg">
+          <div className="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center text-2xl">
             {image}
           </div>
         ) : (
-          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center text-3xl shadow-lg">
-            🎵
+          <div className="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center">
+            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
           </div>
         )}
         <div className="flex flex-col">
-          <h3 className="text-white text-xl font-bold">{title}</h3>
+          <h3 className="text-white text-lg font-semibold">{title}</h3>
           {status !== 'released' && (
             <span
-              className="inline-block w-fit px-2 py-0.5 rounded-lg text-xs font-semibold border mt-1"
+              className="inline-block w-fit px-2 py-0.5 rounded text-xs font-semibold border mt-1"
               style={{
                 background: statusColors[status].bg,
                 color: statusColors[status].text,
@@ -99,7 +101,7 @@ export function AppCard({
         </div>
       </div>
 
-      <hr className="border-white/10 my-6" />
+      <hr className="border-gray-700 my-4" />
 
       {/* Platform icons */}
       <div className="flex items-center gap-3">
@@ -107,21 +109,20 @@ export function AppCard({
           <PlatformIcon
             key={platform}
             platform={platform}
-            className="text-slate-400 hover:text-slate-300 transition-colors"
+            className="text-gray-500 hover:text-gray-400 transition-colors"
           />
         ))}
       </div>
 
-      <hr className="border-white/10 my-6" />
+      <hr className="border-gray-700 my-4" />
 
       {/* App description */}
       <div className="flex-grow">
-        <p className="text-slate-300 text-sm leading-relaxed">{displayedText}</p>
+        <p className="text-gray-400 text-sm leading-relaxed">{displayedText}</p>
         {isLongDescription && (
           <button
             type="button"
-            className="inline-flex items-center gap-1 mt-2 text-sm font-medium bg-transparent border-none cursor-pointer hover:opacity-80"
-            style={{ color: baseColor }}
+            className="inline-flex items-center gap-1 mt-2 text-sm font-medium bg-transparent border-none cursor-pointer hover:opacity-80 text-gray-300"
             onClick={() => setExpanded(!expanded)}
           >
             {expanded ? t.appCard.showLess : t.appCard.readMore}
@@ -137,16 +138,12 @@ export function AppCard({
         )}
       </div>
 
-      <hr className="border-white/10 my-6" />
+      <hr className="border-gray-700 my-4" />
 
       {/* Download button */}
       <Link
         href={href}
-        className="w-full text-white py-3 px-6 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:brightness-110 hover:-translate-y-0.5 mt-auto"
-        style={{
-          background: `linear-gradient(135deg, ${baseColor} 0%, ${darkerColor} 100%)`,
-          boxShadow: `0 4px 16px rgba(${r}, ${g}, ${b}, 0.3)`,
-        }}
+        className="w-full text-white py-2.5 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all hover:bg-gray-800 mt-auto bg-gray-700"
       >
         {t.common.download}
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -9,10 +9,12 @@ export function AboutContent() {
     <>
       <section className="relative text-white overflow-hidden min-h-[60vh] flex items-center">
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8 text-center">
-          <div className="glass-card w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 border-purple-500/30">
-            <span className="text-purple-400 font-bold text-4xl">★</span>
+          <div className="glass-card w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-8">
+            <svg className="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6 text-white">
             {t.about.title}
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-gray-300">{t.about.subtitle}</p>
@@ -27,16 +29,16 @@ export function AboutContent() {
             <ul className="space-y-3">
               {[t.about.noTracking, t.about.transparentDev, t.about.communityDrivenFeatures, t.about.freeForever].map((item) => (
                 <li key={item} className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0" />
+                  <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 mr-3 flex-shrink-0" />
                   <span className="text-gray-300">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-gray-800 rounded-lg p-8 border border-red-900">
+          <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
             <blockquote className="text-lg text-gray-200 italic mb-4">{t.about.quoteAudre}</blockquote>
-            <cite className="text-red-600 font-semibold">{t.about.quoteAudreAuthor}</cite>
-            <div className="mt-6 p-4 bg-gray-900 rounded border border-red-800">
+            <cite className="text-gray-400 font-semibold">{t.about.quoteAudreAuthor}</cite>
+            <div className="mt-6 p-4 bg-gray-900 rounded border border-gray-700">
               <p className="text-sm text-gray-400">{t.about.quoteNote}</p>
             </div>
           </div>
@@ -53,9 +55,9 @@ export function AboutContent() {
             { title: t.about.performance, desc: t.about.performanceDesc },
             { title: t.about.sustainability, desc: t.about.sustainabilityDesc },
           ].map(({ title, desc }) => (
-            <div key={title} className="bg-gray-800 rounded-lg shadow-lg p-6 border border-red-900">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div key={title} className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
@@ -66,19 +68,19 @@ export function AboutContent() {
         </div>
       </Section>
 
-      <Section title={t.about.ourStory} subtitle={t.about.ourStoryDesc} background="red">
+      <Section title={t.about.ourStory} subtitle={t.about.ourStoryDesc} background="default">
         <div className="max-w-4xl mx-auto space-y-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
             <h3 className="text-xl font-semibold text-white mb-3">{t.about.theBeginning}</h3>
-            <p className="text-red-100">{t.about.beginningDesc}</p>
+            <p className="text-gray-300">{t.about.beginningDesc}</p>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
             <h3 className="text-xl font-semibold text-white mb-3">{t.about.growingMovement}</h3>
-            <p className="text-red-100">{t.about.growingDesc}</p>
+            <p className="text-gray-300">{t.about.growingDesc}</p>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
             <h3 className="text-xl font-semibold text-white mb-3">{t.about.revolutionarySoftware}</h3>
-            <p className="text-red-100">{t.about.revolutionaryDesc}</p>
+            <p className="text-gray-300">{t.about.revolutionaryDesc}</p>
           </div>
         </div>
       </Section>
@@ -86,16 +88,18 @@ export function AboutContent() {
       <Section title={t.about.theCollective} subtitle={t.about.collectiveDesc}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { emoji: '👩‍💻', title: t.about.coreDevelopers, sub: t.about.coreDevelopersSubtitle, desc: t.about.coreDevelopersDesc },
-            { emoji: '🎨', title: t.about.designers, sub: t.about.designersSubtitle, desc: t.about.designersDesc },
-            { emoji: '🔒', title: t.about.securityExperts, sub: t.about.securityExpertsSubtitle, desc: t.about.securityExpertsDesc },
-            { emoji: '📝', title: t.about.documentationTeam, sub: t.about.documentationTeamSubtitle, desc: t.about.documentationTeamDesc },
-            { emoji: '🌍', title: t.about.translators, sub: t.about.translatorsSubtitle, desc: t.about.translatorsDesc },
-            { emoji: '💬', title: t.about.communityTeam, sub: t.about.communityTeamSubtitle, desc: t.about.communityTeamDesc },
-          ].map(({ emoji, title, sub, desc }) => (
+            { title: t.about.coreDevelopers, sub: t.about.coreDevelopersSubtitle, desc: t.about.coreDevelopersDesc },
+            { title: t.about.designers, sub: t.about.designersSubtitle, desc: t.about.designersDesc },
+            { title: t.about.securityExperts, sub: t.about.securityExpertsSubtitle, desc: t.about.securityExpertsDesc },
+            { title: t.about.documentationTeam, sub: t.about.documentationTeamSubtitle, desc: t.about.documentationTeamDesc },
+            { title: t.about.translators, sub: t.about.translatorsSubtitle, desc: t.about.translatorsDesc },
+            { title: t.about.communityTeam, sub: t.about.communityTeamSubtitle, desc: t.about.communityTeamDesc },
+          ].map(({ title, sub, desc }) => (
             <div key={title} className="text-center">
-              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">{emoji}</span>
+              <div className="w-20 h-20 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
               </div>
               <h3 className="text-lg font-semibold text-white mb-1">{title}</h3>
               <p className="text-gray-400 text-sm mb-3">{sub}</p>
