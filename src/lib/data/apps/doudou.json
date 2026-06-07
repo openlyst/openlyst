@@ -25,6 +25,11 @@
     "Linux",
     "Android"
   ],
+  "screenshots": [
+    "https://gitlab.com/Openlyst/doudou/-/raw/main/images/home.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/doudou/-/raw/main/images/albums.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/doudou/-/raw/main/images/nowplaying.png?ref_type=heads"
+  ],
   "deprecated": false,
   "versions": [
     {
