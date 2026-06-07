@@ -271,7 +271,7 @@ export function AppDetailContent({
       </section>
 
       {app.versions.length > 0 && (
-        <Section title={t.appDetail.downloads} background="gray" centered>
+        <Section title={t.appDetail.downloads} centered>
           <div className="font-display mx-auto w-full max-w-7xl rounded-2xl border border-gray-800 overflow-hidden flex flex-col lg:flex-row min-h-[540px]">
             {/* Version sidebar */}
             <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800 bg-gray-900 p-3 lg:max-h-[540px] lg:flex lg:flex-col">
@@ -509,7 +509,7 @@ export function AppDetailContent({
       )}
 
       {screenshots.length > 0 && (
-        <Section title={t.appDetail.viewScreenshots} background="gray" centered>
+        <Section title={t.appDetail.viewScreenshots} centered>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {screenshots.map((src, i) => (
               <button
