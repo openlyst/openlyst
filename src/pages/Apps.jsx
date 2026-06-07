@@ -64,7 +64,7 @@ export default function Apps() {
             {filteredApps.map(app => (
               <Link key={app.id} to={`/apps/${app.id}`} className="app-card">
                 <div className="app-card-header">
-                  <div className="app-card-icon">{app.icon || '📱'}</div>
+                  <div className="app-card-icon"><i className="fas fa-mobile-alt"></i></div>
                   {app.deprecated && <span className="badge deprecated">Deprecated</span>}
                 </div>
                 <h3>{app.name}</h3>

@@ -45,7 +45,7 @@ export default function AppDetail() {
         <Link to="/apps" className="back-link">← Back to Apps</Link>
         
         <div className="app-detail-header">
-          <div className="app-detail-icon">{app.icon || '📱'}</div>
+          <div className="app-detail-icon"><i className="fas fa-mobile-alt"></i></div>
           <div className="app-detail-info">
             <h1>{app.name}</h1>
             {app.deprecated && <span className="badge deprecated large">Deprecated</span>}
@@ -72,7 +72,7 @@ export default function AppDetail() {
 
         {app.deprecated && (
           <div className="warning-banner">
-            ⚠️ This application is deprecated and no longer maintained. Use at your own risk.
+            <i className="fas fa-exclamation-triangle"></i> This application is deprecated and no longer maintained. Use at your own risk.
           </div>
         )}
 

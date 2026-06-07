@@ -22,28 +22,28 @@ export default function About() {
           <h2>Our Values</h2>
           <div className="values-grid">
             <div className="value-card">
-              <h3>🔒 Privacy</h3>
+              <h3><i className="fas fa-shield-alt"></i> Privacy</h3>
               <p>
                 Your data belongs to you. We don't track, surveil, or sell your information. 
                 Our applications work offline when possible and never require unnecessary permissions.
               </p>
             </div>
             <div className="value-card">
-              <h3>📖 Open Source</h3>
+              <h3><i className="fas fa-code"></i> Open Source</h3>
               <p>
                 All our code is publicly available for audit, modification, and distribution. 
                 We use permissive licenses that allow you to truly own the software you use.
               </p>
             </div>
             <div className="value-card">
-              <h3>🤝 Community</h3>
+              <h3><i className="fas fa-users"></i> Community</h3>
               <p>
                 Built by volunteers, for everyone. We welcome contributions from anyone who wants 
                 to help build better software. Join our community and help shape the future.
               </p>
             </div>
             <div className="value-card">
-              <h3>🎯 User First</h3>
+              <h3><i className="fas fa-heart"></i> User First</h3>
               <p>
                 We design with users in mind, not shareholders. Features are driven by community 
                 needs, not monetization strategies. Our software is free forever.

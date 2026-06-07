@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <p>© 2026 OpenLyst. All software released under open source licenses.</p>
-          <p className="footer-tagline">Free software for everyone ✊</p>
+          <p className="footer-tagline">Free software for everyone</p>
         </div>
       </div>
     </footer>

@@ -24,17 +24,17 @@ export default function Home() {
           </p>
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-icon">🔒</div>
+              <div className="feature-icon"><i className="fas fa-shield-alt"></i></div>
               <h3>Privacy First</h3>
               <p>Your data belongs to you. No tracking, no surveillance, no corporate control.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">🤝</div>
+              <div className="feature-icon"><i className="fas fa-users"></i></div>
               <h3>Community Driven</h3>
               <p>Built by volunteers who care about creating better software for everyone.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">📖</div>
+              <div className="feature-icon"><i className="fas fa-code"></i></div>
               <h3>Open Source</h3>
               <p>All code is transparent, auditable, and free to use, modify, and distribute.</p>
             </div>
@@ -79,25 +79,25 @@ export default function Home() {
           </p>
           <div className="apps-preview">
             <Link to="/apps/doudou" className="app-preview-card">
-              <div className="app-icon">🎵</div>
+              <div className="app-icon"><i className="fas fa-music"></i></div>
               <h3>Doudou</h3>
               <p>Music player for self-hosted libraries. Connect Jellyfin, Plex, or Navidrome.</p>
               <span className="app-link">Download →</span>
             </Link>
             <Link to="/apps/finar" className="app-preview-card">
-              <div className="app-icon">📺</div>
+              <div className="app-icon"><i className="fas fa-play-circle"></i></div>
               <h3>Finar</h3>
               <p>Cross-platform Jellyfin client built with Flutter. Native playback and offline support.</p>
               <span className="app-link">Download →</span>
             </Link>
             <Link to="/apps/klit" className="app-preview-card">
-              <div className="app-icon">🖼️</div>
+              <div className="app-icon"><i className="fas fa-images"></i></div>
               <h3>Klit</h3>
               <p>Privacy-focused browser for the e621 community with fast browsing workflow.</p>
               <span className="app-link">Download →</span>
             </Link>
             <Link to="/apps/repstore" className="app-preview-card">
-              <div className="app-icon">📦</div>
+              <div className="app-icon"><i className="fas fa-store"></i></div>
               <h3>Openlyst</h3>
               <p>Alternative app store for Android built around AltStore-compatible repositories.</p>
               <span className="app-link">Download →</span>
