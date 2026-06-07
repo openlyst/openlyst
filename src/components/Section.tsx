@@ -8,7 +8,7 @@ const backgroundClasses: Record<Background, string> = {
   default: 'bg-transparent',
   red: 'glass-light text-white',
   dark: 'bg-transparent text-white',
-  gray: 'glass-light',
+  gray: 'bg-transparent',
   glass: 'glass',
 };
 

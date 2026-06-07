@@ -44,7 +44,7 @@ export function ReposContent({ reposByLang }: ReposContentProps) {
         </div>
       </section>
 
-      <Section title={sectionTitle} background="default">
+      <Section title={sectionTitle} background="default" centered>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
           {repos.map((repo) => (
             <div

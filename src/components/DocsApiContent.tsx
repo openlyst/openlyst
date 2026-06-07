@@ -243,7 +243,7 @@ export function DocsApiContent() {
         </div>
       </section>
 
-      <Section title={t.api.baseUrl} subtitle={t.api.baseUrlSubtitle} background="gray">
+      <Section title={t.api.baseUrl} subtitle={t.api.baseUrlSubtitle} background="gray" centered>
         <div className="bg-gray-900 rounded-xl p-6 font-mono text-lg">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <code className="text-emerald-400 break-all">{BASE_URL}/api/v1</code>
@@ -258,7 +258,7 @@ export function DocsApiContent() {
         </div>
       </Section>
 
-      <Section title={t.api.howItWorks} subtitle={t.api.howItWorksSubtitle} background="default">
+      <Section title={t.api.howItWorks} subtitle={t.api.howItWorksSubtitle} background="default" centered>
         <div className="space-y-6 text-gray-300">
           <div>
             <h3 className="text-lg font-semibold text-white mb-2">{t.api.responseFormatTitle}</h3>
@@ -285,7 +285,7 @@ export function DocsApiContent() {
         </div>
       </Section>
 
-      <Section title={t.api.quickStart} subtitle={t.api.quickStartSubtitle} background="gray">
+      <Section title={t.api.quickStart} subtitle={t.api.quickStartSubtitle} background="gray" centered>
         <div className="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
           <pre className="text-gray-300">
 {`const response = await fetch('${BASE_URL}/api/v1/apps');
@@ -295,7 +295,7 @@ console.log(data.data);`}
         </div>
       </Section>
 
-      <Section title={t.api.apiEndpoints} subtitle={t.api.apiEndpointsSubtitle} background="default">
+      <Section title={t.api.apiEndpoints} subtitle={t.api.apiEndpointsSubtitle} background="default" centered>
         <div className="space-y-8">
           {endpoints.map((endpoint) => {
             const pathParams = endpoint.params.filter((p) => p.kind === 'path');
@@ -392,7 +392,7 @@ console.log(data.data);`}
         </div>
       </Section>
 
-      <Section title={t.api.downloadStructure} subtitle={t.api.downloadStructureSubtitle} background="gray">
+      <Section title={t.api.downloadStructure} subtitle={t.api.downloadStructureSubtitle} background="gray" centered>
         <div className="space-y-4 text-gray-400">
           <p>{t.api.downloadsFieldDesc}</p>
           <p className="flex items-start gap-2">
@@ -402,7 +402,7 @@ console.log(data.data);`}
         </div>
       </Section>
 
-      <Section title={t.api.rateLimits} subtitle={t.api.rateLimitsSubtitle} background="default">
+      <Section title={t.api.rateLimits} subtitle={t.api.rateLimitsSubtitle} background="default" centered>
         <div className="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8">
           <p className="text-gray-400 mb-4">{t.api.noRateLimitsDesc}</p>
           <p className="text-gray-400">{t.api.noApiKeyDesc}</p>
