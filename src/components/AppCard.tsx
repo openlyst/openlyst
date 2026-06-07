@@ -1,15 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/contexts/LanguageContext';
 import { PlatformIcon } from '@/components/PlatformIcon';
 
 const MAX_DESCRIPTION_LENGTH = 150;
 const statusColors = {
-  released: { bg: 'rgba(16, 185, 129, 0.2)', text: '#10b981', border: 'rgba(16, 185, 129, 0.3)' },
-  beta: { bg: 'rgba(245, 158, 11, 0.2)', text: '#f59e0b', border: 'rgba(245, 158, 11, 0.3)' },
-  development: { bg: 'rgba(239, 68, 68, 0.2)', text: '#ef4444', border: 'rgba(239, 68, 68, 0.3)' },
+  released: { bg: 'rgba(75, 85, 99, 0.3)', text: '#9ca3af', border: 'rgba(75, 85, 99, 0.5)' },
+  beta: { bg: 'rgba(107, 114, 128, 0.3)', text: '#9ca3af', border: 'rgba(107, 114, 128, 0.5)' },
+  development: { bg: 'rgba(156, 163, 175, 0.3)', text: '#9ca3af', border: 'rgba(156, 163, 175, 0.5)' },
 };
 
 function parseColor(color: string): { r: number; g: number; b: number } {
@@ -27,6 +27,20 @@ function parseColor(color: string): { r: number; g: number; b: number } {
 function darkenColor(color: string, factor = 0.8): string {
   const { r, g, b } = parseColor(color);
   return `rgb(${Math.round(r * factor)}, ${Math.round(g * factor)}, ${Math.round(b * factor)})`;
+}
+
+function getUserPlatform(): string | null {
+  if (typeof window === 'undefined') return null;
+  
+  const userAgent = navigator.userAgent.toLowerCase();
+  
+  if (userAgent.includes('mac') && userAgent.includes('os x')) return 'macOS';
+  if (userAgent.includes('windows')) return 'Windows';
+  if (userAgent.includes('linux')) return 'Linux';
+  if (userAgent.includes('iphone') || userAgent.includes('ipad')) return 'iOS';
+  if (userAgent.includes('android')) return 'Android';
+  
+  return null;
 }
 
 export interface AppCardProps {
@@ -51,6 +65,12 @@ export function AppCard({
 }: AppCardProps) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
+  const [userPlatform, setUserPlatform] = useState<string | null>(null);
+  
+  useEffect(() => {
+    setUserPlatform(getUserPlatform());
+  }, []);
+  
   const baseColor = tintColor || '#8b5cf6';
   const darkerColor = darkenColor(baseColor, 0.75);
   const { r, g, b } = parseColor(baseColor);
@@ -67,26 +87,39 @@ export function AppCard({
         ? t.appCard.beta
         : t.appCard.inDevelopment;
 
+  const isPlatformSupported = userPlatform && platforms.includes(userPlatform) && userPlatform !== 'Web';
+
   return (
-    <div className="rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full p-8">
+    <div className="rounded-xl overflow-hidden bg-[#0a0a0a] border border-gray-800 hover:border-gray-700 transition-all duration-200 flex flex-col h-full p-5 relative overflow-hidden">
+      {/* Subtle grid background overlay */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none" style={{
+        backgroundImage: `
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+        `,
+        backgroundSize: '20px 20px'
+      }} />
+      
       {/* Icon and Name at top */}
-      <div className="flex items-center gap-4 mb-4">
+      <div className="flex items-center gap-4 mb-4 relative z-10">
         {image && (image.startsWith('http') || image.startsWith('/')) ? (
-          <img src={image} alt={`${title} icon`} className="w-16 h-16 rounded-xl object-cover shadow-lg" />
+          <img src={image} alt={`${title} icon`} className="w-14 h-14 rounded-lg object-cover bg-gray-900 p-1" />
         ) : image ? (
-          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center text-3xl shadow-lg">
+          <div className="w-14 h-14 rounded-lg bg-gray-900 flex items-center justify-center text-2xl">
             {image}
           </div>
         ) : (
-          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center text-3xl shadow-lg">
-            🎵
+          <div className="w-14 h-14 rounded-lg bg-gray-900 flex items-center justify-center border border-gray-800">
+            <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
           </div>
         )}
         <div className="flex flex-col">
-          <h3 className="text-white text-xl font-bold">{title}</h3>
+          <h3 className="text-white text-xl font-semibold">{title}</h3>
           {status !== 'released' && (
             <span
-              className="inline-block w-fit px-2 py-0.5 rounded-lg text-xs font-semibold border mt-1"
+              className="inline-block w-fit px-2.5 py-1 rounded text-xs font-medium border mt-1.5"
               style={{
                 background: statusColors[status].bg,
                 color: statusColors[status].text,
@@ -99,29 +132,26 @@ export function AppCard({
         </div>
       </div>
 
-      <hr className="border-white/10 my-6" />
+      <div className="border-b border-gray-800 my-4" />
 
       {/* Platform icons */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2.5 mb-4">
         {platforms.map((platform) => (
           <PlatformIcon
             key={platform}
             platform={platform}
-            className="text-slate-400 hover:text-slate-300 transition-colors"
+            className="text-gray-600 hover:text-gray-500 transition-colors"
           />
         ))}
       </div>
 
-      <hr className="border-white/10 my-6" />
-
       {/* App description */}
-      <div className="flex-grow">
-        <p className="text-slate-300 text-sm leading-relaxed">{displayedText}</p>
+      <div className="flex-grow mb-4">
+        <p className="text-gray-400 text-sm leading-relaxed">{displayedText}</p>
         {isLongDescription && (
           <button
             type="button"
-            className="inline-flex items-center gap-1 mt-2 text-sm font-medium bg-transparent border-none cursor-pointer hover:opacity-80"
-            style={{ color: baseColor }}
+            className="inline-flex items-center gap-1 mt-2 text-sm font-medium bg-transparent border-none cursor-pointer hover:opacity-80 text-gray-500"
             onClick={() => setExpanded(!expanded)}
           >
             {expanded ? t.appCard.showLess : t.appCard.readMore}
@@ -137,22 +167,30 @@ export function AppCard({
         )}
       </div>
 
-      <hr className="border-white/10 my-6" />
-
-      {/* Download button */}
-      <Link
-        href={href}
-        className="w-full text-white py-3 px-6 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:brightness-110 hover:-translate-y-0.5 mt-auto"
-        style={{
-          background: `linear-gradient(135deg, ${baseColor} 0%, ${darkerColor} 100%)`,
-          boxShadow: `0 4px 16px rgba(${r}, ${g}, ${b}, 0.3)`,
-        }}
-      >
-        {t.common.download}
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-      </Link>
+      {/* Buttons */}
+      <div className="flex flex-col gap-2 mt-auto relative z-10">
+        <Link
+          href={href}
+          className="w-full text-white py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all hover:bg-gray-800 bg-gray-900 border border-gray-800 hover:border-gray-700"
+        >
+          Read More
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+        
+        {isPlatformSupported && (
+          <Link
+            href={href}
+            className="w-full text-white py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all hover:bg-gray-800 bg-gray-900 border border-gray-800 hover:border-gray-700"
+          >
+            Download for {userPlatform}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }

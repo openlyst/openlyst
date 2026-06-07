@@ -61,7 +61,7 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
           <div className="text-center">
             <PlatformIcons />
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 text-white">
               {t.home.title}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-300">
@@ -87,8 +87,8 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           <div className="glass-card rounded-xl p-6 text-center scroll-contain-cards">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/30">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
@@ -96,8 +96,8 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
             <p className="text-gray-400">{t.home.privacyDesc}</p>
           </div>
           <div className="glass-card rounded-xl p-6 text-center scroll-contain-cards">
-            <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-500/30">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
             </div>
@@ -105,8 +105,8 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
             <p className="text-gray-400">{t.home.communityDesc}</p>
           </div>
           <div className="glass-card rounded-xl p-6 text-center scroll-contain-cards">
-            <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-pink-500/30">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
@@ -120,6 +120,7 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
         title={t.home.latestNews}
         subtitle={t.home.latestNewsDesc}
         background="default"
+        centered
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {news.length > 0 ? (
@@ -140,7 +141,7 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cyan-300 hover:text-cyan-200 text-sm font-medium"
+                      className="text-gray-300 hover:text-white text-sm font-medium"
                     >
                       {t.home.readMore}
                     </a>
@@ -161,9 +162,12 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
         title={t.home.ourApps}
         subtitle={t.home.ourAppsDesc}
         background="default"
+        centered
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-          {apps.map((app) => (
+          {apps
+            .filter((app) => app.bundleIdentifier === 'doudou' || app.bundleIdentifier === 'klit')
+            .map((app) => (
             <div key={app.slug} className="animate-fadeIn scroll-contain-cards">
               <AppCard
                 title={app.name}
@@ -177,37 +181,12 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
               />
             </div>
           ))}
-          {apps.length === 0 && (
+          {apps.filter((app) => app.bundleIdentifier === 'doudou' || app.bundleIdentifier === 'klit').length === 0 && (
             <div className="col-span-full text-center py-12">
-              <div className="text-6xl mb-4">🚀</div>
               <h3 className="text-2xl font-semibold text-white mb-2">{t.home.comingSoon}</h3>
               <p className="text-gray-400 max-w-md mx-auto">{t.home.comingSoonDesc}</p>
             </div>
           )}
-        </div>
-        <div className="mt-12 text-center">
-          <Button text={t.home.viewAllApps} href="/apps" variant="primary" />
-        </div>
-      </Section>
-
-      <Section
-        title={t.home.joinRevolution}
-        subtitle={t.home.joinRevolutionDesc}
-        background="red"
-        centered
-      >
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            text={t.home.startContributing}
-            href="https://gitlab.com/Openlyst/"
-            variant="secondary"
-            size="lg"
-          />
-          <Button text={t.home.downloadApps} href="/apps" variant="outline" size="lg" />
-        </div>
-        <div className="mt-12 text-center">
-          <p className="text-red-100 text-lg font-medium">{t.home.quote}</p>
-          <p className="text-red-200 mt-2">{t.home.quoteAuthor}</p>
         </div>
       </Section>
     </>

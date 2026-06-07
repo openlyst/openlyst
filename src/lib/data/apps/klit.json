@@ -12,9 +12,9 @@
     "ru": "Клиент E926 API"
   },
   "localizedDescription": {
-    "en": "Klit is the successor to BaoBao, built for the e621 community with privacy-focused defaults and a fast browsing workflow.",
-    "zh": "Klit 是 BaoBao 的后继应用，为 e621 社区打造，默认注重隐私，并提供快速浏览体验。",
-    "ru": "Klit — преемник BaoBao для сообщества e621 с приватными настройками по умолчанию и быстрым просмотром."
+    "en": "Built for the e621 community with privacy-focused defaults and a fast browsing workflow.",
+    "zh": "为 e621 社区打造，默认注重隐私，并提供快速浏览体验。",
+    "ru": "Для сообщества e621 с приватными настройками по умолчанию и быстрым просмотром."
   },
   "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/icon.png?ref_type=heads",
   "tintColor": "#f43f5e",

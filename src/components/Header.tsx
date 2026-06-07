@@ -64,8 +64,8 @@ export function Header() {
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     pathname === item.href
-                      ? 'bg-purple-600/50 text-white'
-                      : 'text-white hover:bg-white/10 hover:text-purple-300'
+                      ? 'bg-gray-700 text-white'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                   }`}
                 >
                   {item.name}
@@ -77,7 +77,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium bg-white/10 hover:bg-white/20 transition-colors"
+                className="flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium bg-gray-800 hover:bg-gray-700 transition-colors"
               >
                 <span>{LANGUAGE_FLAGS[language]}</span>
                 <span className="hidden lg:inline">{LANGUAGE_NAMES[language]}</span>
@@ -97,15 +97,15 @@ export function Header() {
                           setLanguage(lang);
                           setIsLangMenuOpen(false);
                         }}
-                        className={`w-full flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors ${
-                          language === lang ? 'bg-purple-600/30' : ''
+                        className={`w-full flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-gray-800 transition-colors ${
+                          language === lang ? 'bg-gray-700' : ''
                         }`}
                       >
                         <span>{LANGUAGE_FLAGS[lang]}</span>
                         <span>{LANGUAGE_NAMES[lang]}</span>
                         {language === lang && (
                           <svg
-                            className="w-4 h-4 ml-auto text-purple-400"
+                            className="w-4 h-4 ml-auto text-gray-400"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                           >
@@ -128,14 +128,14 @@ export function Header() {
             <button
               type="button"
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-              className="p-2 rounded-md text-white hover:bg-red-800"
+              className="p-2 rounded-md text-white hover:bg-gray-800"
             >
               <span>{LANGUAGE_FLAGS[language]}</span>
             </button>
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-purple-300 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-400"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
             >
               <span className="sr-only">Open main menu</span>
               <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -159,14 +159,14 @@ export function Header() {
                     setLanguage(lang);
                     setIsLangMenuOpen(false);
                   }}
-                  className={`w-full flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors ${
-                    language === lang ? 'bg-purple-600/30' : ''
+                  className={`w-full flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-gray-800 transition-colors ${
+                    language === lang ? 'bg-gray-700' : ''
                   }`}
                 >
                   <span>{LANGUAGE_FLAGS[lang]}</span>
                   <span>{LANGUAGE_NAMES[lang]}</span>
                   {language === lang && (
-                    <svg className="w-4 h-4 ml-auto text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 ml-auto text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -189,8 +189,8 @@ export function Header() {
                   href={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     pathname === item.href
-                      ? 'bg-purple-600/50 text-white'
-                      : 'text-white hover:bg-white/10 hover:text-purple-300'
+                      ? 'bg-gray-700 text-white'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
