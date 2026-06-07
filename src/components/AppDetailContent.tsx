@@ -512,7 +512,7 @@ export function AppDetailContent({
       )}
 
       {screenshots.length > 0 && (
-        <Section title={t.appDetail.viewScreenshots} background="gray">
+        <Section title={t.appDetail.viewScreenshots} background="gray" centered>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {screenshots.map((src, i) => (
               <button
