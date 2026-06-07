@@ -182,51 +182,7 @@
 
 /* Home Page */
 .home {
-  padding: 0;
-}
-
-.hero {
-  background: var(--bg-alt);
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero h1 {
-  font-size: 2.75rem;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: var(--text-light);
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-
-.cta-button {
-  display: inline-block;
-  background: var(--primary);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow);
-}
-
-.cta-button:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  color: white;
+  padding: 3rem 0;
 }
 
 .features {

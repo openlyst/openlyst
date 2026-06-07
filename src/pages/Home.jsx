@@ -3,22 +3,9 @@ import { Link } from 'react-router-dom'
 export default function Home() {
   return (
     <div className="home">
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Free & Open Source Applications</h1>
-          <p className="hero-subtitle">
-            We build free and open-source software that puts users first. 
-            Keep control of your own tools and data.
-          </p>
-          <Link to="/apps" className="cta-button">
-            Explore Our Apps
-          </Link>
-        </div>
-      </section>
-
       <section className="features">
         <div className="container">
-          <h2>Built for Everyone</h2>
+          <h1>Built for Everyone</h1>
           <p className="section-subtitle">
             Technology should work for people. Our apps are built in the open by community contributors.
           </p>
