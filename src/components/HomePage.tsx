@@ -117,6 +117,48 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
       </Section>
 
       <Section
+        title={t.home.latestNews}
+        subtitle={t.home.latestNewsDesc}
+        background="default"
+        centered
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          {news.length > 0 ? (
+            news.slice(0, 4).map((item) => (
+              <article key={item.identifier} className="glass-card rounded-xl p-6 scroll-contain-cards">
+                <div className="flex items-center justify-between gap-4 mb-3">
+                  <h3 className="text-lg font-semibold text-white">
+                    <LinkifiedText text={item.title} />
+                  </h3>
+                  <span className="text-xs text-gray-400 whitespace-nowrap">{item.date}</span>
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  <LinkifiedText text={item.caption} />
+                </p>
+                {item.url && (
+                  <div className="mt-4">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-white text-sm font-medium"
+                    >
+                      {t.home.readMore}
+                    </a>
+                  </div>
+                )}
+              </article>
+            ))
+          ) : (
+            <div className="col-span-full text-center py-8 text-gray-400">{t.home.noNewsYet}</div>
+          )}
+        </div>
+        <div className="mt-10 text-center">
+          <Button text={t.home.viewAllNews} href="/news" variant="secondary" />
+        </div>
+      </Section>
+
+      <Section
         title={t.home.ourApps}
         subtitle={t.home.ourAppsDesc}
         background="default"
