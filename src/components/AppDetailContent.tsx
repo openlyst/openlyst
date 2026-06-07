@@ -272,7 +272,7 @@ export function AppDetailContent({
 
       {app.versions.length > 0 && (
         <Section title={t.appDetail.downloads} background="gray" centered>
-          <div className="font-display mx-auto w-full max-w-7xl rounded-2xl border border-gray-800 bg-[#0a0a0a] overflow-hidden flex flex-col lg:flex-row min-h-[540px]">
+          <div className="font-display mx-auto w-full max-w-7xl rounded-2xl border border-gray-800 overflow-hidden flex flex-col lg:flex-row min-h-[540px]">
             {/* Version sidebar */}
             <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800 bg-gray-900 p-3 lg:max-h-[540px] lg:flex lg:flex-col">
               <div className="lg:hidden">
@@ -535,7 +535,7 @@ export function AppDetailContent({
           aria-label={t.appDetail.viewScreenshots}
         >
           <div
-            className="relative w-full max-w-6xl max-h-[90vh] rounded-2xl border border-gray-800 bg-[#0a0a0a] p-3 sm:p-4"
+            className="relative w-full max-w-6xl max-h-[90vh] rounded-2xl border border-gray-800 p-3 sm:p-4"
             onClick={(e) => e.stopPropagation()}
           >
             <img
