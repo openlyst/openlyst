@@ -186,8 +186,8 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
             </div>
           )}
         </div>
-        <div className="mt-12 text-center">
-          <Button text={t.home.viewAllApps} href="/apps" variant="primary" />
+        <div className="mt-12">
+          <Button text={t.home.viewAllApps} href="/apps" variant="primary" className="w-full" />
         </div>
       </Section>
 

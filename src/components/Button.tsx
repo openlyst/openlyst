@@ -24,6 +24,7 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   onClick?: () => void;
+  className?: string;
 }
 
 export function Button({
@@ -32,17 +33,18 @@ export function Button({
   variant = 'primary',
   size = 'md',
   onClick,
+  className = '',
 }: ButtonProps) {
-  const className = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]}`;
+  const computedClassName = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
   if (href) {
     return (
-      <a href={href} className={className}>
+      <a href={href} className={computedClassName}>
         {text}
       </a>
     );
   }
   return (
-    <button type="button" onClick={onClick} className={className}>
+    <button type="button" onClick={onClick} className={computedClassName}>
       {text}
     </button>
   );
