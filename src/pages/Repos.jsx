@@ -1,22 +1,6 @@
-import { useState, useEffect } from 'react'
+import repos from '../data/repos.json'
 
 export default function Repos() {
-  const [repos, setRepos] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    fetch('https://openlyst.ink/api/v1/repo')
-      .then(res => res.json())
-      .then(data => {
-        setRepos(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Failed to fetch repos:', err)
-        setLoading(false)
-      })
-  }, [])
-
   return (
     <div className="page repos-page">
       <div className="container">
@@ -27,30 +11,21 @@ export default function Repos() {
           </p>
         </div>
 
-        {loading ? (
-          <div className="loading">Loading repositories...</div>
-        ) : (
-          <div className="repos-grid">
-            {repos.map((repo, index) => (
-              <div key={index} className="repo-card">
-                <div className="repo-header">
-                  <h3>{repo.name}</h3>
-                  {repo.url && (
-                    <a href={repo.url} target="_blank" rel="noopener noreferrer" className="repo-link">
-                      Visit →
-                    </a>
-                  )}
-                </div>
-                {repo.description && <p className="repo-description">{repo.description}</p>}
-                {repo.apps && (
-                  <div className="repo-apps">
-                    <strong>{repo.apps.length} app{repo.apps.length !== 1 ? 's' : ''}</strong>
-                  </div>
+        <div className="repos-grid">
+          {repos.map((repo) => (
+            <div key={repo.id} className="repo-card">
+              <div className="repo-header">
+                <h3>{repo.name.en}</h3>
+                {repo.url && (
+                  <a href={repo.url} target="_blank" rel="noopener noreferrer" className="repo-link">
+                    Visit →
+                  </a>
                 )}
               </div>
-            ))}
-          </div>
-        )}
+              <p className="repo-description">{repo.description.en}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

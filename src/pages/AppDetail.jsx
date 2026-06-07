@@ -1,32 +1,18 @@
-import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import doudou from '../data/apps/doudou.json'
+import finar from '../data/apps/finar.json'
+import klit from '../data/apps/klit.json'
+import lystcode from '../data/apps/lystcode.json'
+import docan from '../data/apps/docan.json'
+import opentorrent from '../data/apps/opentorrent.json'
+import repstore from '../data/apps/repstore.json'
+
+const apps = { doudou, finar, klit, lystcode, docan, opentorrent, repstore }
 
 export default function AppDetail() {
   const { id } = useParams()
-  const [app, setApp] = useState(null)
-  const [versions, setVersions] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    Promise.all([
-      fetch(`https://openlyst.ink/api/v1/apps/${id}`).then(res => res.json()),
-      fetch(`https://openlyst.ink/api/v1/apps/${id}/versions`).then(res => res.json())
-    ])
-      .then(([appData, versionsData]) => {
-        setApp(appData)
-        setVersions(versionsData)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Failed to fetch app details:', err)
-        setLoading(false)
-      })
-  }, [id])
-
-  if (loading) {
-    return <div className="page loading-page"><div className="container">Loading...</div></div>
-  }
+  const app = apps[id]
 
   if (!app) {
     return (
@@ -39,31 +25,26 @@ export default function AppDetail() {
     )
   }
 
+  const latestVersion = app.versions?.[0]
+
   return (
     <div className="page app-detail-page">
       <div className="container">
         <Link to="/apps" className="back-link">← Back to Apps</Link>
         
         <div className="app-detail-header">
-          <div className="app-detail-icon"><i className="fas fa-mobile-alt"></i></div>
+          <img src={app.iconURL} alt={app.name.en} className="app-detail-icon-img" />
           <div className="app-detail-info">
-            <h1>{app.name}</h1>
+            <h1>{app.name.en}</h1>
             {app.deprecated && <span className="badge deprecated large">Deprecated</span>}
-            <p className="app-detail-description">{app.description}</p>
+            <p className="app-detail-description">{app.localizedDescription.en}</p>
             <div className="app-detail-meta">
-              {app.platforms && (
+              <div className="meta-item">
+                <strong>Platforms:</strong> {app.platforms.join(', ')}
+              </div>
+              {latestVersion && (
                 <div className="meta-item">
-                  <strong>Platforms:</strong> {app.platforms.join(', ')}
-                </div>
-              )}
-              {app.latest_version && (
-                <div className="meta-item">
-                  <strong>Latest Version:</strong> v{app.latest_version}
-                </div>
-              )}
-              {app.license && (
-                <div className="meta-item">
-                  <strong>License:</strong> {app.license}
+                  <strong>Latest Version:</strong> v{latestVersion.version}
                 </div>
               )}
             </div>
@@ -79,24 +60,46 @@ export default function AppDetail() {
         <section className="app-section">
           <h2>Downloads</h2>
           <div className="downloads-grid">
-            {app.platforms?.map(platform => (
-              <a 
-                key={platform}
-                href={`https://openlyst.ink/api/v1/apps/${id}/latest?platform=${platform}`}
-                className="download-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download for {platform}
-              </a>
-            ))}
+            {app.platforms.map(platform => {
+              const download = latestVersion?.downloads?.[platform]
+              if (!download) return null
+              
+              if (typeof download === 'string') {
+                return (
+                  <a 
+                    key={platform}
+                    href={download}
+                    className="download-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download for {platform}
+                  </a>
+                )
+              }
+              
+              return Object.entries(download).map(([format, url]) => {
+                if (!url || typeof url !== 'string') return null
+                return (
+                  <a 
+                    key={`${platform}-${format}`}
+                    href={url}
+                    className="download-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download for {platform} ({format})
+                  </a>
+                )
+              })
+            })}
           </div>
         </section>
 
         <section className="app-section">
           <h2>Version History</h2>
           <div className="versions-list">
-            {versions.map((version, index) => (
+            {app.versions?.map((version, index) => (
               <div key={index} className="version-item">
                 <div className="version-info">
                   <span className="version-number">v{version.version}</span>
@@ -104,27 +107,36 @@ export default function AppDetail() {
                     {version.date ? new Date(version.date).toLocaleDateString() : 'Unknown date'}
                   </span>
                 </div>
-                {version.notes && <p className="version-notes">{version.notes}</p>}
+                {version.sourceCode && (
+                  <a 
+                    href={version.sourceCode}
+                    className="version-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View source →
+                  </a>
+                )}
               </div>
             ))}
           </div>
         </section>
 
-        <section className="app-section">
-          <h2>Source Code</h2>
-          {app.source_url ? (
-            <a 
-              href={app.source_url} 
-              className="source-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on GitLab →
-            </a>
-          ) : (
-            <p>Source code repository not available.</p>
-          )}
-        </section>
+        {app.screenshots && app.screenshots.length > 0 && (
+          <section className="app-section">
+            <h2>Screenshots</h2>
+            <div className="screenshots-grid">
+              {app.screenshots.map((screenshot, index) => (
+                <img 
+                  key={index} 
+                  src={screenshot} 
+                  alt={`Screenshot ${index + 1}`}
+                  className="screenshot-img"
+                />
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   )
