@@ -165,7 +165,9 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
         centered
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-          {apps.map((app) => (
+          {apps
+            .filter((app) => app.bundleIdentifier === 'doudou' || app.bundleIdentifier === 'klit')
+            .map((app) => (
             <div key={app.slug} className="animate-fadeIn scroll-contain-cards">
               <AppCard
                 title={app.name}
@@ -179,7 +181,7 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
               />
             </div>
           ))}
-          {apps.length === 0 && (
+          {apps.filter((app) => app.bundleIdentifier === 'doudou' || app.bundleIdentifier === 'klit').length === 0 && (
             <div className="col-span-full text-center py-12">
               <h3 className="text-2xl font-semibold text-white mb-2">{t.home.comingSoon}</h3>
               <p className="text-gray-400 max-w-md mx-auto">{t.home.comingSoonDesc}</p>
