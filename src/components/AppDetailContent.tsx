@@ -231,10 +231,10 @@ export function AppDetailContent({
     <>
       <section className="relative text-white py-10 sm:py-12">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-white/15 bg-[rgba(18,31,52,0.45)] backdrop-blur-xl p-5 sm:p-7 shadow-xl shadow-black/25">
+          <div className="rounded-2xl border border-gray-800 bg-[#0a0a0a] p-5 sm:p-7">
             <Link
               href="/apps"
-              className="inline-flex items-center text-gray-400 hover:text-purple-400 text-sm font-medium mb-8"
+              className="inline-flex items-center text-gray-400 hover:text-gray-300 text-sm font-medium mb-8"
             >
               ← {t.appDetail.backToApps}
             </Link>
@@ -242,7 +242,7 @@ export function AppDetailContent({
               <img
                 src={app.iconURL}
                 alt=""
-                className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover shadow-xl flex-shrink-0"
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover flex-shrink-0 bg-gray-900 p-1"
               />
               <div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-white">{app.name}</h1>
@@ -251,7 +251,7 @@ export function AppDetailContent({
                   {app.platforms.map((p) => (
                     <span
                       key={p}
-                      className="px-3 py-1 rounded-lg text-sm font-medium bg-white/10 text-gray-200 border border-white/10"
+                      className="px-3 py-1 rounded-lg text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700"
                     >
                       {p}
                     </span>
@@ -259,7 +259,7 @@ export function AppDetailContent({
                 </div>
               </div>
             </div>
-            <div className="mt-8 border-t border-white/10 pt-6">
+            <div className="mt-8 border-t border-gray-800 pt-6">
               <h2 className="text-2xl font-bold tracking-tight text-white">{t.appDetail.about}</h2>
               <div
                 className="modal-prose prose-invert max-w-none mt-4"
@@ -271,27 +271,27 @@ export function AppDetailContent({
       </section>
 
       {app.versions.length > 0 && (
-        <Section title={t.appDetail.downloads} background="gray">
-          <div className="font-display mx-auto w-full max-w-7xl rounded-3xl border border-white/10 bg-gray-900/40 backdrop-blur-xl overflow-hidden flex flex-col lg:flex-row min-h-[540px] shadow-2xl shadow-black/40 ring-1 ring-white/5">
+        <Section title={t.appDetail.downloads} background="gray" centered>
+          <div className="font-display mx-auto w-full max-w-7xl rounded-2xl border border-gray-800 bg-[#0a0a0a] overflow-hidden flex flex-col lg:flex-row min-h-[540px]">
             {/* Version sidebar */}
-            <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-white/10 bg-gray-900/30 backdrop-blur-lg p-3 lg:max-h-[540px] lg:flex lg:flex-col">
+            <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800 bg-gray-900 p-3 lg:max-h-[540px] lg:flex lg:flex-col">
               <div className="lg:hidden">
                 <button
                   type="button"
                   onClick={() => setMobileVersionsOpen((prev) => !prev)}
-                  className="w-full flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-left"
+                  className="w-full flex items-center justify-between rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-left"
                   aria-expanded={mobileVersionsOpen}
                   aria-controls="mobile-versions-list"
                 >
                   <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-300">
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">
                       {t.appDetail.versions}
                     </p>
                     <p className="text-sm font-semibold text-white">
                       {t.common.version} {version?.version}
                     </p>
                   </div>
-                  <span className={`text-gray-300 transition-transform ${mobileVersionsOpen ? 'rotate-180' : ''}`}>
+                  <span className={`text-gray-400 transition-transform ${mobileVersionsOpen ? 'rotate-180' : ''}`}>
                     ▼
                   </span>
                 </button>
@@ -307,20 +307,20 @@ export function AppDetailContent({
                         }}
                         className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 border ${
                           version?.version === v.version
-                            ? 'bg-purple-900/60 border-purple-500/60 text-white'
-                            : 'border-transparent text-gray-300 hover:bg-white/5 hover:text-white'
+                            ? 'bg-gray-700 border-gray-600 text-white'
+                            : 'border-transparent text-gray-400 hover:bg-gray-800 hover:text-white'
                         }`}
                       >
                         <div className="flex items-center justify-between gap-3">
                           <span className="block">{v.version}</span>
                           {index === 0 ? (
-                            <span className="rounded-full bg-emerald-300 text-emerald-900 text-[10px] font-semibold px-2 py-0.5">
+                            <span className="rounded-full bg-gray-600 text-gray-200 text-[10px] font-semibold px-2 py-0.5">
                               {t.appDetail.latest}
                             </span>
                           ) : null}
                         </div>
                         {v.date ? (
-                          <span className="block text-xs font-normal text-gray-400 mt-1">{v.date}</span>
+                          <span className="block text-xs font-normal text-gray-500 mt-1">{v.date}</span>
                         ) : null}
                       </button>
                     ))}
@@ -337,20 +337,20 @@ export function AppDetailContent({
                     onClick={() => setSelectedVersion(v)}
                     className={`text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 border ${
                       version?.version === v.version
-                        ? 'bg-purple-900/60 border-purple-500/60 text-white'
-                        : 'border-transparent text-gray-300 hover:bg-white/5 hover:text-white'
+                        ? 'bg-gray-700 border-gray-600 text-white'
+                        : 'border-transparent text-gray-400 hover:bg-gray-800 hover:text-white'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <span className="block">{v.version}</span>
                       {index === 0 ? (
-                        <span className="rounded-full bg-emerald-300 text-emerald-900 text-[10px] font-semibold px-2 py-0.5">
+                        <span className="rounded-full bg-gray-600 text-gray-200 text-[10px] font-semibold px-2 py-0.5">
                           {t.appDetail.latest}
                         </span>
                       ) : null}
                     </div>
                     {v.date ? (
-                      <span className="block text-xs font-normal text-gray-400 mt-1">{v.date}</span>
+                      <span className="block text-xs font-normal text-gray-500 mt-1">{v.date}</span>
                     ) : null}
                   </button>
                 ))}
@@ -360,11 +360,11 @@ export function AppDetailContent({
             <div className="flex-1 overflow-auto flex flex-col min-h-0">
               {version && (
                 <div
-                  className="p-5 sm:p-6 flex flex-col gap-5 bg-gray-800/30 backdrop-blur-lg min-h-full"
+                  className="p-5 sm:p-6 flex flex-col gap-5 bg-gray-900 min-h-full"
                 >
                   <div className="space-y-1">
                     <h3 className="text-white text-2xl font-semibold">{app.name}</h3>
-                    <p className="text-gray-300 text-xs">{t.appDetail.chooseDownload}</p>
+                    <p className="text-gray-400 text-xs">{t.appDetail.chooseDownload}</p>
                   </div>
 
                   <div className="flex flex-wrap items-center justify-between gap-3">
@@ -375,7 +375,7 @@ export function AppDetailContent({
                           href={version.sourceCode}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 text-sm font-semibold transition-colors"
+                          className="inline-flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-800 hover:bg-gray-700 text-white px-3 py-1.5 text-sm font-semibold transition-colors"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -386,9 +386,9 @@ export function AppDetailContent({
                       <button
                         type="button"
                         onClick={() => setChangelogOpen(true)}
-                        className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 text-white px-3 py-1.5 text-sm font-semibold transition-all shadow-lg shadow-purple-500/25"
+                        className="inline-flex items-center gap-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-white px-3 py-1.5 text-sm font-semibold transition-colors border border-gray-700"
                       >
-                        <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-white/20 text-xs">•</span>
+                        <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-600 text-xs">•</span>
                         {t.appDetail.viewDetails}
                       </button>
                     </div>
@@ -397,9 +397,9 @@ export function AppDetailContent({
                   {/* Download cards */}
                   <div>
                     {tempDownloadsOff ? (
-                      <div className="rounded-xl bg-amber-900/20 border border-amber-600/40 p-4">
-                        <h4 className="font-semibold text-amber-200">{t.appDetail.downloadsPausedTitle}</h4>
-                        <p className="text-gray-400 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
+                      <div className="rounded-xl bg-gray-800 border border-gray-700 p-4">
+                        <h4 className="font-semibold text-gray-300">{t.appDetail.downloadsPausedTitle}</h4>
+                        <p className="text-gray-500 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
                       </div>
                     ) : byPlatform.length > 0 ? (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
@@ -414,10 +414,10 @@ export function AppDetailContent({
                           return (
                             <div
                               key={platform}
-                              className="group relative rounded-2xl border border-white/10 bg-gray-800/50 backdrop-blur-xl p-6 flex flex-col gap-5 text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-purple-500/30 hover:bg-gray-800/70"
+                              className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 flex flex-col gap-5 text-white"
                             >
                               <div className="flex items-center gap-3">
-                                <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 text-white shadow-lg shadow-purple-900/30 transition-transform duration-300 group-hover:scale-105">
+                                <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gray-800 text-gray-400">
                                   {getPlatformIcon(platform)}
                                 </span>
                                 <span className="text-lg font-semibold text-white tracking-tight">{platform}</span>
@@ -426,7 +426,7 @@ export function AppDetailContent({
                                 {!singleOption && (
                                   <div className="relative">
                                     <select
-                                      className="w-full appearance-none rounded-xl border border-white/10 bg-white/5 text-white text-sm px-4 py-2.5 pr-10 focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-colors hover:bg-white/[0.07] cursor-pointer"
+                                      className="w-full appearance-none rounded-xl border border-gray-700 bg-gray-800 text-white text-sm px-4 py-2.5 pr-10 focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-colors hover:bg-gray-700 cursor-pointer"
                                       value={selectedUrl}
                                       onChange={(e) =>
                                         setSelectedUrlByPlatform((prev) => ({ ...prev, [platform]: e.target.value }))
@@ -438,7 +438,7 @@ export function AppDetailContent({
                                         </option>
                                       ))}
                                     </select>
-                                    <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                     </svg>
                                   </div>
@@ -447,10 +447,7 @@ export function AppDetailContent({
                                   href={selectedUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm text-white transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] shadow-lg shadow-purple-500/25"
-                                  style={{
-                                    background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
-                                  }}
+                                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm text-white transition-all duration-200 bg-gray-800 hover:bg-gray-700 border border-gray-700"
                                 >
                                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -463,7 +460,7 @@ export function AppDetailContent({
                         })}
                       </div>
                     ) : (
-                      <p className="text-gray-400 text-sm">{t.appDetail.noDownloads}</p>
+                      <p className="text-gray-500 text-sm">{t.appDetail.noDownloads}</p>
                     )}
                   </div>
                 </div>
@@ -481,17 +478,17 @@ export function AppDetailContent({
               aria-labelledby="changelog-title"
             >
               <div
-                className="bg-gray-800 border border-white/10 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden"
+                className="bg-gray-900 border border-gray-800 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-gray-800/80">
+                <div className="flex items-center justify-between px-5 py-4 border-b border-gray-800">
                   <h2 id="changelog-title" className="text-lg font-semibold text-white">
                     {t.common.changelog} — {version.version}
                   </h2>
                   <button
                     type="button"
                     onClick={() => setChangelogOpen(false)}
-                    className="text-gray-400 hover:text-white p-2 rounded-lg transition-colors hover:bg-white/10"
+                    className="text-gray-500 hover:text-white p-2 rounded-lg transition-colors hover:bg-gray-800"
                     aria-label={t.common.close}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -519,7 +516,7 @@ export function AppDetailContent({
                 key={i}
                 type="button"
                 onClick={() => setActiveScreenshotIndex(i)}
-                className="rounded-xl overflow-hidden border border-gray-600 hover:border-purple-500 transition-colors"
+                className="rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-colors"
                 aria-label={`${t.appDetail.viewScreenshots} ${i + 1}`}
               >
                 <img src={src} alt="" className="w-full aspect-video object-cover" />
@@ -538,7 +535,7 @@ export function AppDetailContent({
           aria-label={t.appDetail.viewScreenshots}
         >
           <div
-            className="relative w-full max-w-6xl max-h-[90vh] rounded-2xl border border-white/15 bg-[rgba(12,20,36,0.8)] p-3 sm:p-4"
+            className="relative w-full max-w-6xl max-h-[90vh] rounded-2xl border border-gray-800 bg-[#0a0a0a] p-3 sm:p-4"
             onClick={(e) => e.stopPropagation()}
           >
             <img
@@ -550,7 +547,7 @@ export function AppDetailContent({
             <button
               type="button"
               onClick={() => setActiveScreenshotIndex(null)}
-              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/45 border border-white/15 text-white hover:bg-black/70"
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-800 border border-gray-700 text-white hover:bg-gray-700"
               aria-label={t.common.close}
             >
               ×
@@ -561,7 +558,7 @@ export function AppDetailContent({
                 <button
                   type="button"
                   onClick={showPrevScreenshot}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/45 border border-white/15 text-white hover:bg-black/70"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gray-800 border border-gray-700 text-white hover:bg-gray-700"
                   aria-label={t.common.back}
                 >
                   ‹
@@ -569,7 +566,7 @@ export function AppDetailContent({
                 <button
                   type="button"
                   onClick={showNextScreenshot}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/45 border border-white/15 text-white hover:bg-black/70"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gray-800 border border-gray-700 text-white hover:bg-gray-700"
                   aria-label={t.common.next}
                 >
                   ›
@@ -577,7 +574,7 @@ export function AppDetailContent({
               </>
             )}
 
-            <p className="mt-3 text-center text-xs text-gray-300">
+            <p className="mt-3 text-center text-xs text-gray-400">
               {activeScreenshotIndex + 1} / {screenshots.length}
             </p>
           </div>
