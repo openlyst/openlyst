@@ -31,7 +31,7 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
         </div>
       </section>
 
-      <Section title={t.news.latestUpdates} subtitle={t.news.latestUpdatesDesc} background="default">
+      <Section title={t.news.latestUpdates} subtitle={t.news.latestUpdatesDesc} background="default" centered>
         {news.length === 0 ? (
           <div className="text-center py-12 text-gray-400">{t.news.noNews}</div>
         ) : (

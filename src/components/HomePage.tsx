@@ -162,6 +162,7 @@ export function HomePage({ initialData }: { initialData: InitialData }) {
         title={t.home.ourApps}
         subtitle={t.home.ourAppsDesc}
         background="default"
+        centered
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {apps.map((app) => (

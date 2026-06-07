@@ -37,6 +37,7 @@ export function DeprecatedPageContent({ initialApps }: { initialApps: App[] }) {
         title={t.deprecated.discontinuedApps}
         subtitle={t.deprecated.discontinuedDesc}
         background="default"
+        centered
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {apps.map((app) => (

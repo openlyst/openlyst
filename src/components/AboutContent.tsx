@@ -21,7 +21,7 @@ export function AboutContent() {
         </div>
       </section>
 
-      <Section title={t.about.ourMission} subtitle={t.about.missionDesc}>
+      <Section title={t.about.ourMission} subtitle={t.about.missionDesc} centered>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">{t.about.powerToThePeople}</h3>
@@ -45,7 +45,7 @@ export function AboutContent() {
         </div>
       </Section>
 
-      <Section title={t.about.ourValues} subtitle={t.about.valuesDesc} background="default">
+      <Section title={t.about.ourValues} subtitle={t.about.valuesDesc} background="default" centered>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { title: t.about.privacyFirst, desc: t.about.privacyFirstDesc },
@@ -68,7 +68,7 @@ export function AboutContent() {
         </div>
       </Section>
 
-      <Section title={t.about.ourStory} subtitle={t.about.ourStoryDesc} background="default">
+      <Section title={t.about.ourStory} subtitle={t.about.ourStoryDesc} background="default" centered>
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
             <h3 className="text-xl font-semibold text-white mb-3">{t.about.theBeginning}</h3>
@@ -85,7 +85,7 @@ export function AboutContent() {
         </div>
       </Section>
 
-      <Section title={t.about.theCollective} subtitle={t.about.collectiveDesc}>
+      <Section title={t.about.theCollective} subtitle={t.about.collectiveDesc} centered>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { title: t.about.coreDevelopers, sub: t.about.coreDevelopersSubtitle, desc: t.about.coreDevelopersDesc },
