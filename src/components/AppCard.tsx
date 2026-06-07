@@ -68,9 +68,18 @@ export function AppCard({
         : t.appCard.inDevelopment;
 
   return (
-    <div className="rounded-xl overflow-hidden bg-[#0a0a0a] border border-gray-800 hover:border-gray-700 transition-all duration-200 flex flex-col h-full p-5">
+    <div className="rounded-xl overflow-hidden bg-[#0a0a0a] border border-gray-800 hover:border-gray-700 transition-all duration-200 flex flex-col h-full p-5 relative overflow-hidden">
+      {/* Subtle grid background overlay */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none" style={{
+        backgroundImage: `
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+        `,
+        backgroundSize: '20px 20px'
+      }} />
+      
       {/* Icon and Name at top */}
-      <div className="flex items-center gap-4 mb-4">
+      <div className="flex items-center gap-4 mb-4 relative z-10">
         {image && (image.startsWith('http') || image.startsWith('/')) ? (
           <img src={image} alt={`${title} icon`} className="w-14 h-14 rounded-lg object-cover bg-gray-900 p-1" />
         ) : image ? (
@@ -139,7 +148,7 @@ export function AppCard({
       {/* Download button */}
       <Link
         href={href}
-        className="w-full text-white py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all hover:bg-gray-800 mt-auto bg-gray-900 border border-gray-800 hover:border-gray-700"
+        className="w-full text-white py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all hover:bg-gray-800 mt-auto bg-gray-900 border border-gray-800 hover:border-gray-700 relative z-10"
       >
         {t.common.download}
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
