@@ -346,9 +346,9 @@
         }
       },
       "localizedDescription": {
-        "en": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art",
-        "zh": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art",
-        "ru": "# 16.2.0\n- Navbar design tweaks\n- Skeleton refactor for pages up to 50% faster in some pages\n- New animations for changing pages\n- Fixed the universal back button on subpages in the settings screen\n- Search bar now supports theming\n- Fixed downloads screen\n- Fixed songs and artists pages from loading\n- Premade playlists now respond to themes\n- Span custom art"
+        "en": "# 16.2.0\n- Navbar design tweaks\n- Page loading improved by up to 50%\n- New page transition animations\n- Fixed back button on settings subpages\n- Search bar now supports themes\n- Fixed downloads screen\n- Fixed songs and artists pages loading\n- Premade playlists now respond to themes\n- Custom art span support",
+        "zh": "# 16.2.0\n- 导航栏设计调整\n- 页面加载速度提升高达 50%\n- 新的页面切换动画\n- 修复了设置子页面的返回按钮\n- 搜索栏现在支持主题\n- 修复了下载页面\n- 修复了歌曲和艺术家页面加载问题\n- 预制播放列表现在响应主题\n- 自定义艺术图支持",
+        "ru": "# 16.2.0\n- Изменения в дизайне навигационной панели\n- Загрузка страниц ускорена до 50%\n- Новые анимации перехода страниц\n- Исправлена кнопка назад на подпункт настроек\n- Строка поиска теперь поддерживает темы\n- Исправлен экран загрузок\n- Исправлена загрузка страниц песен и исполнителей\n- Готовые плейлисты теперь реагируют на темы\n- Поддержка кастомного арта"
       }
     },
     {
@@ -432,9 +432,9 @@
         }
       },
       "localizedDescription": {
-        "en": "# 16.1.0\n- en_AU patches\n- Fix album art animations\n- Fix animations not being smooth\n- Removed GetX",
-        "zh": "# 16.1.0\n- en_AU patches\n- Fix album art animations\n- Fix animations not being smooth\n- Removed GetX",
-        "ru": "# 16.1.0\n- en_AU patches\n- Fix album art animations\n- Fix animations not being smooth\n- Removed GetX"
+        "en": "# 16.1.0\n- Australian English patches\n- Fixed album art animations\n- Fixed animation smoothness\n- Removed GetX",
+        "zh": "# 16.1.0\n- 澳大利亚英语补丁\n- 修复了专辑封面动画\n- 修复了动画流畅度\n- 移除了 GetX",
+        "ru": "# 16.1.0\n- Патчи для австралийского английского\n- Исправлены анимации обложки альбома\n- Исправлена плавность анимаций\n- Удален GetX"
       }
     },
     {
@@ -518,9 +518,9 @@
         }
       },
       "localizedDescription": {
-        "en": "# 16.0.0\n\n- Brand new app\n- Everything has been rewritten to just work. We are done with bugs and unimplamented features",
-        "zh": "# 16.0.0\n\n- Brand new app\n- Everything has been rewritten to just work. We are done with bugs and unimplamented features",
-        "ru": "# 16.0.0\n\n- Brand new app\n- Everything has been rewritten to just work. We are done with bugs and unimplamented features"
+        "en": "# 16.0.0\n\n- Complete app rewrite\n- Fixed bugs and finished missing features",
+        "zh": "# 16.0.0\n\n- 完整重写应用\n- 修复了错误并完成了缺失的功能",
+        "ru": "# 16.0.0\n\n- Полное переписывание приложения\n- Исправлены ошибки и завершены недостающие функции"
       }
     },
     {

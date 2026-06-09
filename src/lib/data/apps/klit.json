@@ -284,7 +284,7 @@
         "Web": ""
       },
       "localizedDescription": {
-        "en": "# 9.0.0\n\n- Brand new codebase"
+        "en": "# 9.0.0\n\n- Complete codebase rewrite"
       }
     },
     {
@@ -450,7 +450,7 @@
         "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-21/klit-8.0.1-2026-02-27-web.zip"
       },
       "localizedDescription": {
-        "en": "# 8.0.1\n\n- top bar refactor"
+        "en": "# 8.0.1\n\n- Top bar redesigned"
       }
     },
     {

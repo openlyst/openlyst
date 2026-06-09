@@ -47,7 +47,7 @@
         }
       },
       "localizedDescription": {
-        "en": "# 4.0.0\n- Rebrand to Openlyst\n- Removed F-Droid support\n- Removed APKPure support\n- Removed repository/source management UI (single Openlyst API mode)\n- Check for Updates\n- Cleanup\n- New UI\n- Removed Desktop UI files\n- OLED Theme\n- Accent colours"
+        "en": "# 4.0.0\n- Rebranded to Openlyst\n- Removed F-Droid support\n- Removed APKPure support\n- Simplified to single Openlyst API mode\n- Added update checking\n- UI redesign\n- Removed desktop UI\n- Added OLED theme\n- Added accent color options"
       }
     },
     {
