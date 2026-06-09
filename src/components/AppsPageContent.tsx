@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Section, AppCard, Skeleton } from '@/components';
 import { useLanguage } from '@/lib/contexts/LanguageContext';
-import { getActiveApps } from '@/lib/services/dataService';
+import { getActiveApps, getDeprecatedApps } from '@/lib/services/dataService';
 import type { App } from '@/lib/types/repo';
 
 export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
@@ -15,7 +15,14 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
   useEffect(() => {
     if (prevLang === language) return;
     setPrevLang(language);
-    getActiveApps(language).then(setApps).catch(console.error);
+    Promise.all([
+      getActiveApps(language),
+      getDeprecatedApps(language),
+    ])
+      .then(([active, deprecated]) => {
+        setApps([...active, ...deprecated]);
+      })
+      .catch(console.error);
   }, [language, prevLang]);
 
   return (
@@ -46,6 +53,7 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
                 platforms={app.platforms}
                 image={app.iconURL}
                 tintColor={app.tintColor}
+                deprecated={app.deprecated}
               />
             </div>
           ))}
@@ -56,18 +64,6 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
             <p className="text-gray-400 max-w-md mx-auto">{t.apps.noAppsDesc}</p>
           </div>
         )}
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 text-sm mb-3">{t.apps.cantFind}</p>
-          <Link
-            href="/deprecated"
-            className="inline-flex items-center text-gray-300 hover:text-white transition-colors text-sm font-medium"
-          >
-            <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {t.apps.checkDeprecated}
-          </Link>
-        </div>
         <div className="mt-12 text-center">
           <p className="text-gray-400 mb-6">{t.apps.wantToContributeDesc}</p>
           <Link

@@ -1,9 +1,12 @@
-import { getActiveApps } from '@/lib/services/dataService';
+import { getActiveApps, getDeprecatedApps } from '@/lib/services/dataService';
 import { AppsPageContent } from '@/components/AppsPageContent';
 
 export const dynamic = 'force-dynamic';
 
 export default async function AppsPage() {
-  const apps = await getActiveApps();
-  return <AppsPageContent initialApps={apps} />;
+  const [activeApps, deprecatedApps] = await Promise.all([
+    getActiveApps(),
+    getDeprecatedApps(),
+  ]);
+  return <AppsPageContent initialApps={[...activeApps, ...deprecatedApps]} />;
 }
