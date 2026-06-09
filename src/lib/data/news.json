@@ -64,9 +64,9 @@
       "ru": "Lystcode 1.0.0 вышел — мощное программирование для всех"
     },
     "caption": {
-      "en": "Lystcode 1.0.0 is now available on macOS, Windows, and Linux. This IDE focused on usability features intelligent code completion, multi-language support (Python, JavaScript, TypeScript, Rust, Java, C++, and more), and a clean, distraction-free interface. Download it now via DMG (macOS), EXE (Windows), or AppImage/DEB/RPM/AUR (Linux). Completely free and open source under MIT license.",
-      "zh": "Lystcode 1.0.0 现已支持 macOS、Windows 和 Linux。这款注重可用性的 IDE 具有智能代码补全、多语言支持（Python、JavaScript、TypeScript、Rust、Java、C++ 等）以及简洁无干扰的界面。立即通过 DMG（macOS）、EXE（Windows）或 AppImage/DEB/RPM/AUR（Linux）下载。基于 MIT 许可证，完全免费开源。",
-      "ru": "Lystcode 1.0.0 теперь доступен на macOS, Windows и Linux. Этот IDE с фокусом на удобство использования предлагает интеллектуальное автодополнение кода, поддержку множества языков (Python, JavaScript, TypeScript, Rust, Java, C++ и др.) и чистый интерфейс без отвлекающих элементов. Скачайте сейчас через DMG (macOS), EXE (Windows) или AppImage/DEB/RPM/AUR (Linux). Полностью бесплатный и открытый под лицензией MIT."
+      "en": "Lystcode 1.0.0 is now available on macOS, Windows, and Linux. Features code completion, multi-language support (Python, JavaScript, TypeScript, Rust, Java, C++, and more), and a clean interface. Download via DMG (macOS), EXE (Windows), or AppImage/DEB/RPM/AUR (Linux). Free and open source under MIT license.",
+      "zh": "Lystcode 1.0.0 现已支持 macOS、Windows 和 Linux。具有代码补全、多语言支持（Python、JavaScript、TypeScript、Rust、Java、C++ 等）以及简洁界面。通过 DMG（macOS）、EXE（Windows）或 AppImage/DEB/RPM/AUR（Linux）下载。基于 MIT 许可证，免费开源。",
+      "ru": "Lystcode 1.0.0 теперь доступен на macOS, Windows и Linux. Включает автодополнение кода, поддержку множества языков (Python, JavaScript, TypeScript, Rust, Java, C++ и др.) и чистый интерфейс. Скачайте через DMG (macOS), EXE (Windows) или AppImage/DEB/RPM/AUR (Linux). Бесплатный и открытый под лицензией MIT."
     },
     "date": "2026-04-05",
     "tintColor": "#6366f1",
@@ -83,9 +83,9 @@
       "ru": "Представляем Lystcode — наш новый функционально‑ориентированный IDE"
     },
     "caption": {
-      "en": "We are launching Lystcode, a simple, feature‑focused IDE you fully control. Right now we ship native binaries for Linux; on macOS and Windows you can build it yourself from source at https://gitlab.com/Openlyst/Lystcode Lystcode speaks Gemini, Codex, Cursor, Kimi, and Copilot — all via local CLIs, not hosted APIs, so you use your own subscriptions instead of paying us for API markup. The app is completely free and FOSS under the MIT license, which is different from our usual AGPL.",
-      "zh": "我们发布了 Lystcode，这是一款简单易用、以功能为核心的全新 IDE，并且完全由你掌控。当前我们只提供 Linux 原生二进制；在 macOS 和 Windows 上，你可以从源码自行编译（仓库地址：https://gitlab.com/Openlyst/Lystcode ）。Lystcode 支持 Gemini、Codex、Cursor、Kimi 和 Copilot，并通过本地 CLI 而不是托管 API 工作，因此你可以直接使用自己的订阅，而不是为额外的 API 费用买单。Lystcode 完全免费并且开源，采用 MIT 许可证，这与我们通常使用的 AGPL 不同。",
-      "ru": "Мы запускаем Lystcode — простой IDE с фокусом на AIвы полностью управляете. Сейчас мы поставляем нативные бинарники только для Linux; на macOS и Windows вы можете собрать его сами из исходников по адресу https://gitlab.com/Openlyst/Lystcode Lystcode работает с Gemini, Codex, Cursor, Kimi и Copilot через локальные CLI, а не облачные API, поэтому вы используете собственные подписки и не платите нам за наценку на API. Приложение полностью бесплатно и FOSS под лицензией MIT, что отличается от нашего привычного AGPL."
+      "en": "We are launching Lystcode, a simple IDE you fully control. Native binaries for Linux are available now; on macOS and Windows you can build from source at https://gitlab.com/Openlyst/Lystcode Lystcode works with Gemini, Codex, Cursor, Kimi, and Copilot via local CLIs, not hosted APIs, so you use your own subscriptions. Free and open source under MIT license.",
+      "zh": "我们发布了 Lystcode，这是一款简单易用的 IDE，完全由你掌控。目前提供 Linux 原生二进制；在 macOS 和 Windows 上，你可以从源码自行编译（仓库地址：https://gitlab.com/Openlyst/Lystcode ）。Lystcode 通过本地 CLI 支持 Gemini、Codex、Cursor、Kimi 和 Copilot，而不是托管 API，因此你可以直接使用自己的订阅。免费开源，采用 MIT 许可证。",
+      "ru": "Мы запускаем Lystcode — простой IDE, которым вы полностью управляете. Нативные бинарники для Linux доступны сейчас; на macOS и Windows вы можете собрать из исходников по адресу https://gitlab.com/Openlyst/Lystcode Lystcode работает с Gemini, Codex, Cursor, Kimi и Copilot через локальные CLI, а не облачные API, поэтому вы используете собственные подписки. Бесплатный и открытый под лицензией MIT."
     },
     "date": "2026-03-16",
     "tintColor": "#6366f1",
@@ -140,9 +140,9 @@
       "ru": "Finar и Klit присоединяются к Rust-дорожной карте"
     },
     "caption": {
-      "en": "Finar and Klit have both been rewritten as native apps, which is our main stack for now. They will come out any day now. We are super excited to show you these new apps — they are faster, smoother, less buggy and jank. We are still sad we had to leave Flutter, but it left us no other option; we just could not ruin apps, so they're native now.",
-      "zh": "Finar 和 Klit 均已重写为原生应用，这是我们目前的主技术栈。它们即将发布。我们非常期待向大家展示这些新应用——更快、更流畅、更少卡顿与 bug。我们仍对离开 Flutter 感到遗憾，但别无选择；我们无法眼睁睁看着应用变糟，所以它们现在是原生应用。",
-      "ru": "Finar и Klit полностью переписаны как нативные приложения — наш текущий основной стек. Они выйдут со дня на день. Мы очень рады показать вам эти приложения — они быстрее, плавнее, с меньшим количеством багов и лагов. Нам по-прежнему грустно, что пришлось уйти с Flutter, но он не оставил нам выбора; мы не могли позволить приложениям деградировать, поэтому теперь они нативные."
+      "en": "Finar and Klit have been rewritten as native apps, our current main stack. They will be released soon. These new apps are faster, smoother, and have fewer bugs. We had to leave Flutter, but it was necessary to maintain app quality.",
+      "zh": "Finar 和 Klit 已重写为原生应用，这是我们目前的主技术栈。它们即将发布。这些新应用更快、更流畅、bug 更少。我们不得不离开 Flutter，但这是保持应用质量的必要选择。",
+      "ru": "Finar и Klit переписаны как нативные приложения, наш текущий основной стек. Они скоро выйдут. Эти новые приложения быстрее, плавнее и с меньшим количеством багов. Нам пришлось уйти с Flutter, но это было необходимо для поддержания качества приложений."
     },
     "date": "2026-02-20",
     "tintColor": "#6366f1",

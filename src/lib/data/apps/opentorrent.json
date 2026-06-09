@@ -196,9 +196,9 @@
         "Web": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/opentorrent-1.0.0-2026-02-08-web.zip"
       },
       "localizedDescription": {
-        "en": "Initial release of Opentorrent, a cross-platform qBittorrent client that brings seamless torrenting to iOS, macOS, Windows, Linux, Android, and the Web.",
-        "zh": "开放种子的首次发布，这是一款跨平台的 qBittorrent 客户端，为 iOS、macOS、Windows、Linux、Android 和 Web 带来无缝的种子下载体验。",
-        "ru": "Первоначальный выпуск Opentorrent — кроссплатформенного клиента qBittorrent, который обеспечивает бесперебойную работу с торрентами на iOS, macOS, Windows, Linux, Android и в веб-браузере."
+        "en": "First release of Opentorrent, a cross-platform qBittorrent client for iOS, macOS, Windows, Linux, Android, and the Web.",
+        "zh": "开放种子首次发布，这是一款跨平台的 qBittorrent 客户端，支持 iOS、macOS、Windows、Linux、Android 和 Web。",
+        "ru": "Первый выпуск Opentorrent — кроссплатформенного клиента qBittorrent для iOS, macOS, Windows, Linux, Android и веба."
       }
     }
   ]
