@@ -4,18 +4,27 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Section, AppCard, Skeleton } from '@/components';
 import { useLanguage } from '@/lib/contexts/LanguageContext';
-import { getActiveApps } from '@/lib/services/dataService';
+import { getActiveApps, getDeprecatedApps } from '@/lib/services/dataService';
 import type { App } from '@/lib/types/repo';
 
 export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
   const { t, language } = useLanguage();
   const [apps, setApps] = useState<App[]>(initialApps);
+  const [deprecatedApps, setDeprecatedApps] = useState<App[]>([]);
   const [prevLang, setPrevLang] = useState(language);
 
   useEffect(() => {
     if (prevLang === language) return;
     setPrevLang(language);
-    getActiveApps(language).then(setApps).catch(console.error);
+    Promise.all([
+      getActiveApps(language),
+      getDeprecatedApps(language),
+    ])
+      .then(([active, deprecated]) => {
+        setApps(active);
+        setDeprecatedApps(deprecated);
+      })
+      .catch(console.error);
   }, [language, prevLang]);
 
   return (
@@ -56,18 +65,18 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
             <p className="text-gray-400 max-w-md mx-auto">{t.apps.noAppsDesc}</p>
           </div>
         )}
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 text-sm mb-3">{t.apps.cantFind}</p>
-          <Link
-            href="/deprecated"
-            className="inline-flex items-center text-gray-300 hover:text-white transition-colors text-sm font-medium"
-          >
-            <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {t.apps.checkDeprecated}
-          </Link>
-        </div>
+        {deprecatedApps.length > 0 && (
+          <div className="mt-12 text-center">
+            <div className="glass-card inline-block px-4 py-3 rounded-lg border border-yellow-500/30 bg-yellow-500/10">
+              <p className="text-yellow-300 text-sm font-medium mb-2">
+                ⚠️ {deprecatedApps.length} {deprecatedApps.length === 1 ? 'app is' : 'apps are'} deprecated
+              </p>
+              <p className="text-gray-400 text-xs">
+                These apps are no longer maintained but may still work
+              </p>
+            </div>
+          </div>
+        )}
         <div className="mt-12 text-center">
           <p className="text-gray-400 mb-6">{t.apps.wantToContributeDesc}</p>
           <Link

@@ -47,7 +47,6 @@
     "noAppsYet": "暂无应用",
     "noAppsDesc": "我们正在向目录中加入更多应用，请稍后再来查看。",
     "cantFind": "找不到您想要的应用？",
-    "checkDeprecated": "查看已弃用的应用",
     "wantToContribute": "想要贡献？",
     "wantToContributeDesc": "帮助我们持续改进和维护 OpenLyst 应用。",
     "contributeText": "加入我们相信免费、开源软件的开发者和用户社区。我们可以共同创造企业控制平台的替代品。",
@@ -62,20 +61,6 @@
     "noNews": "尚未发布新闻。",
     "readMore": "了解更多",
     "openApp": "打开应用"
-  },
-  "deprecated": {
-    "title": "已弃用的应用",
-    "subtitle": "这些应用不再积极维护。它们可能仍然可以使用，但不会收到更新或支持。",
-    "noLongerMaintained": "不再维护",
-    "discontinuedApps": "已停止的应用",
-    "discontinuedDesc": "这些应用已被替换或停止。请查看我们的活跃应用以获取替代品。",
-    "deprecatedBadge": "已弃用",
-    "noDeprecated": "没有已弃用的应用",
-    "noDeprecatedDesc": "我们所有的应用目前都在积极维护中！",
-    "viewActiveApps": "查看活跃应用",
-    "appDeprecated": "此应用已被弃用",
-    "appDeprecatedDesc": "此应用程序不再维护，将不会收到更新。请考虑使用替代方案。",
-    "loadingDetails": "请稍等，正在加载应用详情"
   },
   "about": {
     "title": "关于 OpenLyst",
