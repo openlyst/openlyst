@@ -146,15 +146,6 @@ export interface NewsItem {
   appID?: string;
 }
 
-/** Resolved repository entry with localized name/description (e.g. from getRepos). */
-export interface RepositoryEntry {
-  id: string;
-  name: string;
-  type: string;
-  url: string;
-  description?: string;
-}
-
 export interface RepoConfig {
   name: string;
   subtitle: string;
