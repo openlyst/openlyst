@@ -34,6 +34,90 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "10.1.0",
+      "date": "2026-06-09",
+      "releaseTag": "build-102",
+      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/main",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository",
+        "macOS": "Download the latest macOS build",
+        "Windows": "Download the latest Windows build",
+        "Linux": "Download the latest Linux build from GitLab CI",
+        "Web": "Access the web version"
+      },
+      "repos": {
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "macOS": {
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        }
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-102/klit-10.1.0-2026-06-09-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-102/klit-10.1.0-2026-06-09-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-102/klit-10.1.0-2026-06-09-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-102/klit-10.1.0-2026-06-09.apk",
+          "aab": ""
+        },
+        "Web": ""
+      },
+      "localizedDescription": {
+        "en": "# 10.1.0\n\n- Migrated to e621 Post API v2\n- Updated post response parsing for new JSON structure (files, stats, flags, has, relationships)\n- Added support for new fields: uploader_name, change_seq, approver_id, locked_tags\n- Tags are now returned as flat array (grouped as 'general' for compatibility)\n- Removed unwrapRailsArray from post endpoints (v2 returns arrays directly)"
+      }
+    },
+    {
       "version": "9.0.1",
       "date": "2026-04-12",
       "releaseTag": "build-90",
