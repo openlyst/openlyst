@@ -52,6 +52,7 @@ export interface AppCardProps {
   href: string;
   features?: string[];
   tintColor?: string;
+  deprecated?: boolean;
 }
 
 export function AppCard({
@@ -62,6 +63,7 @@ export function AppCard({
   image = '',
   href,
   tintColor = '#8b5cf6',
+  deprecated = false,
 }: AppCardProps) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
@@ -117,18 +119,25 @@ export function AppCard({
         )}
         <div className="flex flex-col">
           <h3 className="text-white text-xl font-semibold">{title}</h3>
-          {status !== 'released' && (
-            <span
-              className="inline-block w-fit px-2.5 py-1 rounded text-xs font-medium border mt-1.5"
-              style={{
-                background: statusColors[status].bg,
-                color: statusColors[status].text,
-                borderColor: statusColors[status].border,
-              }}
-            >
-              {statusText}
-            </span>
-          )}
+          <div className="flex gap-2 mt-1.5">
+            {deprecated && (
+              <span className="inline-block w-fit px-2.5 py-1 rounded text-xs font-medium border bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
+                DEPRECATED
+              </span>
+            )}
+            {status !== 'released' && (
+              <span
+                className="inline-block w-fit px-2.5 py-1 rounded text-xs font-medium border"
+                style={{
+                  background: statusColors[status].bg,
+                  color: statusColors[status].text,
+                  borderColor: statusColors[status].border,
+                }}
+              >
+                {statusText}
+              </span>
+            )}
+          </div>
         </div>
       </div>
 
