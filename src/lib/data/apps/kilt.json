@@ -1,10 +1,10 @@
 {
-  "bundleIdentifier": "klit",
-  "applicationId": "gitlab.openlyst.klit",
+  "bundleIdentifier": "kilt",
+  "applicationId": "gitlab.openlyst.kilt",
   "name": {
     "en": "Kilt",
-    "zh": "Klit",
-    "ru": "Klit"
+    "zh": "Kilt",
+    "ru": "Kilt"
   },
   "subtitle": {
     "en": "E926 API client",

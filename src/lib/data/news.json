@@ -133,16 +133,16 @@
     "appID": ""
   },
   {
-    "identifier": "finar_klit_rust_roadmap_2026",
+    "identifier": "finar_kilt_rust_roadmap_2026",
     "title": {
-      "en": "Finar and Klit Join the Rust Roadmap",
-      "zh": "Finar 与 Klit 加入 Rust 路线图",
-      "ru": "Finar и Klit присоединяются к Rust-дорожной карте"
+      "en": "Finar and Kilt Join the Rust Roadmap",
+      "zh": "Finar 与 Kilt 加入 Rust 路线图",
+      "ru": "Finar и Kilt присоединяются к Rust-дорожной карте"
     },
     "caption": {
-      "en": "Finar and Klit have been rewritten as native apps, our current main stack. They will be released soon. These new apps are faster, smoother, and have fewer bugs. We had to leave Flutter, but it was necessary to maintain app quality.",
-      "zh": "Finar 和 Klit 已重写为原生应用，这是我们目前的主技术栈。它们即将发布。这些新应用更快、更流畅、bug 更少。我们不得不离开 Flutter，但这是保持应用质量的必要选择。",
-      "ru": "Finar и Klit переписаны как нативные приложения, наш текущий основной стек. Они скоро выйдут. Эти новые приложения быстрее, плавнее и с меньшим количеством багов. Нам пришлось уйти с Flutter, но это было необходимо для поддержания качества приложений."
+      "en": "Finar and Kilt have been rewritten as native apps, our current main stack. They will be released soon. These new apps are faster, smoother, and have fewer bugs. We had to leave Flutter, but it was necessary to maintain app quality.",
+      "zh": "Finar 和 Kilt 已重写为原生应用，这是我们目前的主技术栈。它们即将发布。这些新应用更快、更流畅、bug 更少。我们不得不离开 Flutter，但这是保持应用质量的必要选择。",
+      "ru": "Finar и Kilt переписаны как нативные приложения, наш текущий основной стек. Они скоро выйдут. Эти новые приложения быстрее, плавнее и с меньшим количеством багов. Нам пришлось уйти с Flutter, но это было необходимо для поддержания качества приложений."
     },
     "date": "2026-02-20",
     "tintColor": "#6366f1",
@@ -495,21 +495,21 @@
   {
     "identifier": "baobao_deprecated_klit_release",
     "title": {
-      "en": "BaoBao Discontinued - Meet Klit!",
-      "zh": "BaoBao 停产 - 认识 Klit！",
-      "ru": "BaoBao прекращён — встречайте Klit!"
+      "en": "BaoBao Discontinued - Meet Kilt!",
+      "zh": "BaoBao 停产 - 认识 Kilt！",
+      "ru": "BaoBao прекращён — встречайте Kilt!"
     },
     "caption": {
-      "en": "BaoBao is being retired in favor of Klit, our new e621 client.",
-      "zh": "BaoBao 正在退役，由新的 e621 客户端 Klit 取代。",
-      "ru": "BaoBao прекращается в пользу Klit — нашего нового клиента e621."
+      "en": "BaoBao is being retired in favor of Kilt, our new e621 client.",
+      "zh": "BaoBao 正在退役，由新的 e621 客户端 Kilt 取代。",
+      "ru": "BaoBao прекращается в пользу Kilt — нашего нового клиента e621."
     },
     "date": "2025-12-06",
     "tintColor": "#ff6b35",
     "imageURL": "/icons/Klit/klit_release_image.png",
     "notify": true,
     "url": "/apps/klit",
-    "appID": "klit"
+    "appID": "kilt"
   },
   {
     "identifier": "doudou_600_release",
