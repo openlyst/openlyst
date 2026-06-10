@@ -2,7 +2,7 @@
   "bundleIdentifier": "klit",
   "applicationId": "gitlab.openlyst.klit",
   "name": {
-    "en": "Klit",
+    "en": "Kilt",
     "zh": "Klit",
     "ru": "Klit"
   },
@@ -114,7 +114,9 @@
         "Web": ""
       },
       "localizedDescription": {
-        "en": "# 10.1.0\n\n- Migrated to e621 Post API v2\n- Updated post response parsing for new JSON structure (files, stats, flags, has, relationships)\n- Added support for new fields: uploader_name, change_seq, approver_id, locked_tags\n- Tags are now returned as flat array (grouped as 'general' for compatibility)\n- Removed unwrapRailsArray from post endpoints (v2 returns arrays directly)"
+        "en": "# 10.1.0\n\n- App is being renamed from Klit to Kilt in English because the old name sounds like an inappropriate word\n- Migrated to e621 Post API v2\n- Updated post response parsing for new JSON structure (files, stats, flags, has, relationships)\n- Added support for new fields: uploader_name, change_seq, approver_id, locked_tags\n- Tags are now returned as flat array (grouped as 'general' for compatibility)\n- Removed unwrapRailsArray from post endpoints (v2 returns arrays directly)",
+        "zh": "# 10.1.0\n\n- 应用在英语中从 Klit 更名为 Kilt，因为旧名称听起来像不雅词汇\n- 迁移到 e621 Post API v2\n- 更新了帖子响应解析以适配新的 JSON 结构（files、stats、flags、has、relationships）\n- 新增字段支持：uploader_name、change_seq、approver_id、locked_tags\n- 标签现在以扁平数组返回（为兼容性归类为 'general'）\n- 从帖子端点移除了 unwrapRailsArray（v2 直接返回数组）",
+        "ru": "# 10.1.0\n\n- Приложение переименовано с Klit на Kilt в английском языке, так как старое название звучит как неприличное слово\n- Переход на e621 Post API v2\n- Обновлен разбор ответов постов для новой структуры JSON (files, stats, flags, has, relationships)\n- Добавлена поддержка новых полей: uploader_name, change_seq, approver_id, locked_tags\n- Теги теперь возвращаются плоским массивом (сгруппированы как 'general' для совместимости)\n- Удален unwrapRailsArray из эндпоинтов постов (v2 возвращает массивы напрямую)"
       }
     },
     {
