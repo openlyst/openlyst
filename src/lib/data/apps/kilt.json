@@ -147,7 +147,7 @@
         }
       },
       "downloads": {
-        "iOS": "https://github.com/openlyst/builds/releases/download/build-102/klit-10.1.0-2026-06-09-ios-unsigned.ipa",
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-102/kilt-10.1.0-2026-06-09-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
@@ -156,7 +156,7 @@
         },
         "Windows": {
           "zip": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-102/klit-10.1.0-2026-06-09-windows-x64.zip",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-102/kilt-10.1.0-2026-06-09-windows-x64.zip",
             "arm64": ""
           },
           "exe": {
@@ -181,7 +181,7 @@
             "arm64": ""
           },
           "appimage": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-102/klit-10.1.0-2026-06-09-linux-x86_64.AppImage",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-102/kilt-10.1.0-2026-06-09-linux-x86_64.AppImage",
             "arm64": ""
           },
           "rpm": {
@@ -194,7 +194,7 @@
           }
         },
         "Android": {
-          "apk": "https://github.com/openlyst/builds/releases/download/build-102/klit-10.1.0-2026-06-09.apk",
+          "apk": "https://github.com/openlyst/builds/releases/download/build-102/kilt-10.1.0-2026-06-09.apk",
           "aab": ""
         },
         "Web": ""
@@ -233,20 +233,20 @@
         }
       },
       "downloads": {
-        "iOS": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-ios-unsigned.ipa",
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12-ios-unsigned.ipa",
         "macOS": {
           "x86_64": "",
           "arm64": "",
-          "universal": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-macos-unsigned.zip",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12-macos-unsigned.zip",
           "homebrew": ""
         },
         "Windows": {
           "zip": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-windows-x64.zip",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12-windows-x64.zip",
             "arm64": ""
           },
           "exe": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-windows-x64-setup.exe",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12-windows-x64-setup.exe",
             "arm64": ""
           },
           "msix": {
@@ -263,15 +263,15 @@
         },
         "Linux": {
           "zip": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-linux-x64.zip",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12-linux-x64.zip",
             "arm64": ""
           },
           "appimage": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-linux-x86_64.AppImage",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12-linux-x86_64.AppImage",
             "arm64": ""
           },
           "rpm": {
-            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12-linux-amd64.rpm",
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12-linux-amd64.rpm",
             "arm64": ""
           },
           "deb": {
@@ -280,8 +280,8 @@
           }
         },
         "Android": {
-          "apk": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12.apk",
-          "aab": "https://github.com/openlyst/builds/releases/download/build-90/klit-9.0.1-2026-04-12.aab"
+          "apk": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-90/kilt-9.0.1-2026-04-12.aab"
         },
         "Web": ""
       },
