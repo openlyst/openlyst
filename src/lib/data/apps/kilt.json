@@ -16,7 +16,7 @@
     "zh": "为 e621 社区打造，默认注重隐私，并提供快速浏览体验。",
     "ru": "Для сообщества e621 с приватными настройками по умолчанию и быстрым просмотром."
   },
-  "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/icon.png?ref_type=heads",
+  "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/icon.png?ref_type=heads",
   "tintColor": "#f43f5e",
   "platforms": [
     "iOS",
@@ -27,9 +27,9 @@
     "Web"
   ],
   "screenshots": [
-    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/home.png?ref_type=heads",
-    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/popular.png?ref_type=heads",
-    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/post.png?ref_type=heads"
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/home.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/popular.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/post.png?ref_type=heads"
   ],
   "deprecated": false,
   "versions": [
