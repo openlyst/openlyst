@@ -16,7 +16,7 @@
     "zh": "为 e621 社区打造，默认注重隐私，并提供快速浏览体验。",
     "ru": "Для сообщества e621 с приватными настройками по умолчанию и быстрым просмотром."
   },
-  "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/icon.png?ref_type=heads",
+  "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/icon.png?ref_type=heads",
   "tintColor": "#f43f5e",
   "platforms": [
     "iOS",
@@ -27,12 +27,98 @@
     "Web"
   ],
   "screenshots": [
-    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/home.png?ref_type=heads",
-    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/popular.png?ref_type=heads",
-    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Klit/post.png?ref_type=heads"
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/home.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/popular.png?ref_type=heads",
+    "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/post.png?ref_type=heads"
   ],
   "deprecated": false,
   "versions": [
+    {
+      "version": "10.1.2",
+      "date": "2026-06-11",
+      "releaseTag": "build-110",
+      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/main",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository",
+        "macOS": "Download the latest macOS build",
+        "Windows": "Download the latest Windows build",
+        "Linux": "Download the latest Linux build from GitLab CI",
+        "Web": "Access the web version"
+      },
+      "repos": {
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "macOS": {
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        }
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-110/kilt-10.1.2-2026-06-11-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-110/kilt-10.1.2-2026-06-11-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-110/kilt-10.1.2-2026-06-11-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-110/kilt-10.1.2-2026-06-11-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-110/kilt-10.1.2-2026-06-11-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-110/kilt-10.1.2-2026-06-11.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-110/kilt-10.1.2-2026-06-11.aab"
+        },
+        "Web": ""
+      },
+      "localizedDescription": {
+        "en": "# 10.1.2\n\n- Renames the application to not sound like a bad word in English and updates the app id",
+        "zh": "# 10.1.2\n\n- 重命名应用程序以避免在英语中听起来像不雅词汇，并更新了应用 ID",
+        "ru": "# 10.1.2\n\n- Переименовано приложение, чтобы оно не звучало как неприличное слово на английском языке, и обновлен идентификатор приложения"
+      }
+    },
     {
       "version": "10.1.0",
       "date": "2026-06-09",
