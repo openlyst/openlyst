@@ -506,7 +506,7 @@
     },
     "date": "2025-12-06",
     "tintColor": "#ff6b35",
-    "imageURL": "/icons/Klit/klit_release_image.png",
+    "imageURL": "/icons/Kilt/klit_release_image.png",
     "notify": true,
     "url": "/apps/klit",
     "appID": "kilt"
