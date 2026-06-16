@@ -19,25 +19,6 @@
     "appID": "doudou"
   },
   {
-    "identifier": "lystcode_docan_discontinued_2026",
-    "title": {
-      "en": "Lystcode and Docan Discontinued",
-      "zh": "Lystcode 和 Docan 已停止维护",
-      "ru": "Lystcode и Docan прекращены"
-    },
-    "caption": {
-      "en": "Lystcode and Docan have been discontinued. We are no longer maintaining or releasing updates for these applications. Thank you to everyone who used them.",
-      "zh": "Lystcode 和 Docan 已停止维护。我们不再为这些应用程序提供维护或发布更新。感谢所有使用它们的用户。",
-      "ru": "Lystcode и Docan прекращены. Мы больше не поддерживаем и не выпускаем обновления для этих приложений. Спасибо всем, кто ими пользовался."
-    },
-    "date": "2026-06-04",
-    "tintColor": "#dc2626",
-    "imageURL": "/favicon.svg",
-    "notify": true,
-    "url": "",
-    "appID": ""
-  },
-  {
     "identifier": "doudou_190_release",
     "title": {
       "en": "DouDou v19.0.0 Released",
@@ -55,44 +36,6 @@
     "notify": true,
     "url": "/apps/doudou",
     "appID": "doudou"
-  },
-  {
-    "identifier": "lystcode_100_release",
-    "title": {
-      "en": "Lystcode 1.0.0 is Here — Powerful Coding for Everyone",
-      "zh": "Lystcode 1.0.0 发布 — 人人可用的强大编程工具",
-      "ru": "Lystcode 1.0.0 вышел — мощное программирование для всех"
-    },
-    "caption": {
-      "en": "Lystcode 1.0.0 is now available on macOS, Windows, and Linux. Features code completion, multi-language support (Python, JavaScript, TypeScript, Rust, Java, C++, and more), and a clean interface. Download via DMG (macOS), EXE (Windows), or AppImage/DEB/RPM/AUR (Linux). Free and open source under MIT license.",
-      "zh": "Lystcode 1.0.0 现已支持 macOS、Windows 和 Linux。具有代码补全、多语言支持（Python、JavaScript、TypeScript、Rust、Java、C++ 等）以及简洁界面。通过 DMG（macOS）、EXE（Windows）或 AppImage/DEB/RPM/AUR（Linux）下载。基于 MIT 许可证，免费开源。",
-      "ru": "Lystcode 1.0.0 теперь доступен на macOS, Windows и Linux. Включает автодополнение кода, поддержку множества языков (Python, JavaScript, TypeScript, Rust, Java, C++ и др.) и чистый интерфейс. Скачайте через DMG (macOS), EXE (Windows) или AppImage/DEB/RPM/AUR (Linux). Бесплатный и открытый под лицензией MIT."
-    },
-    "date": "2026-04-05",
-    "tintColor": "#6366f1",
-    "imageURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Lystcode/icon.png?ref_type=heads",
-    "notify": true,
-    "url": "/apps/lystcode",
-    "appID": "lystcode"
-  },
-  {
-    "identifier": "lystcode_ai_ide_2026",
-    "title": {
-      "en": "Introducing Lystcode — Our New Feature‑Focused IDE",
-      "zh": "全新 Lystcode — 我们的功能聚焦 IDE",
-      "ru": "Представляем Lystcode — наш новый функционально‑ориентированный IDE"
-    },
-    "caption": {
-      "en": "We are launching Lystcode, a simple IDE you fully control. Native binaries for Linux are available now; on macOS and Windows you can build from source at https://gitlab.com/Openlyst/Lystcode Lystcode works with Gemini, Codex, Cursor, Kimi, and Copilot via local CLIs, not hosted APIs, so you use your own subscriptions. Free and open source under MIT license.",
-      "zh": "我们发布了 Lystcode，这是一款简单易用的 IDE，完全由你掌控。目前提供 Linux 原生二进制；在 macOS 和 Windows 上，你可以从源码自行编译（仓库地址：https://gitlab.com/Openlyst/Lystcode ）。Lystcode 通过本地 CLI 支持 Gemini、Codex、Cursor、Kimi 和 Copilot，而不是托管 API，因此你可以直接使用自己的订阅。免费开源，采用 MIT 许可证。",
-      "ru": "Мы запускаем Lystcode — простой IDE, которым вы полностью управляете. Нативные бинарники для Linux доступны сейчас; на macOS и Windows вы можете собрать из исходников по адресу https://gitlab.com/Openlyst/Lystcode Lystcode работает с Gemini, Codex, Cursor, Kimi и Copilot через локальные CLI, а не облачные API, поэтому вы используете собственные подписки. Бесплатный и открытый под лицензией MIT."
-    },
-    "date": "2026-03-16",
-    "tintColor": "#6366f1",
-    "imageURL": "/favicon.svg",
-    "notify": true,
-    "url": "https://gitlab.com/Openlyst/Lystcode",
-    "appID": ""
   },
   {
     "identifier": "going_production_new_infra_2026",
@@ -188,25 +131,6 @@
     "notify": true,
     "url": "/apps/doudou",
     "appID": "doudou"
-  },
-  {
-    "identifier": "docan_finar_apkpure_2026",
-    "title": {
-      "en": "Docan and Finar Join APKPure with Doudou",
-      "zh": "Docan 和 Finar 与 Doudou 一同登陆 APKPure",
-      "ru": "Docan и Finar присоединились к APKPure вместе с Doudou"
-    },
-    "caption": {
-      "en": "Docan and Finar are now on APKPure alongside Doudou. We are super proud of this. Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar",
-      "zh": "Docan 和 Finar 现已与 Doudou 一起登陆 APKPure，我们为此感到非常自豪。Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar",
-      "ru": "Docan и Finar теперь на APKPure вместе с Doudou. Мы очень гордимся этим. Docan: https://apkpure.com/p/gitlab.openlyst.docan — Finar: https://apkpure.com/p/gitlab.openlysr.finar"
-    },
-    "date": "2026-02-17",
-    "tintColor": "#10b981",
-    "imageURL": "/favicon.svg",
-    "notify": true,
-    "url": "",
-    "appID": ""
   },
   {
     "identifier": "doudou_140_release",
@@ -472,25 +396,6 @@
     "notify": true,
     "url": "/apps/openlyst",
     "appID": "repstore"
-  },
-  {
-    "identifier": "docan_100_release",
-    "title": {
-      "en": "Docan Is Available",
-      "zh": "多灿已上线",
-      "ru": "Docan уже доступен"
-    },
-    "caption": {
-      "en": "Docan, our cross-platform chat app, is now available.",
-      "zh": "多灿（我们的跨平台聊天应用）现已可用。",
-      "ru": "Docan, наше кроссплатформенное приложение для чата, теперь доступно."
-    },
-    "date": "2025-12-07",
-    "tintColor": "#6366f1",
-    "imageURL": "/icons/Docan/icon.png",
-    "notify": true,
-    "url": "/apps/docan",
-    "appID": "docan"
   },
   {
     "identifier": "baobao_deprecated_klit_release",

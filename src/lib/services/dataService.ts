@@ -17,11 +17,8 @@ import enI18n from '@/lib/data/i18n/en.json';
 import zhI18n from '@/lib/data/i18n/zh.json';
 import ruI18n from '@/lib/data/i18n/ru.json';
 import doudou from '@/lib/data/apps/doudou.json';
-import docan from '@/lib/data/apps/docan.json';
 import finar from '@/lib/data/apps/finar.json';
 import kilt from '@/lib/data/apps/kilt.json';
-import lystcode from '@/lib/data/apps/lystcode.json';
-import opentorrent from '@/lib/data/apps/opentorrent.json';
 import repstore from '@/lib/data/apps/repstore.json';
 
 export type SupportedLanguage = 'en' | 'zh' | 'ru';
@@ -104,11 +101,8 @@ const BASE_URL = 'https://openlyst.ink';
 
 const appModules: LocalizedAppData[] = [
   doudou as LocalizedAppData,
-  docan as LocalizedAppData,
   finar as LocalizedAppData,
   kilt as LocalizedAppData,
-  lystcode as LocalizedAppData,
-  opentorrent as LocalizedAppData,
   repstore as LocalizedAppData,
 ];
 
