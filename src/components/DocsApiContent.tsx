@@ -41,7 +41,7 @@ const endpoints: ApiEndpoint[] = [
     "totalApps": 6,
     "totalNews": 5,
     "tempDownloadsOff": false,
-    "featuredApps": ["doudou", "docan", ...]
+    "featuredApps": ["doudou", "finar", ...]
   }
 }`,
   },
@@ -74,7 +74,7 @@ const endpoints: ApiEndpoint[] = [
     path: '/api/v1/apps/:slug',
     description: 'Full details for one app, including all versions.',
     params: [
-      { name: 'slug', kind: 'path', required: true, description: 'App slug or bundle identifier', values: 'e.g. doudou, docan' },
+      { name: 'slug', kind: 'path', required: true, description: 'App slug or bundle identifier', values: 'e.g. doudou, finar' },
       { name: 'lang', kind: 'query', required: false, description: 'Content language', values: 'en | zh | ru' },
     ],
     exampleResponse: `{
