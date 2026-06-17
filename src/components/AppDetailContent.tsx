@@ -520,7 +520,7 @@ export function AppDetailContent({
                 className="rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-colors"
                 aria-label={`${t.appDetail.viewScreenshots} ${i + 1}`}
               >
-                <img src={src} alt="" className="w-full aspect-video object-cover" />
+                <img src={src} alt="" className="w-full h-auto object-contain" />
               </button>
             ))}
           </div>
