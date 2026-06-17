@@ -55,8 +55,6 @@
     "viewSourceCode": "View Source Code"
   },
   "news": {
-    "title": "Project News",
-    "subtitle": "Official updates about builds, releases, and service status.",
     "latestUpdates": "Latest Updates",
     "latestUpdatesDesc": "Recent announcements from the OpenLyst team.",
     "noNews": "No news has been published yet.",
