@@ -272,9 +272,10 @@ export function AppDetailContent({
 
       {app.versions.length > 0 && (
         <Section title={t.appDetail.downloads} centered>
-          <div className="font-display mx-auto w-full max-w-7xl rounded-2xl border border-gray-800 overflow-hidden flex flex-col lg:flex-row min-h-[540px]">
+          <div className="font-display mx-auto w-full max-w-7xl rounded-2xl border border-gray-800 overflow-hidden flex flex-col lg:flex-row min-h-[540px] relative">
             {/* Version sidebar */}
-            <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800 bg-gray-900 p-3 lg:flex lg:flex-col">
+            <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800 bg-[#0a0a0a] p-3 lg:flex lg:flex-col relative">
+              <div className="absolute top-0 left-0 w-1 h-full" style={{ backgroundColor: app.tintColor || '#8b5cf6' }} />
               <div className="lg:hidden">
                 <button
                   type="button"
@@ -320,7 +321,7 @@ export function AppDetailContent({
                           ) : null}
                         </div>
                         {v.date ? (
-                          <span className="block text-xs font-normal text-gray-500 mt-1">{v.date}</span>
+                          <span className="block text-xs font-normal text-gray-500 mt-1">{v.date.replace(/-/g, '/')}</span>
                         ) : null}
                       </button>
                     ))}
@@ -328,7 +329,7 @@ export function AppDetailContent({
                 )}
               </div>
 
-              <nav className="hidden lg:flex lg:flex-col gap-1.5 overflow-y-auto flex-1 min-h-0">
+              <nav className="hidden lg:flex lg:flex-col gap-1.5 overflow-y-auto flex-1 min-h-0 pl-3">
                 <p className="text-white text-xs font-semibold px-2 pb-1.5">{t.appDetail.versions}</p>
                 {app.versions.map((v, index) => (
                   <button
@@ -337,20 +338,20 @@ export function AppDetailContent({
                     onClick={() => setSelectedVersion(v)}
                     className={`text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 border ${
                       version?.version === v.version
-                        ? 'bg-gray-700 border-gray-600 text-white'
-                        : 'border-transparent text-gray-400 hover:bg-gray-800 hover:text-white'
+                        ? 'bg-gray-800 border-gray-700 text-white'
+                        : 'border-transparent text-gray-400 hover:bg-gray-900 hover:text-white'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <span className="block">{v.version}</span>
                       {index === 0 ? (
-                        <span className="rounded-full bg-gray-600 text-gray-200 text-[10px] font-semibold px-2 py-0.5">
+                        <span className="rounded-full bg-gray-700 text-gray-200 text-[10px] font-semibold px-2 py-0.5">
                           {t.appDetail.latest}
                         </span>
                       ) : null}
                     </div>
                     {v.date ? (
-                      <span className="block text-xs font-normal text-gray-500 mt-1">{v.date}</span>
+                      <span className="block text-xs font-normal text-gray-500 mt-1">{v.date.replace(/-/g, '/')}</span>
                     ) : null}
                   </button>
                 ))}
@@ -360,7 +361,7 @@ export function AppDetailContent({
             <div className="flex-1 overflow-auto flex flex-col min-h-0">
               {version && (
                 <div
-                  className="p-5 sm:p-6 flex flex-col gap-5 bg-gray-900 min-h-full"
+                  className="p-5 sm:p-6 flex flex-col gap-5 bg-[#0a0a0a] min-h-full"
                 >
                   <div className="space-y-1">
                     <h3 className="text-white text-2xl font-semibold">{app.name}</h3>
@@ -375,7 +376,7 @@ export function AppDetailContent({
                           href={version.sourceCode}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-800 hover:bg-gray-700 text-white px-3 py-1.5 text-sm font-semibold transition-colors"
+                          className="inline-flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-900 hover:bg-gray-800 text-white px-3 py-1.5 text-sm font-semibold transition-colors"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -386,9 +387,9 @@ export function AppDetailContent({
                       <button
                         type="button"
                         onClick={() => setChangelogOpen(true)}
-                        className="inline-flex items-center gap-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-white px-3 py-1.5 text-sm font-semibold transition-colors border border-gray-700"
+                        className="inline-flex items-center gap-2 rounded-lg bg-gray-900 hover:bg-gray-800 text-white px-3 py-1.5 text-sm font-semibold transition-colors border border-gray-700"
                       >
-                        <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-600 text-xs">•</span>
+                        <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-700 text-xs">•</span>
                         {t.appDetail.viewDetails}
                       </button>
                     </div>
@@ -397,7 +398,7 @@ export function AppDetailContent({
                   {/* Download cards */}
                   <div>
                     {tempDownloadsOff ? (
-                      <div className="rounded-xl bg-gray-800 border border-gray-700 p-4">
+                      <div className="rounded-xl bg-gray-900 border border-gray-800 p-4">
                         <h4 className="font-semibold text-gray-300">{t.appDetail.downloadsPausedTitle}</h4>
                         <p className="text-gray-500 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
                       </div>
@@ -414,10 +415,10 @@ export function AppDetailContent({
                           return (
                             <div
                               key={platform}
-                              className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 flex flex-col gap-5 text-white"
+                              className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 flex flex-col gap-5 text-white hover:border-gray-700 transition-colors"
                             >
                               <div className="flex items-center gap-3">
-                                <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gray-800 text-gray-400">
+                                <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gray-900 text-gray-400">
                                   {getPlatformIcon(platform)}
                                 </span>
                                 <span className="text-lg font-semibold text-white tracking-tight">{platform}</span>
@@ -426,7 +427,7 @@ export function AppDetailContent({
                                 {!singleOption && (
                                   <div className="relative">
                                     <select
-                                      className="w-full appearance-none rounded-xl border border-gray-700 bg-gray-800 text-white text-sm px-4 py-2.5 pr-10 focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-colors hover:bg-gray-700 cursor-pointer"
+                                      className="w-full appearance-none rounded-xl border border-gray-800 bg-gray-900 text-white text-sm px-4 py-2.5 pr-10 focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-colors hover:bg-gray-800 cursor-pointer"
                                       value={selectedUrl}
                                       onChange={(e) =>
                                         setSelectedUrlByPlatform((prev) => ({ ...prev, [platform]: e.target.value }))
@@ -447,7 +448,7 @@ export function AppDetailContent({
                                   href={selectedUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm text-white transition-all duration-200 bg-gray-800 hover:bg-gray-700 border border-gray-700"
+                                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm text-white transition-all duration-200 bg-gray-900 hover:bg-gray-800 border border-gray-800"
                                 >
                                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -519,7 +520,7 @@ export function AppDetailContent({
                 className="rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-colors"
                 aria-label={`${t.appDetail.viewScreenshots} ${i + 1}`}
               >
-                <img src={src} alt="" className="w-full aspect-video object-cover" />
+                <img src={src} alt="" className="w-full h-auto object-contain" />
               </button>
             ))}
           </div>
