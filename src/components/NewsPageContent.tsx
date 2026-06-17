@@ -45,18 +45,23 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
         ) : (
           <div className="space-y-6">
             {news.map((item) => (
-              <article key={item.identifier} className="glass-card rounded-xl p-6 scroll-contain-cards">
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+              <article 
+                key={item.identifier} 
+                className="relative rounded-2xl border border-gray-800 bg-[#0a0a0a] p-6 overflow-hidden"
+                style={{ borderColor: item.tintColor ? `${item.tintColor}40` : undefined }}
+              >
+                <div className="absolute top-0 left-0 w-1 h-full" style={{ backgroundColor: item.tintColor || '#8b5cf6' }} />
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4 pl-3">
                   <h2 className="text-xl font-semibold text-white">
                     <LinkifiedText text={item.title} />
                   </h2>
-                  <span className="text-sm text-gray-400">{item.date.replace(/-/g, '/')}</span>
+                  <span className="text-sm text-gray-400 whitespace-nowrap">{item.date.replace(/-/g, '/')}</span>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed pl-3">
                   <LinkifiedText text={item.caption} />
                 </p>
                 {item.appID && apps[item.appID] && (
-                  <div className="mt-4">
+                  <div className="mt-4 pl-3">
                     <AppCard
                       title={apps[item.appID].name}
                       description={apps[item.appID].subtitle}
@@ -70,7 +75,7 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
                   </div>
                 )}
                 {item.url && !item.appID && (
-                  <div className="mt-4">
+                  <div className="mt-4 pl-3">
                     <LinkPreview url={item.url} />
                   </div>
                 )}
