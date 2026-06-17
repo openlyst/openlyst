@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { marked } from 'marked';
 import { Section } from '@/components';
-import { AppCard } from '@/components/AppCard';
 import { useLanguage } from '@/lib/contexts/LanguageContext';
 import { getApp } from '@/lib/services/dataService';
 import type { App, AppVersion } from '@/lib/types/repo';
@@ -228,8 +227,6 @@ export function AppDetailContent({
 
   const descriptionHtml = { __html: marked(app.localizedDescription || '') };
 
-  const status: 'released' | 'beta' | 'development' = app.beta ? 'beta' : app.deprecated ? 'development' : 'released';
-
   return (
     <>
       <section className="relative text-white py-10 sm:py-12">
@@ -241,19 +238,6 @@ export function AppDetailContent({
             >
               ← {t.appDetail.backToApps}
             </Link>
-
-            <div className="mb-8">
-              <AppCard
-                title={app.name}
-                description={app.subtitle}
-                status={status}
-                platforms={app.platforms}
-                image={app.iconURL}
-                href={`/apps/${app.slug}`}
-                tintColor={app.tintColor}
-                deprecated={app.deprecated}
-              />
-            </div>
             <div className="flex flex-col sm:flex-row items-start gap-6">
               <img
                 src={app.iconURL}
