@@ -2,23 +2,40 @@
 
 import { useState, useEffect } from 'react';
 import { Section } from '@/components';
+import { AppCard } from '@/components/AppCard';
 import { LinkifiedText } from '@/components/LinkifiedText';
 import { LinkPreview } from '@/components/LinkPreview';
 import { extractUrls } from '@/lib/utils/linkify';
 import { useLanguage } from '@/lib/contexts/LanguageContext';
-import { getAllNews } from '@/lib/services/dataService';
-import type { NewsItem } from '@/lib/types/repo';
+import { getAllNews, getApp } from '@/lib/services/dataService';
+import type { NewsItem, App } from '@/lib/types/repo';
 
 export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
   const { t, language } = useLanguage();
   const [news, setNews] = useState<NewsItem[]>(initialNews);
   const [prevLang, setPrevLang] = useState(language);
+  const [apps, setApps] = useState<Record<string, App>>({});
 
   useEffect(() => {
     if (prevLang === language) return;
     setPrevLang(language);
     getAllNews(language).then(setNews).catch(console.error);
   }, [language, prevLang]);
+
+  useEffect(() => {
+    const appIds = news.filter(item => item.appID).map(item => item.appID!);
+    const uniqueAppIds = [...new Set(appIds)];
+    
+    uniqueAppIds.forEach(appId => {
+      if (!apps[appId]) {
+        getApp(appId, language).then(app => {
+          if (app) {
+            setApps(prev => ({ ...prev, [appId]: app }));
+          }
+        }).catch(console.error);
+      }
+    });
+  }, [news, language, apps]);
 
   return (
     <>
@@ -38,6 +55,20 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
                 <p className="text-gray-300 leading-relaxed">
                   <LinkifiedText text={item.caption} />
                 </p>
+                {item.appID && apps[item.appID] && (
+                  <div className="mt-4">
+                    <AppCard
+                      title={apps[item.appID].name}
+                      description={apps[item.appID].subtitle}
+                      status={apps[item.appID].beta ? 'beta' : apps[item.appID].deprecated ? 'development' : 'released'}
+                      platforms={apps[item.appID].platforms}
+                      image={apps[item.appID].iconURL}
+                      href={`/apps/${apps[item.appID].slug}`}
+                      tintColor={apps[item.appID].tintColor}
+                      deprecated={apps[item.appID].deprecated}
+                    />
+                  </div>
+                )}
                 {item.url && (
                   <div className="mt-4">
                     <LinkPreview url={item.url} />
