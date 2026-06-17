@@ -22,15 +22,6 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
 
   return (
     <>
-      <section className="relative text-white overflow-hidden min-h-[45vh] flex items-center">
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:py-24 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 text-white">
-            {t.news.title}
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">{t.news.subtitle}</p>
-        </div>
-      </section>
-
       <Section title={t.news.latestUpdates} subtitle={t.news.latestUpdatesDesc} background="default" centered>
         {news.length === 0 ? (
           <div className="text-center py-12 text-gray-400">{t.news.noNews}</div>
