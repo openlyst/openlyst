@@ -213,6 +213,13 @@ export function DocsApiContent() {
   return (
     <>
       <section className="relative text-white overflow-hidden min-h-[50vh] flex items-center">
+        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px'
+        }} />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4 text-white">
