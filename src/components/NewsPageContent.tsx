@@ -33,7 +33,7 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
                   <h2 className="text-xl font-semibold text-white">
                     <LinkifiedText text={item.title} />
                   </h2>
-                  <span className="text-sm text-gray-400">{item.date}</span>
+                  <span className="text-sm text-gray-400">{item.date.replace(/-/g, '/')}</span>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
                   <LinkifiedText text={item.caption} />
