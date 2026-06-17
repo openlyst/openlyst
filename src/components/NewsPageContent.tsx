@@ -69,7 +69,7 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
                     />
                   </div>
                 )}
-                {item.url && (
+                {item.url && !item.appID && (
                   <div className="mt-4">
                     <LinkPreview url={item.url} />
                   </div>
