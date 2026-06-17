@@ -321,7 +321,7 @@ export function AppDetailContent({
                           ) : null}
                         </div>
                         {v.date ? (
-                          <span className="block text-xs font-normal text-gray-500 mt-1">{v.date}</span>
+                          <span className="block text-xs font-normal text-gray-500 mt-1">{v.date.replace(/-/g, '/')}</span>
                         ) : null}
                       </button>
                     ))}
@@ -351,7 +351,7 @@ export function AppDetailContent({
                       ) : null}
                     </div>
                     {v.date ? (
-                      <span className="block text-xs font-normal text-gray-500 mt-1">{v.date}</span>
+                      <span className="block text-xs font-normal text-gray-500 mt-1">{v.date.replace(/-/g, '/')}</span>
                     ) : null}
                   </button>
                 ))}
