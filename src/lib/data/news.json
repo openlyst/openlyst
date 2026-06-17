@@ -121,7 +121,7 @@
       "ru": "Поддержка Spotify отменена для Doudou"
     },
     "caption": {
-      "en": "Support for Spotify has been canceled for Doudou due to Spotify supporting I.E.E. and other MAGA US politics. We do not support those nazis.",
+      "en": "Support for Spotify has been discontinued for Doudou due to Spotify's alignment with regressive US political movements and policies. We cannot in good conscience support platforms that enable such ideologies.",
       "zh": "由于 Spotify 支持 I.E.E. 和其他 MAGA 美国政治，豆豆已取消对 Spotify 的支持。我们不支持那些纳粹。",
       "ru": "Поддержка Spotify отменена для Doudou из-за поддержки Spotify I.E.E. и других политик MAGA в США. Мы не поддерживаем этих нацистов."
     },
@@ -150,25 +150,6 @@
     "notify": true,
     "url": "/apps/doudou",
     "appID": "doudou"
-  },
-  {
-    "identifier": "path_forward_2026",
-    "title": {
-      "en": "Our Path Forward",
-      "zh": "我们的前进方向",
-      "ru": "Наш путь вперёд"
-    },
-    "caption": {
-      "en": "This was one of the hardest decisions we've had to make. We are moving away from Flutter for future applications—Flutter's performance and design simply weren't meeting our standards. Some of our existing applications will be ported to our new native stack. Native will be the base for everything we build from here on, except for the main official website. Thank you for your understanding and support.",
-      "zh": "这是我们做过的最艰难的决定之一。我们将在未来的应用中逐步告别 Flutter——Flutter 的性能和设计已无法满足我们的标准。部分现有应用将迁移到新的原生技术栈。除主官网外，原生技术栈将成为我们一切新项目的基础。感谢大家的理解与支持。",
-      "ru": "Это было одно из самых сложных решений для нас. Мы отказываемся от Flutter в пользу будущих приложений — производительность и дизайн Flutter не соответствовали нашим стандартам. Некоторые из наших приложений будут перенесены на наш новый нативный стек. Нативный стек станет основой для всего, что мы создаём, кроме основного официального сайта. Спасибо за понимание и поддержку."
-    },
-    "date": "2026-02-15",
-    "tintColor": "#6366f1",
-    "imageURL": "/favicon.svg",
-    "notify": true,
-    "url": "",
-    "appID": ""
   },
   {
     "identifier": "doudou_apk_updates_paused_2026",

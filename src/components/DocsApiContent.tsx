@@ -28,7 +28,7 @@ const endpoints: ApiEndpoint[] = [
   {
     method: 'GET',
     path: '/api/v1/repo',
-    description: 'Repository metadata and basic statistics. Use for repo name, icon, featured apps, total counts, and tempDownloadsOff flag.',
+    description: 'Get repository info: name, icon, featured apps, total counts, and download status.',
     params: [
       { name: 'lang', kind: 'query', required: false, description: 'Content language', values: 'en | zh | ru' },
     ],
@@ -48,7 +48,7 @@ const endpoints: ApiEndpoint[] = [
   {
     method: 'GET',
     path: '/api/v1/apps',
-    description: 'List all apps. Optionally filter by status or platform.',
+    description: 'List all apps. Filter by status or platform if needed.',
     params: [
       { name: 'filter', kind: 'query', required: false, description: 'Limit to active or deprecated apps', values: 'active | deprecated' },
       { name: 'platform', kind: 'query', required: false, description: 'Only apps that support this platform', values: 'e.g. iOS, Android, macOS' },
@@ -72,7 +72,7 @@ const endpoints: ApiEndpoint[] = [
   {
     method: 'GET',
     path: '/api/v1/apps/:slug',
-    description: 'Full details for one app, including all versions.',
+    description: 'Get full app details including all versions.',
     params: [
       { name: 'slug', kind: 'path', required: true, description: 'App slug or bundle identifier', values: 'e.g. doudou, finar' },
       { name: 'lang', kind: 'query', required: false, description: 'Content language', values: 'en | zh | ru' },
@@ -96,7 +96,7 @@ const endpoints: ApiEndpoint[] = [
   {
     method: 'GET',
     path: '/api/v1/apps/:slug/versions',
-    description: 'All versions of an app, ordered newest first.',
+    description: 'Get all versions of an app, newest first.',
     params: [
       { name: 'slug', kind: 'path', required: true, description: 'App slug or bundle identifier', values: 'e.g. doudou' },
       { name: 'lang', kind: 'query', required: false, description: 'Content language', values: 'en | zh | ru' },
@@ -115,7 +115,7 @@ const endpoints: ApiEndpoint[] = [
   {
     method: 'GET',
     path: '/api/v1/apps/:slug/latest',
-    description: 'The latest version of an app only. Returns 404 if no versions exist.',
+    description: 'Get the latest version of an app. Returns 404 if no versions exist.',
     params: [
       { name: 'slug', kind: 'path', required: true, description: 'App slug or bundle identifier', values: 'e.g. doudou' },
       { name: 'lang', kind: 'query', required: false, description: 'Content language', values: 'en | zh | ru' },
@@ -136,7 +136,7 @@ const endpoints: ApiEndpoint[] = [
   {
     method: 'GET',
     path: '/api/v1/news',
-    description: 'News and announcements. Optionally filter by app or limit count.',
+    description: 'Get news and announcements. Filter by app or limit count.',
     params: [
       { name: 'limit', kind: 'query', required: false, description: 'Max number of items to return', values: 'positive integer' },
       { name: 'appId', kind: 'query', required: false, description: 'Only news for this app (bundle ID)', values: 'e.g. doudou' },
@@ -160,7 +160,7 @@ const endpoints: ApiEndpoint[] = [
   {
     method: 'GET',
     path: '/api/v1/search',
-    description: 'Search apps by name, subtitle, description, or bundle identifier. Query parameter q is required. Results include relevanceScore.',
+    description: 'Search apps by name, subtitle, description, or bundle ID. Results include relevanceScore.',
     params: [
       { name: 'q', kind: 'query', required: true, description: 'Search term', values: 'any string' },
       { name: 'lang', kind: 'query', required: false, description: 'Content language', values: 'en | zh | ru' },
@@ -183,7 +183,7 @@ const endpoints: ApiEndpoint[] = [
   {
     method: 'GET',
     path: '/api/v1/platforms',
-    description: 'All platforms that have at least one app, with app counts. Sorted by count descending.',
+    description: 'Get all platforms with at least one app, sorted by app count.',
     params: [
       { name: 'lang', kind: 'query', required: false, description: 'Content language', values: 'en | zh | ru' },
     ],
@@ -212,44 +212,31 @@ export function DocsApiContent() {
 
   return (
     <>
-      <section className="relative text-white overflow-hidden min-h-[60vh] flex items-center">
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
+      <section className="relative text-white overflow-hidden min-h-[50vh] flex items-center">
+        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px'
+        }} />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full mb-6">
-              <span className="text-cyan-300">API</span>
-              <span className="text-cyan-200 font-medium">{t.api.restApiVersion}</span>
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4 text-white">
               {t.api.title}
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">{t.api.subtitle}</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg">
-                <span className="text-green-400">✓</span>
-                <span>{t.api.free}</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg">
-                <span className="text-green-400">✓</span>
-                <span>{t.api.noAuth}</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
-                <span>{t.api.jsonResponses}</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
-                <span>{t.api.corsEnabled}</span>
-              </div>
-            </div>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">{t.api.subtitle}</p>
           </div>
         </div>
       </section>
 
-      <Section title={t.api.baseUrl} subtitle={t.api.baseUrlSubtitle} background="gray" centered>
-        <div className="bg-gray-900 rounded-xl p-6 font-mono text-lg">
+      <Section title={t.api.baseUrl} subtitle={t.api.baseUrlSubtitle} background="default" centered>
+        <div className="bg-[#0a0a0a] rounded-xl border border-gray-800 p-6 font-mono text-lg">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <code className="text-emerald-400 break-all">{BASE_URL}/api/v1</code>
             <button
               type="button"
-              className="shrink-0 px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors text-sm"
+              className="shrink-0 px-3 py-1 bg-gray-900 hover:bg-gray-800 text-gray-300 rounded-lg transition-colors text-sm border border-gray-700"
               onClick={() => copyToClipboard(`${BASE_URL}/api/v1`, 'base')}
             >
               {copiedEndpoint === 'base' ? t.api.copied : t.api.copy}
@@ -264,7 +251,7 @@ export function DocsApiContent() {
             <h3 className="text-lg font-semibold text-white mb-2">{t.api.responseFormatTitle}</h3>
             <p className="text-gray-400">{t.api.responseFormatDesc}</p>
           </div>
-          <div className="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
+          <div className="bg-[#0a0a0a] rounded-xl border border-gray-800 p-6 font-mono text-sm overflow-x-auto">
             <pre className="text-gray-300 whitespace-pre-wrap break-words">
 {`// Success
 { "success": true, "language": "en", "data": ... }
@@ -285,8 +272,8 @@ export function DocsApiContent() {
         </div>
       </Section>
 
-      <Section title={t.api.quickStart} subtitle={t.api.quickStartSubtitle} background="gray" centered>
-        <div className="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
+      <Section title={t.api.quickStart} subtitle={t.api.quickStartSubtitle} background="default" centered>
+        <div className="bg-[#0a0a0a] rounded-xl border border-gray-800 p-6 font-mono text-sm overflow-x-auto">
           <pre className="text-gray-300">
 {`const response = await fetch('${BASE_URL}/api/v1/apps');
 const data = await response.json();
@@ -306,17 +293,17 @@ console.log(data.data);`}
             return (
               <div
                 key={endpoint.path}
-                className="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden"
+                className="bg-[#0a0a0a] rounded-xl border border-gray-800 overflow-hidden"
               >
-                <div className="p-6 border-b border-gray-700">
+                <div className="p-6 border-b border-gray-800">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span className="px-3 py-1 bg-green-900/50 text-green-400 font-mono font-bold text-sm rounded-lg">
+                    <span className="px-3 py-1 bg-green-900/30 text-green-400 font-mono font-bold text-sm rounded-lg border border-green-900/50">
                       {endpoint.method}
                     </span>
                     <code className="text-lg font-mono text-white break-all">{endpoint.path}</code>
                     <button
                       type="button"
-                      className="ml-auto px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors text-sm shrink-0"
+                      className="ml-auto px-3 py-1 bg-gray-900 hover:bg-gray-800 text-gray-300 rounded-lg transition-colors text-sm shrink-0 border border-gray-700"
                       onClick={() => copyToClipboard(exampleUrl, endpoint.path)}
                     >
                       {copiedEndpoint === endpoint.path ? t.api.copied : t.api.copyUrl}
@@ -332,7 +319,7 @@ console.log(data.data);`}
                           <div className="overflow-x-auto">
                             <table className="w-full text-sm text-left">
                               <thead>
-                                <tr className="text-gray-400 border-b border-gray-600">
+                                <tr className="text-gray-400 border-b border-gray-700">
                                   <th className="py-2 pr-4 font-mono">Name</th>
                                   <th className="py-2 pr-4">{t.api.required}</th>
                                   <th className="py-2">Description</th>
@@ -340,7 +327,7 @@ console.log(data.data);`}
                               </thead>
                               <tbody>
                                 {pathParams.map((p) => (
-                                  <tr key={p.name} className="border-b border-gray-700/50">
+                                  <tr key={p.name} className="border-b border-gray-800/50">
                                     <td className="py-2 pr-4 font-mono text-cyan-300">{p.name}</td>
                                     <td className="py-2 pr-4">{p.required ? t.api.required : t.api.default}</td>
                                     <td className="py-2 text-gray-400">{p.description}{p.values ? ` (${p.values})` : ''}</td>
@@ -357,7 +344,7 @@ console.log(data.data);`}
                           <div className="overflow-x-auto">
                             <table className="w-full text-sm text-left">
                               <thead>
-                                <tr className="text-gray-400 border-b border-gray-600">
+                                <tr className="text-gray-400 border-b border-gray-700">
                                   <th className="py-2 pr-4 font-mono">Name</th>
                                   <th className="py-2 pr-4">{t.api.required}</th>
                                   <th className="py-2">Description</th>
@@ -365,7 +352,7 @@ console.log(data.data);`}
                               </thead>
                               <tbody>
                                 {queryParams.map((p) => (
-                                  <tr key={p.name} className="border-b border-gray-700/50">
+                                  <tr key={p.name} className="border-b border-gray-800/50">
                                     <td className="py-2 pr-4 font-mono text-cyan-300">{p.name}</td>
                                     <td className="py-2 pr-4">{p.required ? t.api.required : t.api.default}</td>
                                     <td className="py-2 text-gray-400">{p.description}{p.values ? ` (${p.values})` : ''}</td>
@@ -381,7 +368,7 @@ console.log(data.data);`}
 
                   <div className="mt-4">
                     <h4 className="text-sm font-semibold text-gray-300 mb-2">{t.api.exampleResponse}</h4>
-                    <pre className="bg-gray-900 rounded-lg p-4 text-xs text-gray-400 overflow-x-auto whitespace-pre-wrap break-words">
+                    <pre className="bg-gray-900 rounded-lg p-4 text-xs text-gray-400 overflow-x-auto whitespace-pre-wrap break-words border border-gray-800">
                       {endpoint.exampleResponse}
                     </pre>
                   </div>
@@ -392,7 +379,7 @@ console.log(data.data);`}
         </div>
       </Section>
 
-      <Section title={t.api.downloadStructure} subtitle={t.api.downloadStructureSubtitle} background="gray" centered>
+      <Section title={t.api.downloadStructure} subtitle={t.api.downloadStructureSubtitle} background="default" centered>
         <div className="space-y-4 text-gray-400">
           <p>{t.api.downloadsFieldDesc}</p>
           <p className="flex items-start gap-2">
@@ -403,7 +390,7 @@ console.log(data.data);`}
       </Section>
 
       <Section title={t.api.rateLimits} subtitle={t.api.rateLimitsSubtitle} background="default" centered>
-        <div className="bg-gray-800 rounded-xl shadow-lg border border-gray-700 p-8">
+        <div className="bg-[#0a0a0a] rounded-xl border border-gray-800 p-8">
           <p className="text-gray-400 mb-4">{t.api.noRateLimitsDesc}</p>
           <p className="text-gray-400">{t.api.noApiKeyDesc}</p>
         </div>

@@ -27,20 +27,6 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
 
   return (
     <>
-      <section className="relative text-white overflow-hidden min-h-[60vh] flex items-center">
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 text-white">
-            {t.apps.title}
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">{t.apps.subtitle}</p>
-          <div className="flex items-center justify-center">
-            <span className="glass-card px-4 py-2 text-gray-300 text-lg font-medium rounded-full">
-              {t.apps.powerToThePeople}
-            </span>
-          </div>
-        </div>
-      </section>
-
       <Section title={t.apps.ourApps} subtitle={t.apps.ourAppsDesc} background="default" centered>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {apps.map((app) => (
@@ -54,6 +40,7 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
                 image={app.iconURL}
                 tintColor={app.tintColor}
                 deprecated={app.deprecated}
+                version={app.versions[0]?.version}
               />
             </div>
           ))}
