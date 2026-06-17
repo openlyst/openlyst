@@ -15,13 +15,13 @@ export function Footer() {
               <span className="text-xl font-bold">OpenLyst</span>
             </div>
             <p className="text-gray-300 max-w-md">{t.footer.description}</p>
-            <div className="mt-4 flex space-x-4">
+            <div className="mt-4 flex space-x-4 items-center">
               <a
                 href="https://gitlab.com/Openlyst"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <span className="sr-only">GitLab</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
                   <path d="m23.6004 9.5927-.0337-.0862L20.3.981a.851.851 0 0 0-.3362-.405.874.874 0 0 0-.9997.0539.874.874 0 0 0-.29.4112l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4112.874.874 0 0 0-.9997-.0539.8585.8585 0 0 0-.3362.405l-3.2665 8.5252-.0329.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.0275.0207a6.0657 6.0657 0 0 0 3.6931 1.2543h13.575a6.0657 6.0657 0 0 0 3.6931-1.2543l.0275-.0207.0113-.0087a6.0662 6.0662 0 0 0 2.0104-7.003z" />
                 </svg>
               </a>
