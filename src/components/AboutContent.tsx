@@ -68,23 +68,6 @@ export function AboutContent() {
         </div>
       </Section>
 
-      <Section title={t.about.ourStory} subtitle={t.about.ourStoryDesc} background="default" centered>
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold text-white mb-3">{t.about.theBeginning}</h3>
-            <p className="text-gray-300">{t.about.beginningDesc}</p>
-          </div>
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold text-white mb-3">{t.about.growingMovement}</h3>
-            <p className="text-gray-300">{t.about.growingDesc}</p>
-          </div>
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold text-white mb-3">{t.about.revolutionarySoftware}</h3>
-            <p className="text-gray-300">{t.about.revolutionaryDesc}</p>
-          </div>
-        </div>
-      </Section>
-
       <Section title={t.about.theCollective} subtitle={t.about.collectiveDesc} centered>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
