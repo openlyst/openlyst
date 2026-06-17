@@ -53,6 +53,7 @@ export interface AppCardProps {
   features?: string[];
   tintColor?: string;
   deprecated?: boolean;
+  version?: string;
 }
 
 export function AppCard({
@@ -64,6 +65,7 @@ export function AppCard({
   href,
   tintColor = '#8b5cf6',
   deprecated = false,
+  version,
 }: AppCardProps) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
@@ -119,7 +121,12 @@ export function AppCard({
         )}
         <div className="flex flex-col">
           <h3 className="text-white text-xl font-semibold">{title}</h3>
-          <div className="flex gap-2 mt-1.5">
+          <div className="flex gap-2 mt-1.5 items-center">
+            {version && (
+              <span className="text-xs text-gray-500 font-mono">
+                v{version}
+              </span>
+            )}
             {deprecated && (
               <span className="inline-block w-fit px-2.5 py-1 rounded text-xs font-medium border bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
                 DEPRECATED

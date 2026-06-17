@@ -71,6 +71,7 @@ export function NewsPageContent({ initialNews }: { initialNews: NewsItem[] }) {
                       href={`/apps/${apps[item.appID].slug}`}
                       tintColor={apps[item.appID].tintColor}
                       deprecated={apps[item.appID].deprecated}
+                      version={apps[item.appID].versions[0]?.version}
                     />
                   </div>
                 )}

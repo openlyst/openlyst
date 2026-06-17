@@ -40,6 +40,7 @@ export function AppsPageContent({ initialApps }: { initialApps: App[] }) {
                 image={app.iconURL}
                 tintColor={app.tintColor}
                 deprecated={app.deprecated}
+                version={app.versions[0]?.version}
               />
             </div>
           ))}
