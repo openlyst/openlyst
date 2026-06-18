@@ -28,7 +28,7 @@
     "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/news.png?ref_type=heads",
     "https://gitlab.com/Openlyst/repstore/-/raw/main/docs/imgs/sources.png?ref_type=heads"
   ],
-  "deprecated": false,
+  "deprecated": true,
   "versions": [
     {
       "version": "4.0.0",
