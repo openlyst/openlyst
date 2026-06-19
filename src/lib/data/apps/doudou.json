@@ -33,6 +33,68 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "20.0.0",
+      "date": "2026-06-19",
+      "buildVersion": "20.0.0",
+      "buildNumber": "120",
+      "releaseTag": "build-120",
+      "sourceCode": "https://gitlab.com/Openlyst/doudou/-/tree/0e4652b9f09b9b7848cfe0cc4b62e821c202aaaa",
+      "sourceCommit": "0e4652b9f09b9b7848cfe0cc4b62e821c202aaaa",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Linux",
+        "Android"
+      ],
+      "platformInstall": {
+        "iOS": "Add the altstore repo https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository. Visit https://gitlab.com/HttpAnimations/repstore for installation instructions.",
+        "macOS": "Install via Homebrew: brew tap Openlyst/macos https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux.git && brew install --cask doudou",
+        "Linux": "Download the latest Linux build from GitLab CI."
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19-macos-unsigned.zip",
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19-linux-amd64.deb",
+            "arm64": ""
+          },
+          "aur": {
+            "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
+            "arm64": ""
+          },
+          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19.aab"
+        }
+      },
+      "localizedDescription": {
+        "en": "# 20.0.0\n\n## Added\n- Confirmation dialog before deleting a server.\n- Protocol dropdown (HTTPS/HTTP) when adding or editing a server, defaulting to HTTPS.\n- Server URL input now automatically strips existing protocol prefixes.\n- \"Your favorites\" track row section on the home screen for all providers.\n- App icon displayed next to the app name in the App Info settings section.\n- Heart button in the mobile mini player to quickly favorite/unfavorite the current song.\n- `PLAYSTORE` compile flag that directs the update dialog download button to the Google Play Store instead of the website when building Android releases.\n- `NoOpBackend` stub to gracefully handle the app when no media server is configured.\n- Hidden easter egg to unlock the YouTube Music provider on Play Store builds (long-press the app icon in Settings → App Info).\n\n## Changed\n- Removed sliding transition animations when switching between main tabs and content pages for a snappier experience.\n- Redesigned bottom navigation bar with a cleaner, more compact custom design and integrated mini player.\n- Mobile mini player is now a full-width flat bar instead of a floating pill, with reduced height and smaller album art.\n- Now playing screen no longer auto-opens on mobile when pressing play, matching desktop behavior.\n- Theme mode selector changed from dialog to dropdown with custom styling.\n- All dropdowns redesigned with custom icons, colors, and rounded corners.\n- Removed redundant \"Active\" badge from Servers settings and desktop two-pane selected section indicator.\n- Favourites quick action card hidden when user has zero favorites.\n- Replaced \"Shuffle all\" quick action with \"Start radio\" for YouTube Music servers.\n- YouTube Music users now see a hybrid home feed combining personalized local sections and YouTube Music content.\n- Default synced lyrics highlight style changed to karaoke.\n- \"Random\" removed from radio labels to avoid implying random song selection.\n- CI pipeline made manual to reduce costs.\n- Removed redundant YouTube Music add server dialog since it does not require login credentials.\n- Removed the compact short desktop mini player state that appeared before the mobile shell took over.\n- YouTube Music is hidden from the \"Add Server\" provider picker when building with `PLAYSTORE=true`.\n- Fresh installs no longer create a default YouTube Music server when building with `PLAYSTORE=true`.\n\n## Fixed\n- Status bar overlap on mobile.\n- Settings screen layout not extending full height in two-pane view.\n- Theme switching properly updates all UI providers.\n- ListTile rendering and ink splash issues.\n- UI unresponsiveness caused by improper reactive widget nesting.\n- Bottom navbar not navigating away when on settings sub-pages on mobile.\n- Settings header alignment on mobile.\n- Back button visibility in light mode.\n- Now playing bottom bar icon visibility in light mode.\n- Home screen quick action card borders not visible in light mode.\n- Search bar background and border colors in light mode.\n- Switch/toggle \"on\" state visibility in light mode.\n- Home screen favorite count not updating reactively.\n- Incorrect \"Your library is empty\" message showing when library sections exist.\n- Radio seeding from a random favorited song instead of a fallback chain.\n- Nested scroll view issues in YouTube Music home feed.\n- Desktop player song title overflow.\n- Full-screen player title text wrapping.\n- Localization strings showing literal `\\n` instead of rendering as newlines.\n- Radio mode button now hidden on the now playing bar when not connected to a YouTube Music host.\n- Window controls (close, minimize, maximize) not working on macOS.\n- YouTube Music search results page showing blank due to parsing logic not handling itemSectionRenderer sections.\n- YouTube Music community playlists search parameters updated to use double-letter codes matching ytmusicapi reference implementation.\n- \"Add Server\" button now visible even when no servers are configured.",
+        "zh": "# 20.0.0\n\n## 新增\n- 删除服务器前显示确认对话框。\n- 添加或编辑服务器时新增协议下拉选项（HTTPS/HTTP），默认选择 HTTPS。\n- 服务器 URL 输入框会自动去除已有的协议前缀。\n- 为所有提供商的首页添加“你的收藏”曲目行区域。\n- 在设置的应用信息中，应用名称旁显示应用图标。\n- 移动迷你播放器中添加心形按钮，可快速收藏/取消收藏当前歌曲。\n- 新增 `PLAYSTORE` 编译标志，构建 Android 发布版时，更新对话框的下载按钮将跳转至 Google Play 商店而非官网。\n- 新增 `NoOpBackend` 存根，用于在未配置媒体服务器时优雅地处理应用。\n- 隐藏彩蛋：在 Play Store 版本中，长按设置 → 应用信息中的应用图标，可解锁 YouTube Music 提供商。\n\n## 变更\n- 移除主标签和内容页之间的滑动过渡动画，使切换更轻快。\n- 重新设计底部导航栏，采用更简洁、更紧凑的自定义设计，并集成迷你播放器。\n- 移动迷你播放器从悬浮胶囊改为全宽扁平条，高度降低，专辑封面更小。\n- 在移动设备上点击播放时不再自动打开“正在播放”界面，与桌面行为保持一致。\n- 主题模式选择器从对话框改为带自定义样式的下拉菜单。\n- 所有下拉菜单重新设计，采用自定义图标、配色和圆角。\n- 从服务器设置和桌面双窗格选中区指示器中移除冗余的“Active”徽章。\n- 当用户没有收藏时，隐藏“收藏”快速操作卡片。\n- 将 YouTube Music 服务器的“全部随机”快速操作替换为“开始电台”。\n- YouTube Music 用户现在会看到混合首页，同时包含个性化本地版块和 YouTube Music 内容。\n- 默认同步歌词高亮样式改为卡拉 OK。\n- 从电台标签中移除“随机”字样，以避免暗示随机选曲。\n- CI 流水线改为手动触发，以降低成本。\n- 移除冗余的 YouTube Music 添加服务器对话框，因为该服务无需登录凭据。\n- 移除在移动外壳接管之前出现的紧凑短桌面迷你播放器状态。\n- 使用 `PLAYSTORE=true` 构建时，YouTube Music 不再出现在“添加服务器”提供商选择器中。\n- 使用 `PLAYSTORE=true` 构建时，首次安装不再自动创建默认的 YouTube Music 服务器。\n\n## 修复\n- 移动端状态栏重叠问题。\n- 双窗格视图下设置页面布局未占满高度的问题。\n- 主题切换现在会正确更新所有 UI 提供器。\n- ListTile 渲染和水波纹问题。\n- 由不当响应式 widget 嵌套导致的 UI 无响应问题。\n- 移动端在设置子页面时底部导航栏无法导航离开的问题。\n- 移动端设置标题对齐问题。\n- 浅色模式下返回按钮可见性问题。\n- 浅色模式下“正在播放”底部栏图标可见性问题。\n- 浅色模式下首页快速操作卡片边框不可见的问题。\n- 浅色模式下搜索栏背景和边框颜色问题。\n- 浅色模式下开关/切换“开启”状态可见性问题。\n- 首页收藏数量未响应式更新的问题。\n- 在存在资料库分区时仍显示“你的资料库为空”的错误信息。\n- 电台种子从随机收藏歌曲开始而非按回退链选择的问题。\n- YouTube Music 首页嵌套滚动视图问题。\n- 桌面播放器歌曲标题溢出问题。\n- 全屏播放器标题文本换行问题。\n- 本地化字符串显示原始 `\\n` 而非渲染为换行的问题。\n- 当未连接到 YouTube Music 主机时，正在播放栏的电台模式按钮现在隐藏。\n- macOS 上窗口控制按钮（关闭、最小化、最大化）失效的问题。\n- YouTube Music 搜索结果页空白的问题，解析逻辑未处理 itemSectionRenderer 部分。\n- YouTube Music 社区播放列表搜索参数更新为与 ytmusicapi 参考实现一致的双字母代码。\n- 即使未配置服务器，现在也显示“添加服务器”按钮。",
+        "ru": "# 20.0.0\n\n## Добавлено\n- Диалог подтверждения перед удалением сервера.\n- Выпадающий список протокола (HTTPS/HTTP) при добавлении или редактировании сервера, по умолчанию HTTPS.\n- Поле ввода URL сервера теперь автоматически удаляет существующие префиксы протокола.\n- Раздел строк треков «Ваши избранные» на главном экране для всех провайдеров.\n- Иконка приложения отображается рядом с названием приложения в разделе App Info настроек.\n- Кнопка сердца в мобильном мини-плеере для быстрого добавления/удаления текущей песни из избранного.\n- Флаг компиляции `PLAYSTORE`, который при сборке Android-релизов направляет кнопку загрузки диалога обновления в Google Play Store вместо сайта.\n- Заглушка `NoOpBackend` для корректной работы приложения, когда не настроен медиа-сервер.\n- Скрытая пасхалка для разблокировки провайдера YouTube Music в Play Store-сборках (долгое нажатие на иконку приложения в Настройки → App Info).\n\n## Изменено\n- Убраны скользящие анимации перехода между основными вкладками и страницами контента для более быстрого переключения.\n- Переработана нижняя панель навигации: более чистый, компактный пользовательский дизайн с интегрированным мини-плеером.\n- Мобильный мини-плеер теперь представляет собой полноширокую плоскую панель вместо плавающей капсулы, с меньшей высотой и уменьшенной обложкой альбома.\n- Экран «Сейчас играет» больше не открывается автоматически на мобильных устройствах при нажатии кнопки воспроизведения, как на десктопе.\n- Селектор режима темы заменён с диалога на выпадающий список с пользовательским стилем.\n- Все выпадающие списки переработаны с пользовательскими иконками, цветами и скругленными углами.\n- Убран лишний значок «Active» из настроек серверов и индикатора выбранного раздела на десктопе в двухпанельном режиме.\n- Карточка быстрого действия «Избранное» скрыта, когда у пользователя нет избранных треков.\n- Для серверов YouTube Music действие «Перемешать всё» заменено на «Запустить радио».\n- Пользователи YouTube Music теперь видят гибридную ленту главного экрана, объединяющую персональные локальные разделы и контент YouTube Music.\n- Стиль подсветки синхронизированных текстов по умолчанию изменён на караоке.\n- Убрано слово «Random» в метках радио, чтобы не создавать впечатление случайного выбора песен.\n- CI-пайплайн переведён в ручной режим для снижения затрат.\n- Убран лишний диалог добавления сервера YouTube Music, так как для него не требуются учётные данные.\n- Убран компактный короткий режим мини-плеера на десктопе, который появлялся до перехода на мобильную оболочку.\n- YouTube Music скрыт из выбора провайдера «Add Server» при сборке с `PLAYSTORE=true`.\n- При сборке с `PLAYSTORE=true` чистые установки больше не создают сервер YouTube Music по умолчанию.\n\n## Исправлено\n- Перекрытие строки состояния на мобильных устройствах.\n- Разметка экрана настроек не занимала всю высоту в двухпанельном режиме.\n- Переключение темы корректно обновляет все UI-провайдеры.\n- Проблемы с отрисовкой ListTile и эффектами брызг чернил.\n- Неотзывчивость UI, вызванная неправильной вложенностью реактивных виджетов.\n- Нижняя панель навигации не уходила с подстраниц настроек на мобильных устройствах.\n- Выравнивание заголовка настроек на мобильных устройствах.\n- Видимость кнопки назад в светлом режиме.\n- Видимость иконок нижней панели «Сейчас играет» в светлом режиме.\n- Невидимые границы карточек быстрых действий на главном экране в светлом режиме.\n- Цвет фона и границ строки поиска в светлом режиме.\n- Видимость состояния «включено» у переключателей в светлом режиме.\n- Счётчик избранного на главном экране не обновлялся реактивно.\n- Неправильное сообщение «Ваша библиотека пуста», показываемое при наличии разделов библиотеки.\n- Формирование радио на основе случайной избранной песни вместо резервной цепочки.\n- Проблемы с вложенными прокручиваемыми представлениями в ленте YouTube Music на главном экране.\n- Переполнение названия песни в десктопном плеере.\n- Перенос текста заголовка в полноэкранном плеере.\n- Локализационные строки отображали литеральный `\\n` вместо переноса строк.\n- Кнопка режима радио теперь скрыта на панели «Сейчас играет», когда нет подключения к хосту YouTube Music.\n- Кнопки управления окном (закрыть, свернуть, развернуть) не работали на macOS.\n- Страница результатов поиска YouTube Music отображалась пустой из-за того, что логика парсинга не обрабатывала секции itemSectionRenderer.\n- Параметры поиска community-плейлистов YouTube Music обновлены для использования двухбуквенных кодов, соответствующих референсной реализации ytmusicapi.\n- Кнопка «Add Server» теперь видна, даже если не настроено ни одного сервера."
+      }
+    },
+    {
       "version": "19.0.0",
       "date": "2026-06-04",
       "releaseTag": "build-99",
