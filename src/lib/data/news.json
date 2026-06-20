@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_20_windows_issue_2026",
+    "title": {
+      "en": "Doudou v20 Windows Support Issue",
+      "zh": "豆豆 v20 Windows 支持问题",
+      "ru": "Проблема с поддержкой Windows в Doudou v20"
+    },
+    "caption": {
+      "en": "We're sorry, but Doudou v20 does not support Windows yet. We are working on fixing this issue and will have Windows support available soon. We apologize for the inconvenience.",
+      "zh": "很抱歉，豆豆 v20 暂时不支持 Windows。我们正在修复此问题，很快会提供 Windows 支持。对此造成的不便深表歉意。",
+      "ru": "Нам жаль, но Doudou v20 пока не поддерживает Windows. Мы работаем над исправлением этой проблемы и скоро добавим поддержку Windows. Приносим извинения за неудобства."
+    },
+    "date": "2026-06-19",
+    "tintColor": "#f59e0b",
+    "imageURL": "/icons/Doudou/icon.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "doudou_signing_fixed_android_2026",
     "title": {
       "en": "Doudou Signing Fixed for Android",
