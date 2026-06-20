@@ -430,7 +430,7 @@
     },
     "date": "2025-10-29",
     "tintColor": "#dc2626",
-    "imageURL": "https://example.com/doudou_release_image.png",
+    "imageURL": "",
     "notify": true,
     "url": "/apps/doudou",
     "appID": "doudou"
