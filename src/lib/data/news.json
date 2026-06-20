@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_20_windows_added_2026",
+    "title": {
+      "en": "Doudou v20 Windows Builds Added",
+      "zh": "豆豆 v20 Windows 构建已添加",
+      "ru": "Сборки Windows для Doudou v20 добавлены"
+    },
+    "caption": {
+      "en": "Windows builds for Doudou v20 are now available! You can download the setup.exe or zip from the app page.",
+      "zh": "豆豆 v20 的 Windows 构建现已推出！您可以从应用页面下载 setup.exe 或 zip 文件。",
+      "ru": "Сборки Windows для Doudou v20 теперь доступны! Вы можете скачать setup.exe или zip со страницы приложения."
+    },
+    "date": "2026-06-19",
+    "tintColor": "#10b981",
+    "imageURL": "/icons/Doudou/icon.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "doudou_20_windows_issue_2026",
     "title": {
       "en": "Doudou v20 Windows Support Issue",
