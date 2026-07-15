@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_21_coming_soon_google_review_2026",
+    "title": {
+      "en": "Doudou v21 Is on Its Way",
+      "zh": "豆豆 v21 即将到来",
+      "ru": "Doudou v21 уже на подходе"
+    },
+    "caption": {
+      "en": "Doudou v21 is coming soon. We're just waiting on Google to finish reviewing the update before we can roll it out. Thanks for your patience.",
+      "zh": "豆豆 v21 即将发布。我们正在等待 Google 完成审核，之后即可推出。感谢您的耐心等待。",
+      "ru": "Doudou v21 скоро выйдет. Мы просто ждём, пока Google завершит проверку обновления, после чего сможем его выпустить. Спасибо за терпение."
+    },
+    "date": "2026-07-14",
+    "tintColor": "#10b981",
+    "imageURL": "/icons/Doudou/icon.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "doudou_20_windows_added_2026",
     "title": {
       "en": "Doudou v20 Windows Builds Added",
