@@ -34,6 +34,92 @@
   "deprecated": false,
   "versions": [
     {
+      "version": "10.2.0",
+      "date": "2026-07-24",
+      "releaseTag": "build-152",
+      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/main",
+      "platforms": [
+        "iOS",
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android",
+        "Web"
+      ],
+      "platformInstall": {
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "Android": "Use Openlyst to install from our repository",
+        "macOS": "Download the latest macOS build",
+        "Windows": "Download the latest Windows build",
+        "Linux": "Download the latest Linux build from GitLab CI",
+        "Web": "Access the web version"
+      },
+      "repos": {
+        "iOS": "https://gitlab.com/Openlyst/copy-downloads/-/raw/main/apps.json",
+        "macOS": {
+          "homebrew": "https://github.com/HttpAnimation/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+        }
+      },
+      "downloads": {
+        "iOS": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-ios-unsigned.ipa",
+        "macOS": {
+          "x86_64": "",
+          "arm64": "",
+          "universal": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-macos-unsigned.zip",
+          "homebrew": ""
+        },
+        "Windows": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-windows-x64.zip",
+            "arm64": ""
+          },
+          "exe": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-windows-x64-setup.exe",
+            "arm64": ""
+          },
+          "msix": {
+            "x86_64": "",
+            "arm64": ""
+          },
+          "portable": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-windows-x64.zip",
+            "arm64": ""
+          },
+          "winget": "",
+          "chocolatey": "",
+          "scoop": ""
+        },
+        "Linux": {
+          "zip": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-linux-x64.zip",
+            "arm64": ""
+          },
+          "appimage": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-linux-x86_64.AppImage",
+            "arm64": ""
+          },
+          "rpm": {
+            "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-linux-amd64.rpm",
+            "arm64": ""
+          },
+          "deb": {
+            "x86_64": "",
+            "arm64": ""
+          }
+        },
+        "Android": {
+          "apk": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24.apk",
+          "aab": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24.aab"
+        },
+        "Web": ""
+      },
+      "localizedDescription": {
+        "en": "# 10.2.0\n\n- Fixed crash when playing video in release builds on macOS by disabling hardware acceleration\n- Fixed artist names not showing on posts by adding `mode=extended` to e621 v2 API requests\n- Fixed macOS app icon not displaying by regenerating it via `flutter_launcher_icons`",
+        "zh": "# 10.2.0\n\n- 修复了在 macOS 发行版中播放视频时的崩溃问题（通过禁用硬件加速）\n- 通过向 e621 v2 API 请求添加 `mode=extended` 修复了帖子中不显示作者名称的问题\n- 通过 `flutter_launcher_icons` 重新生成修复了 macOS 应用图标不显示的问题",
+        "ru": "# 10.2.0\n\n- Исправлен сбой при воспроизведении видео в release-сборках на macOS путём отключения аппаратного ускорения\n- Исправлено отображение имён авторов на постах добавлением `mode=extended` к запросам e621 v2 API\n- Исправлено отображение значка приложения на macOS путём регенерации через `flutter_launcher_icons`"
+      }
+    },
+    {
       "version": "10.1.2",
       "date": "2026-06-11",
       "releaseTag": "build-110",
