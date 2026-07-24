@@ -37,7 +37,7 @@
       "version": "10.2.0",
       "date": "2026-07-24",
       "releaseTag": "build-152",
-      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/main",
+      "sourceCode": "https://gitlab.com/Openlyst/klit/-/tree/fdeb66c7db7c3f84c72bb9daf1f9f3d1052ede32",
       "platforms": [
         "iOS",
         "macOS",
