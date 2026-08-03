@@ -92,15 +92,15 @@
         "Linux": {
           "zip": {
             "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-linux-x64.zip",
-            "arm64": ""
+            "arm64": "https://github.com/openlyst/builds/releases/download/build-164/kilt-10.2.0-2026-08-03-linux-arm64.zip"
           },
           "appimage": {
             "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-linux-x86_64.AppImage",
-            "arm64": ""
+            "arm64": "https://github.com/openlyst/builds/releases/download/build-164/kilt-10.2.0-2026-08-03-linux-aarch64.AppImage"
           },
           "rpm": {
             "x86_64": "https://github.com/openlyst/builds/releases/download/build-152/kilt-10.2.0-2026-07-24-linux-amd64.rpm",
-            "arm64": ""
+            "arm64": "https://github.com/openlyst/builds/releases/download/build-164/kilt-10.2.0-2026-08-03-linux-arm64.rpm"
           },
           "deb": {
             "x86_64": "",
