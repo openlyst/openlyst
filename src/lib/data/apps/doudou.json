@@ -12,9 +12,9 @@
     "ru": "Финальный музыкальный плеер"
   },
   "localizedDescription": {
-    "en": "Doudou is a music player for self-hosted libraries. Connect Jellyfin, Plex, or Navidrome and listen from your own servers.",
-    "zh": "豆豆是一款面向自托管音乐库的播放器。连接 Jellyfin、Plex 或 Navidrome，即可从你自己的服务器收听音乐。",
-    "ru": "Doudou — музыкальный плеер для самохост-коллекций. Подключайте Jellyfin, Plex или Navidrome и слушайте музыку со своих серверов."
+    "en": "Doudou is a music player for self-hosted libraries. Connect Jellyfin, Plex, Subsonic/Navidrome, or YouTube Music and listen from your own servers.",
+    "zh": "豆豆是一款面向自托管音乐库的播放器。连接 Jellyfin、Plex、Subsonic/Navidrome 或 YouTube Music，即可从你自己的服务器收听音乐。",
+    "ru": "Doudou — музыкальный плеер для самохост-коллекций. Подключайте Jellyfin, Plex, Subsonic/Navidrome или YouTube Music и слушайте музыку со своих серверов."
   },
   "iconURL": "https://gitlab.com/Openlyst/doudou/-/raw/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?ref_type=heads",
   "tintColor": "#8b5cf6",
