@@ -12,9 +12,9 @@
     "ru": "Клиент E926 API"
   },
   "localizedDescription": {
-    "en": "Built for the e621 community with privacy-focused defaults and a fast browsing workflow.",
-    "zh": "为 e621 社区打造，默认注重隐私，并提供快速浏览体验。",
-    "ru": "Для сообщества e621 с приватными настройками по умолчанию и быстрым просмотром."
+    "en": "Standalone e926/self21 booru viewer. For desktop and mobile.",
+    "zh": "独立的 e926/self21 booru 浏览器。适用于桌面和移动端。",
+    "ru": "Автономный просмотрщик booru для e926/self21. Для десктопа и мобильных устройств."
   },
   "iconURL": "https://gitlab.com/Openlyst/openlyst/-/raw/main/static/icons/Kilt/icon.png?ref_type=heads",
   "tintColor": "#f43f5e",
