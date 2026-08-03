@@ -37,57 +37,92 @@ function getFirstDownloadUrl(d: unknown): string | null {
   return null;
 }
 
-/** Collect all download links for a version with labels from the key path (e.g. "Android · APK"). */
-function getVersionDownloadEntries(version: AppVersion): { label: string; url: string }[] {
-  const out: { label: string; url: string }[] = [];
-  const dl = version.downloads || version.downloadURLs;
-  if (!dl || typeof dl !== 'object') return out;
+const ARCH_KEYS = new Set(['x86_64', 'arm64', 'aarch64', 'universal', 'i386']);
+const ARCH_ORDER = ['universal', 'arm64', 'x86_64', 'aarch64', 'i386'];
+const ARCH_LABELS: Record<string, string> = {
+  universal: 'Universal',
+  arm64: 'ARM64',
+  aarch64: 'AArch64',
+  x86_64: 'x86_64',
+  i386: 'i386',
+};
 
-  function walk(obj: unknown, parts: string[]) {
-    if (typeof obj === 'string' && obj) {
-      const label = parts.join(' · ');
-      if (label) out.push({ label, url: obj });
-      return;
-    }
-    if (obj && typeof obj === 'object') {
-      const rec = obj as Record<string, unknown>;
-      for (const [key, value] of Object.entries(rec)) {
-        const next = [...parts];
-        if (key !== 'x86_64' && key !== 'arm64' && key !== 'aarch64' && key !== 'universal') {
-          next.push(key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()));
-        } else {
-          next.push(key.toUpperCase());
-        }
-        walk(value, next);
+const EXT_LABELS: Record<string, string> = {
+  ipa: 'IPA',
+  apk: 'APK',
+  aab: 'AAB',
+  zip: 'Zip',
+  exe: 'Exe',
+  msi: 'MSI',
+  msix: 'MSIX',
+  deb: 'Deb',
+  rpm: 'RPM',
+  appimage: 'AppImage',
+  tar: 'Tar',
+  gz: 'Tarball',
+};
+
+function inferPackageLabel(url: string): string {
+  const m = url.match(/\.([a-z0-9]+)(?:$|\?)/i);
+  if (m) {
+    const ext = m[1].toLowerCase();
+    if (EXT_LABELS[ext]) return EXT_LABELS[ext];
+  }
+  return 'Download';
+}
+
+function prettyLabel(key: string): string {
+  return key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+interface DownloadOption {
+  pkg: string;
+  arch: string | null;
+  url: string;
+}
+
+interface PlatformGroup {
+  platform: string;
+  arches: string[];
+  options: DownloadOption[];
+}
+
+function collectOptions(obj: unknown, pkg: string | null, arch: string | null, out: DownloadOption[]) {
+  if (typeof obj === 'string' && obj) {
+    out.push({ pkg: pkg || inferPackageLabel(obj), arch, url: obj });
+    return;
+  }
+  if (obj && typeof obj === 'object') {
+    for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
+      if (ARCH_KEYS.has(key.toLowerCase())) {
+        const norm = key.toLowerCase() === 'aarch64' ? 'arm64' : key.toLowerCase();
+        collectOptions(value, pkg, norm, out);
+      } else {
+        collectOptions(value, pkg ? `${pkg} · ${prettyLabel(key)}` : prettyLabel(key), arch, out);
       }
     }
   }
-
-  for (const [platform, value] of Object.entries(dl)) {
-    walk(value, [platform]);
-  }
-  return out;
 }
 
-/** Group entries by platform (first segment of label). Option label = rest after platform. */
-function groupDownloadsByPlatform(
-  entries: { label: string; url: string }[]
-): { platform: string; optionLabel: string; url: string }[][] {
-  const byPlatform = new Map<string, { optionLabel: string; url: string }[]>();
-  for (const { label, url } of entries) {
-    const i = label.indexOf(' · ');
-    const platform = i >= 0 ? label.slice(0, i) : label;
-    const optionLabel = i >= 0 ? label.slice(i + 3) : label;
-    let list = byPlatform.get(platform);
-    if (!list) {
-      list = [];
-      byPlatform.set(platform, list);
-    }
-    list.push({ optionLabel, url });
+function buildPlatformGroups(version: AppVersion): PlatformGroup[] {
+  const dl = version.downloads || version.downloadURLs;
+  if (!dl || typeof dl !== 'object') return [];
+  const groups: PlatformGroup[] = [];
+  for (const [platform, value] of Object.entries(dl)) {
+    const options: DownloadOption[] = [];
+    collectOptions(value, null, null, options);
+    const valid = options.filter((o) => o.url);
+    if (valid.length === 0) continue;
+    const archSet = new Set<string>();
+    for (const o of valid) if (o.arch) archSet.add(o.arch);
+    const arches = Array.from(archSet).sort((a, b) => {
+      const ai = ARCH_ORDER.indexOf(a);
+      const bi = ARCH_ORDER.indexOf(b);
+      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+    });
+    groups.push({ platform: prettyLabel(platform), arches, options: valid });
   }
-  return Array.from(byPlatform.entries()).map(([platform, list]) =>
-    list.map(({ optionLabel, url }) => ({ platform, optionLabel, url }))
-  );
+  return groups;
 }
 
 function getPlatformIcon(platform: string) {
@@ -170,21 +205,27 @@ export function AppDetailContent({
 
   const version = selectedVersion || app.versions[0];
   const screenshots = getScreenshotsList(app);
-  const downloadEntries = version ? getVersionDownloadEntries(version) : [];
-  const byPlatform = groupDownloadsByPlatform(downloadEntries);
+  const groups = version ? buildPlatformGroups(version) : [];
 
-  // Selected download URL per platform (for dropdowns). Default to first option when version/entries change.
-  const [selectedUrlByPlatform, setSelectedUrlByPlatform] = useState<Record<string, string>>({});
+  const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
+  const [selectedArch, setSelectedArch] = useState<string | null>(null);
   const [changelogOpen, setChangelogOpen] = useState(false);
   const [activeScreenshotIndex, setActiveScreenshotIndex] = useState<number | null>(null);
-  const [mobileVersionsOpen, setMobileVersionsOpen] = useState(false);
+
   useEffect(() => {
-    const next: Record<string, string> = {};
-    for (const group of byPlatform) {
-      if (group.length > 0) next[group[0].platform] = group[0].url;
+    if (groups.length > 0) {
+      setSelectedPlatform(groups[0].platform);
+      setSelectedArch(groups[0].arches.length > 0 ? groups[0].arches[0] : null);
+    } else {
+      setSelectedPlatform(null);
+      setSelectedArch(null);
     }
-    setSelectedUrlByPlatform(next);
   }, [version?.version]);
+
+  const activeGroup = groups.find((g) => g.platform === selectedPlatform) || null;
+  const visibleOptions = activeGroup
+    ? activeGroup.options.filter((o) => o.arch === null || o.arch === selectedArch)
+    : [];
 
   useEffect(() => {
     if (changelogOpen) setChangelogOpen(false);
@@ -223,6 +264,12 @@ export function AppDetailContent({
       if (prev === null) return prev;
       return (prev + 1) % screenshots.length;
     });
+  };
+
+  const selectPlatform = (platform: string) => {
+    setSelectedPlatform(platform);
+    const g = groups.find((x) => x.platform === platform);
+    setSelectedArch(g && g.arches.length > 0 ? g.arches[0] : null);
   };
 
   const descriptionHtml = { __html: marked(app.localizedDescription || '') };
@@ -272,191 +319,163 @@ export function AppDetailContent({
 
       {app.versions.length > 0 && (
         <Section title={t.appDetail.downloads} centered>
-          <div className="font-display mx-auto w-full max-w-7xl rounded-2xl border border-gray-800 overflow-hidden flex flex-col lg:flex-row min-h-[540px] relative">
-            {/* Version sidebar */}
-            <aside className="lg:w-60 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800 bg-[#0a0a0a] p-3 lg:flex lg:flex-col relative">
-              <div className="absolute top-0 left-0 w-1 h-full" style={{ backgroundColor: app.tintColor || '#8b5cf6' }} />
-              <div className="lg:hidden">
-                <button
-                  type="button"
-                  onClick={() => setMobileVersionsOpen((prev) => !prev)}
-                  className="w-full flex items-center justify-between rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-left"
-                  aria-expanded={mobileVersionsOpen}
-                  aria-controls="mobile-versions-list"
-                >
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">
-                      {t.appDetail.versions}
-                    </p>
-                    <p className="text-sm font-semibold text-white">
-                      {t.common.version} {version?.version}
-                    </p>
+          <div className="font-display mx-auto w-full max-w-4xl rounded-2xl border border-gray-800 bg-[#0a0a0a] overflow-hidden">
+            <div className="h-1 w-full" style={{ backgroundColor: app.tintColor || '#8b5cf6' }} />
+
+            <div className="p-5 sm:p-7 flex flex-col gap-6">
+              {/* Version + actions */}
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <label
+                    htmlFor="version-select"
+                    className="text-[11px] font-semibold uppercase tracking-wide text-gray-400"
+                  >
+                    {t.appDetail.versions}
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="version-select"
+                      value={version?.version}
+                      onChange={(e) => {
+                        const v = app.versions.find((x) => x.version === e.target.value);
+                        if (v) setSelectedVersion(v);
+                      }}
+                      className="appearance-none rounded-lg border border-gray-700 bg-gray-900 text-white text-sm font-semibold pl-3 pr-9 py-2 cursor-pointer hover:bg-gray-800 focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-colors"
+                    >
+                      {app.versions.map((v, i) => (
+                        <option key={v.version} value={v.version} className="bg-gray-900">
+                          {v.version}
+                          {i === 0 ? ` — ${t.appDetail.latest}` : ''}
+                          {v.date ? `  ·  ${v.date.replace(/-/g, '/')}` : ''}
+                        </option>
+                      ))}
+                    </select>
+                    <svg
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
                   </div>
-                  <span className={`text-gray-400 transition-transform ${mobileVersionsOpen ? 'rotate-180' : ''}`}>
-                    ▼
-                  </span>
-                </button>
-                {mobileVersionsOpen && (
-                  <div id="mobile-versions-list" className="mt-2 max-h-64 overflow-y-auto space-y-1">
-                    {app.versions.map((v, index) => (
-                      <button
-                        key={v.version}
-                        type="button"
-                        onClick={() => {
-                          setSelectedVersion(v);
-                          setMobileVersionsOpen(false);
-                        }}
-                        className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 border ${
-                          version?.version === v.version
-                            ? 'bg-gray-700 border-gray-600 text-white'
-                            : 'border-transparent text-gray-400 hover:bg-gray-800 hover:text-white'
-                        }`}
-                      >
-                        <div className="flex items-center justify-between gap-3">
-                          <span className="block">{v.version}</span>
-                          {index === 0 ? (
-                            <span className="rounded-full bg-gray-600 text-gray-200 text-[10px] font-semibold px-2 py-0.5">
-                              {t.appDetail.latest}
-                            </span>
-                          ) : null}
-                        </div>
-                        {v.date ? (
-                          <span className="block text-xs font-normal text-gray-500 mt-1">{v.date.replace(/-/g, '/')}</span>
-                        ) : null}
-                      </button>
-                    ))}
-                  </div>
-                )}
+                </div>
+                <div className="flex items-center gap-2">
+                  {version?.sourceCode && (
+                    <a
+                      href={version.sourceCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-900 hover:bg-gray-800 text-white px-3 py-1.5 text-sm font-semibold transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                      {t.appDetail.viewSource}
+                    </a>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setChangelogOpen(true)}
+                    className="inline-flex items-center gap-2 rounded-lg bg-gray-900 hover:bg-gray-800 text-white px-3 py-1.5 text-sm font-semibold transition-colors border border-gray-700"
+                  >
+                    <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-700 text-[10px]">i</span>
+                    {t.appDetail.viewDetails}
+                  </button>
+                </div>
               </div>
 
-              <nav className="hidden lg:flex lg:flex-col gap-1.5 overflow-y-auto flex-1 min-h-0 pl-3">
-                <p className="text-white text-xs font-semibold px-2 pb-1.5">{t.appDetail.versions}</p>
-                {app.versions.map((v, index) => (
-                  <button
-                    key={v.version}
-                    type="button"
-                    onClick={() => setSelectedVersion(v)}
-                    className={`text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 border ${
-                      version?.version === v.version
-                        ? 'bg-gray-800 border-gray-700 text-white'
-                        : 'border-transparent text-gray-400 hover:bg-gray-900 hover:text-white'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="block">{v.version}</span>
-                      {index === 0 ? (
-                        <span className="rounded-full bg-gray-700 text-gray-200 text-[10px] font-semibold px-2 py-0.5">
-                          {t.appDetail.latest}
-                        </span>
-                      ) : null}
-                    </div>
-                    {v.date ? (
-                      <span className="block text-xs font-normal text-gray-500 mt-1">{v.date.replace(/-/g, '/')}</span>
-                    ) : null}
-                  </button>
-                ))}
-              </nav>
-            </aside>
-            {/* Main content */}
-            <div className="flex-1 overflow-auto flex flex-col min-h-0">
-              {version && (
-                <div
-                  className="p-5 sm:p-6 flex flex-col gap-5 bg-[#0a0a0a] min-h-full"
-                >
-                  <div className="space-y-1">
-                    <h3 className="text-white text-2xl font-semibold">{app.name}</h3>
-                    <p className="text-gray-400 text-xs">{t.appDetail.chooseDownload}</p>
-                  </div>
-
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h4 className="text-white text-4xl md:text-5xl font-bold leading-tight">{t.common.version} {version.version}</h4>
-                    <div className="flex items-center gap-2">
-                      {version.sourceCode && (
-                        <a
-                          href={version.sourceCode}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-900 hover:bg-gray-800 text-white px-3 py-1.5 text-sm font-semibold transition-colors"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                          </svg>
-                          {t.appDetail.viewSource}
-                        </a>
-                      )}
-                      <button
-                        type="button"
-                        onClick={() => setChangelogOpen(true)}
-                        className="inline-flex items-center gap-2 rounded-lg bg-gray-900 hover:bg-gray-800 text-white px-3 py-1.5 text-sm font-semibold transition-colors border border-gray-700"
-                      >
-                        <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-700 text-xs">•</span>
-                        {t.appDetail.viewDetails}
-                      </button>
+              {tempDownloadsOff ? (
+                <div className="rounded-xl bg-gray-900 border border-gray-800 p-5">
+                  <h4 className="font-semibold text-gray-300">{t.appDetail.downloadsPausedTitle}</h4>
+                  <p className="text-gray-500 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
+                </div>
+              ) : groups.length > 0 ? (
+                <>
+                  {/* Platform selector */}
+                  <div className="flex flex-col gap-2.5">
+                    <span className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">
+                      {t.appDetail.selectPlatform}
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {groups.map((g) => {
+                        const active = selectedPlatform === g.platform;
+                        return (
+                          <button
+                            key={g.platform}
+                            type="button"
+                            onClick={() => selectPlatform(g.platform)}
+                            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold border transition-all duration-200 ${
+                              active
+                                ? 'bg-white text-black border-white'
+                                : 'bg-gray-900 text-gray-300 border-gray-800 hover:bg-gray-800 hover:text-white'
+                            }`}
+                          >
+                            <span className={active ? 'text-black' : 'text-gray-400'}>
+                              {getPlatformIcon(g.platform)}
+                            </span>
+                            {g.platform}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
-                  {/* Download cards */}
-                  <div>
-                    {tempDownloadsOff ? (
-                      <div className="rounded-xl bg-gray-900 border border-gray-800 p-4">
-                        <h4 className="font-semibold text-gray-300">{t.appDetail.downloadsPausedTitle}</h4>
-                        <p className="text-gray-500 text-sm mt-1">{t.appDetail.downloadsPausedReason}</p>
-                      </div>
-                    ) : byPlatform.length > 0 ? (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
-                        {byPlatform.map((group) => {
-                          const platform = group[0].platform;
-                          const selectedUrl = selectedUrlByPlatform[platform] ?? group[0].url;
-                          const singleOption = group.length === 1;
-                          const buttonText = t.appDetail.downloadPlatform.includes('{platform}')
-                            ? t.appDetail.downloadPlatform.replace('{platform}', platform)
-                            : `${t.common.download} ${platform}`;
-
+                  {/* Arch selector */}
+                  {activeGroup && activeGroup.arches.length > 0 && (
+                    <div className="flex flex-col gap-2.5">
+                      <span className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">
+                        {t.appDetail.selectArch}
+                      </span>
+                      <div className="flex flex-wrap gap-2">
+                        {activeGroup.arches.map((a) => {
+                          const active = selectedArch === a;
                           return (
-                            <div
-                              key={platform}
-                              className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 flex flex-col gap-5 text-white hover:border-gray-700 transition-colors"
+                            <button
+                              key={a}
+                              type="button"
+                              onClick={() => setSelectedArch(a)}
+                              className={`rounded-lg px-3.5 py-2 text-sm font-semibold border transition-all duration-200 ${
+                                active
+                                  ? 'bg-gray-100 text-black border-gray-100'
+                                  : 'bg-gray-900 text-gray-300 border-gray-800 hover:bg-gray-800 hover:text-white'
+                              }`}
                             >
-                              <div className="flex items-center gap-3">
-                                <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gray-900 text-gray-400">
-                                  {getPlatformIcon(platform)}
-                                </span>
-                                <span className="text-lg font-semibold text-white tracking-tight">{platform}</span>
+                              {ARCH_LABELS[a] || a}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Downloads */}
+                  <div className="flex flex-col gap-2.5">
+                    <span className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">
+                      {t.appDetail.downloads}
+                    </span>
+                    {visibleOptions.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {visibleOptions.map((o) => {
+                          const sub = o.arch ? ARCH_LABELS[o.arch] || o.arch : null;
+                          return (
+                            <a
+                              key={`${o.pkg}-${o.url}`}
+                              href={o.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group flex items-center justify-between gap-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-gray-600 hover:bg-gray-800 px-4 py-3.5 transition-colors"
+                            >
+                              <div className="min-w-0">
+                                <p className="font-semibold text-white text-sm truncate">{o.pkg}</p>
+                                {sub && <p className="text-xs text-gray-500 mt-0.5">{sub}</p>}
                               </div>
-                              <div className="flex flex-col gap-3">
-                                {!singleOption && (
-                                  <div className="relative">
-                                    <select
-                                      className="w-full appearance-none rounded-xl border border-gray-800 bg-gray-900 text-white text-sm px-4 py-2.5 pr-10 focus:ring-2 focus:ring-gray-500/50 focus:border-transparent transition-colors hover:bg-gray-800 cursor-pointer"
-                                      value={selectedUrl}
-                                      onChange={(e) =>
-                                        setSelectedUrlByPlatform((prev) => ({ ...prev, [platform]: e.target.value }))
-                                      }
-                                    >
-                                      {group.map(({ optionLabel, url }) => (
-                                        <option key={url} value={url} className="bg-gray-900 text-white">
-                                          {optionLabel}
-                                        </option>
-                                      ))}
-                                    </select>
-                                    <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                  </div>
-                                )}
-                                <a
-                                  href={selectedUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm text-white transition-all duration-200 bg-gray-900 hover:bg-gray-800 border border-gray-800"
-                                >
-                                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                  </svg>
-                                  {buttonText}
-                                </a>
-                              </div>
-                            </div>
+                              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gray-800 group-hover:bg-gray-700 text-gray-300 group-hover:text-white transition-colors flex-shrink-0">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                              </span>
+                            </a>
                           );
                         })}
                       </div>
@@ -464,7 +483,9 @@ export function AppDetailContent({
                       <p className="text-gray-500 text-sm">{t.appDetail.noDownloads}</p>
                     )}
                   </div>
-                </div>
+                </>
+              ) : (
+                <p className="text-gray-500 text-sm">{t.appDetail.noDownloads}</p>
               )}
             </div>
           </div>
