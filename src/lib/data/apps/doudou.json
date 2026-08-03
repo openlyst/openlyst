@@ -7,9 +7,9 @@
     "ru": "Doudou"
   },
   "subtitle": {
-    "en": "Music player for self-hosted services",
-    "zh": "自托管服务的音乐播放器",
-    "ru": "Музыкальный плеер для самостоятельного хостинга"
+    "en": "The final music player",
+    "zh": "终极音乐播放器",
+    "ru": "Финальный музыкальный плеер"
   },
   "localizedDescription": {
     "en": "Doudou is a music player for self-hosted libraries. Connect Jellyfin, Plex, or Navidrome and listen from your own servers.",

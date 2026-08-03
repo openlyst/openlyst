@@ -62,7 +62,7 @@ const endpoints: ApiEndpoint[] = [
     {
       "name": "Doudou",
       "slug": "doudou",
-      "subtitle": "Music player for self-hosted services",
+      "subtitle": "The final music player",
       "platforms": ["iOS", "macOS", "Windows", "Linux", "Android"],
       "versions": [...]
     }
@@ -85,7 +85,7 @@ const endpoints: ApiEndpoint[] = [
     "slug": "doudou",
     "bundleIdentifier": "doudou",
     "applicationId": "gitlab.openlyst.doudou",
-    "subtitle": "Music player for self-hosted services",
+    "subtitle": "The final music player",
     "localizedDescription": "...",
     "iconURL": "https://...",
     "platforms": ["iOS", "macOS", ...],
@@ -174,7 +174,7 @@ const endpoints: ApiEndpoint[] = [
     {
       "name": "Doudou",
       "slug": "doudou",
-      "subtitle": "Music player for self-hosted services",
+      "subtitle": "The final music player",
       "relevanceScore": 11
     }
   ]
