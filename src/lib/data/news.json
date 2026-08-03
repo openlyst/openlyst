@@ -1,5 +1,24 @@
 [
   {
+    "identifier": "doudou_21_more_time_2026",
+    "title": {
+      "en": "Doudou v21 Needs a Little More Time",
+      "zh": "豆豆 v21 还需要一点时间",
+      "ru": "Doudou v21 нужно ещё немного времени"
+    },
+    "caption": {
+      "en": "Doudou v21 is taking a bit longer than expected to finish up. We're putting the final touches on it and making sure everything is right before release. Thanks for sticking with us — it'll be worth the wait.",
+      "zh": "豆豆 v21 的收尾工作比预期稍久。我们正在做最后的打磨，确保一切就绪后再发布。感谢你的耐心等待——值得的。",
+      "ru": "Doudou v21 завершается чуть дольше, чем ожидалось. Мы наводим последние штрихи и убедимся, что всё готово, прежде чем выпускать. Спасибо, что остаётесь с нами — оно того стоит."
+    },
+    "date": "2026-08-02",
+    "tintColor": "#f59e0b",
+    "imageURL": "/icons/Doudou/icon.png",
+    "notify": true,
+    "url": "/apps/doudou",
+    "appID": "doudou"
+  },
+  {
     "identifier": "doudou_21_coming_soon_google_review_2026",
     "title": {
       "en": "Doudou v21 Is on Its Way",
