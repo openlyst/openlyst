@@ -81,8 +81,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://github.com/openlyst/builds/releases/download/build-120/doudou-20.0.0-2026-06-19.apk",
@@ -192,8 +191,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://github.com/openlyst/builds/releases/download/build-99/doudou-19.0.0-2026-06-04.apk",
@@ -339,8 +337,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://github.com/openlyst/builds/releases/download/build-93/doudou-17.0.0-2026-05-06.apk",
@@ -425,8 +422,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-73/doudou-16.2.0-2026-03-14.apk",
@@ -511,8 +507,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-71/doudou-16.1.0-2026-03-11.apk",
@@ -597,8 +592,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-68/doudou-16.0.0-2026-03-09.apk",
@@ -678,8 +672,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-22/doudou-15.0.0-2026-02-27.apk",
@@ -759,8 +752,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-31/doudou-14.0.0-2026-02-16.apk",
@@ -841,8 +833,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://github.com/justacalico/Openlyst-more-builds/releases/download/build-23/doudou-13.0.0-2026-02-15.apk",
@@ -923,8 +914,7 @@
           "aur": {
             "x86_64": "http://aur.archlinux.org/packages/doudou-bin",
             "arm64": ""
-          },
-          "homebrew": "https://github.com/JustACalico/Openlyst-more-builds?tab=readme-ov-file#homebrew-macoslinux"
+          }
         },
         "Android": {
           "apk": "https://gitlab.com/api/v4/projects/79691113/packages/generic/github-mirror/build-4/doudou-12.1.0-2026-02-08.apk",
