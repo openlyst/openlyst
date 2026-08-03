@@ -47,6 +47,16 @@ const ARCH_LABELS: Record<string, string> = {
   i386: 'i386',
 };
 
+const ARCH_PREFERENCE = ['x86_64', 'universal', 'arm64', 'aarch64', 'i386'];
+
+function defaultArch(arches: string[]): string | null {
+  if (arches.length === 0) return null;
+  for (const a of ARCH_PREFERENCE) {
+    if (arches.includes(a)) return a;
+  }
+  return arches[0];
+}
+
 const EXT_LABELS: Record<string, string> = {
   ipa: 'IPA',
   apk: 'APK',
@@ -215,7 +225,7 @@ export function AppDetailContent({
   useEffect(() => {
     if (groups.length > 0) {
       setSelectedPlatform(groups[0].platform);
-      setSelectedArch(groups[0].arches.length > 0 ? groups[0].arches[0] : null);
+      setSelectedArch(defaultArch(groups[0].arches));
     } else {
       setSelectedPlatform(null);
       setSelectedArch(null);
@@ -269,7 +279,7 @@ export function AppDetailContent({
   const selectPlatform = (platform: string) => {
     setSelectedPlatform(platform);
     const g = groups.find((x) => x.platform === platform);
-    setSelectedArch(g && g.arches.length > 0 ? g.arches[0] : null);
+    setSelectedArch(defaultArch(g ? g.arches : []));
   };
 
   const descriptionHtml = { __html: marked(app.localizedDescription || '') };
