@@ -57,6 +57,26 @@ function defaultArch(arches: string[]): string | null {
   return arches[0];
 }
 
+function detectPlatformFromUA(ua: string): string | null {
+  const lower = ua.toLowerCase();
+  if (/iphone|ipad|ipod/.test(lower)) return 'iOS';
+  if (/android/.test(lower)) return 'Android';
+  if (/windows/.test(lower)) return 'Windows';
+  if (/macintosh|mac os|macbook/.test(lower)) return 'macOS';
+  if (/linux|cros|x11/.test(lower)) return 'Linux';
+  return null;
+}
+
+function pickDefaultPlatform(available: { platform: string }[], ua: string): string | null {
+  if (available.length === 0) return null;
+  const detected = detectPlatformFromUA(ua);
+  if (detected) {
+    const match = available.find((g) => g.platform.toLowerCase() === detected.toLowerCase());
+    if (match) return match.platform;
+  }
+  return available[0].platform;
+}
+
 const EXT_LABELS: Record<string, string> = {
   ipa: 'IPA',
   apk: 'APK',
@@ -224,8 +244,11 @@ export function AppDetailContent({
 
   useEffect(() => {
     if (groups.length > 0) {
-      setSelectedPlatform(groups[0].platform);
-      setSelectedArch(defaultArch(groups[0].arches));
+      const ua = typeof navigator !== 'undefined' ? navigator.userAgent : '';
+      const platform = pickDefaultPlatform(groups, ua);
+      setSelectedPlatform(platform);
+      const g = groups.find((x) => x.platform === platform);
+      setSelectedArch(defaultArch(g ? g.arches : []));
     } else {
       setSelectedPlatform(null);
       setSelectedArch(null);
