@@ -397,7 +397,7 @@ export function AppDetailContent({
                     <span className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">
                       {t.appDetail.selectPlatform}
                     </span>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                       {groups.map((g) => {
                         const active = selectedPlatform === g.platform;
                         return (
@@ -405,7 +405,7 @@ export function AppDetailContent({
                             key={g.platform}
                             type="button"
                             onClick={() => selectPlatform(g.platform)}
-                            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold border transition-all duration-200 ${
+                            className={`inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold border transition-all duration-200 ${
                               active
                                 ? 'bg-white text-black border-white'
                                 : 'bg-gray-900 text-gray-300 border-gray-800 hover:bg-gray-800 hover:text-white'
@@ -414,7 +414,7 @@ export function AppDetailContent({
                             <span className={active ? 'text-black' : 'text-gray-400'}>
                               {getPlatformIcon(g.platform)}
                             </span>
-                            {g.platform}
+                            <span className="truncate">{g.platform}</span>
                           </button>
                         );
                       })}
